@@ -1,0 +1,234 @@
+{
+ "_label": "OFFLINE REPLAY FRAGMENT: extracted read-only from Harness smoke 71532008 (runs/0b4b326c-1bf5-4337-bb47-1f254880b5ca/trajectory.json). Model-authored text from a recorded run; no live call is made when this fixture is used.",
+ "engine_source_sha256_at_record": "a397aeeb20d862da17e5fbb71e9e1a5a1e255a95bbe252de45da72b42c3963a3",
+ "recorded_audit": {
+  "candidate_id": "C1",
+  "kind": "weakness",
+  "reason": "Status label lacks a supporting targeted revision or evidence",
+  "status": "INVALID",
+  "supporting_artifacts": [],
+  "target_id": "W001",
+  "transition_step": 38
+ },
+ "candidates": [
+  {
+   "candidate_id": "C0",
+   "confidence": 1,
+   "content": "{\"starts\":[{\"job\":\"A\",\"start\":8},{\"job\":\"B\",\"start\":0},{\"job\":\"C\",\"start\":2},{\"job\":\"D\",\"start\":5}]}",
+   "created_at": "2026-09-29T17:11:49.008335+00:00",
+   "iteration": 0,
+   "known_strengths": [
+    "Assumes discrete non-preemptive job execution with integer start times and immediate handoff upon completion",
+    "Strictly satisfies resource capacity limit of 2 and precedence constraints B precedes C and C precedes D",
+    "All jobs complete within the horizon limit of 9",
+    "Material limitation: Schedule is a feasible satisfaction candidate rather than an optimal minimal-makespan schedule"
+   ],
+   "known_weaknesses": [],
+   "parent_candidate_id": null
+  },
+  {
+   "candidate_id": "C1",
+   "confidence": 1,
+   "content": "{\"starts\":[{\"job\":\"A\",\"start\":8},{\"job\":\"B\",\"start\":0},{\"job\":\"C\",\"start\":2},{\"job\":\"D\",\"start\":5}]}",
+   "created_at": "2026-09-29T17:16:21.459506+00:00",
+   "iteration": 1,
+   "known_strengths": [
+    "Assumes discrete non-preemptive job execution with integer start times and immediate handoff upon completion",
+    "Strictly satisfies precedence constraints: B completes at 2 before C starts at 2, and C completes at 5 before D starts at 5",
+    "Explicitly verified concurrent resource demand across all intervals ([0,2) demand 1 for B, [2,5) demand 2 for C, [5,8) demand 2 for D, [8,9) demand 2 for A), strictly satisfying capacity limit 2",
+    "Explicitly verified all job completion times against the horizon limit of 9 (B finishes at 2, C finishes at 5, D finishes at 8, A finishes at 9 <= 9)",
+    "Material limitation: Schedule is a feasible satisfaction candidate rather than an optimal minimal-makespan schedule"
+   ],
+   "known_weaknesses": [
+    {
+     "description": "Resource capacity and horizon constraints are untested guarantees under the automated development checks, although candidate C0 satisfies both upon direct inspection.",
+     "evidence": "The development feedback states: 'Checks JSON schema, job identities and precedence; does not check resource capacity or horizon.' Verification confirms that candidate C0's schedule [B:[0,2), C:[2,5), D:[5,8), A:[8,9)] has maximum active demand 2 and completes at t=9, meeting explicit requirements without automated test coverage.",
+     "first_seen_iteration": 0,
+     "id": "W001",
+     "last_seen_iteration": 0,
+     "occurrences": 1,
+     "severity": "low",
+     "status": "open",
+     "status_reason": "",
+     "target_id": null,
+     "type": "untested_guarantee"
+    }
+   ],
+   "parent_candidate_id": "C0"
+  }
+ ],
+ "revision_plans": [
+  {
+   "candidate_id": "C0",
+   "changes": [
+    {
+     "action": "Add explicit verification for concurrent resource demand and completion times against horizon limits.",
+     "expected_effect": "Ensures the schedule satisfies capacity limit 2 and horizon 9, resolving the untested guarantee.",
+     "targets": [
+      "W001"
+     ]
+    }
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "type": "candidate",
+   "step": 35,
+   "data": {
+    "candidate_id": "C1",
+    "confidence": 1,
+    "content": "{\"starts\":[{\"job\":\"A\",\"start\":8},{\"job\":\"B\",\"start\":0},{\"job\":\"C\",\"start\":2},{\"job\":\"D\",\"start\":5}]}",
+    "created_at": "2026-09-29T17:16:21.459506+00:00",
+    "iteration": 1,
+    "known_strengths": [
+     "Assumes discrete non-preemptive job execution with integer start times and immediate handoff upon completion",
+     "Strictly satisfies precedence constraints: B completes at 2 before C starts at 2, and C completes at 5 before D starts at 5",
+     "Explicitly verified concurrent resource demand across all intervals ([0,2) demand 1 for B, [2,5) demand 2 for C, [5,8) demand 2 for D, [8,9) demand 2 for A), strictly satisfying capacity limit 2",
+     "Explicitly verified all job completion times against the horizon limit of 9 (B finishes at 2, C finishes at 5, D finishes at 8, A finishes at 9 <= 9)",
+     "Material limitation: Schedule is a feasible satisfaction candidate rather than an optimal minimal-makespan schedule"
+    ],
+    "known_weaknesses": [
+     {
+      "description": "Resource capacity and horizon constraints are untested guarantees under the automated development checks, although candidate C0 satisfies both upon direct inspection.",
+      "evidence": "The development feedback states: 'Checks JSON schema, job identities and precedence; does not check resource capacity or horizon.' Verification confirms that candidate C0's schedule [B:[0,2), C:[2,5), D:[5,8), A:[8,9)] has maximum active demand 2 and completes at t=9, meeting explicit requirements without automated test coverage.",
+      "first_seen_iteration": 0,
+      "id": "W001",
+      "last_seen_iteration": 0,
+      "occurrences": 1,
+      "severity": "low",
+      "status": "open",
+      "status_reason": "",
+      "target_id": null,
+      "type": "untested_guarantee"
+     }
+    ],
+    "parent_candidate_id": "C0"
+   }
+  },
+  {
+   "type": "weakness_status_change",
+   "step": 38,
+   "data": {
+    "after": {
+     "description": "Resource capacity and horizon constraints are untested guarantees under the automated development checks, although candidate C0 satisfies both upon direct inspection.",
+     "evidence": "The development feedback states: 'Checks JSON schema, job identities and precedence; does not check resource capacity or horizon.' Verification confirms that candidate C0's schedule [B:[0,2), C:[2,5), D:[5,8), A:[8,9)] has maximum active demand 2 and completes at t=9, meeting explicit requirements without automated test coverage.",
+     "first_seen_iteration": 0,
+     "id": "W001",
+     "last_seen_iteration": 0,
+     "occurrences": 1,
+     "severity": "low",
+     "status": "accepted_risk",
+     "status_reason": "Direct trace confirms the schedule respects capacity (max demand 2 <= 2) and horizon (finishes at 9 <= 9); missing test harness coverage is an accepted risk as candidate output cannot modify harness checks.",
+     "target_id": null,
+     "type": "untested_guarantee"
+    },
+    "before": {
+     "description": "Resource capacity and horizon constraints are untested guarantees under the automated development checks, although candidate C0 satisfies both upon direct inspection.",
+     "evidence": "The development feedback states: 'Checks JSON schema, job identities and precedence; does not check resource capacity or horizon.' Verification confirms that candidate C0's schedule [B:[0,2), C:[2,5), D:[5,8), A:[8,9)] has maximum active demand 2 and completes at t=9, meeting explicit requirements without automated test coverage.",
+     "first_seen_iteration": 0,
+     "id": "W001",
+     "last_seen_iteration": 0,
+     "occurrences": 1,
+     "severity": "low",
+     "status": "open",
+     "status_reason": "",
+     "target_id": null,
+     "type": "untested_guarantee"
+    }
+   }
+  }
+ ],
+ "c1_judgments": [
+  {
+   "adversarial": false,
+   "candidate_id": "C1",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 1,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "13652869-11a1-4525-a30e-98f8a0dd4abb"
+   ],
+   "fatal_issues": [],
+   "judge_id": "primary",
+   "judgment_id": "J002",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [],
+   "verdict": "PASS"
+  },
+  {
+   "adversarial": true,
+   "candidate_id": "C1",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 1,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "13652869-11a1-4525-a30e-98f8a0dd4abb"
+   ],
+   "fatal_issues": [],
+   "judge_id": "adversarial",
+   "judgment_id": "AJ002",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [
+    "Job A finishes exactly at the horizon bound of 9 (occupying interval [8, 9)), leaving zero slack against the horizon constraint."
+   ],
+   "verdict": "PASS"
+  }
+ ],
+ "c1_evidence": [
+  {
+   "artifact_id": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+   "candidate_id": "C1",
+   "description": "Executed declared development subset on this task input; not final evaluation\n{\"development_feedback\":{\"observations\":{\"failures\":[],\"scope\":\"development subset only; PASS is not final task success\"},\"status\":\"COMPLETED\",\"verdict\":\"PASS\"}}",
+   "evidence_type": "EXECUTED_EVIDENCE",
+   "passed": true,
+   "source": "harness:0b4b326c-1bf5-4337-bb47-1f254880b5ca:receipts/13652869-11a1-4525-a30e-98f8a0dd4abb.json",
+   "targets": [
+    "CL001"
+   ],
+   "test_id": null
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "version": "0.3.4",
+ "source_sha256": "d1a9f68bb8cacf1e4dc4384180d5b6971bebb8209b34ea50f1bb94939ceed7a2",
+ "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+ "computed_by": "end_harness.adapters._source_identity (read-only import; no Engine import)",
+ "previous": {
+  "version": "0.3.3",
+  "source_sha256": "3e57f6753d880bb54190a27b58640e5fdf853c56f9b6cd4bc92d44fbd01076f9"
+ },
+ "changed_files": {
+  "added": [
+   "IMPLEMENTATION_REPORT_v0.3.3.md",
+   "tests/test_integrity_review.py",
+   "validation_v034/engine-identity.json",
+   "validation_v034/engine-tests-after.txt",
+   "validation_v034/engine-tests-before.txt",
+   "validation_v034/engine-tree-after.json",
+   "validation_v034/engine-tree-before.json",
+   "validation_v034/harness-tests.txt",
+   "validation_v034/harness-unchanged.txt",
+   "validation_v034/offline-reassessment.json",
+   "validation_v034/offline-reassessment.txt",
+   "validation_v034/offline_reassessment.py",
+   "validation_v034/regression-tests-on-pristine-0.3.3.txt"
+  ],
+  "removed": [],
+  "modified": [
+   "IMPLEMENTATION_REPORT.md",
+   "README.md",
+   "end_engine/quality/integrity.py",
+   "end_engine/quality/session.py",
+   "pyproject.toml",
+   "tests/test_evidence_integrity.py",
+   "tests/test_final_reconciliation.py",
+   "tests/test_quality.py"
+  ]
+ },
+ "tree_manifests": "engine-tree-before.json / engine-tree-after.json exclude __pycache__ (unchanged: 54 files, identical hashes)"
+}

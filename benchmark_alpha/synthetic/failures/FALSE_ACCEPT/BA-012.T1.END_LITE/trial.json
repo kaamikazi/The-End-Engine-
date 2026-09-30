@@ -1,0 +1,146 @@
+{
+ "answer": "Here is the function.\n```python\ndef is_palindrome(s):\n    t = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return t == t[::-1]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 195,
+   "latency_ms": 0.0,
+   "output_tokens": 35,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 571,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1118,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 381,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 298,
+   "latency_ms": 0.0,
+   "output_tokens": 50,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 648,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "overthinking_trap",
+ "condition": "END_LITE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 6,
+  "calls_by_role": {
+   "generator": 6
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 186,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 3397,
+  "model_latency_ms": 0,
+  "prompt_tokens": 3211,
+  "tool_check_calls": 0,
+  "total_tokens": 3397,
+  "wall_ms": 34.864
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "INCONCLUSIVE",
+  "best_candidate_id": "C1",
+  "branch_count": 0,
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "errors": [],
+  "gate_decisions": [],
+  "iterations": 1,
+  "latest_candidate_id": "C1",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C1",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "QUALITY_THRESHOLD_REACHED",
+  "trajectory_file": "2f6f601f-f95b-4a5b-a41d-5cc47905077f.jsonl",
+  "trajectory_id": "2f6f601f-f95b-4a5b-a41d-5cc47905077f",
+  "trajectory_sha256": "fa7b935f04566645157242f71e7dbff25947738460815439ae7d9fd50335113e"
+ },
+ "ended_at": "2026-09-30T15:11:28.897004+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-012.T1.END_LITE",
+ "stages": {},
+ "started_at": "2026-09-30T15:11:28.862510+00:00",
+ "task_id": "BA-012",
+ "trial": 1,
+ "trial_id": "BA-012.T1",
+ "trial_seed": 3805504194
+}

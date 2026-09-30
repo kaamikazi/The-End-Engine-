@@ -1,0 +1,36 @@
+OFFLINE_REASSESSMENT run with END Engine 0.3.4 (source d1a9f68bb8cacf1e4dc4384180d5b6971bebb8209b34ea50f1bb94939ceed7a2); Harness trajectories opened read-only; no model call.
+== OFFLINE_REASSESSMENT 71532008 (trajectory sha256 5814f03af076401a3efbc8cd13105ecc957378e24893f8363c7324eb4499298f)
+  historical: EXTERNAL_BLOCKER BLOCKED final C0
+  C0: validations match recorded=True; claims=[('CL001', 'verified', 'none')]
+     statements=[('J001.verdict', 'evidence_validated'), ('AJ001.verdict', 'evidence_validated')]
+     references=[('J001.evidence', 'c3fbf3b1-dae1-4005-ac09-02da66d206ee', 'valid'), ('AJ001.evidence', 'c3fbf3b1-dae1-4005-ac09-02da66d206ee', 'valid')]
+     contradictions=[] uncertainties=[]
+     historical gate=ACCEPT_PROVISIONALLY ['Generator and judge share model identity']
+     derived gate=ACCEPT_PROVISIONALLY ['Generator and judge share model identity']
+  C1: validations match recorded=True; claims=[('CL001', 'verified', 'engine')]
+     statements=[('J002.verdict', 'evidence_validated'), ('AJ002.verdict', 'evidence_validated')]
+     references=[('J002.evidence', '13652869-11a1-4525-a30e-98f8a0dd4abb', 'valid'), ('AJ002.evidence', '13652869-11a1-4525-a30e-98f8a0dd4abb', 'valid')]
+     contradictions=[] uncertainties=[]
+     historical gate=REVISE ['Status label lacks a supporting targeted revision or evidence', 'Unresolved high-severity weaknesses remain']
+     derived gate=REVISE ['Status label lacks a supporting targeted revision or evidence', 'Unresolved high-severity weaknesses remain']
+     audit differences (0.3.1 policy, not integrity)=[{'target_id': 'W001', 'recorded': 'INVALID', 'current_policy': 'WEAKLY_SUPPORTED', 'current_reason': 'Justified lower-severity risk acceptance corroborated by independent judgments; model-based, the concern remains unverified'}]
+  final: {'decision': 'BLOCKED', 'acceptance_label': 'INCOMPLETE', 'note': 'termination EXTERNAL_BLOCKER is preserved; the final gate stays BLOCKED/INCOMPLETE and only lists added reasons', 'added_reasons': []}
+  identical-content applicable: []
+  not transferred: []
+== OFFLINE_REASSESSMENT 8b553c71 (trajectory sha256 cac07b1ba55b8c55dd994880d493562a5057b9c93a7c324ee500e78e56bce4a1)
+  historical: ACCEPTED_PROVISIONALLY ACCEPT_PROVISIONALLY final C0
+  C0: validations match recorded=True; claims=[('CL001', 'verified', 'none')]
+     statements=[('J001.verdict', 'evidence_validated'), ('AJ001.verdict', 'evidence_validated'), ('AJ001.uncertainties[0]', 'unsupported')]
+     references=[('J001.evidence', '02941036-e406-4136-8cb8-e25f8eafc920', 'valid'), ('AJ001.evidence', '02941036-e406-4136-8cb8-e25f8eafc920', 'valid'), ('AJ001.uncertainties[0]', '02941036-e406-4136-8cb8-e25f8eafc920', 'valid')]
+     contradictions=[] uncertainties=['Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]']
+     historical gate=ACCEPT_PROVISIONALLY ['Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.', 'Generator and judge share model identity']
+     derived gate=ACCEPT_PROVISIONALLY ['Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.', 'Generator and judge share model identity', 'Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]']
+  C1: validations match recorded=True; claims=[('CL001', 'verified', 'engine')]
+     statements=[('J002.verdict', 'evidence_validated'), ('AJ002.verdict', 'evidence_validated')]
+     references=[('J002.evidence', 'b3c34247-a7ff-49d9-a973-2337963e5e64', 'valid'), ('AJ002.evidence', 'b3c34247-a7ff-49d9-a973-2337963e5e64', 'valid')]
+     contradictions=[] uncertainties=[]
+     historical gate=ACCEPT_PROVISIONALLY ['Generator and judge share model identity']
+     derived gate=ACCEPT_PROVISIONALLY ['Generator and judge share model identity']
+  final: {'decision': 'ACCEPT_PROVISIONALLY', 'reasons': ['Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.', 'Generator and judge share model identity', 'Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]']}
+  identical-content applicable: []
+  not transferred: []

@@ -1,0 +1,105 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 2260,
+  "checks": [
+   {
+    "detail": null,
+    "name": "schedule_format",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "precedence_A_C",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "precedence_B_E",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "disjoint_B_D",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "peak demand 3",
+    "name": "capacity",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "makespan 6",
+    "name": "horizon",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "deterministic_validator",
+  "evaluator": "schedule",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": {
+    "A": 0,
+    "B": 0,
+    "C": 3,
+    "D": 3,
+    "E": 4
+   },
+   "claim_region": "after </think>"
+  },
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-004"
+ },
+ "run_id": "BA-004.T1.SELF_REFLECT",
+ "stages": {
+  "initial": {
+   "answer_chars": 13530,
+   "checks": [
+    {
+     "detail": "got None",
+     "name": "schedule_format",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "schedule",
+   "evaluator_version": "alpha-2",
+   "extracted": {
+    "answer": null,
+    "claim_region": "whole text"
+   },
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0,
+   "task_id": "BA-004"
+  }
+ }
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "end-engine"
+version = "0.3.4"
+description = "A model-agnostic recursive deliberation core and experience ledger"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+end-engine-demo = "end_engine.demo:main"
+
+[tool.setuptools.packages.find]
+include = ["end_engine*"]

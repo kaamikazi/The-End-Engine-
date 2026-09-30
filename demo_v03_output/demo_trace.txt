@@ -1,0 +1,116 @@
+END ENGINE v0.3 — INDEPENDENT QUALITY AND ROLLBACK
+Design a deployment controller that can automatically roll out a new service version while preventing a faulty release from causing a large-scale outage.
+Mock model judgments; actual execution is limited to the documented abstract state-machine checks.
+
+Candidate C0
+A rollout must preserve a healthy serving version. Apply the new version to all workers after a single successful health probe.
+[VERIFY] C0 score=0.58, type=MODEL_JUDGMENT
+[ADVERSARIAL_TEST] {'test_id': 'AT001', 'candidate_id': 'C0', 'target': 'CL001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[JUDGMENT] C0: NEEDS_REVISION — [{'category': 'assumption', 'description': 'A single health probe cannot exclude delayed or partial rollout failures.', 'target': 'candidate', 'fatal': False, 'evidence': []}]
+[ADVERSARIAL_JUDGMENT] C0: NEEDS_REVISION — [{'category': 'assumption', 'description': 'A single health probe cannot exclude delayed or partial rollout failures.', 'target': 'candidate', 'fatal': False, 'evidence': []}]
+[CLAIM_VALIDATION] {'candidate_id': 'C0', 'claim_id': 'CL001', 'status': 'UNVERIFIED', 'importance': 'HIGH', 'supporting_artifacts': [], 'contradicting_artifacts': [], 'judge_confidence': 0.4}
+[JUDGE_FEEDBACK] {'candidate_id': 'C0', 'target': 'candidate', 'weakness_ids': ['W001'], 'issue': {'category': 'assumption', 'description': 'A single health probe cannot exclude delayed or partial rollout failures.', 'target': 'candidate', 'fatal': False, 'evidence': []}}
+[JUDGE_FEEDBACK] {'candidate_id': 'C0', 'target': 'candidate', 'weakness_ids': ['W001'], 'issue': {'category': 'assumption', 'description': 'A single health probe cannot exclude delayed or partial rollout failures.', 'target': 'candidate', 'fatal': False, 'evidence': []}}
+[QUALITY_GATE] {'candidate_id': 'C0', 'decision': 'REVISE', 'reasons': ['A single health probe cannot exclude delayed or partial rollout failures.', 'At least one judge requires correction', "A judge's recommended action requires correction", 'A judged dimension is below the quality floor', 'Basic verification has not passed', 'Unresolved high-severity weaknesses remain'], 'required_actions': ['Address judged findings through targeted cognition']}
+Operator ASSUMPTION -> W001: Investigate W001 (assumption); expected gain 0.74, issue value 1.60, novelty 0.88, repetition penalty 0.00
+Question Q001: Regarding weakness W001: A single health probe cannot exclude delayed or partial rollout failures.
+Identify hidden assumptions that the current answer depends on. State how each could be checked.
+
+Candidate C1
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Add automatic rollback on failures.
+[VERIFY] C1 score=0.78, type=MODEL_JUDGMENT
+[ADVERSARIAL_TEST] {'test_id': 'AT002', 'candidate_id': 'C1', 'target': 'CL001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT003', 'candidate_id': 'C1', 'target': 'W001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[JUDGMENT] C1: PASS — []
+[ADVERSARIAL_JUDGMENT] C1: NEEDS_REVISION — [{'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': False, 'evidence': []}]
+[CLAIM_VALIDATION] {'candidate_id': 'C1', 'claim_id': 'CL001', 'status': 'UNVERIFIED', 'importance': 'HIGH', 'supporting_artifacts': [], 'contradicting_artifacts': [], 'judge_confidence': 0.4}
+[RESOLUTION_AUDIT] {'candidate_id': 'C1', 'target_id': 'W001', 'status': 'WEAKLY_SUPPORTED', 'reason': 'Substantive revision and rationale exist, but no executed support is attached', 'transition_step': 34, 'supporting_artifacts': [], 'kind': 'weakness'}
+[PAIRWISE_COMPARISON] {'from_candidate': 'C0', 'to_candidate': 'C1', 'preferred': 'C1', 'dimensions': [['correctness', 'C1'], ['completeness', 'C1'], ['robustness', 'C1'], ['clarity', 'C1'], ['architecture', 'C1'], ['failure_modes', 'C1'], ['alternatives', 'C1'], ['constraint_adherence', 'C1'], ['complexity_cost', 'C1']], 'delta': [['correctness', 0.08], ['completeness', 0.08], ['robustness', 0.08], ['clarity', 0.08], ['architecture', 0.08], ['failure_modes', 0.08], ['alternatives', 0.08], ['constraint_adherence', 0.08], ['complexity_cost', 0.08]], 'net_assessment': 'IMPROVEMENT', 'reason': 'B adds substantive rollout protections; the safe proposal passes the bounded recovery model', 'severe_dimensions': []}
+[JUDGE_FEEDBACK] {'candidate_id': 'C1', 'target': 'CL001', 'weakness_ids': ['W002'], 'issue': {'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': False, 'evidence': []}}
+[QUALITY_GATE] {'candidate_id': 'C1', 'decision': 'REVISE', 'reasons': ['Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'At least one judge requires correction', "A judge's recommended action requires correction", 'A judged dimension is below the quality floor', 'Basic verification has not passed', 'Unresolved high-severity weaknesses remain'], 'required_actions': ['Address judged findings through targeted cognition']}
+[TRANSITION_LABEL] {'from_candidate': 'C0', 'to_candidate': 'C1', 'label': 'GOOD_REVISION'}
+Operator WHAT_BREAKS -> W002: Investigate W002 (failure_mode); expected gain 0.74, issue value 1.60, novelty 0.94, repetition penalty 0.00
+Question Q002: Regarding weakness W002: Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.
+Assume the proposal has been deployed and failed badly. Identify plausible structural causes, including overload, partial failure, recovery, and adversarial inputs.
+
+Candidate C2
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Add automatic rollback on failures. Retire the previous pool when rollback starts, then restore the earlier version.
+[VERIFY] C2 score=0.97, type=MODEL_JUDGMENT
+[ADVERSARIAL_TEST] {'test_id': 'AT004', 'candidate_id': 'C2', 'target': 'CL001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT005', 'candidate_id': 'C2', 'target': 'W001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT006', 'candidate_id': 'C2', 'target': 'W002', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[JUDGMENT] C2: PASS — []
+[ADVERSARIAL_JUDGMENT] C2: NEEDS_REVISION — [{'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': False, 'evidence': []}]
+[CLAIM_VALIDATION] {'candidate_id': 'C2', 'claim_id': 'CL001', 'status': 'UNVERIFIED', 'importance': 'HIGH', 'supporting_artifacts': [], 'contradicting_artifacts': [], 'judge_confidence': 0.4}
+[RESOLUTION_AUDIT] {'candidate_id': 'C2', 'target_id': 'W001', 'status': 'WEAKLY_SUPPORTED', 'reason': 'Substantive revision and rationale exist, but no executed support is attached', 'transition_step': 34, 'supporting_artifacts': [], 'kind': 'weakness'}
+[RESOLUTION_AUDIT] {'candidate_id': 'C2', 'target_id': 'W002', 'status': 'WEAKLY_SUPPORTED', 'reason': 'Substantive revision and rationale exist, but no executed support is attached', 'transition_step': 68, 'supporting_artifacts': [], 'kind': 'weakness'}
+[PAIRWISE_COMPARISON] {'from_candidate': 'C1', 'to_candidate': 'C2', 'preferred': 'C2', 'dimensions': [['correctness', 'C2'], ['completeness', 'C2'], ['robustness', 'C2'], ['clarity', 'C2'], ['architecture', 'C2'], ['failure_modes', 'C2'], ['alternatives', 'C2'], ['constraint_adherence', 'C2'], ['complexity_cost', 'C2']], 'delta': [['correctness', 0.08], ['completeness', 0.08], ['robustness', 0.08], ['clarity', 0.08], ['architecture', 0.08], ['failure_modes', 0.08], ['alternatives', 0.08], ['constraint_adherence', 0.08], ['complexity_cost', 0.08]], 'net_assessment': 'IMPROVEMENT', 'reason': 'B adds substantive rollout protections; the safe proposal passes the bounded recovery model', 'severe_dimensions': []}
+[JUDGE_FEEDBACK] {'candidate_id': 'C2', 'target': 'CL001', 'weakness_ids': ['W002'], 'issue': {'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': False, 'evidence': []}}
+[QUALITY_GATE] {'candidate_id': 'C2', 'decision': 'REVISE', 'reasons': ['Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'At least one judge requires correction', "A judge's recommended action requires correction", 'A judged dimension is below the quality floor', 'Unresolved high-severity weaknesses remain'], 'required_actions': ['Address judged findings through targeted cognition']}
+[TRANSITION_LABEL] {'from_candidate': 'C1', 'to_candidate': 'C2', 'label': 'GOOD_REVISION'}
+Operator EVIDENCE -> CL001: Investigate CL001 (evidence); expected gain 0.65, issue value 0.95, novelty 0.88, repetition penalty 0.00
+Question Q003: Regarding evidence_gap CL001: A rollout must preserve a healthy serving version.
+Identify unsupported factual or quantitative claims. Specify the evidence required to substantiate them.
+
+Candidate C3
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Retain the last healthy pool until rollback completes. Fence rollback by deployment epoch. Serialize promotion with rollback. Reject stale completion events. Check delayed failures and every ordering of retry, stale completion, and rollback completion in a bounded abstract model. Require production-specific validation before deployment; the abstract model covers only its encoded invariants.
+[VERIFY] C3 score=0.98, type=MODEL_JUDGMENT
+[ADVERSARIAL_TEST] {'test_id': 'AT007', 'candidate_id': 'C3', 'target': 'CL001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT008', 'candidate_id': 'C3', 'target': 'W001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT009', 'candidate_id': 'C3', 'target': 'W002', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C3-1', 'candidate_id': 'C3', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': True, 'description': 'Executed abstract rollback model over 6 event orderings; 0 violated the serving invariant. No real deployment was executed.', 'targets': ['CL001'], 'test_id': 'AT007'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C3-2', 'candidate_id': 'C3', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': True, 'description': 'Executed abstract rollback model over 6 event orderings; 0 violated the serving invariant. No real deployment was executed.', 'targets': ['W001'], 'test_id': 'AT008'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C3-3', 'candidate_id': 'C3', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': True, 'description': 'Executed abstract rollback model over 6 event orderings; 0 violated the serving invariant. No real deployment was executed.', 'targets': ['W002'], 'test_id': 'AT009'}
+[JUDGMENT] C3: PASS — []
+[ADVERSARIAL_JUDGMENT] C3: PASS — []
+[CLAIM_VALIDATION] {'candidate_id': 'C3', 'claim_id': 'CL001', 'status': 'SUPPORTED', 'importance': 'HIGH', 'supporting_artifacts': ['E-C3-1'], 'contradicting_artifacts': [], 'judge_confidence': 0.95}
+[RESOLUTION_AUDIT] {'candidate_id': 'C3', 'target_id': 'W001', 'status': 'VALID', 'reason': 'Candidate-bound executed evidence supports this transition', 'transition_step': 34, 'supporting_artifacts': ['E-C3-2'], 'kind': 'weakness'}
+[RESOLUTION_AUDIT] {'candidate_id': 'C3', 'target_id': 'W002', 'status': 'VALID', 'reason': 'Candidate-bound executed evidence supports this transition', 'transition_step': 104, 'supporting_artifacts': ['E-C3-3'], 'kind': 'weakness'}
+[PAIRWISE_COMPARISON] {'from_candidate': 'C2', 'to_candidate': 'C3', 'preferred': 'C3', 'dimensions': [['correctness', 'C3'], ['completeness', 'C3'], ['robustness', 'C3'], ['clarity', 'C3'], ['architecture', 'C3'], ['failure_modes', 'C3'], ['alternatives', 'C3'], ['constraint_adherence', 'C3'], ['complexity_cost', 'C3']], 'delta': [['correctness', 0.22], ['completeness', 0.22], ['robustness', 0.22], ['clarity', 0.22], ['architecture', 0.22], ['failure_modes', 0.22], ['alternatives', 0.22], ['constraint_adherence', 0.22], ['complexity_cost', 0.22]], 'net_assessment': 'MIXED', 'reason': 'B adds substantive rollout protections; the safe proposal passes the bounded recovery model', 'severe_dimensions': []}
+[QUALITY_GATE] {'candidate_id': 'C3', 'decision': 'ACCEPT_VERIFIED', 'reasons': ['Independent judgments and candidate-bound executed checks agree within the recorded scope'], 'required_actions': []}
+[TRANSITION_LABEL] {'from_candidate': 'C2', 'to_candidate': 'C3', 'label': 'GOOD_REVISION'}
+Operator ALTERNATIVE -> C3:alternatives: Investigate C3:alternatives (alternatives); expected gain 0.86, issue value 0.60, novelty 0.94, repetition penalty 0.00
+Question Q004: Regarding component C3:alternatives: The candidate's alternatives
+Identify a materially different approach and the conditions in which it outperforms this proposal.
+
+Candidate C4
+A rollout must preserve a healthy serving version. Use a bounded canary. For elegant fast rollback, retire the previous pool when rollback starts. This concise workflow replaces the detailed fencing and recovery protocol.
+[VERIFY] C4 score=0.99, type=MODEL_JUDGMENT
+[ADVERSARIAL_TEST] {'test_id': 'AT010', 'candidate_id': 'C4', 'target': 'CL001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT011', 'candidate_id': 'C4', 'target': 'W001', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[ADVERSARIAL_TEST] {'test_id': 'AT012', 'candidate_id': 'C4', 'target': 'W002', 'scenario': 'Interleave stale completion, retry and rollback completion while the new release is faulty.', 'expected_property': 'A healthy serving pool remains available in every encoded event ordering.', 'execution_status': 'EXECUTABLE'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C4-1', 'candidate_id': 'C4', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': False, 'description': 'Executed abstract rollback model over 6 event orderings; 6 violated the serving invariant. No real deployment was executed.', 'targets': ['CL001'], 'test_id': 'AT010'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C4-2', 'candidate_id': 'C4', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': False, 'description': 'Executed abstract rollback model over 6 event orderings; 6 violated the serving invariant. No real deployment was executed.', 'targets': ['W001'], 'test_id': 'AT011'}
+[VERIFIER_EVIDENCE] {'artifact_id': 'E-C4-3', 'candidate_id': 'C4', 'evidence_type': 'EXECUTED_EVIDENCE', 'source': 'bounded_rollback_state_machine', 'passed': False, 'description': 'Executed abstract rollback model over 6 event orderings; 6 violated the serving invariant. No real deployment was executed.', 'targets': ['W002'], 'test_id': 'AT012'}
+[JUDGMENT] C4: PASS — []
+[ADVERSARIAL_JUDGMENT] C4: FAIL — [{'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': True, 'evidence': []}]
+[CLAIM_VALIDATION] {'candidate_id': 'C4', 'claim_id': 'CL001', 'status': 'CONTRADICTED', 'importance': 'HIGH', 'supporting_artifacts': [], 'contradicting_artifacts': ['E-C4-1'], 'judge_confidence': 0.95}
+[RESOLUTION_AUDIT] {'candidate_id': 'C4', 'target_id': 'W001', 'status': 'WEAKLY_SUPPORTED', 'reason': 'Substantive revision and rationale exist, but no executed support is attached', 'transition_step': 34, 'supporting_artifacts': [], 'kind': 'weakness'}
+[RESOLUTION_AUDIT] {'candidate_id': 'C4', 'target_id': 'W002', 'status': 'WEAKLY_SUPPORTED', 'reason': 'Substantive revision and rationale exist, but no executed support is attached', 'transition_step': 104, 'supporting_artifacts': [], 'kind': 'weakness'}
+[PAIRWISE_COMPARISON] {'from_candidate': 'C3', 'to_candidate': 'C4', 'preferred': 'C3', 'dimensions': [['correctness', 'C3'], ['completeness', 'C3'], ['robustness', 'C3'], ['clarity', 'C4'], ['architecture', 'C3'], ['failure_modes', 'C3'], ['alternatives', 'C3'], ['constraint_adherence', 'C3'], ['complexity_cost', 'C3']], 'delta': [['correctness', -0.5], ['completeness', -0.1], ['robustness', -0.5], ['clarity', 0.12], ['architecture', -0.1], ['failure_modes', -0.1], ['alternatives', -0.1], ['constraint_adherence', -0.5], ['complexity_cost', -0.1]], 'net_assessment': 'SEVERE_REGRESSION', 'reason': 'B removes retained healthy capacity and epoch fencing', 'severe_dimensions': ['correctness', 'robustness', 'constraint_adherence']}
+[JUDGE_FEEDBACK] {'candidate_id': 'C4', 'target': 'CL001', 'weakness_ids': ['W002'], 'issue': {'category': 'rollback_flaw', 'description': 'Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'target': 'CL001', 'fatal': True, 'evidence': []}}
+[QUALITY_GATE] {'candidate_id': 'C4', 'decision': 'REJECT', 'reasons': ['Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.'], 'required_actions': ['Remove the demonstrated failure before acceptance']}
+[TRANSITION_LABEL] {'from_candidate': 'C3', 'to_candidate': 'C4', 'label': 'BAD_REVISION'}
+[CANDIDATE_ROLLBACK] {'from_candidate': 'C4', 'to_candidate': 'C3', 'reason': 'B removes retained healthy capacity and epoch fencing'}
+Termination: {'reason': 'ACCEPTED_VERIFIED', 'explanation': 'Independent judgments and candidate-bound executed checks agree within the recorded scope'}
+
+FINAL SCORECARD
+{
+  "acceptance_label": "ACCEPTED_HIGH_CONFIDENCE",
+  "best_candidate": "C3",
+  "final_candidate": "C3",
+  "known_uncertainties": [],
+  "latest_candidate": "C4",
+  "quality_gate": "ACCEPT_VERIFIED",
+  "trajectory": {
+    "adversarial_resilience": "HIGH",
+    "evidence_quality": "HIGH",
+    "operator_efficiency": "MEDIUM",
+    "redundancy": "LOW",
+    "rejected_revisions": 1,
+    "resolution_integrity": "HIGH",
+    "substantive_progress": "HIGH",
+    "trajectory_issues": [],
+    "verification_independence": "HIGH"
+  }
+}

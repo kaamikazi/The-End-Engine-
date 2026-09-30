@@ -1,0 +1,29 @@
+{
+ "version": "0.3.2",
+ "source_sha256": "5ea97d2f7170a8d4d928d9e088b6d3d0f6d3425cdea5f28628ac545c8db5c314",
+ "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+ "previous": {
+  "version": "0.3.1",
+  "source_sha256": "7a0b36decba87d3587699aa91f213c5279c812049632f37b865947ad3a0d6c16"
+ },
+ "changed_files": {
+  "added": [
+   "IMPLEMENTATION_REPORT_v0.3.1.md",
+   "tests/test_final_reconciliation.py",
+   "validation_v032/engine-identity.json",
+   "validation_v032/engine-tests-after.txt",
+   "validation_v032/engine-tests-before.txt",
+   "validation_v032/engine-tree-after.json",
+   "validation_v032/engine-tree-before.json",
+   "validation_v032/harness-tests.txt"
+  ],
+  "removed": [],
+  "modified": [
+   "IMPLEMENTATION_REPORT.md",
+   "README.md",
+   "end_engine/engine.py",
+   "end_engine/quality/session.py",
+   "pyproject.toml"
+  ]
+ }
+}

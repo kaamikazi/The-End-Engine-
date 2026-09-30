@@ -1,0 +1,146 @@
+{
+ "answer": "Here is the function.\n```python\ndef chunk(items, size):\n    if not isinstance(size, int) or size <= 0:\n        raise ValueError('size')\n    return [items[i:i + size] for i in range(0, len(items), size)]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 260,
+   "latency_ms": 0.0,
+   "output_tokens": 67,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 669,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1215,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 479,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 396,
+   "latency_ms": 0.0,
+   "output_tokens": 67,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 732,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "debugging",
+ "condition": "END_LITE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 6,
+  "calls_by_role": {
+   "generator": 6
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 235,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 3986,
+  "model_latency_ms": 0,
+  "prompt_tokens": 3751,
+  "tool_check_calls": 0,
+  "total_tokens": 3986,
+  "wall_ms": 29.97
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "INCONCLUSIVE",
+  "best_candidate_id": "C1",
+  "branch_count": 0,
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "errors": [],
+  "gate_decisions": [],
+  "iterations": 1,
+  "latest_candidate_id": "C1",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C1",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "QUALITY_THRESHOLD_REACHED",
+  "trajectory_file": "50061551-8db6-44e4-b73f-ebfb4ba9957c.jsonl",
+  "trajectory_id": "50061551-8db6-44e4-b73f-ebfb4ba9957c",
+  "trajectory_sha256": "676a9ba8a5991625847fd2645bb02ef52c3a45b2be3146987aab4d8841e5fe4f"
+ },
+ "ended_at": "2026-09-30T15:11:30.470254+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-002.T1.END_LITE",
+ "stages": {},
+ "started_at": "2026-09-30T15:11:30.445178+00:00",
+ "task_id": "BA-002",
+ "trial": 1,
+ "trial_id": "BA-002.T1",
+ "trial_seed": 4219183038
+}

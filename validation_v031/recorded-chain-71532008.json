@@ -1,0 +1,52 @@
+{
+ "source": "E:\\The End Harness\\output\\antigravity-smoke\\71532008-8e55-49f4-af8f-3a1086ae9f47\\runs\\0b4b326c-1bf5-4337-bb47-1f254880b5ca\\trajectory.json",
+ "mode": "read-only verification of recorded trajectory; not a replay",
+ "C0_C1_content_identical": true,
+ "W001_severity": "low",
+ "W001_type": "untested_guarantee",
+ "transition": [
+  "open",
+  "accepted_risk",
+  38
+ ],
+ "status_reason_chars": 206,
+ "audit": [
+  "INVALID",
+  "W001",
+  "Status label lacks a supporting targeted revision or evidence"
+ ],
+ "feedback_creates": [
+  "W002"
+ ],
+ "feedback_issue_fatal": false,
+ "W002_severity_at_gate": "high",
+ "C1_gate": [
+  "REVISE",
+  [
+   "Status label lacks a supporting targeted revision or evidence",
+   "Unresolved high-severity weaknesses remain"
+  ]
+ ],
+ "C1_judgments": [
+  [
+   "PASS",
+   "ACCEPT",
+   0,
+   0
+  ],
+  [
+   "PASS",
+   "ACCEPT",
+   0,
+   0
+  ]
+ ],
+ "C1_dev_evidence_passed": [
+  true
+ ],
+ "termination": {
+  "explanation": "revision_plan failed: BudgetExhausted: model_attempts_exhausted",
+  "reason": "EXTERNAL_BLOCKER"
+ },
+ "model_calls": 15
+}

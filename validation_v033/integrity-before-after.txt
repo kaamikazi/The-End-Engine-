@@ -1,0 +1,18 @@
+SYNTHETIC before/after probe (offline; no model calls). Same scenarios through ClaimValidator + QualityGate (+ integrity on 0.3.3).
+Script: validation_v033/integrity-probe.py
+== Engine 0.3.2 (pristine copy, source 5ea97d2f7170a8d4d928d9e088b6d3d0f6d3425cdea5f28628ac545c8db5c314)
+{
+ "dev PASS targeted at a final-task claim": "ACCEPT_VERIFIED",
+ "judge cites nonexistent artifact E-C0-9": "ValueError: Judge cites unknown evidence artifact (run ends EXTERNAL_BLOCKER)",
+ "checker PASS contradicted by adversarial minor issue on CL001": "ACCEPT_VERIFIED",
+ "model-asserted NOT_APPLICABLE claim": "ACCEPT_VERIFIED",
+ "judge uncertainty: dev receipt E-C0-1 shows all constraints are satisfied": "ACCEPT_PROVISIONALLY"
+}
+== Engine 0.3.3 (working tree)
+{
+ "dev PASS targeted at a final-task claim": "ACCEPT_PROVISIONALLY",
+ "judge cites nonexistent artifact E-C0-9": "ACCEPT_PROVISIONALLY",
+ "checker PASS contradicted by adversarial minor issue on CL001": "ACCEPT_PROVISIONALLY",
+ "model-asserted NOT_APPLICABLE claim": "ACCEPT_PROVISIONALLY",
+ "judge uncertainty: dev receipt E-C0-1 shows all constraints are satisfied": "ACCEPT_PROVISIONALLY"
+}

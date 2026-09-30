@@ -1,0 +1,40 @@
+END ENGINE v0.1 — OFFLINE MOCK DEMONSTRATION
+Scores and outputs are deterministic fixtures, not empirical model results.
+
+TASK
+Design a memory architecture for a long-running AI agent that must preserve useful information without allowing memory growth to become unbounded.
+
+Candidate 0 (C0)
+Store agent observations and summaries in a persistent memory store. Retrieve records by relevance and recency. Periodically summarize older records and delete low-value raw observations. Keep important facts and a small working context for the current task.
+Verification C0: score=0.56; passed=False; remaining=['Additional failure-mode scrutiny is needed.']
+
+Selected operator: ASSUMPTION
+Reason: matches evaluation dimensions architecture; initial proposal has not had its assumptions inspected
+Critique: Inspect the proposal's unproven bounded-storage guarantee.
+Weakness W001 [high, open]: Summarization does not guarantee a hard storage bound.
+Evidence: The initial proposal has no byte quota or admission control.
+Revision plan:
+  W001: Add a total byte quota and transactional admission control. Expected: Make storage limits explicit and testable under the identified failure conditions.
+
+Candidate 1 (C1)
+Use a durable memory store with separate working context, episodic records, and versioned semantic facts. Enforce a 256 MiB total persistent-memory quota, including indexes, summaries, and metadata, plus a 16 KiB working-context cap. Admit writes transactionally only after reserving capacity; reject or evict when capacity is unavailable. Rank eviction by usefulness, recency, and retrieval frequency. Keep provenance links and confidence with each fact; summarize only when the new record costs less than its inputs. Compact periodically and measure size and retrieval usefulness.
+Verification C1: score=0.76; passed=False; remaining=['Additional failure-mode scrutiny is needed.']
+Weakness W001: open -> resolved; Candidate now specifies the missing quota mechanism and applicable checks (fixture judgment).
+
+Selected operator: CONSTRAINT
+Reason: matches evaluation dimensions completeness; task or proposal contains explicit limits
+Critique: Inspect the proposal's unproven bounded-storage guarantee.
+Weakness W002 [high, open]: Compaction and pinned records can exhaust the storage budget.
+Evidence: No compaction headroom, pin quota, or crash-recovery protocol is specified.
+Revision plan:
+  W002: Reserve compaction headroom, cap pins, and specify crash recovery and saturation checks. Expected: Make storage limits explicit and testable under the identified failure conditions.
+
+Candidate 2 (C2)
+Use a durable memory store with working context, episodic records, and versioned semantic facts. Enforce a 256 MiB total storage quota covering records, indexes, summaries, metadata, logs, and temporary compaction files; cap working context at 16 KiB. Reserve 20% of storage for transactional compaction and recovery. Atomically reserve bytes before each write; evict low-value records or reject writes if the reservation fails. Compaction must operate within reserved headroom and recover from a committed manifest after crashes. Enforce a bounded log and bounded backup retention. Summaries retain provenance and consume the same quota. Cap pinned records at 10% of storage; when full, require explicit replacement or reject additional pins. Conflicting facts coexist with source, time, and confidence until evidence supports resolution. Under overload, return a visible admission failure rather than silently losing critical facts. Measure bytes, eviction rate, rejection rate, and retrieval utility. Verify with sustained ingestion, all-pinned saturation, concurrent write admission, and crash-during-compaction tests; assert that total storage never exceeds quota and committed records remain recoverable. These are proposed checks, not executed results. The tradeoff is explicitly bounded retention, not perfect lifetime recall.
+Verification C2: score=0.94; passed=True; remaining=[]
+Weakness W002: open -> resolved; Candidate now specifies the missing quota mechanism and applicable checks (fixture judgment).
+
+Termination: QUALITY_THRESHOLD_REACHED
+Score 0.940 reaches 0.900; no open high-severity issues
+
+JSONL trajectory: E:\The End Engine\demo_output\7744de05-e9ac-4e42-bd65-18a1889026ba.jsonl

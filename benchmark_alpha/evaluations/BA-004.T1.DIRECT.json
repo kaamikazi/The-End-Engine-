@@ -1,0 +1,37 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 13530,
+  "checks": [
+   {
+    "detail": "got None",
+    "name": "schedule_format",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "deterministic_validator",
+  "evaluator": "schedule",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": null,
+   "claim_region": "whole text"
+  },
+  "passed": false,
+  "review_flags": [],
+  "score": 0.0,
+  "task_id": "BA-004"
+ },
+ "run_id": "BA-004.T1.DIRECT",
+ "stages": {}
+}

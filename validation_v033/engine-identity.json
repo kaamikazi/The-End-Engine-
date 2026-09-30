@@ -1,0 +1,40 @@
+{
+ "version": "0.3.3",
+ "source_sha256": "3e57f6753d880bb54190a27b58640e5fdf853c56f9b6cd4bc92d44fbd01076f9",
+ "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+ "computed_by": "end_harness.adapters._source_identity (read-only import; no Engine import)",
+ "previous": {
+  "version": "0.3.2",
+  "source_sha256": "5ea97d2f7170a8d4d928d9e088b6d3d0f6d3425cdea5f28628ac545c8db5c314"
+ },
+ "changed_files": {
+  "added": [
+   "IMPLEMENTATION_REPORT_v0.3.2.md",
+   "end_engine/quality/integrity.py",
+   "tests/fixtures/recorded_8b553c71_integrity.json",
+   "tests/test_evidence_integrity.py",
+   "validation_v033/engine-identity.json",
+   "validation_v033/engine-tests-after.txt",
+   "validation_v033/engine-tests-before.txt",
+   "validation_v033/engine-tree-after.json",
+   "validation_v033/engine-tree-before.json",
+   "validation_v033/harness-tests.txt",
+   "validation_v033/integrity-before-after.txt",
+   "validation_v033/integrity-probe.py"
+  ],
+  "removed": [],
+  "modified": [
+   "IMPLEMENTATION_REPORT.md",
+   "README.md",
+   "end_engine/experience/schema.py",
+   "end_engine/quality/audits.py",
+   "end_engine/quality/gate.py",
+   "end_engine/quality/judges.py",
+   "end_engine/quality/session.py",
+   "end_engine/quality/state.py",
+   "end_engine/verification/tool_verifier.py",
+   "pyproject.toml",
+   "tests/test_quality.py"
+  ]
+ }
+}

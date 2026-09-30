@@ -1,0 +1,55 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 15292,
+  "checks": [
+   {
+    "detail": "no JSON object",
+    "name": "corrupting_write",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "prevention",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "w1_after_rejection",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "w2_retry_on_timeout",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "structured_rubric",
+  "evaluator": "choices",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": null,
+   "claim_region": "whole text"
+  },
+  "passed": false,
+  "review_flags": [],
+  "score": 0.0,
+  "task_id": "BA-007"
+ },
+ "run_id": "BA-007.T2.DIRECT",
+ "stages": {}
+}

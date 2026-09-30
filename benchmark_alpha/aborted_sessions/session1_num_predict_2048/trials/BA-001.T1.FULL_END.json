@@ -1,0 +1,121 @@
+{
+ "answer": "```json\n[\\-40.0, 32.0, 97.9, 212.0, 74.7]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 221,
+   "latency_ms": 6192.916,
+   "output_tokens": 151,
+   "prompt_chars": 762,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 3878804567,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 749,
+   "latency_ms": 14513.334,
+   "output_tokens": 294,
+   "prompt_chars": 2432,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 2659689463,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "easy_transformation",
+ "condition": "FULL_END",
+ "cost": {
+  "branch_count": 0,
+  "calls": 2,
+  "calls_by_role": {
+   "generator": 2
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 445,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 1415,
+  "model_latency_ms": 20706.25,
+  "prompt_tokens": 970,
+  "tool_check_calls": 0,
+  "total_tokens": 1415,
+  "wall_ms": 20734.752
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": null,
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "normal",
+  "errors": [
+   {
+    "message": "Invalid or duplicate weakness update: completeness",
+    "stage": "verification"
+   }
+  ],
+  "gate_decisions": [],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": false,
+   "remaining_issues": [
+    "Input array has 5 elements but the candidate output has 5 elements, but the task specifies 5 temperatures, so completeness is questionable.",
+    "The candidate output uses numbers with one decimal place, but the task says 'rounded to one decimal place', so correctness is partially achieved but not fully.",
+    "The candidate output format is a JSON array of numbers, but the task specifies a ```json code block, so clarity is low due to missing code block formatting.",
+    "The candidate output includes a trailing comma in the JSON array, which is invalid JSON syntax, causing robustness issues."
+   ],
+   "score": 0.45
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "bfe1e5cc-d48c-494a-a609-5c56f5468895.jsonl",
+  "trajectory_id": "bfe1e5cc-d48c-494a-a609-5c56f5468895",
+  "trajectory_sha256": "c6f4a285205105c7e8a5cdce87450f0f70efbb036e67ecc3c03d91e9355da582"
+ },
+ "ended_at": "2026-09-30T15:03:12.851852+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 2048,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 300.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 2,
+ "run_id": "BA-001.T1.FULL_END",
+ "stages": {},
+ "started_at": "2026-09-30T15:02:52.117528+00:00",
+ "task_id": "BA-001",
+ "trial": 1,
+ "trial_id": "BA-001.T1",
+ "trial_seed": 1026581566
+}

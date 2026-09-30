@@ -1,0 +1,253 @@
+{
+ "_label": "OFFLINE REPLAY FRAGMENT: extracted read-only from Harness smoke 8b553c71-30d1-41b5-9aa4-9ca917ac6a3b (runs/6af3c3b0-5338-442a-8911-11d3cd17a726/trajectory.json), recorded on END Engine 0.3.2. Model-authored judgments and candidates from a LIVE_ANTIGRAVITY_SUBSCRIPTION run (benchmark_eligible=false); no live call is made when this fixture is used.",
+ "source_trajectory_sha256": "cac07b1ba55b8c55dd994880d493562a5057b9c93a7c324ee500e78e56bce4a1",
+ "engine_version_at_record": "0.3.2",
+ "engine_source_sha256_at_record": "5ea97d2f7170a8d4d928d9e088b6d3d0f6d3425cdea5f28628ac545c8db5c314",
+ "different_model_identity": false,
+ "candidates": [
+  {
+   "candidate_id": "C0",
+   "content": "{\"starts\":[{\"job\":\"A\",\"start\":0},{\"job\":\"B\",\"start\":1},{\"job\":\"C\",\"start\":3},{\"job\":\"D\",\"start\":6}]}",
+   "parent_candidate_id": null
+  },
+  {
+   "candidate_id": "C1",
+   "content": "{\"starts\":[{\"job\":\"A\",\"start\":0},{\"job\":\"B\",\"start\":1},{\"job\":\"C\",\"start\":3},{\"job\":\"D\",\"start\":6}]}",
+   "parent_candidate_id": "C0"
+  }
+ ],
+ "claims_at_discovery": [
+  {
+   "claim_id": "CL001",
+   "confidence": null,
+   "evidence": "",
+   "evidence_status": "UNVERIFIED",
+   "source_candidate": "C0",
+   "text": "The declared development checks pass for this task input.",
+   "type": "technical"
+  }
+ ],
+ "verifier_evidence": [
+  {
+   "artifact_id": "02941036-e406-4136-8cb8-e25f8eafc920",
+   "candidate_id": "C0",
+   "description": "Executed declared development subset on this task input; not final evaluation\n{\"development_feedback\":{\"observations\":{\"failures\":[],\"scope\":\"development subset only; PASS is not final task success\"},\"status\":\"COMPLETED\",\"verdict\":\"PASS\"}}",
+   "evidence_type": "EXECUTED_EVIDENCE",
+   "passed": true,
+   "source": "harness:6af3c3b0-5338-442a-8911-11d3cd17a726:receipts/02941036-e406-4136-8cb8-e25f8eafc920.json",
+   "targets": [
+    "CL001"
+   ],
+   "test_id": null
+  },
+  {
+   "artifact_id": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+   "candidate_id": "C1",
+   "description": "Executed declared development subset on this task input; not final evaluation\n{\"development_feedback\":{\"observations\":{\"failures\":[],\"scope\":\"development subset only; PASS is not final task success\"},\"status\":\"COMPLETED\",\"verdict\":\"PASS\"}}",
+   "evidence_type": "EXECUTED_EVIDENCE",
+   "passed": true,
+   "source": "harness:6af3c3b0-5338-442a-8911-11d3cd17a726:receipts/b3c34247-a7ff-49d9-a973-2337963e5e64.json",
+   "targets": [
+    "CL001"
+   ],
+   "test_id": null
+  }
+ ],
+ "judgments": [
+  {
+   "adversarial": false,
+   "candidate_id": "C0",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 1,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "02941036-e406-4136-8cb8-e25f8eafc920"
+   ],
+   "fatal_issues": [],
+   "judge_id": "primary",
+   "judgment_id": "J001",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [],
+   "verdict": "PASS"
+  },
+  {
+   "adversarial": false,
+   "candidate_id": "C1",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 1,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "b3c34247-a7ff-49d9-a973-2337963e5e64"
+   ],
+   "fatal_issues": [],
+   "judge_id": "primary",
+   "judgment_id": "J002",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [],
+   "verdict": "PASS"
+  }
+ ],
+ "adversarial_judgments": [
+  {
+   "adversarial": true,
+   "candidate_id": "C0",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 0.95,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "02941036-e406-4136-8cb8-e25f8eafc920"
+   ],
+   "fatal_issues": [],
+   "judge_id": "adversarial",
+   "judgment_id": "AJ001",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [
+    "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied."
+   ],
+   "verdict": "PASS"
+  },
+  {
+   "adversarial": true,
+   "candidate_id": "C1",
+   "dimensions": {
+    "clarity": {
+     "confidence": 1,
+     "score": 1
+    },
+    "completeness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "constraint_adherence": {
+     "confidence": 1,
+     "score": 1
+    },
+    "correctness": {
+     "confidence": 1,
+     "score": 1
+    },
+    "robustness": {
+     "confidence": 1,
+     "score": 1
+    }
+   },
+   "evidence": [
+    "b3c34247-a7ff-49d9-a973-2337963e5e64"
+   ],
+   "fatal_issues": [],
+   "judge_id": "adversarial",
+   "judgment_id": "AJ002",
+   "major_issues": [],
+   "minor_issues": [],
+   "recommended_action": "ACCEPT",
+   "uncertainties": [],
+   "verdict": "PASS"
+  }
+ ],
+ "recorded_quality_gates": [
+  {
+   "candidate_id": "C0",
+   "decision": "ACCEPT_PROVISIONALLY",
+   "reasons": [
+    "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+    "Generator and judge share model identity"
+   ],
+   "required_actions": []
+  },
+  {
+   "candidate_id": "C1",
+   "decision": "ACCEPT_PROVISIONALLY",
+   "reasons": [
+    "Generator and judge share model identity"
+   ],
+   "required_actions": []
+  }
+ ],
+ "recorded_claim_validations": [
+  {
+   "candidate_id": "C0",
+   "claim_id": "CL001",
+   "contradicting_artifacts": [],
+   "importance": "MEDIUM",
+   "judge_confidence": 0.95,
+   "status": "SUPPORTED",
+   "supporting_artifacts": [
+    "02941036-e406-4136-8cb8-e25f8eafc920"
+   ]
+  },
+  {
+   "candidate_id": "C1",
+   "claim_id": "CL001",
+   "contradicting_artifacts": [],
+   "importance": "MEDIUM",
+   "judge_confidence": 0.95,
+   "status": "SUPPORTED",
+   "supporting_artifacts": [
+    "b3c34247-a7ff-49d9-a973-2337963e5e64"
+   ]
+  }
+ ]
+}

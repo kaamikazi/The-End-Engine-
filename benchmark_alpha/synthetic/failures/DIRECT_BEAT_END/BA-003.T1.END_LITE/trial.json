@@ -1,0 +1,146 @@
+{
+ "answer": "Here is the function.\n```python\ndef min_rooms(meetings):\n    return len(meetings)\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 230,
+   "latency_ms": 0.0,
+   "output_tokens": 36,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 608,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1154,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 418,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 335,
+   "latency_ms": 0.0,
+   "output_tokens": 36,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 671,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "algorithm",
+ "condition": "END_LITE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 6,
+  "calls_by_role": {
+   "generator": 6
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 173,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 3589,
+  "model_latency_ms": 0,
+  "prompt_tokens": 3416,
+  "tool_check_calls": 0,
+  "total_tokens": 3589,
+  "wall_ms": 26.759
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "INCONCLUSIVE",
+  "best_candidate_id": "C1",
+  "branch_count": 0,
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "errors": [],
+  "gate_decisions": [],
+  "iterations": 1,
+  "latest_candidate_id": "C1",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C1",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "QUALITY_THRESHOLD_REACHED",
+  "trajectory_file": "7e512d3f-a24f-43c5-aed1-083cb47217c7.jsonl",
+  "trajectory_id": "7e512d3f-a24f-43c5-aed1-083cb47217c7",
+  "trajectory_sha256": "5732159bb4daa93429b20f6bf9f4b94481cb010ffc763ed1385c8d79b56d1358"
+ },
+ "ended_at": "2026-09-30T15:11:27.918211+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-003.T1.END_LITE",
+ "stages": {},
+ "started_at": "2026-09-30T15:11:27.893159+00:00",
+ "task_id": "BA-003",
+ "trial": 1,
+ "trial_id": "BA-003.T1",
+ "trial_seed": 2309919218
+}

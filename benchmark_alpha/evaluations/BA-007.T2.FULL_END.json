@@ -1,0 +1,141 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": null,
+  "calibration": {
+   "basis": "quality_gate=BLOCKED",
+   "external_passed": false,
+   "internal": "inconclusive",
+   "label": "INCONCLUSIVE"
+  },
+  "delta_validation": [],
+  "operator_effects": [],
+  "overthinking": [],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.75
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C0",
+   "regressions": [],
+   "returned_candidate_id": "C0"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 2701,
+   "checks": [
+    {
+     "detail": null,
+     "name": "corrupting_write",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "prevention",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": "got 'reacquire_lease_and_overwrite'",
+     "name": "w1_after_rejection",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": null,
+     "name": "w2_retry_on_timeout",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-2",
+   "extracted": {
+    "answer": {
+     "corrupting_write": "W1_at_19",
+     "prevention": "fencing_token_checked_by_storage",
+     "w1_after_rejection": "reacquire_lease_and_overwrite",
+     "w2_retry_on_timeout": "safe_if_idempotent_with_same_token"
+    },
+    "claim_region": "whole text"
+   },
+   "passed": false,
+   "review_flags": [],
+   "score": 0.75,
+   "task_id": "BA-007"
+  }
+ },
+ "final": {
+  "answer_chars": 2701,
+  "checks": [
+   {
+    "detail": null,
+    "name": "corrupting_write",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "prevention",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "got 'reacquire_lease_and_overwrite'",
+    "name": "w1_after_rejection",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": null,
+    "name": "w2_retry_on_timeout",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "structured_rubric",
+  "evaluator": "choices",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": {
+    "corrupting_write": "W1_at_19",
+    "prevention": "fencing_token_checked_by_storage",
+    "w1_after_rejection": "reacquire_lease_and_overwrite",
+    "w2_retry_on_timeout": "safe_if_idempotent_with_same_token"
+   },
+   "claim_region": "whole text"
+  },
+  "passed": false,
+  "review_flags": [],
+  "score": 0.75,
+  "task_id": "BA-007"
+ },
+ "run_id": "BA-007.T2.FULL_END",
+ "stages": {}
+}

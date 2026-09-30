@@ -1,0 +1,53 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 4863,
+  "checks": [
+   {
+    "detail": null,
+    "name": "first",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "last",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "elapsed_minutes",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "known_answer",
+  "evaluator": "json_fields",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": {
+    "elapsed_minutes": 30,
+    "first": "E2",
+    "last": "E1"
+   },
+   "claim_region": "after </think>"
+  },
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-005"
+ },
+ "run_id": "BA-005.T2.DIRECT",
+ "stages": {}
+}

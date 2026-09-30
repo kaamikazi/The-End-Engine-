@@ -1,0 +1,57 @@
+{
+ "answer": "Final answer:\n```json\n{\"conclusion\": \"Yes, QA passed so it works.\", \"certainty\": \"established\", \"evidence_used\": [\"E1\"], \"additional_evidence_needed\": []}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 146,
+   "latency_ms": 0.0,
+   "output_tokens": 39,
+   "purpose": "direct_answer",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "contradictory_evidence",
+ "condition": "DIRECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 1,
+  "calls_by_role": {
+   "generator": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 39,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 185,
+  "model_latency_ms": 0,
+  "prompt_tokens": 146,
+  "tool_check_calls": 0,
+  "total_tokens": 185,
+  "wall_ms": 0.019
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-09-30T15:11:29.521082+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-010.T1.DIRECT",
+ "stages": {
+  "answer": "Final answer:\n```json\n{\"conclusion\": \"Yes, QA passed so it works.\", \"certainty\": \"established\", \"evidence_used\": [\"E1\"], \"additional_evidence_needed\": []}\n```"
+ },
+ "started_at": "2026-09-30T15:11:29.521082+00:00",
+ "task_id": "BA-010",
+ "trial": 1,
+ "trial_id": "BA-010.T1",
+ "trial_seed": 2049852102
+}

@@ -1,0 +1,109 @@
+END ENGINE v0.2 — COGNITIVE OPERATOR BRAIN
+Offline fixture; scores and evidence judgments are synthetic.
+
+TASK
+Design a deployment controller that can automatically roll out a new service version while preventing a faulty release from causing a large-scale outage.
+
+Candidate C0
+A rollout must preserve a healthy serving version. Apply the new version to all workers after a single successful health probe.
+claim_discovered: {'claim_id': 'CL001', 'text': 'A rollout must preserve a healthy serving version.', 'type': 'technical', 'source_candidate': 'C0', 'confidence': None, 'evidence_status': 'UNVERIFIED', 'evidence': ''}
+Verification C0: 0.58, passed=False, remaining=['Complete the rollout failure analysis']
+State: open=['W001'], budget={'cycles': 4, 'operations': 7}
+Coverage: alternatives=NONE, architecture=NONE, assumptions=NONE, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+State: open=['W001'], budget={'cycles': 4, 'operations': 7}
+Coverage: alternatives=NONE, architecture=NONE, assumptions=NONE, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+
+Operator candidates:
+  ASSUMPTION: utility=1.513, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  EVIDENCE: utility=0.880, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=0.880, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  ALTERNATIVE: utility=0.358, factors={'relevance': 0.79, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  SECOND_ORDER_EFFECT: utility=0.310, factors={'relevance': 0.79, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+Selected ASSUMPTION -> W001: Investigate W001 (assumption); expected gain 0.74, issue value 1.60, novelty 0.88, repetition penalty 0.00
+Question Q001: Regarding weakness W001: A single health probe cannot exclude delayed or partial rollout failures.
+Identify hidden assumptions that the current answer depends on. State how each could be checked.
+Critique: Investigate the selected rollout safety gap and state a corrective invariant.
+  W001 [high]: A single health probe cannot exclude delayed or partial rollout failures. Evidence: Targeted review confirms this independent-judge concern.
+Information gain: {'level': 'LOW', 'new_findings': 0, 'duplicates': 1, 'knowledge_changes': 0, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C0', 'changes': [{'targets': ['W001'], 'action': 'Add canary limits, retained healthy capacity, epoch fencing and serialized recovery as applicable.', 'expected_effect': "Prevent the specific judged failure while preserving the user's rollout objective."}]}
+
+Candidate C1
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Add automatic rollback on failures.
+Verification C1: 0.78, passed=False, remaining=['Complete the rollout failure analysis']
+State: open=['W002'], budget={'cycles': 3, 'operations': 6}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+State: open=['W002'], budget={'cycles': 3, 'operations': 6}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+
+Operator candidates:
+  WHAT_BREAKS: utility=1.581, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  EVIDENCE: utility=0.767, factors={'relevance': 1.3, 'information_gain': 0.65, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=0.767, factors={'relevance': 1.3, 'information_gain': 0.65, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  SECOND_ORDER_EFFECT: utility=0.310, factors={'relevance': 0.79, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  ALTERNATIVE: utility=0.291, factors={'relevance': 0.67, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+Selected WHAT_BREAKS -> W002: Investigate W002 (failure_mode); expected gain 0.74, issue value 1.60, novelty 0.94, repetition penalty 0.00
+Question Q002: Regarding weakness W002: Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.
+Assume the proposal has been deployed and failed badly. Identify plausible structural causes, including overload, partial failure, recovery, and adversarial inputs.
+Critique: Investigate the selected rollout safety gap and state a corrective invariant.
+  W002 [high]: Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry. Evidence: Targeted review confirms this independent-judge concern.
+Information gain: {'level': 'LOW', 'new_findings': 0, 'duplicates': 1, 'knowledge_changes': 0, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C1', 'changes': [{'targets': ['W002'], 'action': 'Add canary limits, retained healthy capacity, epoch fencing and serialized recovery as applicable.', 'expected_effect': "Prevent the specific judged failure while preserving the user's rollout objective."}]}
+
+Candidate C2
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Add automatic rollback on failures. Retire the previous pool when rollback starts, then restore the earlier version.
+Verification C2: 0.97, passed=True, remaining=[]
+State: open=['W002'], budget={'cycles': 2, 'operations': 5}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+State: open=['W002'], budget={'cycles': 2, 'operations': 5}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+
+Operator candidates:
+  EVIDENCE: utility=0.767, factors={'relevance': 1.3, 'information_gain': 0.65, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=0.767, factors={'relevance': 1.3, 'information_gain': 0.65, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  ALTERNATIVE: utility=0.291, factors={'relevance': 0.67, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  WHICH: utility=0.277, factors={'relevance': 0.67, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  CONSTRAINT: utility=0.256, factors={'relevance': 0.67, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+Selected EVIDENCE -> CL001: Investigate CL001 (evidence); expected gain 0.65, issue value 0.95, novelty 0.88, repetition penalty 0.00
+Question Q003: Regarding evidence_gap CL001: A rollout must preserve a healthy serving version.
+Identify unsupported factual or quantitative claims. Specify the evidence required to substantiate them.
+Critique: Investigate the selected rollout safety gap and state a corrective invariant.
+Information gain: {'level': 'ZERO', 'new_findings': 0, 'duplicates': 0, 'knowledge_changes': 0, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C2', 'changes': [{'targets': ['W002'], 'action': 'Add canary limits, retained healthy capacity, epoch fencing and serialized recovery as applicable.', 'expected_effect': "Prevent the specific judged failure while preserving the user's rollout objective."}]}
+
+Candidate C3
+A rollout must preserve a healthy serving version. Use a bounded canary and pause promotion on delayed error signals. Retain the last healthy pool until rollback completes. Fence rollback by deployment epoch. Serialize promotion with rollback. Reject stale completion events. Check delayed failures and every ordering of retry, stale completion, and rollback completion in a bounded abstract model. Require production-specific validation before deployment; the abstract model covers only its encoded invariants.
+Verification C3: 0.98, passed=True, remaining=[]
+claim_status_change: {'claim_id': 'CL001', 'text': 'A rollout must preserve a healthy serving version.', 'type': 'technical', 'source_candidate': 'C0', 'confidence': None, 'evidence_status': 'SUPPORTED', 'evidence': 'Executed evidence references: E-C3-1'}
+State: open=[], budget={'cycles': 1, 'operations': 4}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+State: open=[], budget={'cycles': 1, 'operations': 4}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+meta_check: {'candidate_id': 'C3', 'questions': ['Are we attacking the right uncertainty?', 'Would an unexplored alternative add more information?'], 'priority_adjustments': {'search': 0.6}, 'rationale': ['Recent operations are concentrated or low-value; inspect a competing approach']}
+State: open=[], budget={'cycles': 1, 'operations': 4}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+
+Operator candidates:
+  ALTERNATIVE: utility=0.891, factors={'relevance': 0.67, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0.6}
+  WHICH: utility=0.877, factors={'relevance': 0.67, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.6}
+  VERIFY: utility=0.260, factors={'relevance': 0.79, 'information_gain': 0.635, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  CONSTRAINT: utility=0.256, factors={'relevance': 0.67, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  HOW: utility=0.256, factors={'relevance': 0.67, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.15, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+Selected ALTERNATIVE -> C3:alternatives: Investigate C3:alternatives (alternatives); expected gain 0.86, issue value 0.60, novelty 0.94, repetition penalty 0.00
+Question Q004: Regarding component C3:alternatives: The candidate's alternatives
+Identify a materially different approach and the conditions in which it outperforms this proposal.
+Critique: Investigate the selected rollout safety gap and state a corrective invariant.
+Information gain: {'level': 'ZERO', 'new_findings': 0, 'duplicates': 0, 'knowledge_changes': 0, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C3', 'changes': []}
+
+Candidate C4
+A rollout must preserve a healthy serving version. Use a bounded canary. For elegant fast rollback, retire the previous pool when rollback starts. This concise workflow replaces the detailed fencing and recovery protocol.
+Verification C4: 0.99, passed=True, remaining=[]
+claim_status_change: {'claim_id': 'CL001', 'text': 'A rollout must preserve a healthy serving version.', 'type': 'technical', 'source_candidate': 'C0', 'confidence': None, 'evidence_status': 'CONTRADICTED', 'evidence': 'Executed evidence references: E-C4-1'}
+State: open=['W002'], budget={'cycles': 0, 'operations': 3}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+State: open=[], budget={'cycles': 1, 'operations': 3}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+State: open=[], budget={'cycles': 1, 'operations': 3}
+Coverage: alternatives=NONE, architecture=LOW, assumptions=LOW, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=LOW, robustness=LOW, second_order_effects=NONE
+
+Termination: ACCEPTED_VERIFIED — Independent judgments and candidate-bound executed checks agree within the recorded scope

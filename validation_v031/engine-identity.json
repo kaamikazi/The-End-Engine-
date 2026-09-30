@@ -1,0 +1,34 @@
+{
+ "version": "0.3.1",
+ "source_sha256": "7a0b36decba87d3587699aa91f213c5279c812049632f37b865947ad3a0d6c16",
+ "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+ "previous": {
+  "version": "0.3.0",
+  "source_sha256": "11895bb98ac917622ac726dcced72f7e433ff10d503ba34e08a0c15ff835b4b9",
+  "tree_manifest_sha256": "a397aeeb20d862da17e5fbb71e9e1a5a1e255a95bbe252de45da72b42c3963a3"
+ },
+ "changed_files": {
+  "added": [
+   "IMPLEMENTATION_REPORT_v0.3.md",
+   "tests/fixtures/recorded_71532008_audit.json",
+   "tests/test_audit_policy.py",
+   "validation_v031/engine-identity.json",
+   "validation_v031/engine-tests-after.txt",
+   "validation_v031/engine-tests-before.txt",
+   "validation_v031/engine-tree-after.json",
+   "validation_v031/engine-tree-before.json",
+   "validation_v031/harness-compat-tests.txt",
+   "validation_v031/recorded-chain-71532008.json"
+  ],
+  "removed": [],
+  "modified": [
+   "IMPLEMENTATION_REPORT.md",
+   "README.md",
+   "end_engine/quality/audits.py",
+   "end_engine/quality/gate.py",
+   "end_engine/quality/session.py",
+   "end_engine/quality/state.py",
+   "pyproject.toml"
+  ]
+ }
+}

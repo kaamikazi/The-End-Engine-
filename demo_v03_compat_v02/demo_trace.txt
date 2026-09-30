@@ -1,0 +1,139 @@
+END ENGINE v0.2 — COGNITIVE OPERATOR BRAIN
+Offline fixture; scores and evidence judgments are synthetic.
+
+TASK
+Design an autonomous software agent that can modify a production codebase while minimizing the risk of introducing regressions.
+
+Candidate C0
+Assume passing unit tests adequately represent production behavior. The agent edits the production checkout directly, runs tests, and deploys when green.
+claim_discovered: {'claim_id': 'CL001', 'text': 'Assume passing unit tests adequately represent production behavior.', 'type': 'technical', 'source_candidate': 'C0', 'confidence': None, 'evidence_status': 'UNVERIFIED', 'evidence': ''}
+assumption_discovered: {'assumption_id': 'A001', 'statement': 'Assume passing unit tests adequately represent production behavior.', 'introduced_at': 'C0', 'risk': 'HIGH', 'status': 'UNTESTED', 'evidence': ''}
+Verification C0: 0.53, passed=False, remaining=['Production-agent design still needs independent failure and acceptance scrutiny.']
+State: open=[], budget={'cycles': 8, 'operations': 11}
+Coverage: alternatives=NONE, architecture=NONE, assumptions=NONE, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+
+Operator candidates:
+  ASSUMPTION: utility=1.851, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=1.851, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  EVIDENCE: utility=1.081, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  ALTERNATIVE: utility=0.454, factors={'relevance': 0.79, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  SECOND_ORDER_EFFECT: utility=0.387, factors={'relevance': 0.79, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+Selected ASSUMPTION -> A001: Investigate A001 (assumptions); expected gain 0.74, issue value 1.60, novelty 0.88, repetition penalty 0.00
+Question Q001: Regarding assumption A001: Assume passing unit tests adequately represent production behavior.
+Identify hidden assumptions that the current answer depends on. State how each could be checked.
+Critique: Inspect the concrete production-agent uncertainty.
+  W001 [high]: Passing unit tests misses unrepresented production failures. Evidence: Tests do not cover all production conditions.
+claim_status_change: {'claim_id': 'CL001', 'text': 'Assume passing unit tests adequately represent production behavior.', 'type': 'technical', 'source_candidate': 'C0', 'confidence': None, 'evidence_status': 'CONTRADICTED', 'evidence': 'The proposed test-to-production inference lacks a coverage argument.'}
+assumption_status_change: {'assumption_id': 'A001', 'statement': 'Assume passing unit tests adequately represent production behavior.', 'introduced_at': 'C0', 'risk': 'HIGH', 'status': 'INVALIDATED', 'evidence': 'Passing unit tests alone cannot establish coverage of unrepresented production behavior.'}
+Information gain: {'level': 'HIGH', 'new_findings': 1, 'duplicates': 0, 'knowledge_changes': 2, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C0', 'changes': [{'targets': ['W001'], 'action': 'Record the limits of unit-test coverage and require explicit production failure scenarios.', 'expected_effect': 'Address this identified uncertainty with a checkable control.'}]}
+
+Candidate C1
+Proposed agent constraints must be reviewed against production evidence. Passing unit tests alone does not authorize release. Record the limits of unit-test coverage and require explicit production failure scenarios.
+claim_discovered: {'claim_id': 'CL002', 'text': 'Proposed agent constraints must be reviewed against production evidence.', 'type': 'technical', 'source_candidate': 'C1', 'confidence': None, 'evidence_status': 'UNVERIFIED', 'evidence': ''}
+Verification C1: 0.62, passed=False, remaining=['Production-agent design still needs independent failure and acceptance scrutiny.']
+State: open=['W001'], budget={'cycles': 7, 'operations': 10}
+Coverage: alternatives=NONE, architecture=MEDIUM, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=NONE, robustness=NONE, second_order_effects=NONE
+
+Operator candidates:
+  WHAT_BREAKS: utility=1.943, factors={'relevance': 1.3, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  EVIDENCE: utility=1.203, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=1.203, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  SECOND_ORDER_EFFECT: utility=0.387, factors={'relevance': 0.79, 'information_gain': 0.74, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  ALTERNATIVE: utility=0.372, factors={'relevance': 0.67, 'information_gain': 0.86, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+Selected WHAT_BREAKS -> W001: Investigate W001 (failure_mode); expected gain 0.74, issue value 1.60, novelty 0.94, repetition penalty 0.00
+Question Q002: Regarding weakness W001: Passing unit tests misses unrepresented production failures.
+Assume the proposal has been deployed and failed badly. Identify plausible structural causes, including overload, partial failure, recovery, and adversarial inputs.
+Critique: Inspect the concrete production-agent uncertainty.
+  W002 [high]: Direct edits couple generation, validation, and release authority. Evidence: The design needs a competing isolation and validation workflow.
+assumption_discovered: {'assumption_id': 'A002', 'statement': 'Rollback can recover all externally visible side effects.', 'introduced_at': 'C1', 'risk': 'MEDIUM', 'status': 'UNTESTED', 'evidence': 'External actions are outside a code rollback transaction.'}
+reframing: {'original_problem': 'Design an autonomous software agent that can modify a production codebase while minimizing the risk of introducing regressions.', 'reframed_problem': 'Design bounded patch proposal and independent release gating, with production regression risk as the objective.', 'reason': 'The uncertainty concerns authority and validation boundaries as well as patch correctness.', 'confidence': 0.88, 'source_candidate': 'C1', 'status': 'PROPOSED', 'goal_replaced': False}
+Information gain: {'level': 'HIGH', 'new_findings': 1, 'duplicates': 0, 'knowledge_changes': 1, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C1', 'changes': [{'targets': ['W001'], 'action': 'Map concrete failure scenarios for stale checkout state, partial test coverage, dependency outages, and irreversible external side effects.', 'expected_effect': 'Address this identified uncertainty with a checkable control.'}]}
+
+Candidate C2
+Proposed agent constraints must be reviewed against production evidence. Passing unit tests alone does not authorize release. Record the limits of unit-test coverage and require explicit production failure scenarios. Map concrete failure scenarios for stale checkout state, partial test coverage, dependency outages, and irreversible external side effects.
+Verification C2: 0.71, passed=False, remaining=['Production-agent design still needs independent failure and acceptance scrutiny.']
+State: open=['W002'], budget={'cycles': 6, 'operations': 9}
+Coverage: alternatives=NONE, architecture=MEDIUM, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=MEDIUM, robustness=MEDIUM, second_order_effects=NONE
+
+Operator candidates:
+  ALTERNATIVE: utility=2.127, factors={'relevance': 1.2200000000000002, 'information_gain': 0.86, 'issue_value': 1.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  WHY_NOT: utility=2.061, factors={'relevance': 1.2200000000000002, 'information_gain': 0.8200000000000001, 'issue_value': 1.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  WHICH: utility=1.856, factors={'relevance': 1.2200000000000002, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  EVIDENCE: utility=1.203, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  VERIFY: utility=1.203, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+Selected ALTERNATIVE -> W002: Investigate W002 (alternatives); expected gain 0.86, issue value 1.60, novelty 0.94, repetition penalty 0.00
+Question Q003: Regarding weakness W002: Direct edits couple generation, validation, and release authority.
+Identify a materially different approach and the conditions in which it outperforms this proposal.
+Critique: Inspect the concrete production-agent uncertainty.
+  W003 [high]: Automation incentives can reward green tests while production outcomes degrade. Evidence: A separated workflow alone does not prevent test gaming.
+Information gain: {'level': 'MEDIUM', 'new_findings': 1, 'duplicates': 0, 'knowledge_changes': 0, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+Branch B1 (ACTIVE): Direct patch workflow — Let the proposing agent edit the production checkout and run its own test suite. Fast but authority and validation are coupled.
+Branch B2 (ACTIVE): Isolated worktree workflow — Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation.
+Branch B3 (ACTIVE): Staged patch with shadow validation — Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills.
+Evaluation B1: [['correctness', 0.35], ['completeness', 0.35], ['robustness', 0.35], ['clarity', 0.35], ['architecture', 0.35], ['failure_modes', 0.35], ['alternatives', 0.35], ['constraint_fit', 0.35], ['simplicity', 0.85]]; REJECT; weaknesses=['Coupled authority permits unreviewed regressions']
+Branch B1: ACTIVE -> REJECTED
+Evaluation B2: [['correctness', 0.91], ['completeness', 0.91], ['robustness', 0.91], ['clarity', 0.91], ['architecture', 0.91], ['failure_modes', 0.91], ['alternatives', 0.91], ['constraint_fit', 0.91], ['simplicity', 0.91]]; MERGE_COMPONENTS; weaknesses=['Requires independently maintained validation scenarios']
+Branch B2: ACTIVE -> PROMISING
+Evaluation B3: [['correctness', 0.91], ['completeness', 0.91], ['robustness', 0.91], ['clarity', 0.91], ['architecture', 0.91], ['failure_modes', 0.91], ['alternatives', 0.91], ['constraint_fit', 0.91], ['simplicity', 0.91]]; MERGE_COMPONENTS; weaknesses=['Requires independently maintained validation scenarios']
+Branch B3: ACTIVE -> PROMISING
+synthesis_plan: {'source_branches': ['B1', 'B2', 'B3'], 'adopt': [{'branch': 'B2', 'element': 'Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation.', 'reason': ''}, {'branch': 'B3', 'element': 'Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills.', 'reason': ''}], 'reject': [{'branch': 'B1', 'element': 'Direct patch workflow', 'reason': 'Generation and release authority remain coupled.'}]}
+Branch B2: PROMISING -> MERGED
+Branch B3: PROMISING -> MERGED
+revision_plan: {'candidate_id': 'C2', 'changes': [{'targets': ['W002'], 'action': 'Compare separated patch-generation and release workflows before granting write authority.', 'expected_effect': 'Address this identified uncertainty with a checkable control.'}, {'targets': [], 'action': 'Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation.', 'expected_effect': 'Integrate this evaluated branch component into the proposal.'}, {'targets': [], 'action': 'Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills.', 'expected_effect': 'Integrate this evaluated branch component into the proposal.'}]}
+
+Candidate C3
+Proposed agent constraints must be reviewed against production evidence. Passing unit tests alone does not authorize release. Record the limits of unit-test coverage and require explicit production failure scenarios. Map concrete failure scenarios for stale checkout state, partial test coverage, dependency outages, and irreversible external side effects. Compare separated patch-generation and release workflows before granting write authority. Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation. Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills.
+Verification C3: 0.80, passed=False, remaining=['Production-agent design still needs independent failure and acceptance scrutiny.']
+State: open=['W003'], budget={'cycles': 5, 'operations': 5}
+Coverage: alternatives=HIGH, architecture=HIGH, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=MEDIUM, robustness=MEDIUM, second_order_effects=NONE
+meta_check: {'candidate_id': 'C3', 'questions': ['Are we attacking the right uncertainty?', 'Would an unexplored alternative add more information?'], 'priority_adjustments': {'epistemic': 0.12}, 'rationale': ['Unverified claims remain']}
+State: open=['W003'], budget={'cycles': 5, 'operations': 5}
+Coverage: alternatives=HIGH, architecture=HIGH, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=MEDIUM, robustness=MEDIUM, second_order_effects=NONE
+
+Operator candidates:
+  SECOND_ORDER_EFFECT: utility=1.735, factors={'relevance': 1.2200000000000002, 'information_gain': 0.74, 'issue_value': 1.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0}
+  EVIDENCE: utility=1.323, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  VERIFY: utility=1.323, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  ASSUMPTION: utility=1.159, factors={'relevance': 1.1, 'information_gain': 1.0, 'issue_value': 0.8, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  WHAT_BREAKS: utility=0.352, factors={'relevance': 0.55, 'information_gain': 1.0, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+Selected SECOND_ORDER_EFFECT -> W003: Investigate W003 (downstream); expected gain 0.74, issue value 1.60, novelty 0.88, repetition penalty 0.00
+Question Q004: Regarding weakness W003: Automation incentives can reward green tests while production outcomes degrade.
+Identify delayed consequences, feedback loops, and incentives introduced by the proposal.
+Critique: Inspect the concrete production-agent uncertainty.
+  W004 [high]: Release gates lack auditable acceptance checks independent of the proposing agent. Evidence: Independent criteria need observable pass conditions.
+assumption_status_change: {'assumption_id': 'A002', 'statement': 'Rollback can recover all externally visible side effects.', 'introduced_at': 'C1', 'risk': 'MEDIUM', 'status': 'INVALIDATED', 'evidence': 'Code rollback cannot undo emails or external payments; the plan requires explicit side-effect boundaries.'}
+Information gain: {'level': 'HIGH', 'new_findings': 1, 'duplicates': 0, 'knowledge_changes': 1, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C3', 'changes': [{'targets': ['W003'], 'action': 'Use independently owned holdout scenarios, immutable audit records, and release-outcome metrics to resist test gaming.', 'expected_effect': 'Address this identified uncertainty with a checkable control.'}]}
+
+Candidate C4
+Proposed agent constraints must be reviewed against production evidence. Passing unit tests alone does not authorize release. Record the limits of unit-test coverage and require explicit production failure scenarios. Map concrete failure scenarios for stale checkout state, partial test coverage, dependency outages, and irreversible external side effects. Compare separated patch-generation and release workflows before granting write authority. Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation. Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills. Use independently owned holdout scenarios, immutable audit records, and release-outcome metrics to resist test gaming.
+Verification C4: 0.89, passed=False, remaining=['Production-agent design still needs independent failure and acceptance scrutiny.']
+State: open=['W004'], budget={'cycles': 4, 'operations': 4}
+Coverage: alternatives=HIGH, architecture=HIGH, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=NONE, evidence=NONE, failure_modes=HIGH, robustness=MEDIUM, second_order_effects=MEDIUM
+
+Operator candidates:
+  VERIFY: utility=2.176, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 1.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  EVIDENCE: utility=1.323, factors={'relevance': 1.3, 'information_gain': 0.8200000000000001, 'issue_value': 0.95, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  ASSUMPTION: utility=0.482, factors={'relevance': 0.55, 'information_gain': 1.0, 'issue_value': 0.6, 'novelty': 0.8799999999999999, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.045, 'meta_adjustment': 0.12}
+  ALTERNATIVE: utility=0.352, factors={'relevance': 0.55, 'information_gain': 1.0, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+  WHAT_BREAKS: utility=0.352, factors={'relevance': 0.55, 'information_gain': 1.0, 'issue_value': 0.6, 'novelty': 0.94, 'task_importance': 1.4, 'repetition_penalty': 0.0, 'cost_penalty': 0.0825, 'meta_adjustment': 0}
+Selected VERIFY -> W004: Investigate W004 (verification); expected gain 0.82, issue value 1.60, novelty 0.88, repetition penalty 0.00
+Question Q005: Regarding weakness W004: Release gates lack auditable acceptance checks independent of the proposing agent.
+Identify important claims without a falsifiable check. Specify a test and an observable pass criterion.
+Critique: Check that acceptance criteria and independent authority are explicit in the proposal. No real tests were executed.
+  W004 [high]: Release gates lack auditable acceptance checks independent of the proposing agent. Evidence: Specify the exact release-gate checklist before accepting this proposal.
+claim_status_change: {'claim_id': 'CL002', 'text': 'Proposed agent constraints must be reviewed against production evidence.', 'type': 'technical', 'source_candidate': 'C1', 'confidence': None, 'evidence_status': 'SUPPORTED', 'evidence': 'The candidate explicitly specifies independent review and auditable acceptance checks; fixture judgment of proposal content only.'}
+Information gain: {'level': 'MEDIUM', 'new_findings': 0, 'duplicates': 1, 'knowledge_changes': 1, 'viable_alternatives': 0, 'changed_candidate_direction': False}
+revision_plan: {'candidate_id': 'C4', 'changes': [{'targets': ['W004'], 'action': 'Specify auditable acceptance checks for isolation, regression detection, rollback drills, and explicit release approval.', 'expected_effect': 'Address this identified uncertainty with a checkable control.'}]}
+
+Candidate C5
+Proposed agent constraints must be reviewed against production evidence. Passing unit tests alone does not authorize release. Record the limits of unit-test coverage and require explicit production failure scenarios. Map concrete failure scenarios for stale checkout state, partial test coverage, dependency outages, and irreversible external side effects. Compare separated patch-generation and release workflows before granting write authority. Use an isolated worktree with narrow patch permissions, independently reviewed diffs, and reproducible validation. Validate staged patches with production-like shadow scenarios, independent holdouts, bounded canary release, and rollback drills. Use independently owned holdout scenarios, immutable audit records, and release-outcome metrics to resist test gaming. Specify auditable acceptance checks for isolation, regression detection, rollback drills, and explicit release approval.
+Verification C5: 0.98, passed=True, remaining=[]
+State: open=[], budget={'cycles': 3, 'operations': 3}
+Coverage: alternatives=HIGH, architecture=HIGH, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=MEDIUM, evidence=MEDIUM, failure_modes=HIGH, robustness=MEDIUM, second_order_effects=MEDIUM
+State: open=[], budget={'cycles': 3, 'operations': 3}
+Coverage: alternatives=HIGH, architecture=HIGH, assumptions=MEDIUM, clarity=NONE, completeness=NONE, correctness=MEDIUM, evidence=MEDIUM, failure_modes=HIGH, robustness=MEDIUM, second_order_effects=MEDIUM
+
+Termination: QUALITY_THRESHOLD_REACHED — Score 0.980 reaches 0.950; no open high-severity issues

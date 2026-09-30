@@ -1,0 +1,817 @@
+{
+ "label": "OFFLINE_REASSESSMENT",
+ "note": "Derived offline from recorded inputs; not a live run and not historical evidence.",
+ "smokes": [
+  {
+   "label": "OFFLINE_REASSESSMENT",
+   "smoke": "71532008",
+   "trajectory": "E:\\The End Harness\\output\\antigravity-smoke\\71532008-8e55-49f4-af8f-3a1086ae9f47\\runs\\0b4b326c-1bf5-4337-bb47-1f254880b5ca\\trajectory.json",
+   "trajectory_sha256": "5814f03af076401a3efbc8cd13105ecc957378e24893f8363c7324eb4499298f",
+   "engine_at_record": {
+    "version": "0.3.0",
+    "source_sha256": "11895bb98ac917622ac726dcced72f7e433ff10d503ba34e08a0c15ff835b4b9"
+   },
+   "claim_extractor_at_record": "CheckBinding",
+   "different_model_identity": false,
+   "historical": {
+    "termination": {
+     "explanation": "revision_plan failed: BudgetExhausted: model_attempts_exhausted",
+     "reason": "EXTERNAL_BLOCKER"
+    },
+    "final_candidate_id": "C0",
+    "best_candidate_id": "C0",
+    "latest_candidate_id": "C1",
+    "quality_gate": "BLOCKED",
+    "acceptance_label": "INCOMPLETE",
+    "gates": [
+     {
+      "candidate_id": "C0",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     },
+     {
+      "candidate_id": "C1",
+      "decision": "REVISE",
+      "reasons": [
+       "Status label lacks a supporting targeted revision or evidence",
+       "Unresolved high-severity weaknesses remain"
+      ],
+      "required_actions": [
+       "Address judged findings through targeted cognition"
+      ]
+     }
+    ]
+   },
+   "reconstructed_engine_written_claim_updates": [
+    [
+     "CL001",
+     "SUPPORTED",
+     "Executed evidence references: c3fbf3b1-dae1-4005-ac09-02da66d206ee"
+    ]
+   ],
+   "candidates": [
+    {
+     "candidate_id": "C0",
+     "content_sha256": "96bad1ea0e784b56c53e78e6d8d2c1f41cdd15663ce938ed234235f6663519bc",
+     "evaluation_steps": [
+      2,
+      20
+     ],
+     "inputs": {
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "type": "technical",
+        "source_candidate": "C0",
+        "confidence": null,
+        "evidence_status": "UNVERIFIED",
+        "evidence": ""
+       }
+      ],
+      "evidence_ids": [
+       "c3fbf3b1-dae1-4005-ac09-02da66d206ee"
+      ],
+      "judgment_ids": [
+       "J001",
+       "AJ001"
+      ]
+     },
+     "validations_match_recorded": true,
+     "judge_unresolved_evidence": {
+      "J001": [],
+      "AJ001": []
+     },
+     "integrity": {
+      "candidate_id": "C0",
+      "content_sha256": "96bad1ea0e784b56c53e78e6d8d2c1f41cdd15663ce938ed234235f6663519bc",
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "model_status": "UNVERIFIED",
+        "status_source": "none",
+        "status": "verified",
+        "history": [
+         "model_claimed",
+         "checker_supported",
+         "verified"
+        ],
+        "reason": "trusted executed check within its declared scope: c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "supporting": [
+         "c3fbf3b1-dae1-4005-ac09-02da66d206ee"
+        ],
+        "out_of_scope": [],
+        "contradicting": [],
+        "references": []
+       }
+      ],
+      "statements": [
+       {
+        "source": "J001.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "c3fbf3b1-dae1-4005-ac09-02da66d206ee: valid"
+        ]
+       },
+       {
+        "source": "AJ001.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "c3fbf3b1-dae1-4005-ac09-02da66d206ee: valid"
+        ]
+       }
+      ],
+      "references": [
+       {
+        "source": "J001.evidence",
+        "reference": "c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "owner": "C0"
+       },
+       {
+        "source": "AJ001.evidence",
+        "reference": "c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "owner": "C0"
+       }
+      ],
+      "contradictions": [],
+      "trusted_evidence": [
+       {
+        "artifact_id": "c3fbf3b1-dae1-4005-ac09-02da66d206ee",
+        "passed": true,
+        "source": "harness:0b4b326c-1bf5-4337-bb47-1f254880b5ca:receipts/c3fbf3b1-dae1-4005-ac09-02da66d206ee.json",
+        "targets": [
+         "CL001"
+        ],
+        "check_id": null,
+        "phase": "undeclared",
+        "artifact_binding": "undeclared"
+       }
+      ],
+      "model_agreement": {
+       "judgments": {
+        "J001": "PASS",
+        "AJ001": "PASS"
+       },
+       "agreement": true,
+       "same_model_identity": true,
+       "status": "model_claimed",
+       "counts_as": "corroboration only; never independent verification"
+      },
+      "accepted_risks": [],
+      "uncertainties": [],
+      "status_counts": {
+       "verified": 1,
+       "evidence_validated": 2
+      }
+     },
+     "historical_gate": {
+      "candidate_id": "C0",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     },
+     "derived_gate": {
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "derivation": "historical decision + integrity uncertainties"
+     },
+     "audit_differences": []
+    },
+    {
+     "candidate_id": "C1",
+     "content_sha256": "96bad1ea0e784b56c53e78e6d8d2c1f41cdd15663ce938ed234235f6663519bc",
+     "evaluation_steps": [
+      35,
+      57
+     ],
+     "inputs": {
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "type": "technical",
+        "source_candidate": "C0",
+        "confidence": null,
+        "evidence_status": "SUPPORTED",
+        "evidence": "Executed evidence references: c3fbf3b1-dae1-4005-ac09-02da66d206ee"
+       }
+      ],
+      "evidence_ids": [
+       "13652869-11a1-4525-a30e-98f8a0dd4abb"
+      ],
+      "judgment_ids": [
+       "J002",
+       "AJ002"
+      ]
+     },
+     "validations_match_recorded": true,
+     "judge_unresolved_evidence": {
+      "J002": [],
+      "AJ002": []
+     },
+     "integrity": {
+      "candidate_id": "C1",
+      "content_sha256": "96bad1ea0e784b56c53e78e6d8d2c1f41cdd15663ce938ed234235f6663519bc",
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "model_status": "SUPPORTED",
+        "status_source": "engine",
+        "status": "verified",
+        "history": [
+         "model_claimed",
+         "checker_supported",
+         "verified"
+        ],
+        "reason": "trusted executed check within its declared scope: 13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "supporting": [
+         "13652869-11a1-4525-a30e-98f8a0dd4abb"
+        ],
+        "out_of_scope": [],
+        "contradicting": [],
+        "references": []
+       }
+      ],
+      "statements": [
+       {
+        "source": "J002.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "13652869-11a1-4525-a30e-98f8a0dd4abb: valid"
+        ]
+       },
+       {
+        "source": "AJ002.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "13652869-11a1-4525-a30e-98f8a0dd4abb: valid"
+        ]
+       }
+      ],
+      "references": [
+       {
+        "source": "J002.evidence",
+        "reference": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "owner": "C1"
+       },
+       {
+        "source": "AJ002.evidence",
+        "reference": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "owner": "C1"
+       }
+      ],
+      "contradictions": [],
+      "trusted_evidence": [
+       {
+        "artifact_id": "13652869-11a1-4525-a30e-98f8a0dd4abb",
+        "passed": true,
+        "source": "harness:0b4b326c-1bf5-4337-bb47-1f254880b5ca:receipts/13652869-11a1-4525-a30e-98f8a0dd4abb.json",
+        "targets": [
+         "CL001"
+        ],
+        "check_id": null,
+        "phase": "undeclared",
+        "artifact_binding": "undeclared"
+       }
+      ],
+      "model_agreement": {
+       "judgments": {
+        "J002": "PASS",
+        "AJ002": "PASS"
+       },
+       "agreement": true,
+       "same_model_identity": true,
+       "status": "model_claimed",
+       "counts_as": "corroboration only; never independent verification"
+      },
+      "accepted_risks": [
+       {
+        "target_id": "W001",
+        "audit": "WEAKLY_SUPPORTED",
+        "status": "unresolved",
+        "reason": "an accepted risk is a retained concern; it is not verified"
+       }
+      ],
+      "uncertainties": [],
+      "status_counts": {
+       "verified": 1,
+       "evidence_validated": 2
+      }
+     },
+     "historical_gate": {
+      "candidate_id": "C1",
+      "decision": "REVISE",
+      "reasons": [
+       "Status label lacks a supporting targeted revision or evidence",
+       "Unresolved high-severity weaknesses remain"
+      ],
+      "required_actions": [
+       "Address judged findings through targeted cognition"
+      ]
+     },
+     "derived_gate": {
+      "decision": "REVISE",
+      "reasons": [
+       "Status label lacks a supporting targeted revision or evidence",
+       "Unresolved high-severity weaknesses remain"
+      ],
+      "derivation": "not affected by integrity (a return that precedes integrity uncertainties); other Engine changes since the recording are listed under audit_differences"
+     },
+     "audit_differences": [
+      {
+       "target_id": "W001",
+       "recorded": "INVALID",
+       "current_policy": "WEAKLY_SUPPORTED",
+       "current_reason": "Justified lower-severity risk acceptance corroborated by independent judgments; model-based, the concern remains unverified"
+      }
+     ]
+    }
+   ],
+   "final": {
+    "label": "OFFLINE_REASSESSMENT",
+    "final_candidate_id": "C0",
+    "identical_content_candidates": [
+     "C0",
+     "C1"
+    ],
+    "integrity_findings": {
+     "applicable": [],
+     "resolved_later": []
+    },
+    "not_transferred": [],
+    "valid_resolutions_considered": [],
+    "reconciled_uncertainties_added": [],
+    "derived_final_gate": {
+     "decision": "BLOCKED",
+     "acceptance_label": "INCOMPLETE",
+     "note": "termination EXTERNAL_BLOCKER is preserved; the final gate stays BLOCKED/INCOMPLETE and only lists added reasons",
+     "added_reasons": []
+    },
+    "termination_preserved": {
+     "explanation": "revision_plan failed: BudgetExhausted: model_attempts_exhausted",
+     "reason": "EXTERNAL_BLOCKER"
+    }
+   }
+  },
+  {
+   "label": "OFFLINE_REASSESSMENT",
+   "smoke": "8b553c71",
+   "trajectory": "E:\\The End Harness\\output\\antigravity-smoke-v032\\8b553c71-30d1-41b5-9aa4-9ca917ac6a3b\\runs\\6af3c3b0-5338-442a-8911-11d3cd17a726\\trajectory.json",
+   "trajectory_sha256": "cac07b1ba55b8c55dd994880d493562a5057b9c93a7c324ee500e78e56bce4a1",
+   "engine_at_record": {
+    "version": "0.3.2",
+    "source_sha256": "5ea97d2f7170a8d4d928d9e088b6d3d0f6d3425cdea5f28628ac545c8db5c314"
+   },
+   "claim_extractor_at_record": "CheckBinding",
+   "different_model_identity": false,
+   "historical": {
+    "termination": {
+     "explanation": "Generator and judge share model identity",
+     "reason": "ACCEPTED_PROVISIONALLY"
+    },
+    "final_candidate_id": "C0",
+    "best_candidate_id": "C0",
+    "latest_candidate_id": "C1",
+    "quality_gate": "ACCEPT_PROVISIONALLY",
+    "acceptance_label": "ACCEPTED_PROVISIONAL",
+    "gates": [
+     {
+      "candidate_id": "C0",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     },
+     {
+      "candidate_id": "C1",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     }
+    ]
+   },
+   "reconstructed_engine_written_claim_updates": [
+    [
+     "CL001",
+     "SUPPORTED",
+     "Executed evidence references: 02941036-e406-4136-8cb8-e25f8eafc920"
+    ]
+   ],
+   "candidates": [
+    {
+     "candidate_id": "C0",
+     "content_sha256": "3e3c4b8fe06e54a0b094f9aead41b91662fc91d0987694a017e85734d02bf084",
+     "evaluation_steps": [
+      2,
+      20
+     ],
+     "inputs": {
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "type": "technical",
+        "source_candidate": "C0",
+        "confidence": null,
+        "evidence_status": "UNVERIFIED",
+        "evidence": ""
+       }
+      ],
+      "evidence_ids": [
+       "02941036-e406-4136-8cb8-e25f8eafc920"
+      ],
+      "judgment_ids": [
+       "J001",
+       "AJ001"
+      ]
+     },
+     "validations_match_recorded": true,
+     "judge_unresolved_evidence": {
+      "J001": [],
+      "AJ001": []
+     },
+     "integrity": {
+      "candidate_id": "C0",
+      "content_sha256": "3e3c4b8fe06e54a0b094f9aead41b91662fc91d0987694a017e85734d02bf084",
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "model_status": "UNVERIFIED",
+        "status_source": "none",
+        "status": "verified",
+        "history": [
+         "model_claimed",
+         "checker_supported",
+         "verified"
+        ],
+        "reason": "trusted executed check within its declared scope: 02941036-e406-4136-8cb8-e25f8eafc920",
+        "supporting": [
+         "02941036-e406-4136-8cb8-e25f8eafc920"
+        ],
+        "out_of_scope": [],
+        "contradicting": [],
+        "references": []
+       }
+      ],
+      "statements": [
+       {
+        "source": "J001.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "02941036-e406-4136-8cb8-e25f8eafc920: valid"
+        ]
+       },
+       {
+        "source": "AJ001.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "02941036-e406-4136-8cb8-e25f8eafc920: valid"
+        ]
+       },
+       {
+        "source": "AJ001.uncertainties[0]",
+        "text": "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+        "status": "unsupported",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated",
+         "unsupported"
+        ],
+        "reason": "statement about final-task or complete correctness cites development-scope or undeclared-phase evidence: 02941036-e406-4136-8cb8-e25f8eafc920",
+        "references": [
+         "02941036-e406-4136-8cb8-e25f8eafc920: valid"
+        ]
+       }
+      ],
+      "references": [
+       {
+        "source": "J001.evidence",
+        "reference": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "owner": "C0"
+       },
+       {
+        "source": "AJ001.evidence",
+        "reference": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "owner": "C0"
+       },
+       {
+        "source": "AJ001.uncertainties[0]",
+        "reference": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "kind": "execution_id",
+        "status": "valid",
+        "resolved_to": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "owner": "C0"
+       }
+      ],
+      "contradictions": [],
+      "trusted_evidence": [
+       {
+        "artifact_id": "02941036-e406-4136-8cb8-e25f8eafc920",
+        "passed": true,
+        "source": "harness:6af3c3b0-5338-442a-8911-11d3cd17a726:receipts/02941036-e406-4136-8cb8-e25f8eafc920.json",
+        "targets": [
+         "CL001"
+        ],
+        "check_id": null,
+        "phase": "undeclared",
+        "artifact_binding": "undeclared"
+       }
+      ],
+      "model_agreement": {
+       "judgments": {
+        "J001": "PASS",
+        "AJ001": "PASS"
+       },
+       "agreement": true,
+       "same_model_identity": true,
+       "status": "model_claimed",
+       "counts_as": "corroboration only; never independent verification"
+      },
+      "accepted_risks": [],
+      "uncertainties": [
+       "Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]"
+      ],
+      "status_counts": {
+       "verified": 1,
+       "evidence_validated": 2,
+       "unsupported": 1
+      }
+     },
+     "historical_gate": {
+      "candidate_id": "C0",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     },
+     "derived_gate": {
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+       "Generator and judge share model identity",
+       "Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]"
+      ],
+      "derivation": "historical decision + integrity uncertainties"
+     },
+     "audit_differences": []
+    },
+    {
+     "candidate_id": "C1",
+     "content_sha256": "3e3c4b8fe06e54a0b094f9aead41b91662fc91d0987694a017e85734d02bf084",
+     "evaluation_steps": [
+      34,
+      53
+     ],
+     "inputs": {
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "type": "technical",
+        "source_candidate": "C0",
+        "confidence": null,
+        "evidence_status": "SUPPORTED",
+        "evidence": "Executed evidence references: 02941036-e406-4136-8cb8-e25f8eafc920"
+       }
+      ],
+      "evidence_ids": [
+       "b3c34247-a7ff-49d9-a973-2337963e5e64"
+      ],
+      "judgment_ids": [
+       "J002",
+       "AJ002"
+      ]
+     },
+     "validations_match_recorded": true,
+     "judge_unresolved_evidence": {
+      "J002": [],
+      "AJ002": []
+     },
+     "integrity": {
+      "candidate_id": "C1",
+      "content_sha256": "3e3c4b8fe06e54a0b094f9aead41b91662fc91d0987694a017e85734d02bf084",
+      "claims": [
+       {
+        "claim_id": "CL001",
+        "text": "The declared development checks pass for this task input.",
+        "model_status": "SUPPORTED",
+        "status_source": "engine",
+        "status": "verified",
+        "history": [
+         "model_claimed",
+         "checker_supported",
+         "verified"
+        ],
+        "reason": "trusted executed check within its declared scope: b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "supporting": [
+         "b3c34247-a7ff-49d9-a973-2337963e5e64"
+        ],
+        "out_of_scope": [],
+        "contradicting": [],
+        "references": []
+       }
+      ],
+      "statements": [
+       {
+        "source": "J002.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "b3c34247-a7ff-49d9-a973-2337963e5e64: valid"
+        ]
+       },
+       {
+        "source": "AJ002.verdict",
+        "text": "PASS; recommended ACCEPT",
+        "status": "evidence_validated",
+        "history": [
+         "model_claimed",
+         "evidence_referenced",
+         "evidence_validated"
+        ],
+        "reason": "references resolve to recorded evidence; the statement itself remains a model statement",
+        "references": [
+         "b3c34247-a7ff-49d9-a973-2337963e5e64: valid"
+        ]
+       }
+      ],
+      "references": [
+       {
+        "source": "J002.evidence",
+        "reference": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "owner": "C1"
+       },
+       {
+        "source": "AJ002.evidence",
+        "reference": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "kind": "artifact",
+        "status": "valid",
+        "resolved_to": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "owner": "C1"
+       }
+      ],
+      "contradictions": [],
+      "trusted_evidence": [
+       {
+        "artifact_id": "b3c34247-a7ff-49d9-a973-2337963e5e64",
+        "passed": true,
+        "source": "harness:6af3c3b0-5338-442a-8911-11d3cd17a726:receipts/b3c34247-a7ff-49d9-a973-2337963e5e64.json",
+        "targets": [
+         "CL001"
+        ],
+        "check_id": null,
+        "phase": "undeclared",
+        "artifact_binding": "undeclared"
+       }
+      ],
+      "model_agreement": {
+       "judgments": {
+        "J002": "PASS",
+        "AJ002": "PASS"
+       },
+       "agreement": true,
+       "same_model_identity": true,
+       "status": "model_claimed",
+       "counts_as": "corroboration only; never independent verification"
+      },
+      "accepted_risks": [],
+      "uncertainties": [],
+      "status_counts": {
+       "verified": 1,
+       "evidence_validated": 2
+      }
+     },
+     "historical_gate": {
+      "candidate_id": "C1",
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "required_actions": []
+     },
+     "derived_gate": {
+      "decision": "ACCEPT_PROVISIONALLY",
+      "reasons": [
+       "Generator and judge share model identity"
+      ],
+      "derivation": "historical decision + integrity uncertainties"
+     },
+     "audit_differences": []
+    }
+   ],
+   "final": {
+    "label": "OFFLINE_REASSESSMENT",
+    "final_candidate_id": "C0",
+    "identical_content_candidates": [
+     "C0",
+     "C1"
+    ],
+    "integrity_findings": {
+     "applicable": [],
+     "resolved_later": []
+    },
+    "not_transferred": [],
+    "valid_resolutions_considered": [],
+    "reconciled_uncertainties_added": [],
+    "derived_final_gate": {
+     "decision": "ACCEPT_PROVISIONALLY",
+     "reasons": [
+      "Development test artifact 02941036-e406-4136-8cb8-e25f8eafc920 only verified schema and precedence; independent evaluation confirmed resource capacity and horizon constraints are fully satisfied.",
+      "Generator and judge share model identity",
+      "Evidence used outside its checked scope was not counted: AJ001.uncertainties[0]"
+     ]
+    },
+    "termination_preserved": {
+     "explanation": "Generator and judge share model identity",
+     "reason": "ACCEPTED_PROVISIONALLY"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "label": "Benchmark Alpha frozen Engine baseline (recorded before any benchmark code ran)",
+ "recorded_at": "2026-09-30",
+ "engine": {
+  "version": "0.3.4",
+  "source_sha256": "d1a9f68bb8cacf1e4dc4384180d5b6971bebb8209b34ea50f1bb94939ceed7a2",
+  "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+  "files": 52,
+  "git_commit": null,
+  "git_status": "not a git repository"
+ },
+ "python": {
+  "version": "3.12.1",
+  "executable": "C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+ },
+ "engine_tests": {
+  "command": "python -B -m unittest discover -s tests -t . (PYTHONDONTWRITEBYTECODE=1, cwd outside tree)",
+  "result": "Ran 164 tests in 9.149s; OK",
+  "passed": 164,
+  "failed": 0
+ },
+ "implementation_report": "IMPLEMENTATION_REPORT.md (END Engine v0.3.4)",
+ "repository_status": "not a git repository; no commit available; tree snapshot of 137 non-cache files taken before benchmark work",
+ "cognitive_core_modified_by_benchmark": false,
+ "benchmark_code_location": "benchmark_alpha/ (outside end_engine/ and tests/; not part of the fingerprint scope)"
+}

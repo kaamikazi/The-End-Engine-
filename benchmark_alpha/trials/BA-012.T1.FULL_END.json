@@ -1,0 +1,199 @@
+{
+ "answer": "```python\ndef is_palindrome(s):\n    return s == s[::-1]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 208,
+   "latency_ms": 3269.425,
+   "output_tokens": 71,
+   "prompt_chars": 780,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 1187782977,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 661,
+   "latency_ms": 3499.931,
+   "output_tokens": 70,
+   "prompt_chars": 2393,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 2409980077,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 323,
+   "latency_ms": 14698.298,
+   "output_tokens": 326,
+   "prompt_chars": 1203,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": 1408358200,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1246,
+   "latency_ms": 13587.966,
+   "output_tokens": 224,
+   "prompt_chars": 4310,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": 2097029265,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1278,
+   "latency_ms": 24136.488,
+   "output_tokens": 357,
+   "prompt_chars": 4491,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": 1299349358,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1522,
+   "latency_ms": 9039.048,
+   "output_tokens": 137,
+   "prompt_chars": 5415,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": 897131370,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 715,
+   "latency_ms": 3784.885,
+   "output_tokens": 72,
+   "prompt_chars": 2846,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": 2027131694,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "overthinking_trap",
+ "condition": "FULL_END",
+ "cost": {
+  "branch_count": 0,
+  "calls": 7,
+  "calls_by_role": {
+   "adversarial_judge": 2,
+   "generator": 4,
+   "judge": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 1257,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 7210,
+  "model_latency_ms": 72016.041,
+  "prompt_tokens": 5953,
+  "tool_check_calls": 0,
+  "total_tokens": 7210,
+  "truncated_text_answers": 0,
+  "wall_ms": 72100.476
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "normal",
+  "errors": [
+   {
+    "message": "Revision plan targets unknown weakness IDs",
+    "stage": "revision_plan"
+   }
+  ],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "REJECT"
+   }
+  ],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 1
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "0e941f16-848f-4099-913e-b3ad3a46d7c6.jsonl",
+  "trajectory_id": "0e941f16-848f-4099-913e-b3ad3a46d7c6",
+  "trajectory_sha256": "0684f55d8d93b3928f6da2d6cca01d32f50fded390d597ab866c23fe8e752a72"
+ },
+ "ended_at": "2026-09-30T16:25:55.369834+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 900.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 0,
+ "run_id": "BA-012.T1.FULL_END",
+ "stages": {},
+ "started_at": "2026-09-30T16:24:43.270425+00:00",
+ "task_id": "BA-012",
+ "trial": 1,
+ "trial_id": "BA-012.T1",
+ "trial_seed": 3805504194
+}

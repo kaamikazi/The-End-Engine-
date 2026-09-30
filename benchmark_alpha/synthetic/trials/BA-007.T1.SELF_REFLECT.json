@@ -1,0 +1,85 @@
+{
+ "answer": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 211,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "self_reflect_initial",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 307,
+   "latency_ms": 0.0,
+   "output_tokens": 4,
+   "purpose": "self_reflect_critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 306,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "self_reflect_revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "failure_recovery",
+ "condition": "SELF_REFLECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 3,
+  "calls_by_role": {
+   "generator": 3
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 110,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 934,
+  "model_latency_ms": 0,
+  "prompt_tokens": 824,
+  "tool_check_calls": 0,
+  "total_tokens": 934,
+  "wall_ms": 0.037
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-09-30T15:11:29.896175+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-007.T1.SELF_REFLECT",
+ "stages": {
+  "critique": "SYNTHETIC critique.",
+  "final": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```",
+  "initial": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```"
+ },
+ "started_at": "2026-09-30T15:11:29.896175+00:00",
+ "task_id": "BA-007",
+ "trial": 1,
+ "trial_id": "BA-007.T1",
+ "trial_seed": 2466925725
+}

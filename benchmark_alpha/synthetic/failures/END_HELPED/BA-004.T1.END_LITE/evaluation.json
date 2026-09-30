@@ -1,0 +1,251 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C1",
+  "calibration": {
+   "basis": "llm_verifier_passed=True",
+   "external_passed": true,
+   "internal": "accepted",
+   "label": "TRUE_ACCEPT"
+  },
+  "delta_validation": [],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 2101,
+    "effect": "positive",
+    "external_after": 1.0,
+    "external_before": 0.6667,
+    "information_gain": "ZERO",
+    "on_candidate": "C0",
+    "operator": "CONSTRAINT",
+    "revision_candidate": "C1",
+    "target": "C0:completeness"
+   }
+  ],
+  "overthinking": [],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.6667
+    },
+    "C1": {
+     "passed": true,
+     "score": 1.0
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C1",
+   "regressions": [],
+   "returned_candidate_id": "C1"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 66,
+   "checks": [
+    {
+     "detail": null,
+     "name": "schedule_format",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "precedence_A_C",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "precedence_B_E",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "disjoint_B_D",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "peak demand 4",
+     "name": "capacity",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "makespan 5",
+     "name": "horizon",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "schedule",
+   "evaluator_version": "alpha-2",
+   "extracted": {
+    "answer": {
+     "A": 0,
+     "B": 0,
+     "C": 2,
+     "D": 1,
+     "E": 3
+    },
+    "claim_region": "whole text"
+   },
+   "passed": false,
+   "review_flags": [],
+   "score": 0.6667,
+   "task_id": "BA-004"
+  },
+  "C1": {
+   "answer_chars": 66,
+   "checks": [
+    {
+     "detail": null,
+     "name": "schedule_format",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "precedence_A_C",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "precedence_B_E",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "disjoint_B_D",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": "peak demand 3",
+     "name": "capacity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": "makespan 6",
+     "name": "horizon",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "schedule",
+   "evaluator_version": "alpha-2",
+   "extracted": {
+    "answer": {
+     "A": 0,
+     "B": 0,
+     "C": 2,
+     "D": 3,
+     "E": 4
+    },
+    "claim_region": "whole text"
+   },
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-004"
+  }
+ },
+ "final": {
+  "answer_chars": 66,
+  "checks": [
+   {
+    "detail": null,
+    "name": "schedule_format",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "precedence_A_C",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "precedence_B_E",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "disjoint_B_D",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "peak demand 3",
+    "name": "capacity",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "makespan 6",
+    "name": "horizon",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "deterministic_validator",
+  "evaluator": "schedule",
+  "evaluator_version": "alpha-2",
+  "extracted": {
+   "answer": {
+    "A": 0,
+    "B": 0,
+    "C": 2,
+    "D": 3,
+    "E": 4
+   },
+   "claim_region": "whole text"
+  },
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-004"
+ },
+ "run_id": "BA-004.T1.END_LITE",
+ "stages": {}
+}
