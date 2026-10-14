@@ -30,3 +30,5 @@ Thumbs.db
 # Local staging manifests/review logs are operational checkpoint artifacts.
 /checkpoint_20261013/stage-*.paths
 /checkpoint_20261013/staging_review/
+# Duplicate first-round ZIP extraction; original pack and archive receipt are retained.
+/independent_review_package_v1/extracted/

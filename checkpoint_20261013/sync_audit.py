@@ -16,6 +16,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def save(name,data):(OUT/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
 def classify(rel):
     parts=Path(rel).parts;top=parts[0]
+    if rel.startswith('independent_review_package_v1/extracted/'):return 'G','EXCLUDE','Duplicate first-round review ZIP extraction; source pack and compact packaging records included'
     if any(p in ('__pycache__','.venv','venv','build','dist','scratch','node_modules') for p in parts) or rel.endswith(('.pyc','.zip','.tmp')) or top.endswith('.egg-info'):return 'G','EXCLUDE','Generated cache/environment/build/extraction scratch or duplicate ZIP'
     if top=='end_engine' or rel=='pyproject.toml':return 'A','INCLUDE','Engine implementation/runtime packaging'
     if top=='tests':return 'B','INCLUDE','Engine offline tests'
