@@ -1,0 +1,85 @@
+{
+  "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+  "seq": 3,
+  "purpose": "adversarial_tests",
+  "requested_at": "2026-10-06T16:50:04.537557+00:00",
+  "completed_at": "2026-10-06T16:51:29.768132+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "payload": {
+    "model": "qwen3:4b",
+    "stream": false,
+    "think": false,
+    "prompt": "Generate up to four concrete adversarial scenarios and observable expected properties. Do not claim execution; executable describes suitability only, not actual execution.\n\nINPUT (JSON):\n{\"audit_targets\": [], \"candidate\": {\"alias\": \"A\", \"content\": \"```json\\n[ -40.0, 32.0, 97.9, 212.0, 74.7 ]\\n```\"}, \"claims\": [], \"task\": \"Convert these Celsius temperatures to Fahrenheit, rounded to one decimal place: [-40, 0, 36.6, 100, 21.5]. Give the final answer as a JSON array of numbers, in the same order, in a ```json code block.\"}\n\nRespond with only one JSON object that satisfies this JSON Schema:\n{\"additionalProperties\": false, \"properties\": {\"tests\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"execution_status\": {\"enum\": [\"UNEXECUTED\", \"REASONED\", \"SIMULATED\", \"EXECUTABLE\"], \"type\": \"string\"}, \"expected_property\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"scenario\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"target\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"target\", \"scenario\", \"expected_property\", \"execution_status\"], \"type\": \"object\"}, \"maxItems\": 4, \"type\": \"array\"}}, \"required\": [\"tests\"], \"type\": \"object\"}",
+    "options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "num_predict": 4096,
+      "num_ctx": 8192,
+      "seed": 3029730307
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "tests": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "expected_property": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "UNEXECUTED",
+                  "REASONED",
+                  "SIMULATED",
+                  "EXECUTABLE"
+                ]
+              }
+            },
+            "required": [
+              "target",
+              "scenario",
+              "expected_property",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "tests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-06T16:51:29.7579218Z",
+    "response": "{\n  \"tests\": [\n    {\n      \"target\": \"audit_targets\",\n      \"scenario\": \"The candidate's content contains a JSON array of numbers that might be misinterpreted as Celsius temperatures due to the presence of negative values and decimal points. The input specifies a list of Celsius temperatures to convert, but the candidate's content is provided as a string with a JSON array that could be a valid temperature list.\",\n      \"expected_property\": \"The candidate's content should not be interpreted as the temperature list to convert. The input task specifies a list of Celsius temperatures to convert, and the candidate's content is a JSON array that is not the same as the task's specified list. The candidate's content is a string with a JSON array, but it is not the list of temperatures to convert as per the task description.\",\n      \"execution_status\": \"UNEXECUTED\"\n    },\n    {\n      \"target\": \"candidate\",\n      \"scenario\": \"The candidate's content is a JSON string containing a list of numbers that includes negative values and decimals, which could be mistakenly used as the temperature list to convert. The task requires converting a specific list of Celsius temperatures to Fahrenheit, but the candidate's content is provided as a JSON array that is not the same as the task's specified list.\",\n      \"expected_property\": \"The candidate's content should not be the temperature list to convert. The candidate's content is a JSON array of numbers that is not the same as the task's specified list of Celsius temperatures. The task specifies the list [-40, 0,  36.6, 100, 21.5], but the candidate's content is [ -40.0, 32.0, 97.9, 212.0, 74.7], which has different values and formatting.\",\n      \"execution_status\": \"UNEXECUTED\"\n    },\n    {\n      \"target\": \"claims\",\n      \"scenario\": \"The claims field is empty, but the task requires generating a conversion result. The candidate's content is provided as a JSON array, which is not the expected output format for the claims field.\",\n      \"expected_property\": \"The claims field should be empty as per the input, but the task requires a conversion result. The candidate's content is a JSON array that is not the expected output format for the claims field, and the claims field is empty in the input, so this scenario is not applicable.\",\n      \"execution_status\": \"UNEXECUTED\"\n    },\n    {\n      \"target\": \"task\",\n      \"scenario\": \"The task specifies a list of Celsius temperatures to convert, but the candidate's content is a JSON array that contains numbers with different values and formatting. The candidate's content has negative values and decimals, but the task requires specific conversions for a given list.\",\n      \"expected_property\": \"The task specifies the list [-40, 0, 36.6, 100, 21.5] to convert to Fahrenheit. The candidate's content is a JSON array of numbers [ -40.0, 32.0, 97.9, 212.0, 74.7], which is not the same as the task's specified list. The candidate's content should not be used as the input list for conversion.\",\n      \"execution_status\": \"UNEXECUTED\"\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 85180581900,
+    "load_duration": 4651200,
+    "prompt_eval_count": 354,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 1084028000,
+    "eval_count": 709,
+    "eval_duration": 84011040000
+  },
+  "error": null,
+  "latency_ms": 85223.385
+}

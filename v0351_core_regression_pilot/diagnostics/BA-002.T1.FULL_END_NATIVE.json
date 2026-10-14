@@ -1,0 +1,628 @@
+{
+  "run_id": "BA-002.T1.FULL_END_NATIVE",
+  "task": "BA-002",
+  "condition": "FULL_END_NATIVE",
+  "external_score": 1.0,
+  "passed": true,
+  "format_ok": true,
+  "wall_seconds": 1113.709721,
+  "total_model_calls": 32,
+  "generator_calls": 12,
+  "judge_calls": 16,
+  "verifier_calls": 4,
+  "protocol_repair_calls": 2,
+  "transport_retry_calls": 0,
+  "revision_calls": 3,
+  "tokens": 91718,
+  "known_partial_tokens": 91718,
+  "prompt_tokens": 79622,
+  "output_tokens": 12096,
+  "end_cycles": 3,
+  "calls_per_completed_cycle": 10.666666666666666,
+  "stop_reason": "BUDGET_EXHAUSTED",
+  "quality_gate": "REVISE",
+  "acceptance_label": "INCONCLUSIVE",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempted": 2,
+  "repair_succeeded": 1,
+  "repair_failed": 1,
+  "repair_suppressed": 0,
+  "invalid_elements_discarded": 2,
+  "calls_saved_by_suppression": 0,
+  "repair_attempts": 2,
+  "repair_successes": 1,
+  "discarded_protocol_elements": 2,
+  "rollback_count": 0,
+  "c0_score": 1.0,
+  "c0_format_ok": true,
+  "c0_chars": 7670,
+  "c0_final_region_chars": 7670,
+  "final_chars": 431,
+  "final_region_chars": 431,
+  "selected_candidate_score": 1.0,
+  "score_delta": 0.0,
+  "revision_value": "NEUTRAL",
+  "output_withheld": false,
+  "output_integrity": {
+    "action": "allow",
+    "blocked": false,
+    "candidate_id": "C1",
+    "checks": [],
+    "model_calls": 0,
+    "presentation": "final answer region; raw candidate retained in ledger"
+  },
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "unsupported_claim_count": 0,
+  "grounding_incidents": 7,
+  "decisive_judge_findings": 0,
+  "nondecisive_judge_findings": 7,
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 7670
+    },
+    "C1": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 2279
+    },
+    "C2": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 2881
+    },
+    "C3": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 3305
+    }
+  },
+  "judge_findings": [
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function uses `len(items) - size` in the range stop condition, which is incorrect and causes the last chunk to be missed",
+      "evidence": [
+        "The range function is `range(0, len(items) - size, size)`. This means: - The starting point is 0. - The stop condition is `len(items) - size` (so it stops when i >= len(items)-size). - The step is `size`."
+      ],
+      "fatal": true,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+      "target": "CL002",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "But the doc says `size` must be positive integer.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not validate `size` as a positive integer as required by the docstring",
+      "evidence": [
+        "But the problem says: `size` must be a positive integer -> so we check for integer and positive."
+      ],
+      "fatal": false,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "But the doc says `size` must be positive integer.",
+      "target": "CL003",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "Also, we must check for the condition that `size` must be positive integer.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not handle the case where `size` is 0 or negative",
+      "evidence": [
+        "Also, we must check for the condition that `size` must be positive integer."
+      ],
+      "fatal": false,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "Also, we must check for the condition that `size` must be positive integer.",
+      "target": "CL006",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The corrected code starts with checking if size is a positive integer. If not, raise ValueError. Then the loop is range(0, len(items), size). So for each i in that range, append items[i:i+size].",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the loop should use `range(0, len(items), size)` but the example provided in the candidate uses `items = [1,2,3,4,5,6]` with `size=2` and says the chunks are [1,2], [3,4], [5,6]. However, the candidate's own example shows that the original code (with `len(items) - size`) is incorrect for the case where the list length is not divisible by `size`, but the candidate does not provide evidence that the corrected code works for all cases. The candidate claims the corrected code is correct but does not demonstrate it with a test case that covers the edge case where `len(items) % size != 0`.",
+      "evidence": [
+        "CL001"
+      ],
+      "fatal": true,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "The candidate claims the loop should be `range(0, len(items), size)`",
+      "target": "The corrected code",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "So the fixes needed are:\n1. Add a check for size being a positive integer (raise ValueError otherwise).\n2. Change the range in the for loop to `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the original code has a bug with the range being `len(items) - size` but the candidate's own corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate states that the original code's range was wrong, but the candidate's corrected code does not include the check for `size` being a positive integer in the loop condition. The candidate mentions the check for `size` being a positive integer, but the corrected code provided does include this check.",
+      "evidence": [
+        "CANDIDATE: The candidate says the corrected code starts by checking if size is a positive integer."
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+      "target": "CL001",
+      "task_reference": "This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block.",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The original code uses a for loop with `range(0, len(items) - size, size)`. Wait, that seems wrong.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the original code's range is `len(items) - size`, but the corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate's explanation of the original code's behavior is inconsistent with the corrected code's implementation.",
+      "evidence": [
+        "CANDIDATE: The candidate says the original code uses a for loop with `range(0, len(items) - size, size)`"
+      ],
+      "fatal": false,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+      "target": "CL001",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "Another edge case: empty list. If items is empty, the loop runs 0 times, returns empty list. Correct.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate mentions that the corrected code handles empty lists correctly, but the task does not require this edge case to be tested.",
+      "evidence": [
+        "CANDIDATE: Another edge case: empty list. If items is empty, the loop runs 0 times, returns empty list. Correct."
+      ],
+      "fatal": false,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "raise ValueError(\"size must be a positive integer\")",
+      "target": "CL007",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "grounding_records": [
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+      "claim_type": "",
+      "description": "The candidate function uses `len(items) - size` in the range stop condition, which is incorrect and causes the last chunk to be missed",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "fatal",
+      "source_claim": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "But the doc says `size` must be positive integer.",
+      "claim_type": "",
+      "description": "The candidate function does not validate `size` as a positive integer as required by the docstring",
+      "issue": "major_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "major",
+      "source_claim": "But the doc says `size` must be positive integer.",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "Also, we must check for the condition that `size` must be positive integer.",
+      "claim_type": "",
+      "description": "The candidate function does not handle the case where `size` is 0 or negative",
+      "issue": "minor_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "minor",
+      "source_claim": "Also, we must check for the condition that `size` must be positive integer.",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "The corrected code starts with checking if size is a positive integer. If not, raise ValueError. Then the loop is range(0, len(items), size). So for each i in that range, append items[i:i+size].",
+      "claim_type": "",
+      "description": "The candidate claims the loop should use `range(0, len(items), size)` but the example provided in the candidate uses `items = [1,2,3,4,5,6]` with `size=2` and says the chunks are [1,2], [3,4], [5,6]. However, the candidate's own example shows that the original code (with `len(items) - size`) is incorrect for the case where the list length is not divisible by `size`, but the candidate does not provide evidence that the corrected code works for all cases. The candidate claims the corrected code is correct but does not demonstrate it with a test case that covers the edge case where `len(items) % size != 0`.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "fatal",
+      "source_claim": "The candidate claims the loop should be `range(0, len(items), size)`",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C3",
+      "candidate_quote": "So the fixes needed are:\n1. Add a check for size being a positive integer (raise ValueError otherwise).\n2. Change the range in the for loop to `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`.",
+      "claim_type": "",
+      "description": "The candidate claims the original code has a bug with the range being `len(items) - size` but the candidate's own corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate states that the original code's range was wrong, but the candidate's corrected code does not include the check for `size` being a positive integer in the loop condition. The candidate mentions the check for `size` being a positive integer, but the corrected code provided does include this check.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ004",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C3",
+      "candidate_quote": "The original code uses a for loop with `range(0, len(items) - size, size)`. Wait, that seems wrong.",
+      "claim_type": "",
+      "description": "The candidate claims the original code's range is `len(items) - size`, but the corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate's explanation of the original code's behavior is inconsistent with the corrected code's implementation.",
+      "issue": "major_issues[0]",
+      "judgment_id": "AJ004",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "major",
+      "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C3",
+      "candidate_quote": "Another edge case: empty list. If items is empty, the loop runs 0 times, returns empty list. Correct.",
+      "claim_type": "",
+      "description": "The candidate mentions that the corrected code handles empty lists correctly, but the task does not require this edge case to be tested.",
+      "issue": "minor_issues[0]",
+      "judgment_id": "AJ004",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "minor",
+      "source_claim": "raise ValueError(\"size must be a positive integer\")",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "protocol_events": [
+    {
+      "action": "repair_requested",
+      "attempt": 1,
+      "category": "MODEL_PROTOCOL_INVALID_REFERENCE",
+      "invalid": [
+        "findings:null",
+        "findings:null"
+      ],
+      "stage": "critique",
+      "validation_error": "Critique references unknown or duplicate identifiers"
+    },
+    {
+      "action": "invalid_elements_discarded",
+      "category": "MODEL_PROTOCOL_REPAIR_EXHAUSTED",
+      "continued": true,
+      "discarded": [
+        {
+          "description": "The current function does not validate `size` as a positive integer, violating the docstring.",
+          "evidence": "The function does not include a check for `size` being a positive integer. The docstring requires raising `ValueError` if `size` is not a positive integer, but the current implementation lacks this validation.",
+          "severity": "high",
+          "type": "evidence_gap",
+          "weakness_id": "null"
+        },
+        {
+          "description": "The loop range uses `len(items) - size` as the stop condition, which causes the last chunk to be missed.",
+          "evidence": "When `len(items) = 6` and `size = 2`, the current function returns [[1,2],[3,4]] but the correct output should be [[1,2],[3,4],[5,6]] as the last chunk is missing.",
+          "severity": "high",
+          "type": "evidence_gap",
+          "weakness_id": "null"
+        }
+      ],
+      "invalid": [
+        "findings:null",
+        "findings:null"
+      ],
+      "original_category": "MODEL_PROTOCOL_INVALID_REFERENCE",
+      "stage": "critique"
+    },
+    {
+      "action": "repair_requested",
+      "attempt": 1,
+      "category": "MODEL_PROTOCOL_INVALID_REFERENCE",
+      "invalid": [
+        "W1",
+        "W2"
+      ],
+      "stage": "revision_plan",
+      "validation_error": "Revision plan targets unknown weakness IDs"
+    },
+    {
+      "action": "repaired",
+      "attempt": 1,
+      "category": "MODEL_PROTOCOL_INVALID_REFERENCE",
+      "continued": true,
+      "discarded": [],
+      "stage": "revision_plan"
+    }
+  ],
+  "repair_statistics": {
+    "calls_saved_by_suppression": 0,
+    "failure_limit": 2,
+    "failures_by_stage": {
+      "critique": 1
+    },
+    "invalid_elements_discarded": 2,
+    "pending_stages": [],
+    "repair_attempted": 2,
+    "repair_failed": 1,
+    "repair_succeeded": 1,
+    "repair_suppressed": 0
+  },
+  "repair_outcomes": [
+    {
+      "accepted_and_used": false,
+      "outcome": "repair_failed",
+      "stage": "critique"
+    },
+    {
+      "accepted_and_used": true,
+      "outcome": "repair_succeeded",
+      "stage": "revision_plan"
+    }
+  ],
+  "epistemic_checks": [
+    {
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C2",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C3",
+      "checks": [],
+      "model_calls": 0
+    }
+  ],
+  "cycle_progress": [
+    {
+      "blockers": [],
+      "cycle": 1,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "candidate_content",
+        "claim_support_state"
+      ]
+    },
+    {
+      "blockers": [],
+      "cycle": 2,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "issue_state",
+        "claim_support_state"
+      ]
+    },
+    {
+      "blockers": [],
+      "cycle": 3,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "issue_state",
+        "claim_support_state"
+      ]
+    }
+  ],
+  "no_progress_cycles": 0,
+  "no_progress_stop": false,
+  "mandatory_action_overrides": 0,
+  "operator_sequence": [
+    "EVIDENCE",
+    "VERIFY",
+    "VERIFY"
+  ],
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "error_records": []
+}

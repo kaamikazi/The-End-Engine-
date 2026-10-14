@@ -1,0 +1,26 @@
+{
+ "task_id": "BA-010",
+ "category": "contradictory_evidence",
+ "difficulty": "hard",
+ "prompt": "Question: does parse_config() in release 3.1.0 correctly handle an empty configuration file?\nEvidence (both refer to the same commit a1b2c3d):\n  [E1] QA test report for 3.1.0: \"test_empty_config ... PASSED\".\n  [E2] CI log for 3.1.0, build #812: \"test_empty_config ... FAILED: KeyError: 'version'\".\nGive your final answer as one JSON object in a ```json code block with exactly these keys: \"conclusion\" (string), \"certainty\" (one of \"established\", \"likely\", \"hypothesis\", \"unknown\"), \"evidence_used\" (list of evidence IDs you relied on), \"additional_evidence_needed\" (list of strings).",
+ "constraints": [
+  "cite only provided evidence IDs"
+ ],
+ "evaluation": {
+  "type": "deterministic_validator",
+  "evaluator": "evidence",
+  "provided_ids": [
+   "E1",
+   "E2"
+  ],
+  "mode": "contradiction"
+ },
+ "expected_properties": [
+  "both artifacts considered",
+  "conflict left unresolved without further evidence"
+ ],
+ "failure_conditions": [
+  "one artifact ignored",
+  "conflict resolved as established"
+ ]
+}

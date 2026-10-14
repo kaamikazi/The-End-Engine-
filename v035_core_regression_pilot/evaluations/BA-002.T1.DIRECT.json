@@ -1,0 +1,41 @@
+{
+  "run_id": "BA-002.T1.DIRECT",
+  "final": {
+    "task_id": "BA-002",
+    "evaluator": "python_tests",
+    "evaluator_version": "alpha-3",
+    "format_ok": true,
+    "evaluation_type": "executable_test",
+    "passed": true,
+    "score": 1.0,
+    "checks": [
+      {
+        "name": "unit_tests",
+        "score": 1.0,
+        "required": true,
+        "detail": null
+      }
+    ],
+    "counters": {
+      "unsupported_claim_count": 0,
+      "unsupported_high_impact_claim_count": 0,
+      "fabricated_reference_count": 0,
+      "scope_overreach_count": 0,
+      "contradiction_ignored_count": 0,
+      "false_execution_claim_count": 0,
+      "correct_uncertainty_count": 0
+    },
+    "review_flags": [],
+    "extracted": {
+      "tests": {
+        "passed": 7,
+        "total": 7
+      },
+      "claim_region": "after </think>"
+    },
+    "answer_chars": 11112
+  },
+  "stages": {},
+  "candidates": {},
+  "analysis": null
+}

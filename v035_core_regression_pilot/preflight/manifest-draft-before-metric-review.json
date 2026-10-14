@@ -1,0 +1,280 @@
+{
+  "experiment": "v0.3.5 Core Regression Pilot",
+  "status": "PREFLIGHT_COMPLETE",
+  "diagnostic_only": true,
+  "not_benchmark_beta": true,
+  "created_at": "2026-10-05T16:18:11.197526+00:00",
+  "engine": {
+    "version": "0.3.5",
+    "source_sha256": "7c9ce8d2b892b70cdecce93b40c3310269d603c59101757f32983dde96a0947b",
+    "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+    "files": 64,
+    "python": "3.12.14",
+    "git_commit": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+    "offline_tests": {
+      "command": "python -m unittest discover -s tests -t .",
+      "tests": 226,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 9.282
+    },
+    "decision_provider": "baseline"
+  },
+  "model_identity": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-04-13T11:24:13.189597+06:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ],
+    "server_version": "0.35.1"
+  },
+  "historical_ollama_version": "0.35.0",
+  "ollama_version_changed": true,
+  "model_settings": {
+    "model": "qwen3:4b",
+    "provider": "ollama-local",
+    "endpoint": "http://127.0.0.1:11434",
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "num_predict": 4096,
+    "num_ctx": 8192,
+    "base_seed": 20260930,
+    "think": false,
+    "timeout_seconds": 900.0,
+    "structured_retries": 1,
+    "system": null
+  },
+  "task_ids": [
+    "BA-001",
+    "BA-002",
+    "BA-008",
+    "BA-009"
+  ],
+  "task_hashes": {
+    "BA-001": "778aa162b7e1cd9109a0d4ee5c30372de07c1e0e7ed5a556f05b88a75c447d97",
+    "BA-002": "9d6cb82a77b770de82e65eac9573efda48f117b0c72c57db239a01a14d0a729e",
+    "BA-008": "a050ea4a29c8e302279a27d9a0939a81cded3ed825276a053a7cc9c024ba3953",
+    "BA-009": "3f6156dc1ca273bd9cf6d87db413a5abbfe6dffdf005cf2b7ef263a9f4719a9c"
+  },
+  "evaluator_sha256": "2570b6632b7aaf64d9f3418407cadad14b05ec89283f97e2286ecf70e4a03914",
+  "evaluator_source": "byte-identical copy of benchmark_alpha/bench/evaluators.py",
+  "transport_source": "byte-identical copy of benchmark_beta/bench/providers.py (v0.3.5 error taxonomy)",
+  "conditions": [
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "FULL_END_NATIVE"
+  ],
+  "trials": 1,
+  "planned_runs": 12,
+  "randomization_seed": 20261005,
+  "plan": [
+    {
+      "run_id": "BA-001.T1.DIRECT",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 1
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_NATIVE",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 2
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 3
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_NATIVE",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 4
+    },
+    {
+      "run_id": "BA-002.T1.DIRECT",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 5
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 6
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 7
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_NATIVE",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 8
+    },
+    {
+      "run_id": "BA-008.T1.DIRECT",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 9
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 10
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_NATIVE",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 11
+    },
+    {
+      "run_id": "BA-009.T1.DIRECT",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 12
+    }
+  ],
+  "end_configs": {
+    "FULL_END_STRUCTURED": {
+      "ledger_dir": "E:\\The End Engine\\v035_core_regression_pilot\\trajectories",
+      "verbose": false,
+      "llm_classification": false,
+      "llm_selection": false,
+      "quality_threshold": 0.9,
+      "critical_quality_threshold": 0.95,
+      "improvement_epsilon": 0.01,
+      "stagnation_patience": 2,
+      "repeated_critique_patience": 2,
+      "max_active_branches": 3,
+      "max_branch_depth": 2,
+      "max_branches_per_operator": 3,
+      "max_cognitive_operations": null,
+      "enable_branching": true,
+      "meta_check_interval": 3,
+      "max_reframings": 1,
+      "cognitive_stagnation_patience": 3,
+      "quality_evaluation": false,
+      "judge_min_confidence": 0.75,
+      "post_acceptance_cycles": 0,
+      "protocol_repair_attempts": 1,
+      "candidate_generation": "structured",
+      "decision": {
+        "provider": "baseline",
+        "requested_model": null,
+        "categories": [
+          "operator_routing"
+        ],
+        "timeout_seconds": 5.0,
+        "max_calls_per_run": 4,
+        "max_latency_ms": 15000.0,
+        "min_choice_probability": 0.65,
+        "min_choice_confidence": 0.7,
+        "max_utility_loss": 0.25,
+        "max_repetition_penalty": 0.5
+      },
+      "max_run_calls": null
+    },
+    "FULL_END_NATIVE": {
+      "ledger_dir": "E:\\The End Engine\\v035_core_regression_pilot\\trajectories",
+      "verbose": false,
+      "llm_classification": false,
+      "llm_selection": false,
+      "quality_threshold": 0.9,
+      "critical_quality_threshold": 0.95,
+      "improvement_epsilon": 0.01,
+      "stagnation_patience": 2,
+      "repeated_critique_patience": 2,
+      "max_active_branches": 3,
+      "max_branch_depth": 2,
+      "max_branches_per_operator": 3,
+      "max_cognitive_operations": null,
+      "enable_branching": true,
+      "meta_check_interval": 3,
+      "max_reframings": 1,
+      "cognitive_stagnation_patience": 3,
+      "quality_evaluation": false,
+      "judge_min_confidence": 0.75,
+      "post_acceptance_cycles": 0,
+      "protocol_repair_attempts": 1,
+      "candidate_generation": "native",
+      "decision": {
+        "provider": "baseline",
+        "requested_model": null,
+        "categories": [
+          "operator_routing"
+        ],
+        "timeout_seconds": 5.0,
+        "max_calls_per_run": 4,
+        "max_latency_ms": 15000.0,
+        "min_choice_probability": 0.65,
+        "min_choice_confidence": 0.7,
+        "max_utility_loss": 0.25,
+        "max_repetition_penalty": 0.5
+      },
+      "max_run_calls": null
+    }
+  },
+  "full_end_max_cycles": 3,
+  "decision_provider": "baseline",
+  "jev_calls_allowed": 0,
+  "cloud_inference_allowed": false,
+  "pilot_source_hashes": {
+    "run_pilot.py": "15475ace46f2e070778894668a3dd6db2fa5ba6d902b2b9b1bd09a03cd96f0da",
+    "report_pilot.py": "8c7a5c961a17838a8d5c896e1f20743a708a964ebf96ca85d9cfa912ae4ad423",
+    "tests.py": "7ace58e52d0d81eea646966d6295068d7fff0ce90dc042c0241f8202592729ce",
+    "bench/__init__.py": "882eb38ccae8335a31df126e2e7562bf92200d75fe01e2fa51a290344e85b054",
+    "bench/analysis.py": "fd58672b1628b9fbdbc408e07e1ee34626ad130a444cf91f9be3a419d60ab10a",
+    "bench/conditions.py": "be3559a40c969dbd179517276d9835bc3f8cbc25746d78e1e77cab224ac68559",
+    "bench/evaluators.py": "2570b6632b7aaf64d9f3418407cadad14b05ec89283f97e2286ecf70e4a03914",
+    "bench/providers.py": "7c1be0834feb73163607f4f5ebb76e15f09abe50fc2e14e144306ef11fd09a92",
+    "bench/upstream_runner.py": "63bf2a7c4288ce9f225c318d227d4fea33e541c883abbef4102ba03831bb5d10",
+    "tasks/BA-001.json": "778aa162b7e1cd9109a0d4ee5c30372de07c1e0e7ed5a556f05b88a75c447d97",
+    "tasks/BA-002.json": "9d6cb82a77b770de82e65eac9573efda48f117b0c72c57db239a01a14d0a729e",
+    "tasks/BA-008.json": "a050ea4a29c8e302279a27d9a0939a81cded3ed825276a053a7cc9c024ba3953",
+    "tasks/BA-009.json": "3f6156dc1ca273bd9cf6d87db413a5abbfe6dffdf005cf2b7ef263a9f4719a9c"
+  },
+  "runtime_guard": {
+    "threshold_seconds": 21600,
+    "after_first_FULL_END": true,
+    "formula": "elapsed completed runs + mean completed FULL_END wall * remaining FULL_END + mean DIRECT wall * remaining DIRECT; if no DIRECT observed, use its 900s timeout upper bound"
+  },
+  "runtime_projections": [],
+  "completed_runs": [],
+  "sessions": []
+}

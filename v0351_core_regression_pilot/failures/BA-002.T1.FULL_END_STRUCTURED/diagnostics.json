@@ -1,0 +1,512 @@
+{
+  "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+  "task": "BA-002",
+  "condition": "FULL_END_STRUCTURED",
+  "external_score": 1.0,
+  "passed": true,
+  "format_ok": true,
+  "wall_seconds": 997.153714,
+  "total_model_calls": 31,
+  "generator_calls": 10,
+  "judge_calls": 17,
+  "verifier_calls": 4,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "revision_calls": 3,
+  "tokens": 54482,
+  "known_partial_tokens": 54482,
+  "prompt_tokens": 46094,
+  "output_tokens": 8388,
+  "end_cycles": 3,
+  "calls_per_completed_cycle": 10.333333333333334,
+  "stop_reason": "BUDGET_EXHAUSTED",
+  "quality_gate": "REVISE",
+  "acceptance_label": "INCONCLUSIVE",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempted": 0,
+  "repair_succeeded": 0,
+  "repair_failed": 0,
+  "repair_suppressed": 0,
+  "invalid_elements_discarded": 0,
+  "calls_saved_by_suppression": 0,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 0,
+  "c0_score": 1.0,
+  "c0_format_ok": true,
+  "c0_chars": 623,
+  "c0_final_region_chars": 623,
+  "final_chars": 623,
+  "final_region_chars": 623,
+  "selected_candidate_score": 1.0,
+  "score_delta": 0.0,
+  "revision_value": "NEUTRAL",
+  "output_withheld": false,
+  "output_integrity": {
+    "action": "allow",
+    "blocked": false,
+    "candidate_id": "C0",
+    "checks": [],
+    "model_calls": 0,
+    "presentation": "final answer region; raw candidate retained in ledger"
+  },
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "unsupported_claim_count": 0,
+  "grounding_incidents": 6,
+  "decisive_judge_findings": 0,
+  "nondecisive_judge_findings": 6,
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 623
+    },
+    "C1": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 623
+    },
+    "C2": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 623
+    },
+    "C3": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 623
+    }
+  },
+  "judge_findings": [
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "```python\n# Fix: The original code starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.\n# Corrected: Start from 0, go to len(items) (inclusive), step by size.\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not match its docstring requirement that `size` must be positive and raises ValueError if not, but the code only checks for `size <= 0` and raises ValueError, which is correct. However, the main issue is that the corrected code does not actually fix the original bug.",
+      "evidence": [
+        "CL001",
+        "CL002"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate function is supposed to fix the bug in the original code, but the corrected code does not match the original bug description or the docstring requirements.",
+      "target": "CANDIDATE",
+      "task_reference": "This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block.\n\n```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not correctly handle cases where `len(items)` is less than `size`, causing an empty chunk to be appended when `size` is greater than the length of `items`",
+      "evidence": [
+        "The candidate uses `range(0, len(items), size)` which will include an index beyond the list if `len(items) < size`"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate function starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.",
+      "target": "chunk(items, size)",
+      "task_reference": "The task requires the function to split the list into chunks of size `size` with the last chunk possibly shorter, but the candidate does not handle the case where `len(items) < size` correctly.",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "if size <= 0:\n        raise ValueError('size must be positive')",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not raise a ValueError when `size` is not positive, but the docstring states that it should raise a ValueError for non-positive `size`",
+      "evidence": [
+        "The candidate checks `if size <= 0:` but the condition is not raised as an exception in the code"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate function raises ValueError('size must be positive')",
+      "target": "chunk(items, size)",
+      "task_reference": "The task requires the function to raise a ValueError for non-positive `size` as stated in the docstring",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not handle the case where `items` is an empty list",
+      "evidence": [
+        "The candidate does not check for empty lists"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate function starts the loop at 0 and increments by size",
+      "target": "chunk(items, size)",
+      "task_reference": "The task does not specify handling of empty lists",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+      "evidence": [
+        "CANDIDATE: the only text a finding about the candidate may quote or attribute to the candidate."
+      ],
+      "fatal": true,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+      "target": "CANDIDATE_INTERNAL",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate function does not correctly handle the case where `items` is empty.",
+      "evidence": [
+        "CANDIDATE: The candidate function starts the loop at 0 and increments by `size` without checking for empty list."
+      ],
+      "fatal": true,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "The function should handle empty lists correctly",
+      "target": "chunk(items, size)",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "grounding_records": [
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "```python\n# Fix: The original code starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.\n# Corrected: Start from 0, go to len(items) (inclusive), step by size.\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "claim_type": "",
+      "description": "The candidate function does not match its docstring requirement that `size` must be positive and raises ValueError if not, but the code only checks for `size <= 0` and raises ValueError, which is correct. However, the main issue is that the corrected code does not actually fix the original bug.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The candidate function is supposed to fix the bug in the original code, but the corrected code does not match the original bug description or the docstring requirements.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C1",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "claim_type": "",
+      "description": "The candidate function does not correctly handle cases where `len(items)` is less than `size`, causing an empty chunk to be appended when `size` is greater than the length of `items`",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ002",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The candidate function starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C1",
+      "candidate_quote": "if size <= 0:\n        raise ValueError('size must be positive')",
+      "claim_type": "",
+      "description": "The candidate function does not raise a ValueError when `size` is not positive, but the docstring states that it should raise a ValueError for non-positive `size`",
+      "issue": "major_issues[0]",
+      "judgment_id": "AJ002",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "major",
+      "source_claim": "The candidate function raises ValueError('size must be positive')",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C1",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "claim_type": "",
+      "description": "The candidate function does not handle the case where `items` is an empty list",
+      "issue": "minor_issues[0]",
+      "judgment_id": "AJ002",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "minor",
+      "source_claim": "The candidate function starts the loop at 0 and increments by size",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result",
+      "claim_type": "",
+      "description": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "fatal",
+      "source_claim": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C3",
+      "candidate_quote": "for i in range(0, len(items), size):",
+      "claim_type": "",
+      "description": "The candidate function does not correctly handle the case where `items` is empty.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ004",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "fatal",
+      "source_claim": "The function should handle empty lists correctly",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "protocol_events": [],
+  "repair_statistics": {
+    "calls_saved_by_suppression": 0,
+    "failure_limit": 2,
+    "failures_by_stage": {},
+    "invalid_elements_discarded": 0,
+    "pending_stages": [],
+    "repair_attempted": 0,
+    "repair_failed": 0,
+    "repair_succeeded": 0,
+    "repair_suppressed": 0
+  },
+  "repair_outcomes": [],
+  "epistemic_checks": [
+    {
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C2",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C3",
+      "checks": [],
+      "model_calls": 0
+    }
+  ],
+  "cycle_progress": [
+    {
+      "blockers": [],
+      "cycle": 1,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "issue_state"
+      ]
+    },
+    {
+      "blockers": [],
+      "cycle": 2,
+      "no_progress_cycles": 1,
+      "reasons": []
+    },
+    {
+      "blockers": [],
+      "cycle": 3,
+      "no_progress_cycles": 2,
+      "reasons": []
+    }
+  ],
+  "no_progress_cycles": 2,
+  "no_progress_stop": false,
+  "mandatory_action_overrides": 0,
+  "operator_sequence": [
+    "EVIDENCE",
+    "EVIDENCE",
+    "VERIFY"
+  ],
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "error_records": []
+}
