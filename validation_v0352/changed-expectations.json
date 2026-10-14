@@ -1,0 +1,140 @@
+[
+  {
+    "file": "tests/test_audit_policy.py",
+    "test": "test_empty_justification_keeps_concern_open_at_its_severity",
+    "reason": "Invalid retirement of an advisory proposal is recorded/reopened, not promoted into a demonstrated candidate defect.",
+    "old_method_sha256": "ce646a1e7068915d2d0a7fc56afc496624951f7e70abb8dd5624bba5a8e60252"
+  },
+  {
+    "file": "tests/test_audit_policy.py",
+    "test": "test_genuine_high_severity_concern_still_escalates_and_remains_unresolved",
+    "reason": "Severity alone is not evidence; actual scoped high failures remain covered by S2/R11 and trusted-check lifecycle controls.",
+    "old_method_sha256": "8e05ad7e1d81fac56e2a3368cf5a90550f15e0d69eabb93f5cca7976c3a31a32"
+  },
+  {
+    "file": "tests/test_audit_policy.py",
+    "test": "test_unsupported_assumption_transition_resets_without_severity_inflation",
+    "reason": "Model assumption support is intercepted before it alters authority; no unsupported transition is applied and then undone.",
+    "old_method_sha256": "39a502c2f3eff358d49d37d26c6af8eb783cd5db4d402a5bac527d2a8998ce85"
+  },
+  {
+    "file": "tests/test_end_engine.py",
+    "test": "test_weaknesses_persist_without_verifier_resolution",
+    "reason": "Advisory findings persist and remain targetable, but do not override an independently configured rule verifier.",
+    "old_method_sha256": "9bee44593fe2a6c58cfac434d9f780077e881f1130c9f07f66c5d35ef35b62aa"
+  },
+  {
+    "file": "tests/test_final_reconciliation.py",
+    "test": "test_c0_restored_after_identical_c1_acquires_unresolved_high_concern",
+    "reason": "Reconciliation cannot turn a later ungrounded model allegation into a proven high defect; raw history and uncertainty remain.",
+    "old_method_sha256": "3771ba3f2b8bf74a853ff285371a7682855e49b0099af90334d225051c2f6e6c"
+  },
+  {
+    "file": "tests/test_final_reconciliation.py",
+    "test": "test_budget_exhaustion_keeps_its_cause_and_reports_applicable_concerns",
+    "reason": "A model allegation no longer forces a budget stop; an explicit probe keeps the intended interruption/termination test exercised.",
+    "old_method_sha256": "ff34be2beb42b7279fec1e99092ebe4f0d9cca9eabbfd6490a7f483b10542c64"
+  },
+  {
+    "file": "tests/test_integrity_review.py",
+    "test": "test_critique_cannot_disguise_non_applicability_as_engine_support",
+    "reason": "Model NOT_APPLICABLE/support updates stay proposals before knowledge mutation, while a real scoped claim still verifies.",
+    "old_method_sha256": "a1803d0e29fc79eb6ccbe543249798082543e68e70868f77c46257261914479a"
+  },
+  {
+    "file": "tests/test_integrity_review.py",
+    "test": "test_content_contradiction_on_identical_candidate_stays_visible",
+    "reason": "An unsupported model opposition is retained as an advisory assessment, not promoted into an executed-evidence contradiction.",
+    "old_method_sha256": "970c368f4403bde1d11fad2bac05b7d0f99fe2ec37b96b17762087fab31ad9ee"
+  },
+  {
+    "file": "tests/test_integrity_review.py",
+    "test": "test_explicit_rollback_keeps_rollback_and_reports_applicable_conflict",
+    "reason": "A model-set fatal label lacks scope proof; it cannot force rejection/rollback. Trusted-failure rollback controls remain unchanged.",
+    "old_method_sha256": "0b23e5210d24a5e4625d9b7e02080abd5849fb4011ec8cbc9c95288d6a3fe87a"
+  },
+  {
+    "file": "tests/test_integrity_review.py",
+    "test": "test_contradiction_resolved_later_by_validated_transition_is_not_reraised",
+    "reason": "The ungrounded model stance is not an evidence contradiction; the real scoped retirement still applies and is not resurrected.",
+    "old_method_sha256": "b0fe5dde7a1e443ac333612ce80331c0c6b5ba686c29ebbe6ed99534ec571930"
+  },
+  {
+    "file": "tests/test_cognitive_brain.py",
+    "test": "test_deep_run_branches_questions_and_synthesis_are_real_stages",
+    "reason": "Model-only state/support assertions no longer complete scrutiny; bounded compatibility and goal preservation still tested.",
+    "old_method_sha256": "27b6ba5f5a8942f4bccfce084415a92c881fe5204359ec7997cbf7ed00b6cb9a"
+  },
+  {
+    "file": "tests/test_cognitive_brain.py",
+    "test": "test_critical_demo_is_bounded_and_does_not_replace_goal",
+    "reason": "Model-only state/support assertions no longer complete scrutiny; bounded compatibility and goal preservation still tested.",
+    "old_method_sha256": "9f86427bb413067a400df2ca3f61583244f586297cb9509070c25317d2e93680"
+  },
+  {
+    "file": "tests/test_evidence_integrity.py",
+    "test": "test_missing_evidence_stays_visible_after_rollback",
+    "reason": "The best candidate is retained with scope uncertainty; a model allegation alone no longer emits a rollback event.",
+    "old_method_sha256": "8d0eac0a0af1d0b9a59c5de692a52291c9ad7aad765ab1dbf7f0464f55a9ff7b"
+  },
+  {
+    "file": "tests/test_final_reconciliation.py",
+    "test": "test_candidate_specific_audit_failure_is_not_transferred",
+    "reason": "An invalid retirement is recorded but cannot promote the underlying advisory concern into a proven defect.",
+    "old_method_sha256": "e34ce0cd2a6bbf37e783f44c4dfcf62ba29df5628166f68b040519b75b93b11d"
+  },
+  {
+    "file": "tests/test_quality.py",
+    "test": "test_controlled_regression_returns_best_and_retains_latest",
+    "reason": "The unvalidated C2 concern blocks completed assessment without proving failure; C4 executed failure still rolls back to verified C3.",
+    "old_method_sha256": "37f35106b828fd6b246edfea7420c6ac3cf87f87fba7a5006033ef5fae53ed2b"
+  },
+  {
+    "file": "tests/test_quality.py",
+    "test": "test_fatal_revision_cannot_receive_good_revision_label",
+    "reason": "A model-set fatal label without a demonstrated contract violation does not establish a bad revision.",
+    "old_method_sha256": "643284ff72ee25c51c4a445ff165af50d4553f53dec4063b22d82a6806de9bbb"
+  },
+  {
+    "file": "tests/test_quality.py",
+    "test": "test_successful_correction_gets_recovery_transition_label",
+    "reason": "A real scoped check can verify the correction; the initial model-only allegation did not establish a rejected failure to recover from.",
+    "old_method_sha256": "b7c649326ca16f221d6e5cd0ed58c80d29fd65c97d5e683c92ecbd83615b89ac"
+  },
+  {
+    "file": "tests/test_quality.py",
+    "test": "test_legacy_demos_remain_compatible_but_unjudged",
+    "reason": "The production fixture cannot close its candidate assumptions using model-only support updates; unjudged labels remain blocked/inconclusive.",
+    "old_method_sha256": "08ff68f3731e4d0d4ec515de4564094b8233f0f1262c67c97275af41520d0612"
+  },
+  {
+    "file": "tests/test_v0351_regressions.py",
+    "test": "test_safe_status_revision_wins_equal_gate_rank_without_verified_promotion",
+    "reason": "Unsupported model verification is inconclusive, not a demonstrated defect; safe output and no-progress nonacceptance remain protected.",
+    "old_method_sha256": "9b972e82f6f71d6f18671cc3cb3a07d8bb7f378516eccd065db73cc9be96e01b"
+  },
+  {
+    "file": "tests/test_v0351_regressions.py",
+    "test": "test_S17_no_progress_does_not_create_acceptance",
+    "reason": "Unsupported model verification is inconclusive, not a demonstrated defect; safe output and no-progress nonacceptance remain protected.",
+    "old_method_sha256": "8db9a79a60df95856d23387867e6c5ba0d0c38c5e45201bdae97132e07d27005"
+  },
+  {
+    "file": "tests/test_v035_regressions.py",
+    "test": "test_C0_AB_structured_vs_native_metadata_stays_separate",
+    "reason": "Structured requests intentionally add source labels; native initial requests and output/protocol separation remain unchanged.",
+    "old_method_sha256": "ea73472b0846ed121c57ef06bca36aab43bec529573fde784ca95cdce9899a1a"
+  },
+  {
+    "file": "tests/test_v035_regressions.py",
+    "test": "test_R12_real_task_constraint_violation_still_counts",
+    "reason": "Validated finite findings use the Engine mechanical reason rather than treating the model wording as proof.",
+    "old_method_sha256": "6715bde2e9b1b1073f4504237d398f37705b443fcd2699423cc6c3127f7ccb8e"
+  },
+  {
+    "file": "tests/test_v035_regressions.py",
+    "test": "test_R9_contradicting_a_task_premise_is_not_a_defect",
+    "reason": "A bare executed-ID string supplies no artifact/coverage declaration; scoped full-artifact positive controls remain in S1/S2/T4.",
+    "old_method_sha256": "608d3c6d491b35d035047085ed3810d2745d224fcd013a126dd7a8a31b36782b"
+  }
+]

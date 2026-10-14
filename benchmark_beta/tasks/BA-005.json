@@ -1,0 +1,26 @@
+{
+ "task_id": "BA-005",
+ "category": "hidden_assumption",
+ "difficulty": "medium",
+ "prompt": "Three services logged these events:\n  E1 (payments): 2026-03-08T01:50:00-05:00\n  E2 (auth): 2026-03-08T07:20:00+01:00\n  E3 (billing): 2026-03-08T06:45:00Z\nWhich event happened first, which happened last, and how many minutes elapsed between the first and the last? Give the final answer as a JSON object with keys \"first\", \"last\" (event IDs) and \"elapsed_minutes\" (integer), in a ```json code block.",
+ "constraints": [
+  "event IDs",
+  "integer minutes"
+ ],
+ "evaluation": {
+  "type": "known_answer",
+  "evaluator": "json_fields",
+  "expected": {
+   "first": "E2",
+   "last": "E1",
+   "elapsed_minutes": 30
+  }
+ },
+ "expected_properties": [
+  "timestamps normalized to one time zone before comparison"
+ ],
+ "failure_conditions": [
+  "comparing local clock times (E1 first, E2 last, 330 minutes)"
+ ],
+ "purpose": "The obvious comparison assumes one time zone."
+}

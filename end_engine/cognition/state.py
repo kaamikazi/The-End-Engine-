@@ -46,6 +46,7 @@ class Claim:
     confidence: float | None = None
     evidence_status: EvidenceStatus = EvidenceStatus.UNVERIFIED
     evidence: str = ""
+    source_origin: str = 'CANDIDATE'
 
 
 @dataclass(frozen=True)
@@ -56,6 +57,8 @@ class Assumption:
     risk: str = "HIGH"
     status: AssumptionStatus = AssumptionStatus.UNTESTED
     evidence: str = ""
+    source_origin: str = 'UNKNOWN'
+    decisive: bool = True
 
 
 @dataclass(frozen=True)

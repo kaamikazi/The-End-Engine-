@@ -1,0 +1,250 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C0",
+  "calibration": {
+   "basis": "quality_gate=BLOCKED",
+   "external_passed": false,
+   "internal": "inconclusive",
+   "label": "INCONCLUSIVE"
+  },
+  "delta_validation": [
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C1"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C2"
+   }
+  ],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 5585,
+    "effect": "neutral",
+    "external_after": 0.0,
+    "external_before": 0.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C1",
+    "target": "C0:evidence"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 5753,
+    "effect": "neutral",
+    "external_after": 0.0,
+    "external_before": 0.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "SECOND_ORDER_EFFECT",
+    "revision_candidate": "C2",
+    "target": "C0:failure_modes"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 9267,
+    "effect": null,
+    "external_after": null,
+    "external_before": 0.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "ALTERNATIVE",
+    "revision_candidate": null,
+    "target": "C0:alternatives"
+   }
+  ],
+  "overthinking": [
+   "B_cycles_without_external_benefit"
+  ],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.0
+    },
+    "C1": {
+     "passed": false,
+     "score": 0.0
+    },
+    "C2": {
+     "passed": false,
+     "score": 0.0
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C0",
+   "regressions": [],
+   "returned_candidate_id": "C0"
+  },
+  "rollbacks": [
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C1",
+    "rejected_score": 0.0,
+    "restored_to": "C0",
+    "returned": "C0",
+    "returned_score": 0.0
+   },
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C2",
+    "rejected_score": 0.0,
+    "restored_to": "C0",
+    "returned": "C0",
+    "returned_score": 0.0
+   }
+  ]
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 693,
+   "checks": [
+    {
+     "detail": "missing required JSON keys",
+     "name": "format",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": null,
+    "claim_region": "whole text"
+   },
+   "format_ok": false,
+   "passed": false,
+   "review_flags": [
+    "no parseable evidence JSON; judged from text only for fabricated references"
+   ],
+   "score": 0.0,
+   "task_id": "BA-011"
+  },
+  "C1": {
+   "answer_chars": 693,
+   "checks": [
+    {
+     "detail": "missing required JSON keys",
+     "name": "format",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": null,
+    "claim_region": "whole text"
+   },
+   "format_ok": false,
+   "passed": false,
+   "review_flags": [
+    "no parseable evidence JSON; judged from text only for fabricated references"
+   ],
+   "score": 0.0,
+   "task_id": "BA-011"
+  },
+  "C2": {
+   "answer_chars": 693,
+   "checks": [
+    {
+     "detail": "missing required JSON keys",
+     "name": "format",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": null,
+    "claim_region": "whole text"
+   },
+   "format_ok": false,
+   "passed": false,
+   "review_flags": [
+    "no parseable evidence JSON; judged from text only for fabricated references"
+   ],
+   "score": 0.0,
+   "task_id": "BA-011"
+  }
+ },
+ "final": {
+  "answer_chars": 693,
+  "checks": [
+   {
+    "detail": "missing required JSON keys",
+    "name": "format",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "deterministic_validator",
+  "evaluator": "evidence",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": null,
+   "claim_region": "whole text"
+  },
+  "format_ok": false,
+  "passed": false,
+  "review_flags": [
+   "no parseable evidence JSON; judged from text only for fabricated references"
+  ],
+  "score": 0.0,
+  "task_id": "BA-011"
+ },
+ "run_id": "BA-011.T1.FULL_END",
+ "stages": {}
+}

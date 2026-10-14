@@ -1,0 +1,262 @@
+{
+  "root": "E:\\The End Engine",
+  "origin": "https://github.com/kaamikazi/The-End-Engine-.git",
+  "original_head": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+  "original_branch": "main",
+  "engine_version": "0.3.5.2",
+  "engine_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+  "changed_counts": {
+    " M": 390,
+    " D": 20,
+    "??": 5017
+  },
+  "local_file_count": 7447,
+  "local_size_bytes": 264499038,
+  "nested_git": [],
+  "submodules": "No submodules (.gitmodules absent; index contains no gitlinks); child submodule command unavailable in sandbox\n",
+  "recommendation_counts": {
+    "INCLUDE": 4061,
+    "EXCLUDE": 3383,
+    "HOLD_LARGE_LOCAL_ONLY": 3
+  },
+  "size_thresholds": {
+    "10MiB": [
+      {
+        "path": "experimental_task_pack_v1_safety_boundary/validation/HISTORICAL_SINGLE_RESULTS.json",
+        "size_bytes": 15443273,
+        "sha256": "6708d3490d413c90c4b60363a2d95d9d390ef7268222505c7d153d246f8a0c52"
+      },
+      {
+        "path": "experimental_task_pack_v1_safety_boundary/validation/scratch/archive_final/END_Experimental_Safety_Boundary_Review_v1/experimental_task_pack_v1_safety_boundary/validation/HISTORICAL_SINGLE_RESULTS.json",
+        "size_bytes": 15443273,
+        "sha256": "6708d3490d413c90c4b60363a2d95d9d390ef7268222505c7d153d246f8a0c52"
+      },
+      {
+        "path": "experimental_task_pack_v1_safety_boundary/validation/scratch/archive_preflight/END_Experimental_Safety_Boundary_Review_v1/experimental_task_pack_v1_safety_boundary/validation/HISTORICAL_SINGLE_RESULTS.json",
+        "size_bytes": 15443273,
+        "sha256": "6708d3490d413c90c4b60363a2d95d9d390ef7268222505c7d153d246f8a0c52"
+      }
+    ],
+    "25MiB": [],
+    "50MiB": [],
+    "100MiB": []
+  },
+  "per_directory": {
+    ".gitattributes": {
+      "files": 1,
+      "bytes": 88
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 160
+    },
+    ".venv": {
+      "files": 1658,
+      "bytes": 27128425
+    },
+    "END_Experimental_Independent_Review_v1.zip": {
+      "files": 1,
+      "bytes": 744375
+    },
+    "END_Experimental_Independent_Review_v1_R2.zip": {
+      "files": 1,
+      "bytes": 593260
+    },
+    "END_Experimental_Independent_Review_v1_R3.zip": {
+      "files": 1,
+      "bytes": 979279
+    },
+    "END_Experimental_Safety_Boundary_Review_v1.zip": {
+      "files": 1,
+      "bytes": 2232598
+    },
+    "IMPLEMENTATION_REPORT.md": {
+      "files": 1,
+      "bytes": 20001
+    },
+    "IMPLEMENTATION_REPORT_JEV_EXPERIMENT.md": {
+      "files": 1,
+      "bytes": 15248
+    },
+    "IMPLEMENTATION_REPORT_v0.1.md": {
+      "files": 1,
+      "bytes": 4763
+    },
+    "IMPLEMENTATION_REPORT_v0.2.md": {
+      "files": 1,
+      "bytes": 8057
+    },
+    "IMPLEMENTATION_REPORT_v0.3.1.md": {
+      "files": 1,
+      "bytes": 11599
+    },
+    "IMPLEMENTATION_REPORT_v0.3.2.md": {
+      "files": 1,
+      "bytes": 9715
+    },
+    "IMPLEMENTATION_REPORT_v0.3.3.md": {
+      "files": 1,
+      "bytes": 15422
+    },
+    "IMPLEMENTATION_REPORT_v0.3.4.md": {
+      "files": 1,
+      "bytes": 16786
+    },
+    "IMPLEMENTATION_REPORT_v0.3.5.1.md": {
+      "files": 1,
+      "bytes": 20562
+    },
+    "IMPLEMENTATION_REPORT_v0.3.5.2.md": {
+      "files": 1,
+      "bytes": 22713
+    },
+    "IMPLEMENTATION_REPORT_v0.3.5.md": {
+      "files": 1,
+      "bytes": 20001
+    },
+    "IMPLEMENTATION_REPORT_v0.3.md": {
+      "files": 1,
+      "bytes": 9839
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 56917
+    },
+    "REVISION_VALUE_AUDIT_v0352.md": {
+      "files": 1,
+      "bytes": 28678
+    },
+    "architecture_review_v1": {
+      "files": 40,
+      "bytes": 3645039
+    },
+    "benchmark_alpha": {
+      "files": 836,
+      "bytes": 16526471
+    },
+    "benchmark_beta": {
+      "files": 464,
+      "bytes": 11705234
+    },
+    "benchmark_beta_gemini": {
+      "files": 459,
+      "bytes": 8096730
+    },
+    "build": {
+      "files": 63,
+      "bytes": 330034
+    },
+    "demo_output": {
+      "files": 4,
+      "bytes": 408869
+    },
+    "demo_v01_compat_output": {
+      "files": 4,
+      "bytes": 857199
+    },
+    "demo_v02_output": {
+      "files": 7,
+      "bytes": 4910626
+    },
+    "demo_v03_compat_v01": {
+      "files": 4,
+      "bytes": 861401
+    },
+    "demo_v03_compat_v02": {
+      "files": 4,
+      "bytes": 2543766
+    },
+    "demo_v03_output": {
+      "files": 9,
+      "bytes": 6169191
+    },
+    "docs": {
+      "files": 2,
+      "bytes": 13630
+    },
+    "end_engine": {
+      "files": 119,
+      "bytes": 718085
+    },
+    "end_engine.egg-info": {
+      "files": 6,
+      "bytes": 2789
+    },
+    "experimental_task_pack_v1": {
+      "files": 122,
+      "bytes": 4801773
+    },
+    "experimental_task_pack_v1_r2": {
+      "files": 366,
+      "bytes": 10052385
+    },
+    "experimental_task_pack_v1_r3": {
+      "files": 736,
+      "bytes": 28931249
+    },
+    "experimental_task_pack_v1_safety_boundary": {
+      "files": 1428,
+      "bytes": 92594591
+    },
+    "independent_review_package_v1": {
+      "files": 157,
+      "bytes": 6560011
+    },
+    "pyproject.toml": {
+      "files": 1,
+      "bytes": 446
+    },
+    "run-demo.ps1": {
+      "files": 1,
+      "bytes": 1180
+    },
+    "tests": {
+      "files": 19,
+      "bytes": 405839
+    },
+    "trajectories": {
+      "files": 4,
+      "bytes": 39609
+    },
+    "v0351_core_regression_pilot": {
+      "files": 393,
+      "bytes": 13654842
+    },
+    "v035_core_regression_pilot": {
+      "files": 373,
+      "bytes": 12774710
+    },
+    "validation_jev": {
+      "files": 13,
+      "bytes": 785851
+    },
+    "validation_v031": {
+      "files": 7,
+      "bytes": 97845
+    },
+    "validation_v032": {
+      "files": 6,
+      "bytes": 101698
+    },
+    "validation_v033": {
+      "files": 8,
+      "bytes": 113689
+    },
+    "validation_v034": {
+      "files": 11,
+      "bytes": 186107
+    },
+    "validation_v035": {
+      "files": 9,
+      "bytes": 61612
+    },
+    "validation_v0351": {
+      "files": 25,
+      "bytes": 1107692
+    },
+    "validation_v0352": {
+      "files": 69,
+      "bytes": 3500359
+    }
+  }
+}

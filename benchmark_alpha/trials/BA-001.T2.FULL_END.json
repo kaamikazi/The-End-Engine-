@@ -1,0 +1,201 @@
+{
+ "answer": "The conversion formula from Celsius to Fahrenheit is: F = (C * 9/5) + 32. Applying this formula to each temperature:\n-40°C = (-40 * 9/5) + 32 = -72 + 32 = -40.0°F\n0°C = (0 * 9/5) + 10 = 32.0°F\n36.6°C = (36.6 * 9/5) + 32 = 65.88 + 32 = 67.9°F\n100°C = (100 * 9/5) + 32 = 180 + 32 = 212.0°F\n21.5°C = (21.5 * 9/5) + 32 = 38.7 + 32 = 60.7°F\n\nThe converted temperatures rounded to one decimal place are: [-40.0, 32.0, 67.9, 212.0, 60.7].",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 221,
+   "latency_ms": 13619.999,
+   "output_tokens": 304,
+   "prompt_chars": 762,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 1241807367,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 905,
+   "latency_ms": 6061.475,
+   "output_tokens": 124,
+   "prompt_chars": 2759,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 740675110,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 563,
+   "latency_ms": 26628.998,
+   "output_tokens": 555,
+   "prompt_chars": 1561,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": 1909412904,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1486,
+   "latency_ms": 10276.937,
+   "output_tokens": 170,
+   "prompt_chars": 4668,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": 3698419862,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1518,
+   "latency_ms": 21418.335,
+   "output_tokens": 343,
+   "prompt_chars": 4849,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": 872220627,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1734,
+   "latency_ms": 13140.385,
+   "output_tokens": 196,
+   "prompt_chars": 5423,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": 3121909840,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 1053,
+   "latency_ms": 5100.682,
+   "output_tokens": 92,
+   "prompt_chars": 3120,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": 799545867,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "easy_transformation",
+ "condition": "FULL_END",
+ "cost": {
+  "branch_count": 0,
+  "calls": 7,
+  "calls_by_role": {
+   "adversarial_judge": 2,
+   "generator": 4,
+   "judge": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 1784,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 9264,
+  "model_latency_ms": 96246.811,
+  "prompt_tokens": 7480,
+  "tool_check_calls": 0,
+  "total_tokens": 9264,
+  "truncated_text_answers": 0,
+  "wall_ms": 96371.499
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "normal",
+  "errors": [
+   {
+    "message": "Revision plan targets unknown weakness IDs",
+    "stage": "revision_plan"
+   }
+  ],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "REJECT"
+   }
+  ],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": false,
+   "remaining_issues": [
+    "The task specifies a JSON array of numbers, but the candidate provided a list of strings with decimal points (e.g., '-40.0', '32.0') instead of numbers."
+   ],
+   "score": 0.8
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "b1c2eba6-3483-47ec-8dac-6119f075a40a.jsonl",
+  "trajectory_id": "b1c2eba6-3483-47ec-8dac-6119f075a40a",
+  "trajectory_sha256": "d4262f54a1213f4e7bcad0be2342b70e7e3ed60dad227c67bf6b0e55535f4bcd"
+ },
+ "ended_at": "2026-10-01T06:00:04.012322+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 900.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-001.T2.FULL_END",
+ "stages": {},
+ "started_at": "2026-10-01T05:58:27.639862+00:00",
+ "task_id": "BA-001",
+ "trial": 2,
+ "trial_id": "BA-001.T2",
+ "trial_seed": 161788062
+}

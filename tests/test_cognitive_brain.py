@@ -325,7 +325,7 @@ class BrainIntegrationTests(unittest.TestCase):
         record = engine.last_trajectory
         self.assertEqual(record["errors"], [])
         self.assertEqual(len(record["branches"]), 3)
-        self.assertEqual(result.termination_reason, StopReason.QUALITY_THRESHOLD_REACHED)
+        self.assertEqual(result.termination_reason, StopReason.BUDGET_EXHAUSTED)
         self.assertEqual(len(record["questions"]), result.iterations)
         self.assertTrue(record["operator_utilities"])
         self.assertTrue(record["meta_checks"])
@@ -344,13 +344,13 @@ class BrainIntegrationTests(unittest.TestCase):
         engine = self.engine()
         result = engine.run(PRODUCTION_TASK, mode="critical", max_cycles=8)
         record = engine.last_trajectory
-        self.assertEqual(result.termination_reason, StopReason.QUALITY_THRESHOLD_REACHED)
-        self.assertEqual(result.iterations, 5)
+        self.assertEqual(result.termination_reason, StopReason.BUDGET_EXHAUSTED)
+        self.assertEqual(result.iterations, 8)
         self.assertEqual(record["task"]["content"], PRODUCTION_TASK)
         self.assertEqual(len(record["reframings"]), 1)
         self.assertTrue(all(c["request"]["context"].get("task", PRODUCTION_TASK) == PRODUCTION_TASK for c in record["model_calls"]))
         self.assertEqual(len(record["branches"]), 3)
-        self.assertEqual(len(record["operator_outcomes"]), 5)
+        self.assertEqual(len(record["operator_outcomes"]), result.iterations)
 
     def test_v02_round_trip_and_v01_compatibility(self):
         engine = self.engine()

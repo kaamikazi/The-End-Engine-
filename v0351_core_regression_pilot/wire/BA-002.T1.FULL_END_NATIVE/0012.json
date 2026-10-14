@@ -1,0 +1,85 @@
+{
+  "run_id": "BA-002.T1.FULL_END_NATIVE",
+  "seq": 12,
+  "purpose": "adversarial_tests",
+  "requested_at": "2026-10-07T12:17:30.461569+00:00",
+  "completed_at": "2026-10-07T12:17:53.477833+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "payload": {
+    "model": "qwen3:4b",
+    "stream": false,
+    "think": false,
+    "prompt": "Generate up to four concrete adversarial scenarios and observable expected properties. Do not claim execution; executable describes suitability only, not actual execution.\n\nINPUT (JSON):\n{\"audit_targets\": [], \"candidate\": {\"alias\": \"A\", \"content\": \"Okay, let's see. The task is to fix a Python function that has bugs. The function is supposed to split a list into chunks of a given size. The previous answer already tried to fix it, but I need to make sure it's correct.\\n\\nThe original function had a loop that used `range(0, len(items) - size, size)`. That's wrong because if the list length is, say, 5 and size is 2, then len(items)-size is 3. The range would go 0, 2 (since step is 2), so the next would be 4 which is beyond 3. But the last chunk (indices 4 and 5) would be missed. So the stop condition should be `len(items)`, not `len(items) - size`.\\n\\nAlso, the docstring says `size` must be a positive integer. The original function didn't check that, so it could crash if size is 0 or negative. So we need to add a check that raises ValueError if size isn't a positive integer.\\n\\nThe previous answer added the check and fixed the loop. Let me verify with examples.\\n\\nTest case 1: items = [1,2,3,4,5,6], size=2. The correct chunks should be [[1,2], [3,4], [5,6]]. The original loop would stop at 4 (since len(items)-size=4), so it would take i=0 and i=2, but miss i=4. The fixed loop uses range(0,6,2) which is [0,2,4], so it takes all three chunks. Good.\\n\\nTest case 2: items = [1,2,3], size=2. Original loop would do len(items)-size=1, so range(0,1,2) is [0] → only [1,2], but the last chunk [3] is missing. Fixed loop uses range(0,3,2) → [0,2], so it takes [1,2] and [3] (since items[2:4] is [3]). Correct.\\n\\nAnother edge case: empty list. If items is empty, the loop runs 0 times, returns empty list. Correct.\\n\\nCheck for size=0: the function raises ValueError as required. Size negative: same.\\n\\nSo the previous answer seems correct. The key fixes are the validation and the loop range.\\n\\nThe user wants the answer in a code block. So I'll output the corrected function as specified.\\n</think>\\n\\n```python\\ndef chunk(items, size):\\n    \\\"\\\"\\\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\\n    `size` must be a positive integer; raise ValueError otherwise.\\\"\\\"\\\"\\n    if not isinstance(size, int) or size <= 0:\\n        raise ValueError(\\\"size must be a positive integer\\\")\\n    result = []\\n    for i in range(0, len(items), size):\\n        result.append(items[i:i + size])\\n    return result\\n```\"}, \"claims\": [{\"claim_id\": \"CL012\", \"text\": \"Also, the docstring says `size` must be a positive integer.\"}, {\"claim_id\": \"CL001\", \"text\": \"`size` must be a positive integer; raise ValueError otherwise.\\\"\"}, {\"claim_id\": \"CL007\", \"text\": \"raise ValueError(\\\"size must be a positive integer\\\")\"}], \"task\": \"This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block.\\n\\n```python\\ndef chunk(items, size):\\n    \\\"\\\"\\\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\\n    `size` must be a positive integer; raise ValueError otherwise.\\\"\\\"\\\"\\n    result = []\\n    for i in range(0, len(items) - size, size):\\n        result.append(items[i:i + size])\\n    return result\\n```\"}\n\nRespond with only one JSON object that satisfies this JSON Schema:\n{\"additionalProperties\": false, \"properties\": {\"tests\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"execution_status\": {\"enum\": [\"UNEXECUTED\", \"REASONED\", \"SIMULATED\", \"EXECUTABLE\"], \"type\": \"string\"}, \"expected_property\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"scenario\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"target\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"target\", \"scenario\", \"expected_property\", \"execution_status\"], \"type\": \"object\"}, \"maxItems\": 4, \"type\": \"array\"}}, \"required\": [\"tests\"], \"type\": \"object\"}",
+    "options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "num_predict": 4096,
+      "num_ctx": 8192,
+      "seed": 2854233507
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "tests": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "expected_property": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "UNEXECUTED",
+                  "REASONED",
+                  "SIMULATED",
+                  "EXECUTABLE"
+                ]
+              }
+            },
+            "required": [
+              "target",
+              "scenario",
+              "expected_property",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "tests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-07T12:17:53.4626209Z",
+    "response": "{\n  \"tests\": [\n    {\n      \"target\": \"CL001\",\n      \"scenario\": \"The function's docstring specifies that `size` must be a positive integer; the function should raise ValueError for non-positive integers.\",\n      \"expected_property\": \"The function raises ValueError when size is not a positive integer (e.g., size=0 or size=-1).\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"CL007\",\n      \"scenario\": \"The function uses `range(0, len(items), size)` in the corrected version to avoid missing the last chunk when the list length is not divisible by size.\",\n      \"expected_property\": \"The function correctly handles cases where the list length is not divisible by size (e.g., items=[1,2,3], size=2 produces [[1,2], [3]]).\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"CL012\",\n      \"scenario\": \"The original function used `len(items) - size` in the range, causing the last chunk to be missed when the list length is not divisible by size.\",\n      \"expected_property\": \"The corrected function avoids the off-by-one error by using `len(items)` as the stop value in the range, ensuring all chunks are included.\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"CL001\",\n      \"scenario\": \"The function's validation checks that `size` is a positive integer before processing the list.\",\n      \"expected_property\": \"The function raises ValueError with the message \\\"size must be a positive integer\\\" when `size` is not a positive integer.\",\n      \"execution_status\": \"REASONED\"\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 22962011900,
+    "load_duration": 5795500,
+    "prompt_eval_count": 1129,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 948509000,
+    "eval_count": 377,
+    "eval_duration": 21913955000
+  },
+  "error": null,
+  "latency_ms": 23006.624
+}

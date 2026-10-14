@@ -1,0 +1,122 @@
+{
+ "answer": "The evidence provided only includes a load test for a single region (us-east-1) with 100 requests/s sustained for 10 minutes under synthetic read-only traffic, reporting a p99 latency of 120 ms with 0 errors. This test does not account for production peak traffic (5,000 requests/s), mixed read/write operations, or multiple regions (3 regions). The p99 latency of 120 ms in the test is specific to read-only traffic and a much lower request rate than the target (5,00:00 requests/s). Therefore, the evidence does not support a promise of p99 under 200 ms for the specified production conditions. The contract promise cannot be made based on this evidence alone.",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 336,
+   "latency_ms": 10069.122,
+   "output_tokens": 226,
+   "prompt_chars": 1212,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 3898021274,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 944,
+   "latency_ms": 11883.751,
+   "output_tokens": 231,
+   "prompt_chars": 3423,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 1718656106,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "narrow_check_broad_claim",
+ "condition": "FULL_END",
+ "cost": {
+  "branch_count": 0,
+  "calls": 2,
+  "calls_by_role": {
+   "generator": 2
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 457,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 1737,
+  "model_latency_ms": 21952.873,
+  "prompt_tokens": 1280,
+  "tool_check_calls": 0,
+  "total_tokens": 1737,
+  "truncated_text_answers": 0,
+  "wall_ms": 21979.046
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": null,
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "deep",
+  "errors": [
+   {
+    "message": "Invalid or duplicate weakness update: completeness",
+    "stage": "verification"
+   }
+  ],
+  "gate_decisions": [],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": false,
+   "remaining_issues": [
+    "The test does not account for production peak traffic (5,000 requests/s)",
+    "The test does not account for mixed read/write operations",
+    "The test does not account for multiple regions (3 regions)",
+    "The p99 latency of 120 ms is specific to read-only traffic and a much lower request rate than the target (5,000 requests/s)"
+   ],
+   "score": 0.2
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "279d3005-a673-4526-9075-4d72c938b291.jsonl",
+  "trajectory_id": "279d3005-a673-4526-9075-4d72c938b291",
+  "trajectory_sha256": "c64712a530c29c85f9dd23c88bdfcbf663aa1e1a34c11428f3f565a3d29ae94f"
+ },
+ "ended_at": "2026-09-30T19:35:01.027397+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 900.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 1,
+ "run_id": "BA-011.T2.FULL_END",
+ "stages": {},
+ "started_at": "2026-09-30T19:34:39.047221+00:00",
+ "task_id": "BA-011",
+ "trial": 2,
+ "trial_id": "BA-011.T2",
+ "trial_seed": 522479099
+}

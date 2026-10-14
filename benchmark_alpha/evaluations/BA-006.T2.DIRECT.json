@@ -1,0 +1,56 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 19315,
+  "checks": [
+   {
+    "detail": "no JSON object",
+    "name": "dedup_key",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "ack_timing",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "stale_event",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "no JSON object",
+    "name": "atomicity",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "structured_rubric",
+  "evaluator": "choices",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": null,
+   "claim_region": "whole text"
+  },
+  "format_ok": false,
+  "passed": false,
+  "review_flags": [],
+  "score": 0.0,
+  "task_id": "BA-006"
+ },
+ "run_id": "BA-006.T2.DIRECT",
+ "stages": {}
+}

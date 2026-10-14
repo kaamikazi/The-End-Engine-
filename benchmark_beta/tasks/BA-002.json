@@ -1,0 +1,134 @@
+{
+ "task_id": "BA-002",
+ "category": "debugging",
+ "difficulty": "easy",
+ "prompt": "This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block.\n\n```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```",
+ "constraints": [
+  "function name chunk",
+  "raise ValueError for non-positive size"
+ ],
+ "evaluation": {
+  "type": "executable_test",
+  "evaluator": "python_tests",
+  "function": "chunk",
+  "tests": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     2
+    ],
+    "expect": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      5
+     ]
+    ]
+   },
+   {
+    "args": [
+     [],
+     3
+    ],
+    "expect": []
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expect": [
+     [
+      1,
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     5
+    ],
+    "expect": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     1
+    ],
+    "expect": [
+     [
+      1
+     ],
+     [
+      2
+     ],
+     [
+      3
+     ],
+     [
+      4
+     ]
+    ]
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     0
+    ],
+    "raises": "ValueError"
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     -1
+    ],
+    "raises": "ValueError"
+   }
+  ]
+ },
+ "expected_properties": [
+  "last partial chunk kept",
+  "ValueError on size <= 0"
+ ],
+ "failure_conditions": [
+  "any unit test fails",
+  "no function found"
+ ]
+}

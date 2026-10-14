@@ -328,7 +328,7 @@ class LifecycleTests(unittest.TestCase):
             ToolCheck(True, "SYNTHETIC development subset", tuple(x.claim_id for x in claims), None, dev),))
         result, record = self.run_engine([c0, c1], ContentJudge(), tool)
         self.assertEqual((result.best_candidate_id, result.answer), ("C0", c0))
-        self.assertTrue(record["rollback_events"])
+        self.assertEqual(record["rollback_events"], [])  # Unsupported model negatives do not prove a regression.
         summary = record["scorecard"]["evidence_integrity"]
         self.assertEqual(summary["candidate_id"], "C0")
         missing = {i["id"]: i["status"] for i in summary["not_verified"]}

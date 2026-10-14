@@ -1,0 +1,58 @@
+{
+ "answer": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 211,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "direct_answer",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "failure_recovery",
+ "condition": "DIRECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 1,
+  "calls_by_role": {
+   "generator": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 53,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 264,
+  "model_latency_ms": 0,
+  "prompt_tokens": 211,
+  "tool_check_calls": 0,
+  "total_tokens": 264,
+  "truncated_text_answers": 0,
+  "wall_ms": 0.02
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-10-01T07:27:23.827574+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 4,
+ "run_id": "BA-007.T1.DIRECT",
+ "stages": {
+  "answer": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```"
+ },
+ "started_at": "2026-10-01T07:27:23.827574+00:00",
+ "task_id": "BA-007",
+ "trial": 1,
+ "trial_id": "BA-007.T1",
+ "trial_seed": 2952722812
+}

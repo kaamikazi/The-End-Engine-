@@ -58,11 +58,12 @@
   "prompt_tokens": 824,
   "tool_check_calls": 0,
   "total_tokens": 934,
-  "wall_ms": 0.037
+  "truncated_text_answers": 0,
+  "wall_ms": 0.031
  },
  "data_origin": "SYNTHETIC",
  "end": null,
- "ended_at": "2026-09-30T15:11:29.896175+00:00",
+ "ended_at": "2026-10-01T06:23:05.330138+00:00",
  "error": null,
  "model": {
   "data_origin": "SYNTHETIC",
@@ -77,7 +78,7 @@
   "final": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```",
   "initial": "Final answer:\n```json\n{\"corrupting_write\": \"W1_at_19\", \"prevention\": \"w1_checks_lease_before_writing\", \"w1_after_rejection\": \"retry_write\", \"w2_retry_on_timeout\": \"always_safe\", \"explanation\": \"Check first.\"}\n```"
  },
- "started_at": "2026-09-30T15:11:29.896175+00:00",
+ "started_at": "2026-10-01T06:23:05.330138+00:00",
  "task_id": "BA-007",
  "trial": 1,
  "trial_id": "BA-007.T1",

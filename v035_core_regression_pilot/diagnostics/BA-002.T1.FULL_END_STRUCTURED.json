@@ -1,0 +1,419 @@
+{
+  "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+  "task": "BA-002",
+  "condition": "FULL_END_STRUCTURED",
+  "external_score": 1.0,
+  "passed": true,
+  "format_ok": true,
+  "wall_seconds": 528.1980010000001,
+  "total_model_calls": 29,
+  "generator_calls": 10,
+  "judge_calls": 15,
+  "verifier_calls": 4,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "tokens": 44019,
+  "prompt_tokens": 35537,
+  "output_tokens": 8482,
+  "end_cycles": 3,
+  "stop_reason": "BUDGET_EXHAUSTED",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 3,
+  "quality_gate": "REJECT",
+  "c0_score": 1.0,
+  "c0_format_ok": true,
+  "c0_chars": 392,
+  "final_chars": 392,
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "grounding_incidents": 3,
+  "decisive_judge_findings": 8,
+  "nondecisive_judge_findings": 3,
+  "unsupported_claim_count": 0,
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 392
+    },
+    "C1": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 392
+    },
+    "C2": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 392
+    },
+    "C3": {
+      "task_id": "BA-002",
+      "evaluator": "python_tests",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 7,
+          "total": 7
+        },
+        "claim_region": "whole text"
+      },
+      "answer_chars": 392
+    }
+  },
+  "operator_sequence": [
+    "EVIDENCE",
+    "VERIFY",
+    "EVIDENCE"
+  ],
+  "judge_findings": [
+    {
+      "judgment_id": "J001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "category": "constraint_adherence",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": false,
+      "description": "The function does not correctly handle the case where `size` is 0 or negative, as it only raises ValueError when `size <= 0` but the loop condition is incorrect.",
+      "evidence": [
+        "The candidate function has a loop that runs from 0 to len(items) - size, which causes it to skip the last chunk when `size` is 1 or larger, and fails when `size` is greater than len(items)."
+      ],
+      "fatal": true,
+      "grounding": "MISATTRIBUTED",
+      "target": "chunk",
+      "task_reference": "This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block.\n\n```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```"
+    },
+    {
+      "judgment_id": "J002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "candidate_quote": "if size <= 0:\n    raise ValueError(\"size must be positive\")",
+      "category": "constraint_adherence",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The function does not handle the case where `size` is 0 correctly (raises ValueError but the docstring says it should raise ValueError when size <= 0)",
+      "evidence": [
+        "CANDIDATE: if size <= 0:\n    raise ValueError(\"size must be positive\")"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "chunk",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "J002",
+      "candidate_id": "C1",
+      "kind": "major_issues",
+      "candidate_quote": "if size <= 0:\n    raise ValueError(\"size must be positive\")",
+      "category": "constraint_adherence",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The function does not handle the case where `size` is 0 correctly (raises ValueError but the docstring says it should raise ValueError when size <= 0)",
+      "evidence": [
+        "CANDIDATE: if size <= 0:\n    raise ValueError(\"size must be positive\")"
+      ],
+      "fatal": false,
+      "grounding": "GROUNDED",
+      "target": "chunk",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "The function does not correctly handle the case where `size` is 0 or negative, as it does not raise ValueError for size <= 0",
+      "evidence": [
+        "CANDIDATE: the candidate function code"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "chunk",
+      "task_reference": "The task states that the function has bugs and needs to match its docstring"
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "major_issues",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "The loop in the function uses `range(0, len(items), size)` which is correct for the intended behavior, but the task shows a different implementation with `range(0, len(items) - size, size)` which is incorrect",
+      "evidence": [
+        "CANDIDATE: the candidate function code"
+      ],
+      "fatal": false,
+      "grounding": "GROUNDED",
+      "target": "chunk",
+      "task_reference": "The task shows a function with a bug: for i in range(0, len(items) - size, size)"
+    },
+    {
+      "judgment_id": "J004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "The function does not correctly handle cases where `size` is 0 or negative, as it only raises an error when `size <= 0` but does not check the condition properly.",
+      "evidence": [
+        "CL001"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "size must be positive integer",
+      "task_reference": "The function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block."
+    },
+    {
+      "judgment_id": "J004",
+      "candidate_id": "C3",
+      "kind": "major_issues",
+      "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "The function does not correctly handle cases where `items` is empty or the loop range is invalid.",
+      "evidence": [
+        "CL002"
+      ],
+      "fatal": false,
+      "grounding": "GROUNDED",
+      "target": "Split the list `items` into consecutive lists of length `size`",
+      "task_reference": "This function has bugs. Fix it so that it matches its docstring, and give the complete corrected function in a ```python code block."
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The function does not correctly handle the case where `size` is 0, but the docstring states `size` must be positive and raises ValueError otherwise. However, the function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list.",
+      "evidence": [
+        "CANDIDATE: The function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list."
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "CL001",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The function does not correctly handle the case where `size` is 1, as it skips the last element when `len(items) - size` is less than `i` (e.g., items = [1, 2], size = 1: returns [] instead of [[1], [2]]",
+      "evidence": [
+        "CL001",
+        "CL002"
+      ],
+      "fatal": true,
+      "grounding": "UNGROUNDED",
+      "target": "chunk",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The function does not correctly split the list into chunks of `size` when `len(items)` is less than `size` (e.g., items = [1], size = 2). The loop condition `for i in range(0, len(items) - size, size)` will not execute if `len(items) < size`, causing the last chunk to be missing.",
+      "evidence": [
+        "CL001",
+        "CL002"
+      ],
+      "fatal": true,
+      "grounding": "MISATTRIBUTED",
+      "target": "chunk",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "category": "constraint_adherence",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate function does not handle the case where `size` is 0 or negative correctly, violating the docstring requirement that `size` must be positive and a ValueError should be raised otherwise.",
+      "evidence": [
+        "CL001: `size` must be a positive integer; raise ValueError otherwise."
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "size must be positive",
+      "task_reference": ""
+    }
+  ],
+  "grounding_records": [
+    {
+      "candidate_id": "C0",
+      "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "description": "The function does not correctly handle the case where `size` is 0 or negative, as it only raises ValueError when `size <= 0` but the loop condition is incorrect.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "J001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "candidate_quote occurs only in the task, not in the candidate",
+      "severity": "fatal",
+      "status": "MISATTRIBUTED"
+    },
+    {
+      "candidate_id": "C1",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+      "claim_type": "",
+      "description": "The function does not correctly handle the case where `size` is 1, as it skips the last element when `len(items) - size` is less than `i` (e.g., items = [1, 2], size = 1: returns [] instead of [[1], [2]]",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ002",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "candidate_quote occurs neither in the candidate nor in the task",
+      "severity": "fatal",
+      "status": "UNGROUNDED"
+    },
+    {
+      "candidate_id": "C2",
+      "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+      "claim_type": "",
+      "description": "The function does not correctly split the list into chunks of `size` when `len(items)` is less than `size` (e.g., items = [1], size = 2). The loop condition `for i in range(0, len(items) - size, size)` will not execute if `len(items) < size`, causing the last chunk to be missing.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "candidate_quote occurs only in the task, not in the candidate",
+      "severity": "fatal",
+      "status": "MISATTRIBUTED"
+    }
+  ],
+  "protocol_events": [],
+  "error_records": []
+}

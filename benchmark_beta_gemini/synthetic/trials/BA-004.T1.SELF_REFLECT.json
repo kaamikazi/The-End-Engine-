@@ -1,0 +1,86 @@
+{
+ "answer": "Final answer:\n```json\n{\"A\": 0, \"B\": 0, \"C\": 2, \"D\": 1, \"E\": 3}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 140,
+   "latency_ms": 0.0,
+   "output_tokens": 16,
+   "purpose": "self_reflect_initial",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 200,
+   "latency_ms": 0.0,
+   "output_tokens": 4,
+   "purpose": "self_reflect_critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 198,
+   "latency_ms": 0.0,
+   "output_tokens": 16,
+   "purpose": "self_reflect_revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "constraint_satisfaction",
+ "condition": "SELF_REFLECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 3,
+  "calls_by_role": {
+   "generator": 3
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 36,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 574,
+  "model_latency_ms": 0,
+  "prompt_tokens": 538,
+  "tool_check_calls": 0,
+  "total_tokens": 574,
+  "truncated_text_answers": 0,
+  "wall_ms": 0.037
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-10-01T08:40:51.123578+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 2,
+ "run_id": "BA-004.T1.SELF_REFLECT",
+ "stages": {
+  "critique": "SYNTHETIC critique.",
+  "final": "Final answer:\n```json\n{\"A\": 0, \"B\": 0, \"C\": 2, \"D\": 1, \"E\": 3}\n```",
+  "initial": "Final answer:\n```json\n{\"A\": 0, \"B\": 0, \"C\": 2, \"D\": 1, \"E\": 3}\n```"
+ },
+ "started_at": "2026-10-01T08:40:51.123578+00:00",
+ "task_id": "BA-004",
+ "trial": 1,
+ "trial_id": "BA-004.T1",
+ "trial_seed": 4074584687
+}

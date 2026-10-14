@@ -2,6 +2,7 @@ from copy import deepcopy
 from uuid import uuid4
 
 from ..core.state import now, to_data
+from ..models.budget import RunCallBudget
 
 
 class Trajectory:
@@ -9,6 +10,7 @@ class Trajectory:
 
     def __init__(self, task, configuration, model):
         self._call_counter = 0
+        self.call_budget = None
         self._data = {
             "schema_version": "2.0", "trajectory_id": str(uuid4()),
             "task": {"content": task}, "configuration": deepcopy(configuration),
@@ -27,7 +29,11 @@ class Trajectory:
             "quality_gate_decisions": [], "fatal_issues": [], "disputes": [], "claim_validations": [],
             "resolution_audits": [], "assumption_audits": [], "adversarial_tests": [], "verifier_evidence": [],
             "rollback_events": [], "judge_feedback": [], "gaming_signals": [], "trajectory_judgments": [],
-            "transition_labels": [], "evidence_integrity": [], "best_candidate_id": None, "latest_candidate_id": None,
+            "transition_labels": [], "evidence_integrity": [],
+            "protocol_events": [], "judge_groundings": [], "engine_checks": [], "best_candidate_id": None, "latest_candidate_id": None,
+            "repair_outcomes": [], "epistemic_checks": [], "cycle_progress": [],
+            "repair_statistics": {}, "no_progress_cycles": 0, "no_progress_stop": False,
+            "assessment_findings": [], "revision_evidence_deltas": [],
             "acceptance_label": "INCOMPLETE", "scorecard": None,
         }
 
@@ -39,6 +45,18 @@ class Trajectory:
         identity = f"M{self._call_counter}"
         self._call_counter += 1
         return identity
+
+    def configure_call_budget(self, limit):
+        self.call_budget = RunCallBudget(limit)
+        self.set("run_call_budget", self.call_budget.snapshot())
+
+    def reserve_call(self, kind):
+        if self.call_budget is None:
+            return
+        try:
+            self.call_budget.reserve(kind)
+        finally:
+            self.set("run_call_budget", self.call_budget.snapshot())
 
     def set(self, key, value):
         self._data[key] = deepcopy(to_data(value))

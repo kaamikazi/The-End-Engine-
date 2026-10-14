@@ -8,12 +8,12 @@ Generated from stored records. Measured values only; see §21–22 for limits.
 
 - DIRECT: passed 4/10 runs (pass rate 0.4), mean external score 0.6317, mean tokens 161.9, mean calls 1.0, mean wall 0.0 s.
 - SELF_REFLECT: passed 6/10 runs (pass rate 0.6), mean external score 0.7667, mean tokens 613.0, mean calls 3.0, mean wall 0.0 s.
-- END_LITE: passed 4/10 runs (pass rate 0.4), mean external score 0.5518, mean tokens 3928.8, mean calls 6.0, mean wall 0.0293 s.
-- FULL_END: passed 3/10 runs (pass rate 0.3), mean external score 0.5018, mean tokens 14732.1, mean calls 17.3, mean wall 0.1136 s.
+- END_LITE: passed 4/10 runs (pass rate 0.4), mean external score 0.5518, mean tokens 3928.8, mean calls 6.0, mean wall 0.0269 s.
+- FULL_END: passed 3/10 runs (pass rate 0.3), mean external score 0.5018, mean tokens 14732.1, mean calls 17.3, mean wall 0.1096 s.
 - FULL_END_vs_DIRECT: 2 wins / 5 ties / 3 losses over 10 matched task-trials; score delta -0.1299; token ×90.995; latency ×None.
 - FULL_END_vs_SELF_REFLECT: 1 wins / 4 ties / 5 losses over 10 matched task-trials; score delta -0.2649; token ×24.033; latency ×None.
 - END_LITE_vs_DIRECT: 3 wins / 4 ties / 3 losses over 10 matched task-trials; score delta -0.0799; token ×24.267; latency ×None.
-- FULL_END_vs_END_LITE: 0 wins / 9 ties / 1 losses over 10 matched task-trials; score delta -0.05; token ×3.75; latency ×3.877.
+- FULL_END_vs_END_LITE: 0 wins / 9 ties / 1 losses over 10 matched task-trials; score delta -0.05; token ×3.75; latency ×4.074.
 - END_LITE_vs_SELF_REFLECT: 2 wins / 4 ties / 4 losses over 10 matched task-trials; score delta -0.2149; token ×6.409; latency ×None.
 - SELF_REFLECT_vs_DIRECT: 4 wins / 5 ties / 1 losses over 10 matched task-trials; score delta 0.135; token ×3.786; latency ×None.
 - END_LITE internal vs external (LLM verifier (no gate in END_LITE)): {'TRUE_ACCEPT': 4, 'FALSE_ACCEPT': 6, 'TRUE_REJECT': 0, 'FALSE_REJECT': 0, 'INCONCLUSIVE': 0}.
@@ -50,6 +50,16 @@ Generated from stored records. Measured values only; see §21–22 for limits.
 - Every condition receives the task prompt verbatim. Hidden expectations are never sent to the model.
 - One run is one (task, trial, condition). Failures are recorded, never retried at run level and never repaired.
 - Task set hash: `a18e02902245ad8aca46ad55d6942a61a6266efe4c3af50130c046588a4015df`.
+- Truncated text answers (text call reached the output cap; kept as the answer): {'DIRECT': 0, 'SELF_REFLECT': 0, 'END_LITE': 0, 'FULL_END': 0}.
+- Configuration changes, scope decision and repository events during the run (from manifest.json):
+
+```json
+{
+ "configuration_changes": null,
+ "scope_decision": null,
+ "repository_events_during_run": null
+}
+```
 
 ## 5. Task set
 
@@ -109,8 +119,17 @@ Deterministic evaluators only (executable unit tests in an isolated interpreter 
 |---|---|---|---|---|---|---|---|---|
 | DIRECT | 4/10 | 0.6317 (0.3616) | 4 | 161.9 | 1.0 | 0.0 | 0 | 0 |
 | SELF_REFLECT | 6/10 | 0.7667 (0.3639) | 0 | 613.0 | 3.0 | 0.0 | 0 | 0 |
-| END_LITE | 4/10 | 0.5518 (0.4245) | 1 | 3928.8 | 6.0 | 0.0293 | 0 | 0 |
-| FULL_END | 3/10 | 0.5018 (0.3942) | 2 | 14732.1 | 17.3 | 0.1136 | 0 | 0 |
+| END_LITE | 4/10 | 0.5518 (0.4245) | 1 | 3928.8 | 6.0 | 0.0269 | 0 | 0 |
+| FULL_END | 3/10 | 0.5018 (0.3942) | 2 | 14732.1 | 17.3 | 0.1096 | 0 | 0 |
+
+Format compliance (diagnostic; does not change any score — the required answer structure is a hard requirement of every task):
+
+| Condition | required structure present | pass rate when present |
+|---|---|---|
+| DIRECT | 10/10 | 0.4 |
+| SELF_REFLECT | 10/10 | 0.6 |
+| END_LITE | 10/10 | 0.4 |
+| FULL_END | 10/10 | 0.3 |
 
 Score distribution per condition (mean / median / min / max / sd):
 
@@ -169,7 +188,7 @@ Score distribution per condition (mean / median / min / max / sd):
 
 | Comparison | W/T/L | Score delta | Token × | Latency × | Unsupported claims | False accepts |
 |---|---|---|---|---|---|---|
-| FULL_END_vs_END_LITE | 0/9/1 | -0.05 | 3.75 | 3.877 | {'FULL_END': 2, 'END_LITE': 1} | {'FULL_END': 7, 'END_LITE': 6} |
+| FULL_END_vs_END_LITE | 0/9/1 | -0.05 | 3.75 | 4.074 | {'FULL_END': 2, 'END_LITE': 1} | {'FULL_END': 7, 'END_LITE': 6} |
 
 Wins/ties/losses use the meaningful-difference rule (|Δscore| ≥ 0.1 or pass/fail change).
 
@@ -209,6 +228,32 @@ Every FALSE_ACCEPT:
 | BA-009.T1.FULL_END | ACCEPT_PROVISIONALLY | ACCEPTED_PROVISIONAL | quality_gate=ACCEPT_PROVISIONALLY | C0 | 0.5 | names_missing_evidence, certainty_below_established |
 | BA-011.T1.FULL_END | ACCEPT_PROVISIONALLY | ACCEPTED_PROVISIONAL | quality_gate=ACCEPT_PROVISIONALLY | C0 | 0.5 | names_missing_evidence, no_guarantee_from_narrow_test |
 | BA-012.T1.FULL_END | ACCEPT_PROVISIONALLY | ACCEPTED_PROVISIONAL | quality_gate=ACCEPT_PROVISIONALLY | C1 | 0.5556 | unit_tests |
+
+**How END runs ended** (termination reason, final gate, and Engine errors that stopped the loop; IDs normalized):
+
+*END_LITE* — mean END cycles 1.0
+
+| termination | runs |
+|---|---|
+| QUALITY_THRESHOLD_REACHED | 10 |
+
+| final quality_gate | runs |
+|---|---|
+| BLOCKED | 10 |
+
+No Engine errors.
+
+*FULL_END* — mean END cycles 1.5
+
+| termination | runs |
+|---|---|
+| ACCEPTED_PROVISIONALLY | 10 |
+
+| final quality_gate | runs |
+|---|---|
+| ACCEPT_PROVISIONALLY | 10 |
+
+No Engine errors.
 
 ## 14. EPISTEMIC / HALLUCINATION RESULTS
 
@@ -313,8 +358,8 @@ No provider pricing is configured: monetary cost = null.
 |---|---|---|---|---|---|---|---|---|
 | DIRECT | 0.6317 | 0.0 | 1.0 | 1.0 | 161.9 | 1.0 | 0.0 |  |
 | SELF_REFLECT | 0.7667 | 0.135 | 3.0 | 3.0 | 613.0 | 3.786 | 0.0 |  |
-| END_LITE | 0.5518 | -0.0799 | 6.0 | 6.0 | 3928.8 | 24.267 | 0.0293 |  |
-| FULL_END | 0.5018 | -0.1299 | 17.3 | 17.3 | 14732.1 | 90.995 | 0.1136 |  |
+| END_LITE | 0.5518 | -0.0799 | 6.0 | 6.0 | 3928.8 | 24.267 | 0.0269 |  |
+| FULL_END | 0.5018 | -0.1299 | 17.3 | 17.3 | 14732.1 | 90.995 | 0.1096 |  |
 
 **A. Unconstrained:** the table above (each condition's intended behaviour).
 

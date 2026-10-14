@@ -1,0 +1,30 @@
+{
+  "changed_source": [
+    "end_engine/__init__.py",
+    "end_engine/cognition/branches.py",
+    "end_engine/cognition/knowledge.py",
+    "end_engine/config.py",
+    "end_engine/core/output_format.py",
+    "end_engine/core/revision_planner.py",
+    "end_engine/core/state.py",
+    "end_engine/engine.py",
+    "end_engine/experience/schema.py",
+    "end_engine/models/recording.py",
+    "end_engine/operators/base.py",
+    "end_engine/quality/gate.py",
+    "end_engine/quality/grounding.py",
+    "end_engine/quality/judges.py",
+    "end_engine/quality/schema.py",
+    "end_engine/quality/session.py",
+    "end_engine/quality/state.py",
+    "pyproject.toml"
+  ],
+  "new_source": [
+    "end_engine/core/progress.py",
+    "end_engine/core/task_contract.py",
+    "end_engine/models/repair.py",
+    "end_engine/quality/epistemic.py"
+  ],
+  "secret_literal_candidate_files": [],
+  "diff_check_returncode": 0
+}
