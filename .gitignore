@@ -15,3 +15,18 @@ htmlcov/
 *.tmp
 .DS_Store
 Thumbs.db
+
+# Local review ZIP snapshots; exact hashes remain in research receipts.
+/END_Experimental_*.zip
+# Extracted review bundles and temporary evaluator test files.
+/experimental_task_pack_v1*/validation/scratch/
+/checkpoint_20261013/validation/scratch/
+# Detailed 15.44 MB replay output retained locally pending artifact-storage approval.
+/experimental_task_pack_v1_safety_boundary/validation/HISTORICAL_SINGLE_RESULTS.json
+# Transient progress logs; existing tracked copies are left unstaged.
+**/live_progress.log
+# Post-push local receipt contains the resulting commit IDs (not a scientific record).
+/checkpoint_20261013/SYNC_RECEIPT.json
+# Local staging manifests/review logs are operational checkpoint artifacts.
+/checkpoint_20261013/stage-*.paths
+/checkpoint_20261013/staging_review/

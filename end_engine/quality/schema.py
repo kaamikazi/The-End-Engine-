@@ -1,8 +1,17 @@
 from ..models.schema import BRIEF, SCORE, STRING, STRINGS, obj
 
 
+# v0.3.5: grounding fields are optional (additive); older judges and fixtures remain valid.
 ISSUE = obj({"category": BRIEF, "description": BRIEF, "target": STRING,
-             "fatal": {"type": "boolean"}, "evidence": STRINGS})
+             "fatal": {"type": "boolean"}, "evidence": STRINGS,
+             "claim_type": {"type": "string", "enum": ["CANDIDATE_INTERNAL", "TASK_CONSTRAINT", "EXTERNAL_FACT",
+                                                           "EXTERNAL_FACTUAL", "EPISTEMIC_STATUS"]},
+             "source_claim": {"type": "string", "maxLength": 1500},
+             "alleged_defect": {"type": "string", "maxLength": 1500},
+             "basis": {"type": "string", "maxLength": 1500},
+             "candidate_quote": {"type": "string", "maxLength": 1500},
+             "task_reference": {"type": "string", "maxLength": 1500}},
+            required=["category", "description", "target", "fatal", "evidence"])
 
 
 def judgment_schema(dimensions):

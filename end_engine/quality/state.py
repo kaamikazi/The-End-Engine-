@@ -20,6 +20,27 @@ class GateDecision(str, Enum):
     BLOCKED = "BLOCKED"
 
 
+class Provenance(str, Enum):
+    """Minimal source semantics (v0.3.5). Where information came from, never how confident anyone is.
+    MODEL_CONSENSUS != EXECUTED_CHECK; TASK_PROVIDED != REGISTERED_EVIDENCE; MODEL_JUDGMENT != verified fact."""
+    TASK_PROVIDED = "TASK_PROVIDED"            # user instructions and claims; may contain false premises
+    CANDIDATE = "CANDIDATE"                    # what the candidate actually says, proposes or computes
+    ENGINE_DERIVED = "ENGINE_DERIVED"          # deterministic Engine checks (format, leakage, grounding)
+    EXECUTED_CHECK = "EXECUTED_CHECK"          # EXECUTED_EVIDENCE from the trusted tool verifier
+    REGISTERED_EVIDENCE = "REGISTERED_EVIDENCE"
+    MODEL_JUDGMENT = "MODEL_JUDGMENT"          # a judge's interpretation
+    MODEL_CONSENSUS = "MODEL_CONSENSUS"        # several model statements agreeing
+    REPORTED_CONSENSUS = "REPORTED_CONSENSUS"  # people or sources reported as agreeing
+    UNKNOWN = "UNKNOWN"
+    TASK_INSTRUCTION = "TASK_INSTRUCTION"
+    TASK_ASSERTION = "TASK_ASSERTION"
+    MODEL_CRITIQUE = "MODEL_CRITIQUE"
+    MODEL_REVISION_PLAN = "MODEL_REVISION_PLAN"
+
+
+EVIDENCE_PROVENANCE = {"EXECUTED_EVIDENCE": Provenance.EXECUTED_CHECK, "MODEL_JUDGMENT": Provenance.MODEL_JUDGMENT}
+
+
 @dataclass(frozen=True)
 class DimensionJudgment:
     score: float
@@ -33,6 +54,18 @@ class JudgeIssue:
     target: str = "candidate"
     fatal: bool = False
     evidence: tuple[str, ...] = ()
+    # v0.3.5, optional and additive. claim_type: CANDIDATE_INTERNAL | TASK_CONSTRAINT | EXTERNAL_FACT ("" = undeclared).
+    claim_type: str = ""
+    candidate_quote: str = ""      # verbatim candidate text the finding is about
+    task_reference: str = ""       # task text the finding relies on
+    grounding: str = ""            # set by the Engine, never by the judge (see quality/grounding.py)
+    decisive: bool = True          # False: the finding cannot drive REJECT/REVISE, rollback or a weakness
+    # v0.3.5.1: optional bounded semantic argument. Writer provenance remains MODEL_JUDGMENT.
+    source_claim: str = ""
+    alleged_defect: str = ""
+    basis: str = ""
+    textual_grounding: str = ""    # Engine annotations, distinct from semantic support
+    semantic_grounding: str = ""
 
 
 @dataclass(frozen=True)
@@ -51,6 +84,8 @@ class Judgment:
     adversarial: bool = False
     # Cited IDs absent from the evidence supplied to the judge. Kept as cited; never dropped, repaired or substituted.
     unresolved_evidence: tuple[str, ...] = ()
+    assessment_decisive: bool = True
+    assessment_requires_evidence: bool = False
 
     def as_dict(self):
         data = to_data(self)
@@ -131,6 +166,7 @@ class RevisionComparison:
     net_assessment: str
     reason: str
     severe_dimensions: tuple[str, ...] = ()
+    assessment_decisive: bool = True
 
 
 @dataclass(frozen=True)
