@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "crc_valid": true,
+  "member_hashes_valid": true,
+  "extracted_source_confirmed": true,
+  "results": [
+    {
+      "new_tests": {
+        "tests": 57,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      "migration": {
+        "single_count": 167,
+        "pair_count": 18,
+        "single_classification_changed_count": 117,
+        "new_single_counts": {
+          "PASS_WITHIN_DECLARED_SCOPE": 14,
+          "FAIL_WITH_GROUNDED_REASON": 17,
+          "REQUIRES_REVIEW": 136
+        },
+        "all_five_task_dimensions_unchanged": true,
+        "all_protected_pair_fields_unchanged": true,
+        "historic_fixture_bytes_unchanged": true,
+        "passed": true
+      },
+      "independent_probes": {
+        "probe_count": 26,
+        "passed": true
+      },
+      "network_attempts": 0,
+      "model_calls": 0,
+      "passed": true
+    },
+    {
+      "historical": {
+        "tests": 100,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      "network_attempts": 0,
+      "model_calls": 0,
+      "passed": true
+    }
+  ],
+  "logs": [
+    {
+      "command": [
+        "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "experimental_task_pack_v1_safety_boundary/validate.py",
+        "all"
+      ],
+      "stdout": "{\"new_tests\": {\"tests\": 57, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"passed\": true}, \"migration\": {\"single_count\": 167, \"pair_count\": 18, \"single_classification_changed_count\": 117, \"new_single_counts\": {\"PASS_WITHIN_DECLARED_SCOPE\": 14, \"FAIL_WITH_GROUNDED_REASON\": 17, \"REQUIRES_REVIEW\": 136}, \"all_five_task_dimensions_unchanged\": true, \"all_protected_pair_fields_unchanged\": true, \"historic_fixture_bytes_unchanged\": true, \"passed\": true}, \"independent_probes\": {\"probe_count\": 26, \"passed\": true}, \"network_attempts\": 0, \"model_calls\": 0, \"passed\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "experimental_task_pack_v1_safety_boundary/validate.py",
+        "historical-tests"
+      ],
+      "stdout": "{\"historical\": {\"tests\": 100, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"passed\": true}, \"network_attempts\": 0, \"model_calls\": 0, \"passed\": true}\n",
+      "stderr": ""
+    }
+  ]
+}

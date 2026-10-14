@@ -1,0 +1,117 @@
+{
+  "rubric_version": "exp-pack-1.1.0-draft",
+  "freeze_status": "DRAFT_PENDING_REVIEW",
+  "independent_review_status": "PENDING",
+  "engine_baseline": {
+    "tests": 303,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 35.948
+  },
+  "engine_final": {
+    "tests": 303,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 21.222
+  },
+  "r3_baseline": {
+    "tests": 100,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 16.456
+  },
+  "historical_r3_retest": {
+    "historical": {
+      "tests": 100,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    "network_attempts": 0,
+    "model_calls": 0,
+    "passed": true
+  },
+  "new_validation": {
+    "new_tests": {
+      "tests": 57,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    "migration": {
+      "single_count": 167,
+      "pair_count": 18,
+      "single_classification_changed_count": 117,
+      "new_single_counts": {
+        "PASS_WITHIN_DECLARED_SCOPE": 14,
+        "FAIL_WITH_GROUNDED_REASON": 17,
+        "REQUIRES_REVIEW": 136
+      },
+      "all_five_task_dimensions_unchanged": true,
+      "all_protected_pair_fields_unchanged": true,
+      "historic_fixture_bytes_unchanged": true,
+      "passed": true
+    },
+    "independent_probes": {
+      "probe_count": 26,
+      "passed": true
+    },
+    "network_attempts": 0,
+    "model_calls": 0,
+    "passed": true
+  },
+  "preservation": {
+    "protected_file_count": 6018,
+    "all_preexisting_files_unchanged": true,
+    "packs": {
+      "experimental_task_pack_v1": {
+        "file_count": 122,
+        "before_aggregate_sha256": "77be0dc45fe3ed9ab8375ba2697e8697809801c780c3d8a463986fc139b943b0",
+        "after_aggregate_sha256": "77be0dc45fe3ed9ab8375ba2697e8697809801c780c3d8a463986fc139b943b0",
+        "unchanged": true
+      },
+      "experimental_task_pack_v1_r2": {
+        "file_count": 366,
+        "before_aggregate_sha256": "dc34cae9092a29863cf39d8471e1fd1d85565ca8b501af713c3f549af674efe1",
+        "after_aggregate_sha256": "dc34cae9092a29863cf39d8471e1fd1d85565ca8b501af713c3f549af674efe1",
+        "unchanged": true
+      },
+      "experimental_task_pack_v1_r3": {
+        "file_count": 736,
+        "before_aggregate_sha256": "9984b36adddf9eeca8881bb50163524764a9c9a9c2e64a611355eb0de1500403",
+        "after_aggregate_sha256": "9984b36adddf9eeca8881bb50163524764a9c9a9c2e64a611355eb0de1500403",
+        "unchanged": true
+      }
+    },
+    "engine_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+    "source_entries": 70,
+    "public_tasks_loader_and_historical_fixture_bytes_unchanged": true,
+    "harness_modified": false
+  },
+  "security": {
+    "text_files_scanned": 469,
+    "findings": [],
+    "active_evaluator_no_engine_provider_network_imports": true,
+    "credential_files_included": false,
+    "test_only_HMAC_salt": "Literal offline-test-only-salt is a synthetic blinding test input, not an account credential",
+    "candidate_code_executed": false,
+    "network_and_model_calls": 0,
+    "passed": true
+  },
+  "live_inference": false,
+  "git_mutations": false,
+  "engine_behaviour_modified": false,
+  "archive_extraction_retest": "PASSED: CRC/member hashes and extracted57+100 suites,167 singles,18 pairs,26 probes; final exact ZIP receipt external",
+  "recommendation": "READY_FOR_INDEPENDENT_SAFETY_BOUNDARY_REVIEW"
+}
