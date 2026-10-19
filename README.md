@@ -1,3 +1,5 @@
+> **WIP research checkpoint:** END v1.0.2 certification-contract acceptance remains unresolved. See [checkpoint status](experimental_architectures_v1_r3/RESEARCH_CHECKPOINT_STATUS.md). The v2 proposal is not implemented or scientifically approved.
+
 # END Engine v0.3.5.2 — Unified Assessment Integrity + Revision Provenance
 
 This is an offline corrective release following the frozen v0.3.5.1 pilot. It does

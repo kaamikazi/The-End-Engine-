@@ -1,0 +1,20 @@
+{
+  "status": "SOURCE_ONLY_WIP_NOT_SCIENTIFIC_ACCEPTANCE",
+  "public_base_commit": "6f4da3f1e30a842ab37adb7a9be12a0222a80054",
+  "local_source_provenance_commit": "bc9bcbad8e9cb051d54c3b270e2e03d460858986",
+  "source_has_uncommitted_certification_correction": true,
+  "eight_unpublished_research_ancestors_deliberately_not_pushed": true,
+  "excluded_new_material": [
+    "frozen evaluator payload, fixtures, answer/judging corpus and freeze review evidence",
+    "private reviewer ZIPs/scripts/raw report bundles",
+    "original proposal and extracted duplicate support",
+    "raw generated trajectories, logs, runtime scratch and archives",
+    "caches, virtual environments, credentials and personal machine paths"
+  ],
+  "public_data": "Only approved public/synthetic task definitions and deterministic engineering tests; no new hidden judging fixtures",
+  "prior_public_exposure": "Existing baseline exposure is unchanged; it is not cleared, repaired or relabeled by this checkpoint",
+  "review_provenance": "Separate fresh AI review, not authenticated external human audit; private bundle SHA-256 e4a65900335124443c947c81ff55ffb0e6beca4af35c94e8693654049119dc54",
+  "Git_history_policy": "No rewritten local history, no force push, no main push/merge/tag/release/PR",
+  "source_preservation": "All copied implementation and original unit assertions are byte-identical to the dirty reviewed worktree",
+  "source_root_sha256": "1b92bad8dfdc527e367435d72ba0b5e29c87ecaa36e432eadff10f6818efe126"
+}

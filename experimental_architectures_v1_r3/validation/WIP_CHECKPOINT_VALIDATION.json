@@ -1,0 +1,137 @@
+{
+  "status": "WIP_HISTORICAL_ACCEPTANCE_UNRESOLVED",
+  "python": "3.12.14",
+  "environment": "Windows native lease/hard-link/read-share controls; inherited offline socket audit guard",
+  "executed_now": {
+    "Engine": {
+      "command": "From repository root: python -B -m unittest discover -s tests -t . -v",
+      "tests": 303,
+      "pass": 303,
+      "fail": 0,
+      "error": 0,
+      "skip": 0
+    },
+    "current_r3": {
+      "command": "From experimental_architectures_v1_r3: python -B -m unittest discover -s tests -t . -v",
+      "tests": 244,
+      "pass": 222,
+      "fail": 16,
+      "error": 6,
+      "skip": 0,
+      "expected_exit": 1,
+      "individual_outcomes_identical_to_reviewed_source": true,
+      "nonpassing_test_ids": [
+        {
+          "test": "tests.accounting.test_resources.ResourceTests.test_torn_final_journal_append_recovers_without_dispatch",
+          "outcome": "ERROR"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage",
+          "outcome": "FAIL"
+        },
+        {
+          "test": "tests.corrections.test_interactions.CrossDefectTests.test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record",
+          "outcome": "ERROR"
+        },
+        {
+          "test": "tests.corrections.test_interactions.CrossDefectTests.test_serializer_fallback_does_not_conceal_journal_failure",
+          "outcome": "ERROR"
+        },
+        {
+          "test": "tests.corrections.test_interactions.CrossDefectTests.test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit",
+          "outcome": "ERROR"
+        },
+        {
+          "test": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_W_torn_journal_remains_diagnosable",
+          "outcome": "ERROR"
+        },
+        {
+          "test": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_corrupt_journal_finalization_remains_blocked",
+          "outcome": "ERROR"
+        }
+      ]
+    }
+  },
+  "retained_not_rerun_now": {
+    "reviewer154": {
+      "pass": 146,
+      "fail": 8
+    },
+    "prior49": {
+      "pass": 48,
+      "fail": 1
+    },
+    "reviewer_owned62": {
+      "pass": 61,
+      "retained_fixture_expectation_fail": 1
+    },
+    "author_owned37_reexecuted_during_prior_review": {
+      "pass": 37
+    }
+  },
+  "source_root_sha256": "1b92bad8dfdc527e367435d72ba0b5e29c87ecaa36e432eadff10f6818efe126",
+  "live_provider_calls": 0,
+  "empirical_benchmarks": 0,
+  "v2_observations_or_adapter_implemented": false,
+  "human_approval": "PENDING"
+}
