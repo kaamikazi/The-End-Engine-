@@ -1,0 +1,2318 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:end:contract:2.1-proposal.1",
+  "title": "END v2.1 prospective exclusive outcome view (not implemented)",
+  "description": "Valid instance means structural constraints AND ALL x-semantic-rules with external evidence hold. Schema shape alone confers no source authenticity, provenance certificate or answer correctness. Typed errors are not serialized members.",
+  "definitions": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "uint": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\x5c)(?!.*(?:^|/)[.][.](?:/|$)).+$"
+    },
+    "evidence_ref": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "$ref": "#/definitions/relative_path"
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "origin": {
+          "enum": [
+            "IDENTITY",
+            "LEDGER",
+            "RESERVATION",
+            "DISPATCH",
+            "RESPONSE_ANCHOR",
+            "SETTLEMENT",
+            "JOURNAL",
+            "CLOSURE",
+            "PUBLICATION_PROOF"
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "origin"
+      ],
+      "additionalProperties": false
+    },
+    "run_binding": {
+      "type": "object",
+      "properties": {
+        "run_id": {
+          "$ref": "#/definitions/name"
+        },
+        "task_id": {
+          "$ref": "#/definitions/name"
+        },
+        "condition_id": {
+          "enum": [
+            "DIRECT",
+            "SELF_REFLECT",
+            "FROZEN_CURRENT_END",
+            "SPARSE_DELIBERATION",
+            "DIRECTED_REPAIR",
+            "BOUNDED_ALTERNATIVES"
+          ]
+        },
+        "identity_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      },
+      "required": [
+        "run_id",
+        "task_id",
+        "condition_id",
+        "identity_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "enum": [
+            "AUTHORITATIVE_CONSISTENT_SNAPSHOT",
+            "STABLE_BUT_INCOMPLETE_OBSERVATION",
+            "INDIVIDUALLY_CORROBORATED_OBSERVATION",
+            "UNSTABLE_SNAPSHOT",
+            "UNSUPPORTED_OBSERVATION"
+          ]
+        },
+        "capture_id": {
+          "$ref": "#/definitions/name"
+        },
+        "coordination": {
+          "enum": [
+            "VERIFIED_COOPERATIVE_CUT",
+            "NO_COMMON_CUT",
+            "VIOLATED",
+            "UNSUPPORTED"
+          ]
+        },
+        "writer_domain_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inventory_digest": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "content_digest": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "witness_coverage": {
+          "enum": [
+            "CLOSED_ACCOUNTING_GRAPH",
+            "INCOMPLETE_OR_CONTRADICTORY",
+            "INDIVIDUAL_GROUPS_ONLY",
+            "UNSTABLE",
+            "UNSUPPORTED"
+          ]
+        },
+        "origin_scope": {
+          "const": "COOPERATING_LOCAL_WRITERS_NOT_PROVIDER_ATTESTATION"
+        }
+      },
+      "required": [
+        "tier",
+        "capture_id",
+        "coordination",
+        "writer_domain_ref",
+        "inventory_digest",
+        "content_digest",
+        "witness_coverage",
+        "origin_scope"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "enum": [
+                  "AUTHORITATIVE_CONSISTENT_SNAPSHOT",
+                  "STABLE_BUT_INCOMPLETE_OBSERVATION"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "coordination": {
+                "const": "VERIFIED_COOPERATIVE_CUT"
+              },
+              "writer_domain_ref": {
+                "$ref": "#/definitions/sha256"
+              },
+              "inventory_digest": {
+                "$ref": "#/definitions/sha256"
+              },
+              "content_digest": {
+                "$ref": "#/definitions/sha256"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "const": "AUTHORITATIVE_CONSISTENT_SNAPSHOT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "witness_coverage": {
+                "const": "CLOSED_ACCOUNTING_GRAPH"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "const": "STABLE_BUT_INCOMPLETE_OBSERVATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "witness_coverage": {
+                "const": "INCOMPLETE_OR_CONTRADICTORY"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "const": "INDIVIDUALLY_CORROBORATED_OBSERVATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "coordination": {
+                "const": "NO_COMMON_CUT"
+              },
+              "witness_coverage": {
+                "const": "INDIVIDUAL_GROUPS_ONLY"
+              },
+              "inventory_digest": {
+                "const": null
+              },
+              "content_digest": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "const": "UNSTABLE_SNAPSHOT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "coordination": {
+                "const": "VIOLATED"
+              },
+              "witness_coverage": {
+                "const": "UNSTABLE"
+              },
+              "inventory_digest": {
+                "const": null
+              },
+              "content_digest": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tier": {
+                "const": "UNSUPPORTED_OBSERVATION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "coordination": {
+                "const": "UNSUPPORTED"
+              },
+              "witness_coverage": {
+                "const": "UNSUPPORTED"
+              },
+              "inventory_digest": {
+                "const": null
+              },
+              "content_digest": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "known_recorded_number": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "KNOWN_RECORDED"
+            },
+            "value": {
+              "$ref": "#/definitions/uint"
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "UNKNOWN"
+            },
+            "value": {
+              "const": null
+            },
+            "reason": {
+              "enum": [
+                "NOT_RECORDED",
+                "UNREADABLE",
+                "INCONSISTENT_SOURCE",
+                "UNSETTLED"
+              ]
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "claim_scope": {
+      "type": "object",
+      "properties": {
+        "run_id": {
+          "$ref": "#/definitions/name"
+        },
+        "attempt_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/id"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "coverage": {
+          "enum": [
+            "CAPTURED_RECORD_GROUP",
+            "ANCHORED_GRAPH_IN_CUT"
+          ]
+        },
+        "excluded_claims": {
+          "const": [
+            "PROVIDER_INFERENCE_COUNT",
+            "ERASURE_RESISTANCE",
+            "ANSWER_CORRECTNESS",
+            "COMPLETE_RUN_COST"
+          ]
+        }
+      },
+      "required": [
+        "run_id",
+        "attempt_ids",
+        "coverage",
+        "excluded_claims"
+      ],
+      "additionalProperties": false
+    },
+    "claim_base": {
+      "type": "object",
+      "properties": {
+        "claim_kind": {
+          "enum": [
+            "RECORDED_IDENTITY",
+            "CORROBORATED_RESERVATION_DISPATCH",
+            "CORROBORATED_IDENTITY_GROUP",
+            "ANCHORED_GRAPH_CARDINALITY",
+            "SETTLEMENT_METADATA",
+            "RESPONSE_COMMITMENT",
+            "USAGE_METADATA"
+          ]
+        },
+        "value": {
+          "type": "object"
+        },
+        "evidence_authority": {
+          "enum": [
+            "RECORDED_ONLY",
+            "LOCAL_WITNESS_GROUP",
+            "GUARDED_VISIBLE_GRAPH",
+            "RECORDED_SETTLEMENT_NOT_PROVIDER_ATTESTATION",
+            "RECORDED_COMMITMENT_NOT_RESPONSE_TRUTH",
+            "RECORDED_USAGE_NOT_COMPLETE_COST"
+          ]
+        },
+        "scope": {
+          "$ref": "#/definitions/claim_scope"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence_ref"
+          },
+          "minItems": 1
+        },
+        "snapshot_id": {
+          "$ref": "#/definitions/name"
+        },
+        "verification_status": {
+          "enum": [
+            "OBSERVED",
+            "CORROBORATED_WITHIN_SCOPE",
+            "INCONSISTENT_WITH_CURRENT_ROW",
+            "UNVERIFIED"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "full_run_certification_permitted": {
+          "const": false
+        }
+      },
+      "required": [
+        "claim_kind",
+        "value",
+        "evidence_authority",
+        "scope",
+        "source_refs",
+        "snapshot_id",
+        "verification_status",
+        "limitations",
+        "full_run_certification_permitted"
+      ],
+      "additionalProperties": false
+    },
+    "claim": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "RECORDED_IDENTITY"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    }
+                  },
+                  "required": [
+                    "attempt_id"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "RECORDED_ONLY"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "CORROBORATED_RESERVATION_DISPATCH"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "reservation_sha256": {
+                      "$ref": "#/definitions/sha256"
+                    },
+                    "dispatch_sha256": {
+                      "$ref": "#/definitions/sha256"
+                    }
+                  },
+                  "required": [
+                    "attempt_id",
+                    "reservation_sha256",
+                    "dispatch_sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "LOCAL_WITNESS_GROUP"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "CORROBORATED_IDENTITY_GROUP"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "channels": {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "RESERVATION",
+                          "DISPATCH",
+                          "SETTLEMENT",
+                          "RESPONSE_ANCHOR"
+                        ]
+                      },
+                      "minItems": 2,
+                      "uniqueItems": true
+                    },
+                    "relation_digest": {
+                      "$ref": "#/definitions/sha256"
+                    }
+                  },
+                  "required": [
+                    "attempt_id",
+                    "channels",
+                    "relation_digest"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "LOCAL_WITNESS_GROUP"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "ANCHORED_GRAPH_CARDINALITY"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_ids": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/id"
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    },
+                    "cardinality": {
+                      "$ref": "#/definitions/uint"
+                    }
+                  },
+                  "required": [
+                    "attempt_ids",
+                    "cardinality"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "GUARDED_VISIBLE_GRAPH"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "SETTLEMENT_METADATA"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "recorded_state": {
+                      "enum": [
+                        "SUCCEEDED",
+                        "FAILED",
+                        "CANCELED",
+                        "INTERRUPTED",
+                        "PROTOCOL_FAILURE"
+                      ]
+                    },
+                    "row_sha256": {
+                      "$ref": "#/definitions/sha256"
+                    },
+                    "response_binding": {
+                      "enum": [
+                        "BOUND",
+                        "MISSING",
+                        "CONFLICT",
+                        "UNVERIFIED"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "attempt_id",
+                    "recorded_state",
+                    "row_sha256",
+                    "response_binding"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "RECORDED_SETTLEMENT_NOT_PROVIDER_ATTESTATION"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "RESPONSE_COMMITMENT"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "status": {
+                      "enum": [
+                        "MATCH",
+                        "MISSING",
+                        "MOVED_FORENSIC",
+                        "CONFLICT",
+                        "UNVERIFIED"
+                      ]
+                    },
+                    "expected_commitment_sha256": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/definitions/sha256"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "observed_registered_sha256": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/definitions/sha256"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "attempt_id",
+                    "status",
+                    "expected_commitment_sha256",
+                    "observed_registered_sha256"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "RECORDED_COMMITMENT_NOT_RESPONSE_TRUTH"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/claim_base"
+            },
+            {
+              "properties": {
+                "claim_kind": {
+                  "const": "USAGE_METADATA"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "attempt_id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "input_tokens": {
+                      "$ref": "#/definitions/known_recorded_number"
+                    },
+                    "output_tokens": {
+                      "$ref": "#/definitions/known_recorded_number"
+                    },
+                    "total_tokens": {
+                      "$ref": "#/definitions/known_recorded_number"
+                    },
+                    "raw_receipt_status": {
+                      "enum": [
+                        "VERIFIED_AT_CUT",
+                        "UNVERIFIED",
+                        "INVALID"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "attempt_id",
+                    "input_tokens",
+                    "output_tokens",
+                    "total_tokens",
+                    "raw_receipt_status"
+                  ],
+                  "additionalProperties": false
+                },
+                "evidence_authority": {
+                  "const": "RECORDED_USAGE_NOT_COMPLETE_COST"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "complete_totals": {
+      "type": "object",
+      "properties": {
+        "physical_attempts": {
+          "$ref": "#/definitions/uint"
+        },
+        "input_tokens": {
+          "$ref": "#/definitions/uint"
+        },
+        "output_tokens": {
+          "$ref": "#/definitions/uint"
+        },
+        "total_tokens": {
+          "$ref": "#/definitions/uint"
+        },
+        "wall_time": {
+          "type": "number",
+          "minimum": 0
+        },
+        "authority": {
+          "const": "COMPLETE_RECORDED_ACCOUNTING_WITHIN_DECLARED_LOCAL_SCOPE"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence_ref"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "physical_attempts",
+        "input_tokens",
+        "output_tokens",
+        "total_tokens",
+        "wall_time",
+        "authority",
+        "source_refs"
+      ],
+      "additionalProperties": false
+    },
+    "accounting": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "UNKNOWN",
+            "INCONSISTENT"
+          ]
+        },
+        "snapshot": {
+          "$ref": "#/definitions/snapshot"
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/claim"
+          },
+          "minItems": 0
+        },
+        "complete_totals": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/complete_totals"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incomplete_reason": {
+          "enum": [
+            "MISSING_WITNESS",
+            "USAGE_UNKNOWN",
+            "PROVENANCE_BLOCKED",
+            "SNAPSHOT_UNAVAILABLE",
+            "SOURCE_CONFLICT",
+            "UNSUPPORTED"
+          ]
+        }
+      },
+      "required": [
+        "state",
+        "snapshot",
+        "observations",
+        "complete_totals"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "COMPLETE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "complete_totals": {
+                "$ref": "#/definitions/complete_totals"
+              },
+              "incomplete_reason": false,
+              "snapshot": {
+                "properties": {
+                  "tier": {
+                    "const": "AUTHORITATIVE_CONSISTENT_SNAPSHOT"
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "required": [
+              "incomplete_reason"
+            ],
+            "properties": {
+              "complete_totals": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "properties": {
+                  "tier": {
+                    "const": "AUTHORITATIVE_CONSISTENT_SNAPSHOT"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "observations": {
+                "contains": {
+                  "properties": {
+                    "claim_kind": {
+                      "const": "ANCHORED_GRAPH_CARDINALITY"
+                    }
+                  },
+                  "required": [
+                    "claim_kind"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "properties": {
+                  "tier": {
+                    "enum": [
+                      "STABLE_BUT_INCOMPLETE_OBSERVATION",
+                      "INDIVIDUALLY_CORROBORATED_OBSERVATION"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "observations": {
+                "minItems": 1,
+                "items": {
+                  "not": {
+                    "properties": {
+                      "claim_kind": {
+                        "const": "ANCHORED_GRAPH_CARDINALITY"
+                      }
+                    },
+                    "required": [
+                      "claim_kind"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "properties": {
+                  "tier": {
+                    "const": "UNSTABLE_SNAPSHOT"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "PARTIAL",
+                  "UNKNOWN",
+                  "INCONSISTENT"
+                ]
+              },
+              "observations": {
+                "items": {
+                  "not": {
+                    "properties": {
+                      "claim_kind": {
+                        "const": "ANCHORED_GRAPH_CARDINALITY"
+                      }
+                    },
+                    "required": [
+                      "claim_kind"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "properties": {
+                  "tier": {
+                    "const": "UNSUPPORTED_OBSERVATION"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "UNKNOWN",
+                  "INCONSISTENT"
+                ]
+              },
+              "observations": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "handle": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "SOURCE_VERIFIED_BINDING",
+            "CORROBORATED_NOT_CERTIFIED",
+            "OBSERVED_UNBOUND",
+            "MISSING"
+          ]
+        },
+        "output_id": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/name"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "binding_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "status",
+        "output_id",
+        "binding_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "SOURCE_VERIFIED_BINDING",
+                  "CORROBORATED_NOT_CERTIFIED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "output_id": {
+                "$ref": "#/definitions/name"
+              },
+              "binding_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "MISSING"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "output_id": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "VERIFIED",
+            "OBSERVED",
+            "UNAVAILABLE"
+          ]
+        },
+        "parent_ids": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/name"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unavailable_reason": {
+          "enum": [
+            "SOURCE_MISSING",
+            "BINDING_FAILED",
+            "NOT_ESTABLISHED"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "parent_ids"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "UNAVAILABLE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "unavailable_reason"
+            ],
+            "properties": {
+              "parent_ids": {
+                "const": null
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "parent_ids": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/name"
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "unavailable_reason": false
+            }
+          }
+        }
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^C[0-9]+$"
+        },
+        "attempt_id": {
+          "$ref": "#/definitions/id"
+        },
+        "availability": {
+          "enum": [
+            "PRESENT",
+            "MISSING"
+          ]
+        },
+        "content": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "binding_authority": {
+          "enum": [
+            "SOURCE_VERIFIED_BINDING",
+            "OBSERVED_ONLY",
+            "UNRESOLVED"
+          ]
+        },
+        "response_validity": {
+          "enum": [
+            "ELIGIBLE",
+            "REJECTED",
+            "UNASSESSED"
+          ]
+        },
+        "eligible_for_selection": {
+          "type": "boolean"
+        },
+        "lineage": {
+          "$ref": "#/definitions/lineage"
+        },
+        "handle": {
+          "$ref": "#/definitions/handle"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence_ref"
+          },
+          "minItems": 1
+        },
+        "missing_reason": {
+          "enum": [
+            "SOURCE_ABSENT",
+            "UNREADABLE"
+          ]
+        }
+      },
+      "required": [
+        "candidate_id",
+        "attempt_id",
+        "availability",
+        "content",
+        "content_sha256",
+        "binding_authority",
+        "response_validity",
+        "eligible_for_selection",
+        "lineage",
+        "handle",
+        "source_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "PRESENT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "content_sha256": {
+                "$ref": "#/definitions/sha256"
+              },
+              "missing_reason": false
+            }
+          },
+          "else": {
+            "required": [
+              "missing_reason"
+            ],
+            "properties": {
+              "content": {
+                "const": null
+              },
+              "content_sha256": {
+                "const": null
+              },
+              "eligible_for_selection": {
+                "const": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "eligible_for_selection": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "availability": {
+                "const": "PRESENT"
+              },
+              "binding_authority": {
+                "const": "SOURCE_VERIFIED_BINDING"
+              },
+              "response_validity": {
+                "const": "ELIGIBLE"
+              },
+              "lineage": {
+                "properties": {
+                  "status": {
+                    "const": "VERIFIED"
+                  }
+                }
+              },
+              "handle": {
+                "properties": {
+                  "status": {
+                    "const": "SOURCE_VERIFIED_BINDING"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "candidate_collection": {
+      "type": "object",
+      "properties": {
+        "observation_state": {
+          "enum": [
+            "AVAILABLE",
+            "KNOWN_EMPTY_HISTORY",
+            "NONE_SUPPORTABLE",
+            "UNAVAILABLE"
+          ]
+        },
+        "history_coverage": {
+          "enum": [
+            "COMPLETE",
+            "PARTIAL",
+            "UNKNOWN"
+          ]
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/candidate"
+          },
+          "minItems": 0
+        },
+        "initial_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/name"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "initial_ref_state": {
+          "enum": [
+            "BOUND_INITIAL",
+            "NOT_KNOWN",
+            "NONE_GENERATED"
+          ]
+        },
+        "unavailable_reason": {
+          "enum": [
+            "NO_JUSTIFIED_IDENTITIES",
+            "EVIDENCE_UNREADABLE"
+          ]
+        }
+      },
+      "required": [
+        "observation_state",
+        "history_coverage",
+        "entries",
+        "initial_ref",
+        "initial_ref_state"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "observation_state": {
+                "const": "AVAILABLE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "entries": {
+                "minItems": 1
+              },
+              "unavailable_reason": false
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "observation_state": {
+                "const": "KNOWN_EMPTY_HISTORY"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "entries": {
+                "maxItems": 0
+              },
+              "history_coverage": {
+                "const": "COMPLETE"
+              },
+              "initial_ref": {
+                "const": null
+              },
+              "initial_ref_state": {
+                "const": "NONE_GENERATED"
+              },
+              "unavailable_reason": false
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "observation_state": {
+                "enum": [
+                  "NONE_SUPPORTABLE",
+                  "UNAVAILABLE"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "unavailable_reason"
+            ],
+            "properties": {
+              "entries": {
+                "maxItems": 0
+              },
+              "history_coverage": {
+                "const": "UNKNOWN"
+              },
+              "initial_ref": {
+                "const": null
+              },
+              "initial_ref_state": {
+                "const": "NOT_KNOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "initial_ref_state": {
+                "const": "BOUND_INITIAL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "initial_ref": {
+                "$ref": "#/definitions/name"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "initial_ref": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "diagnostic_entry": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/name"
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "detail",
+        "source_refs"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "VERIFIED",
+            "INTERRUPTED",
+            "UNKNOWN",
+            "BLOCKED"
+          ]
+        },
+        "report_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scope": {
+          "const": "RECORDED_PROVENANCE_NOT_ANSWER_CORRECTNESS"
+        }
+      },
+      "required": [
+        "status",
+        "report_sha256",
+        "scope"
+      ],
+      "additionalProperties": false
+    },
+    "source_publication": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "VERIFIED_LEGACY_SOURCE_RECORD"
+        },
+        "source_contract": {
+          "const": "legacy-normal-1.0.1"
+        },
+        "path": {
+          "$ref": "#/definitions/relative_path"
+        },
+        "file_name": {
+          "enum": [
+            "RESULT.json",
+            "COMMON_RESULT.json"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "verification_check_id": {
+          "$ref": "#/definitions/name"
+        },
+        "verified_at_capture_id": {
+          "$ref": "#/definitions/name"
+        }
+      },
+      "required": [
+        "kind",
+        "source_contract",
+        "path",
+        "file_name",
+        "sha256",
+        "verification_check_id",
+        "verified_at_capture_id"
+      ],
+      "additionalProperties": false
+    },
+    "diagnostic_publication": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "NO_ARTIFACT"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "DIAGNOSTIC_FILE"
+            },
+            "path": {
+              "type": "string",
+              "pattern": "^publication/recovery_holds/[A-Za-z0-9_-]+[.]json$"
+            },
+            "sha256": {
+              "$ref": "#/definitions/sha256"
+            }
+          },
+          "required": [
+            "kind",
+            "path",
+            "sha256"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "prior_observation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "NONE_OBSERVED"
+            }
+          },
+          "required": [
+            "state"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "PRESENT"
+            },
+            "path": {
+              "$ref": "#/definitions/relative_path"
+            },
+            "sha256": {
+              "$ref": "#/definitions/sha256"
+            },
+            "currently_verified": {
+              "const": false
+            },
+            "verification_outcome": {
+              "enum": [
+                "REJECTED",
+                "NOT_ESTABLISHED_AT_CAPTURE"
+              ]
+            }
+          },
+          "required": [
+            "state",
+            "path",
+            "sha256",
+            "currently_verified",
+            "verification_outcome"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "envelope": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "end-outcome/2.1-proposal.1"
+        },
+        "contract_version": {
+          "const": "end-certification/2.1-proposal.1"
+        },
+        "variant": {
+          "enum": [
+            "ELIGIBLE_NORMAL_TERMINAL",
+            "ELIGIBLE_RESTRICTED_TERMINAL",
+            "NONCERTIFYING_DIAGNOSTIC"
+          ]
+        },
+        "run_binding": {
+          "$ref": "#/definitions/run_binding"
+        },
+        "artifact_persisted": {
+          "type": "boolean"
+        },
+        "persistence_scope": {
+          "const": "REFERENCED_SOURCE_ARTIFACT_NOT_ENVELOPE"
+        },
+        "provenance_eligible": {
+          "type": "boolean"
+        },
+        "provenance": {
+          "$ref": "#/definitions/provenance"
+        },
+        "termination_reason": {
+          "enum": [
+            "COMPLETED",
+            "NO_ACTIONABLE_REVISION",
+            "INVALID_RESPONSE",
+            "PROTOCOL_FAILURE",
+            "INTERRUPTED",
+            "BUDGET_EXHAUSTED",
+            "TIME_EXHAUSTED",
+            "EXTERNAL_BLOCKER",
+            "UNRESOLVED"
+          ]
+        },
+        "answer_success": {
+          "const": "NOT_ASSERTED"
+        },
+        "candidate_selected": {
+          "type": "boolean"
+        },
+        "selected_candidate_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/name"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "candidates": {
+          "$ref": "#/definitions/candidate_collection"
+        },
+        "accounting": {
+          "$ref": "#/definitions/accounting"
+        },
+        "scientific_score_available": {
+          "const": false
+        },
+        "scientific_score": {
+          "const": null
+        },
+        "scientific_score_status": {
+          "const": "NOT_COMPUTED"
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/diagnostic_entry"
+          },
+          "minItems": 0
+        },
+        "publication": {
+          "type": "object"
+        },
+        "diagnostic_cause": {
+          "enum": [
+            "INTEGRITY_HOLD",
+            "SNAPSHOT_AUTHORITY_UNAVAILABLE",
+            "UNSUPPORTED_OBSERVATION"
+          ]
+        },
+        "prior_artifact_observation": {
+          "$ref": "#/definitions/prior_observation"
+        }
+      },
+      "required": [
+        "schema_version",
+        "contract_version",
+        "variant",
+        "run_binding",
+        "artifact_persisted",
+        "persistence_scope",
+        "provenance_eligible",
+        "provenance",
+        "termination_reason",
+        "answer_success",
+        "candidate_selected",
+        "selected_candidate_ref",
+        "candidates",
+        "accounting",
+        "scientific_score_available",
+        "scientific_score",
+        "scientific_score_status",
+        "diagnostics",
+        "publication"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "candidate_selected": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "selected_candidate_ref": {
+                "$ref": "#/definitions/name"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "selected_candidate_ref": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "accounting": {
+                "properties": {
+                  "snapshot": {
+                    "properties": {
+                      "tier": {
+                        "const": "UNSUPPORTED_OBSERVATION"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidates": {
+                "properties": {
+                  "entries": {
+                    "maxItems": 0
+                  },
+                  "history_coverage": {
+                    "const": "UNKNOWN"
+                  },
+                  "observation_state": {
+                    "enum": [
+                      "NONE_SUPPORTABLE",
+                      "UNAVAILABLE"
+                    ]
+                  },
+                  "initial_ref": {
+                    "const": null
+                  },
+                  "initial_ref_state": {
+                    "const": "NOT_KNOWN"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "allOf": [
+        {
+          "$ref": "#/definitions/envelope"
+        },
+        {
+          "properties": {
+            "variant": {
+              "const": "ELIGIBLE_NORMAL_TERMINAL"
+            },
+            "artifact_persisted": {
+              "const": true
+            },
+            "provenance_eligible": {
+              "const": true
+            },
+            "provenance": {
+              "properties": {
+                "status": {
+                  "const": "VERIFIED"
+                },
+                "report_sha256": {
+                  "$ref": "#/definitions/sha256"
+                }
+              }
+            },
+            "termination_reason": {
+              "enum": [
+                "COMPLETED",
+                "NO_ACTIONABLE_REVISION",
+                "INVALID_RESPONSE",
+                "PROTOCOL_FAILURE"
+              ]
+            },
+            "publication": {
+              "$ref": "#/definitions/source_publication"
+            },
+            "diagnostic_cause": false,
+            "prior_artifact_observation": false,
+            "accounting": {
+              "properties": {
+                "state": {
+                  "enum": [
+                    "COMPLETE",
+                    "PARTIAL",
+                    "UNKNOWN"
+                  ]
+                },
+                "snapshot": {
+                  "properties": {
+                    "tier": {
+                      "enum": [
+                        "AUTHORITATIVE_CONSISTENT_SNAPSHOT",
+                        "STABLE_BUT_INCOMPLETE_OBSERVATION"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "$ref": "#/definitions/envelope"
+        },
+        {
+          "properties": {
+            "variant": {
+              "const": "ELIGIBLE_RESTRICTED_TERMINAL"
+            },
+            "artifact_persisted": {
+              "const": true
+            },
+            "provenance_eligible": {
+              "const": true
+            },
+            "publication": {
+              "$ref": "#/definitions/source_publication"
+            },
+            "diagnostic_cause": false,
+            "prior_artifact_observation": false,
+            "diagnostics": {
+              "minItems": 1
+            },
+            "provenance": {
+              "properties": {
+                "report_sha256": {
+                  "$ref": "#/definitions/sha256"
+                }
+              }
+            },
+            "accounting": {
+              "properties": {
+                "state": {
+                  "enum": [
+                    "COMPLETE",
+                    "PARTIAL",
+                    "UNKNOWN"
+                  ]
+                },
+                "snapshot": {
+                  "properties": {
+                    "tier": {
+                      "enum": [
+                        "AUTHORITATIVE_CONSISTENT_SNAPSHOT",
+                        "STABLE_BUT_INCOMPLETE_OBSERVATION"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "anyOf": [
+            {
+              "properties": {
+                "provenance": {
+                  "properties": {
+                    "status": {
+                      "const": "VERIFIED"
+                    }
+                  }
+                },
+                "termination_reason": {
+                  "enum": [
+                    "INTERRUPTED",
+                    "BUDGET_EXHAUSTED",
+                    "TIME_EXHAUSTED",
+                    "EXTERNAL_BLOCKER",
+                    "UNRESOLVED"
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "provenance": {
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "INTERRUPTED",
+                        "UNKNOWN"
+                      ]
+                    }
+                  }
+                },
+                "termination_reason": {
+                  "enum": [
+                    "INTERRUPTED",
+                    "BUDGET_EXHAUSTED",
+                    "TIME_EXHAUSTED",
+                    "EXTERNAL_BLOCKER",
+                    "UNRESOLVED",
+                    "PROTOCOL_FAILURE",
+                    "INVALID_RESPONSE"
+                  ]
+                },
+                "accounting": {
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "PARTIAL",
+                        "UNKNOWN"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "$ref": "#/definitions/envelope"
+        },
+        {
+          "required": [
+            "diagnostic_cause",
+            "prior_artifact_observation"
+          ],
+          "properties": {
+            "variant": {
+              "const": "NONCERTIFYING_DIAGNOSTIC"
+            },
+            "provenance_eligible": {
+              "const": false
+            },
+            "termination_reason": {
+              "const": "EXTERNAL_BLOCKER"
+            },
+            "candidate_selected": {
+              "const": false
+            },
+            "selected_candidate_ref": {
+              "const": null
+            },
+            "publication": {
+              "$ref": "#/definitions/diagnostic_publication"
+            },
+            "candidates": {
+              "properties": {
+                "entries": {
+                  "items": {
+                    "properties": {
+                      "eligible_for_selection": {
+                        "const": false
+                      },
+                      "binding_authority": {
+                        "enum": [
+                          "OBSERVED_ONLY",
+                          "UNRESOLVED"
+                        ]
+                      },
+                      "handle": {
+                        "properties": {
+                          "status": {
+                            "enum": [
+                              "CORROBORATED_NOT_CERTIFIED",
+                              "OBSERVED_UNBOUND",
+                              "MISSING"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "accounting": {
+              "properties": {
+                "state": {
+                  "enum": [
+                    "PARTIAL",
+                    "UNKNOWN",
+                    "INCONSISTENT"
+                  ]
+                },
+                "complete_totals": {
+                  "const": null
+                }
+              }
+            },
+            "diagnostics": {
+              "minItems": 1,
+              "contains": {
+                "properties": {
+                  "severity": {
+                    "const": "ERROR"
+                  }
+                },
+                "required": [
+                  "severity"
+                ]
+              }
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "diagnostic_cause": {
+                    "const": "INTEGRITY_HOLD"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "provenance": {
+                    "properties": {
+                      "status": {
+                        "const": "BLOCKED"
+                      }
+                    }
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "provenance": {
+                    "properties": {
+                      "status": {
+                        "const": "UNKNOWN"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "artifact_persisted": {
+                    "const": true
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "publication": {
+                    "properties": {
+                      "kind": {
+                        "const": "DIAGNOSTIC_FILE"
+                      }
+                    }
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "publication": {
+                    "properties": {
+                      "kind": {
+                        "const": "NO_ARTIFACT"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "diagnostic_cause": {
+                    "enum": [
+                      "SNAPSHOT_AUTHORITY_UNAVAILABLE",
+                      "UNSUPPORTED_OBSERVATION"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "accounting": {
+                    "properties": {
+                      "snapshot": {
+                        "properties": {
+                          "tier": {
+                            "enum": [
+                              "INDIVIDUALLY_CORROBORATED_OBSERVATION",
+                              "UNSTABLE_SNAPSHOT",
+                              "UNSUPPORTED_OBSERVATION"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "x-contract": {
+    "status": "PROPOSAL_ONLY_NOT_IMPLEMENTED",
+    "versions": {
+      "schema_version": "end-outcome/2.1-proposal.1",
+      "contract_version": "end-certification/2.1-proposal.1"
+    },
+    "typed_error_channel": "TYPED_INTEGRITY_REJECTION_OUTSIDE_JSON_UNION",
+    "strict_numeric_protocol": true,
+    "legacy_outer_fields_forbidden": [
+      "result",
+      "C0",
+      "FINAL",
+      "initial_candidate",
+      "final_candidate",
+      "implementation_version",
+      "artifact_payload_sha256",
+      "is_completed_result"
+    ],
+    "R2_current_implementation_unchanged": true
+  },
+  "x-semantic-rules": [
+    {
+      "id": "J01",
+      "normative_rule": "Strict JSON: reject duplicate keys, NaN/Infinity and finite-overflow numeric tokens before schema validation. Boolean is not integer."
+    },
+    {
+      "id": "E01",
+      "normative_rule": "Source eligibility is external evidence, never established by serialized booleans: normal/restricted require existing F01 completed verifier PASS on referenced bytes/identity/closure at the SAME guarded capture_id. Recompute source provenance/reason and hashes; caller-provided statuses do not substitute."
+    },
+    {
+      "id": "E02",
+      "normative_rule": "A/S requires audited cooperative writer domain and common membership/content cut under all guards described in R1_SNAPSHOT_ACQUISITION. File hashes/timestamps or before/after equality alone never establish it. Strong graph claims require exact R1 witness inventory and closed ID coverage; missing/extra/conflicting mandatory witnesses downgrade to S."
+    },
+    {
+      "id": "A01",
+      "normative_rule": "Every justified claim from the captured evidence must be emitted with its scoped source refs. Unsupported facts must not be invented. claim.snapshot_id == accounting.snapshot.capture_id; claim.scope.run_id == run_binding.run_id; refs/digests must resolve to retained capture bytes and trusted local capture provenance."
+    },
+    {
+      "id": "A02",
+      "normative_rule": "ANCHORED_GRAPH_CARDINALITY requires tier A and GUARDED_VISIBLE_GRAPH, coverage ANCHORED_GRAPH_IN_CUT, identical sorted distinct IDs in value/scope/verified witness graph, and cardinality == len(IDs). Zero requires positively verified empty closed set, not merely absent ledger rows. Other tiers cannot emit this kind."
+    },
+    {
+      "id": "A03",
+      "normative_rule": "CORROBORATED_RESERVATION_DISPATCH requires matching immutable-at-capture reservation/dispatch run/attempt/task/stage/intent identities from execution-origin channels. Its two source hash refs must exist. CORROBORATED_IDENTITY_GROUP requires at least two distinct independently captured named channels with actual cross-binding/origin checks, not two copies/paths of one source. One recorded identity is not actual provider inference or full-run count."
+    },
+    {
+      "id": "A04",
+      "normative_rule": "USAGE_METADATA CORROBORATED_WITHIN_SCOPE requires checked per-field types and arithmetic when all known plus witness bindings at that stated tier; raw receipt status is separately established. Contradictory recorded metadata may be retained only OBSERVED/INCONSISTENT with limitations, never complete cost."
+    },
+    {
+      "id": "A05",
+      "normative_rule": "COMPLETE totals require tier A, current provenance VERIFIED, closure/no future generation, complete covered reservation/settlement/usage/required raw-response validation, no unknown/outstanding/conflicting costs, and totals equal that exact set. total_tokens == input_tokens + output_tokens. Every other case has null complete_totals with explicit reason; unknown is never zero/refund."
+    },
+    {
+      "id": "C01",
+      "normative_rule": "Candidate IDs unique and every observed candidate/attempt is grounded in captured source identities. PRESENT content_sha256 == SHA256(UTF8(content)) AND matches retained source bytes/identity, not merely a rehashed substitute. SOURCE_VERIFIED_BINDING and handle labels must match the trusted source proof for that candidate. Missing content never invented. VERIFIED parent IDs refer to earlier captured candidate IDs and valid ancestry. initial_ref if non-null references original bound initial candidate, never guessed from array index."
+    },
+    {
+      "id": "C02",
+      "normative_rule": "candidate_selected true iff selected_candidate_ref is non-null and references exactly one PRESENT eligible candidate with SOURCE_VERIFIED_BINDING, ELIGIBLE response, VERIFIED lineage and SOURCE_VERIFIED handle. Bound handle/run/task/call/attempt/wire/provenance/settlement/order proof must match current source artifact; rebound/missing/unavailable selection fails. This certifies binding/selection only, never answer truth."
+    },
+    {
+      "id": "C03",
+      "normative_rule": "Diagnostics never select. Raw observed/missing candidates may remain with correct authority. NONE_SUPPORTABLE/UNAVAILABLE entries=[] does not mean zero generated candidates; KNOWN_EMPTY_HISTORY requires positively verified complete empty history. An interrupted terminal may retain an independently supported valid C0; invalid later content does not automatically erase an earlier eligible C0."
+    },
+    {
+      "id": "P01",
+      "normative_rule": "source_publication.path basename == file_name; SHA matches unchanged verified source bytes. Diagnostic file paths never use RESULT.json/COMMON_RESULT.json and are never normal prepared certificates. Prior artifact observation never grants current verification or selection. artifact_persisted describes referenced source artifact, NOT persistence of envelope wire bytes."
+    },
+    {
+      "id": "V01",
+      "normative_rule": "Deterministic partition: grounded diagnostic cause => diagnostic (BLOCKED only for INTEGRITY_HOLD; UNKNOWN for snapshot/unsupported observation). Else current verified source + provenance VERIFIED + normal reason => NORMAL; current verified source + (VERIFIED/restricted reason OR INTERRUPTED|UNKNOWN/uncertain reason) => RESTRICTED. Other inputs raise typed/operational error, no serialized member. Typed integrity rejection is outside the union and matches zero variants."
+    },
+    {
+      "id": "L01",
+      "normative_rule": "Opt-in version routing only. Version-aware legacy normal readers reject any schema_version/variant envelope; validate archived legacy data only with its existing full verifier. Current diagnostic schema is a diagnostic, never RunResult. Unknown/missing/mixed version/class flags reject; arbitrary noncompliant shape-only readers have no compatibility guarantee. No embedded legacy result/C0/FINAL payload is permitted."
+    }
+  ]
+}
