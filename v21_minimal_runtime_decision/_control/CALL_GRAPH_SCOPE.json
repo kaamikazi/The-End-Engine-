@@ -1,0 +1,79 @@
+{
+  "python_files_read": 419,
+  "candidate_edges": 1404,
+  "parse_failures": [],
+  "ledger_internal_write_calls": [
+    {
+      "caller": "Ledger.register",
+      "line": 52,
+      "under_self_lock": true
+    },
+    {
+      "caller": "Ledger.reserve",
+      "line": 64,
+      "under_self_lock": true
+    },
+    {
+      "caller": "Ledger.finish",
+      "line": 82,
+      "under_self_lock": true
+    },
+    {
+      "caller": "Ledger.__init__",
+      "line": 17,
+      "under_self_lock": true
+    }
+  ],
+  "all_private_write_candidates": [
+    {
+      "file": "cognitive_architecture_lab_v1/src/accounting/ledger.py",
+      "caller": "Ledger.register",
+      "line": 52,
+      "expression": "self._write",
+      "lexical_with_context": [
+        "self.lock()"
+      ]
+    },
+    {
+      "file": "cognitive_architecture_lab_v1/src/accounting/ledger.py",
+      "caller": "Ledger.reserve",
+      "line": 64,
+      "expression": "self._write",
+      "lexical_with_context": [
+        "self.lock()"
+      ]
+    },
+    {
+      "file": "cognitive_architecture_lab_v1/src/accounting/ledger.py",
+      "caller": "Ledger.finish",
+      "line": 82,
+      "expression": "self._write",
+      "lexical_with_context": [
+        "self.lock()"
+      ]
+    },
+    {
+      "file": "cognitive_architecture_lab_v1/src/accounting/ledger.py",
+      "caller": "Ledger.__init__",
+      "line": 17,
+      "expression": "self._write",
+      "lexical_with_context": [
+        "self.lock()"
+      ]
+    },
+    {
+      "file": "runtime_isolation_v1/tests/canary/test_canaries.py",
+      "caller": "CanaryTests.test_all_private_sources_absent_from_exact_wire_and_provider_logs",
+      "line": 23,
+      "expression": "e.ledger._write",
+      "lexical_with_context": [
+        "e.ledger.lock()",
+        "temporary()"
+      ]
+    }
+  ],
+  "complete_means": "All syntactic candidates in the enumerated checkout Python file set; unresolved/dynamic/external actor edges are explicitly not a closed-domain proof. Current code path analysis qualifies the critical edges separately.",
+  "runtime_imports": 0,
+  "runtime_tests": 0,
+  "actual_writer_enrollment": false
+}
