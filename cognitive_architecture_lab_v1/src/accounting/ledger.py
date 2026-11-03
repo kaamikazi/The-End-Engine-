@@ -8,8 +8,13 @@ from pathlib import Path
 from ..interfaces.contracts import canonical,finite,positive_int,digest
 class BudgetStop(RuntimeError):pass
 class Ledger:
-    def __init__(self,path,*,global_attempts=136,global_tokens=400000,global_seconds=10800):
-        self.path=Path(path);self.path.parent.mkdir(parents=True,exist_ok=True)
+    def __init__(self,path,*,global_attempts=136,global_tokens=400000,global_seconds=10800,coordination=None):
+        self.path=Path(path);self._coordination=coordination
+        if coordination is not None:
+            from .coordination import Coordinator
+            if type(coordination) is not Coordinator:raise TypeError('Explicit Coordinator required')
+            coordination.validate(self.path)
+        else:self.path.parent.mkdir(parents=True,exist_ok=True)
         self.limits={'attempts':positive_int(global_attempts),'tokens':positive_int(global_tokens),'seconds':finite(global_seconds,True)}
         if global_attempts>136 or global_tokens>400000 or global_seconds>10800:raise ValueError('Frozen global ceilings exceeded')
         with self.lock():
@@ -17,31 +22,39 @@ class Ledger:
             else:self._write({'schema_version':'lab-ledger-v1','limits':self.limits,'runs':{},'attempts':[],'halted':False})
     @contextmanager
     def lock(self):
-        lockpath=self.path.with_suffix(self.path.suffix+'.lock')
-        with lockpath.open('a+b') as f:
-            f.seek(0,2)
-            if f.tell()==0:f.write(b'0');f.flush()
-            f.seek(0)
-            if os.name=='nt':
-                import msvcrt
-                msvcrt.locking(f.fileno(),msvcrt.LK_LOCK,1)
-            else:
-                import fcntl
-                fcntl.flock(f,fcntl.LOCK_EX)
-            try:yield
-            finally:
+        from contextlib import nullcontext
+        from .coordination import _inner_scope
+        coordination=getattr(self,'_coordination',None)
+        if coordination is not None:coordination.check_inner_entry(self.path)
+        with coordination.acquire() if coordination is not None else nullcontext():
+            lockpath=self.path.with_suffix(self.path.suffix+'.lock')
+            with lockpath.open('a+b') as f:
+                f.seek(0,2)
+                if f.tell()==0:f.write(b'0');f.flush()
                 f.seek(0)
-                if os.name=='nt':msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
-                else:fcntl.flock(f,fcntl.LOCK_UN)
+                if os.name=='nt':
+                    import msvcrt
+                    msvcrt.locking(f.fileno(),msvcrt.LK_LOCK,1)
+                else:
+                    import fcntl
+                    fcntl.flock(f,fcntl.LOCK_EX)
+                try:
+                    with _inner_scope(self.path):yield
+                finally:
+                    f.seek(0)
+                    if os.name=='nt':msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
+                    else:fcntl.flock(f,fcntl.LOCK_UN)
     def _read(self):
         envelope=json.loads(self.path.read_text(encoding='utf-8'))
         s=envelope['state']
         if envelope['state_sha256']!=digest(s) or s['schema_version']!='lab-ledger-v1' or s['limits']!=self.limits:raise ValueError('Ledger integrity/identity mismatch')
         return s
     def _write(self,s):
+        coordination=getattr(self,'_coordination',None)
+        if coordination is not None:coordination.assert_write(self.path)
         raw=canonical({'state':s,'state_sha256':digest(s)})
         staging=self.path.with_suffix(self.path.suffix+'.pending')
-        with staging.open('wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
+        with staging.open('xb' if coordination is not None else 'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
         os.replace(staging,self.path)
     def state(self):
         with self.lock():return copy.deepcopy(self._read())

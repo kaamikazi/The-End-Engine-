@@ -1,0 +1,36 @@
+{
+  "observations": {
+    "physical_attempts": 1,
+    "input_tokens": 2,
+    "output_tokens": 3,
+    "total_tokens": 5,
+    "wall_time": 0.01,
+    "known_token_subset": 5,
+    "unknown_usage_attempts": 0,
+    "outstanding_attempts": 0,
+    "attempts": [
+      {
+        "attempt_id": 1,
+        "candidate": {
+          "candidate_id": "c0"
+        },
+        "error_code": null,
+        "input_tokens": 2,
+        "output_tokens": 3,
+        "purpose": "synthetic",
+        "response_sha256": "16477688c0e00699c6cfa4497a3612d7e83c532062b64b250fed8908128ed548",
+        "response_text": "blue",
+        "run_id": "run",
+        "seconds": 0.01,
+        "seconds_ceiling": 1,
+        "started_unix": 1792780736.9615533,
+        "state": "SUCCEEDED",
+        "token_ceiling": 10,
+        "total_tokens": 5
+      }
+    ],
+    "halted": false
+  },
+  "unexpected_child_cleanup": [],
+  "network_attempts": []
+}

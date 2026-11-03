@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "tests": 41,
+    "PASS": 40,
+    "FAIL": 1,
+    "ERROR": 0
+  },
+  "cause": "Windows abspath normalized a trailing-space filename before the rejection check. The created control used the canonical ledger name; no unguarded ledger transaction or deadlock occurred.",
+  "correction": "Validate the raw basename before abspath/realpath; same assertions and same allowed coordination module only.",
+  "initial_result_preserved": true
+}

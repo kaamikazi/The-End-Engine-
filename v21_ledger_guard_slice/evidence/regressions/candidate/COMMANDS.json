@@ -1,0 +1,82 @@
+[
+  {
+    "suite": "engine",
+    "argv": [
+      "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\_control\\regressions.py",
+      "candidate",
+      "engine"
+    ],
+    "pid": 7292,
+    "exit_code": 0,
+    "stdout": "{\"stage\": \"candidate\", \"suite\": \"engine\", \"testsRun\": 303, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"successful\": true, \"elapsed_seconds\": 31.04699999999866}\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 31.23400000000038
+  },
+  {
+    "suite": "lab",
+    "argv": [
+      "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\_control\\regressions.py",
+      "candidate",
+      "lab"
+    ],
+    "pid": 7152,
+    "exit_code": 0,
+    "stdout": "{\"stage\": \"candidate\", \"suite\": \"lab\", \"testsRun\": 58, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"successful\": true, \"elapsed_seconds\": 2.313000000000102}\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 2.4840000000003783
+  },
+  {
+    "suite": "isolation",
+    "argv": [
+      "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\_control\\regressions.py",
+      "candidate",
+      "isolation"
+    ],
+    "pid": 26448,
+    "exit_code": 0,
+    "stdout": "{\"stage\": \"candidate\", \"suite\": \"isolation\", \"testsRun\": 85, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"successful\": true, \"elapsed_seconds\": 4.45299999999952}\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 4.625
+  },
+  {
+    "suite": "native",
+    "argv": [
+      "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\_control\\regressions.py",
+      "candidate",
+      "native"
+    ],
+    "pid": 16072,
+    "exit_code": 0,
+    "stdout": "{\"stage\": \"candidate\", \"suite\": \"native\", \"testsRun\": 53, \"failures\": 0, \"errors\": 0, \"skipped\": 0, \"successful\": true, \"elapsed_seconds\": 19.92200000000048}\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 20.125
+  },
+  {
+    "suite": "r3",
+    "argv": [
+      "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\_control\\regressions.py",
+      "candidate",
+      "r3"
+    ],
+    "pid": 17748,
+    "exit_code": 1,
+    "stdout": "{\"stage\": \"candidate\", \"suite\": \"r3\", \"testsRun\": 244, \"failures\": 16, \"errors\": 6, \"skipped\": 0, \"successful\": false, \"elapsed_seconds\": 112.3130000000001}\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 112.53199999999924
+  }
+]

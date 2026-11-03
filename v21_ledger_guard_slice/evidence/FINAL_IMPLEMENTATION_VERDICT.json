@@ -1,0 +1,107 @@
+{
+  "verdict": "LEDGER_GUARD_SLICE_READY_FOR_INDEPENDENT_REVIEW",
+  "scope": "Explicitly enrolled Ledger coordination only",
+  "branch": "codex/v21-ledger-guard-slice",
+  "base_HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+  "new_commit": null,
+  "checkout": "E:\\The End Engine\\v21_ledger_guard_slice\\checkout",
+  "evidence_directory": "E:\\The End Engine\\v21_ledger_guard_slice\\evidence",
+  "owner_approval": "_control/OWNER_APPROVAL.json",
+  "candidate_source_digest": "e1f62915f944854ef340db8f43a6454ceb077c6a5c61b888e46eeea59182eecd",
+  "digest_domain": "SHA-256 of sorted compact JSON relative-path map of raw file SHA-256 and bytes for changed/new implementation and tests",
+  "exact_source_diff": "EXACT_SOURCE_DIFF.md",
+  "permitted_symbols": [
+    "__init__",
+    "lock",
+    "_write"
+  ],
+  "unchanged_other_tracked_files": 4180,
+  "new_production_modules": 1,
+  "final_targeted": {
+    "attempt": "attempt_004",
+    "testsRun": 41,
+    "PASS": 41,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIP": 0,
+    "all_passed": true
+  },
+  "retained_author_attempts": [
+    {
+      "path": "runs\\targeted\\attempt_001\\RESULT.json",
+      "testsRun": 40,
+      "PASS": 36,
+      "FAIL": 0,
+      "ERROR": 4,
+      "SKIP": 0
+    },
+    {
+      "path": "runs\\targeted\\attempt_002\\RESULT.json",
+      "testsRun": 40,
+      "PASS": 40,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIP": 0
+    },
+    {
+      "path": "runs\\targeted\\attempt_003\\RESULT.json",
+      "testsRun": 41,
+      "PASS": 40,
+      "FAIL": 1,
+      "ERROR": 0,
+      "SKIP": 0
+    },
+    {
+      "path": "runs\\targeted\\attempt_004\\RESULT.json",
+      "testsRun": 41,
+      "PASS": 41,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIP": 0
+    }
+  ],
+  "final_native_error_reproduction": "runs/native_cause_final_source/RESULT.json",
+  "original_regressions": {
+    "tests_per_baseline_or_final": 743,
+    "final_counts": {
+      "PASS": 721,
+      "ERROR": 6,
+      "FAIL": 16
+    },
+    "new_regressions": 0,
+    "same_parent_and_subtest_types_messages": true,
+    "historical_failure_error_exits_preserved": true
+  },
+  "preservation": {
+    "passed": true,
+    "prior_files": 52917,
+    "old_worktree_states_preserved": true,
+    "preexisting_branches_preserved": true
+  },
+  "precise_coverage": "Explicit Coordinator Ledger constructor/lock/_write boundary, including enrolled register/reserve/finish and ordinary readers. Default/old clients remain outside.",
+  "default_behavior": "Legacy unless coordinator explicitly supplied; no environment/global activation or automatic path discovery",
+  "parent_creation": "Preexisting parent required in opt-in mode; explicit control bootstrap only; no parent mkdir",
+  "stale_pending": "Opt-in FileExistsError/preservation, legacy wb semantics unchanged",
+  "source_owner_fence": "Unchanged legacy source core passes synthetic nonowning L1->L2->ordinary L3 test",
+  "independent_acceptance": false,
+  "independent_review_request": "INDEPENDENT_REVIEW_REQUEST.md",
+  "runtime_acceptance": false,
+  "AUTHORITATIVE_CONSISTENT_SNAPSHOT": false,
+  "STABLE_BUT_INCOMPLETE_OBSERVATION": false,
+  "COMPLETE_RUN_ACCOUNTING": false,
+  "FULL_WRITER_ENROLLMENT": false,
+  "SCIENTIFIC_EXPERIMENT_READINESS": false,
+  "native_witness_R1_observer_R3_adapter_implemented": false,
+  "no_live_model_calls": true,
+  "no_provider_requests": true,
+  "no_empirical_benchmark": true,
+  "historical_31_and_N12_unchanged": true,
+  "no_commit_push_merge_tag_release": true,
+  "remaining_gaps": "REMAINING_WRITER_GAPS.md",
+  "reviewer_provenance": "Author implementation/tests only; no authenticated human approval claimed",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "native_profile": "Windows/NTFS"
+  }
+}

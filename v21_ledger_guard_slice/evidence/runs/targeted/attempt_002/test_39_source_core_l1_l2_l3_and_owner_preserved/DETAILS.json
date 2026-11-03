@@ -1,0 +1,28 @@
+{
+  "observations": {
+    "pid": 7288,
+    "exit_code": 0,
+    "stdout": "{\"pid\": 7288, \"mode\": \"source_core\", \"operation_status\": \"SOURCE_CORE_PASS\", \"payload_sha256\": \"40100073567610c8d8285a8101fa16f370f91d2309c18ac132c071cdd7c13da4\", \"owner_fence_token_preserved\": true, \"source_bytes_preserved\": true, \"source_tripwires\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"lock_order\": \"L1->L2->ordinary_L3\", \"fixture_origin\": \"REBASED_SYNTHETIC_ONLY\", \"elapsed_seconds\": 0.6720000000004802, \"network_attempts\": []}\n",
+    "stderr": "",
+    "killed": false,
+    "unexpected_timeout": false,
+    "result": {
+      "pid": 7288,
+      "mode": "source_core",
+      "operation_status": "SOURCE_CORE_PASS",
+      "payload_sha256": "40100073567610c8d8285a8101fa16f370f91d2309c18ac132c071cdd7c13da4",
+      "owner_fence_token_preserved": true,
+      "source_bytes_preserved": true,
+      "source_tripwires": {
+        "forbidden_network_events": 0,
+        "forbidden_dispatch_or_reservation_calls": 0
+      },
+      "lock_order": "L1->L2->ordinary_L3",
+      "fixture_origin": "REBASED_SYNTHETIC_ONLY",
+      "elapsed_seconds": 0.6720000000004802,
+      "network_attempts": []
+    }
+  },
+  "unexpected_child_cleanup": [],
+  "network_attempts": []
+}

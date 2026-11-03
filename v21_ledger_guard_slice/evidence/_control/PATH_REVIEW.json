@@ -1,0 +1,8 @@
+{
+  "identified_gap": "Noncanonical Win32 names and NTFS alternate data streams must not be treated as independent shared-ledger domains",
+  "permitted_fix": "Only coordination.py opt-in path preflight: reject streams/trailing aliases/devices, canonicalize existing8.3 names after raw reparse rejection",
+  "legacy_behavior_affected": false,
+  "historical_or_previous_test_results_modified": false,
+  "previous_versions_archived": true,
+  "no_reproducible_deadlock_or_outside_scope_change": true
+}

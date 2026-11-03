@@ -1,0 +1,640 @@
+{
+  "stage": "baseline",
+  "suite": "isolation",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "testsRun": 85,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "successful": true,
+  "test_outcomes": [
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_after_send_failure_counts_and_retains_unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_canceled_response_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_concurrent_duplicate_reservations_are_serialized",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_duplicate_dispatch_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_every_call_purpose_uses_same_boundary_and_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_global_cap_shared",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_known_tokens_and_time_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_no_free_retry_after_known_success",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_overrun_recorded_and_halts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_per_run_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_reserved_before_transport_captures_any_bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_time_reservation_refused",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_token_reservation_refused_before_send",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_transport_failure_before_send_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_unknown_active_time_blocks",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_dispatch.AccountingTests.test_unknown_tokens_remain_unknown_and_block",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_all_private_sources_absent_from_exact_wire_and_provider_logs",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_encoded_private_messages_reject_structurally",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_encoded_private_prior_context_handles_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_entire_configuration_object_cannot_serialize",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_foreign_condition_candidate_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_forged_context_snapshot_cannot_reach_gateway",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_fresh_markers_are_not_literal_denylist",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_private_observation_not_forwarded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_private_source_and_answers_not_admitted_as_task",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_provider_exception_metadata_never_forwarded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_secret_cannot_be_smuggled_as_model_identifier",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_unexpected_response_metadata_quarantined",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.canary.test_canaries.CanaryTests.test_unrelated_conversation_and_absolute_paths_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_arbitrary_transport_or_callback_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_defaults_mutated_after_seal_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_model_code_output_is_never_executed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_no_dynamic_execution_import_or_network_in_surface",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_public_prompt_injection_has_no_capability",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_real_backend_is_ineligible",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_structured_tool_request_response_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_textual_fake_tool_instructions_are_inert",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_accept_and_block_are_both_explicit_external_choices",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_decision_binds_exact_exposure_and_scope",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_no_automatic_scientific_signoff",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_plain_status_is_not_signature",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_private_evaluation_object_rejects_as_prior_output",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_scientific_decision_metadata_not_generation_input",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_stable_correctly_spelled_exposure_enums",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_unverified_custodian_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_actual_final_bytes_captured",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_actual_full_payload_matches_expected_allowlist",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_bounded_prior_context_not_silently_truncated",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_current_run_outputs_allowed_bounded_and_quoted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_duplicate_final_wire_keys_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_extra_final_wire_field_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_forged_reservation_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_forged_sealed_body_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_host_metadata_absent",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_identical_initial_bytes_six_conditions",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_independent_alternative_cannot_inherit_prior_outputs",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_initial_history_is_forbidden",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_model_visible_output_handles_do_not_reveal_global_attempt_ids",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_public_observation_computed_not_forwarded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_public_source_hash_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_run_mutation_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_run_task_payload_must_match_public_source_order",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_unapproved_process_instruction_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_closure_durable_prevents_new_generation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_evaluation_requires_closed_generation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_interrupted_construction_before_reservation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_interrupted_exchange_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_interruption_after_reservation_survives_restart",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_malformed_response_retained_host_only",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_missing_response_quarantined",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_modified_closed_output_rejects",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_no_replay_after_crash",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_old_seal_cannot_cross_restart",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_own_output_provenance_survives_restart",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_posthoc_evaluation_cannot_feed_revision",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_restart_path_revalidates",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.restart.test_recovery.RestartTests.test_retry_path_revalidates",
+      "status": "PASS"
+    }
+  ],
+  "subtest_outcomes": [
+    {
+      "parent": "tests.canary.test_canaries.CanaryTests.test_secret_cannot_be_smuggled_as_model_identifier",
+      "id": "tests.canary.test_canaries.CanaryTests.test_secret_cannot_be_smuggled_as_model_identifier (field='model_identity')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.canary.test_canaries.CanaryTests.test_secret_cannot_be_smuggled_as_model_identifier",
+      "id": "tests.canary.test_canaries.CanaryTests.test_secret_cannot_be_smuggled_as_model_identifier (field='model_digest')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret",
+      "id": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret (changes={'seed_if_supported': 123456789})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret",
+      "id": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret (changes={'context_window': 16384})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret",
+      "id": "tests.canary.test_canaries.CanaryTests.test_settings_need_reviewed_configuration_not_encoded_secret (changes={'generation_parameters': {'temperature': 0.9, 'top_p': 0.8, 'think': False}})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='tools')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='functions')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='file_search')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='browser')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='web_search')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='mcp')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='retrieval_index')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='mounts')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='conversation_id')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='thread_id')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='assistant_id')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='attachments')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='tool_choice')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='workspace')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_all_forbidden_capability_descriptors (feature='callbacks')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='tools')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='functions')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='file_search')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='browser')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='retrieval')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='conversation')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='memory')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='sdk_retries')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='headers')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_every_inherited_default_rejected (feature='metadata')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected (changes={'tools': ['shell']})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected (changes={'tool_choice': 'auto'})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected (changes={'messages': [{'role': 'system', 'content': 'private'}]})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected (changes={'stateless': False})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected",
+      "id": "tests.capabilities.test_tools.CapabilityTests.test_final_role_and_tool_injection_rejected (changes={'stream': True})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.contamination.test_decisions.ContaminationTests.test_decision_binds_exact_exposure_and_scope",
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_decision_binds_exact_exposure_and_scope (changed={'exposure_ledger_sha256': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.contamination.test_decisions.ContaminationTests.test_decision_binds_exact_exposure_and_scope",
+      "id": "tests.contamination.test_decisions.ContaminationTests.test_decision_binds_exact_exposure_and_scope (changed={'scope': 'other'})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict (changes={'parameters': []})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict (changes={'messages': [None]})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict (changes={'model': {'tools': ['shell']}})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict (changes={'parameters': {'context_window': 8192, 'maximum_output_tokens': 4096, 'seed': True, 'temperature': 0.7, 'think': False, 'top_p': 0.8}})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict",
+      "id": "tests.request_serialization.test_wire.WireTests.test_final_settings_and_shapes_strict (changes={'parameters': {'context_window': 8192, 'maximum_output_tokens': 99999, 'seed': 11, 'temperature': 0.7, 'think': False, 'top_p': 0.8}})",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject (raw=b'{\"messag')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject (raw=b'null')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject (raw=b'[]')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_partial_serialization_reject (raw=b'\\xff')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject (t='dict')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject (t='bytes')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject",
+      "id": "tests.request_serialization.test_wire.WireTests.test_preconstructed_provider_object_raw_bytes_reject (t='object')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='messages')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='system')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='developer')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='metadata')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='provider_request')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='file')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation",
+      "id": "tests.request_serialization.test_wire.WireTests.test_unknown_call_fields_reject_before_reservation (key='config')",
+      "status": "PASS"
+    }
+  ],
+  "raw_failures": [],
+  "raw_errors": [],
+  "network_attempts_denied": [],
+  "elapsed_seconds": 4.5
+}

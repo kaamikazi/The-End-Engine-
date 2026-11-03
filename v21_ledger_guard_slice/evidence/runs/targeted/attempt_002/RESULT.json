@@ -1,0 +1,219 @@
+{
+  "attempt": "attempt_002",
+  "testsRun": 40,
+  "PASS": 40,
+  "FAIL": 0,
+  "ERROR": 0,
+  "SKIP": 0,
+  "all_passed": true,
+  "test_outcomes": [
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_01_constructor_and_existing_attachment",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_02_missing_parent_has_no_pre_guard_creation",
+      "status": "PASS",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_03_wrong_resource_rejected_before_initialization",
+      "status": "PASS",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_04_register_reserve_finish_and_usage_unchanged",
+      "status": "PASS",
+      "elapsed_seconds": 0.07800000000133878
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_05_unknown_usage_still_blocks_next_reservation",
+      "status": "PASS",
+      "elapsed_seconds": 0.09399999999914144
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_06_global_ceiling_and_shared_runs",
+      "status": "PASS",
+      "elapsed_seconds": 0.07799999999951979
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_07_logical_reentry_across_explicit_instances",
+      "status": "PASS",
+      "elapsed_seconds": 0.06300000000010186
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_08_nonowning_reader_explicitly_enrolled",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_09_recursive_l3_rejected_before_native_reacquire",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_10_first_l2_under_legacy_l3_rejected",
+      "status": "PASS",
+      "elapsed_seconds": 0.030999999999039574
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_11_write_cannot_acquire_l2_from_inside_private_helper",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_12_other_thread_cannot_borrow_ownership",
+      "status": "PASS",
+      "elapsed_seconds": 0.0319999999992433
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_13_thread_contention_is_bounded",
+      "status": "PASS",
+      "elapsed_seconds": 0.2029999999995198
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_14_threads_share_domain_and_no_lost_registrations",
+      "status": "PASS",
+      "elapsed_seconds": 0.0930000000007567
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_15_cross_process_constructor_waits_before_l3_or_data",
+      "status": "PASS",
+      "elapsed_seconds": 0.46899999999914144
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_16_cross_process_register_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.4850000000005821
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_17_cross_process_reserve_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.5
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_18_cross_process_finish_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.5
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_19_enrolled_process_writes_after_release",
+      "status": "PASS",
+      "elapsed_seconds": 0.25
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_20_unenrolled_process_bypasses_domain_and_creates_pending",
+      "status": "PASS",
+      "elapsed_seconds": 0.2180000000007567
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_21_write_fsync_and_replace_stay_inside_l2_l3",
+      "status": "PASS",
+      "elapsed_seconds": 0.046999999998661224
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_22_exception_at_fsync_preserves_pending_and_releases",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_23_replace_failure_preserves_both_files_and_releases",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_24_stale_pending_blocks_new_optin_write",
+      "status": "PASS",
+      "elapsed_seconds": 0.046999999998661224
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_25_interruption_releases_owned_guards",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_26_process_termination_releases_l2",
+      "status": "PASS",
+      "elapsed_seconds": 0.2029999999995198
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_27_crash_after_pending_keeps_evidence_and_no_replay",
+      "status": "PASS",
+      "elapsed_seconds": 0.4220000000004802
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_28_control_missing_is_not_recreated",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_29_empty_control_fails_without_repair",
+      "status": "PASS",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_30_control_copy_cannot_rebind_identity",
+      "status": "PASS",
+      "elapsed_seconds": 0.0319999999992433
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_31_actual_hardlink_alias_rejected",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_32_case_alias_uses_same_domain",
+      "status": "PASS",
+      "elapsed_seconds": 0.06199999999989814
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_33_invalid_configuration_has_no_effects",
+      "status": "PASS",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_34_d_then_l2_then_l3_without_recursive_d",
+      "status": "PASS",
+      "elapsed_seconds": 0.06300000000010186
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_35_legacy_api_and_default_stale_pending_semantics",
+      "status": "PASS",
+      "elapsed_seconds": 0.014999999999417923
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_36_default_does_not_silently_enroll",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_37_legacy_differential_against_pinned_source",
+      "status": "PASS",
+      "elapsed_seconds": 0.046999999998661224
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_38_duplicate_module_origin_rejected",
+      "status": "PASS",
+      "elapsed_seconds": 0.01600000000144064
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_39_source_core_l1_l2_l3_and_owner_preserved",
+      "status": "PASS",
+      "elapsed_seconds": 0.8589999999985594
+    },
+    {
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_40_guard_bootstrap_never_overwrites_existing_control",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563
+    }
+  ],
+  "raw_failures": [],
+  "raw_errors": [],
+  "elapsed_seconds": 5.531000000000859,
+  "strong_authority_awarded": false,
+  "independent_acceptance": false,
+  "retained_previous_results": [
+    "runs\\targeted\\attempt_001\\RESULT.json"
+  ]
+}

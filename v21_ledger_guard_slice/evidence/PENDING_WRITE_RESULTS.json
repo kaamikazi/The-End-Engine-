@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "number": 1,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_01_constructor_and_existing_attachment",
+      "status": "PASS",
+      "elapsed_seconds": 0.06199999999989814,
+      "raw_details": "runs\\targeted\\attempt_004\\test_01_constructor_and_existing_attachment\\DETAILS.json"
+    },
+    {
+      "number": 2,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_02_missing_parent_has_no_pre_guard_creation",
+      "status": "PASS",
+      "elapsed_seconds": 0.0,
+      "raw_details": "runs\\targeted\\attempt_004\\test_02_missing_parent_has_no_pre_guard_creation\\DETAILS.json"
+    },
+    {
+      "number": 3,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_03_wrong_resource_rejected_before_initialization",
+      "status": "PASS",
+      "elapsed_seconds": 0.0319999999992433,
+      "raw_details": "runs\\targeted\\attempt_004\\test_03_wrong_resource_rejected_before_initialization\\DETAILS.json"
+    },
+    {
+      "number": 15,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_15_cross_process_constructor_waits_before_l3_or_data",
+      "status": "PASS",
+      "elapsed_seconds": 0.46899999999914144,
+      "raw_details": "runs\\targeted\\attempt_004\\test_15_cross_process_constructor_waits_before_l3_or_data\\DETAILS.json"
+    },
+    {
+      "number": 16,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_16_cross_process_register_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "raw_details": "runs\\targeted\\attempt_004\\test_16_cross_process_register_no_pending_while_excluded\\DETAILS.json"
+    },
+    {
+      "number": 17,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_17_cross_process_reserve_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "raw_details": "runs\\targeted\\attempt_004\\test_17_cross_process_reserve_no_pending_while_excluded\\DETAILS.json"
+    },
+    {
+      "number": 18,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_18_cross_process_finish_no_pending_while_excluded",
+      "status": "PASS",
+      "elapsed_seconds": 0.5,
+      "raw_details": "runs\\targeted\\attempt_004\\test_18_cross_process_finish_no_pending_while_excluded\\DETAILS.json"
+    },
+    {
+      "number": 20,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_20_unenrolled_process_bypasses_domain_and_creates_pending",
+      "status": "PASS",
+      "elapsed_seconds": 0.25,
+      "raw_details": "runs\\targeted\\attempt_004\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\DETAILS.json"
+    },
+    {
+      "number": 21,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_21_write_fsync_and_replace_stay_inside_l2_l3",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_21_write_fsync_and_replace_stay_inside_l2_l3\\DETAILS.json"
+    },
+    {
+      "number": 22,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_22_exception_at_fsync_preserves_pending_and_releases",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_22_exception_at_fsync_preserves_pending_and_releases\\DETAILS.json"
+    },
+    {
+      "number": 23,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_23_replace_failure_preserves_both_files_and_releases",
+      "status": "PASS",
+      "elapsed_seconds": 0.06199999999989814,
+      "raw_details": "runs\\targeted\\attempt_004\\test_23_replace_failure_preserves_both_files_and_releases\\DETAILS.json"
+    },
+    {
+      "number": 24,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_24_stale_pending_blocks_new_optin_write",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_24_stale_pending_blocks_new_optin_write\\DETAILS.json"
+    },
+    {
+      "number": 27,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_27_crash_after_pending_keeps_evidence_and_no_replay",
+      "status": "PASS",
+      "elapsed_seconds": 0.4220000000004802,
+      "raw_details": "runs\\targeted\\attempt_004\\test_27_crash_after_pending_keeps_evidence_and_no_replay\\DETAILS.json"
+    }
+  ],
+  "enrolled_constructor_register_reserve_finish_excluded_before_pending": true,
+  "constructor_while_L2_held": "No ledger main, L3 control or pending created by the enrolled child",
+  "write_phases": {
+    "phases": [
+      "PENDING_FLUSHED_WITH_L2_L3",
+      "REPLACE_WITH_L2_L3"
+    ]
+  },
+  "stale_evidence": "Opt-in exclusive xb refuses preexisting pending; no repair or cleanup deletion. Legacy wb behavior retained.",
+  "unenrolled_negative": {
+    "receipt": {
+      "pid": 21224,
+      "exit_code": 0,
+      "stdout": "{\"pid\": 21224, \"mode\": \"register\", \"operation_status\": \"REJECTED\", \"exception_type\": \"PermissionError\", \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_004\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_004\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json'\", \"code\": null, \"errno\": 13, \"winerror\": 5, \"elapsed_seconds\": 0.0, \"network_attempts\": []}\n",
+      "stderr": "",
+      "killed": false,
+      "unexpected_timeout": false,
+      "result": {
+        "pid": 21224,
+        "mode": "register",
+        "operation_status": "REJECTED",
+        "exception_type": "PermissionError",
+        "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_004\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_004\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json'",
+        "code": null,
+        "errno": 13,
+        "winerror": 5,
+        "elapsed_seconds": 0.0,
+        "network_attempts": []
+      }
+    },
+    "pending_sha256": "8c8245bbc53127c04cb7eac2e74a36b65b82a7e2bf9926d63cae2ba5224649fc",
+    "main_sha256": "09f65febce3563b74bf4d296345ce5e536971b769639f142c0ed8f2734d21a07",
+    "scope": "UNENROLLED_OUTSIDE_GUARANTEE_NO_A_S"
+  },
+  "crash_pending": {
+    "phase": {
+      "phase": "PENDING_FLUSHED_FSYNCED_BEFORE_REPLACE",
+      "pid": 16364,
+      "pending_path": "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\runs\\targeted\\attempt_004\\test_27_crash_after_pending_keeps_evidence_and_no_replay\\budget.json.pending"
+    },
+    "terminated_writer": {
+      "pid": 16364,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "killed": true,
+      "unexpected_timeout": false
+    },
+    "pending_sha256": "a4b914f1a7b38fdec4155a6c24a30dfd456aa8bc1addc5cc5602c1b789f01a06",
+    "main_unchanged": true,
+    "automatic_repair_or_replay": false
+  },
+  "fsync_replace_failure_testing": "Injected fsync/replace errors exercise release and preservation; actual native replace denial occurs in the unenrolled pinned-main control",
+  "all_writer_enrollment": false
+}

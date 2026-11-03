@@ -1,0 +1,18 @@
+{
+  "initial_counts": {
+    "tests": 40,
+    "PASS": 36,
+    "FAIL": 0,
+    "ERROR": 4
+  },
+  "affected_tests": [
+    "test_15",
+    "test_16",
+    "test_17",
+    "test_18"
+  ],
+  "exact_error": "PermissionError errno13 in test sha(Path.read_bytes) of active control through second handle",
+  "production_rejection_preconditions_already_observed": "Child exited0 recording REJECTED/L2_CONTENTION_DEADLINE; no pending assertion passed",
+  "correction_scope": "New contested test helper only: owner-FD full-byte control read while held; all original data/control hashes also rechecked after release; no omitted control and no production source change",
+  "old_result_and_exact_sources_preserved": "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\runs\\targeted\\attempt_001"
+}

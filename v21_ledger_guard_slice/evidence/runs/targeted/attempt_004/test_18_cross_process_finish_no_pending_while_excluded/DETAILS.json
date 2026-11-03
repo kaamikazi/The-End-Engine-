@@ -1,0 +1,35 @@
+{
+  "observations": {
+    "operation": "finish",
+    "attempt_phase": {
+      "phase": "ACTUAL_OPERATION_ENTRY",
+      "pid": 31196,
+      "operation": "finish",
+      "enrolled": true
+    },
+    "receipt": {
+      "pid": 31196,
+      "exit_code": 0,
+      "stdout": "{\"pid\": 31196, \"mode\": \"finish\", \"operation_status\": \"REJECTED\", \"exception_type\": \"CoordinationBusy\", \"message\": \"L2_CONTENTION_DEADLINE\", \"code\": \"L2_CONTENTION_DEADLINE\", \"errno\": null, \"winerror\": null, \"elapsed_seconds\": 0.25, \"network_attempts\": []}\n",
+      "stderr": "",
+      "killed": false,
+      "unexpected_timeout": false,
+      "result": {
+        "pid": 31196,
+        "mode": "finish",
+        "operation_status": "REJECTED",
+        "exception_type": "CoordinationBusy",
+        "message": "L2_CONTENTION_DEADLINE",
+        "code": "L2_CONTENTION_DEADLINE",
+        "errno": null,
+        "winerror": null,
+        "elapsed_seconds": 0.25,
+        "network_attempts": []
+      }
+    },
+    "no_pending_created_while_L2_held": true,
+    "constructor": false
+  },
+  "unexpected_child_cleanup": [],
+  "network_attempts": []
+}

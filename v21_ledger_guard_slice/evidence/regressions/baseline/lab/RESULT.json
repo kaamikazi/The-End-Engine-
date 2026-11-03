@@ -1,0 +1,357 @@
+{
+  "stage": "baseline",
+  "suite": "lab",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "testsRun": 58,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "successful": true,
+  "test_outcomes": [
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_active_time_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_actual_usage_overrun_retained_and_halts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_all_physical_purposes_count",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_corrupt_checkpoint_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_failed_calls_not_deleted_on_new_cell",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_global_attempts_shared_across_runs",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_global_token_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_interruption_blocks_restart_budget_reset",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_limits_cannot_reset_after_restart",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_measured_zero_valid",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_per_run_attempt_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_per_run_time_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_per_run_token_reservation_stop",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_reservation_durable_before_dispatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_response_and_candidate_durable",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_response_hash_mismatch_rejects",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_run_contract_cannot_change_on_resume",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_settlement_cannot_be_overwritten",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_unknown_time_blocks",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_ledger.AccountingTests.test_unknown_tokens_not_zero",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_C0_final_lineage_separate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_TASK_INPUT_candidate_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_all_six_identical_initial_public_bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_approved_input_display_order_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_candidate_attempt_identity_global_across_cells",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_critique_not_generated_candidate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_cross_run_invocations_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_durable_candidate_resume",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_every_termination_code",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_explicit_alias_not_silent_relabel",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_failed_without_output_null_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_final_can_retain_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_input_detached_from_external_mutation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_model_settings_reject_unknown_secret",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_nested_request_mutation_detected_before_dispatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_nonfinite_public_json_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_partial_output_retained_and_not_complete",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_replay_deterministic_except_attempt_time",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_required_request_fields",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_task_identity_mismatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_unknown_parent_reject_before_dispatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_changed_approved_bytes_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_child_environment_stripped",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_deterministic_export",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_hidden_top_level_key_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_junction_export_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_no_evaluator_import_in_mock_source",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_no_tool_or_private_metadata_in_wire",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_only_allowlisted_bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_posthoc_evaluation_order_synthetic",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_real_runtime_gate_is_closed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_symlink_export_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_temp_logs_have_no_hidden_canary",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_unrestricted_child_CAN_import_absolute_private_module",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.isolation.test_boundary.IsolationTests.test_unrestricted_child_CAN_read_private_canary",
+      "status": "PASS"
+    }
+  ],
+  "subtest_outcomes": [
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='-1')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='True')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='nan')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='inf')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='-1')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='True')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens",
+      "id": "tests.accounting.test_ledger.AccountingTests.test_invalid_measured_times_and_tokens (x='1.5')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'attempt_budget': 37}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'attempt_budget': True}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'token_budget': 0}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'wall_time_budget': nan}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'context_window': 0}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'maximum_output_tokens': 9000}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers",
+      "id": "tests.interfaces.test_contracts.InterfaceTests.test_invalid_request_numbers (kw=\"{'seed_if_supported': False}\")",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='../hidden')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='/hidden')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='C:/hidden')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='E:\\\\hidden')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='file:stream')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='./public.json')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject",
+      "id": "tests.isolation.test_boundary.IsolationTests.test_traversal_absolute_stream_reject (p='foo/../public.json')",
+      "status": "PASS"
+    }
+  ],
+  "raw_failures": [],
+  "raw_errors": [],
+  "network_attempts_denied": [],
+  "elapsed_seconds": 2.32799999999952
+}

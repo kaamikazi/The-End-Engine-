@@ -1,0 +1,20 @@
+{
+  "pid": 21224,
+  "exit_code": 0,
+  "stdout": "{\"pid\": 21224, \"mode\": \"register\", \"operation_status\": \"REJECTED\", \"exception_type\": \"PermissionError\", \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_004\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_004\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json'\", \"code\": null, \"errno\": 13, \"winerror\": 5, \"elapsed_seconds\": 0.0, \"network_attempts\": []}\n",
+  "stderr": "",
+  "killed": false,
+  "unexpected_timeout": false,
+  "result": {
+    "pid": 21224,
+    "mode": "register",
+    "operation_status": "REJECTED",
+    "exception_type": "PermissionError",
+    "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_004\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_004\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json'",
+    "code": null,
+    "errno": 13,
+    "winerror": 5,
+    "elapsed_seconds": 0.0,
+    "network_attempts": []
+  }
+}

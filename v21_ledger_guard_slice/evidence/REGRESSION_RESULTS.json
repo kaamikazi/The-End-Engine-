@@ -1,0 +1,106 @@
+{
+  "no_new_regressions": true,
+  "suites": [
+    {
+      "suite": "engine",
+      "baseline_tests": 303,
+      "final_tests": 303,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 303
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/engine/RESULT.json",
+      "final_result": "regressions/candidate_final/engine/RESULT.json"
+    },
+    {
+      "suite": "lab",
+      "baseline_tests": 58,
+      "final_tests": 58,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 58
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/lab/RESULT.json",
+      "final_result": "regressions/candidate_final/lab/RESULT.json"
+    },
+    {
+      "suite": "isolation",
+      "baseline_tests": 85,
+      "final_tests": 85,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 85
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/isolation/RESULT.json",
+      "final_result": "regressions/candidate_final/isolation/RESULT.json"
+    },
+    {
+      "suite": "native",
+      "baseline_tests": 53,
+      "final_tests": 53,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 53
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/native/RESULT.json",
+      "final_result": "regressions/candidate_final/native/RESULT.json"
+    },
+    {
+      "suite": "r3",
+      "baseline_tests": 244,
+      "final_tests": 244,
+      "final_failures": 16,
+      "final_errors": 6,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 222,
+        "ERROR": 6,
+        "FAIL": 16
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 1,
+      "final_command_exit": 1,
+      "baseline_result": "regressions/baseline/r3/RESULT.json",
+      "final_result": "regressions/candidate_final/r3/RESULT.json"
+    }
+  ],
+  "actual_tests_per_baseline_or_final_run": 743,
+  "final_counts": {
+    "PASS": 721,
+    "ERROR": 6,
+    "FAIL": 16
+  },
+  "parent_outcome_or_message_changes": [],
+  "subtest_changes": [],
+  "network_attempts_denied": [],
+  "raw_tracebacks_preserved": true,
+  "historical_failures_not_rescored": true,
+  "N12_historical_FAIL_unchanged": true,
+  "candidate_intermediate_run_also_retained": "regressions/candidate",
+  "source_revision": "_control/SCOPED_SOURCE_REVIEW.json"
+}

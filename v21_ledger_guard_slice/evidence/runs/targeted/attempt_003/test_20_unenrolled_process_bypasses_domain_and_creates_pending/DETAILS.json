@@ -1,0 +1,29 @@
+{
+  "observations": {
+    "receipt": {
+      "pid": 36056,
+      "exit_code": 0,
+      "stdout": "{\"pid\": 36056, \"mode\": \"register\", \"operation_status\": \"REJECTED\", \"exception_type\": \"PermissionError\", \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_003\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_ledger_guard_slice\\\\\\\\evidence\\\\\\\\runs\\\\\\\\targeted\\\\\\\\attempt_003\\\\\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\\\\\budget.json'\", \"code\": null, \"errno\": 13, \"winerror\": 5, \"elapsed_seconds\": 0.0, \"network_attempts\": []}\n",
+      "stderr": "",
+      "killed": false,
+      "unexpected_timeout": false,
+      "result": {
+        "pid": 36056,
+        "mode": "register",
+        "operation_status": "REJECTED",
+        "exception_type": "PermissionError",
+        "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_003\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\evidence\\\\runs\\\\targeted\\\\attempt_003\\\\test_20_unenrolled_process_bypasses_domain_and_creates_pending\\\\budget.json'",
+        "code": null,
+        "errno": 13,
+        "winerror": 5,
+        "elapsed_seconds": 0.0,
+        "network_attempts": []
+      }
+    },
+    "pending_sha256": "8c8245bbc53127c04cb7eac2e74a36b65b82a7e2bf9926d63cae2ba5224649fc",
+    "main_sha256": "09f65febce3563b74bf4d296345ce5e536971b769639f142c0ed8f2734d21a07",
+    "scope": "UNENROLLED_OUTSIDE_GUARANTEE_NO_A_S"
+  },
+  "unexpected_child_cleanup": [],
+  "network_attempts": []
+}

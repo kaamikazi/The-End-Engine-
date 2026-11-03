@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "source_digest": "e1f62915f944854ef340db8f43a6454ceb077c6a5c61b888e46eeea59182eecd",
+  "controls": [
+    {
+      "number": 7,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_07_logical_reentry_across_explicit_instances",
+      "status": "PASS",
+      "elapsed_seconds": 0.046000000000276486,
+      "raw_details": "runs\\targeted\\attempt_004\\test_07_logical_reentry_across_explicit_instances\\DETAILS.json"
+    },
+    {
+      "number": 8,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_08_nonowning_reader_explicitly_enrolled",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_08_nonowning_reader_explicitly_enrolled\\DETAILS.json"
+    },
+    {
+      "number": 9,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_09_recursive_l3_rejected_before_native_reacquire",
+      "status": "PASS",
+      "elapsed_seconds": 0.046999999998661224,
+      "raw_details": "runs\\targeted\\attempt_004\\test_09_recursive_l3_rejected_before_native_reacquire\\DETAILS.json"
+    },
+    {
+      "number": 10,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_10_first_l2_under_legacy_l3_rejected",
+      "status": "PASS",
+      "elapsed_seconds": 0.031000000000858563,
+      "raw_details": "runs\\targeted\\attempt_004\\test_10_first_l2_under_legacy_l3_rejected\\DETAILS.json"
+    },
+    {
+      "number": 11,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_11_write_cannot_acquire_l2_from_inside_private_helper",
+      "status": "PASS",
+      "elapsed_seconds": 0.0319999999992433,
+      "raw_details": "runs\\targeted\\attempt_004\\test_11_write_cannot_acquire_l2_from_inside_private_helper\\DETAILS.json"
+    },
+    {
+      "number": 12,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_12_other_thread_cannot_borrow_ownership",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_12_other_thread_cannot_borrow_ownership\\DETAILS.json"
+    },
+    {
+      "number": 13,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_13_thread_contention_is_bounded",
+      "status": "PASS",
+      "elapsed_seconds": 0.18699999999989814,
+      "raw_details": "runs\\targeted\\attempt_004\\test_13_thread_contention_is_bounded\\DETAILS.json"
+    },
+    {
+      "number": 14,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_14_threads_share_domain_and_no_lost_registrations",
+      "status": "PASS",
+      "elapsed_seconds": 0.10900000000037835,
+      "raw_details": "runs\\targeted\\attempt_004\\test_14_threads_share_domain_and_no_lost_registrations\\DETAILS.json"
+    },
+    {
+      "number": 25,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_25_interruption_releases_owned_guards",
+      "status": "PASS",
+      "elapsed_seconds": 0.06300000000010186,
+      "raw_details": "runs\\targeted\\attempt_004\\test_25_interruption_releases_owned_guards\\DETAILS.json"
+    },
+    {
+      "number": 34,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_34_d_then_l2_then_l3_without_recursive_d",
+      "status": "PASS",
+      "elapsed_seconds": 0.06199999999989814,
+      "raw_details": "runs\\targeted\\attempt_004\\test_34_d_then_l2_then_l3_without_recursive_d\\DETAILS.json"
+    },
+    {
+      "number": 38,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_38_duplicate_module_origin_rejected",
+      "status": "PASS",
+      "elapsed_seconds": 0.0,
+      "raw_details": "runs\\targeted\\attempt_004\\test_38_duplicate_module_origin_rejected\\DETAILS.json"
+    },
+    {
+      "number": 39,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_39_source_core_l1_l2_l3_and_owner_preserved",
+      "status": "PASS",
+      "elapsed_seconds": 0.9060000000008586,
+      "raw_details": "runs\\targeted\\attempt_004\\test_39_source_core_l1_l2_l3_and_owner_preserved\\DETAILS.json"
+    }
+  ],
+  "enrolled_order": "D if present -> L2 -> ordinary L3; later source reader L1 -> L2 -> ordinary L3",
+  "same_thread_L2_reentry": "Checked logical ownership across attached Coordinator instances; no native recursive byte-lock assumption",
+  "recursive_L3": "Rejected before new native acquisition in opt-in mode",
+  "legacy_inner_tracking": "Thread-local bookkeeping only; catches first L2 attempt under a current-module legacy L3; default L3 behavior unchanged",
+  "no_L2_acquisition_inside_write": true,
+  "source_core": {
+    "pid": 5968,
+    "exit_code": 0,
+    "stdout": "{\"pid\": 5968, \"mode\": \"source_core\", \"operation_status\": \"SOURCE_CORE_PASS\", \"payload_sha256\": \"b4534df11040b5f1c711889e0b68292505774ed8422349b196069021b367951d\", \"owner_fence_token_preserved\": true, \"source_bytes_preserved\": true, \"source_tripwires\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"lock_order\": \"L1->L2->ordinary_L3\", \"fixture_origin\": \"REBASED_SYNTHETIC_ONLY\", \"elapsed_seconds\": 0.7029999999995198, \"network_attempts\": []}\n",
+    "stderr": "",
+    "killed": false,
+    "unexpected_timeout": false,
+    "result": {
+      "pid": 5968,
+      "mode": "source_core",
+      "operation_status": "SOURCE_CORE_PASS",
+      "payload_sha256": "b4534df11040b5f1c711889e0b68292505774ed8422349b196069021b367951d",
+      "owner_fence_token_preserved": true,
+      "source_bytes_preserved": true,
+      "source_tripwires": {
+        "forbidden_network_events": 0,
+        "forbidden_dispatch_or_reservation_calls": 0
+      },
+      "lock_order": "L1->L2->ordinary_L3",
+      "fixture_origin": "REBASED_SYNTHETIC_ONLY",
+      "elapsed_seconds": 0.7029999999995198,
+      "network_attempts": []
+    }
+  },
+  "unsupported_inner_users": "Old/unmodified or foreign code is not enrolled and cannot be represented as drained",
+  "authority_awarded": false
+}

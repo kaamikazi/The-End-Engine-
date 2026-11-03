@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\tests_coordination_v1\\record_contention_cause.py",
+    "--child",
+    "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\runs\\native_contention_cause\\budget.json"
+  ],
+  "pid": 33968,
+  "exit_code": 0,
+  "stdout": "{\"domain_code\": \"L2_CONTENTION_DEADLINE\", \"native_cause_type\": \"PermissionError\", \"native_errno\": 13, \"native_winerror\": null, \"native_message\": \"[Errno 13] Permission denied\", \"traceback\": \"Traceback (most recent call last):\\n  File \\\"E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\checkout\\\\cognitive_architecture_lab_v1\\\\src\\\\accounting\\\\coordination.py\\\", line 267, in acquire\\n    msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)\\nPermissionError: [Errno 13] Permission denied\\n\\nThe above exception was the direct cause of the following exception:\\n\\nTraceback (most recent call last):\\n  File \\\"E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\checkout\\\\tests_coordination_v1\\\\record_contention_cause.py\\\", line 10, in child\\n    try:actor.register(request('blocked'))\\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\checkout\\\\cognitive_architecture_lab_v1\\\\src\\\\accounting\\\\ledger.py\\\", line 62, in register\\n    with self.lock():\\n         ^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\imran\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\python\\\\Lib\\\\contextlib.py\\\", line 137, in __enter__\\n    return next(self.gen)\\n           ^^^^^^^^^^^^^^\\n  File \\\"E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\checkout\\\\cognitive_architecture_lab_v1\\\\src\\\\accounting\\\\ledger.py\\\", line 29, in lock\\n    with coordination.acquire() if coordination is not None else nullcontext():\\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"C:\\\\Users\\\\imran\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\python\\\\Lib\\\\contextlib.py\\\", line 137, in __enter__\\n    return next(self.gen)\\n           ^^^^^^^^^^^^^^\\n  File \\\"E:\\\\The End Engine\\\\v21_ledger_guard_slice\\\\checkout\\\\cognitive_architecture_lab_v1\\\\src\\\\accounting\\\\coordination.py\\\", line 274, in acquire\\n    raise CoordinationBusy() from error\\ncognitive_architecture_lab_v1.src.accounting.coordination.CoordinationBusy: L2_CONTENTION_DEADLINE\\n\", \"network_attempts\": []}\n",
+  "stderr": ""
+}
