@@ -1,0 +1,199 @@
+# THE END ENGINE — A0 Blocker Root-Cause Investigation
+
+**Mission:** Diagnose the two unresolved A0 feasibility blockers without modifying the implementation or relaxing the approved safety contract.
+
+**Current verdict:** `A0_FEASIBILITY_BLOCKED`
+
+**Authorization:** Read-only evidence analysis and remediation planning only.
+
+## 1. Current evidence
+
+A0 recorded:
+
+- 19 PASS.
+- 1 ERROR: A0-18 collector.
+- Four recursive-lock negative controls produced their expected bounded rejections.
+- A separate writer-domain mutation remains unresolved.
+- No A1 enrollment, production implementation, test migration, inference or empirical benchmark has been authorized.
+
+Required evidence directory:
+
+`E:\The End Engine\v21_A0_feasibility\`
+
+Scoring clarification:
+
+`scoring_clarification_20261021\A0_NEGATIVE_CONTROL_SCORING.json`
+
+Read the original A0 raw traces, vector results, writer coverage, lock results, open blockers and source-preservation records.
+
+Do not infer details from summary labels when raw evidence is available.
+
+## 2. Investigate the writer-domain mutation
+
+Determine precisely:
+
+1. Which source function or process performed the mutation.
+2. Which filesystem object or ledger state changed.
+3. Which locks or guards were actually held.
+4. Which proposed coordination domain should have excluded the mutation.
+5. Whether the writer was enrolled in that domain.
+6. Whether the failure demonstrates incomplete coverage, incorrect lock ordering or an invalid quiescence assumption.
+7. Whether the mutation occurred inside the intended capture boundary.
+8. Whether current source can safely establish A/S authority under the proposed quiescence-first strategy.
+
+Construct a source-grounded causal timeline.
+
+Distinguish observed behavior from hypothetical race conditions.
+
+Do not treat an unprotected writer as harmless merely because most other writers cooperate.
+
+Do not silently expand F01 locking or alter the Engine.
+
+## 3. Investigate A0-18
+
+Read the exact A0-18 test definition and saved error trace.
+
+Determine whether the error originated in:
+
+- Test harness orchestration.
+- Child-process collection.
+- Timeout handling.
+- Evidence serialization.
+- Process synchronization.
+- Native Windows behavior.
+- Production-source interaction.
+- An actual implementation failure.
+
+Identify the exact exception, failing operation and evidence state at failure.
+
+A collector ERROR remains ERROR until a correctly authorized rerun resolves it.
+
+Do not relabel it PASS based on speculation.
+
+Do not replace its assertion with an easier one.
+
+## 4. Preserve negative-control scoring
+
+The four saved recursive-lock controls remain bounded-negative PASS when the recorded expectations were genuinely satisfied.
+
+Preserve all six required scoring fields.
+
+Their results do not establish successful recursive acquisition or safe production reentrancy.
+
+Unexpected deadlocks, missed deadlines, resource leaks or incorrect sentinels remain failures.
+
+Do not change these controls during this investigation.
+
+## 5. Determine feasible remedies
+
+For each blocker, evaluate three possibilities.
+
+**Option A — A0-local correction**
+
+The blocker can be addressed only within isolated feasibility harness or collector code, without modifying production behavior.
+
+**Option B — Separate scope expansion**
+
+The blocker requires changes to protected writer coordination, F01-adjacent behavior, native synchronization or source APIs.
+
+Identify the exact files, symbols, invariants and authorization needed.
+
+**Option C — Lower-authority profile**
+
+The strong A/S snapshot guarantee cannot be established under the current permitted coordination strategy.
+
+Specify which independently justified I/X observations remain possible and what capability must be withheld.
+
+Do not assume Option A is preferable merely because it is easier to approve.
+
+Do not weaken the accepted R1 contract.
+
+## 6. New testing is not authorized
+
+This task may inspect existing raw evidence and source code.
+
+Do not rerun A0-18.
+
+Do not launch new concurrency experiments.
+
+Do not change the writer-domain implementation.
+
+Do not modify historical tests or scoring definitions.
+
+Do not create production commits.
+
+Prepare the minimum targeted follow-up tests for separate approval.
+
+Each proposed test must include its expected positive and negative outcomes, timeout bounds, evidence preservation and stop criteria.
+
+## 7. Required deliverables
+
+Create a separate local investigation directory:
+
+`E:\The End Engine\v21_A0_blocker_investigation\`
+
+Produce:
+
+- `A0_BLOCKER_ROOT_CAUSE.md`
+- `WRITER_DOMAIN_MUTATION_TIMELINE.md`
+- `A0_18_COLLECTOR_ERROR_ANALYSIS.md`
+- `SOURCE_AND_LOCK_INVOLVEMENT.csv`
+- `REMEDIATION_OPTIONS.md`
+- `MINIMUM_FOLLOWUP_TEST_PLAN.md`
+- `SCOPE_AUTHORIZATION_REQUIRED.md`
+- `PRESERVATION_REPORT.json`
+- `FINAL_DIAGNOSTIC_VERDICT.md`
+
+Preserve original A0 evidence bytes.
+
+## 8. Git and scientific preservation
+
+Do not change the published v2.1 checkpoint.
+
+Do not modify the original correction worktree.
+
+No commit, push, merge, rebase, tag or release.
+
+No provider calls.
+
+No live inference.
+
+No empirical benchmarks.
+
+The approved R1/R3 contract remains frozen for this investigation.
+
+## 9. Final verdict
+
+Choose exactly one:
+
+`A0_HARNESS_CORRECTION_PROPOSED`
+
+The blockers are demonstrated to be resolvable in isolated A0 tooling, with a precise proposed correction.
+
+`A0_SCOPE_EXPANSION_REQUIRED`
+
+A material blocker requires protected source or synchronization changes outside current authorization.
+
+`A0_STRONG_PROFILE_NOT_SUPPORTED`
+
+Available evidence does not support the proposed strong snapshot strategy; a lower-authority design or new coordination approach is necessary.
+
+`A0_ROOT_CAUSE_UNRESOLVED`
+
+Evidence is insufficient to determine a safe remediation.
+
+Do not claim A0 feasibility acceptance.
+
+Do not authorize A1.
+
+**Final principle:**
+
+A successfully rejected dangerous operation is a valid negative-test result.
+
+An uncontrolled writer is a genuine snapshot-authority problem.
+
+A collector exception is not automatically a production defect.
+
+Find the exact cause before changing the system.
+
+**BEGIN READ-ONLY INVESTIGATION.**

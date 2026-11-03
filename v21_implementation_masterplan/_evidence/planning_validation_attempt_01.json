@@ -1,0 +1,18 @@
+{
+  "scope": "Planning document and mechanical source-preservation validation, NOT implementation tests",
+  "implementation_tests_executed": 0,
+  "historical_suites_rerun": false,
+  "checks": [
+    {
+      "check": "all15 required deliverables present and nonempty",
+      "passed": true
+    },
+    {
+      "check": "nine exact unrenamed requirements, verbatim",
+      "passed": false
+    }
+  ],
+  "passed": false,
+  "error": "AssertionError: nine exact unrenamed requirements, verbatim",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_implementation_masterplan\\_evidence\\validate_plan.py\", line 19, in <module>\n    check('nine exact unrenamed requirements, verbatim',len(trace)==9 and {r['ID']:r['exact_requirement'] for r in trace}==exact)\n  File \"E:\\The End Engine\\v21_implementation_masterplan\\_evidence\\validate_plan.py\", line 12, in check\n    if not condition:raise AssertionError(name)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: nine exact unrenamed requirements, verbatim\n"
+}

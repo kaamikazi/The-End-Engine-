@@ -1,0 +1,342 @@
+{
+  "raw_A0_18": {
+    "vector_id": "A0-18",
+    "required_plan_observation": "Any deliberately unenrolled direct register/finish/inner-lock user prevents strong capability; no hash-only coverage promotion",
+    "status": "ERROR",
+    "expectation_matched": false,
+    "observed_events": [],
+    "authority": "X",
+    "material_blocker": false,
+    "started_unix": 1792509955.200613,
+    "error": "PermissionError: [Errno 13] Permission denied",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_runner.py\", line 28, in main\n    value=t.CASES[vector](root);row.update(value);row['status']='PASS';row['expectation_matched']=True\n          ^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\test_lock_domain_feasibility.py\", line 130, in case18\n    r=zero_worker(w.collect(w.spawn('register_bypass',root,fixture=pub.directory)));after=w.snapshot(pub.directory)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_workers.py\", line 49, in snapshot\n    def snapshot(root):return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(root.rglob('*')) if p.is_file()}\n                                                                  ^^^^^^^^^^^^^^\n  File \"C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py\", line 1020, in read_bytes\n    return f.read()\n           ^^^^^^^^\nPermissionError: [Errno 13] Permission denied\n",
+    "elapsed_seconds": 0.75
+  },
+  "raw_child_request": {
+    "mode": "register_bypass",
+    "root": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18",
+    "kwargs": {
+      "fixture": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18\\copy"
+    }
+  },
+  "raw_child_result": {
+    "events": [
+      {
+        "operation": "UNCHANGED_LEDGER_REGISTER",
+        "outcome": "RAISED",
+        "exception": "PermissionError",
+        "winerror": 5,
+        "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-18\\\\copy\\\\budget.json'"
+      },
+      {
+        "ledger_before": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "ledger_after": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "pending_created": true,
+        "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+        "attempt_rows_after": 1
+      }
+    ],
+    "counters": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "worker_operation_completed": true
+  },
+  "raw_child_exit": {
+    "pid": 24156,
+    "exit_code": 0,
+    "stdout": "{\"events\": [{\"operation\": \"UNCHANGED_LEDGER_REGISTER\", \"outcome\": \"RAISED\", \"exception\": \"PermissionError\", \"winerror\": 5, \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_feasibility\\\\\\\\runs\\\\\\\\attempt_002\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_feasibility\\\\\\\\runs\\\\\\\\attempt_002\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json'\"}, {\"ledger_before\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"ledger_after\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"pending_created\": true, \"pending_sha256\": \"4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23\", \"attempt_rows_after\": 1}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+    "stderr": "",
+    "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18\\register_bypass-1792509955457376300.request.json",
+    "killed_by_parent": false,
+    "worker_result": {
+      "events": [
+        {
+          "operation": "UNCHANGED_LEDGER_REGISTER",
+          "outcome": "RAISED",
+          "exception": "PermissionError",
+          "winerror": 5,
+          "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-18\\\\copy\\\\budget.json'"
+        },
+        {
+          "ledger_before": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+          "ledger_after": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+          "pending_created": true,
+          "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+          "attempt_rows_after": 1
+        }
+      ],
+      "counters": {
+        "forbidden_network_events": 0,
+        "forbidden_dispatch_or_reservation_calls": 0
+      },
+      "worker_operation_completed": true
+    }
+  },
+  "run_counts": {
+    "PASS": 19,
+    "FAIL": 0,
+    "ERROR": 1,
+    "NOT_EXECUTED": 0
+  },
+  "raw_error_has_filename": false,
+  "first_candidate_data_path_by_exact_sorted_iteration": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18\\copy\\.a0-L2.lock",
+  "first_path_classification": "existing test L2 operational guard, excluded by data_paths() and actively byte-locked by parent",
+  "filename_evidence_limit": "The trace records Errno13 at f.read without filename. First-path identification is deterministic source/preserved-membership reconstruction, not a newly captured syscall filename or rerun.",
+  "sorted_preserved_membership": [
+    ".a0-L2.lock",
+    ".publication.lock",
+    "0.out",
+    "0.ready",
+    "1.out",
+    "1.ready",
+    "budget.boundary.lock",
+    "budget.closed.json",
+    "budget.json",
+    "budget.json.lock",
+    "budget.json.pending",
+    "budget.json.r2_bindings/bindings.lock",
+    "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+    "GO",
+    "publication/attempts/000001.json",
+    "publication/attempts/000001.reservation.json",
+    "publication/attempts/000001.response.json",
+    "publication/attempts/000001.settlement.json",
+    "publication/events/42392257d7241802443d8a1d25e687be.json",
+    "publication/events/63457dc10418005c5b1206dfed6974da.json",
+    "publication/events/b1b26848c635d0127307443db3c700fa.json",
+    "publication/events/dc3c15847b426d84eaa37bc0c6349c79.json",
+    "publication/IDENTITY.json",
+    "publication/owner.json",
+    "publication/owner.lock",
+    "publication/prepared/098daa830127c966a6ba971589880458.json",
+    "RESULT.json",
+    "REVIEWER_OUTCOME.json",
+    "wire/000001-4dcaf471206a91f7.jsonl"
+  ],
+  "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+  "ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+  "ledger_state_sha256_before_after_equal": true,
+  "pending_added_run": "A0_UNENROLLED_REGISTER",
+  "attempt_rows_unchanged": true,
+  "pending_state_checksum_valid": true,
+  "source_file_refs": {
+    "saved_test": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\executed_scaffolding\\test_lock_domain_feasibility.py",
+      "sha256": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "lines": {
+        "recursive": 35,
+        "case10": 80,
+        "case11": 82,
+        "case17": 119,
+        "case18": 127
+      }
+    },
+    "saved_workers": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\executed_scaffolding\\probe_workers.py",
+      "sha256": "5793daf5074f8a754a55e512b5ba0a025ff15ca8e948d99c6ba7574ca5d7de80",
+      "lines": {
+        "snapshot": 49,
+        "Pins.__enter__": 58,
+        "Pins.__exit__": 72,
+        "ExistingLock.__enter__": 95,
+        "ExistingLock.__exit__": 113,
+        "spawn": 126,
+        "collect": 130,
+        "clone_fixture": 145,
+        "protected_core": 166,
+        "perform": 180
+      }
+    },
+    "saved_runner": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\executed_scaffolding\\probe_runner.py",
+      "sha256": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+      "lines": {
+        "main": 9
+      }
+    },
+    "Ledger": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\cognitive_architecture_lab_v1\\src\\accounting\\ledger.py",
+      "sha256": "bb4134ad69a22d900dff3a830cd52c480fae0826e2170a61cd0e85f81fc832d9",
+      "lines": {
+        "Ledger.lock": 19,
+        "Ledger._read": 36,
+        "Ledger._write": 41,
+        "Ledger.register": 48
+      }
+    },
+    "publication": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication.py",
+      "sha256": "43d5c9070a2b96dfe4616068001b151e089169cb3ff9d46adfc9e560c2501a9b",
+      "lines": {
+        "Publication.lock": 58,
+        "Publication._take_lease": 65,
+        "Publication.release": 105,
+        "Publication._verify_completed": 131,
+        "Publication.verify_semantics": 141,
+        "Publication.publish": 175
+      }
+    },
+    "transport": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\runtime_isolation_v1\\src\\trusted_transport\\transport.py",
+      "sha256": "b2db8bc4bc9a1f9ce23d0bf5637b3f1e413b24bed418288f7887a64fded4484f",
+      "lines": {
+        "dispatch_lock": 17
+      }
+    },
+    "pins": {
+      "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication_guard.py",
+      "sha256": "b3d2573f7898d6c70b26f3fe858c05afa17ac7b1f6c3237a302c38eacd31fad6",
+      "lines": {
+        "EvidencePin.inventory": 26,
+        "EvidencePin.pin": 35
+      }
+    }
+  },
+  "four_negative_controls": [
+    {
+      "attempt": "attempt_001",
+      "vector_id": "A0-04",
+      "observed_event": {
+        "arrangement": "Outer unchanged Ledger.lock followed by Ledger.state reacquiring that same L3",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 34136
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-04\\recursive-1792509846601651600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6089999999994689,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.219000000000051,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-04\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "13d072977d3d4415725e8afc09480af13424107e4e8df86f85fa941bd952c956",
+      "raw_timeout_sha256": "bdd392443a606b51678b019d81258f49e8de9e614127b08cfb886c9060c7a81d",
+      "saved_scaffold_sha256": "8b0b814f5571ead213c92b560d3ccd7511cffee4ff6e8a09aa1d20db39b2fa6b",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_001",
+      "vector_id": "A0-05",
+      "observed_event": {
+        "arrangement": "Outer unchanged dispatch_lock followed by a second acquisition of that same D guard",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 32228
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-05\\recursive-1792509847831536600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6099999999996726,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.2179999999998472,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-05\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "0f37f8d41d0de88af76337f5af89400bf1f430f90d537aa2cac75696e21893be",
+      "raw_timeout_sha256": "76d0682b976e893460b28ced041faa0b0ce40a78a7e7d98b6f66c9dd6480a487",
+      "saved_scaffold_sha256": "8b0b814f5571ead213c92b560d3ccd7511cffee4ff6e8a09aa1d20db39b2fa6b",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_002",
+      "vector_id": "A0-04",
+      "observed_event": {
+        "arrangement": "Outer unchanged Ledger.lock followed by Ledger.state reacquiring that same L3",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 20236
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-04\\recursive-1792509941889139800.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6090000000003783,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.2650000000003274,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-04\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "48e0f7f01f5f6d9fff22ec9f5a314788b9ca88c04195ae7f8958ac3a01cd2a70",
+      "raw_timeout_sha256": "6df7a4280a53d3269fc7a73e60eb40ea9d1530856b52391d635188c0be60a74b",
+      "saved_scaffold_sha256": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_002",
+      "vector_id": "A0-05",
+      "observed_event": {
+        "arrangement": "Outer unchanged dispatch_lock followed by a second acquisition of that same D guard",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 36328
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-05\\recursive-1792509943175186600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6099999999996726,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.25,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-05\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "2df9fad885b2ddb5e2646bdf5eded97ebcee4708789879759d25b4b468838ca4",
+      "raw_timeout_sha256": "2da6b6126c6fdfa6bce97f996a08bf5c2da9ec462ccbcda06e03cf62b6990364",
+      "saved_scaffold_sha256": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "original_control_status_unchanged": "PASS"
+    }
+  ],
+  "existing_A0_manifest_members_verified": 721,
+  "current_source_is_same_as_executed_manifest": true,
+  "new_tests_or_concurrency_experiments": 0,
+  "source_or_scaffold_imports": 0
+}

@@ -1,0 +1,46 @@
+{
+  "vector_id": "A0-16",
+  "required_plan_observation": "Failure after each acquired resource and an actual killed holder release only its own resources; later reader reacquires",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "boundary": 0,
+      "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+    },
+    {
+      "boundary": 1,
+      "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+    },
+    {
+      "boundary": 2,
+      "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+    },
+    {
+      "boundary": 3,
+      "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "FileNotFoundError",
+      "message": "[WinError 2] The system cannot find the file specified.",
+      "elapsed_seconds": 0.0,
+      "winerror": 2
+    },
+    {
+      "pid": 37628,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-16\\kill_holder-1792509950484373600.request.json",
+      "killed_by_parent": true
+    },
+    {
+      "actual_killed_holder_resources_reacquired": true
+    }
+  ],
+  "authority": "I",
+  "material_blocker": false,
+  "started_unix": 1792509950.4615052,
+  "elapsed_seconds": 0.4849999999996726
+}

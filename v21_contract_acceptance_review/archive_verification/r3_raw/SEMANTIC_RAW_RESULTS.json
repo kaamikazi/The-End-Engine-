@@ -1,0 +1,485 @@
+[
+  {
+    "name": "positive_selected_normal",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_guarded_S_legacy_terminal",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_restricted_C0_unknown_later_cost",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_diagnostic_A_count_no_certification",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_diagnostic_I_recorded_identity",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_unstable_unavailable_diagnostic",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_unsupported_no_candidates",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "source_pass_boolean_forgery",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E01",
+        "reason": "source proof/bytes/path/identity/same-cut mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "E01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "foreign_same_hash_source_path",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E01",
+        "reason": "source proof/bytes/path/identity/same-cut mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "E01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "source_other_capture",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E01",
+        "reason": "source proof/bytes/path/identity/same-cut mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "E01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "source_identity_rebound",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E01",
+        "reason": "source proof/bytes/path/identity/same-cut mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "E01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "hash_equality_without_domain",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E02",
+        "reason": "cooperative cut/witness tier not established"
+      }
+    ],
+    "expected_failure_rules": [
+      "E02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "missing_mandatory_witness_A_forgery",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "E02",
+        "reason": "cooperative cut/witness tier not established"
+      }
+    ],
+    "expected_failure_rules": [
+      "E02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "omitted_justified_claim",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A01",
+        "reason": "unsupported/omitted claim or unresolved retained refs"
+      }
+    ],
+    "expected_failure_rules": [
+      "A01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "unresolved_capture_reference",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A01",
+        "reason": "unsupported/omitted claim or unresolved retained refs"
+      }
+    ],
+    "expected_failure_rules": [
+      "A01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "claim_other_snapshot",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A01",
+        "reason": "claim capture/run mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "A01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "graph_cardinality_mismatch",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A02",
+        "reason": "graph scope/IDs/cardinality differs from positively verified witness set"
+      }
+    ],
+    "expected_failure_rules": [
+      "A02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "empty_graph_without_positive_evidence",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A02",
+        "reason": "graph scope/IDs/cardinality differs from positively verified witness set"
+      }
+    ],
+    "expected_failure_rules": [
+      "A02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_independent_reservation_dispatch",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "copied_witnesses_false_independence",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A03",
+        "reason": "copies do not prove independent original channels"
+      }
+    ],
+    "expected_failure_rules": [
+      "A03"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_recorded_metadata_not_total",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "usage_arithmetic_false_corroboration",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A04",
+        "reason": "corroborated usage arithmetic invalid"
+      }
+    ],
+    "expected_failure_rules": [
+      "A04"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "positive_complete_totals",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "unknown_cost_cannot_be_complete",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A05",
+        "reason": "complete source coverage/sum/closure unavailable"
+      }
+    ],
+    "expected_failure_rules": [
+      "A05"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "unclosed_generation_cannot_be_complete",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A05",
+        "reason": "complete source coverage/sum/closure unavailable"
+      }
+    ],
+    "expected_failure_rules": [
+      "A05"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "invalid_raw_cannot_be_complete",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A05",
+        "reason": "complete source coverage/sum/closure unavailable"
+      }
+    ],
+    "expected_failure_rules": [
+      "A05"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "complete_sum_mismatch",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "A05",
+        "reason": "complete source coverage/sum/closure unavailable"
+      }
+    ],
+    "expected_failure_rules": [
+      "A05"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "self_rehashed_substitute_answer",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "C01",
+        "reason": "candidate uniqueness/content/source proof mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "C01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "later_parent_false_lineage",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "C01",
+        "reason": "parent not earlier bound candidate"
+      }
+    ],
+    "expected_failure_rules": [
+      "C01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "selection_ref_unbound",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "C02",
+        "reason": "selection/handle lacks current source proof"
+      }
+    ],
+    "expected_failure_rules": [
+      "C02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "rebound_handle",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "C02",
+        "reason": "selection/handle lacks current source proof"
+      }
+    ],
+    "expected_failure_rules": [
+      "C02"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "unknown_history_not_known_empty",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "C03",
+        "reason": "diagnostic selection or unsupported known-empty history"
+      }
+    ],
+    "expected_failure_rules": [
+      "C03"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "publication_basename_mismatch",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "P01",
+        "reason": "source basename mismatch"
+      }
+    ],
+    "expected_failure_rules": [
+      "P01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "suspect_prior_preserved",
+    "structural_member_count": 1,
+    "semantic_failures": [],
+    "expected_failure_rules": [],
+    "expectation_match": true,
+    "normatively_accepted": true,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  },
+  {
+    "name": "generic_exception_must_not_be_diagnostic",
+    "structural_member_count": 1,
+    "semantic_failures": [
+      {
+        "rule": "V01",
+        "reason": "diagnostic cause not grounded; generic exceptions remain external"
+      }
+    ],
+    "expected_failure_rules": [
+      "V01"
+    ],
+    "expectation_match": true,
+    "normatively_accepted": false,
+    "scope": "SYNTHETIC_EXTERNAL_ORACLE_ONLY_NOT_RUNTIME_PROOF"
+  }
+]

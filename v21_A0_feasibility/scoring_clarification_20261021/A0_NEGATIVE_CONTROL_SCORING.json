@@ -1,0 +1,177 @@
+{
+  "date": "2026-10-21",
+  "scope": "Approved scoring clarification only; retrospective administrative evidence annotation, no test or source modification",
+  "required_fields": [
+    "observed_event",
+    "expected_event",
+    "elapsed_time",
+    "bound_satisfied",
+    "control_verdict",
+    "feasibility_implication"
+  ],
+  "records": [
+    {
+      "attempt": "attempt_001",
+      "vector_id": "A0-04",
+      "observed_event": {
+        "arrangement": "Outer unchanged Ledger.lock followed by Ledger.state reacquiring that same L3",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 34136
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-04\\recursive-1792509846601651600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6089999999994689,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.219000000000051,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-04\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "13d072977d3d4415725e8afc09480af13424107e4e8df86f85fa941bd952c956",
+      "raw_timeout_sha256": "bdd392443a606b51678b019d81258f49e8de9e614127b08cfb886c9060c7a81d",
+      "saved_scaffold_sha256": "8b0b814f5571ead213c92b560d3ccd7511cffee4ff6e8a09aa1d20db39b2fa6b",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_001",
+      "vector_id": "A0-05",
+      "observed_event": {
+        "arrangement": "Outer unchanged dispatch_lock followed by a second acquisition of that same D guard",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 32228
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-05\\recursive-1792509847831536600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6099999999996726,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.2179999999998472,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_001\\A0-05\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "0f37f8d41d0de88af76337f5af89400bf1f430f90d537aa2cac75696e21893be",
+      "raw_timeout_sha256": "76d0682b976e893460b28ced041faa0b0ce40a78a7e7d98b6f66c9dd6480a487",
+      "saved_scaffold_sha256": "8b0b814f5571ead213c92b560d3ccd7511cffee4ff6e8a09aa1d20db39b2fa6b",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_002",
+      "vector_id": "A0-04",
+      "observed_event": {
+        "arrangement": "Outer unchanged Ledger.lock followed by Ledger.state reacquiring that same L3",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 20236
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-04\\recursive-1792509941889139800.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6090000000003783,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.2650000000003274,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-04\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "48e0f7f01f5f6d9fff22ec9f5a314788b9ca88c04195ae7f8958ac3a01cd2a70",
+      "raw_timeout_sha256": "6df7a4280a53d3269fc7a73e60eb40ea9d1530856b52391d635188c0be60a74b",
+      "saved_scaffold_sha256": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "original_control_status_unchanged": "PASS"
+    },
+    {
+      "attempt": "attempt_002",
+      "vector_id": "A0-05",
+      "observed_event": {
+        "arrangement": "Outer unchanged dispatch_lock followed by a second acquisition of that same D guard",
+        "readiness": {
+          "phase": "FIRST_LOCK_HELD",
+          "pid": 36328
+        },
+        "result": "EXPECTED_BOUNDED_BLOCKED_SENTINEL",
+        "lock_operation_outcome": "BLOCKED_AND_TERMINATED; no successful recursive acquisition",
+        "actual_exit_code": 1,
+        "raw_timeout_receipt": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-05\\recursive-1792509943175186600.request.timeout.json"
+      },
+      "expected_event": {
+        "required_negative_behavior": "After FIRST_LOCK_HELD, recursive operation does not complete before the timed wait; expected watchdog records timeout, parent terminates/joins child, then the probe reacquires/releases the guard",
+        "timed_wait_threshold_seconds": 0.6,
+        "overall_sentinel_bound_seconds": 3,
+        "unexpected_timeout_wrong_sentinel_or_cleanup_failure": "FAIL"
+      },
+      "elapsed_time": 0.6099999999996726,
+      "elapsed_time_unit": "seconds",
+      "elapsed_time_scope": "Recorded sentinel detection plus parent termination/join; not a separate watchdog-trigger timestamp",
+      "whole_vector_elapsed_time": 1.25,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "The deliberately recursive arrangement exhibited the expected bounded lock hazard. This is not a successful acquisition, does not establish safe production reentrancy, and does not waive unresolved production-deadlock or writer-domain stop conditions.",
+      "cleanup_evidence": "The exact saved recursive() source reacquires/releases the guard before returning; its preserved expectation-match PASS establishes that code path returned. No new cleanup experiment or separate timestamp is invented.",
+      "timing_limit": "0.6s is the timed-wait threshold; the original explicit end-to-end sentinel assertion is <3s. No claim of an exactly measured 0.6s watchdog-trigger deadline is made.",
+      "raw_vector_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-05\\VECTOR_RESULT.json",
+      "raw_vector_sha256": "2df9fad885b2ddb5e2646bdf5eded97ebcee4708789879759d25b4b468838ca4",
+      "raw_timeout_sha256": "2da6b6126c6fdfa6bce97f996a08bf5c2da9ec462ccbcda06e03cf62b6990364",
+      "saved_scaffold_sha256": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "original_control_status_unchanged": "PASS"
+    }
+  ],
+  "counts": {
+    "PASS": 4,
+    "FAIL": 0
+  },
+  "existing_A0_verdict": "A0_FEASIBILITY_BLOCKED",
+  "latest_run_counts_unchanged": {
+    "PASS": 19,
+    "FAIL": 0,
+    "ERROR": 1,
+    "NOT_EXECUTED": 0
+  },
+  "initial_run_counts_unchanged": {
+    "PASS": 10,
+    "FAIL": 1,
+    "ERROR": 0,
+    "NOT_EXECUTED": 9
+  },
+  "unwaived_stop": "Actual unenrolled Ledger.register created pending namespace membership under test coordination; A0-18 collector ERROR also remains. Recursive-lock scoring clarification does not resolve these.",
+  "new_probe_executions": 0,
+  "new_reservations_dispatch_provider_calls": 0,
+  "A1_or_production_authorization": "NONE",
+  "old_evidence_manifest_sha256": "9afc6f8e15af45d559f3fd0b3c105f8d82207118de97c2520571b8d08f1fd3ab",
+  "preexisting_evidence_hashes_verified": 721
+}

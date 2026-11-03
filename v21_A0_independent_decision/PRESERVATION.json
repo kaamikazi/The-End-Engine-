@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "method": "SHA-256 before/after for all prior preservation inventory entries and full file membership of the supplied three evidence roots. After hashes use sixteen read-only workers; no metadata-only shortcut. Read-only Git state comparison.",
+  "unique_files_hashed_after": 51810,
+  "read_errors": {},
+  "changed": {
+    "checkpoint": [],
+    "correction": [],
+    "v2_review": [],
+    "v1_review": [],
+    "Harness": [],
+    "historical_research": [],
+    "v21_checkpoint": [],
+    "original_v21": [],
+    "approved_review": [],
+    "masterplan": [],
+    "source_fixture": [],
+    "checkout_tracked": [],
+    "all_original_A0_evidence_including_scoring_and_six_files": [],
+    "six_current_A0_scaffold_files": [],
+    "investigation_all_files": [],
+    "A0_all": [],
+    "investigation_all": [],
+    "collector_correction_all": []
+  },
+  "counts": {
+    "checkpoint": 4162,
+    "correction": 27844,
+    "v2_review": 3158,
+    "v1_review": 58,
+    "Harness": 289,
+    "historical_research": 6258,
+    "v21_checkpoint": 4181,
+    "original_v21": 18,
+    "approved_review": 768,
+    "masterplan": 42,
+    "source_fixture": 27,
+    "checkout_tracked": 4181,
+    "all_original_A0_evidence_including_scoring_and_six_files": 720,
+    "six_current_A0_scaffold_files": 6,
+    "investigation_all_files": 24,
+    "A0_all": 4907,
+    "investigation_all": 24,
+    "collector_correction_all": 74
+  },
+  "git_states_unchanged": true,
+  "git_states": {
+    "E:\\The End Engine\\v21_A0_feasibility\\checkout": {
+      "HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+      "branch": "codex/v21-a0-feasibility",
+      "status": "?? experimental_architectures_v1_r3/feasibility_v21/",
+      "staged": ""
+    },
+    "E:\\END-v102-V21-Contract-Checkpoint": {
+      "HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+      "branch": "wip/end-v102-contract-v21-review",
+      "status": "",
+      "staged": ""
+    },
+    "E:\\END-Cognitive-Architectures-Fix-v102": {
+      "HEAD": "bc9bcbad8e9cb051d54c3b270e2e03d460858986",
+      "branch": "fix/cognitive-architectures-v102-f02",
+      "status": "M experimental_architectures_v1_r3/CURRENT_REVIEW_STATUS.json\n M experimental_architectures_v1_r3/src/shared/journals.py\n M experimental_architectures_v1_r3/src/shared/provenance.py\n M experimental_architectures_v1_r3/src/shared/publication.py\n M experimental_architectures_v1_r3/src/shared/recovery_blocked.py\n?? experimental_architectures_v1_r3/src/shared/certification.py\n?? experimental_architectures_v1_r3/tests/corrections/test_certification.py\n?? experimental_architectures_v1_r3/validation/AR01_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR02_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR03_RESULTS.json\n?? experimental_architectures_v1_r3/validation/BASELINE_IDENTITY.json\n?? experimental_architectures_v1_r3/validation/BASELINE_INPUT_HASHES.json\n?? experimental_architectures_v1_r3/validation/BASELINE_REPRODUCTIONS.json\n?? experimental_architectures_v1_r3/validation/BEFORE_CORRECTION.json\n?? experimental_architectures_v1_r3/validation/F01_F03_F04_REGRESSIONS.json\n?? experimental_architectures_v1_r3/validation/FINAL_VALIDATION.json\n?? experimental_architectures_v1_r3/validation/NEGATIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS_RUN.txt\n?? experimental_architectures_v1_r3/validation/POSITIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/PROBE_PORTS.json\n?? experimental_architectures_v1_r3/validation/PROTECTED_BEFORE.json\n?? experimental_architectures_v1_r3/validation/PROVENANCE_GRAPH.json\n?? experimental_architectures_v1_r3/validation/RECOVERY_RESULTS.json\n?? experimental_architectures_v1_r3/validation/SIX_CONDITION_WIRING.json\n?? experimental_architectures_v1_r3/validation/SOURCE_PRESERVATION.json\n?? experimental_architectures_v1_r3/validation/TOCTOU_BLOCKER.json\n?? experimental_architectures_v1_r3/validation/after/\n?? experimental_architectures_v1_r3/validation/before/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2_1/\n?? experimental_architectures_v1_r3/validation/final_f02/ALL_RESULTS.json\n?? experimental_architectures_v1_r3/validation/final_f02/COMMANDS.json\n?? experimental_architectures_v1_r3/validation/final_f02/after_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/ar_controls.log\n?? experimental_architectures_v1_r3/validation/final_f02/before_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/deliver.py\n?? experimental_architectures_v1_r3/validation/final_f02/engine.json\n?? experimental_architectures_v1_r3/validation/final_f02/engine.log\n?? experimental_architectures_v1_r3/validation/final_f02/engine.txt\n?? experimental_architectures_v1_r3/validation/final_f02/exact_probe.py\n?? experimental_architectures_v1_r3/validation/final_f02/fresh_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/frozen_preflight.log\n?? experimental_architectures_v1_r3/validation/final_f02/full_reviewer/\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.json\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.log\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.txt\n?? experimental_architectures_v1_r3/validation/final_f02/native.json\n?? experimental_architectures_v1_r3/validation/final_f02/native.log\n?? experimental_architectures_v1_r3/validation/final_f02/native.txt\n?? experimental_architectures_v1_r3/validation/final_f02/original.json\n?? experimental_architectures_v1_r3/validation/final_f02/original.log\n?? experimental_architectures_v1_r3/validation/final_f02/original.txt\n?? experimental_architectures_v1_r3/validation/final_f02/preserve_after.py\n?? experimental_architectures_v1_r3/validation/final_f02/prior49.log\n?? experimental_architectures_v1_r3/validation/final_f02/provenance_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/r2.json\n?? experimental_architectures_v1_r3/validation/final_f02/r2.log\n?? experimental_architectures_v1_r3/validation/final_f02/r2.txt\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.json\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.log\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.txt\n?? experimental_architectures_v1_r3/validation/final_f02/run_validation.py\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.json\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.log\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.txt\n?? experimental_architectures_v1_r3/validation/final_f02/session_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/suite_worker.py\n?? experimental_architectures_v1_r3/validation/final_f02/supplemental_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/wiring_and_recovery.py\n?? experimental_architectures_v1_r3/validation/ir101_final/\n?? experimental_architectures_v1_r3/validation/offline_guard/\n?? experimental_architectures_v1_r3/validation/prior_controls/\n?? experimental_architectures_v1_r3/validation/publication_window_blocker/\n?? experimental_architectures_v1_r3/validation/regression/\n?? experimental_architectures_v1_r3/validation/reproductions_after/\n?? experimental_architectures_v1_r3/validation/reproductions_before/\n?? experimental_architectures_v1_r3/validation/resume_20261017_f01/\n?? experimental_architectures_v1_r3/validation/review_input/\n?? experimental_architectures_v1_r3/validation/reviewer_probes_r2.py\n?? experimental_architectures_v1_r3/validation/scratch/",
+      "staged": ""
+    },
+    "E:\\END-v102-WIP-Checkpoint-20261019": {
+      "HEAD": "eadf1390c0631cfe30985744b38bb4df055acb87",
+      "branch": "wip/end-v102-contract-review-20261019",
+      "status": "",
+      "staged": ""
+    },
+    "E:\\The End Engine": {
+      "HEAD": "6f4da3f1e30a842ab37adb7a9be12a0222a80054",
+      "branch": "checkpoint/end-engine-v0352-research-20261013",
+      "staged": ""
+    }
+  },
+  "original_reports_and_tests_edited": false,
+  "production_changes": 0,
+  "provider_calls": 0,
+  "live_inference": false,
+  "benchmark_runs": 0,
+  "git_commit_push_merge_release": false,
+  "authorship": "Mechanical preservation by prior collector author; acceptance judgments are separately attributed to fresh AI reviewer contexts.",
+  "inventory_attempt_note": "Two slow sequential read-only capture attempts were intentionally stopped and their exit1 receipts retained. Concurrent full-byte capture and comparison completed with exit0. No A0 control rerun occurred.",
+  "prior_protected_inventory_matches": {
+    "prior": "E:\\The End Engine\\v21_A0_collector_correction\\_control\\BEFORE.json",
+    "changed": {
+      "checkpoint": [],
+      "correction": [],
+      "v2_review": [],
+      "v1_review": [],
+      "Harness": [],
+      "historical_research": [],
+      "v21_checkpoint": [],
+      "original_v21": [],
+      "approved_review": [],
+      "masterplan": [],
+      "source_fixture": [],
+      "checkout_tracked": [],
+      "all_original_A0_evidence_including_scoring_and_six_files": [],
+      "six_current_A0_scaffold_files": [],
+      "investigation_all_files": []
+    },
+    "passed": true,
+    "capture_timing": "After independent synthetic scratch run; original supplied roots were read only. Independently compare each inherited original hash and each supplied evidence manifest."
+  },
+  "original_evidence_manifest_verification": [
+    {
+      "root": "E:\\The End Engine\\v21_A0_feasibility",
+      "manifest": "_control/EVIDENCE_FILE_HASHES.json",
+      "manifest_sha256": "9afc6f8e15af45d559f3fd0b3c105f8d82207118de97c2520571b8d08f1fd3ab",
+      "entries": 721,
+      "failures": []
+    },
+    {
+      "root": "E:\\The End Engine\\v21_A0_blocker_investigation",
+      "manifest": "_evidence/INVESTIGATION_FILE_HASHES.json",
+      "manifest_sha256": "4d50c57823766288a1cbdaee83a4009e11a09f1933e382a20259feb1a5231ba2",
+      "entries": 23,
+      "failures": []
+    },
+    {
+      "root": "E:\\The End Engine\\v21_A0_collector_correction",
+      "manifest": "_control/EVIDENCE_FILE_HASHES.json",
+      "manifest_sha256": "8d3d06cdb64f3f87dc9be1064385d0e5724c7baeb325c8714bbca049e2a17cad",
+      "entries": 73,
+      "failures": []
+    }
+  ],
+  "main_workspace_Engine_identity": {
+    "method": "Canonical sorted compact JSON relative *.py SHA-256 map plus pyproject.toml",
+    "files": 70,
+    "observed_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+    "expected_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+    "matches": true
+  },
+  "baseline_timing_disclosure": "After independent synthetic scratch run; original supplied roots were read only. Independently compare each inherited original hash and each supplied evidence manifest.",
+  "administrative_inventory_exits": [
+    {
+      "session": 62483,
+      "exit": 1,
+      "meaning": "Intentionally stopped slow sandbox hash reader; receipt retained; not test failure"
+    },
+    {
+      "session": 73122,
+      "exit": 1,
+      "meaning": "Intentionally stopped slow sequential native hash reader; receipt retained; not test failure"
+    },
+    {
+      "session": 87358,
+      "exit": 0,
+      "meaning": "Concurrent complete byte baseline capture and prior inventory/manifests verified"
+    },
+    {
+      "session": 8495,
+      "exit": 0,
+      "meaning": "Concurrent complete byte comparison; no changes/read errors; Git states unchanged"
+    }
+  ]
+}

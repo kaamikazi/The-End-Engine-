@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\jsonschema\__init__.py", line 13, in <module>
+    from jsonschema._format import FormatChecker
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\jsonschema\_format.py", line 11, in <module>
+    from jsonschema.exceptions import FormatError
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\jsonschema\exceptions.py", line 15, in <module>
+    from referencing.exceptions import Unresolvable as _Unresolvable
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\referencing\__init__.py", line 5, in <module>
+    from referencing._core import Anchor, Registry, Resource, Specification
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\referencing\_core.py", line 9, in <module>
+    from rpds import HashTrieMap, HashTrieSet, List
+  File "C:\Users\imran\AppData\Local\Programs\Python\Python310\Lib\site-packages\rpds\__init__.py", line 1, in <module>
+    from .rpds import *
+ModuleNotFoundError: No module named 'rpds.rpds'

@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "mode": "READ_ONLY_EVIDENCE_ANALYSIS_AND_REMEDIATION_PLANNING",
+  "new_test_runs": 0,
+  "new_concurrency_experiments": 0,
+  "changed": {
+    "checkpoint": [],
+    "correction": [],
+    "v2_review": [],
+    "v1_review": [],
+    "Harness": [],
+    "historical_research": [],
+    "v21_checkpoint": [],
+    "original_v21": [],
+    "approved_review": [],
+    "masterplan": [],
+    "source_fixture": [],
+    "checkout_tracked": [],
+    "all_original_A0_evidence_including_scoring_and_six_files": [],
+    "six_current_A0_scaffold_files": []
+  },
+  "membership_delta": {
+    "original_A0_evidence": {
+      "added": [],
+      "removed": []
+    },
+    "approved_checkpoint": {
+      "added": [],
+      "removed": []
+    },
+    "original_correction": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "counts": {
+    "checkpoint": 4162,
+    "correction": 27844,
+    "v2_review": 3158,
+    "v1_review": 58,
+    "Harness": 289,
+    "historical_research": 6258,
+    "v21_checkpoint": 4181,
+    "original_v21": 18,
+    "approved_review": 768,
+    "masterplan": 42,
+    "source_fixture": 27,
+    "checkout_tracked": 4181,
+    "all_original_A0_evidence_including_scoring_and_six_files": 720,
+    "six_current_A0_scaffold_files": 6
+  },
+  "git_states_before_equal_after": true,
+  "git_states": {
+    "E:\\The End Engine\\v21_A0_feasibility\\checkout": {
+      "HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+      "branch": "codex/v21-a0-feasibility",
+      "status": "?? experimental_architectures_v1_r3/feasibility_v21/",
+      "staged": ""
+    },
+    "E:\\END-v102-V21-Contract-Checkpoint": {
+      "HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+      "branch": "wip/end-v102-contract-v21-review",
+      "status": "",
+      "staged": ""
+    },
+    "E:\\END-Cognitive-Architectures-Fix-v102": {
+      "HEAD": "bc9bcbad8e9cb051d54c3b270e2e03d460858986",
+      "branch": "fix/cognitive-architectures-v102-f02",
+      "status": "M experimental_architectures_v1_r3/CURRENT_REVIEW_STATUS.json\n M experimental_architectures_v1_r3/src/shared/journals.py\n M experimental_architectures_v1_r3/src/shared/provenance.py\n M experimental_architectures_v1_r3/src/shared/publication.py\n M experimental_architectures_v1_r3/src/shared/recovery_blocked.py\n?? experimental_architectures_v1_r3/src/shared/certification.py\n?? experimental_architectures_v1_r3/tests/corrections/test_certification.py\n?? experimental_architectures_v1_r3/validation/AR01_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR02_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR03_RESULTS.json\n?? experimental_architectures_v1_r3/validation/BASELINE_IDENTITY.json\n?? experimental_architectures_v1_r3/validation/BASELINE_INPUT_HASHES.json\n?? experimental_architectures_v1_r3/validation/BASELINE_REPRODUCTIONS.json\n?? experimental_architectures_v1_r3/validation/BEFORE_CORRECTION.json\n?? experimental_architectures_v1_r3/validation/F01_F03_F04_REGRESSIONS.json\n?? experimental_architectures_v1_r3/validation/FINAL_VALIDATION.json\n?? experimental_architectures_v1_r3/validation/NEGATIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS_RUN.txt\n?? experimental_architectures_v1_r3/validation/POSITIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/PROBE_PORTS.json\n?? experimental_architectures_v1_r3/validation/PROTECTED_BEFORE.json\n?? experimental_architectures_v1_r3/validation/PROVENANCE_GRAPH.json\n?? experimental_architectures_v1_r3/validation/RECOVERY_RESULTS.json\n?? experimental_architectures_v1_r3/validation/SIX_CONDITION_WIRING.json\n?? experimental_architectures_v1_r3/validation/SOURCE_PRESERVATION.json\n?? experimental_architectures_v1_r3/validation/TOCTOU_BLOCKER.json\n?? experimental_architectures_v1_r3/validation/after/\n?? experimental_architectures_v1_r3/validation/before/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2_1/\n?? experimental_architectures_v1_r3/validation/final_f02/ALL_RESULTS.json\n?? experimental_architectures_v1_r3/validation/final_f02/COMMANDS.json\n?? experimental_architectures_v1_r3/validation/final_f02/after_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/ar_controls.log\n?? experimental_architectures_v1_r3/validation/final_f02/before_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/deliver.py\n?? experimental_architectures_v1_r3/validation/final_f02/engine.json\n?? experimental_architectures_v1_r3/validation/final_f02/engine.log\n?? experimental_architectures_v1_r3/validation/final_f02/engine.txt\n?? experimental_architectures_v1_r3/validation/final_f02/exact_probe.py\n?? experimental_architectures_v1_r3/validation/final_f02/fresh_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/frozen_preflight.log\n?? experimental_architectures_v1_r3/validation/final_f02/full_reviewer/\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.json\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.log\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.txt\n?? experimental_architectures_v1_r3/validation/final_f02/native.json\n?? experimental_architectures_v1_r3/validation/final_f02/native.log\n?? experimental_architectures_v1_r3/validation/final_f02/native.txt\n?? experimental_architectures_v1_r3/validation/final_f02/original.json\n?? experimental_architectures_v1_r3/validation/final_f02/original.log\n?? experimental_architectures_v1_r3/validation/final_f02/original.txt\n?? experimental_architectures_v1_r3/validation/final_f02/preserve_after.py\n?? experimental_architectures_v1_r3/validation/final_f02/prior49.log\n?? experimental_architectures_v1_r3/validation/final_f02/provenance_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/r2.json\n?? experimental_architectures_v1_r3/validation/final_f02/r2.log\n?? experimental_architectures_v1_r3/validation/final_f02/r2.txt\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.json\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.log\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.txt\n?? experimental_architectures_v1_r3/validation/final_f02/run_validation.py\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.json\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.log\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.txt\n?? experimental_architectures_v1_r3/validation/final_f02/session_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/suite_worker.py\n?? experimental_architectures_v1_r3/validation/final_f02/supplemental_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/wiring_and_recovery.py\n?? experimental_architectures_v1_r3/validation/ir101_final/\n?? experimental_architectures_v1_r3/validation/offline_guard/\n?? experimental_architectures_v1_r3/validation/prior_controls/\n?? experimental_architectures_v1_r3/validation/publication_window_blocker/\n?? experimental_architectures_v1_r3/validation/regression/\n?? experimental_architectures_v1_r3/validation/reproductions_after/\n?? experimental_architectures_v1_r3/validation/reproductions_before/\n?? experimental_architectures_v1_r3/validation/resume_20261017_f01/\n?? experimental_architectures_v1_r3/validation/review_input/\n?? experimental_architectures_v1_r3/validation/reviewer_probes_r2.py\n?? experimental_architectures_v1_r3/validation/scratch/",
+      "staged": ""
+    },
+    "E:\\END-v102-WIP-Checkpoint-20261019": {
+      "HEAD": "eadf1390c0631cfe30985744b38bb4df055acb87",
+      "branch": "wip/end-v102-contract-review-20261019",
+      "status": "",
+      "staged": ""
+    }
+  },
+  "source_implementation_scaffold_contract_evidence_scoring_modified": false,
+  "provider_calls": 0,
+  "live_inference": 0,
+  "benchmarks": 0,
+  "commit_push_merge_rebase_tag_release": false,
+  "engine_fingerprint_preserved": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+  "frozen_evaluator_root_covered_by_prior_source_file_inventory": "23a923ebb224a162ba98c673a9f4f97e8c0571807a893ed72d6a07d65f181a09",
+  "no_evaluator_or_Engine_execution": true
+}

@@ -1,0 +1,26 @@
+{
+  "vector_id": "A0-12",
+  "required_plan_observation": "Missing/empty lock input is rejected without creating/initializing a byte or directory",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "FileNotFoundError",
+      "message": "A0_EXISTING_NONEMPTY_GUARD_REQUIRED:E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-12\\missing.lock",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "FileNotFoundError",
+      "message": "A0_EXISTING_NONEMPTY_GUARD_REQUIRED:E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-12\\empty.lock",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    }
+  ],
+  "authority": "X",
+  "material_blocker": false,
+  "started_unix": 1792509948.395301,
+  "elapsed_seconds": 0.0
+}

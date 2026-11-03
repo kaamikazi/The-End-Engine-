@@ -1,0 +1,42 @@
+{
+  "vector_id": "A0-06",
+  "required_plan_observation": "Session/Publication constructor under native L1 is demonstrated unsafe or rejected by planned preflight; no observer construction path",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "observed": "TEST_PREFLIGHT_REJECTED_MUTATING_CONSTRUCTORS",
+      "constructors_executed": 0,
+      "source_side_effects": [
+        "Session mkdir/Publication init/ledger initialization",
+        "gateway registration"
+      ],
+      "no_observer_constructor_shortcut": true
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "PermissionError",
+      "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "PermissionError",
+      "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "PermissionError",
+      "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    }
+  ],
+  "authority": "X",
+  "material_blocker": false,
+  "started_unix": 1792509848.87445,
+  "elapsed_seconds": 0.0
+}

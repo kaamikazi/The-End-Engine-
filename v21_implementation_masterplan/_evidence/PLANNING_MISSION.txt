@@ -1,0 +1,625 @@
+
+PROJECT:
+THE END ENGINE
+
+MISSION:
+END v1.0.2 → v2.1
+Approved Contract Implementation Masterplan
+
+CURRENT CONTRACT VERDICT:
+APPROVE_V21_CONTRACT_FOR_IMPLEMENTATION_PLANNING
+
+AUTHORIZATION:
+IMPLEMENTATION PLANNING ONLY.
+
+No production changes are authorized in this task.
+
+====================================================
+PRIMARY OBJECTIVE
+====================================================
+
+Convert the independently accepted v2.1 contract into
+an executable, risk-controlled engineering plan.
+
+Inspect the ACTUAL current implementation, dependencies,
+public interfaces, concurrency primitives and historical
+tests.
+
+The goal is to determine the smallest safe sequence of
+changes needed to implement the accepted contract.
+
+Do not immediately start implementing.
+
+Do not redesign approved scientific contracts.
+
+====================================================
+SOURCE IDENTITY
+====================================================
+
+Repository:
+https://github.com/kaamikazi/The-End-Engine-
+
+Approved contract branch:
+wip/end-v102-contract-v21-review
+
+Approved contract commit:
+783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e
+
+Original correction worktree:
+E:\END-Cognitive-Architectures-Fix-v102
+
+Original correction HEAD:
+bc9bcbad8e9cb051d54c3b270e2e03d460858986
+
+The published checkpoint and original correction
+worktree are distinct Git states.
+
+Inspect both without merging or modifying either.
+
+Engine:
+0.3.5.2
+
+Expected fingerprint:
+29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82
+
+Frozen evaluator root:
+23a923ebb224a162ba98c673a9f4f97e8c0571807a893ed72d6a07d65f181a09
+
+====================================================
+APPROVED REVIEW
+====================================================
+
+Review directory:
+
+E:\The End Engine\v21_contract_acceptance_review\
+
+Read:
+
+V21_INDEPENDENT_REVIEW.md
+R1_WRITER_DOMAIN_AUDIT.md
+R1_SNAPSHOT_DECISION.md
+R3_SCHEMA_DECISION.md
+R3_STANDARD_VALIDATOR_RESULTS.json
+R3_SEMANTIC_RULE_AUDIT.md
+R1_R3_CROSS_CONTRACT_TESTS.json
+R2_R4_R5_PRESERVATION.md
+IMPLEMENTATION_PREREQUISITES.md
+FINAL_VERDICT.json
+
+Review archive:
+
+V21_CONTRACT_ACCEPTANCE_REVIEW_BUNDLE.zip
+
+Expected SHA-256:
+
+fa988f05f5d8620aeff46878542d2ef083f09e5b255b7bb5581b3c3b55ec6671
+
+Read the exact accepted v2.1 contract documents
+from the verified Git checkpoint.
+
+If any required file is unavailable, clearly disclose
+the missing source and refrain from inventing its details.
+
+====================================================
+PHASE 1 — MAP ALL NINE ENGINEERING GATES
+====================================================
+
+Read IMPLEMENTATION_PREREQUISITES.md.
+
+Extract the exact IP01–IP09 requirements.
+
+Do not infer or rename them.
+
+For each prerequisite record:
+
+- Exact requirement
+- Current implementation status
+- Relevant source modules/functions
+- Required modifications
+- Required evidence
+- Required positive tests
+- Required negative tests
+- Dependencies
+- Risk level
+- Estimated effort
+- Acceptance condition
+- Independent review requirement
+
+Classify each prerequisite:
+
+EXISTING_AND_VERIFIED
+PARTIALLY_IMPLEMENTED
+NOT_IMPLEMENTED
+UNKNOWN
+BLOCKED_BY_DEPENDENCY
+
+Do not call a feature implemented merely because its
+interface or design document already exists.
+
+====================================================
+PHASE 2 — R1 WRITER-DOMAIN FEASIBILITY
+====================================================
+
+This is the highest-risk prerequisite.
+
+The contract requires a coordinated membership/content
+snapshot under the declared cooperating-writer model.
+
+Inspect every relevant writer:
+
+- Ledger initialization
+- Ledger registration
+- Reserve
+- Finish / settlement
+- Dispatch and response witnesses
+- Journal append and recovery
+- Candidate/handle records
+- Closure
+- Publication
+- Ownership/fencing
+- Baseline/native integrations
+- Shared-ledger consumers
+- Administrative mutation paths
+
+Produce a complete writer-enrollment matrix.
+
+For every writer, identify:
+
+- Entry point
+- Files or namespaces mutated
+- Existing locks
+- Proposed L1/L2/L3 interaction
+- Cross-run shared resources
+- Lock-order constraints
+- Process boundaries
+- Crash/failure behavior
+
+Investigate whether the proposed L2 outer domain can
+be installed without deadlocks, unsafe lock recursion,
+or disruption of F01 ownership and fencing.
+
+Do not assume existing publication locks protect
+directory membership.
+
+Do not assume individually matching hashes prove
+a consistent snapshot.
+
+If full cooperative coverage cannot be established,
+plan the required I/X downgrade behavior.
+
+Flag any prerequisite that needs changes to protected
+core Engine/other projects as a separate scope request.
+
+====================================================
+PHASE 3 — READ-ONLY R1 CAPTURE DESIGN
+====================================================
+
+Specify the planned module and APIs for:
+
+- Grounded run identity
+- Nonowning capture
+- Guard acquisition
+- Complete namespace enumeration
+- File identity and read-pin management
+- Immutable in-memory byte capture
+- Mandatory witness verification
+- Ledger graph validation
+- Membership/content revalidation
+- Manifest sealing
+- Authority classification
+- Deterministic downgrading
+- Resource release
+
+The observer must not:
+
+- Create a new owner/fence
+- Dispatch an AI model
+- Reserve another attempt
+- Rewrite history
+- Repair missing evidence
+- Publish a completed result
+
+Retain approved bounds:
+
+At most 2 acquisition attempts.
+At most 5 seconds per guard wait.
+No retry to erase a demonstrated in-epoch violation.
+
+Create the expected failure-path and cleanup design.
+
+Prove which existing code can be reused safely and
+which read-only parser components must be new.
+
+====================================================
+PHASE 4 — ACCOUNTING OBSERVATION EXTRACTOR
+====================================================
+
+Plan the required observation authority system.
+
+Support the five accepted R1 authority tiers.
+
+Include:
+
+- Scoped attempt identity
+- Corroborated reservation/dispatch
+- Independently justified visible cardinality
+- Supported settlement metadata
+- Usage observations
+- Unknown or inconsistent totals
+- Partial candidate/handle observations
+
+For the 16 historical accounting cases:
+
+14 coherent-graph observations
+2 narrower identity observations
+
+Define the precise executable predicates required
+before emitting each claim.
+
+No count may be promoted beyond its evidence scope.
+
+An anchored recorded attempt is not authenticated
+provider inference.
+
+Preserve supported facts after overall BLOCKED without
+restoring false complete-run accounting.
+
+Plan exact downgrade tests for all approved fault cases.
+
+====================================================
+PHASE 5 — R3 EXCLUSIVE RESULT ADAPTER
+====================================================
+
+Plan an additive opt-in v2.1 outcome interface.
+
+Approved serialized variants:
+
+ELIGIBLE_NORMAL_TERMINAL
+ELIGIBLE_RESTRICTED_TERMINAL
+NONCERTIFYING_DIAGNOSTIC
+
+Typed integrity rejection remains outside serialization.
+
+Use the accepted normative Draft-07 schema.
+
+Separate:
+
+STRUCTURAL_VALIDATION
+
+EXTERNAL_EVIDENCE_SEMANTIC_VALIDATION
+
+STRICT_SOURCE_PARSING
+
+Do not rely on the JSON Schema library to execute
+the fourteen x-semantic-rules.
+
+Plan implementation of all semantic rules against
+real captured evidence.
+
+The adapter must not replace the current execute()
+return contract without separate authorization.
+
+Plan tests for:
+
+- All three disjoint variants
+- Typed rejection
+- Normal completed result
+- Restricted interrupted result
+- Valid C0
+- Unknown later usage
+- Invalid response
+- Missing candidate
+- Rebound output handle
+- Conflicting schema tags
+- Malformed numeric values
+- Duplicate JSON keys
+- Unknown schema versions
+- Legacy result-reader compatibility
+
+No scientific score is produced by this adapter.
+
+====================================================
+PHASE 6 — R4 CALLER COMPATIBILITY
+====================================================
+
+Inventory current consumers of:
+
+Session.finish()
+execute()
+blocked_recovery()
+Publication.publish()
+Publication.verify_semantics()
+Publication.verify_completed()
+
+Determine where consumers expect:
+
+- Legacy RunResult
+- final_candidate
+- physical_attempts
+- token totals
+- completed result files
+- typed exceptions
+- diagnostic objects
+
+Separate internal callers from external/public APIs.
+
+Design an opt-in migration path.
+
+Old consumers must not interpret a diagnostic as a
+normally verified RunResult.
+
+Preserve the behavior of existing source interfaces
+unless a separately reviewed migration authorizes change.
+
+====================================================
+PHASE 7 — R5 ACCEPTANCE TEST PLAN
+====================================================
+
+Prepare a versioned CR2 acceptance suite design.
+
+The plan must retain:
+
+- 31 original historical outcomes
+- All original race vectors
+- Exact corruption mutations
+- Two-process interleavings
+- Four-process contention
+- Valid-history finalization
+- Stale finalizers
+- Existing completed results
+- Owner/fence correctness
+- Native read-pin protection
+- All 13 publication seam controls
+- Crash/recovery windows
+- Interrupted attempts
+- No duplicate provider replay
+- Completed-result immutability
+
+Do not migrate or edit tests during this planning task.
+
+For every proposed replacement test, show the
+original invariant that it preserves.
+
+Old failures remain visible as historical outcomes.
+
+====================================================
+PHASE 8 — IMPLEMENTATION ORDER
+====================================================
+
+Recommend the smallest independently reviewable slices.
+
+For each slice provide:
+
+1. Scope
+2. Exact files/functions to change
+3. Interfaces added or modified
+4. Expected test additions
+5. Prerequisite dependencies
+6. Protected code interaction
+7. Preservation requirements
+8. Stop/rollback criteria
+9. Independent acceptance gate
+
+Prefer incremental phases rather than a single massive
+rewrite.
+
+Consider:
+
+A. Writer-domain feasibility and enrollment
+B. Read-only capture and authority predicates
+C. Structured accounting observations
+D. Schema and semantic validation
+E. Opt-in outcome adapter and compatibility
+F. Versioned CR2 acceptance tests
+G. Independent implementation acceptance
+
+These are suggested planning groups, not automatic
+authorization to change code.
+
+Identify which phase should be executed first and why.
+
+If a smaller first phase can reduce risk, prefer it.
+
+====================================================
+PHASE 9 — SCIENTIFIC AND SOURCE PRESERVATION
+====================================================
+
+Protected:
+
+END Engine 0.3.5.2
+END Harness
+Frozen evaluator
+A/B/C algorithms
+Architecture prompts
+Public task definitions
+Physical call ceilings 4/5/5
+Experimental model settings
+Original END three-cycle behavior
+Historical benchmark evidence
+Original reviewer evidence
+
+Existing F01 publication machinery must be preserved.
+
+Do not weaken the accepted F02 certification rule.
+
+Do not change F03 baseline admission or F04 numeric
+safety unless a separate future authorization permits it.
+
+No live inference.
+No benchmark.
+No provider API requests.
+No model downloads.
+
+====================================================
+PHASE 10 — RESOURCE AND RISK ESTIMATE
+====================================================
+
+Provide estimated effort per phase.
+
+Include:
+
+- Engineering complexity
+- Major concurrency risk
+- Required Windows/NTFS validation
+- Source compatibility risk
+- Number and type of planned tests
+- Expected reviewer effort
+- Estimated offline test runtime
+
+Use observed test runtime data if available.
+
+Otherwise label estimates as assumptions.
+
+Do not invent measured performance.
+
+Identify the critical path and any phase that might
+invalidate the proposed implementation strategy.
+
+====================================================
+PHASE 11 — REQUIRED DELIVERABLES
+====================================================
+
+Create a planning-only directory outside the
+protected implementation tree:
+
+E:\The End Engine\v21_implementation_masterplan\
+
+Produce:
+
+IMPLEMENTATION_MASTERPLAN.md
+
+IP01_IP09_TRACEABILITY.csv
+
+WRITER_DOMAIN_INVENTORY.csv
+
+LOCK_ORDER_AND_DEADLOCK_ANALYSIS.md
+
+R1_CAPTURE_DESIGN.md
+
+R1_OBSERVATION_EXTRACTION.md
+
+R3_VALIDATOR_AND_ADAPTER_DESIGN.md
+
+R4_CALLER_COMPATIBILITY.md
+
+R5_CR2_TEST_PLAN.md
+
+PHASED_IMPLEMENTATION_ROADMAP.md
+
+RESOURCE_AND_RISK_ESTIMATE.md
+
+SOURCE_PRESERVATION.json
+
+OPEN_ENGINEERING_RISKS.md
+
+FIRST_IMPLEMENTATION_SLICE.md
+
+FINAL_PLANNING_REPORT.md
+
+All proposals must refer to real source symbols,
+not guessed functions.
+
+No implementation code may be changed.
+
+====================================================
+PHASE 12 — GIT RULES
+====================================================
+
+Existing public checkpoint:
+
+wip/end-v102-contract-v21-review
+
+HEAD:
+783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e
+
+Do not modify or push to main.
+
+Do not alter the published WIP checkpoint.
+
+Do not create implementation commits.
+
+Do not merge or tag.
+
+Keep planning documents local for separate review.
+
+No Git push is necessary for this task.
+
+Record Git identities and confirm original dirty
+research work remains preserved.
+
+====================================================
+FINAL VERDICT
+====================================================
+
+Choose one:
+
+IMPLEMENTATION_PLAN_READY_FOR_REVIEW
+
+All IP01–IP09 requirements have concrete, testable
+implementation plans with clear scope boundaries.
+
+FEASIBILITY_RISK_REQUIRES_DECISION
+
+A material implementation dependency or lock-domain
+risk requires a design decision before planning can
+be accepted.
+
+INSUFFICIENT_SOURCE_EVIDENCE
+
+Required current source or reviewer materials are
+unavailable.
+
+====================================================
+FINAL REPORT
+====================================================
+
+Include:
+
+- Exact baseline and source identity
+- All nine engineering gates
+- Proposed architecture and module boundaries
+- Complete writer/lock-domain inventory
+- Deadlock and publication risks
+- R1 evidence capture design
+- R3 validation and adapter plan
+- R4 caller compatibility
+- R5 CR2 coverage
+- Phase-by-phase implementation roadmap
+- Recommended first slice
+- Explicit authorization needed for that slice
+- Test and resource estimates
+- Unresolved risks
+- Git preservation receipt
+- Final planning verdict
+
+IMPLEMENTATION:
+NOT AUTHORIZED
+
+TEST MIGRATION:
+NOT AUTHORIZED
+
+LIVE INFERENCE:
+0
+
+EMPIRICAL BENCHMARKS:
+0
+
+SCIENTIFIC PERFORMANCE CLAIMS:
+NONE
+
+====================================================
+FINAL PRINCIPLE
+====================================================
+
+THE CONTRACT IS APPROVED.
+
+THE IMPLEMENTATION IS NOT.
+
+BUILD A PLAN THAT CAN BE TESTED, REJECTED,
+REVISED AND INDEPENDENTLY VERIFIED.
+
+PRESERVE THE SCIENTIFIC ENGINE.
+
+DO NOT IMPLEMENT UNTIL THE FIRST SLICE IS APPROVED.
+
+BEGIN.

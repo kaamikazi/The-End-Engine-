@@ -1,0 +1,585 @@
+
+ROLE:
+Fresh independent AI reviewer.
+Scientific systems auditor.
+Evidence-integrity and contract-schema specialist.
+
+PROJECT:
+THE END ENGINE
+
+MISSION:
+v2.1 — FINAL CONTRACT ACCEPTANCE REVIEW
+
+MODE:
+READ-ONLY
+OFFLINE
+NO IMPLEMENTATION
+NO TEST MIGRATION
+NO GIT MUTATION
+
+====================================================
+PRIMARY GOAL
+====================================================
+
+Determine whether END's v2.1 certification contract is
+sufficiently precise, safe and implementable to authorize
+a separate implementation-planning phase.
+
+Do not assume author validation equals acceptance.
+
+Do not reject a complete prospective contract merely
+because the implementation does not exist yet.
+
+This review concerns CONTRACT CORRECTNESS.
+
+Runtime acceptance is a later, separate phase.
+
+====================================================
+SOURCE OF TRUTH
+====================================================
+
+Repository:
+https://github.com/kaamikazi/The-End-Engine-
+
+Review branch:
+wip/end-v102-contract-v21-review
+
+Expected commit:
+783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e
+
+Required directory:
+experimental_architectures_v1_r3/
+validation/contract_reconciliation_v2_1/
+
+Read all 17 specification documents and the
+documentation validation summary.
+
+Read previous v2 review:
+
+E:\The End Engine\
+v2_contract_acceptance_review_20261020\
+review\V2_INDEPENDENT_REVIEW.md
+
+Previous review archive SHA-256:
+ad21ed22701c05c7249c4bc8ddfeda037a7d31e6bfed51b3b76adfc9193cbddf
+
+If an external review bundle is unavailable, disclose
+the missing evidence instead of inventing observations.
+
+====================================================
+HISTORICAL REVIEW FINDINGS
+====================================================
+
+Previous decisions:
+
+R1: REVISE
+R2: ACCEPT
+R3: REVISE
+R4: ACCEPT_WITH_CONDITIONS
+R5: ACCEPT_WITH_CONDITIONS
+
+v2.1 claims to resolve R1 and R3.
+
+Author-reported synthetic document validation:
+
+139 expected matches
+0 mismatches
+
+These are NOT independent acceptance results.
+
+Historical failures remain:
+
+244 suite: 222 PASS, 16 FAIL, 6 ERROR
+154 suite: 146 PASS, 8 FAIL
+49 suite: 48 PASS, 1 FAIL
+
+No migration has been authorized.
+
+====================================================
+PHASE 1 — R1 SNAPSHOT CORRECTNESS
+====================================================
+
+Review the prospective R1-GUARDED-CUT-2.1 protocol.
+
+The proposal distinguishes:
+
+A: AUTHORITATIVE_CONSISTENT_SNAPSHOT
+S: STABLE_BUT_INCOMPLETE_OBSERVATION
+I: INDIVIDUALLY_CORROBORATED_OBSERVATION
+U: UNSTABLE_SNAPSHOT
+X: UNSUPPORTED_OBSERVATION
+
+Assess whether these authority levels are:
+
+- mutually distinguishable
+- supported by exact prerequisites
+- consistently downgraded
+- scientifically honest
+- internally compatible with the actual source
+
+The strongest R1 claim requires a coordinated
+membership-and-content snapshot.
+
+Check the stated L1 run/publication domain,
+L2 outer shared-ledger mutation domain,
+and L3 existing non-reentrant Ledger.lock.
+
+Determine whether the proposed lock acquisition
+order can be implemented without deadlocks or
+unauthorized owner/fence changes.
+
+Inspect the actual writer paths.
+
+Identify every writer that must participate in L2.
+
+Do not assume a proposed coordination domain
+already exists in the runtime.
+
+Distinguish:
+
+CURRENT_IMPLEMENTATION_FACT
+
+PROPOSED_IMPLEMENTATION_REQUIREMENT
+
+REVIEWED_TRUST_ASSUMPTION
+
+UNKNOWN_IMPLEMENTABILITY
+
+If complete cooperative-writer coverage cannot be
+proved with current infrastructure, determine whether
+the stated I/X downgrade still makes the prospective
+contract safe.
+
+Do not require hostile-host security that the
+contract explicitly excludes.
+
+====================================================
+PHASE 2 — SNAPSHOT ADVERSARIAL REVIEW
+====================================================
+
+Challenge the proposed capture protocol with:
+
+1. Orphan creation after first enumeration.
+
+2. Reservation deletion.
+
+3. Attempt identity duplication.
+
+4. Changed ledger contents.
+
+5. Response receipt moved during capture.
+
+6. Settlement witness replaced.
+
+7. Hard-link and alias records.
+
+8. Case-fold collisions.
+
+9. Unexpected nested directory.
+
+10. Temporary or unknown attempt files.
+
+11. ABA mutation during acquisition.
+
+12. Missing mandatory witness.
+
+13. Conflicting response commitment.
+
+14. Cooperative writer excluded from L2.
+
+15. Guard timeout.
+
+16. Failure while read pins are held.
+
+17. Process termination during capture.
+
+18. Concurrent valid finalization.
+
+19. Ledger shared by multiple runs.
+
+20. Capture after normal RESULT publication.
+
+For each scenario determine:
+
+- whether the proposed authority tier is justified
+- which evidence remains observable
+- whether full certification is prohibited
+- whether retry is allowed
+- whether evidence is preserved
+- whether provider replay is forbidden
+
+The contract allows no more than two acquisition
+attempts and five seconds per guard wait.
+
+A known in-epoch integrity violation must not be
+retried until it disappears and then called VERIFIED.
+
+Test the difference between failure to acquire a
+snapshot and corruption established by evidence.
+
+Do not label all unavailable snapshots corrupt.
+
+====================================================
+PHASE 3 — WITNESS AUTHORITY
+====================================================
+
+Review every mandatory accounting witness:
+
+- run identity
+- full ledger envelope and rows
+- reservation
+- dispatch
+- response anchor
+- settlement
+- journal inventory
+- unexpected records
+- closure/publication binding
+
+Check independent source origins.
+
+A hash match proves byte equality, not recording origin.
+
+A copied witness does not establish another independent
+event.
+
+A known duplicate representation must not increase
+attempt cardinality.
+
+An unknown extra possible attempt must not be ignored.
+
+Determine whether the contract can preserve genuinely
+supported per-source observations when stronger
+graph authority fails.
+
+Specifically review all sixteen historical mutations.
+
+Fourteen cases propose anchored visible cardinality 1
+conditional on A prerequisites.
+
+Two cases propose narrower reservation/dispatch
+observations.
+
+Check these conclusions against actual historical
+evidence and the new snapshot assumptions.
+
+If evidence only establishes I, do not award A.
+
+If evidence supports a narrower fact, do not discard it
+without explaining why.
+
+====================================================
+PHASE 4 — R3 SCHEMA ACCEPTANCE
+====================================================
+
+Review:
+
+R3_EXCLUSIVE_OUTCOME_UNION.md
+R3_SCHEMA_SPECIFICATION.json
+R3_NORMATIVE_FIELD_MATRIX.csv
+R3_LEGACY_COMPATIBILITY.md
+
+Proposed serialized variants:
+
+ELIGIBLE_NORMAL_TERMINAL
+
+ELIGIBLE_RESTRICTED_TERMINAL
+
+NONCERTIFYING_DIAGNOSTIC
+
+Typed integrity rejection is OUTSIDE the JSON union.
+
+Independently verify the partition.
+
+A valid serialized instance must match EXACTLY ONE
+variant.
+
+A contradictory instance must match ZERO variants.
+
+Pay special attention to:
+
+- persisted INTERRUPTED
+- COMPLETED
+- NO_ACTIONABLE_REVISION
+- BUDGET_EXHAUSTED
+- TIME_EXHAUSTED
+- INVALID_RESPONSE
+- PROTOCOL_FAILURE
+- UNKNOWN provenance
+- BLOCKED provenance
+- unsupported snapshot authority
+
+Verify that persisted INTERRUPTED cannot be classified
+as an ordinary successful result.
+
+Verify that normal artifact persistence does not assert
+answer correctness.
+
+Scientific scores must not appear as measured results
+when no empirical evaluation occurred.
+
+====================================================
+PHASE 5 — INDEPENDENT STANDARD SCHEMA CHECK
+====================================================
+
+The author reports 139/139 local validation matches.
+
+Do not accept the local checker as independent evidence.
+
+Use an available established JSON Schema Draft-07
+validator to inspect and validate the specification.
+
+If none is installed, report that limitation.
+
+Do not silently download packages or change the
+protected research environment.
+
+Validate:
+
+- schema/meta-schema correctness
+- references
+- oneOf exclusivity
+- enum constraints
+- required fields
+- additionalProperties restrictions
+- nested field requirements
+- conditional branches
+- numeric bounds
+- null versus missing
+- malformed discriminator combinations
+
+Independently generate positive and negative instances.
+
+CRITICAL:
+
+The specification uses x-semantic-rules.
+
+These are not standard JSON Schema enforcement keywords.
+
+Separate:
+
+STRUCTURAL_SCHEMA_VALIDATION
+
+EXTERNAL_EVIDENCE_SEMANTIC_VALIDATION
+
+A JSON Schema library accepting an instance does not
+prove its source evidence or scientific eligibility.
+
+Review all fourteen semantic rules separately.
+
+Check whether they are:
+
+- precise
+- testable
+- internally consistent
+- bound to independent evidence
+- safe under unavailable or contradictory evidence
+
+Also review strict parsing assumptions for duplicate
+JSON keys and invalid numeric representations.
+
+====================================================
+PHASE 6 — CROSS-CONTRACT CONSISTENCY
+====================================================
+
+Check R1 and R3 together.
+
+Examples:
+
+Can an eligible legacy terminal coexist with S-tier
+accounting observations without being mislabeled as
+complete-run accounting?
+
+Can a noncertifying diagnostic contain corroborated
+attempt identity without claiming certified success?
+
+Can an unstable snapshot accidentally produce a normal
+eligible terminal?
+
+Can a diagnostic embed legacy RunResult-looking fields
+and confuse a shape-based reader?
+
+Can an existing immutable result be preserved while
+current evidence verification rejects it?
+
+Can valid C0 recovery survive with unknown later cost?
+
+Can an independent accounting observation accidentally
+override a BLOCKED journal?
+
+Check source artifact verification and R1 observation
+authority as separate axes.
+
+Do not allow either to silently replace the other.
+
+====================================================
+PHASE 7 — PRESERVE ACCEPTED REQUIREMENTS
+====================================================
+
+R2 remains accepted.
+
+No normal VERIFIED certificate from BLOCKED evidence.
+
+R4 remains conditionally accepted.
+
+Preserve opt-in adapters, supported API boundaries,
+caller inventory and version compatibility tests.
+
+R5 remains conditionally accepted.
+
+Preserve exact fault vectors, real multi-process races,
+positive valid publication, crash recovery, owner
+fencing, read pins, immutable output and no replay.
+
+Do not invent new redesign requirements without a
+specific demonstrated contradiction.
+
+====================================================
+PHASE 8 — REVIEW STOP RULE
+====================================================
+
+Distinguish:
+
+A. MATERIAL CONTRACT DEFECT
+   The specification is contradictory, unsafe,
+   ambiguous or untestable.
+
+B. IMPLEMENTATION PREREQUISITE
+   The specification is adequate but requires future
+   engineering before runtime claims can be made.
+
+C. SCIENTIFIC LIMITATION
+   The contract cannot establish empirical model
+   performance or semantic answer correctness.
+
+D. OPTIONAL FUTURE ENHANCEMENT
+   Useful but not needed for contract acceptance.
+
+Only A blocks contract approval automatically.
+
+An unimplemented but precisely defined future
+requirement is not itself a contract contradiction.
+
+If a prerequisite is technically impossible using
+the declared allowed scope, explain that and determine
+whether it invalidates the design.
+
+Do not invent endless new mandatory features.
+
+====================================================
+PHASE 9 — REVIEW DELIVERABLES
+====================================================
+
+Create a separate reviewer-owned directory:
+
+E:\The End Engine\v21_contract_acceptance_review\
+
+Produce:
+
+V21_INDEPENDENT_REVIEW.md
+
+R1_SNAPSHOT_DECISION.md
+
+R1_WRITER_DOMAIN_AUDIT.md
+
+R1_WITNESS_CASES.csv
+
+R1_DOWNGRADE_REVIEW.csv
+
+R3_SCHEMA_DECISION.md
+
+R3_STANDARD_VALIDATOR_RESULTS.json
+
+R3_SEMANTIC_RULE_AUDIT.md
+
+R1_R3_CROSS_CONTRACT_TESTS.json
+
+R2_R4_R5_PRESERVATION.md
+
+IMPLEMENTATION_PREREQUISITES.md
+
+FINAL_VERDICT.json
+
+Bundle the reports without changing author-owned files.
+
+Preserve reviewer-owned failures and raw reproduction.
+
+Record archive SHA-256 externally.
+
+====================================================
+PHASE 10 — FINAL VERDICT
+====================================================
+
+Choose EXACTLY ONE:
+
+APPROVE_V21_CONTRACT_FOR_IMPLEMENTATION_PLANNING
+
+The normative specification is sufficiently precise,
+safe and coherent for a separately authorized
+implementation plan.
+
+This is NOT runtime acceptance.
+
+REVISE_V21_CONTRACT
+
+A demonstrated material specification contradiction
+or missing normative rule remains.
+
+IMPLEMENTABILITY_BLOCKER
+
+The required contract cannot be realized under its
+declared trust/operational constraints, and the
+specified downgrade cannot resolve the problem.
+
+INSUFFICIENT_EVIDENCE
+
+Required material cannot be inspected responsibly.
+
+For every finding, mark:
+
+BLOCKING_CONTRACT_DEFECT
+
+IMPLEMENTATION_PREREQUISITE
+
+SCIENTIFIC_LIMITATION
+
+OPTIONAL_ENHANCEMENT
+
+Include source evidence and explain the classification.
+
+====================================================
+ABSOLUTE RESTRICTIONS
+====================================================
+
+NO production implementation changes.
+NO schema edits.
+NO old-test migration.
+NO reviewer-assertion weakening.
+NO Engine or Harness modifications.
+NO frozen evaluator modifications.
+NO inference provider calls.
+NO empirical benchmark.
+NO commit.
+NO Git push.
+NO merge.
+NO release.
+
+Preserve both original research worktrees.
+
+Independent AI review is not authenticated human
+scientific approval.
+
+====================================================
+FINAL PRINCIPLE
+====================================================
+
+REVIEW THE ACTUAL SPECIFICATION.
+
+CHALLENGE ITS MOST IMPORTANT ASSUMPTIONS.
+
+DISTINGUISH DESIGN ACCEPTANCE FROM RUNTIME PROOF.
+
+DO NOT REOPEN ACCEPTED DECISIONS WITHOUT EVIDENCE.
+
+DO NOT CHANGE THE EXPERIMENT TO MAKE THE TEST PASS.
+
+BEGIN.

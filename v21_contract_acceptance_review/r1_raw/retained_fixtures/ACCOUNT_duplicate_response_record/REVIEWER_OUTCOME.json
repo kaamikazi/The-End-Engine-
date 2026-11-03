@@ -1,0 +1,221 @@
+{
+  "id": "ACCOUNT_duplicate_response_record",
+  "status": "PASS",
+  "outcome": {
+    "original_mutator": "duplicate_response_record",
+    "graph": {
+      "returned": {
+        "schema_version": "abc-r3-provenance-v1",
+        "revision": "1.0.2",
+        "run_attempts_sha256": "b873f8d71e3b9f9f4118a4be65902bc4a11b9e82d99306117f47f2c2ccda6bb6",
+        "anchor_hashes": {
+          "publication/attempts/000001.reservation.json": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "publication/attempts/000001.json": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "publication/attempts/000001.settlement.json": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        "ordered_attempt_ids": [
+          1
+        ],
+        "bound_output_handles": [
+          "O_e59a538cd2637c630ecbfe20"
+        ],
+        "unwitnessed_settlements": [],
+        "overall": "VERIFIED"
+      }
+    },
+    "journal": {
+      "schema_version": "abc-r2-journal-review-v1",
+      "overall": "BLOCKED",
+      "attempts": [
+        {
+          "attempt_id": 1,
+          "status": "CORRUPT",
+          "code": "JOURNAL_SCHEMA_HASH_OR_LEDGER_MISMATCH",
+          "exception_type": "AssertionError",
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "observed_current_bytes_sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19"
+        }
+      ],
+      "trusted_hashes": {},
+      "untrusted_evidence": {
+        "wire/000001-4dcaf471206a91f7.jsonl": {
+          "sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19",
+          "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+          "status": "CORRUPT"
+        }
+      },
+      "verified_provider_records": [],
+      "host_compromise_protection": false,
+      "provenance_graph": {
+        "schema_version": "abc-r3-provenance-v1",
+        "revision": "1.0.2",
+        "run_attempts_sha256": "b873f8d71e3b9f9f4118a4be65902bc4a11b9e82d99306117f47f2c2ccda6bb6",
+        "anchor_hashes": {
+          "publication/attempts/000001.reservation.json": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "publication/attempts/000001.json": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "publication/attempts/000001.settlement.json": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        "ordered_attempt_ids": [
+          1
+        ],
+        "bound_output_handles": [
+          "O_e59a538cd2637c630ecbfe20"
+        ],
+        "unwitnessed_settlements": [],
+        "overall": "VERIFIED",
+        "wire_hashes": {
+          "wire/000001-4dcaf471206a91f7.jsonl": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19"
+        }
+      },
+      "requires_integrity_hold": true
+    },
+    "independently_supported_recorded_reservation_count": 1,
+    "independently_supported_dispatch_anchor_count": 1,
+    "verified_complete_provider_count": null,
+    "scope": "Corroborated cooperating-writer graph, not provider-signed completeness",
+    "original_settlement_recorded_tokens": {
+      "input_tokens": 10,
+      "output_tokens": 5,
+      "total_tokens": 15
+    },
+    "returned_accounting_authority": "UNRESOLVED_CORRUPT_HISTORY_NOT_ZERO",
+    "returned_physical_attempts": null,
+    "schema_version": "abc-r3-blocked-recovery-v1",
+    "new_dispatches": [],
+    "immutable_inputs": true,
+    "returned": {
+      "schema_version": "abc-r3-blocked-recovery-v1",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+      "status": "BLOCKED",
+      "is_completed_result": false,
+      "request_run_id": "REVIEWER_CONTRACT",
+      "journal_integrity": {
+        "schema_version": "abc-r2-journal-review-v1",
+        "overall": "BLOCKED",
+        "attempts": [
+          {
+            "attempt_id": 1,
+            "status": "CORRUPT",
+            "code": "JOURNAL_SCHEMA_HASH_OR_LEDGER_MISMATCH",
+            "exception_type": "AssertionError",
+            "path": "wire/000001-4dcaf471206a91f7.jsonl",
+            "observed_current_bytes_sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19"
+          }
+        ],
+        "trusted_hashes": {},
+        "untrusted_evidence": {
+          "wire/000001-4dcaf471206a91f7.jsonl": {
+            "sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19",
+            "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+            "status": "CORRUPT"
+          }
+        },
+        "verified_provider_records": [],
+        "host_compromise_protection": false,
+        "provenance_graph": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "b873f8d71e3b9f9f4118a4be65902bc4a11b9e82d99306117f47f2c2ccda6bb6",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+            "publication/attempts/000001.json": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+            "publication/attempts/000001.settlement.json": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_e59a538cd2637c630ecbfe20"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED",
+          "wire_hashes": {
+            "wire/000001-4dcaf471206a91f7.jsonl": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19"
+          }
+        },
+        "requires_integrity_hold": true
+      },
+      "result": {
+        "run_id": "REVIEWER_CONTRACT",
+        "task_id": "ABC-PUBLIC-001",
+        "condition_id": "SPARSE_DELIBERATION",
+        "termination_reason": "EXTERNAL_BLOCKER",
+        "physical_attempts": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "wall_time": null,
+        "all_generated_candidates": null,
+        "accounting_authority": "UNRESOLVED_CORRUPT_HISTORY_NOT_ZERO",
+        "diagnostic_errors": [
+          {
+            "code": "F02_PROVENANCE_INTEGRITY_HOLD",
+            "failed_attempt_identity_invariants": [
+              "JOURNAL_SCHEMA_HASH_OR_LEDGER_MISMATCH"
+            ]
+          }
+        ]
+      },
+      "candidate_history": {
+        "status": "RETAINED_IN_EVIDENCE_NOT_RECONSTRUCTED_OR_CERTIFIED",
+        "ledger_observation": {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\budget.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1288,
+          "sha256": "9cb652153447718476a8bd0e8e91b8852d1fd706f4c8c6fcd734cb74b6eafda2",
+          "raw_base64": "eyJzdGF0ZSI6eyJhdHRlbXB0cyI6W3siYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPX2U1OWE1MzhjZDI2MzdjNjMwZWNiZmUyMCIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ5MTM0OTk5OTkyMzg0MTEsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjMuNzkxMzE5OCwic3RhdGUiOiJTVUNDRUVERUQiLCJ0b2tlbl9jZWlsaW5nIjoxNjM4NCwidG90YWxfdG9rZW5zIjoxNX1dLCJoYWx0ZWQiOmZhbHNlLCJsaW1pdHMiOnsiYXR0ZW1wdHMiOjEzNiwic2Vjb25kcyI6MTA4MDAsInRva2VucyI6NDAwMDAwfSwicnVucyI6eyJSRVZJRVdFUl9DT05UUkFDVCI6eyJhdHRlbXB0cyI6NCwiaWRlbnRpdHkiOiJmNWJiZjBiYmI1NTkwNjBhNDFjMjFiNjJjYTc5ZGU1OWZhMGQxMWY4Y2M4MGI2YmU0OGViNDUwYjdhNDkzNjIxIiwic2Vjb25kcyI6MTgwMCwidG9rZW5zIjo0MDAwMDB9fSwic2NoZW1hX3ZlcnNpb24iOiJsYWItbGVkZ2VyLXYxIn0sInN0YXRlX3NoYTI1NiI6Ijg5NGQ0ZmUzMmJiOTlmM2Q4NWZiYTVmNjQ3ZTAyN2Q5YTQ4ZTkyNGVkMGQyZGFlMjI4ZjhmOWIxNzhjYjIzODAifQ=="
+        },
+        "independent_settlement_observations": [
+          {
+            "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\attempts\\000001.settlement.json",
+            "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+            "bytes": 1290,
+            "sha256": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+            "raw_base64": "eyJhdHRlbXB0X2lkIjoxLCJkaXNwYXRjaF9hbmNob3Jfc2hhMjU2IjoiYzNlYTgxOWRkMGVkY2QwZTQwYzUzYTA0OThmYTBiMDMxNzBhZDcyZTU4NGI5MzFhNjM5MTMwYjJkY2UzYzM2NyIsImlkZW50aXR5X3NoYTI1NiI6IjEyZWEwMGVmNWJjYTZlMzQ3MzM1NzkxYTY3MDMxOTM5ZmZkNWJiODVjOWU0YTA0MjVkYWJlZDkxZDllMzJmNWEiLCJyZXNwb25zZV9hbmNob3Jfc2hhMjU2IjoiZmVhNjc1MjA3NzcxZjVmODk2YjlkZjQxZGYyY2E3MDJiYzVmMWFjODRmOTMxZjQ3YzRlZWY3YTI3OWY4NjIzOSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2NoZW1hX3ZlcnNpb24iOiJhYmMtcjMtc2V0dGxlbWVudC12MSIsInNldHRsZW1lbnQiOnsiYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPX2U1OWE1MzhjZDI2MzdjNjMwZWNiZmUyMCIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ5MTM0OTk5OTkyMzg0MTEsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjMuNzkxMzE5OCwic3RhdGUiOiJTVUNDRUVERUQiLCJ0b2tlbl9jZWlsaW5nIjoxNjM4NCwidG90YWxfdG9rZW5zIjoxNX19"
+          }
+        ]
+      },
+      "evidence_observations": [
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\attempts\\000001.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1960,
+          "sha256": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\attempts\\000001.reservation.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 682,
+          "sha256": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\attempts\\000001.response.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 255,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\attempts\\000001.settlement.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1290,
+          "sha256": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\wire\\000001-4dcaf471206a91f7.jsonl",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 4409,
+          "sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19"
+        }
+      ],
+      "existing_result_observation": null,
+      "scientific_scores": null,
+      "recovery_provider_calls": 0,
+      "diagnostic_record": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record\\publication\\recovery_holds\\de3eef4add37ec2d70872dd78953f3e8.json",
+      "publication": "NONE_INTEGRITY_HOLD_NO_RESULT_CERTIFICATE"
+    }
+  },
+  "elapsed_seconds": 0.18800000000192085
+}

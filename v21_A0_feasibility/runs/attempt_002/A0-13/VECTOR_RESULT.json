@@ -1,0 +1,55 @@
+{
+  "vector_id": "A0-13",
+  "required_plan_observation": "Existing read-pinned data denies a real child write/delete through test lifetime",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "pid": 39272,
+      "exit_code": 0,
+      "stdout": "{\"events\": [{\"operation\": \"write\", \"outcome\": \"DENIED\", \"exception\": \"PermissionError\", \"errno\": 13, \"winerror\": null, \"message\": \"[Errno 13] Permission denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_feasibility\\\\\\\\runs\\\\\\\\attempt_002\\\\\\\\A0-13\\\\\\\\data.txt'\"}, {\"operation\": \"delete\", \"outcome\": \"DENIED\", \"exception\": \"PermissionError\", \"errno\": 13, \"winerror\": 32, \"message\": \"[WinError 32] The process cannot access the file because it is being used by another process: 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_feasibility\\\\\\\\runs\\\\\\\\attempt_002\\\\\\\\A0-13\\\\\\\\data.txt'\"}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+      "stderr": "",
+      "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-13\\mutate-1792509948501163300.request.json",
+      "killed_by_parent": false,
+      "worker_result": {
+        "events": [
+          {
+            "operation": "write",
+            "outcome": "DENIED",
+            "exception": "PermissionError",
+            "errno": 13,
+            "winerror": null,
+            "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-13\\\\data.txt'"
+          },
+          {
+            "operation": "delete",
+            "outcome": "DENIED",
+            "exception": "PermissionError",
+            "errno": 13,
+            "winerror": 32,
+            "message": "[WinError 32] The process cannot access the file because it is being used by another process: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-13\\\\data.txt'"
+          }
+        ],
+        "counters": {
+          "forbidden_network_events": 0,
+          "forbidden_dispatch_or_reservation_calls": 0
+        },
+        "worker_operation_completed": true
+      }
+    },
+    {
+      "pin_identity": {
+        "volume_serial": "bc08b541",
+        "file_index": "00010000001402fc",
+        "links": 1,
+        "bytes": 8
+      },
+      "captured_sha256": "962f85a27854336f3286ad54b49321f62525043b5f3508b2ecc887fdd6e7550e",
+      "post_release_write_succeeds": true
+    }
+  ],
+  "authority": "I",
+  "material_blocker": false,
+  "started_unix": 1792509948.4950511,
+  "elapsed_seconds": 0.4849999999996726
+}

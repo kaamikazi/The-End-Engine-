@@ -1,0 +1,6 @@
+Coordinator-only setup failure retained, not a contract assertion failure:
+
+An attempted PowerShell/python -c one-line mechanical output-count check failed before execution with exit code 1:
+SyntaxError: unterminated string literal (detected at line 1)
+
+Cause: nested shell/Python quoting around the embedded for-loop source was malformed. No check ran and no output receipt or protected file was written by that failed command. The coordinator moved the same intended mechanical check into verify_output_consistency.py and executed that file. This setup failure is not counted as a test PASS or as a reviewer contract finding.

@@ -1,0 +1,23 @@
+{
+  "pid": 35920,
+  "exit_code": 0,
+  "stdout": "{\"events\": [{\"same_file\": true, \"distinct_class_identity\": true, \"distinct_lock_maps\": true, \"decision\": \"REJECT_DUPLICATE_MODULE_ORIGIN_NO_STRONG_DOMAIN\"}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+  "stderr": "",
+  "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-20\\duplicate_origin-1792509954586651500.request.json",
+  "killed_by_parent": false,
+  "worker_result": {
+    "events": [
+      {
+        "same_file": true,
+        "distinct_class_identity": true,
+        "distinct_lock_maps": true,
+        "decision": "REJECT_DUPLICATE_MODULE_ORIGIN_NO_STRONG_DOMAIN"
+      }
+    ],
+    "counters": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "worker_operation_completed": true
+  }
+}

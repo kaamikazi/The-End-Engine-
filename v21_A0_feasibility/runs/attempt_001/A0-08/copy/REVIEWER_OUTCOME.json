@@ -1,0 +1,44 @@
+{
+  "id": "RACE_2_valid",
+  "status": "PASS",
+  "outcome": {
+    "process_count": 2,
+    "kind": "valid",
+    "processes": [
+      {
+        "pid": 7704,
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "pid": 36284,
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "outcomes": [
+      {
+        "status": "FileExistsError",
+        "detail": "Verified completed run; no new session admitted",
+        "pid": 7704,
+        "dispatches": []
+      },
+      {
+        "status": "NORMAL",
+        "sha": "4579f1dee28af85e279f7c47c259b6decf4d7052b9c5e29d7d967e75df827331",
+        "pid": 36284,
+        "dispatches": []
+      }
+    ],
+    "stale_session": {
+      "returned_existing": true,
+      "termination": "INTERRUPTED",
+      "sha": "4579f1dee28af85e279f7c47c259b6decf4d7052b9c5e29d7d967e75df827331"
+    },
+    "no_dispatch": true,
+    "immutable_prior_evidence": true
+  },
+  "elapsed_seconds": 2.110000000000582
+}

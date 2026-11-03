@@ -1,0 +1,56 @@
+{
+  "vector_id": "A0-20",
+  "required_plan_observation": "Unknown participant/resource aliases, PID reuse/stale epoch and duplicate module origins refuse coverage; grounded lower I/X or real typed error, never A/S",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "unknown_actor": "NO_STRONG_DOMAIN; lower facts if grounded",
+      "actual_alias_identity": {
+        "volume_serial": "bc08b541",
+        "file_index": "000100000014037d",
+        "links": 2,
+        "bytes": 2
+      },
+      "alias_paths": [
+        "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-20\\resource.json",
+        "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-20\\alias.json"
+      ],
+      "stale_epoch": "ACTUAL_CHANGED_EPOCH_FILE_REJECTED_AS_SAME_EPOCH; no production capability issued",
+      "process_identity": {
+        "pid": 3644,
+        "creation_filetime": 134369835393832424
+      },
+      "wrong_creation_filetime_rejected": 134369835393832425,
+      "PID_reuse": "CREATION_ID_MISMATCH_NEGATIVE; actual OS PID reuse not forced or claimed",
+      "candidate_association_if_unsupported": "NONE; X, never fake zero"
+    },
+    {
+      "pid": 35920,
+      "exit_code": 0,
+      "stdout": "{\"events\": [{\"same_file\": true, \"distinct_class_identity\": true, \"distinct_lock_maps\": true, \"decision\": \"REJECT_DUPLICATE_MODULE_ORIGIN_NO_STRONG_DOMAIN\"}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+      "stderr": "",
+      "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-20\\duplicate_origin-1792509954586651500.request.json",
+      "killed_by_parent": false,
+      "worker_result": {
+        "events": [
+          {
+            "same_file": true,
+            "distinct_class_identity": true,
+            "distinct_lock_maps": true,
+            "decision": "REJECT_DUPLICATE_MODULE_ORIGIN_NO_STRONG_DOMAIN"
+          }
+        ],
+        "counters": {
+          "forbidden_network_events": 0,
+          "forbidden_dispatch_or_reservation_calls": 0
+        },
+        "worker_operation_completed": true
+      }
+    }
+  ],
+  "authority": "X",
+  "material_blocker": false,
+  "started_unix": 1792509954.576503,
+  "elapsed_seconds": 0.4849999999996726
+}

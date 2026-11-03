@@ -1,0 +1,66 @@
+[
+  {
+    "name": "duplicate_root",
+    "raw": "{\"a\":1,\"a\":2}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('DUPLICATE_KEY:a')",
+    "expectation_match": true
+  },
+  {
+    "name": "duplicate_nested",
+    "raw": "{\"x\":{\"a\":1,\"a\":2}}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('DUPLICATE_KEY:a')",
+    "expectation_match": true
+  },
+  {
+    "name": "nan",
+    "raw": "{\"a\":NaN}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('INVALID_JSON_NUMBER:NaN')",
+    "expectation_match": true
+  },
+  {
+    "name": "infinity",
+    "raw": "{\"a\":Infinity}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('INVALID_JSON_NUMBER:Infinity')",
+    "expectation_match": true
+  },
+  {
+    "name": "minus_infinity",
+    "raw": "{\"a\":-Infinity}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('INVALID_JSON_NUMBER:-Infinity')",
+    "expectation_match": true
+  },
+  {
+    "name": "finite_overflow",
+    "raw": "{\"a\":1e9999}",
+    "expected_accepted": false,
+    "accepted": false,
+    "error": "ValueError('NONFINITE_OR_OVERFLOW:1e9999')",
+    "expectation_match": true
+  },
+  {
+    "name": "finite_number",
+    "raw": "{\"a\":1e2}",
+    "expected_accepted": true,
+    "accepted": true,
+    "error": null,
+    "expectation_match": true
+  },
+  {
+    "name": "valid_zero",
+    "raw": "{\"a\":0}",
+    "expected_accepted": true,
+    "accepted": true,
+    "error": null,
+    "expectation_match": true
+  }
+]

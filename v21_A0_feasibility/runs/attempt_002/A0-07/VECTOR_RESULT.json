@@ -1,0 +1,24 @@
+{
+  "vector_id": "A0-07",
+  "required_plan_observation": "In-process/thread L1 contention respects remaining deadline through local/native stages",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "TimeoutError",
+      "message": "A0_LOCAL_GUARD_DEADLINE",
+      "elapsed_seconds": 0.40599999999994907,
+      "winerror": null
+    },
+    {
+      "thread_joined": true,
+      "shared_local_RLock": true,
+      "total_seconds": 0.40599999999994907
+    }
+  ],
+  "authority": "I",
+  "material_blocker": false,
+  "started_unix": 1792509944.264015,
+  "elapsed_seconds": 0.40599999999994907
+}

@@ -1,0 +1,10 @@
+{
+  "operation": "Mechanical read-only preservation inventory, not a test",
+  "script": "_control/preserve.py before",
+  "session_id": 62483,
+  "observed_exit_code": 1,
+  "completion": "Intentionally stopped only its identified Python process after slow filesystem-sandbox reads; no completed baseline was emitted",
+  "partial_stdout": "checkpoint 4162\ncorrection 27844\nv2_review 3158\nv1_review 58\nHarness 289\n",
+  "action": "Retry exact unchanged inventory script with native filesystem access; independent A0-18 is not rerun",
+  "protected_files_modified": false
+}

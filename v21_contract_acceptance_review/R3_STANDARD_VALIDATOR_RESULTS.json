@@ -1,0 +1,41 @@
+{
+  "validator": "python-jsonschema",
+  "validator_version": "4.26.0",
+  "validator_module": "C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\jsonschema\\__init__.py",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+  "no_packages_installed": true,
+  "offline": true,
+  "author_checker_used": false,
+  "schema_sha256": "ab900d6d1c40eea67dbe9f4f4c31fcbb90cadaddbdcbfa56c090aa742d72ced9",
+  "metaschema_check": "PASS",
+  "local_references": 91,
+  "unresolved_references": 0,
+  "structural_fixtures": 1161,
+  "structural_expectation_matches": 1161,
+  "structural_expectation_failures": [],
+  "accepted_structural_fixtures": 63,
+  "rejected_structural_fixtures": 1098,
+  "multi_member_instances": [],
+  "semantic_oracle_cases": 35,
+  "semantic_expectation_failures": [],
+  "strict_parsing_cases": 8,
+  "strict_parse_failures": [],
+  "matrix_rows": 87,
+  "matrix_base_presence_failures": [],
+  "limitations": [
+    "Standard Draft07 ignores x-semantic-rules.",
+    "Semantic tests use explicit synthetic external facts, never authenticate source/capture/provider.",
+    "No actual new adapter/capture protocol installed or executed.",
+    "Finite fixtures are not proof of all possible instances; disjointness additionally follows from required variant constants."
+  ],
+  "setup_failures": [
+    {
+      "kind": "ENVIRONMENT_SETUP_FAILURE",
+      "event": "Primary Python3.12 importing installed Python310 jsonschema package fails at compiled rpds.rpds",
+      "contract_assertion_failure": false,
+      "retained_traceback": "r3_raw/PRIMARY312_IMPORT_FAILURE.txt",
+      "resolution": "Use already installed matching Python310 interpreter -B; no installs"
+    }
+  ]
+}

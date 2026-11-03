@@ -1,0 +1,11 @@
+# Independent R2 certification decision
+
+**ACCEPT.** V2 preserves the accepted rule: BLOCKED cannot become VERIFIED, and no new normal certificate may be issued from contradictory provenance. Scoped accounting/candidate observations convey information; they cannot grant publication eligibility.
+
+`R2_CERTIFICATION_PRESERVATION.md:3` requires independent eligibility recomputation, not trust in a caller's checksum, status, hold flag or payload. Actual `src/shared/certification.py:29` recomputes current evidence, rejects BLOCKED, requires exact report equality, and limits UNCERTAIN terminal reasons. `src/shared/publication.py:141` invokes it in the direct semantic path; publish and verify_completed transitively use that path. `Session.finish` checks recoverability before building a normal payload. This source inspection establishes the intended path separation, not universal proof over every I/O schedule.
+
+Fresh reviewer DIRECT_PUBLISHER_BLOCKED forges VERIFIED and a false hold flag after complete-extra-record corruption. Direct publish, verify_semantics and finish all reject; no RESULT/prepared certificate appears and input bytes stay unchanged. PRIOR_RESULT_FORENSIC verifies that completed-result verification rejects after later evidence damage while the existing RESULT and prepared bytes remain unchanged. The returned diagnostic references the suspect result rather than claiming a currently verified result. This is the required forensic/current-validity distinction.
+
+Valid STOP/C0, numeric-invalid raw retention with no selected invalid answer, partial unknown usage, valid concurrent publication and killed-process restricted recovery are positive evidence against simply rejecting everything. Unknown accounting remains null rather than zero or a refund. The current runtime does not emit v2 claims or the new union; these passes are current safety controls, not v2 implementation acceptance.
+
+Keep direct-publisher bypass, report-forgery, initial/late mutation, stale-owner, pre-link/after-link and valid restricted-recovery controls mandatory during any later authorized implementation. Nothing in R1/R3/R4 may weaken this decision to recover old expectations. No material unsafe source defect was established by these bounded controls.

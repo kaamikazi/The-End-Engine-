@@ -1,0 +1,321 @@
+{
+  "collector_verdict": "A0_COLLECTOR_INDEPENDENTLY_ACCEPTED",
+  "reviewer_role": "Fresh independent context separate from correction author; no correction implementation written by this reviewer",
+  "scope": "Exact corrected A0-18 negative evidence collector only; no runtime/strong-profile acceptance",
+  "source_commit": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+  "historical_A0": {
+    "counts": {
+      "PASS": 19,
+      "ERROR": 1
+    },
+    "retained_A0_18_status": "ERROR",
+    "source": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\RUN_RESULT.json",
+    "saved_historical_report_driver_exit": 1,
+    "exit_source": "E:/The End Engine/v21_A0_feasibility/A0_FEASIBILITY_REPORT.md"
+  },
+  "corrected_author_owned": {
+    "counts": {
+      "PASS": 1
+    },
+    "recorded_driver_exit": 0,
+    "source": "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\TARGETED_RESULT.json"
+  },
+  "independent_reviewer": {
+    "counts": {
+      "PASS": 1,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "executed_controls": 1,
+    "requested_vector_ids": [
+      "A0-18"
+    ],
+    "actual_driver_exit": 0,
+    "child_exit": 0,
+    "child_pid": 38336,
+    "writer_operation": {
+      "operation": "UNCHANGED_LEDGER_REGISTER",
+      "outcome": "RAISED",
+      "exception": "PermissionError",
+      "winerror": 5,
+      "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json'"
+    },
+    "elapsed_seconds": 1.4219999999986612,
+    "parent_tripwires": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "child_tripwires": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "new_provider_calls": 0,
+    "new_reserved_attempts": 0,
+    "attempts_preserved_from_fixture": 1,
+    "strong_profile_supported": false,
+    "A_or_S_awarded": false,
+    "material_blocker": true
+  },
+  "checks": {
+    "narrow_two_file_diff": true,
+    "exact_harness_and_driver_copies": true,
+    "source_hashes_and_saved_evidence_match_manifests": true,
+    "operational_controls_explicit_and_active_visible": true,
+    "pending_fully_captured": true,
+    "unknown_members_visible_without_coverage_promotion": true,
+    "main_ledger_bytes_unchanged": true,
+    "foreign_registration_recorded": true,
+    "no_fabricated_captured_hashes": true,
+    "native_handles_released_on_observed_path": true,
+    "no_provider_or_reservation_calls_observed": true,
+    "independent_exact_negative_pass": true,
+    "strong_authority_not_awarded": true,
+    "ntfs_native_environment": true
+  },
+  "failed_checks": [],
+  "inventory_summary": {
+    "PRE": {
+      "file_sha256": "b97dbaf525698ad8046732ac4b0291b5b28596aafe6edfc8b7f0dc25ae8fa39f",
+      "entry_count": 34,
+      "categories": {
+        "A_OPERATIONAL_CONTROL": 6,
+        "D_UNKNOWN_UNEXPECTED_MEMBER": 12,
+        "B_HISTORICAL_FIXTURE_EVIDENCE": 16
+      },
+      "required_read_failures": [],
+      "collection_complete_for_declared_A0_policy": true,
+      "raw_digest_or_size_mismatches": [],
+      "active_controls": []
+    },
+    "POST": {
+      "file_sha256": "71e97658a821cd27c2c0b630bfb070178e798a912c063cb8c4d43c6cf8af04e3",
+      "entry_count": 35,
+      "categories": {
+        "A_OPERATIONAL_CONTROL": 6,
+        "D_UNKNOWN_UNEXPECTED_MEMBER": 12,
+        "B_HISTORICAL_FIXTURE_EVIDENCE": 16,
+        "C_PENDING_TEMPORARY_EVIDENCE": 1
+      },
+      "required_read_failures": [],
+      "collection_complete_for_declared_A0_policy": true,
+      "raw_digest_or_size_mismatches": [],
+      "active_controls": [
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.a0-L2.lock",
+          "relative_path": ".a0-L2.lock",
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "000100000014061d",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        },
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.publication.lock",
+          "relative_path": ".publication.lock",
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "00010000001405fc",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        },
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\ADMISSION.lock",
+          "relative_path": null,
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "000100000014061f",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        }
+      ]
+    },
+    "post_membership_omissions": [],
+    "post_membership_extra_claims": [],
+    "added_members": [
+      "budget.json.pending"
+    ],
+    "removed_members": [],
+    "captured_file_vs_actual_mismatches": []
+  },
+  "mutation_summary": {
+    "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+    "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+    "pending_envelope_checksum_valid": true,
+    "main_envelope_checksum_valid": true,
+    "foreign_registration_in_pending_only": true,
+    "attempt_arrays_identical": true,
+    "attempt_rows": 1
+  },
+  "resource_release": {
+    "owned_guard_fds_closed": true,
+    "pin_handles_closed": true,
+    "guard_reacquisitions": [
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\ADMISSION.lock",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.publication.lock",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.a0-L2.lock"
+    ],
+    "write_delete_access_checks": [
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\0.out",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\0.ready",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\1.out",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\1.ready",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.closed.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\GO",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\RESULT.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\REVIEWER_OUTCOME.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\IDENTITY.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\owner.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.reservation.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.response.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.settlement.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json"
+    ],
+    "existing_L3_read_after_release_attempt_rows": 1
+  },
+  "static_review": {
+    "changed_files": [
+      "probe_workers.py",
+      "test_lock_domain_feasibility.py"
+    ],
+    "six_file_hashes": {
+      "README.md": {
+        "historical": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "corrected_author": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "reviewer_copy": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "actually_executed_archive": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19"
+      },
+      "probe_runner.py": {
+        "historical": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "corrected_author": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "reviewer_copy": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "actually_executed_archive": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac"
+      },
+      "probe_workers.py": {
+        "historical": "5793daf5074f8a754a55e512b5ba0a025ff15ca8e948d99c6ba7574ca5d7de80",
+        "corrected_author": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348",
+        "reviewer_copy": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348",
+        "actually_executed_archive": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348"
+      },
+      "test_lock_domain_feasibility.py": {
+        "historical": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+        "corrected_author": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3",
+        "reviewer_copy": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3",
+        "actually_executed_archive": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3"
+      },
+      "source_profile.json": {
+        "historical": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "corrected_author": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "reviewer_copy": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "actually_executed_archive": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9"
+      },
+      "result_schema.json": {
+        "historical": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "corrected_author": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "reviewer_copy": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "actually_executed_archive": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353"
+      }
+    },
+    "definition_changes": {
+      "probe_workers.py": {
+        "added": [
+          "collect_a018_namespace"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "test_lock_domain_feasibility.py": {
+        "added": [],
+        "removed": [],
+        "modified": [
+          "case18"
+        ]
+      }
+    },
+    "source_manifest_entries": 246,
+    "source_manifest_mismatches": [],
+    "recursive_scoring_unchanged": true,
+    "driver_sha256": {
+      "author": "49eabd09fc32238a4eb2db0aecdc32dab4f0c8504d72b97c243c36e51c3919c8",
+      "reviewer_exact_copy": "49eabd09fc32238a4eb2db0aecdc32dab4f0c8504d72b97c243c36e51c3919c8"
+    },
+    "saved_two_file_diffs_equal_independently_generated_diffs": {
+      "probe_workers.py": true,
+      "test_lock_domain_feasibility.py": true
+    },
+    "preserved_evidence_manifest_checks": [
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_feasibility\\_control\\EVIDENCE_FILE_HASHES.json",
+        "manifest_sha256": "9afc6f8e15af45d559f3fd0b3c105f8d82207118de97c2520571b8d08f1fd3ab",
+        "entries": 721,
+        "mismatches": []
+      },
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_blocker_investigation\\_evidence\\INVESTIGATION_FILE_HASHES.json",
+        "manifest_sha256": "4d50c57823766288a1cbdaee83a4009e11a09f1933e382a20259feb1a5231ba2",
+        "entries": 23,
+        "mismatches": []
+      },
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_collector_correction\\_control\\EVIDENCE_FILE_HASHES.json",
+        "manifest_sha256": "8d3d06cdb64f3f87dc9be1064385d0e5724c7baeb325c8714bbca049e2a17cad",
+        "entries": 73,
+        "mismatches": []
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "volume": "E:\\",
+    "filesystem": "NTFS",
+    "volume_serial": "bc08b541",
+    "observed_utc": "2026-10-21T19:52:26.185481+00:00"
+  },
+  "provider_zero_basis": "Exact reviewed driver/case18/child contain no inference path; parent and child network/dispatch/reservation tripwires are zero. Copied fixture evidence is not a new provider event or authenticated provider origin.",
+  "preservation_bound": "All source/evidence remain read only to this reviewer; saved source and three evidence manifests independently match. Broad fresh before/after membership, byte and Git preservation is owned separately by the coordinating reviewer in PRESERVATION.json.",
+  "limits": [
+    "No full A0 runner executed.",
+    "One independent execution; no code repair or rerun to green.",
+    "No new arbitrary unknown-member, unreadable-file, reparse, or forced cleanup-error injection was authorized or executed.",
+    "Release demonstrated for the observed completed path only; no universal handle-leak proof.",
+    "Non-atomic namespace inventory is A0 evidence; it is not a common membership/content cut.",
+    "Active lock bytes intentionally not read and not hashed while held.",
+    "No production observer, A1 enrollment, live inference, benchmark or scientific performance claim."
+  ],
+  "raw_evidence": {
+    "audit": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\INDEPENDENT_EVIDENCE_AUDIT.json",
+    "copy_receipt": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\COPY_RECEIPT.json",
+    "command": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\EXACT_COMMAND.json",
+    "exit": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\COMMAND_EXIT.json",
+    "stdout": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\TARGETED_STDOUT.txt",
+    "stderr": "E:\\The End Engine\\v21_A0_independent_decision\\_control\\TARGETED_STDERR.txt",
+    "result": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\TARGETED_RESULT.json"
+  }
+}

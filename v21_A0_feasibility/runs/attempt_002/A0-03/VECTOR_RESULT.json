@@ -1,0 +1,17 @@
+{
+  "vector_id": "A0-03",
+  "required_plan_observation": "Ordinary L3 can be acquired/released by unchanged state/summary while observer holds L1/newL2 and NOT L3",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "observed": "UNCHANGED_L3_READS_COMPLETED_WITH_L1_L2_NO_L3_HELD",
+      "global_attempt_rows": 1,
+      "own_attempt_rows": 1
+    }
+  ],
+  "authority": "I",
+  "material_blocker": false,
+  "started_unix": 1792509941.4200275,
+  "elapsed_seconds": 0.23399999999946886
+}

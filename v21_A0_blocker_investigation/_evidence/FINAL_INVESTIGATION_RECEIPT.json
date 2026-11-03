@@ -1,0 +1,61 @@
+{
+  "scope": "READ_ONLY_DIAGNOSTIC_DOCUMENT_CONSISTENCY; not A0 control acceptance",
+  "passed": true,
+  "checks": [
+    {
+      "check": "all9 required reports present",
+      "passed": true
+    },
+    {
+      "check": "original source/evidence/scoring/Git states preserved",
+      "passed": true
+    },
+    {
+      "check": "no new probe or runtime execution",
+      "passed": true
+    },
+    {
+      "check": "child exit0 distinct from parent ERROR",
+      "passed": true
+    },
+    {
+      "check": "child errorWin5 distinct parentErrno13",
+      "passed": true
+    },
+    {
+      "check": "first-control filename reconstructed, not invented trace field",
+      "passed": true
+    },
+    {
+      "check": "exact pending registration delta, all attempts/other state unchanged",
+      "passed": true
+    },
+    {
+      "check": "negative scoring bytes verbatim",
+      "passed": true
+    },
+    {
+      "check": "all4 bounded negatives retain six fields and original PASS",
+      "passed": true
+    },
+    {
+      "check": "all721 prior manifested members still byte-identical",
+      "passed": true
+    },
+    {
+      "check": "18 source/lock causal roles with exact source hashes",
+      "passed": true
+    },
+    {
+      "check": "selected diagnostic verdict appears explicitly",
+      "passed": true
+    }
+  ],
+  "diagnostic_verdict": "A0_STRONG_PROFILE_NOT_SUPPORTED",
+  "original_A0_verdict": "A0_FEASIBILITY_BLOCKED_UNCHANGED",
+  "original_latest_results": "19PASS/1ERROR_UNCHANGED",
+  "new_probe_executions": 0,
+  "implementation_or_scaffold_changes": 0,
+  "A1_authorization": false,
+  "required_reports": 9
+}

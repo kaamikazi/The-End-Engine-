@@ -1,0 +1,269 @@
+{
+  "id": "ACCOUNT_duplicate_attempt_file",
+  "status": "PASS",
+  "outcome": {
+    "original_mutator": "duplicate_attempt_file",
+    "graph": {
+      "returned": {
+        "schema_version": "abc-r3-provenance-v1",
+        "revision": "1.0.2",
+        "run_attempts_sha256": "8362fa5ab5bc035191108ccd97bbcac25c942e112c7629205fed7392054ffc64",
+        "anchor_hashes": {
+          "publication/attempts/000001.reservation.json": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "publication/attempts/000001.json": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "publication/attempts/000001.settlement.json": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        "ordered_attempt_ids": [
+          1
+        ],
+        "bound_output_handles": [
+          "O_236053faaf9c949d4de7f5d7"
+        ],
+        "unwitnessed_settlements": [],
+        "overall": "VERIFIED"
+      }
+    },
+    "journal": {
+      "schema_version": "abc-r2-journal-review-v1",
+      "overall": "BLOCKED",
+      "attempts": [
+        {
+          "attempt_id": 1,
+          "status": "VERIFIED",
+          "code": "ANCHOR_CHAIN_LEDGER_MATCH",
+          "provider_receipt_valid": true,
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        },
+        {
+          "attempt_id": null,
+          "status": "CORRUPT",
+          "code": "UNEXPECTED_OR_DUPLICATE_JOURNAL",
+          "path": "wire/duplicate.jsonl",
+          "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        }
+      ],
+      "trusted_hashes": {
+        "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+      },
+      "untrusted_evidence": {
+        "wire/duplicate.jsonl": {
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+          "status": "CORRUPT"
+        }
+      },
+      "verified_provider_records": [
+        {
+          "stage": "INITIAL",
+          "method": "POST",
+          "path": "/api/generate",
+          "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Synthetic explicit public contract\\n\\nReturn a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"item_id\\\": \\\"T-1\\\",\\n  \\\"amount\\\": 7,\\n  \\\"mode\\\": \\\"draft\\\"\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One JSON object or a whole JSON fence\\\",\\n  \\\"required_fields\\\": [\\n    \\\"item_id\\\",\\n    \\\"amount\\\",\\n    \\\"status\\\"\\n  ],\\n  \\\"public_constraints\\\": [\\n    {\\n      \\\"id\\\": \\\"id_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/item_id\\\",\\n      \\\"source_path\\\": \\\"/input/item_id\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"amount_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/amount\\\",\\n      \\\"source_path\\\": \\\"/input/amount\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"status_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/status\\\",\\n      \\\"source_path\\\": \\\"/input/mode\\\"\\n    }\\n  ]\\n}\\n\\nPublic reference identifiers: \", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+          "wire_sha256": "4dcaf471206a91f78e617afba01883fd0ab1946bdf8e2830b47bac6ef70c27a8",
+          "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"item_id\\\": \\\"T-1\\\", \\\"amount\\\": 7, \\\"status\\\": \\\"draft\\\"}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+          "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+          "recovered_without_dispatch": true
+        }
+      ],
+      "host_compromise_protection": false,
+      "provenance_graph": {
+        "schema_version": "abc-r3-provenance-v1",
+        "revision": "1.0.2",
+        "run_attempts_sha256": "8362fa5ab5bc035191108ccd97bbcac25c942e112c7629205fed7392054ffc64",
+        "anchor_hashes": {
+          "publication/attempts/000001.reservation.json": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "publication/attempts/000001.json": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "publication/attempts/000001.settlement.json": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        "ordered_attempt_ids": [
+          1
+        ],
+        "bound_output_handles": [
+          "O_236053faaf9c949d4de7f5d7"
+        ],
+        "unwitnessed_settlements": [],
+        "overall": "VERIFIED",
+        "wire_hashes": {
+          "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "wire/duplicate.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        }
+      },
+      "requires_integrity_hold": true
+    },
+    "independently_supported_recorded_reservation_count": 1,
+    "independently_supported_dispatch_anchor_count": 1,
+    "verified_complete_provider_count": null,
+    "scope": "Corroborated cooperating-writer graph, not provider-signed completeness",
+    "original_settlement_recorded_tokens": {
+      "input_tokens": 10,
+      "output_tokens": 5,
+      "total_tokens": 15
+    },
+    "returned_accounting_authority": "UNRESOLVED_CORRUPT_HISTORY_NOT_ZERO",
+    "returned_physical_attempts": null,
+    "schema_version": "abc-r3-blocked-recovery-v1",
+    "new_dispatches": [],
+    "immutable_inputs": true,
+    "returned": {
+      "schema_version": "abc-r3-blocked-recovery-v1",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+      "status": "BLOCKED",
+      "is_completed_result": false,
+      "request_run_id": "REVIEWER_CONTRACT",
+      "journal_integrity": {
+        "schema_version": "abc-r2-journal-review-v1",
+        "overall": "BLOCKED",
+        "attempts": [
+          {
+            "attempt_id": 1,
+            "status": "VERIFIED",
+            "code": "ANCHOR_CHAIN_LEDGER_MATCH",
+            "provider_receipt_valid": true,
+            "path": "wire/000001-4dcaf471206a91f7.jsonl",
+            "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+          },
+          {
+            "attempt_id": null,
+            "status": "CORRUPT",
+            "code": "UNEXPECTED_OR_DUPLICATE_JOURNAL",
+            "path": "wire/duplicate.jsonl",
+            "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+          }
+        ],
+        "trusted_hashes": {
+          "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        },
+        "untrusted_evidence": {
+          "wire/duplicate.jsonl": {
+            "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+            "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+            "status": "CORRUPT"
+          }
+        },
+        "verified_provider_records": [
+          {
+            "stage": "INITIAL",
+            "method": "POST",
+            "path": "/api/generate",
+            "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Synthetic explicit public contract\\n\\nReturn a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"item_id\\\": \\\"T-1\\\",\\n  \\\"amount\\\": 7,\\n  \\\"mode\\\": \\\"draft\\\"\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One JSON object or a whole JSON fence\\\",\\n  \\\"required_fields\\\": [\\n    \\\"item_id\\\",\\n    \\\"amount\\\",\\n    \\\"status\\\"\\n  ],\\n  \\\"public_constraints\\\": [\\n    {\\n      \\\"id\\\": \\\"id_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/item_id\\\",\\n      \\\"source_path\\\": \\\"/input/item_id\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"amount_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/amount\\\",\\n      \\\"source_path\\\": \\\"/input/amount\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"status_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/status\\\",\\n      \\\"source_path\\\": \\\"/input/mode\\\"\\n    }\\n  ]\\n}\\n\\nPublic reference identifiers: \", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+            "wire_sha256": "4dcaf471206a91f78e617afba01883fd0ab1946bdf8e2830b47bac6ef70c27a8",
+            "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"item_id\\\": \\\"T-1\\\", \\\"amount\\\": 7, \\\"status\\\": \\\"draft\\\"}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+            "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+            "recovered_without_dispatch": true
+          }
+        ],
+        "host_compromise_protection": false,
+        "provenance_graph": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "8362fa5ab5bc035191108ccd97bbcac25c942e112c7629205fed7392054ffc64",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+            "publication/attempts/000001.json": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+            "publication/attempts/000001.settlement.json": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_236053faaf9c949d4de7f5d7"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED",
+          "wire_hashes": {
+            "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+            "wire/duplicate.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+          }
+        },
+        "requires_integrity_hold": true
+      },
+      "result": {
+        "run_id": "REVIEWER_CONTRACT",
+        "task_id": "ABC-PUBLIC-001",
+        "condition_id": "SPARSE_DELIBERATION",
+        "termination_reason": "EXTERNAL_BLOCKER",
+        "physical_attempts": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null,
+        "wall_time": null,
+        "all_generated_candidates": null,
+        "accounting_authority": "UNRESOLVED_CORRUPT_HISTORY_NOT_ZERO",
+        "diagnostic_errors": [
+          {
+            "code": "F02_PROVENANCE_INTEGRITY_HOLD",
+            "failed_attempt_identity_invariants": [
+              "UNEXPECTED_OR_DUPLICATE_JOURNAL"
+            ]
+          }
+        ]
+      },
+      "candidate_history": {
+        "status": "RETAINED_IN_EVIDENCE_NOT_RECONSTRUCTED_OR_CERTIFIED",
+        "ledger_observation": {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\budget.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1287,
+          "sha256": "eb547b440d1551b057102b0281a7942916d45caa7ff62d338b156956bb99d9e6",
+          "raw_base64": "eyJzdGF0ZSI6eyJhdHRlbXB0cyI6W3siYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPXzIzNjA1M2ZhYWY5Yzk0OWQ0ZGU3ZjVkNyIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ1MzE3OTk5OTk1MzEzNTgsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjMuNjA0MDg5LCJzdGF0ZSI6IlNVQ0NFRURFRCIsInRva2VuX2NlaWxpbmciOjE2Mzg0LCJ0b3RhbF90b2tlbnMiOjE1fV0sImhhbHRlZCI6ZmFsc2UsImxpbWl0cyI6eyJhdHRlbXB0cyI6MTM2LCJzZWNvbmRzIjoxMDgwMCwidG9rZW5zIjo0MDAwMDB9LCJydW5zIjp7IlJFVklFV0VSX0NPTlRSQUNUIjp7ImF0dGVtcHRzIjo0LCJpZGVudGl0eSI6ImY1YmJmMGJiYjU1OTA2MGE0MWMyMWI2MmNhNzlkZTU5ZmEwZDExZjhjYzgwYjZiZTQ4ZWI0NTBiN2E0OTM2MjEiLCJzZWNvbmRzIjoxODAwLCJ0b2tlbnMiOjQwMDAwMH19LCJzY2hlbWFfdmVyc2lvbiI6ImxhYi1sZWRnZXItdjEifSwic3RhdGVfc2hhMjU2IjoiYWViMTVkZjM2NWNjNDUwNTljYjEzNDk1YThlZTkwNGQ3OThiOGJlYmE0ZTVlNWRjYzg5ZDBiMmE3ZmM1NDBjNCJ9"
+        },
+        "independent_settlement_observations": [
+          {
+            "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\attempts\\000001.settlement.json",
+            "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+            "bytes": 1289,
+            "sha256": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+            "raw_base64": "eyJhdHRlbXB0X2lkIjoxLCJkaXNwYXRjaF9hbmNob3Jfc2hhMjU2IjoiZDQzYzI3OWE0MjVkMTZiN2ZhOGU3YzU1ZGFjZjBkNmVkOWFmNDFjYTU1YTRhNDIwZmZmZWNjY2EwZGEzNzNhZCIsImlkZW50aXR5X3NoYTI1NiI6IjcxMWI5ZmE3YmViYWNiMzdiMTQ1ZDhmMTU1ZGM3YjlmNGNkZWMxZDg2YThhMzk3NWExMTE3ZDVkMjk3YjdmMDEiLCJyZXNwb25zZV9hbmNob3Jfc2hhMjU2IjoiZmVhNjc1MjA3NzcxZjVmODk2YjlkZjQxZGYyY2E3MDJiYzVmMWFjODRmOTMxZjQ3YzRlZWY3YTI3OWY4NjIzOSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2NoZW1hX3ZlcnNpb24iOiJhYmMtcjMtc2V0dGxlbWVudC12MSIsInNldHRsZW1lbnQiOnsiYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPXzIzNjA1M2ZhYWY5Yzk0OWQ0ZGU3ZjVkNyIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ1MzE3OTk5OTk1MzEzNTgsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjMuNjA0MDg5LCJzdGF0ZSI6IlNVQ0NFRURFRCIsInRva2VuX2NlaWxpbmciOjE2Mzg0LCJ0b3RhbF90b2tlbnMiOjE1fX0="
+          }
+        ]
+      },
+      "evidence_observations": [
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\attempts\\000001.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1960,
+          "sha256": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\attempts\\000001.reservation.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 681,
+          "sha256": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\attempts\\000001.response.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 255,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\attempts\\000001.settlement.json",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 1289,
+          "sha256": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\wire\\000001-4dcaf471206a91f7.jsonl",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 3158,
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        },
+        {
+          "path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\wire\\duplicate.jsonl",
+          "authority": "CURRENT_OBSERVATION_NOT_PROVENANCE_CERTIFICATION",
+          "bytes": 3158,
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+        }
+      ],
+      "existing_result_observation": null,
+      "scientific_scores": null,
+      "recovery_provider_calls": 0,
+      "diagnostic_record": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file\\publication\\recovery_holds\\9aa9f09ac97d8678be79bbf465918f1d.json",
+      "publication": "NONE_INTEGRITY_HOLD_NO_RESULT_CERTIFICATE"
+    }
+  },
+  "elapsed_seconds": 0.18699999999807915
+}

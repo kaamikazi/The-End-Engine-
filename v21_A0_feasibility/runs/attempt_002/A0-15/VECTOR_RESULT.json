@@ -1,0 +1,23 @@
+{
+  "vector_id": "A0-15",
+  "required_plan_observation": "Operational L3 lockfile is not pinned incompatibly with its legitimate a+b open; data and controls classified distinctly",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "ordinary_L3_read_with_data_pin": "PASS",
+      "L3_control_lock_excluded_from_data_pins": true
+    },
+    {
+      "observed": "EXPECTED_REFUSAL",
+      "exception": "PermissionError",
+      "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-15\\\\copy\\\\budget.json.lock'",
+      "elapsed_seconds": 0.0,
+      "winerror": null
+    }
+  ],
+  "authority": "I",
+  "material_blocker": false,
+  "started_unix": 1792509950.1289294,
+  "elapsed_seconds": 0.23400000000037835
+}

@@ -1,0 +1,94 @@
+{
+  "original_A0_18": {
+    "status": "ERROR",
+    "error": "PermissionError: [Errno 13] Permission denied",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_runner.py\", line 28, in main\n    value=t.CASES[vector](root);row.update(value);row['status']='PASS';row['expectation_matched']=True\n          ^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\test_lock_domain_feasibility.py\", line 130, in case18\n    r=zero_worker(w.collect(w.spawn('register_bypass',root,fixture=pub.directory)));after=w.snapshot(pub.directory)\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_workers.py\", line 49, in snapshot\n    def snapshot(root):return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(root.rglob('*')) if p.is_file()}\n                                                                  ^^^^^^^^^^^^^^\n  File \"C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py\", line 1020, in read_bytes\n    return f.read()\n           ^^^^^^^^\nPermissionError: [Errno 13] Permission denied\n",
+    "exact_failing_pathname": "NOT_CAPTURED_BY_ORIGINAL_TRACE; .a0-L2.lock was only source reconstruction",
+    "historical_suite_counts": {
+      "PASS": 19,
+      "FAIL": 0,
+      "ERROR": 1,
+      "NOT_EXECUTED": 0
+    },
+    "child_exit": 0,
+    "child_operation": "RAISED PermissionError/WinError5",
+    "pending_created": true,
+    "main_ledger_unchanged": true
+  },
+  "corrected_scoped_rerun": {
+    "status": "PASS",
+    "expected_contract": "The exact unenrolled writer must be detected and strong capability refused; no count/claim promotion",
+    "actual_controls_executed": 1,
+    "child_exit": 0,
+    "child_operation": {
+      "operation": "UNCHANGED_LEDGER_REGISTER",
+      "outcome": "RAISED",
+      "exception": "PermissionError",
+      "winerror": 5,
+      "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json'"
+    },
+    "pending_bytes_captured": true,
+    "foreign_registration_detected": true,
+    "added_members": [
+      "budget.json.pending"
+    ],
+    "required_read_failures": [],
+    "resources_released": {
+      "owned_guard_fds_closed": true,
+      "pin_handles_closed": true,
+      "guard_reacquisitions": [
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\ADMISSION.lock",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\.publication.lock",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\.a0-L2.lock"
+      ],
+      "write_delete_access_checks": [
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\0.out",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\0.ready",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\1.out",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\1.ready",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.closed.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\GO",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\RESULT.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\REVIEWER_OUTCOME.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\IDENTITY.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\owner.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.reservation.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.response.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.settlement.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+        "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json"
+      ],
+      "existing_L3_read_after_release_attempt_rows": 1
+    },
+    "strong_profile_supported": false,
+    "A_or_S_authority_awarded": false
+  },
+  "historical_records_not_rewritten": true,
+  "counts": {
+    "actual_new_controls_executed": 1,
+    "PASS": 1,
+    "FAIL": 0,
+    "ERROR": 0,
+    "historical_attempt_002": {
+      "PASS": 19,
+      "FAIL": 0,
+      "ERROR": 1,
+      "NOT_EXECUTED": 0
+    },
+    "historical_attempt_001": {
+      "PASS": 10,
+      "FAIL": 1,
+      "ERROR": 0,
+      "NOT_EXECUTED": 9
+    },
+    "saved_recursive_negatives": "Four prior bounded-negative PASS unchanged; not rerun",
+    "do_not_combine_historical_and_new_counts": true
+  }
+}
