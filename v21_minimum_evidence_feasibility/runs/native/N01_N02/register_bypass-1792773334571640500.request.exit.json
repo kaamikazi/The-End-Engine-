@@ -1,0 +1,31 @@
+{
+  "pid": 16032,
+  "exit_code": 0,
+  "stdout": "{\"events\": [{\"operation\": \"UNCHANGED_LEDGER_REGISTER\", \"outcome\": \"RAISED\", \"exception\": \"PermissionError\", \"winerror\": 5, \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_minimum_evidence_feasibility\\\\\\\\runs\\\\\\\\native\\\\\\\\N01_N02\\\\\\\\copy\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_minimum_evidence_feasibility\\\\\\\\runs\\\\\\\\native\\\\\\\\N01_N02\\\\\\\\copy\\\\\\\\budget.json'\"}, {\"ledger_before\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"ledger_after\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"pending_created\": true, \"pending_sha256\": \"4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23\", \"attempt_rows_after\": 1}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+  "stderr": "",
+  "request": "E:\\The End Engine\\v21_minimum_evidence_feasibility\\runs\\native\\N01_N02\\register_bypass-1792773334571640500.request.json",
+  "killed_by_parent": false,
+  "worker_result": {
+    "events": [
+      {
+        "operation": "UNCHANGED_LEDGER_REGISTER",
+        "outcome": "RAISED",
+        "exception": "PermissionError",
+        "winerror": 5,
+        "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json'"
+      },
+      {
+        "ledger_before": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "ledger_after": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "pending_created": true,
+        "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+        "attempt_rows_after": 1
+      }
+    ],
+    "counters": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "worker_operation_completed": true
+  }
+}

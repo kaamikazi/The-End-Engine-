@@ -1,0 +1,839 @@
+{
+  "profile_id": "single_host_post_generation_admission_drain_L1_L2_existing_file_pins",
+  "profile_count": 1,
+  "declaration": "Same profile specified in README before execution; this serializes the resulting assessment, not an additional tested profile.",
+  "actual_enforced_writer_exclusion": "Only the two explicitly cooperating admission actors in COOPERATING_POSITIVE while gate held",
+  "operational_quiescence_assumption": "Other generation/finalization/source/journal/owner/fencing/finally writers are presumed drained by proposed deployment; a complete enforceable all-writer disposition is not established.",
+  "currently_inactive_writer": "Known child processes after recorded joins/exits only; no inference from a host process scan",
+  "uncontrolled_writer": "Actual Ledger.register under L3 outside held admission/L1/L2 creates foreign pending",
+  "unknown_actor": "External administrative tools, retained executables, plugins and unspecified background writers; no authenticated closed inventory or launch enforcement",
+  "strong_profile_supported": false,
+  "A_or_S_awarded": false,
+  "source_inventory_entries": 41,
+  "writer_dispositions": [
+    {
+      "source_inventory_entry": {
+        "writer_id": "W01",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:11 Ledger.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "parent directory; ledger.json; ledger.json.lock; ledger.json.pending",
+        "existing_locks": "L3; no complete outer domain",
+        "cross_run_resources": "whole actual ledger + limits",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Partial initialization/staging remains evidence; observer never initializes missing files",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W02",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:19 Ledger.lock",
+        "role": "LOCK_CONTROL",
+        "mutated_files_or_namespaces": "ledger .lock control file opens a+b, initializes byte if empty",
+        "existing_locks": "native nonreentrant L3",
+        "cross_run_resources": "all runs sharing ledger",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "OS exit releases handle; missing/empty lock cannot be initialized by observer",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W03",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:48 Ledger.register",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "full ledger runs map, pending replace",
+        "existing_locks": "L3 only",
+        "cross_run_resources": "global run registrations",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Readback identity must remain exact; no registration in capture",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "UNCONTROLLED_WRITER",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W04",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:53 Ledger.reserve",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "full global attempts/order/halted budgets",
+        "existing_locks": "L3 only",
+        "cross_run_resources": "global reservation sequence and unknown usage",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Durable RESERVED remains charged; no replay or reset",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W05",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:65 Ledger.finish",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "global settlement row, usage, raw content, candidate/handle",
+        "existing_locks": "L3 only",
+        "cross_run_resources": "global rows and halted flag",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Do not synthesize interrupted settlement after death",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W06",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:41 Ledger._write",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "fixed .pending, fsync and os.replace of ledger",
+        "existing_locks": "caller ordinary L3, not self-enforcing",
+        "cross_run_resources": "global ledger directory membership",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Preserve pending; do not read fixed staging as a settled row",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W07",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:46 Ledger.state",
+        "role": "INNER_LOCK_USER",
+        "mutated_files_or_namespaces": "ordinary L3 control-file access; no data mutation normally",
+        "existing_locks": "L3 only",
+        "cross_run_resources": "global full envelope",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Reader can hold L3; must drain before observer core obtains it",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W08",
+        "entry_point": "cognitive_architecture_lab_v1/src/accounting/ledger.py:83 Ledger.summary",
+        "role": "INNER_LOCK_USER",
+        "mutated_files_or_namespaces": "calls state/L3; projects own rows; unknown sums null",
+        "existing_locks": "L3 via state",
+        "cross_run_resources": "global state before projection",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Never use sum or zero as independent complete accounting proof",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W09",
+        "entry_point": "runtime_isolation_v1/src/trusted_transport/transport.py:17 dispatch_lock",
+        "role": "LOCK_CONTROL",
+        "mutated_files_or_namespaces": "guard lock file opens/initializes byte",
+        "existing_locks": "D native byte lock; also used for L1/bindings",
+        "cross_run_resources": "boundary or bindings file depending actual argument",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Existing unbounded blocking helper unsuitable for <=5s capture wait",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W10",
+        "entry_point": "runtime_isolation_v1/src/trusted_transport/transport.py:80 Gateway.register",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "compiler memory registry; ledger register",
+        "existing_locks": "no D; L3 inside register",
+        "cross_run_resources": "global runs map",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Registration bypasses boundary D; cannot assume complete enrollment",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W11",
+        "entry_point": "runtime_isolation_v1/src/trusted_transport/transport.py:88 Gateway.reserve_request",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "reservation and sealed request",
+        "existing_locks": "D -> L3",
+        "cross_run_resources": "global reservation/closure",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Reserved-before-dispatch interruption stays unknown/charged",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W12",
+        "entry_point": "runtime_isolation_v1/src/trusted_transport/transport.py:98 Gateway.dispatch",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "ledger finish and candidate handle; transport evidence callbacks",
+        "existing_locks": "D -> ordinary L3; architecture caller often L1",
+        "cross_run_resources": "global ledger and own journals",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Preserve raw-before-finish, interrupt/cancel and unknown usage windows",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W13",
+        "entry_point": "runtime_isolation_v1/src/trusted_transport/transport.py:119 Gateway.close_generation",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "shared .closed.json and .pending",
+        "existing_locks": "D -> L3 for state",
+        "cross_run_resources": "closure envelope contains multiple runs",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Full closure captured before own-run projection; no observer closure write",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W14",
+        "entry_point": "experimental_architectures_v1_r3/src/adapters/gateway.py:112 StageTransport.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "wire directory; in-memory dispatch context",
+        "existing_locks": "constructor has no local outer guard",
+        "cross_run_resources": "own run namespace",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Cannot construct from observer to create missing wire directory",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W15",
+        "entry_point": "experimental_architectures_v1_r3/src/adapters/gateway.py:117 StageTransport.append_journal",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "exclusive header/create or fsynced append",
+        "existing_locks": "caller dependent; helper callable directly",
+        "cross_run_resources": "own raw journal membership/content",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Torn final append retained, never repaired",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W16",
+        "entry_point": "experimental_architectures_v1_r3/src/adapters/gateway.py:120 StageTransport.exchange",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "provider-record memory; journal hooks; raw response",
+        "existing_locks": "normally Gateway D + Session L1",
+        "cross_run_resources": "own raw/witness files",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Raw response may precede numeric/settlement inspection; no repeat",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W17",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/journals.py:15 prepare",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "dispatch anchor; wire header",
+        "existing_locks": "normally caller L1/D; no internal outer guard",
+        "cross_run_resources": "run attempts/wire",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Anchor/header crash asymmetry remains missing evidence",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W18",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/journals.py:23 finish_entry",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "raw journal tail; registered response anchor",
+        "existing_locks": "normally caller L1/D; callable direct",
+        "cross_run_resources": "run attempts/wire",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Tail-before-receipt is explicit absence, not synthetic receipt",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W19",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/provenance.py:48 record_reservation",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "exclusive .reservation.json",
+        "existing_locks": "Session L1; reads L3; D already released",
+        "cross_run_resources": "run witnesses/global row",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Do not infer execution origin from a copied row",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W20",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/provenance.py:29 record_settlement",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "exclusive .settlement.json",
+        "existing_locks": "Session L1; reads L3; D already released",
+        "cross_run_resources": "run witnesses/global row",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Gateway settlement may exist without witness after crash",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W21",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:36 Publication.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "run dirs/IDENTITY; global ledger .r2_bindings; bindings lock",
+        "existing_locks": "internal L1 -> separate bindings lock; no complete L2",
+        "cross_run_resources": "global bindings namespace",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Cannot call constructor while already holding native L1; metadata creation forbidden in observer",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W22",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:20 durable",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "random .pending; hard-link exclusive or os.replace; cleanup",
+        "existing_locks": "caller dependent",
+        "cross_run_resources": "any path supplied by current caller",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Preserve failed pending and original final; no reuse to overwrite source",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W23",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:92 Publication.claim",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "owner.lock lease; owner.json fence/token; events",
+        "existing_locks": "caller L1; persistent owner OS lease",
+        "cross_run_resources": "per-run ownership bound to global identity",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Never acquire/release somebody else lease; stale owner must reject",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W24",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:105 Publication.release",
+        "role": "LOCK_CONTROL",
+        "mutated_files_or_namespaces": "OS lease handle and in-process owner registry",
+        "existing_locks": "existing lease unlock",
+        "cross_run_resources": "per-run owner registry",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Core release with fd=None must be a no-op; observer owns no lease",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W25",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:62 Publication.event",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "unique event JSON/pending",
+        "existing_locks": "no internal guard, can run outside caller L1",
+        "cross_run_resources": "run events namespace",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Drain error-log producer threads; core uses no logging wrapper",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W26",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:118 Publication.detach",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "event; release lease; detached memory",
+        "existing_locks": "no internal capture domain",
+        "cross_run_resources": "run ownership/events",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Wait for finally/logging completion before participant declared drained",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W27",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:175 Publication.publish",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "RESULT.pending; prepared anchor; exclusive final; cleanup",
+        "existing_locks": "caller L1 + owner lease; EvidencePin + exclusive link",
+        "cross_run_resources": "per-run source publication",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "All F01 pending/prepared/link/crash paths remain unchanged",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W28",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/publication.py:29 exclusive_publish",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "native hard link to final, protected last seam",
+        "existing_locks": "F01 caller lock/lease + EvidencePin",
+        "cross_run_resources": "per-run final name",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "No overwrite; mutation denial is integrity rejection, not success",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W29",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/session.py:18 Session.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "run dir; missing-ledger diagnostic; ledger/Publication/transport initialization",
+        "existing_locks": "mixed constructor locks; registration outside common D",
+        "cross_run_resources": "global ledger + run identity",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Do not construct for observation; validate missing ledger without resetting",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W30",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/session.py:40 Session.call",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "reservation/dispatch/settlement lifecycle and output memory",
+        "existing_locks": "L1 -> D -> L3, with witness writes outside D",
+        "cross_run_resources": "global ledger + run graph",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "No wrapping entire call with same D: inner inherited Gateway would recurse",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W31",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/session.py:67 Session.restore_without_dispatch",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "owner claim/events and in-memory recovered candidates",
+        "existing_locks": "L1, owner lease, L3 reads",
+        "cross_run_resources": "run recovery/global ledger reads",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Not a read-only capture API; must not use as parser",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W32",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/session.py:82 Session._build",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "closure, events; RunResult memory",
+        "existing_locks": "normally L1; D and L3 inside close/summary",
+        "cross_run_resources": "shared closure",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Never build a new source result in observer",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W33",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/session.py:93 Session.finish",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "owner/final/prepared/error events; release on every exit",
+        "existing_locks": "L1, source owner lease, D/L3 through build",
+        "cross_run_resources": "run terminal/global closure",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Valid publication must still work; complete error logging before drain",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W34",
+        "entry_point": "experimental_architectures_v1_r3/src/shared/wiring.py:15 baseline",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "Publication COMMON_RESULT; delegates native output",
+        "existing_locks": "L1 + owner, then native D/L3",
+        "cross_run_resources": "global ledger/closure, own baseline artifacts",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "F03 admission stays before mutation; baseline partial recovery not replayed",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W35",
+        "entry_point": "native_model_integration_v1/src/native_end_bridge/bridge.py:78 NativeGateway.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "ledger registration; native compiler memory",
+        "existing_locks": "L3 but register outside D",
+        "cross_run_resources": "global ledger registration",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Exact Ledger type check rejects a naive proxy/subclass",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W36",
+        "entry_point": "native_model_integration_v1/src/native_end_bridge/bridge.py:82 NativeGateway.attempt",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "reserve, raw response/handle settlement and transport record",
+        "existing_locks": "D -> ordinary L3; baseline wrapper can hold L1",
+        "cross_run_resources": "global ledger/native raw ledger records",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Unknown usage and raw-before-settlement preserved; no new native witnesses invented",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W37",
+        "entry_point": "native_model_integration_v1/src/baseline_adapters/run.py:13 run_baseline",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "MOCK_REPLAY.json; Engine trajectory files; ledger/closure via native",
+        "existing_locks": "outer baseline L1 if wrapped; D/L3 for gateway",
+        "cross_run_resources": "shared ledger + per-cell replay/trajectories",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Do not modify Engine or rerun baseline in planning; drain trajectory/log writers too",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W38",
+        "entry_point": "cognitive_architecture_lab_v1/src/public_runner/mock.py:13 MockSession.dispatch",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "direct ledger reserve/finish and candidate memory",
+        "existing_locks": "L3 only",
+        "cross_run_resources": "same ledger if caller supplies it",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Different purpose/candidate format: unsupported source profile rather than fake architecture graph",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W39",
+        "entry_point": "experimental_architectures_v1/src/shared/session.py:15 Session.__init__",
+        "role": "MUTATOR",
+        "mutated_files_or_namespaces": "historical run metadata/ledger via older interface",
+        "existing_locks": "older version locks; not enrolled by v2.1 adapter",
+        "cross_run_resources": "possible same supplied ledger",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Historical package remains untouched and excluded from strong domain unless explicitly proven",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W40",
+        "entry_point": "experimental_architectures_v1_r3/tests/corrections/test_publication_guard.py:7 PublicationWindowTests.check_mutation",
+        "role": "CONTROLLED_ADMIN_FAULT",
+        "mutated_files_or_namespaces": "writes/deletes/renames at link seam",
+        "existing_locks": "deliberate fault outside producer assumptions",
+        "cross_run_resources": "test-only synthetic evidence",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "Must classify observed violation; no weakened negative assertion",
+        "planned_modification": "No edit to this existing symbol. New opt-in controller records code/resource identities and proves drain/exclusion; reject strong authority if any path remains active/unknown. Online hooks into existing modules require separate scoped authorization.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "HIGH"
+      },
+      "assessed_disposition": "OPERATIONAL_QUIESCENCE_ASSUMPTION",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    },
+    {
+      "source_inventory_entry": {
+        "writer_id": "W41",
+        "entry_point": "EXTERNAL_ADMIN_OR_DYNAMIC_CALLER (not an asserted source function)",
+        "role": "UNKNOWN_EXTERNAL_ACTOR",
+        "mutated_files_or_namespaces": "Any supplied ledger/run path: editors, recovery tools, migration scripts, retained copied finalizers, plugins",
+        "existing_locks": "UNKNOWN; arbitrary direct filesystem callers may bypass all guards",
+        "cross_run_resources": "Potentially every actual shared-ledger namespace",
+        "proposed_L1_L2_L3_interaction": "Initial strong mode: supervised participant fully drained before B; new admissions excluded for epoch; observer existing L1 -> distinct outer L2 -> ordinary L3 only inside unchanged verifier. Original mutator is NOT assumed enrolled by this plan. Live mode unsupported until separately reviewed enrollment.",
+        "lock_order_constraint": "Never acquire run L1 while holding L2/D/L3; never reacquire native L1/D/L3 recursively. Controller drain occurs BEFORE L1. Existing constructors are not invoked under capture guards.",
+        "process_boundaries": "All matching in-process threads and launched child processes on this actual ledger identity; retained copies/external callers excluded or force I/X",
+        "crash_failure_behavior": "No authenticated host-wide inventory; unknown participation prevents strong domain admission",
+        "planned_modification": "No changes to external projects. Operationally exclude/quiesce declared cooperative administrative callers with actual resource/profile evidence, otherwise I/X; any observed in-cut violation U.",
+        "evidence_required": "Actual participant inventory, resource/file-ID map, process exit/drain receipt, no bypass inner-lock users, before/after source hashes, two-process exclusion and unenrolled fallback control",
+        "risk": "CRITICAL"
+      },
+      "assessed_disposition": "UNKNOWN_ACTOR",
+      "dynamic_call_origin_proved": false,
+      "evidence": "Source census only. Direct register is separately exercised; other potential paths are not declared dynamically executed or safely excluded."
+    }
+  ],
+  "real_register_control": "runs/native/N01_N02/CONTROL_RESULT.json",
+  "cooperating_control": "runs/native/COOPERATING_POSITIVE/CONTROL_RESULT.json",
+  "post_bypass_experiments": 0,
+  "post_bypass_operations": "Only read-only diagnosis, report generation and preservation; no additional writer profile tested"
+}

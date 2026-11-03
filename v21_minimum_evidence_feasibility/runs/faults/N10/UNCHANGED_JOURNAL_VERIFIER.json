@@ -1,0 +1,47 @@
+{
+  "schema_version": "abc-r2-journal-review-v1",
+  "overall": "BLOCKED",
+  "attempts": [
+    {
+      "attempt_id": 1,
+      "status": "CORRUPT",
+      "code": "JOURNAL_SCHEMA_HASH_OR_LEDGER_MISMATCH",
+      "exception_type": "DataFault",
+      "path": "wire/000001-4dcaf471206a91f7.jsonl",
+      "observed_current_bytes_sha256": "463d1d22d3dbb7b2d34fe71fb30a759664f09367958623d1f5c40c84a8ed5f71"
+    }
+  ],
+  "trusted_hashes": {},
+  "untrusted_evidence": {
+    "wire/000001-4dcaf471206a91f7.jsonl": {
+      "sha256": "463d1d22d3dbb7b2d34fe71fb30a759664f09367958623d1f5c40c84a8ed5f71",
+      "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+      "status": "CORRUPT"
+    }
+  },
+  "verified_provider_records": [],
+  "host_compromise_protection": false,
+  "provenance_graph": {
+    "schema_version": "abc-r3-provenance-v1",
+    "revision": "1.0.2",
+    "run_attempts_sha256": "e32ede34e06953e7cc24411a41db5ce806ddb9c3e7767b6dfbbd5e3942bc7aea",
+    "anchor_hashes": {
+      "publication/attempts/000001.reservation.json": "f699bda8a807d29ee8d107faf6afd2a9c71c9cd3bb825144dddd60179ee92fa0",
+      "publication/attempts/000001.json": "1d041ad9642a882abd95e75dd73388444cf5abe5134c3ee22435563197d99ddb",
+      "publication/attempts/000001.settlement.json": "37333a34e31b91cffb1d6a04d7b17416b9ccaf2dcea99a50aaec0a0424b05d24",
+      "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+    },
+    "ordered_attempt_ids": [
+      1
+    ],
+    "bound_output_handles": [
+      "O_be597009ec6b09d00c4a089f"
+    ],
+    "unwitnessed_settlements": [],
+    "overall": "VERIFIED",
+    "wire_hashes": {
+      "wire/000001-4dcaf471206a91f7.jsonl": "463d1d22d3dbb7b2d34fe71fb30a759664f09367958623d1f5c40c84a8ed5f71"
+    }
+  },
+  "requires_integrity_hold": true
+}

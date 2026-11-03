@@ -1,0 +1,67 @@
+{
+  "case_id": "COOPERATING_POSITIVE",
+  "control_verdict": "PASS",
+  "strong_profile_supported": false,
+  "A_or_S_awarded": false,
+  "expected_event": "Two explicitly cooperating actors show attempted admission, first finally drain before capture, second admission after release; no extrapolation to all writers.",
+  "observed_event": {
+    "observed_events": [
+      {
+        "phase": "FIRST_DRAINED_FINALLY_COMPLETE_BEFORE_CAPTURE_LOCKS",
+        "pid": 35108,
+        "new_writer_admission_attempt_observed": true
+      },
+      {
+        "phase": "CONTROLLED_TEST_CUT_HELD",
+        "bytes_sha256": "0891573458219af9cac9fcb9187aa2ca72eba5fe91800a027fcb684153f0c7d6"
+      },
+      {
+        "pid": 35108,
+        "exit_code": 0,
+        "stdout": "{\"events\": [], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+        "stderr": "",
+        "request": "E:\\The End Engine\\v21_minimum_evidence_feasibility\\runs\\native\\COOPERATING_POSITIVE\\admitted_writer-1792773332717938200.request.json",
+        "killed_by_parent": false,
+        "worker_result": {
+          "events": [],
+          "counters": {
+            "forbidden_network_events": 0,
+            "forbidden_dispatch_or_reservation_calls": 0
+          },
+          "worker_operation_completed": true
+        }
+      },
+      {
+        "pid": 6904,
+        "exit_code": 0,
+        "stdout": "{\"events\": [], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+        "stderr": "",
+        "request": "E:\\The End Engine\\v21_minimum_evidence_feasibility\\runs\\native\\COOPERATING_POSITIVE\\admitted_writer-1792773333158563200.request.json",
+        "killed_by_parent": false,
+        "worker_result": {
+          "events": [],
+          "counters": {
+            "forbidden_network_events": 0,
+            "forbidden_dispatch_or_reservation_calls": 0
+          },
+          "worker_operation_completed": true
+        }
+      },
+      {
+        "scope": "TWO_EXPLICITLY_COOPERATING_TEST_PARTICIPANTS_ONLY_NOT_ALL_WRITER_COVERAGE",
+        "complete_domain_proven": false
+      }
+    ],
+    "authority": "I",
+    "material_blocker": false
+  },
+  "feasibility_implication": "Enforced admission for these two actors only; external and bypass actors remain unproved.",
+  "emergency_cleanup": [],
+  "elapsed_time": 1.030999999999949,
+  "bound_seconds": 60,
+  "bound_satisfied": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

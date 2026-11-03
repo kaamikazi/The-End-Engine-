@@ -1,0 +1,25 @@
+{
+  "step": 2,
+  "name": "POSITIVE_DIRECT",
+  "role": "CONTROL",
+  "argv": [
+    "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "E:\\The End Engine\\v21_minimum_evidence_feasibility\\scripts\\check_positive.py",
+    "--condition",
+    "DIRECT"
+  ],
+  "pid": 19720,
+  "started_utc": "2026-10-23T16:33:42.371084+00:00",
+  "finished_utc": "2026-10-23T16:33:43.053633+00:00",
+  "observed_exit_code": 0,
+  "elapsed_seconds": 0.6720000000004802,
+  "watchdog_seconds": 60,
+  "timed_out": false,
+  "bound_satisfied": true,
+  "stdout": "{\"condition\": \"DIRECT\", \"control_verdict\": \"PASS\", \"scope\": \"DERIVED_MOCK_LEGACY_CORE_ELIGIBILITY_NOT_NEW_V21_CERTIFICATION\", \"source_authority\": \"I_MAXIMUM_NO_COMMON_CUT\", \"certified_complete_totals\": null, \"provider_calls\": 0, \"core\": {\"passed\": true, \"payload_sha256\": \"750969efba7146c2ca5c6bf92fbb4c2ec3b2886f19dab6b7ec0032df6f595fb0\", \"provenance\": \"VERIFIED\"}, \"owner_lease_never_claimed\": true, \"derived_bytes_unchanged_during_core\": true, \"elapsed_time\": 0.23399999999946886, \"bound_satisfied\": true, \"tripwires\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}}\n",
+  "stderr": "",
+  "cleanup": null,
+  "execution_attempts": 1,
+  "status": "PASS"
+}

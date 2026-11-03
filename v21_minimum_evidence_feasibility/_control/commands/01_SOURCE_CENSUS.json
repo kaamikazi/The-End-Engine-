@@ -1,0 +1,23 @@
+{
+  "step": 1,
+  "name": "SOURCE_CENSUS",
+  "role": "INSPECTION",
+  "argv": [
+    "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "E:\\The End Engine\\v21_minimum_evidence_feasibility\\scripts\\inspect_sources.py"
+  ],
+  "pid": 28264,
+  "started_utc": "2026-10-23T16:33:41.160035+00:00",
+  "finished_utc": "2026-10-23T16:33:42.371084+00:00",
+  "observed_exit_code": 0,
+  "elapsed_seconds": 1.219000000000051,
+  "watchdog_seconds": 60,
+  "timed_out": false,
+  "bound_satisfied": true,
+  "stdout": "{\"conditions\": 6, \"existing_mock_reserved_rows_inspected\": 41, \"new_reservations\": 0, \"all_initial_wires_equal\": true}\n",
+  "stderr": "",
+  "cleanup": null,
+  "execution_attempts": 1,
+  "status": "PASS"
+}

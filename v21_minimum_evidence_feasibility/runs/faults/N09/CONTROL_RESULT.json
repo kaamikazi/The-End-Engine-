@@ -1,0 +1,31 @@
+{
+  "case_id": "N09",
+  "fault": "Interrupted outstanding attempt",
+  "control_verdict": "PASS",
+  "expected_event": {
+    "journal_overall": "INTERRUPTED",
+    "core_exception": "ArtifactIntegrity",
+    "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT"
+  },
+  "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+  "observed_event": {
+    "journal_overall": "INTERRUPTED",
+    "core_passed": false,
+    "core_exception": "ArtifactIntegrity",
+    "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT",
+    "recorded_rows": 1,
+    "known_fixture_token_subset": 0,
+    "unknown_usage_rows": 1,
+    "outstanding_rows": 1,
+    "certified_complete_totals": null,
+    "normal_verified_returned": false,
+    "source_bytes_preserved_during_core": true
+  },
+  "elapsed_time": 0.375,
+  "bound_seconds": 60,
+  "bound_satisfied": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "condition": "SPARSE_DELIBERATION",
+  "control_verdict": "PASS",
+  "scope": "DERIVED_MOCK_LEGACY_CORE_ELIGIBILITY_NOT_NEW_V21_CERTIFICATION",
+  "source_authority": "I_MAXIMUM_NO_COMMON_CUT",
+  "certified_complete_totals": null,
+  "provider_calls": 0,
+  "core": {
+    "passed": true,
+    "payload_sha256": "5312afd60b093f235b312fdbd97b1d3bbb9327976b7ac4deb74a4b9c0d417362",
+    "provenance": "VERIFIED"
+  },
+  "owner_lease_never_claimed": true,
+  "derived_bytes_unchanged_during_core": true,
+  "elapsed_time": 0.6099999999996726,
+  "bound_satisfied": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

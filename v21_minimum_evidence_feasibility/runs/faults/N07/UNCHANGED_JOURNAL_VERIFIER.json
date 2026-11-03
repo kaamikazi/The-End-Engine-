@@ -1,0 +1,31 @@
+{
+  "schema_version": "abc-r2-journal-review-v1",
+  "overall": "BLOCKED",
+  "attempts": [
+    {
+      "attempt_id": 1,
+      "status": "CORRUPT",
+      "code": "JOURNAL_SCHEMA_HASH_OR_LEDGER_MISMATCH",
+      "exception_type": "AssertionError",
+      "path": "wire/000001-4dcaf471206a91f7.jsonl",
+      "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+    },
+    {
+      "attempt_id": null,
+      "status": "INCONSISTENT",
+      "code": "PROVENANCE_GRAPH_INCONSISTENT",
+      "detail": "INDEPENDENT_CONTENT_OR_ACCOUNTING_MISMATCH"
+    }
+  ],
+  "trusted_hashes": {},
+  "untrusted_evidence": {
+    "wire/000001-4dcaf471206a91f7.jsonl": {
+      "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+      "authority": "CURRENT_UNTRUSTED_OR_UNSETTLED_OBSERVATION",
+      "status": "CORRUPT"
+    }
+  },
+  "verified_provider_records": [],
+  "host_compromise_protection": false,
+  "requires_integrity_hold": true
+}

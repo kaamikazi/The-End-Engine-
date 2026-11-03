@@ -1,0 +1,110 @@
+{
+  "verdict": "WRITER_EXCLUSION_BLOCKER",
+  "mode": "OWNER_APPROVED_BOUNDED_OFFLINE_FEASIBILITY",
+  "source_commit": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+  "source_checkout": "E:/The End Engine/v21_A0_feasibility/checkout",
+  "profile_count": 1,
+  "gate_1": {
+    "status": "UNSUPPORTED_IN_TESTED_ARRANGEMENT",
+    "actual_register_bypass": true,
+    "pending_creation_succeeded": true,
+    "pinned_main_replacement_succeeded": false,
+    "main_ledger_bytes_unchanged": true,
+    "all_writer_exclusion_proved": false,
+    "A_or_S_awarded": false,
+    "cooperating_positive_scope": "TWO_EXPLICIT_ACTORS_ONLY",
+    "unknown_background_external_actor_coverage": false,
+    "not_universal_impossibility": true
+  },
+  "gate_2": {
+    "fixture_evidence": "SUPPORTED_WITH_LIMITATIONS",
+    "six_conditions": [
+      "DIRECT",
+      "SELF_REFLECT",
+      "FROZEN_CURRENT_END",
+      "SPARSE_DELIBERATION",
+      "DIRECTED_REPAIR",
+      "BOUNDED_ALTERNATIVES"
+    ],
+    "original_task": "EXP-001",
+    "observed_mock_reserved_rows": 41,
+    "observed_mock_token_sum": 615,
+    "initial_public_payload_and_wires_identical": true,
+    "derived_legacy_completed_core": {
+      "PASS": 6,
+      "FAIL": 0
+    },
+    "native_independent_settlement_witnesses": 0,
+    "architecture_independent_settlement_witnesses": 8,
+    "new_v21_eligible_normal_or_restricted_view": false,
+    "certified_complete_totals": null,
+    "certified_cost_comparison": "INVALID_COMPARISON",
+    "usage_origin": "DETERMINISTIC_MOCK_NOT_MEASURED_PROVIDER",
+    "actual_provider_usage_and_billing": null,
+    "provider_compatibility": "NOT_VALIDATED",
+    "actual_candidate_text_and_lineage_preserved": true,
+    "no_fabricated_C0_or_final": true
+  },
+  "controls": {
+    "distinct_control_executions": 18,
+    "distinct_control_counts": {
+      "PASS": 17,
+      "FAIL": 1
+    },
+    "negative_categories": 12,
+    "negative_category_counts": {
+      "PASS": 11,
+      "FAIL": 1
+    },
+    "distinct_negative_executions": 11,
+    "distinct_negative_counts": {
+      "PASS": 10,
+      "FAIL": 1
+    },
+    "positive_source_checks": 6,
+    "cooperating_positive": 1,
+    "mandatory_controls_all_passed": false,
+    "failed_control": "N12",
+    "failed_control_reason": "Exact WinError5 assertion did not match actual PermissionError errno13/winerror=null. FAIL retained, no rerun or assertion edits.",
+    "original_scheduler_exit": 1,
+    "remaining_previously_unexecuted_controls_exit": 0,
+    "timeouts": 0,
+    "continuation_does_not_erase_failure": true
+  },
+  "historical_outcomes_preserved": {
+    "A0_attempt_002": "19 PASS / 1 ERROR",
+    "author_targeted": "1 PASS",
+    "previous_independent_targeted": "1 PASS",
+    "not_combined": true
+  },
+  "preservation": {
+    "passed": true,
+    "unique_protected_files": 51965,
+    "git_states_unchanged": true,
+    "original_evidence_members_and_bytes_unchanged": true
+  },
+  "readiness": {
+    "limited_controlled_inference_experiment_ready": false,
+    "live_inference_authorized": false,
+    "runtime_acceptance": false,
+    "scientific_scores": null,
+    "next_scope": "NEXT_IMPLEMENTATION_SCOPE.md",
+    "remaining_gaps": "SCIENTIFIC_READINESS_GAPS.md",
+    "required_independent_acceptance": "Pending; this is the implementation-agent study, not fresh independent/human acceptance"
+  },
+  "restrictions": {
+    "production_changes": 0,
+    "Engine_Harness_evaluator_changes": 0,
+    "old_test_migrations": 0,
+    "A1_enrollment": false,
+    "provider_requests": 0,
+    "new_model_calls": 0,
+    "new_reservations": 0,
+    "algorithm_or_Engine_generation_runs": 0,
+    "empirical_benchmarks": 0,
+    "git_commit_push_merge_release": false
+  },
+  "raw_results": "NEGATIVE_CONTROL_RESULTS.json",
+  "primary_blocker_reference": "runs/native/N01_N02/PENDING_MUTATION_RECEIPT.json",
+  "other_mandatory_failure_reference": "runs/native/N12/CONTROL_RESULT.json"
+}

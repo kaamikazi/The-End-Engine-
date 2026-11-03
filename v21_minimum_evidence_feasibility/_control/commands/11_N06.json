@@ -1,0 +1,25 @@
+{
+  "step": 11,
+  "name": "N06",
+  "role": "CONTROL",
+  "argv": [
+    "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "E:\\The End Engine\\v21_minimum_evidence_feasibility\\scripts\\test_evidence_faults.py",
+    "--case",
+    "N06"
+  ],
+  "pid": 22144,
+  "started_utc": "2026-10-23T16:33:50.590246+00:00",
+  "finished_utc": "2026-10-23T16:33:51.440633+00:00",
+  "observed_exit_code": 0,
+  "elapsed_seconds": 0.8440000000000509,
+  "watchdog_seconds": 60,
+  "timed_out": false,
+  "bound_satisfied": true,
+  "stdout": "{\"case\": \"N06\", \"verdict\": \"PASS\", \"observed\": {\"journal_overall\": \"BLOCKED\", \"core_passed\": false, \"core_exception\": \"RecoveryIntegrityHold\", \"core_message\": \"F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\", \"recorded_rows\": 1, \"known_fixture_token_subset\": 15, \"unknown_usage_rows\": 0, \"outstanding_rows\": 0, \"certified_complete_totals\": null, \"normal_verified_returned\": false, \"source_bytes_preserved_during_core\": true}, \"error\": null}\n",
+  "stderr": "",
+  "cleanup": null,
+  "execution_attempts": 1,
+  "status": "PASS"
+}
