@@ -1,0 +1,514 @@
+test_atomic_final_publication_binds_journal_hashes (tests.accounting.test_resources.ResourceTests.test_atomic_final_publication_binds_journal_hashes) ... ok
+test_canceled_attempt_not_refunded (tests.accounting.test_resources.ResourceTests.test_canceled_attempt_not_refunded) ... ok
+test_completed_artifact_never_overwritten (tests.accounting.test_resources.ResourceTests.test_completed_artifact_never_overwritten) ... ok
+test_duplicate_call_rejected_before_second_dispatch (tests.accounting.test_resources.ResourceTests.test_duplicate_call_rejected_before_second_dispatch) ... ok
+test_existing_gateway_methods_and_seals_are_inherited_unchanged (tests.accounting.test_resources.ResourceTests.test_existing_gateway_methods_and_seals_are_inherited_unchanged) ... ok
+test_global_time_limit_recorded (tests.accounting.test_resources.ResourceTests.test_global_time_limit_recorded) ... ok
+test_global_tokens_block_before_initial_without_fake_zero_usage (tests.accounting.test_resources.ResourceTests.test_global_tokens_block_before_initial_without_fake_zero_usage) ... ok
+test_known_usage_counts_all_model_stages (tests.accounting.test_resources.ResourceTests.test_known_usage_counts_all_model_stages) ... ok
+test_no_dispatch_after_generation_closure (tests.accounting.test_resources.ResourceTests.test_no_dispatch_after_generation_closure) ... ok
+test_outstanding_reservation_restart_no_new_dispatch (tests.accounting.test_resources.ResourceTests.test_outstanding_reservation_restart_no_new_dispatch) ... ok
+test_partial_response_restart_recovers_C0_without_budget_reset (tests.accounting.test_resources.ResourceTests.test_partial_response_restart_recovers_C0_without_budget_reset) ... ok
+test_shared_global_cap_across_conditions (tests.accounting.test_resources.ResourceTests.test_shared_global_cap_across_conditions) ... ok
+test_timeout_is_counted_unknown_preserving_C0 (tests.accounting.test_resources.ResourceTests.test_timeout_is_counted_unknown_preserving_C0) ... ok
+test_torn_final_journal_append_recovers_without_dispatch (tests.accounting.test_resources.ResourceTests.test_torn_final_journal_append_recovers_without_dispatch) ... ERROR
+test_wire_and_response_journal_precedes_final_result (tests.accounting.test_resources.ResourceTests.test_wire_and_response_journal_precedes_final_result) ... ok
+test_budget_stops_before_revision (tests.architecture_a.test_sparse.SparseTests.test_budget_stops_before_revision) ... ok
+test_complete_C0_stops_without_revision (tests.architecture_a.test_sparse.SparseTests.test_complete_C0_stops_without_revision) ... ok
+test_generic_uncertainty_only_stops (tests.architecture_a.test_sparse.SparseTests.test_generic_uncertainty_only_stops) ... ok
+test_interrupted_gate_preserves_C0 (tests.architecture_a.test_sparse.SparseTests.test_interrupted_gate_preserves_C0) ... ok
+test_malformed_initial_format_repaired (tests.architecture_a.test_sparse.SparseTests.test_malformed_initial_format_repaired) ... ok
+test_missing_mandatory_section_repaired (tests.architecture_a.test_sparse.SparseTests.test_missing_mandatory_section_repaired) ... ok
+test_no_progress_revision_retained (tests.architecture_a.test_sparse.SparseTests.test_no_progress_revision_retained) ... ok
+test_one_control_format_repair_counts_four_total (tests.architecture_a.test_sparse.SparseTests.test_one_control_format_repair_counts_four_total) ... ok
+test_provider_failure_preserves_C0 (tests.architecture_a.test_sparse.SparseTests.test_provider_failure_preserves_C0) ... ok
+test_public_contradiction_targeted (tests.architecture_a.test_sparse.SparseTests.test_public_contradiction_targeted) ... ok
+test_repair_damaging_unaffected_content_retains_C0 (tests.architecture_a.test_sparse.SparseTests.test_repair_damaging_unaffected_content_retains_C0) ... ok
+test_second_malformed_gate_does_not_loop (tests.architecture_a.test_sparse.SparseTests.test_second_malformed_gate_does_not_loop) ... ok
+test_unknown_usage_no_gate_call (tests.architecture_a.test_sparse.SparseTests.test_unknown_usage_no_gate_call) ... ok
+test_vague_unsupported_criticism_cannot_trigger_rewrite (tests.architecture_a.test_sparse.SparseTests.test_vague_unsupported_criticism_cannot_trigger_rewrite) ... ok
+test_budget_exhaustion_plan_stops (tests.architecture_b.test_repair.RepairTests.test_budget_exhaustion_plan_stops) ... ok
+test_contradictory_plan_public_value_rejected (tests.architecture_b.test_repair.RepairTests.test_contradictory_plan_public_value_rejected) ... ok
+test_correct_missing_requirement_detected_and_repaired (tests.architecture_b.test_repair.RepairTests.test_correct_missing_requirement_detected_and_repaired) ... ok
+test_duplicate_target_actions_rejected (tests.architecture_b.test_repair.RepairTests.test_duplicate_target_actions_rejected) ... ok
+test_false_positive_critique_early_stop (tests.architecture_b.test_repair.RepairTests.test_false_positive_critique_early_stop) ... ok
+test_incomplete_repair_not_reported_complete (tests.architecture_b.test_repair.RepairTests.test_incomplete_repair_not_reported_complete) ... ok
+test_interrupted_revision_preserves_original (tests.architecture_b.test_repair.RepairTests.test_interrupted_revision_preserves_original) ... ok
+test_invalid_self_reported_observation_rejected (tests.architecture_b.test_repair.RepairTests.test_invalid_self_reported_observation_rejected) ... ok
+test_invented_plan_target_rejected (tests.architecture_b.test_repair.RepairTests.test_invented_plan_target_rejected) ... ok
+test_multiple_defects_priorities_and_valid_targets (tests.architecture_b.test_repair.RepairTests.test_multiple_defects_priorities_and_valid_targets) ... ok
+test_plan_format_repair_fits_five (tests.architecture_b.test_repair.RepairTests.test_plan_format_repair_fits_five) ... ok
+test_refusal_control_is_recorded_not_relabelled_success (tests.architecture_b.test_repair.RepairTests.test_refusal_control_is_recorded_not_relabelled_success) ... ok
+test_repair_damaging_unaffected_data_rejected (tests.architecture_b.test_repair.RepairTests.test_repair_damaging_unaffected_data_rejected) ... ok
+test_repair_preserves_unrelated_nested_fields (tests.architecture_b.test_repair.RepairTests.test_repair_preserves_unrelated_nested_fields) ... ok
+test_unknown_usage_inventory_blocks_planning (tests.architecture_b.test_repair.RepairTests.test_unknown_usage_inventory_blocks_planning) ... ok
+test_unresolved_uncertainty_not_defect (tests.architecture_b.test_repair.RepairTests.test_unresolved_uncertainty_not_defect) ... ok
+test_unsupported_tests_passed_is_not_evidence (tests.architecture_b.test_repair.RepairTests.test_unsupported_tests_passed_is_not_evidence) ... ok
+test_A2_better (tests.architecture_c.test_alternatives.AlternativesTests.test_A2_better) ... ok
+test_C0_best (tests.architecture_c.test_alternatives.AlternativesTests.test_C0_best) ... ok
+test_all_alternatives_invalid_keep_C0 (tests.architecture_c.test_alternatives.AlternativesTests.test_all_alternatives_invalid_keep_C0) ... ok
+test_distinct_alternatives_A1_publicly_better (tests.architecture_c.test_alternatives.AlternativesTests.test_distinct_alternatives_A1_publicly_better) ... ok
+test_duplicate_outputs_retained_as_distinct_candidates (tests.architecture_c.test_alternatives.AlternativesTests.test_duplicate_outputs_retained_as_distinct_candidates) ... ok
+test_early_budget_no_silent_ranking (tests.architecture_c.test_alternatives.AlternativesTests.test_early_budget_no_silent_ranking) ... ok
+test_equivalent_outputs_do_not_imply_improvement (tests.architecture_c.test_alternatives.AlternativesTests.test_equivalent_outputs_do_not_imply_improvement) ... ok
+test_false_consensus_is_not_correctness (tests.architecture_c.test_alternatives.AlternativesTests.test_false_consensus_is_not_correctness) ... ok
+test_invalid_candidate_structure_does_not_win_on_length (tests.architecture_c.test_alternatives.AlternativesTests.test_invalid_candidate_structure_does_not_win_on_length) ... ok
+test_invented_verification_cannot_support_selection (tests.architecture_c.test_alternatives.AlternativesTests.test_invented_verification_cannot_support_selection) ... ok
+test_missing_third_candidate_preserves_lineage (tests.architecture_c.test_alternatives.AlternativesTests.test_missing_third_candidate_preserves_lineage) ... ok
+test_one_alternative_provider_failure_retains_C0 (tests.architecture_c.test_alternatives.AlternativesTests.test_one_alternative_provider_failure_retains_C0) ... ok
+test_selection_failure_no_fabricated_ranking (tests.architecture_c.test_alternatives.AlternativesTests.test_selection_failure_no_fabricated_ranking) ... ok
+test_selector_format_repair_fits_five (tests.architecture_c.test_alternatives.AlternativesTests.test_selector_format_repair_fits_five) ... ok
+test_tie_is_honest_unresolved (tests.architecture_c.test_alternatives.AlternativesTests.test_tie_is_honest_unresolved) ... ok
+test_uncertainty_is_not_a_ranking (tests.architecture_c.test_alternatives.AlternativesTests.test_uncertainty_is_not_a_ranking) ... ok
+test_candidate_mismatch (tests.corrections.test_certification.CertificationTests.test_candidate_mismatch) ... ok
+test_direct_normal_publisher_cannot_bypass_F02 (tests.corrections.test_certification.CertificationTests.test_direct_normal_publisher_cannot_bypass_F02) ... ok
+test_direct_semantic_verifier_rejects_independently_blocked_data (tests.corrections.test_certification.CertificationTests.test_direct_semantic_verifier_rejects_independently_blocked_data) ... ok
+test_duplicate (tests.corrections.test_certification.CertificationTests.test_duplicate) ... ok
+test_four_concurrent_blocked_recoveries_do_not_publish (tests.corrections.test_certification.CertificationTests.test_four_concurrent_blocked_recoveries_do_not_publish) ... ok
+test_genuine_programming_defects_remain_visible (tests.corrections.test_certification.CertificationTests.test_genuine_programming_defects_remain_visible) ... ok
+test_invalid_proposed_report_is_rejected (tests.corrections.test_certification.CertificationTests.test_invalid_proposed_report_is_rejected) ... ok
+test_missing_attempt (tests.corrections.test_certification.CertificationTests.test_missing_attempt) ... ok
+test_output_count_mismatch (tests.corrections.test_certification.CertificationTests.test_output_count_mismatch) ... ok
+test_response_text_only (tests.corrections.test_certification.CertificationTests.test_response_text_only) ... ok
+test_settlement_state_mismatch (tests.corrections.test_certification.CertificationTests.test_settlement_state_mismatch) ... ok
+test_total_count_mismatch (tests.corrections.test_certification.CertificationTests.test_total_count_mismatch) ... ok
+test_unknown_report_is_not_success (tests.corrections.test_certification.CertificationTests.test_unknown_report_is_not_success) ... ok
+test_unsupported_disposition_fails_closed (tests.corrections.test_certification.CertificationTests.test_unsupported_disposition_fails_closed) ... ok
+test_valid_completed_result_idempotent (tests.corrections.test_certification.CertificationTests.test_valid_completed_result_idempotent) ... ok
+test_valid_failed_and_rejected_receipts_still_publish (tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish) ... ok
+test_valid_unknown_interrupted_publication (tests.corrections.test_certification.CertificationTests.test_valid_unknown_interrupted_publication) ... ok
+test_active_other_process_rejected_then_recovers_after_death (tests.corrections.test_f01.ResultPublicationTests.test_active_other_process_rejected_then_recovers_after_death) ... ok
+test_active_owner_is_not_stolen_in_same_process (tests.corrections.test_f01.ResultPublicationTests.test_active_owner_is_not_stolen_in_same_process) ... ok
+test_completed_unknown_reservation_remains_unknown (tests.corrections.test_f01.ResultPublicationTests.test_completed_unknown_reservation_remains_unknown) ... ok
+test_corrupt_existing_result_fails_integrity_before_admission (tests.corrections.test_f01.ResultPublicationTests.test_corrupt_existing_result_fails_integrity_before_admission) ... ok
+test_corrupt_owner_fence_rejected_before_generation (tests.corrections.test_f01.ResultPublicationTests.test_corrupt_owner_fence_rejected_before_generation) ... ok
+test_crash_after_exclusive_link_preserves_completed_bytes (tests.corrections.test_f01.ResultPublicationTests.test_crash_after_exclusive_link_preserves_completed_bytes) ... ok
+test_deleted_bound_ledger_cannot_reset_budget (tests.corrections.test_f01.ResultPublicationTests.test_deleted_bound_ledger_cannot_reset_budget) ... ok
+test_exclusive_link_failure_leaves_diagnostic_and_no_success (tests.corrections.test_f01.ResultPublicationTests.test_exclusive_link_failure_leaves_diagnostic_and_no_success) ... ok
+test_missing_previous_owner_metadata_cannot_reset_fence (tests.corrections.test_f01.ResultPublicationTests.test_missing_previous_owner_metadata_cannot_reset_fence) ... ok
+test_optimized_interpreter_fails_before_admission (tests.corrections.test_f01.ResultPublicationTests.test_optimized_interpreter_fails_before_admission) ... ok
+test_permission_denied_does_not_claim_publication (tests.corrections.test_f01.ResultPublicationTests.test_permission_denied_does_not_claim_publication) ... ok
+test_publication_lock_released_by_process_exit (tests.corrections.test_f01.ResultPublicationTests.test_publication_lock_released_by_process_exit) ... ok
+test_repeated_finish_is_verified_byte_identical_and_logs_conflict (tests.corrections.test_f01.ResultPublicationTests.test_repeated_finish_is_verified_byte_identical_and_logs_conflict) ... ok
+test_same_run_cannot_rebind_to_different_output_directory (tests.corrections.test_f01.ResultPublicationTests.test_same_run_cannot_rebind_to_different_output_directory) ... ok
+test_stale_admitted_session_cannot_erase_candidate_lineage (tests.corrections.test_f01.ResultPublicationTests.test_stale_admitted_session_cannot_erase_candidate_lineage) ... ok
+test_stale_fencing_token_cannot_publish (tests.corrections.test_f01.ResultPublicationTests.test_stale_fencing_token_cannot_publish) ... ok
+test_two_independent_finalizers_publish_one_immutable_result (tests.corrections.test_f01.ResultPublicationTests.test_two_independent_finalizers_publish_one_immutable_result) ... ok
+test_unique_pending_collision_preserves_suspect_bytes (tests.corrections.test_f01.ResultPublicationTests.test_unique_pending_collision_preserves_suspect_bytes) ... ok
+test_unrestored_session_cannot_publish_empty_history (tests.corrections.test_f01.ResultPublicationTests.test_unrestored_session_cannot_publish_empty_history) ... ok
+test_changed_decoded_response (tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response) ... FAIL
+test_changed_response_digest (tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest) ... FAIL
+test_changed_wire (tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire) ... FAIL
+test_changed_wire_digest (tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest) ... FAIL
+test_duplicate_attempt_file (tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file) ... FAIL
+test_duplicate_response_record (tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record) ... FAIL
+test_final_hash_mutation_is_rejected_without_overwriting_result (tests.corrections.test_f02.JournalIntegrityTests.test_final_hash_mutation_is_rejected_without_overwriting_result) ... ok
+test_header_only_inflight_append_remains_unknown (tests.corrections.test_f02.JournalIntegrityTests.test_header_only_inflight_append_remains_unknown) ... ok
+test_incorrect_record_order (tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order) ... FAIL
+test_invalid_base64 (tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64) ... FAIL
+test_ledger_disagreement (tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement) ... FAIL
+test_missing_response_anchor (tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor) ... FAIL
+test_missing_settled_journal (tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal) ... FAIL
+test_recomputed_hashes_still_fail_anchor (tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor) ... FAIL
+test_settled_torn_tail (tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail) ... FAIL
+test_swapped_journal_between_runs_is_not_trusted (tests.corrections.test_f02.JournalIntegrityTests.test_swapped_journal_between_runs_is_not_trusted) ... ok
+test_unknown_pre_dispatch_reservation_is_not_verified (tests.corrections.test_f02.JournalIntegrityTests.test_unknown_pre_dispatch_reservation_is_not_verified) ... ok
+test_valid_settled_evidence_is_verified (tests.corrections.test_f02.JournalIntegrityTests.test_valid_settled_evidence_is_verified) ... ok
+test_wrong_attempt (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt) ... FAIL
+test_wrong_run (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run) ... FAIL
+test_wrong_stage (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage) ... FAIL
+test_dictionary_or_unknown_required_field_rejected (tests.corrections.test_f03.BaselineAdmissionTests.test_dictionary_or_unknown_required_field_rejected) ... ok
+test_exact_defaults_execute_all_original_baselines (tests.corrections.test_f03.BaselineAdmissionTests.test_exact_defaults_execute_all_original_baselines) ... ok
+test_mutated_public_contract_rejected_before_reservation (tests.corrections.test_f03.BaselineAdmissionTests.test_mutated_public_contract_rejected_before_reservation) ... ok
+test_partial_native_cell_never_replays (tests.corrections.test_f03.BaselineAdmissionTests.test_partial_native_cell_never_replays) ... ok
+test_reject_active_time (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_active_time) ... ok
+test_reject_attempts (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_attempts) ... ok
+test_reject_context (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_context) ... ok
+test_reject_digest (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_digest) ... ok
+test_reject_model (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_model) ... ok
+test_reject_output_cap (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_output_cap) ... ok
+test_reject_seed (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_seed) ... ok
+test_reject_temperature (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_temperature) ... ok
+test_reject_thinking (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_thinking) ... ok
+test_reject_tokens (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_tokens) ... ok
+test_reject_top_p (tests.corrections.test_f03.BaselineAdmissionTests.test_reject_top_p) ... ok
+test_request_mutation_after_dispatch_cannot_be_echoed_as_effective (tests.corrections.test_f03.BaselineAdmissionTests.test_request_mutation_after_dispatch_cannot_be_echoed_as_effective) ... ok
+test_duplicate_keys_and_depth_size_limits_preserved (tests.corrections.test_f04.NumericSafetyTests.test_duplicate_keys_and_depth_size_limits_preserved) ... ok
+test_large_integer_boundary (tests.corrections.test_f04.NumericSafetyTests.test_large_integer_boundary) ... ok
+test_local_serialization_failure_gets_coherent_protocol_terminal (tests.corrections.test_f04.NumericSafetyTests.test_local_serialization_failure_gets_coherent_protocol_terminal) ... ok
+test_nonfinite_control_never_becomes_repair_evidence (tests.corrections.test_f04.NumericSafetyTests.test_nonfinite_control_never_becomes_repair_evidence) ... ok
+test_provider_numeric_metadata_failure_is_diagnosed (tests.corrections.test_f04.NumericSafetyTests.test_provider_numeric_metadata_failure_is_diagnosed) ... ok
+test_recovery_of_numeric_rejected_output_keeps_raw_history (tests.corrections.test_f04.NumericSafetyTests.test_recovery_of_numeric_rejected_output_keeps_raw_history) ... ok
+test_reject_1e400_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_1e400_optional_nested_array) ... ok
+test_reject_1e400_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_1e400_required) ... ok
+test_reject_1e999999_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_1e999999_optional_nested_array) ... ok
+test_reject_1e999999_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_1e999999_required) ... ok
+test_reject_Infinity_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_Infinity_optional_nested_array) ... ok
+test_reject_Infinity_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_Infinity_required) ... ok
+test_reject_NaN_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_NaN_optional_nested_array) ... ok
+test_reject_NaN_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_NaN_required) ... ok
+test_reject_negative_1e400_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_1e400_optional_nested_array) ... ok
+test_reject_negative_1e400_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_1e400_required) ... ok
+test_reject_negative_Infinity_optional_nested_array (tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_Infinity_optional_nested_array) ... ok
+test_reject_negative_Infinity_required (tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_Infinity_required) ... ok
+test_serialization_failure_injection_is_diagnosed_and_retry_is_bounded (tests.corrections.test_f04.NumericSafetyTests.test_serialization_failure_injection_is_diagnosed_and_retry_is_bounded) ... ok
+test_valid_finite_float_semantics_match_python (tests.corrections.test_f04.NumericSafetyTests.test_valid_finite_float_semantics_match_python) ... ok
+test_completed_result_and_corrupt_closure_fail_closed (tests.corrections.test_interactions.CrossDefectTests.test_completed_result_and_corrupt_closure_fail_closed) ... ok
+test_completed_result_ignores_late_error_without_rewriting (tests.corrections.test_interactions.CrossDefectTests.test_completed_result_ignores_late_error_without_rewriting) ... ok
+test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record (tests.corrections.test_interactions.CrossDefectTests.test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record) ... ERROR
+test_malformed_receipt_and_duplicate_recovery_keep_unknown_cost (tests.corrections.test_interactions.CrossDefectTests.test_malformed_receipt_and_duplicate_recovery_keep_unknown_cost) ... ok
+test_rehashed_result_cannot_replace_independent_prepared_anchor (tests.corrections.test_interactions.CrossDefectTests.test_rehashed_result_cannot_replace_independent_prepared_anchor) ... ok
+test_serializer_fallback_does_not_conceal_journal_failure (tests.corrections.test_interactions.CrossDefectTests.test_serializer_fallback_does_not_conceal_journal_failure) ... ERROR
+test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit (tests.corrections.test_interactions.CrossDefectTests.test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit) ... ERROR
+test_unknown_usage_survives_interrupted_recovery (tests.corrections.test_interactions.CrossDefectTests.test_unknown_usage_survives_interrupted_recovery) ... ok
+test_A_success_downgraded_failed (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_A_success_downgraded_failed) ... ok
+test_B_candidate_removed (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_B_candidate_removed) ... ok
+test_C_success_changed_interrupted (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_C_success_changed_interrupted) ... ok
+test_D_changed_handle (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_D_changed_handle) ... ok
+test_E_changed_content_same_handle (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_E_changed_content_same_handle) ... ok
+test_F_later_request_quotes_old_handle (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_F_later_request_quotes_old_handle) ... ok
+test_G_duplicate_handle (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_G_duplicate_handle) ... ok
+test_H_handle_reassigned_attempt (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_H_handle_reassigned_attempt) ... ok
+test_I_foreign_run_identity (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_I_foreign_run_identity) ... ok
+test_J_duplicate_attempt (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_J_duplicate_attempt) ... ok
+test_K_reordered_attempts (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_K_reordered_attempts) ... ok
+test_L_duplicate_ordinal (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_L_duplicate_ordinal) ... ok
+test_M_changed_stage (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_M_changed_stage) ... ok
+test_N_swapped_response_anchor (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_N_swapped_response_anchor) ... ok
+test_O_missing_dispatch_evidence (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_O_missing_dispatch_evidence) ... ok
+test_P_missing_response_evidence (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_P_missing_response_evidence) ... ok
+test_Q_refreshed_ledger_checksum_is_insufficient (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Q_refreshed_ledger_checksum_is_insufficient) ... ok
+test_R_erased_attempt_leaves_orphan_anchor (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_R_erased_attempt_leaves_orphan_anchor) ... ok
+test_S_interrupted_attempt_remains_uncertain (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_S_interrupted_attempt_remains_uncertain) ... ok
+test_T_transport_failure_retained (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_T_transport_failure_retained) ... ok
+test_U_rejected_raw_provider_response_retained (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_U_rejected_raw_provider_response_retained) ... ok
+test_V_unknown_usage_stays_unknown (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_V_unknown_usage_stays_unknown) ... ok
+test_W_torn_journal_remains_diagnosable (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_W_torn_journal_remains_diagnosable) ... ERROR
+test_X_completed_result_immutable (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_X_completed_result_immutable) ... ok
+test_Y_journal_changes_at_publication_is_not_returned_verified (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Y_journal_changes_at_publication_is_not_returned_verified) ... ok
+test_Z_valid_recorded_history_passes (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Z_valid_recorded_history_passes) ... ok
+test_missing_historical_witness_is_not_fabricated (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_missing_historical_witness_is_not_fabricated) ... ok
+test_publication_window_never_leaves_a_verified_certificate (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_publication_window_never_leaves_a_verified_certificate) ... ok
+test_unwitnessed_handle_cannot_trigger_a_new_call (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_unwitnessed_handle_cannot_trigger_a_new_call) ... ok
+test_change_after_initial_validation_rejected (tests.corrections.test_publication_guard.PublicationWindowTests.test_change_after_initial_validation_rejected) ... ok
+test_closure_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_closure_write_at_link) ... ok
+test_ledger_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_ledger_write_at_link) ... ok
+test_native_link_hook_cannot_mutate_existing_wire (tests.corrections.test_publication_guard.PublicationWindowTests.test_native_link_hook_cannot_mutate_existing_wire) ... ok
+test_new_orphan_at_exclusive_link_seam_is_rejected (tests.corrections.test_publication_guard.PublicationWindowTests.test_new_orphan_at_exclusive_link_seam_is_rejected) ... ok
+test_owner_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_owner_write_at_link) ... ok
+test_pending_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_pending_write_at_link) ... ok
+test_prepared_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_prepared_write_at_link) ... ok
+test_real_process_writer_denied_until_after_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_real_process_writer_denied_until_after_link) ... ok
+test_settlement_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_settlement_write_at_link) ... ok
+test_wire_delete_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_delete_at_link) ... ok
+test_wire_rename_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_rename_at_link) ... ok
+test_wire_write_at_link (tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_write_at_link) ... ok
+test_completed_result_is_never_replaced (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_completed_result_is_never_replaced) ... ok
+test_conflicting_response_anchor (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_conflicting_response_anchor) ... ok
+test_corrupt_journal_finalization_remains_blocked (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_corrupt_journal_finalization_remains_blocked) ... ERROR
+test_duplicate_after_interruption (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_after_interruption) ... ok
+test_duplicate_different_settlement (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_different_settlement) ... ok
+test_duplicate_inserted_at_recovery_entry (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_inserted_at_recovery_entry) ... ok
+test_duplicated_reservation (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicated_reservation) ... ok
+test_generic_integrity_error_not_swallowed (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_generic_integrity_error_not_swallowed) ... ok
+test_missing_attempt (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_missing_attempt) ... ok
+test_one_duplicate (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_one_duplicate) ... ok
+test_refreshed_ledger_checksum_not_authority (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_refreshed_ledger_checksum_not_authority) ... ok
+test_reordered_sequence (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_reordered_sequence) ... ok
+test_unrelated_programming_defect_propagates (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_unrelated_programming_defect_propagates) ... ok
+test_valid_failed_is_not_converted (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_valid_failed_is_not_converted) ... ok
+test_valid_interrupted_is_not_converted (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_valid_interrupted_is_not_converted) ... ok
+test_canonical_repair_condition_not_renamed (tests.fairness.test_contracts.FairnessTests.test_canonical_repair_condition_not_renamed) ... ok
+test_equivalent_formatting_is_not_substantive_change (tests.fairness.test_contracts.FairnessTests.test_equivalent_formatting_is_not_substantive_change) ... ok
+test_genuine_distinct_control_flow (tests.fairness.test_contracts.FairnessTests.test_genuine_distinct_control_flow) ... ok
+test_property_complete_C0_stop_across_equivalent_encodings (tests.fairness.test_contracts.FairnessTests.test_property_complete_C0_stop_across_equivalent_encodings) ... ok
+test_property_targeted_repair_cannot_overwrite_non_target (tests.fairness.test_contracts.FairnessTests.test_property_targeted_repair_cannot_overwrite_non_target) ... ok
+test_public_identifiers_recorded_without_private_rubric (tests.fairness.test_contracts.FairnessTests.test_public_identifiers_recorded_without_private_rubric) ... ok
+test_same_initial_concrete_bytes_for_three_algorithms (tests.fairness.test_contracts.FairnessTests.test_same_initial_concrete_bytes_for_three_algorithms) ... ok
+test_whole_format_repair_cannot_erase_known_public_identifier (tests.fairness.test_contracts.FairnessTests.test_whole_format_repair_cannot_erase_known_public_identifier) ... ok
+test_actual_baseline_common_contract_without_behavior_change (tests.integration.test_public.IntegrationTests.test_actual_baseline_common_contract_without_behavior_change) ... ok
+test_frozen_public_task_snapshots_exact (tests.integration.test_public.IntegrationTests.test_frozen_public_task_snapshots_exact) ... ok
+test_input_defect_object_not_substituted_for_C0 (tests.integration.test_public.IntegrationTests.test_input_defect_object_not_substituted_for_C0) ... ok
+test_same_mock_inputs_repeat_logical_outcome (tests.integration.test_public.IntegrationTests.test_same_mock_inputs_repeat_logical_outcome) ... ok
+test_alternatives_cannot_receive_sibling_or_C0_content (tests.security.test_boundary.SecurityTests.test_alternatives_cannot_receive_sibling_or_C0_content) ... ok
+test_external_evaluation_requires_closed_generation (tests.security.test_boundary.SecurityTests.test_external_evaluation_requires_closed_generation) ... ok
+test_foreign_output_handle_cannot_enter_gate (tests.security.test_boundary.SecurityTests.test_foreign_output_handle_cannot_enter_gate) ... ok
+test_invalid_observation_category_cannot_be_laundered (tests.security.test_boundary.SecurityTests.test_invalid_observation_category_cannot_be_laundered) ... ok
+test_model_code_is_inert_no_execution_callback (tests.security.test_boundary.SecurityTests.test_model_code_is_inert_no_execution_callback) ... ok
+test_new_stage_unknown_fields_tools_and_private_messages_reject (tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject) ... ok
+test_no_arbitrary_provider_object_bypass (tests.security.test_boundary.SecurityTests.test_no_arbitrary_provider_object_bypass) ... ok
+test_no_evaluator_import_or_dynamic_execution_in_generation (tests.security.test_boundary.SecurityTests.test_no_evaluator_import_or_dynamic_execution_in_generation) ... ok
+test_private_environment_file_and_encoded_canaries_not_forwarded (tests.security.test_boundary.SecurityTests.test_private_environment_file_and_encoded_canaries_not_forwarded) ... ok
+test_stage_for_another_condition_cannot_be_called (tests.security.test_boundary.SecurityTests.test_stage_for_another_condition_cannot_be_called) ... ok
+test_unapproved_prompt_mutation_rejects (tests.security.test_boundary.SecurityTests.test_unapproved_prompt_mutation_rejects) ... ok
+test_unexpected_provider_tools_reject_unknown_consumption (tests.security.test_boundary.SecurityTests.test_unexpected_provider_tools_reject_unknown_consumption) ... ok
+
+======================================================================
+ERROR: test_torn_final_journal_append_recovers_without_dispatch (tests.accounting.test_resources.ResourceTests.test_torn_final_journal_append_recovers_without_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\accounting\test_resources.py", line 63, in test_torn_final_journal_append_recovers_without_dispatch
+    s.detach();script=Script({});r=execute(q,script,d,s.ledger);self.assertEqual(script.seen,[]);self.assertEqual(r['result']['final_candidate'],'C0');self.assertEqual(r['result']['physical_attempts'],1);self.assertIn('TORN_FINAL_APPEND',json.dumps(r))
+                                                                                                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'final_candidate'
+
+======================================================================
+ERROR: test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record (tests.corrections.test_interactions.CrossDefectTests.test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_interactions.py", line 6, in test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record
+    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'{"bad":true}\n');stale=Session(q,Script({}),d);r=s.finish('INTERRUPTED');before=(Path(d)/'RESULT.json').read_bytes();again=stale.finish('COMPLETED');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertEqual(before,(Path(d)/'RESULT.json').read_bytes());self.assertEqual(again['result']['termination_reason'],'EXTERNAL_BLOCKER');evidence(self,'INTERACTIONS',journal_blocker_preserved=True,result_immutable=True)
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\session.py", line 28, in __init__
+    require_recoverable(verify_journals(self.store),self.store)
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\provenance.py", line 208, in require_recoverable
+    raise RecoveryIntegrityHold(report, pub)
+src.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED
+
+======================================================================
+ERROR: test_serializer_fallback_does_not_conceal_journal_failure (tests.corrections.test_interactions.CrossDefectTests.test_serializer_fallback_does_not_conceal_journal_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_interactions.py", line 26, in test_serializer_fallback_does_not_conceal_journal_failure
+    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'corruption\n');s.notes.append(float('nan'));r=s.finish('INTERRUPTED');self.assertEqual(r['result']['termination_reason'],'PROTOCOL_FAILURE');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertIn('JOURNAL_INTEGRITY_BLOCKER',json.dumps(r['result']['diagnostic_errors']));canonical(r)
+                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\session.py", line 100, in finish
+    require_recoverable(report,self.store)
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\provenance.py", line 208, in require_recoverable
+    raise RecoveryIntegrityHold(report, pub)
+src.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED
+
+======================================================================
+ERROR: test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit (tests.corrections.test_interactions.CrossDefectTests.test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_interactions.py", line 9, in test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit
+    q,s=partial(d);journal(d).rename(journal(d).with_suffix('.missing'));s.detach();a=worker('finalize',d,'a','INTERRUPTED');b=worker('finalize',d,'b','COMPLETED');wait(Path(d)/'a.ready');wait(Path(d)/'b.ready');(Path(d)/'go').write_text('go');ra=collect(a);rb=collect(b);self.assertEqual(ra['exit_code'],0,ra);self.assertEqual(rb['exit_code'],0,rb);r=read(Path(d)/'RESULT.json');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertEqual(r['result']['termination_reason'],'EXTERNAL_BLOCKER');self.assertEqual(len(list((Path(d)/'publication/prepared').glob('*.json'))),1);evidence(self,'INTERACTIONS',processes=[ra,rb],overall='BLOCKED',one_terminal_record=True)
+                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\common.py", line 24, in wait
+    if time.monotonic()>until:raise TimeoutError('Test barrier timeout')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: Test barrier timeout
+
+======================================================================
+ERROR: test_W_torn_journal_remains_diagnosable (tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_W_torn_journal_remains_diagnosable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_provenance_r3.py", line 125, in test_W_torn_journal_remains_diagnosable
+    before=p.read_bytes();r=s.finish('INTERRUPTED')
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\session.py", line 100, in finish
+    require_recoverable(report,self.store)
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\provenance.py", line 208, in require_recoverable
+    raise RecoveryIntegrityHold(report, pub)
+src.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED
+
+======================================================================
+ERROR: test_corrupt_journal_finalization_remains_blocked (tests.corrections.test_recovery_hold.RecoveryHoldTests.test_corrupt_journal_finalization_remains_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_recovery_hold.py", line 81, in test_corrupt_journal_finalization_remains_blocked
+    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'corrupt\n');before=p.read_bytes();r=s.finish('INTERRUPTED')
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\session.py", line 100, in finish
+    require_recoverable(report,self.store)
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\src\shared\provenance.py", line 208, in require_recoverable
+    raise RecoveryIntegrityHold(report, pub)
+src.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED
+
+======================================================================
+FAIL: test_changed_decoded_response (tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_changed_response_digest (tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_changed_wire (tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_changed_wire_digest (tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_duplicate_attempt_file (tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_duplicate_response_record (tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_incorrect_record_order (tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_invalid_base64 (tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_ledger_disagreement (tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_missing_response_anchor (tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_missing_settled_journal (tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_recomputed_hashes_still_fail_anchor (tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_settled_torn_tail (tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_wrong_attempt (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_wrong_run (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_wrong_stage (tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 65, in test
+    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\The End Engine\v21_ledger_guard_slice\checkout\experimental_architectures_v1_r3\tests\corrections\test_f02.py", line 8, in check_damage
+    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1
+
+----------------------------------------------------------------------
+Ran 244 tests in 116.363s
+
+FAILED (failures=16, errors=6)

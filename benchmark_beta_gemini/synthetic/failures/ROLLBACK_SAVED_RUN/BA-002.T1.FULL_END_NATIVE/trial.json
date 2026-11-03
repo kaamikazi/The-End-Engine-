@@ -1,0 +1,289 @@
+{
+ "answer": "Here is the function.\n```python\ndef chunk(items, size):\n    if not isinstance(size, int) or size <= 0:\n        raise ValueError('size')\n    return [items[i:i + size] for i in range(0, len(items), size)]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 116,
+   "latency_ms": 0.0,
+   "output_tokens": 51,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 691,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 404,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1596,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1641,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1215,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 479,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 256,
+   "latency_ms": 0.0,
+   "output_tokens": 45,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 8,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 748,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 9,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 398,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 10,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1590,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 11,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1635,
+   "latency_ms": 0.0,
+   "output_tokens": 138,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 12,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 731,
+   "latency_ms": 0.0,
+   "output_tokens": 97,
+   "purpose": "comparison",
+   "role": "judge",
+   "seed": null,
+   "seq": 13,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "debugging",
+ "condition": "FULL_END_NATIVE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 13,
+  "calls_by_role": {
+   "adversarial_judge": 4,
+   "generator": 6,
+   "judge": 3
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 850,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 12350,
+  "model_latency_ms": 0,
+  "prompt_tokens": 11500,
+  "tool_check_calls": 0,
+  "total_tokens": 12350,
+  "truncated_text_answers": 0,
+  "wall_ms": 86.491
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "ACCEPTED_PROVISIONAL",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidate_generation": "native",
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "engine_checks": [
+   {
+    "candidate_id": "C0",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "python"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C1",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "python"
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "ACCEPT_PROVISIONALLY"
+   },
+   {
+    "candidate_id": "C1",
+    "decision": "REJECT"
+   }
+  ],
+  "iterations": 1,
+  "judge_groundings": [],
+  "latest_candidate_id": "C1",
+  "protocol_actions": {},
+  "protocol_events": 0,
+  "protocol_repair_attempts": 1,
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [
+   {
+    "from_candidate": "C1",
+    "reason": "Deterministic fixture preference, not empirical performance evidence",
+    "to_candidate": "C0"
+   }
+  ],
+  "termination": "ACCEPTED_PROVISIONALLY",
+  "termination_category": null,
+  "trajectory_file": "042c4ea9-e79b-421e-b1f4-2ae399cf1b5c.jsonl",
+  "trajectory_id": "042c4ea9-e79b-421e-b1f4-2ae399cf1b5c",
+  "trajectory_sha256": "859d7892d8e4789f98e91265416b47147e035b3813dc1b3421a0bf928224c777"
+ },
+ "ended_at": "2026-10-01T08:40:50.725444+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 4,
+ "run_id": "BA-002.T1.FULL_END_NATIVE",
+ "stages": {},
+ "started_at": "2026-10-01T08:40:50.630815+00:00",
+ "task_id": "BA-002",
+ "trial": 1,
+ "trial_id": "BA-002.T1",
+ "trial_seed": 4197318185
+}

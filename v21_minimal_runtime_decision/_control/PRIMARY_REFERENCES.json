@@ -1,0 +1,25 @@
+{
+  "purpose": "Published primary API/source documentation for N12 design only, not a local runtime test or exact bundled binary attestation",
+  "references": [
+    {
+      "title": "CPython 3.12 FileIO source",
+      "url": "https://raw.githubusercontent.com/python/cpython/3.12/Modules/_io/fileio.c",
+      "claim": "Windows FileIO opens via _wopen and failure is constructed from errno"
+    },
+    {
+      "title": "Microsoft CRT _open/_wopen",
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/open-wopen?view=msvc-170",
+      "claim": "EACCES includes sharing denial and other causes"
+    },
+    {
+      "title": "Microsoft CreateFileW",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew",
+      "claim": "Access/share conflicts have documented sharing-violation semantics"
+    },
+    {
+      "title": "Microsoft Win32 system error codes",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-",
+      "claim": "Win325 and32 are distinct, not the errno namespace"
+    }
+  ]
+}

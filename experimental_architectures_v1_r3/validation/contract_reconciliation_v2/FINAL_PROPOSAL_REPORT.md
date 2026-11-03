@@ -1,0 +1,13 @@
+# Revised certification proposal v2 — document readiness
+
+**CONTRACT_REVISION_READY_FOR_REVIEW.** R1 now mandates tiered supported observations, with exact sixteen-case dispositions; R2 retains accepted certification rejection; R3 provides complete candidate/legacy/v2 union semantics; R4 distinguishes actual/current behavior and prospective opt-in compatibility across all six APIs/five states; R5 retains exact faults, original vectors, two/four-process cardinalities and valid/invalid/crash coverage. Approval and implementation acceptance remain PENDING.
+
+We accept the fresh review's5 confirmed legacy conflicts,10 harness incompatibilities and16 ambiguous accounting contracts. The old21-legacy author classification is not carried forward. All31 historical failures are mapped individually to prospective CR2-v1 controls. No new tests are installed, no assertions are changed, no outcome becomes PASS and no scientific approval is claimed.
+
+Fourteen independent graph-coherent cases must retain observed anchored cardinality1 with IDs [1] and verified graph scope. Ledger disagreement and missing response anchor retain only narrower reservation/dispatch observations and failed settlement/response dimensions. Original witnessed10/5/15 metadata can remain labeled observed metadata; raw validity and complete-run cost are separate. BLOCKED always forbids normal certification regardless of surviving observations. Unknown, observed incomplete, corroborated, fully verified and corrupted evidence remain distinguishable.
+
+Prior independently reproduced baseline: current 244: 222 PASS / 16 FAIL / 6 ERROR / 0 SKIP; reviewer 154: 146 PASS / 8 FAIL; prior 49: 48 PASS / 1 FAIL. Reviewer-owned controls remain62 observations: 61 PASS / 1 retained fixture-expectation FAIL; author 37 reexecution remains separately37 PASS. These are retained evidence, not a fresh all-green claim or empirical benchmark. Any new runs in this documentation/checkpoint task are recorded separately in checkpoint validation receipts.
+
+Exact reviewer archive SHA-256 e4a65900335124443c947c81ff55ffb0e6beca4af35c94e8693654049119dc54 and all reviewed source identities were verified before drafting. Original proposal/reviewer files remain unchanged. Current uncommitted correction bytes are preserved; this proposal does not claim current implementation satisfies v2.
+
+Open work: separate v2 review, caller/compatibility decision, snapshot authority approval, separately scoped additive implementation/test migration and independent acceptance. Git publication, if its complete-history/content audit passes, is a WIP engineering snapshot only. Main/release/scientific approval remain unchanged.

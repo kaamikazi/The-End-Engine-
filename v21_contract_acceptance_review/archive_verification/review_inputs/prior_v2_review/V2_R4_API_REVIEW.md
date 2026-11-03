@@ -1,0 +1,26 @@
+# Independent R4 API review
+
+**ACCEPT_WITH_CONDITIONS**, limited to the stated additive opt-in compatibility plan. No broad external compatibility guarantee is accepted. Current behavior and future adapter behavior are visibly separated; execute_outcome_v2 is a proposed name, not an implemented API.
+
+I read all thirty cells in `R4_API_CONTRACT_V2.md:9–38`, plus actual Session, recovery_blocked, certification and Publication paths. The five columns below assess every cell. UNKNOWN is an attempt/uncertainty concept; INVALID_RESPONSE is an orthogonal terminal reason, so this is not a five-value provenance enum or an exhaustive cross-product.
+
+| API | VERIFIED | BLOCKED | INTERRUPTED | UNKNOWN | INVALID_RESPONSE |
+|---|---|---|---|---|---|
+| Session.finish | Verified new terminal or unchanged valid existing result; valid | Grounded hold before build; existing verifier may wrap; valid | Compatible restricted persistence with supported C0; valid | Known charged reservation and unknown cost, no invented answer; valid | Eligible raw rejection, no invalid selected FINAL; valid |
+| execute | Legacy normal return; completed admission may raise FileExistsError; valid | Only grounded RecoveryIntegrityHold becomes a separate diagnostic; valid | Recovery without provider replay; valid | No continuation on unknown cost; preserve count/cost split; valid | NumericFault translated to eligible INVALID_RESPONSE; valid |
+| blocked_recovery | Non-BLOCKED/ungrounded input rethrows; valid | Requires real context/failed invariants; diagnostic write can fail; valid | Must not route benign interruption here; valid | Unknown is not corruption; valid | Reason alone cannot establish BLOCKED; valid |
+| Publication.publish | Caller lock/lease/fence and independent F01 checks; valid | Independently rejects, often wrapped; valid | Restricted reason plus all other bindings; valid | Never promote uncertainty to COMPLETED/NO_ACTIONABLE_REVISION; valid | May bind a recorded rejection, not correctness; valid |
+| Publication.verify_semantics | Recompute eligibility, result, graph, closure; valid | Direct grounded hold; caller report cannot bypass; valid | Exact report and compatible reason; valid | Supported UNCERTAIN mapping, unknown names reject; valid | Provenance and response reason separate; valid |
+| Publication.verify_completed | Payload/prepared/owner/current semantics, unchanged bytes; valid | ArtifactIntegrity; existing bytes remain; valid | Can verify restricted persisted terminal; valid | Unknown usage is not inferred/replayed; valid | Integrity of rejection is not answer correctness; valid |
+
+The proposal correctly preserves exception-versus-return distinctions and causes. It does not promise every error becomes a diagnostic. Missing/corrupt ledger, invalid context, diagnostic write errors, generic F01/storage failures and unrelated programming exceptions remain real failures. Grounded hold translation must stay narrow. Session construction is also a relevant admission boundary, even though not one of the six table entries; it may reject before a race ready marker or before execute reaches algorithm work.
+
+Known consumers include tests/helpers.py, accounting/correction tests, process_worker.py, wiring.py, reproduce.py, versioned validation scripts and private historical finalizers. Their observed direct field access explains concrete compatibility exposure. The list is useful but is not a completed import/call-site inventory or an external consumer audit. R4:46 honestly labels external reach UNKNOWN and makes inventory, boundary designation and reader tests migration gates. Therefore the plan is acceptable only with these exact conditions:
+
+1. Complete and retain an actual repository import/call-site inventory before authorizing affected API implementation/migration; explicitly designate supported engineering/public boundaries and document unobserved external consumers as a limitation. New evidence of a supported broken guarantee requires its own compatibility decision.
+2. Preserve existing entry points, archived schemas/bytes and their observed typed errors; introduce the v2 union only at a separately named opt-in boundary. No silent execute return-shape replacement or unsafe BLOCKED normal result is permitted.
+3. Resolve R3's normative union before specifying the adapter's return type. Specify exactly whether typed PROVENANCE_INTEGRITY_FAILURE is raised, serialized, or wrapped in a diagnostic and which unrelated errors propagate.
+4. Test all thirty cells plus missing/corrupt ledger, forged hold/report, unknown/mixed tags, storage failure, ordinary RuntimeError, valid restricted recovery and current/archived old-reader behavior. A generic failure cannot pass because it shares ValueError ancestry.
+5. Make only a bounded compatibility claim supported by the inventory and old/new-reader tests. Unknown consumers are never assumed adapted, and document approval is not implementation acceptance.
+
+These conditions are explicit migration gates in the proposal, not authority to start implementation now. If 'accept' is construed as accepting already-complete consumer compatibility, the evidence is insufficient for that broader claim. I accept only the limited plan above; overall contract revision is still required for R1/R3.

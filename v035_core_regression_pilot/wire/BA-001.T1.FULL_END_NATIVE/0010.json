@@ -1,0 +1,85 @@
+{
+  "run_id": "BA-001.T1.FULL_END_NATIVE",
+  "seq": 10,
+  "purpose": "adversarial_tests",
+  "requested_at": "2026-10-05T16:29:06.501755+00:00",
+  "completed_at": "2026-10-05T16:29:26.384152+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "payload": {
+    "model": "qwen3:4b",
+    "stream": false,
+    "think": false,
+    "prompt": "Generate up to four concrete adversarial scenarios and observable expected properties. Do not claim execution; executable describes suitability only, not actual execution.\n\nINPUT (JSON):\n{\"audit_targets\": [{\"description\": \"The claim that each temperature must be represented with one decimal place when rounded is supported by standard conversion rules and the problem's explicit requirement.\", \"id\": \"W001\"}], \"candidate\": {\"alias\": \"A\", \"content\": \"Okay, let's see. The user wants me to convert these Celsius temperatures to Fahrenheit, rounded to one decimal place, and present the result as a JSON array of numbers.\\n\\nFirst, I need to recall the formula for converting Celsius to Fahrenheit: F = (C × 9/5) + 32. Then, for each temperature in the list [-40, 0, 36.6, 100, 21.5], I'll apply this formula and round to one decimal place.\\n\\nStarting with -40°C:\\nF = (-40 × 9/5) + 32 = (-72) + 32 = -40.0. So that's exactly -40.0 when rounded to one decimal.\\n\\nNext, 0°C:\\nF = (0 × 9/5) + 32 = 0 + 32 = 32.0. Rounded to one decimal is 32.0.\\n\\nThen 36.6°C:\\nF = (36.6 × 1.8) + 32. Let's calculate 36.6 × 1.8: 36.6 × 1 = 36.6, 36.6 × 0.8 = 29.28. Adding those gives 36.6 + 29.28 = 65.88. Then 65.88 + 32 = 97.88. Rounded to one decimal: 97.9 (since the second decimal is 8, which rounds up).\\n\\n100°C:\\nF = (100 × 1.8) + 32 = 180 + 32 = 212.0. So that's 212.0.\\n\\n21.5°C:\\nF = (21.5 × 1.8) + 32. 21.5 × 1.8: 20 × 1.8 = 36, 1.5 × 1.8 = 2.7. So 36 + 2.7 = 38.7. 38.7 + 32 = 70.7. Which is already one decimal place.\\n\\nSo the converted values are [-40.0, 32.0, 97.9, 212.0, 70.7].\\n\\nNow, the answer needs to be a JSON array of numbers. In JSON, numbers are written without quotes and trailing zeros are part of the number's representation. For example, 32.0 is a valid number in JSON with one decimal place.\\n\\nI need to make sure that each value is correctly rounded to one decimal place. Let me double-check each:\\n\\n-40°C → -40.0 (exact)\\n0°C → 32.0 (exact)\\n36.6°C → 97.9 (correct rounding)\\n100°C → 212.0 (exact)\\n21.5°C → 70.7 (exact)\\n\\nYes, all values are correctly rounded to one decimal place.\\n\\nSo the final JSON array should be:\\n\\n[-40.0, 32.0, 97.9, 212.0, 70.7]\\n\\nI'll present this in a JSON code block as specified.\\n</think>\\n\\n```json\\n[-40.0, 32.0, 97.9, 212.0, 70.7]\\n```\"}, \"claims\": [], \"task\": \"Convert these Celsius temperatures to Fahrenheit, rounded to one decimal place: [-40, 0, 36.6, 100, 21.5]. Give the final answer as a JSON array of numbers, in the same order, in a ```json code block.\"}\n\nRespond with only one JSON object that satisfies this JSON Schema:\n{\"additionalProperties\": false, \"properties\": {\"tests\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"execution_status\": {\"enum\": [\"UNEXECUTED\", \"REASONED\", \"SIMULATED\", \"EXECUTABLE\"], \"type\": \"string\"}, \"expected_property\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"scenario\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"target\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"target\", \"scenario\", \"expected_property\", \"execution_status\"], \"type\": \"object\"}, \"maxItems\": 4, \"type\": \"array\"}}, \"required\": [\"tests\"], \"type\": \"object\"}",
+    "options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "num_predict": 4096,
+      "num_ctx": 8192,
+      "seed": 1538735499
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "tests": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "expected_property": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "UNEXECUTED",
+                  "REASONED",
+                  "SIMULATED",
+                  "EXECUTABLE"
+                ]
+              }
+            },
+            "required": [
+              "target",
+              "scenario",
+              "expected_property",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "tests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-05T16:29:26.3778874Z",
+    "response": "{\n  \"tests\": [\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"Input list contains -40°C, which converts to exactly -40.0°F with one decimal place\",\n      \"expected_property\": \"The conversion result for -40°C must be -40.0 in the JSON array without rounding error\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"Input list contains 0°C, which converts to exactly 32.0°F with one decimal place\",\n      \"expected_property\": \"The conversion result for 0°C must be 32.0 in the JSON array without rounding error\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"Input list contains 36.6°C, which converts to 97.88°F, rounding to 97.9°F with one decimal place\",\n      \"expected_property\": \"The conversion result for 36.6°C must be 97.9 in the JSON array after rounding to one decimal place\",\n      \"execution_status\": \"REASONED\"\n    },\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"Input list contains 100°C, which converts to exactly 212.0°F with one decimal place\",\n      \"expected_property\": \"The conversion result for 100°C must be 212.0 in the JSON array without rounding error\",\n      \"execution_status\": \"REASONED\"\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 19847082500,
+    "load_duration": 4730900,
+    "prompt_eval_count": 1167,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 938110000,
+    "eval_count": 352,
+    "eval_duration": 18804722000
+  },
+  "error": null,
+  "latency_ms": 19875.76
+}

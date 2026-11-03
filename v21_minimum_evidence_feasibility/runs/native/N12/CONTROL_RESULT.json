@@ -1,0 +1,20 @@
+{
+  "case_id": "N12",
+  "control_verdict": "FAIL",
+  "strong_profile_supported": false,
+  "A_or_S_awarded": false,
+  "expected_event": "Actual concurrent overwrite of pinned existing journal denied with native WinError5; original bytes remain; child joins; pin closes and permits access after release.",
+  "error": {
+    "type": "AssertionError",
+    "message": "",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_minimum_evidence_feasibility\\scripts\\probe_profile.py\", line 15, in main\n    child=w.collect(w.spawn('mutate',root,target=wire,operations=['write']));save(root/'CHILD_COLLECTION_RECEIPT.json',child);assert child['exit_code']==0;events=child['worker_result']['events'];assert len(events)==1 and events[0]['outcome']=='DENIED' and events[0]['winerror']==5;assert wire.read_bytes()==raw\n                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "emergency_cleanup": [],
+  "elapsed_time": 0.7030000000004293,
+  "bound_seconds": 60,
+  "bound_satisfied": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

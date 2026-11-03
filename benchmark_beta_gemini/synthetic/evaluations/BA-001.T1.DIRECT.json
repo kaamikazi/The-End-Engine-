@@ -1,0 +1,44 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 58,
+  "checks": [
+   {
+    "detail": null,
+    "name": "values_correct",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "known_answer",
+  "evaluator": "numeric_list",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": [
+    -40.0,
+    32.0,
+    97.9,
+    212.0,
+    70.7
+   ],
+   "claim_region": "whole text"
+  },
+  "format_ok": true,
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-001"
+ },
+ "run_id": "BA-001.T1.DIRECT",
+ "stages": {}
+}

@@ -1,0 +1,188 @@
+{
+  "run_id": "BA-001.T1.FULL_END_NATIVE",
+  "task": "BA-001",
+  "condition": "FULL_END_NATIVE",
+  "external_score": 1.0,
+  "passed": true,
+  "format_ok": true,
+  "wall_seconds": 517.65936,
+  "total_model_calls": 13,
+  "generator_calls": 4,
+  "judge_calls": 7,
+  "verifier_calls": 2,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "revision_calls": 1,
+  "tokens": 43453,
+  "known_partial_tokens": 43453,
+  "prompt_tokens": 38081,
+  "output_tokens": 5372,
+  "end_cycles": 1,
+  "calls_per_completed_cycle": 13.0,
+  "stop_reason": "ACCEPTED_PROVISIONALLY",
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "acceptance_label": "ACCEPTED_PROVISIONAL",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempted": 0,
+  "repair_succeeded": 0,
+  "repair_failed": 0,
+  "repair_suppressed": 0,
+  "invalid_elements_discarded": 0,
+  "calls_saved_by_suppression": 0,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 0,
+  "c0_score": 1.0,
+  "c0_format_ok": true,
+  "c0_chars": 6594,
+  "c0_final_region_chars": 44,
+  "final_chars": 44,
+  "final_region_chars": 44,
+  "selected_candidate_score": 1.0,
+  "score_delta": 0.0,
+  "revision_value": "NEUTRAL",
+  "output_withheld": false,
+  "output_integrity": {
+    "action": "allow",
+    "blocked": false,
+    "candidate_id": "C0",
+    "checks": [],
+    "model_calls": 0,
+    "presentation": "final answer region; raw candidate retained in ledger"
+  },
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "unsupported_claim_count": 0,
+  "grounding_incidents": 0,
+  "decisive_judge_findings": 0,
+  "nondecisive_judge_findings": 0,
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          70.7
+        ],
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 6594
+    },
+    "C1": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          70.7
+        ],
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 1255
+    }
+  },
+  "judge_findings": [],
+  "grounding_records": [],
+  "protocol_events": [],
+  "repair_statistics": {
+    "calls_saved_by_suppression": 0,
+    "failure_limit": 2,
+    "failures_by_stage": {},
+    "invalid_elements_discarded": 0,
+    "pending_stages": [],
+    "repair_attempted": 0,
+    "repair_failed": 0,
+    "repair_succeeded": 0,
+    "repair_suppressed": 0
+  },
+  "repair_outcomes": [],
+  "epistemic_checks": [
+    {
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0
+    }
+  ],
+  "cycle_progress": [
+    {
+      "blockers": [],
+      "cycle": 1,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "issue_state",
+        "claim_support_state"
+      ]
+    }
+  ],
+  "no_progress_cycles": 0,
+  "no_progress_stop": false,
+  "mandatory_action_overrides": 0,
+  "operator_sequence": [
+    "EVIDENCE"
+  ],
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "error_records": []
+}

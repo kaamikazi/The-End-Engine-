@@ -1,0 +1,410 @@
+{
+  "run_id": "BA-009.T1.FULL_END_NATIVE",
+  "final": {
+    "task_id": "BA-009",
+    "evaluator": "evidence",
+    "evaluator_version": "alpha-3",
+    "format_ok": true,
+    "evaluation_type": "deterministic_validator",
+    "passed": false,
+    "score": 0.5,
+    "checks": [
+      {
+        "name": "format",
+        "score": 1.0,
+        "required": true,
+        "detail": null
+      },
+      {
+        "name": "cited_ids_exist",
+        "score": 0.0,
+        "required": true,
+        "detail": [
+          "database_metrics_unavailable"
+        ]
+      },
+      {
+        "name": "names_missing_evidence",
+        "score": 0.0,
+        "required": true,
+        "detail": null
+      },
+      {
+        "name": "certainty_below_established",
+        "score": 1.0,
+        "required": true,
+        "detail": "certainty='likely'"
+      }
+    ],
+    "counters": {
+      "unsupported_claim_count": 0,
+      "unsupported_high_impact_claim_count": 0,
+      "fabricated_reference_count": 1,
+      "scope_overreach_count": 0,
+      "contradiction_ignored_count": 0,
+      "false_execution_claim_count": 0,
+      "correct_uncertainty_count": 0
+    },
+    "review_flags": [],
+    "extracted": {
+      "answer": {
+        "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+        "certainty": "likely",
+        "evidence_used": [
+          "E2",
+          "database_metrics_unavailable"
+        ],
+        "additional_evidence_needed": []
+      },
+      "claim_region": "whole text"
+    },
+    "answer_chars": 254
+  },
+  "stages": {},
+  "candidates": {
+    "C0": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 0.0,
+          "required": true,
+          "detail": "certainty='established'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 1,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [
+        "model agreement (E2) treated as establishing the cause"
+      ],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "established",
+          "evidence_used": [
+            "E2"
+          ],
+          "additional_evidence_needed": []
+        },
+        "consensus_as_evidence": true,
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 11945
+    },
+    "C1": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 0.0,
+          "required": true,
+          "detail": "certainty='established'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 1,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [
+        "model agreement (E2) treated as establishing the cause"
+      ],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "established",
+          "evidence_used": [
+            "E2"
+          ],
+          "additional_evidence_needed": []
+        },
+        "consensus_as_evidence": true,
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 3650
+    },
+    "C2": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 0.0,
+          "required": true,
+          "detail": [
+            "database_metrics_unavailable"
+          ]
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 1.0,
+          "required": true,
+          "detail": "certainty='likely'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 1,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "likely",
+          "evidence_used": [
+            "E2",
+            "database_metrics_unavailable"
+          ],
+          "additional_evidence_needed": []
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 10359
+    },
+    "C3": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 0.0,
+          "required": true,
+          "detail": [
+            "database_metrics_unavailable"
+          ]
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 1.0,
+          "required": true,
+          "detail": "certainty='likely'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 1,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "likely",
+          "evidence_used": [
+            "E2",
+            "database_metrics_unavailable"
+          ],
+          "additional_evidence_needed": []
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 2770
+    }
+  },
+  "analysis": {
+    "progression": {
+      "candidate_scores": {
+        "C0": {
+          "score": 0.5,
+          "passed": false
+        },
+        "C1": {
+          "score": 0.5,
+          "passed": false
+        },
+        "C2": {
+          "score": 0.5,
+          "passed": false
+        },
+        "C3": {
+          "score": 0.5,
+          "passed": false
+        }
+      },
+      "peak_candidate_id": "C0",
+      "returned_candidate_id": "C3",
+      "missed_peak": false,
+      "regressions": [],
+      "earlier_candidate_better": [],
+      "correct_then_lost": false
+    },
+    "overthinking": [
+      "B_cycles_without_external_benefit"
+    ],
+    "rollbacks": [],
+    "delta_validation": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      }
+    ],
+    "operator_effects": [
+      {
+        "operator": "EVIDENCE",
+        "target": "CL001",
+        "on_candidate": "C0",
+        "information_gain": "LOW",
+        "revision_candidate": "C1",
+        "external_before": 0.5,
+        "external_after": 0.5,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 12761,
+        "cycle_calls_missing_usage": 0
+      },
+      {
+        "operator": "VERIFY",
+        "target": "CL001",
+        "on_candidate": "C1",
+        "information_gain": "LOW",
+        "revision_candidate": "C2",
+        "external_before": 0.5,
+        "external_after": 0.5,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 8655,
+        "cycle_calls_missing_usage": 0
+      },
+      {
+        "operator": "SECOND_ORDER_EFFECT",
+        "target": "C2:failure_modes",
+        "on_candidate": "C2",
+        "information_gain": "LOW",
+        "revision_candidate": "C3",
+        "external_before": 0.5,
+        "external_after": 0.5,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 12024,
+        "cycle_calls_missing_usage": 0
+      }
+    ],
+    "calibration": {
+      "internal": "rejected",
+      "basis": "quality_gate=REVISE",
+      "external_passed": false,
+      "label": "TRUE_REJECT"
+    },
+    "c0_format_ok": true,
+    "best_internal_candidate_id": "C3"
+  }
+}

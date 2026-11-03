@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-06T12:10:03.541189+00:00",
+  "reason": "Previous Python process absent on user retry; stale status recorded BA-009 structured call 5. Cause of termination unknown.",
+  "completed_trials_preserved": 9,
+  "resumed_only": [
+    "BA-009.T1.FULL_END_STRUCTURED",
+    "BA-009.T1.FULL_END_NATIVE",
+    "BA-009.T1.DIRECT"
+  ],
+  "interrupted_partial_trials": 1,
+  "completed_attempts_observed": 4,
+  "additional_request_started_without_recorded_response": 1,
+  "observed_model_latency_seconds": 48.905104,
+  "observed_prompt_tokens": 3769,
+  "observed_output_tokens": 988,
+  "observed_total_tokens": 4757,
+  "unobserved_call_usage": "unknown; no claim of zero cost for call 5",
+  "cost_scope": "Completed-trial summary excludes this overhead. This record accounts separately for all preserved interrupted call responses; elapsed interruption downtime is not inference runtime.",
+  "archive_files_sha256": {
+    "incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED.jsonl": "d70587feb0bfd09f76184d9e292e485b8f7b5f7fc7d4e2224dcf305590c2c004",
+    "incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0001.json": "3c8fc32c506fb3dbaaf79946a61acf0759705bc24af71958436936c7431c3631",
+    "incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0002.json": "aadb89bd881a03ca097a66e367b72f315d03f08a830409ba67a149eca7951e10",
+    "incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0003.json": "70ab461d071c4d307d8d345ba9e24caaab3efb3451cc50b1a702354f575c4050",
+    "incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0004.json": "d9b9a35b3f9cdadc9ecd860afb64f5f9247dfd14fb73c2a3d028c9d7dc4f8ceb"
+  },
+  "nine_completed_trial_sha256": {
+    "BA-001.T1.DIRECT.json": "12f57ca1e0972deb97dd955a81849aa6299531b98c6a7523f3b87e370ce440de",
+    "BA-001.T1.FULL_END_NATIVE.json": "f83fcf5c53ffff1b39dc56ab159d23afbac75dc86f6914092318f3e29dc7bcb4",
+    "BA-001.T1.FULL_END_STRUCTURED.json": "9b2097a6c318860180fd53977688a4d8b3f45a46e24ed35587788383bd32101a",
+    "BA-002.T1.DIRECT.json": "8e346a284cc8afc68c964b93ae63aecfbc3a99a2c10567b107a843bc3dd5b6c0",
+    "BA-002.T1.FULL_END_NATIVE.json": "002b65a3e0d3c2f9540eb59ffb7fba6a7e9a516b7181a2b62898add111f056f2",
+    "BA-002.T1.FULL_END_STRUCTURED.json": "126da7132eef3e66048eaf1f07843562d35d526f83169023dfe2206ea1fb1aaf",
+    "BA-008.T1.DIRECT.json": "45ae70c0f57bafa8d07e5c9979920d43b5a51faa859bee6377ce93725dbf2a4f",
+    "BA-008.T1.FULL_END_NATIVE.json": "4f1fc7bc12111aeadb9c86b2b2048fb9e3bf0e25d7c8532193ba48f02289ffe5",
+    "BA-008.T1.FULL_END_STRUCTURED.json": "5a43aaba848790af998ca547826742e89c4710cd76690b2bfc2f9ec1ce21f98d"
+  }
+}

@@ -1,0 +1,78 @@
+--- original/probe_workers.py
++++ corrected/probe_workers.py
+@@ -47,6 +47,75 @@
+ K.GetFileSizeEx.argtypes=[wt.HANDLE,ctypes.POINTER(ctypes.c_longlong)];K.GetFileSizeEx.restype=wt.BOOL
+ def write_json(p,value):p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+ def snapshot(root):return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(root.rglob('*')) if p.is_file()}
++
++def collect_a018_namespace(root, known_controls, active_controls=None):
++    """A0-18 evidence collection only; no strong snapshot/authority claim.
++
++    Never infer operational status from a filename suffix. Every entry remains
++    visible. Known active controls use their actual owned descriptors, not a
++    blind second-handle read of a byte-locked region. All other read failures
++    retain the exact path/operation and make collection incomplete.
++    """
++    import stat
++    root=Path(root).resolve()
++    known={str(Path(p).resolve()):role for p,role in known_controls.items()}
++    active={str(Path(p).resolve()):guard for p,guard in (active_controls or {}).items()}
++    expected_fixture_files=set(read(HERE/'source_profile.json')['template_files'])
++    entries=[];errors=[];external=[]
++    def role(path):
++        key=str(path.resolve());rel=path.relative_to(root).as_posix()
++        if key in known:return 'A_OPERATIONAL_CONTROL',known[key]
++        if path.name.endswith(('.pending','.tmp','.temporary')):return 'C_PENDING_TEMPORARY_EVIDENCE','Pending/temporary evidence retained; never excluded'
++        historical_role=(rel in {'budget.json','budget.closed.json','RESULT.json','publication/IDENTITY.json','publication/owner.json'} or (len(path.relative_to(root).parts)>1 and path.relative_to(root).parts[0] in {'wire','publication','budget.json.r2_bindings'}))
++        if rel in expected_fixture_files and historical_role:
++            return 'B_HISTORICAL_FIXTURE_EVIDENCE','Known fixture evidence namespace; no origin or certification assertion'
++        return 'D_UNKNOWN_UNEXPECTED_MEMBER','No declared control/evidence role; retained without trusting its name'
++    def unavailable(entry,operation,error):
++        detail={'path':entry['path'],'operation':operation,'exception':type(error).__name__,'errno':getattr(error,'errno',None),'winerror':getattr(error,'winerror',None),'message':str(error)}
++        entry.update(read_status='READ_FAILED',sha256=None,raw_base64=None,error=detail)
++        errors.append(detail)
++    def control_descriptor(entry,guard):
++        if entry['path'] not in known or guard.fd is None or not guard.local_owned or str(guard.path.resolve())!=entry['path']:
++            raise ValueError('A0_ACTIVE_CONTROL_NOT_AN_OWNED_DECLARED_GUARD:'+entry['path'])
++        entry.update(active=True,identity=file_info(msvcrt.get_osfhandle(guard.fd)),read_status='NOT_READ_ACTIVE_LOCK_CONTROL',sha256=None,raw_base64=None,content_reason='Owned native byte-lock control: identity/metadata recorded without a second-handle byte read. No fabricated hash or observed read error.',descriptor_is_owned=True)
++    def visit(directory):
++        # scandir/lstat preserve unknown/dot/temporary entries and never traverse
++        # reparse points. No .pending, dotfile or *.lock exclusion is applied.
++        with os.scandir(directory) as scan:names=sorted(list(scan),key=lambda x:x.name.casefold())
++        for item in names:
++            path=Path(item.path);category,reason=role(path)
++            entry={'path':str(path.resolve()),'relative_path':path.relative_to(root).as_posix(),'category':category,'classification_reason':reason,'active':False,'sha256':None,'raw_base64':None}
++            metadata_operation='lstat'
++            try:
++                st=item.stat(follow_symlinks=False);entry['metadata']={'bytes':st.st_size,'mode':st.st_mode,'mtime_ns':st.st_mtime_ns,'file_attributes':getattr(st,'st_file_attributes',None)}
++                reparse=bool(getattr(st,'st_file_attributes',0)&0x400)
++                if stat.S_ISLNK(st.st_mode) or reparse:
++                    entry.update(type='LINK_OR_REPARSE',read_status='NOT_FOLLOWED');errors.append({'path':str(path),'operation':'classify/follow','exception':'UnsupportedLink','message':'A0 evidence capture cannot safely read this member'})
++                elif stat.S_ISDIR(st.st_mode):entry.update(type='DIRECTORY',read_status='NOT_APPLICABLE_DIRECTORY')
++                elif stat.S_ISREG(st.st_mode):
++                    entry['type']='FILE'
++                    if entry['path'] in active:
++                        metadata_operation='GetFileInformationByHandle(owned_control_fd)';control_descriptor(entry,active[entry['path']])
++                    else:
++                        operation='GetFileInformationByHandle(read-only metadata handle)'
++                        try:
++                            entry['identity']=identity(path);operation='open(rb)'
++                            with path.open('rb') as stream:operation='read';raw=stream.read()
++                            entry.update(read_status='BYTES_CAPTURED',sha256=sha(raw),raw_base64=base64.b64encode(raw).decode(),captured_bytes=len(raw))
++                        except OSError as error:unavailable(entry,operation,error)
++                else:
++                    entry.update(type='UNSUPPORTED_ENTRY',read_status='NOT_READ');errors.append({'path':str(path),'operation':'classify','exception':'UnsupportedEntry','message':'Unknown entry type remains evidence, not a successful capture'})
++            except OSError as error:unavailable(entry,metadata_operation,error)
++            entries.append(entry)
++            if entry.get('type')=='DIRECTORY':visit(path)
++    visit(root)
++    for path,guard in active.items():
++        if not Path(path).is_relative_to(root):
++            entry={'path':path,'type':'FILE','category':'A_OPERATIONAL_CONTROL','classification_reason':known.get(path),'metadata':{'bytes':os.fstat(guard.fd).st_size}}
++            try:control_descriptor(entry,guard)
++            except OSError as error:unavailable(entry,'GetFileInformationByHandle(owned_external_control_fd)',error)
++            external.append(entry)
++    return {'scope':'A0_18_EVIDENCE_INVENTORY_NOT_A_PRODUCTION_SNAPSHOT','root':str(root),'entries':entries,'external_active_controls':external,'required_read_failures':errors,'collection_complete_for_declared_A0_policy':not errors,'active_control_bytes_not_claimed':True,'A_or_S_authority_awarded':False,'all_namespace_categories_retained':True}
+ def ensure_inside(path,root):
+  path=Path(path).resolve();assert path.is_relative_to(Path(root).resolve()),str(path);return path
+ def file_info(handle):

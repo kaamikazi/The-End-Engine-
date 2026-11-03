@@ -1,0 +1,28 @@
+{
+  "pid": 36892,
+  "exit_code": 0,
+  "stdout": "{\"events\": [{\"enter\": 6350.015, \"exit\": 6350.046, \"L2_identity\": {\"volume_serial\": \"bc08b541\", \"file_index\": \"00010000001401ca\", \"links\": 1, \"bytes\": 1}, \"pid\": 36892}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+  "stderr": "",
+  "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-02\\observer-1792509940827956900.request.json",
+  "killed_by_parent": false,
+  "worker_result": {
+    "events": [
+      {
+        "enter": 6350.015,
+        "exit": 6350.046,
+        "L2_identity": {
+          "volume_serial": "bc08b541",
+          "file_index": "00010000001401ca",
+          "links": 1,
+          "bytes": 1
+        },
+        "pid": 36892
+      }
+    ],
+    "counters": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    },
+    "worker_operation_completed": true
+  }
+}

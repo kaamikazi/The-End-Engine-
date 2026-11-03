@@ -1,0 +1,1170 @@
+{
+  "stage": "baseline",
+  "suite": "r3",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "testsRun": 244,
+  "failures": 16,
+  "errors": 6,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "successful": false,
+  "test_outcomes": [
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_atomic_final_publication_binds_journal_hashes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_canceled_attempt_not_refunded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_completed_artifact_never_overwritten",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_duplicate_call_rejected_before_second_dispatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_existing_gateway_methods_and_seals_are_inherited_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_global_time_limit_recorded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_global_tokens_block_before_initial_without_fake_zero_usage",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_known_usage_counts_all_model_stages",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_no_dispatch_after_generation_closure",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_outstanding_reservation_restart_no_new_dispatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_partial_response_restart_recovers_C0_without_budget_reset",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_shared_global_cap_across_conditions",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_timeout_is_counted_unknown_preserving_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_torn_final_journal_append_recovers_without_dispatch",
+      "status": "ERROR",
+      "exception_type": "KeyError",
+      "message": "'final_candidate'"
+    },
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_wire_and_response_journal_precedes_final_result",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_budget_stops_before_revision",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_complete_C0_stops_without_revision",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_generic_uncertainty_only_stops",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_interrupted_gate_preserves_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_malformed_initial_format_repaired",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_missing_mandatory_section_repaired",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_no_progress_revision_retained",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_one_control_format_repair_counts_four_total",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_provider_failure_preserves_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_public_contradiction_targeted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_repair_damaging_unaffected_content_retains_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_second_malformed_gate_does_not_loop",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_unknown_usage_no_gate_call",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_a.test_sparse.SparseTests.test_vague_unsupported_criticism_cannot_trigger_rewrite",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_budget_exhaustion_plan_stops",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_contradictory_plan_public_value_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_correct_missing_requirement_detected_and_repaired",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_duplicate_target_actions_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_false_positive_critique_early_stop",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_incomplete_repair_not_reported_complete",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_interrupted_revision_preserves_original",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_invalid_self_reported_observation_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_invented_plan_target_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_multiple_defects_priorities_and_valid_targets",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_plan_format_repair_fits_five",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_refusal_control_is_recorded_not_relabelled_success",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_repair_damaging_unaffected_data_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_repair_preserves_unrelated_nested_fields",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_unknown_usage_inventory_blocks_planning",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_unresolved_uncertainty_not_defect",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_b.test_repair.RepairTests.test_unsupported_tests_passed_is_not_evidence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_A2_better",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_C0_best",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_all_alternatives_invalid_keep_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_distinct_alternatives_A1_publicly_better",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_duplicate_outputs_retained_as_distinct_candidates",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_early_budget_no_silent_ranking",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_equivalent_outputs_do_not_imply_improvement",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_false_consensus_is_not_correctness",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_invalid_candidate_structure_does_not_win_on_length",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_invented_verification_cannot_support_selection",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_missing_third_candidate_preserves_lineage",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_one_alternative_provider_failure_retains_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_selection_failure_no_fabricated_ranking",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_selector_format_repair_fits_five",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_tie_is_honest_unresolved",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.architecture_c.test_alternatives.AlternativesTests.test_uncertainty_is_not_a_ranking",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_candidate_mismatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_direct_normal_publisher_cannot_bypass_F02",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_direct_semantic_verifier_rejects_independently_blocked_data",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_four_concurrent_blocked_recoveries_do_not_publish",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_genuine_programming_defects_remain_visible",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_invalid_proposed_report_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_missing_attempt",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_output_count_mismatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_response_text_only",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_settlement_state_mismatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_total_count_mismatch",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_unknown_report_is_not_success",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_unsupported_disposition_fails_closed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_valid_completed_result_idempotent",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_certification.CertificationTests.test_valid_unknown_interrupted_publication",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_active_other_process_rejected_then_recovers_after_death",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_active_owner_is_not_stolen_in_same_process",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_completed_unknown_reservation_remains_unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_corrupt_existing_result_fails_integrity_before_admission",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_corrupt_owner_fence_rejected_before_generation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_crash_after_exclusive_link_preserves_completed_bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_deleted_bound_ledger_cannot_reset_budget",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_exclusive_link_failure_leaves_diagnostic_and_no_success",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_missing_previous_owner_metadata_cannot_reset_fence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_optimized_interpreter_fails_before_admission",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_permission_denied_does_not_claim_publication",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_publication_lock_released_by_process_exit",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_repeated_finish_is_verified_byte_identical_and_logs_conflict",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_same_run_cannot_rebind_to_different_output_directory",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_stale_admitted_session_cannot_erase_candidate_lineage",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_stale_fencing_token_cannot_publish",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_two_independent_finalizers_publish_one_immutable_result",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_unique_pending_collision_preserves_suspect_bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f01.ResultPublicationTests.test_unrestored_session_cannot_publish_empty_history",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_final_hash_mutation_is_rejected_without_overwriting_result",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_header_only_inflight_append_remains_unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_swapped_journal_between_runs_is_not_trusted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_unknown_pre_dispatch_reservation_is_not_verified",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_valid_settled_evidence_is_verified",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage",
+      "status": "FAIL",
+      "exception_type": "AssertionError",
+      "message": "None != 1"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_dictionary_or_unknown_required_field_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_exact_defaults_execute_all_original_baselines",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_mutated_public_contract_rejected_before_reservation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_partial_native_cell_never_replays",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_active_time",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_attempts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_context",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_digest",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_model",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_output_cap",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_seed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_temperature",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_thinking",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_tokens",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_reject_top_p",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f03.BaselineAdmissionTests.test_request_mutation_after_dispatch_cannot_be_echoed_as_effective",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_duplicate_keys_and_depth_size_limits_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_large_integer_boundary",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_local_serialization_failure_gets_coherent_protocol_terminal",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_nonfinite_control_never_becomes_repair_evidence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_provider_numeric_metadata_failure_is_diagnosed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_recovery_of_numeric_rejected_output_keeps_raw_history",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_1e400_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_1e400_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_1e999999_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_1e999999_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_Infinity_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_Infinity_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_NaN_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_NaN_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_1e400_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_1e400_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_Infinity_optional_nested_array",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_reject_negative_Infinity_required",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_serialization_failure_injection_is_diagnosed_and_retry_is_bounded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_f04.NumericSafetyTests.test_valid_finite_float_semantics_match_python",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_completed_result_and_corrupt_closure_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_completed_result_ignores_late_error_without_rewriting",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record",
+      "status": "ERROR",
+      "exception_type": "RecoveryIntegrityHold",
+      "message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_malformed_receipt_and_duplicate_recovery_keep_unknown_cost",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_rehashed_result_cannot_replace_independent_prepared_anchor",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_serializer_fallback_does_not_conceal_journal_failure",
+      "status": "ERROR",
+      "exception_type": "RecoveryIntegrityHold",
+      "message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit",
+      "status": "ERROR",
+      "exception_type": "TimeoutError",
+      "message": "Test barrier timeout"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_unknown_usage_survives_interrupted_recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_A_success_downgraded_failed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_B_candidate_removed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_C_success_changed_interrupted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_D_changed_handle",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_E_changed_content_same_handle",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_F_later_request_quotes_old_handle",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_G_duplicate_handle",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_H_handle_reassigned_attempt",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_I_foreign_run_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_J_duplicate_attempt",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_K_reordered_attempts",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_L_duplicate_ordinal",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_M_changed_stage",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_N_swapped_response_anchor",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_O_missing_dispatch_evidence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_P_missing_response_evidence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Q_refreshed_ledger_checksum_is_insufficient",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_R_erased_attempt_leaves_orphan_anchor",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_S_interrupted_attempt_remains_uncertain",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_T_transport_failure_retained",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_U_rejected_raw_provider_response_retained",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_V_unknown_usage_stays_unknown",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_W_torn_journal_remains_diagnosable",
+      "status": "ERROR",
+      "exception_type": "RecoveryIntegrityHold",
+      "message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_X_completed_result_immutable",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Y_journal_changes_at_publication_is_not_returned_verified",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_Z_valid_recorded_history_passes",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_missing_historical_witness_is_not_fabricated",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_publication_window_never_leaves_a_verified_certificate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_unwitnessed_handle_cannot_trigger_a_new_call",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_change_after_initial_validation_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_closure_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_ledger_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_native_link_hook_cannot_mutate_existing_wire",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_new_orphan_at_exclusive_link_seam_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_owner_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_pending_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_prepared_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_real_process_writer_denied_until_after_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_settlement_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_delete_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_rename_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_publication_guard.PublicationWindowTests.test_wire_write_at_link",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_completed_result_is_never_replaced",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_conflicting_response_anchor",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_corrupt_journal_finalization_remains_blocked",
+      "status": "ERROR",
+      "exception_type": "RecoveryIntegrityHold",
+      "message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_after_interruption",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_different_settlement",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicate_inserted_at_recovery_entry",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_duplicated_reservation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_generic_integrity_error_not_swallowed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_missing_attempt",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_one_duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_refreshed_ledger_checksum_not_authority",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_reordered_sequence",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_unrelated_programming_defect_propagates",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_valid_failed_is_not_converted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_valid_interrupted_is_not_converted",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_canonical_repair_condition_not_renamed",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_equivalent_formatting_is_not_substantive_change",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_genuine_distinct_control_flow",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_property_complete_C0_stop_across_equivalent_encodings",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_property_targeted_repair_cannot_overwrite_non_target",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_public_identifiers_recorded_without_private_rubric",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_same_initial_concrete_bytes_for_three_algorithms",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.fairness.test_contracts.FairnessTests.test_whole_format_repair_cannot_erase_known_public_identifier",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.integration.test_public.IntegrationTests.test_actual_baseline_common_contract_without_behavior_change",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.integration.test_public.IntegrationTests.test_frozen_public_task_snapshots_exact",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.integration.test_public.IntegrationTests.test_input_defect_object_not_substituted_for_C0",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.integration.test_public.IntegrationTests.test_same_mock_inputs_repeat_logical_outcome",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_alternatives_cannot_receive_sibling_or_C0_content",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_external_evaluation_requires_closed_generation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_foreign_output_handle_cannot_enter_gate",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_invalid_observation_category_cannot_be_laundered",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_model_code_is_inert_no_execution_callback",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_no_arbitrary_provider_object_bypass",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_no_evaluator_import_or_dynamic_execution_in_generation",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_private_environment_file_and_encoded_canaries_not_forwarded",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_stage_for_another_condition_cannot_be_called",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_unapproved_prompt_mutation_rejects",
+      "status": "PASS"
+    },
+    {
+      "id": "tests.security.test_boundary.SecurityTests.test_unexpected_provider_tools_reject_unknown_consumption",
+      "status": "PASS"
+    }
+  ],
+  "subtest_outcomes": [
+    {
+      "parent": "tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish",
+      "id": "tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish (value='TimeoutError')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish",
+      "id": "tests.corrections.test_certification.CertificationTests.test_valid_failed_and_rejected_receipts_still_publish (value='bytes')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='messages')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='tools')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='attachments')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='evaluator_result')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='thread_id')",
+      "status": "PASS"
+    },
+    {
+      "parent": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject",
+      "id": "tests.security.test_boundary.SecurityTests.test_new_stage_unknown_fields_tools_and_private_messages_reject (key='metadata')",
+      "status": "PASS"
+    }
+  ],
+  "raw_failures": [
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    },
+    {
+      "id": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 65, in test\n    def test(self,label=name,mutator=fn):self.check_damage(label,mutator)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_f02.py\", line 8, in check_damage\n    self.assertEqual(script.seen,[]);self.assertEqual(r['result']['physical_attempts'],1);self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertTrue(r['result']['diagnostic_errors']);self.assertNotEqual(r['result']['termination_reason'],'COMPLETED')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != 1\n"
+    }
+  ],
+  "raw_errors": [
+    {
+      "id": "tests.accounting.test_resources.ResourceTests.test_torn_final_journal_append_recovers_without_dispatch",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\accounting\\test_resources.py\", line 63, in test_torn_final_journal_append_recovers_without_dispatch\n    s.detach();script=Script({});r=execute(q,script,d,s.ledger);self.assertEqual(script.seen,[]);self.assertEqual(r['result']['final_candidate'],'C0');self.assertEqual(r['result']['physical_attempts'],1);self.assertIn('TORN_FINAL_APPEND',json.dumps(r))\n                                                                                                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'final_candidate'\n"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_interactions.py\", line 6, in test_corrupt_journal_then_stale_finalization_cannot_replace_blocked_record\n    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'{\"bad\":true}\\n');stale=Session(q,Script({}),d);r=s.finish('INTERRUPTED');before=(Path(d)/'RESULT.json').read_bytes();again=stale.finish('COMPLETED');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertEqual(before,(Path(d)/'RESULT.json').read_bytes());self.assertEqual(again['result']['termination_reason'],'EXTERNAL_BLOCKER');evidence(self,'INTERACTIONS',journal_blocker_preserved=True,result_immutable=True)\n                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\session.py\", line 28, in __init__\n    require_recoverable(verify_journals(self.store),self.store)\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\provenance.py\", line 208, in require_recoverable\n    raise RecoveryIntegrityHold(report, pub)\nsrc.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\n"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_serializer_fallback_does_not_conceal_journal_failure",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_interactions.py\", line 26, in test_serializer_fallback_does_not_conceal_journal_failure\n    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'corruption\\n');s.notes.append(float('nan'));r=s.finish('INTERRUPTED');self.assertEqual(r['result']['termination_reason'],'PROTOCOL_FAILURE');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertIn('JOURNAL_INTEGRITY_BLOCKER',json.dumps(r['result']['diagnostic_errors']));canonical(r)\n                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\session.py\", line 100, in finish\n    require_recoverable(report,self.store)\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\provenance.py\", line 208, in require_recoverable\n    raise RecoveryIntegrityHold(report, pub)\nsrc.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\n"
+    },
+    {
+      "id": "tests.corrections.test_interactions.CrossDefectTests.test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_interactions.py\", line 9, in test_simultaneous_finalizers_with_missing_journal_keep_failure_explicit\n    q,s=partial(d);journal(d).rename(journal(d).with_suffix('.missing'));s.detach();a=worker('finalize',d,'a','INTERRUPTED');b=worker('finalize',d,'b','COMPLETED');wait(Path(d)/'a.ready');wait(Path(d)/'b.ready');(Path(d)/'go').write_text('go');ra=collect(a);rb=collect(b);self.assertEqual(ra['exit_code'],0,ra);self.assertEqual(rb['exit_code'],0,rb);r=read(Path(d)/'RESULT.json');self.assertEqual(r['journal_integrity']['overall'],'BLOCKED');self.assertEqual(r['result']['termination_reason'],'EXTERNAL_BLOCKER');self.assertEqual(len(list((Path(d)/'publication/prepared').glob('*.json'))),1);evidence(self,'INTERACTIONS',processes=[ra,rb],overall='BLOCKED',one_terminal_record=True)\n                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\common.py\", line 24, in wait\n    if time.monotonic()>until:raise TimeoutError('Test barrier timeout')\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: Test barrier timeout\n"
+    },
+    {
+      "id": "tests.corrections.test_provenance_r3.ProvenanceGraphTests.test_W_torn_journal_remains_diagnosable",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_provenance_r3.py\", line 125, in test_W_torn_journal_remains_diagnosable\n    before=p.read_bytes();r=s.finish('INTERRUPTED')\n                            ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\session.py\", line 100, in finish\n    require_recoverable(report,self.store)\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\provenance.py\", line 208, in require_recoverable\n    raise RecoveryIntegrityHold(report, pub)\nsrc.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\n"
+    },
+    {
+      "id": "tests.corrections.test_recovery_hold.RecoveryHoldTests.test_corrupt_journal_finalization_remains_blocked",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\tests\\corrections\\test_recovery_hold.py\", line 81, in test_corrupt_journal_finalization_remains_blocked\n    q,s=partial(d);p=journal(d);p.write_bytes(p.read_bytes()+b'corrupt\\n');before=p.read_bytes();r=s.finish('INTERRUPTED')\n                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\session.py\", line 100, in finish\n    require_recoverable(report,self.store)\n  File \"E:\\The End Engine\\v21_ledger_guard_slice\\checkout\\experimental_architectures_v1_r3\\src\\shared\\provenance.py\", line 208, in require_recoverable\n    raise RecoveryIntegrityHold(report, pub)\nsrc.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\n"
+    }
+  ],
+  "network_attempts_denied": [],
+  "elapsed_seconds": 116.92200000000048
+}

@@ -25,6 +25,15 @@
     "BA-003.T1.SELF_REFLECT"
    ],
    "reason": "timeout was below the time needed for the 4096-token output cap; BA-003.T1.SELF_REFLECT timed out"
+  },
+  {
+   "at_run_count": 80,
+   "change": "none (settings unchanged); one run re-executed",
+   "preserved_original": "aborted_sessions/session3_server_connection_reset/",
+   "re_executed": [
+    "BA-003.T2.DIRECT"
+   ],
+   "reason": "Ollama connection reset at 21:15Z when the controlling session ended"
   }
  ],
  "data_origin": "LIVE_LOCAL_MODEL",
@@ -53,7 +62,7 @@
    "tool_verifier": null
   }
  },
- "ended_at": "2026-09-30T20:43:10.158856+00:00",
+ "ended_at": "2026-10-01T06:18:27.006515+00:00",
  "engine": {
   "files": 52,
   "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
@@ -145,7 +154,29 @@
   "BA-007.T2.END_LITE",
   "BA-004.T2.DIRECT",
   "BA-004.T2.END_LITE",
-  "BA-004.T2.FULL_END"
+  "BA-004.T2.FULL_END",
+  "BA-004.T2.SELF_REFLECT",
+  "BA-003.T2.FULL_END",
+  "BA-003.T2.SELF_REFLECT",
+  "BA-003.T2.END_LITE",
+  "BA-003.T2.DIRECT",
+  "BA-003.T2.DIRECT",
+  "BA-010.T2.SELF_REFLECT",
+  "BA-010.T2.DIRECT",
+  "BA-010.T2.FULL_END",
+  "BA-010.T2.END_LITE",
+  "BA-006.T2.DIRECT",
+  "BA-006.T2.FULL_END",
+  "BA-006.T2.SELF_REFLECT",
+  "BA-006.T2.END_LITE",
+  "BA-001.T2.DIRECT",
+  "BA-001.T2.END_LITE",
+  "BA-001.T2.SELF_REFLECT",
+  "BA-001.T2.FULL_END",
+  "BA-002.T2.END_LITE",
+  "BA-002.T2.DIRECT",
+  "BA-002.T2.FULL_END",
+  "BA-002.T2.SELF_REFLECT"
  ],
  "label": "Benchmark Alpha live run",
  "model": {
@@ -334,6 +365,26 @@
   "version": "3.12.1"
  },
  "randomization_seed": 20261001,
+ "repository_events_during_run": [
+  {
+   "engine_source_fingerprint_after": "d1a9f68bb8cacf1e4dc4384180d5b6971bebb8209b34ea50f1bb94939ceed7a2 (unchanged)",
+   "event": "git repository initialised and commit 6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7 'Initial public release of END Engine' made outside this session at about 2026-09-30T20:55Z",
+   "files_changed_outside_benchmark": [
+    ".gitignore (modified)",
+    ".gitattributes (added)",
+    "README.md (modified)"
+   ],
+   "note": "git metadata read from .git files; the repository is owned by another Windows account, so git commands were not run",
+   "observed": "2026-10-01T04:52Z"
+  }
+ ],
+ "scope_decision": {
+  "by": "user",
+  "decided": "2026-09-30",
+  "decision": "stop after trial 2: 96 runs (12 tasks x 4 conditions x 2 trials) instead of the planned 144",
+  "reason": "projected ~7 further hours for trial 3 on the local GPU",
+  "trial_3": "not run"
+ },
  "sessions": [
   {
    "completed": 6,
@@ -342,10 +393,16 @@
    "started_at": "2026-09-30T15:18:52.740282+00:00"
   },
   {
-   "completed": 70,
-   "ended_at": "2026-09-30T20:43:10.158856+00:00",
+   "completed": 75,
+   "ended_at": "2026-09-30T21:15:12.117595+00:00",
    "skipped_existing": 5,
    "started_at": "2026-09-30T15:38:40.123559+00:00"
+  },
+  {
+   "completed": 17,
+   "ended_at": "2026-10-01T06:18:27.006515+00:00",
+   "skipped_existing": 79,
+   "started_at": "2026-10-01T04:53:34.193311+00:00"
   }
  ],
  "started_at": "2026-09-30T15:18:52.740282+00:00",

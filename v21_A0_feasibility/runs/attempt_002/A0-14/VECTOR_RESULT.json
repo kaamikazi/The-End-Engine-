@@ -1,0 +1,75 @@
+{
+  "vector_id": "A0-14",
+  "required_plan_observation": "A new directory member can still be created absent cooperation: pins are not a directory freeze",
+  "status": "PASS",
+  "expectation_matched": true,
+  "observed_events": [
+    {
+      "pid": 20608,
+      "exit_code": 0,
+      "stdout": "{\"events\": [{\"operation\": \"write\", \"outcome\": \"MUTATED\"}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+      "stderr": "",
+      "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-14\\mutate-1792509949083440900.request.json",
+      "killed_by_parent": false,
+      "worker_result": {
+        "events": [
+          {
+            "operation": "write",
+            "outcome": "MUTATED"
+          }
+        ],
+        "counters": {
+          "forbidden_network_events": 0,
+          "forbidden_dispatch_or_reservation_calls": 0
+        },
+        "worker_operation_completed": true
+      }
+    },
+    {
+      "observed": "PINS_DO_NOT_FREEZE_NAMESPACE",
+      "added": [
+        "orphan.tmp"
+      ],
+      "old_identity": {
+        "volume_serial": "bc08b541",
+        "file_index": "0001000000140305",
+        "links": 1,
+        "bytes": 14
+      },
+      "new_identity": {
+        "volume_serial": "bc08b541",
+        "file_index": "0001000000140309",
+        "links": 1,
+        "bytes": 14
+      },
+      "old_hash": "9f40aaaa40a6d235fa488307f917547183ed7af6ec6011113b51f0af1f3df37e",
+      "removed_registered_name": "orphan.tmp",
+      "test_had_no_claimed_cooperative_domain": true
+    },
+    {
+      "pid": 33132,
+      "exit_code": 0,
+      "stdout": "{\"events\": [{\"operation\": \"replace\", \"outcome\": \"MUTATED\"}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+      "stderr": "",
+      "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-14\\mutate-1792509949547225600.request.json",
+      "killed_by_parent": false,
+      "worker_result": {
+        "events": [
+          {
+            "operation": "replace",
+            "outcome": "MUTATED"
+          }
+        ],
+        "counters": {
+          "forbidden_network_events": 0,
+          "forbidden_dispatch_or_reservation_calls": 0
+        },
+        "worker_operation_completed": true
+      }
+    }
+  ],
+  "authority": "U",
+  "material_blocker": false,
+  "started_unix": 1792509949.0732596,
+  "elapsed_seconds": 0.9530000000004293
+}

@@ -1,0 +1,2634 @@
+[
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-002.T1.FULL_END_NATIVE",
+    "trajectory": "6ba9d7f7-a7fe-496e-a8f3-d4887cdc0bae.jsonl",
+    "returned": "C0",
+    "gate": "REJECT",
+    "calls": 29,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The candidate's code block has a typo: `i:i+size` should be `items[i:i+size]` (but this is a minor typo in the code block, not a functional issue)"
+      ],
+      [
+        "The candidate's code block has a typo: `i:i+size` should be `items[i:i+size]` (but this is a minor typo in the code block, not a functional issue)"
+      ],
+      [
+        "The candidate's code block has a typo: `i:i+size` should be `items[i:i+size]` (but this is a minor typo in the code block, not a functional issue)"
+      ],
+      [
+        "The candidate's code block has a typo: `i:i+size` should be `items[i:i+size]` (but this is a minor typo in the code block, not a functional issue)"
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the original function has a bug but the provided code does not match the candidate's description of the bug. The candidate states the original function uses `range(0, len(items) - size, size)` which causes the last chunk to be missing, but the code provided in the candidate's answer uses the corrected `range(0, len(items), size)` which fixes the bug."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the original function has a bug but the provided code does not match the candidate's description of the bug. The candidate states the original function uses `range(0, len(items) - size, size)` which causes the last chunk to be missing, but the code provided in the candidate's answer uses the corrected `range(0, len(items), size)` which fixes the bug."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate's explanation of the bug and the corrected function is internally consistent but the original code snippet provided in the candidate's answer uses the corrected `range` logic which resolves the issue without contradiction."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a check for `size` being a positive integer",
+            "expected_effect": "Ensure the function raises ValueError if `size` is not a positive integer, as required by the docstring",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Change the loop range from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "Correctly split the list into chunks where the last chunk may be shorter, as described in the docstring",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Correct the range in the loop from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "The last chunk of the list will be included in the result, ensuring the function matches the docstring's requirement that the last list may be shorter.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a check for `size` being a positive integer at the beginning of the function",
+            "expected_effect": "The function will raise a ValueError if `size` is not a positive integer, as required by the docstring",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Change the loop range from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "The loop will correctly iterate through the list to include the last chunk even if it's shorter than `size`",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "The original function has two critical bugs: 1) it doesn't check if `size` is a positive integer (violating the docstring), 2) the loop uses `range(0, len(items)-size, size)` which misses the last chunk when the list length isn't divisible by `size`. The corrected function in B addresses both issues: adds the size validation and changes the loop to `range(0, len(items), size)`. This ensures the function works for all cases (empty lists, lists shorter than `size`, lists divisible by `size`, etc.) and matches the docstring. There's no additional complexity in the fix (just two lines of code), so complexity_cost is 0 (but the problem states positive delta means extra burden, so 0 is within [-1,1]). All dimensions are 1.0 delta in favor of B because B is the correct solution. Lost requirements: none (the function already had the required behavior but was broken). Recovery invariants: the function now correctly handles all edge cases.",
+      "The original task was to fix a buggy function to match its docstring. Both A and B provide the same corrected function. A is the original solution provided in the task description, while B is a more verbose explanation of the fix. Since the task requires the complete corrected function in a code block, and both A and B output the same function (with identical docstring and logic), there is no difference in correctness, completeness, robustness, clarity, or constraint adherence. The complexity cost is the same because the solution is identical. The delta for each dimension is 1.0 (B minus A) because B is not preferred for recency or length, but the solution is the same so the delta is 0? Wait, no, the problem says 'Do not prefer B for recency or length'. The task says: 'For each dimension give the preferred alias and delta (B minus A), in [-1,1]'. So we need to calculate B minus A. But since both functions are identical, the delta should be 0. However, the problem says 'Do not prefer B for recency or length'. So the preferred alias is A because the task says 'Do not prefer B for recency or length'. But the problem says 'For each dimension give the preferred alias and delta (B minus A), in [-1,1]'. Let me re-read the problem.\n\nThe problem says: 'Compare anonymous A and B against the original task. Do not prefer B for recency or length.' So we are to compare A and B against the original task, not against each other. Wait, no: 'Compare anonymous A and B' means we have two options",
+      "Both solutions are identical in code. The original task description shows that the function has bugs, but both candidates A and B provide the same corrected function. The only difference is in the explanation text (the 'reason' part), but the actual code is identical. Therefore, there is no difference between A and B in terms of the code output. The delta for all dimensions is 0.0 as they are the same. The lost requirements and recovery invariants: The original function had two bugs: (1) no check for `size` being a positive integer, and (2) the loop range was incorrect (`len(items)-size` instead of `len(items)`). Both solutions fix both bugs by adding the check and changing the loop range to `range(0, len(items), size)`. There are no lost requirements or recovery invariants because both solutions fully address the problem as described in the task."
+    ]
+  },
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+    "trajectory": "42be76c1-49bc-4a96-bba0-a3d55d5e7af3.jsonl",
+    "returned": "C0",
+    "gate": "REJECT",
+    "calls": 29,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The loop uses `len(items) - size` as the stop condition, which causes the last chunk to be skipped if `size > 1`."
+      ],
+      [
+        "The loop uses `len(items) - size` as the stop condition, which causes the last chunk to be skipped if `size > 1`."
+      ],
+      [
+        "The function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list."
+      ],
+      [
+        "The function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "EVIDENCE_GAP",
+          "description": "The function does not check `size > 0` before the loop, and the loop condition is incorrect for edge cases (e.g., empty list)."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The function does not check `size > 0` before the loop, and the loop condition is incorrect for the edge case of empty list."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add `if size <= 0: raise ValueError('size must be positive')` before the loop",
+            "expected_effect": "Ensures `size` is positive before processing, and fixes the loop condition for empty lists by validating size before the loop starts.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a check for `size > 0` before the loop and correct the loop condition to handle empty lists",
+            "expected_effect": "The function will now correctly raise ValueError for non-positive `size` and handle empty lists without errors.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a check for `size > 0` before the loop and correct the loop condition to handle empty lists and size=0 edge cases",
+            "expected_effect": "The function will now properly validate `size > 0` and handle all edge cases, including empty lists and size=0, as required by the docstring.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "candidate_id": "C0",
+        "candidate_quote": "```python\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result\n```",
+        "claim_type": "CANDIDATE_INTERNAL",
+        "description": "The function does not correctly handle the case where `size` is 0 or negative, as it only raises ValueError when `size <= 0` but the loop condition is incorrect.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "J001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs only in the task, not in the candidate",
+        "severity": "fatal",
+        "status": "MISATTRIBUTED"
+      },
+      {
+        "candidate_id": "C1",
+        "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError(\"size must be positive\")\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+        "claim_type": "",
+        "description": "The function does not correctly handle the case where `size` is 1, as it skips the last element when `len(items) - size` is less than `i` (e.g., items = [1, 2], size = 1: returns [] instead of [[1], [2]]",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs neither in the candidate nor in the task",
+        "severity": "fatal",
+        "status": "UNGROUNDED"
+      },
+      {
+        "candidate_id": "C2",
+        "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    result = []\n    for i in range(0, len(items) - size, size):\n        result.append(items[i:i + size])\n    return result",
+        "claim_type": "",
+        "description": "The function does not correctly split the list into chunks of `size` when `len(items)` is less than `size` (e.g., items = [1], size = 2). The loop condition `for i in range(0, len(items) - size, size)` will not execute if `len(items) < size`, causing the last chunk to be missing.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs only in the task, not in the candidate",
+        "severity": "fatal",
+        "status": "MISATTRIBUTED"
+      }
+    ],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "Both A and B are identical code. The task description states that the function has bugs, but the provided A and B code snippets are the same. The original task's broken function uses `range(0, len(items) - size, size)` which would cause an error if `len(items) < size`, but both A and B correctly handle the edge case with `size <= 0` check and proper chunking. Since A and B are identical, all dimensions are tied with 0 delta.",
+      "Both A and B are identical in code. The task description mentions that the function has bugs, but both candidates A and B provide the same correct implementation (the original task's code has a bug: it uses `len(items) - size` in the range, which causes it to fail for empty lists or small lists). However, the problem states that the candidates are both identical to each other, so there is no difference between them. The original task's code is incorrect (it has a bug), but both candidates fix it correctly by using `len(items)` in the range, which is the correct implementation. Since the candidates are identical, all dimensions are tied. There are no lost requirements or recovery invariants to consider as both are correct.",
+      "Both A and B are identical code. The task description states that the function has bugs, but both candidates provide the same corrected function. The original task's buggy code had a loop range error (len(items) - size instead of len(items)), but both A and B fix it correctly by using len(items) in the range. Since the candidates are identical, all dimensions are tied. There are no lost requirements or recovery invariants to consider as they match the corrected function."
+    ]
+  },
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-008.T1.FULL_END_NATIVE",
+    "trajectory": "91b86589-796e-4570-965b-bd025d7c7b87.jsonl",
+    "returned": "C1",
+    "gate": "REVISE",
+    "calls": 30,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "Problem statement mentions that built-in sorted() is not stable, but in reality, Python's sorted() is stable. This creates a potential misunderstanding for the candidate."
+      ],
+      [
+        "Problem statement mentions that built-in sorted() is not stable, but in reality, Python's sorted() is stable. This creates a potential misunderstanding for the candidate."
+      ],
+      [
+        "The candidate claims Python's sorted() is stable (correct), but the problem statement states it's unstable (incorrect). This creates a contradiction that the answer depends on."
+      ],
+      [
+        "The candidate claims Python's sorted() is stable (correct), but the problem statement states it's unstable (incorrect). This creates a contradiction that the answer depends on."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims that Python's built-in sorted() is stable (which it is), but the problem statement explicitly states that 'Python's built-in sorted() is not stable'. This creates a contradiction with the problem's premise."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims Python's sorted() is stable (correct), but the problem statement states it's unstable (incorrect). This creates a contradiction that the answer depends on."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims Python's sorted() is stable (correct), but the problem statement states it's unstable (incorrect). This creates a contradiction that the answer depends on."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Address the contradiction by clarifying that Python's built-in sorted() is stable and the problem statement contains a misconception",
+            "expected_effect": "The candidate will correctly acknowledge that Python's sorted() is stable, resolving the contradiction with the problem's premise without altering the solution's functionality",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Clarify the problem statement's premise by explicitly stating that Python's built-in sorted() is stable and that the problem's claim of instability is incorrect",
+            "expected_effect": "Eliminate the contradiction between the problem's premise and Python's actual stable sort behavior, ensuring the solution's validity is not dependent on the problem's incorrect assumption",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Clarify that the problem statement's claim about Python's sorted() instability is incorrect and that the solution leverages Python's stable sort behavior to meet the requirement",
+            "expected_effect": "The candidate's explanation will explicitly state that Python's built-in sorted() is stable, resolving the contradiction with the problem's premise and ensuring the solution's validity without requiring additional stability workarounds",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "Both A and B are identical in implementation and explanation. A is the original answer, B is a rephrased version of A with minor clarifications. The problem statement mentions that Python's built-in sorted() is not stable, but in reality, Python's sorted() is stable. Both solutions correctly use sorted() with a key to extract age, leveraging Python's stable sort behavior. There are no lost requirements or recovery invariants. The delta for all dimensions is 0 because B does not add any new functionality or complexity; it merely restates A with improved clarity in explanation without changing the solution.",
+      "Both A and B provide identical code implementations and explanations. The code block for both is the same: `def sort_by_age(people): return sorted(people, key=lambda x: x[1])`. The explanations both clarify that Python's sorted() is stable (correcting the problem's premise that it's unstable) and state that this solution works due to Python's stable sort behavior. There are no differences in correctness, completeness, robustness, clarity, constraint adherence, or complexity cost between the two answers. The problem statement's claim about sorted() being unstable is incorrect in Python, and both answers address this misconception accurately without adding unnecessary complexity. The explanations are concise and directly address the task requirements. The only difference is in the wording of the explanation's note (A uses \"the problem statement's claim about instability is incorrect\" while B uses \"the problem statement's claim that sorted() is unstable is incorrect\"), but this does not affect the technical correctness or the task requirements. Therefore, the answers are identical in all dimensions.",
+      "Both A and B produce identical code and explanations. The code blocks are identical. The explanations both clarify that Python's sorted() is stable and correct the problem's premise about instability. There are no differences in correctness, completeness, robustness, clarity, constraint adherence, or complexity cost. The problem statement's claim about sorted() being unstable is incorrect in Python, and both solutions address this by using the stable sort behavior of Python's sorted(). No lost requirements or recovery invariants are present since both solutions meet the task requirements exactly.",
+      "Both A and B produce the same code and explanation. A is more concise and directly addresses the misconception without unnecessary elaboration. B adds minor clarifications that don't improve correctness or clarity. For all dimensions, the delta is 0 since both solutions are identical in functionality and explanation. There are no lost requirements or recovery invariants because both solutions correctly implement the stable sort using Python's built-in sorted() function."
+    ]
+  },
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+    "trajectory": "ca37375d-c022-4ffa-a2b5-5d641b59cf35.jsonl",
+    "returned": "C0",
+    "gate": "REVISE",
+    "calls": 35,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The function is written as `sort_by` instead of `sort_by_age` (typo in function name).",
+        "The candidate claims that `sorted()` is stable but the problem states it is not stable, creating a contradiction with the problem's assumption."
+      ],
+      [
+        "The function is written as `sort_by` instead of `sort_by_age` (typo in function name).",
+        "The candidate claims that `sorted()` is stable but the problem states it is not stable, creating a contradiction with the problem's assumption."
+      ],
+      [
+        "The function is written as `sort_by` instead of `sort_by_age` (typo in function name).",
+        "The candidate claims that `sorted()` is stable but the problem states it is not stable, creating a contradiction with the problem's assumption."
+      ],
+      [
+        "The function is written as `sort_by` instead of `sort_by_age` (typo in function name).",
+        "The candidate claims that `sorted()` is stable but the problem states it is not stable, creating a contradiction with the problem's assumption."
+      ]
+    ],
+    "critique_findings": [
+      [],
+      [],
+      []
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C0",
+        "changes": []
+      }
+    ],
+    "groundings": [
+      {
+        "candidate_id": "C0",
+        "candidate_quote": "",
+        "claim_type": "CANDIDATE_INTERNAL",
+        "description": "The candidate claims that Python's built-in `sorted()` is stable, but the task states that it is not stable. This creates a contradiction with the problem's premise.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "rests on an assertion made by the task; a task premise is not verified fact",
+        "severity": "fatal",
+        "status": "TASK_PREMISE_DEPENDENT"
+      },
+      {
+        "candidate_id": "C1",
+        "candidate_quote": "",
+        "claim_type": "CANDIDATE_INTERNAL",
+        "description": "The candidate claims that `sorted()` is stable in modern Python, but the task requires writing a function that assumes `sorted()` is not stable (as the problem states). This contradicts the task's premise that Python's built-in `sorted()` is not stable.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "rests on an assertion made by the task; a task premise is not verified fact",
+        "severity": "fatal",
+        "status": "TASK_PREMISE_DEPENDENT"
+      },
+      {
+        "candidate_id": "C3",
+        "candidate_quote": "Note: The problem statement incorrectly claims that `sorted()` is not stable. In reality, `sorted()` is stable, and `list.sort()` is the method that can be unstable in some contexts (though Python's `list.sort()` is also stable by default in recent versions).",
+        "claim_type": "",
+        "description": "The candidate mentions that `list.sort()` can be unstable in some contexts, but the task specifies using `sorted()` (not `list.sort()`), so this is irrelevant to the task.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs neither in the candidate nor in the task",
+        "severity": "minor",
+        "status": "UNGROUNDED"
+      },
+      {
+        "candidate_id": "C3",
+        "candidate_quote": "",
+        "claim_type": "CANDIDATE_INTERNAL",
+        "description": "The candidate claims Python's `sorted()` is stable, but the task premise states it's unstable, creating a contradiction that undermines the solution's validity.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "rests on an assertion made by the task; a task premise is not verified fact",
+        "severity": "fatal",
+        "status": "TASK_PREMISE_DEPENDENT"
+      }
+    ],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "Both solutions are correct and address the problem as stated. However, A provides more detailed explanation and clarifies the confusion about Python's stability, which is important for understanding the problem. B is more concise but lacks the detailed explanation that A provides. The problem states that Python's built-in sorted() is not stable, but in reality, it is stable. Both solutions correctly use sorted() with a key to maintain order for equal ages. A explains the confusion more thoroughly, making it clearer why the solution works despite the problem's statement. There are no lost requirements or recovery invariants since both solutions meet the problem's requirements. The complexity cost is the same for both as they both use a simple sorted() call with a key.",
+      "Both A and B provide the same correct solution using `sorted(people, key=lambda x: x[1])` which is stable in Python. They both clarify the confusion about `sorted` being stable versus `list.sort()`, and both give the same code example with the same verification. The only difference is in the explanation details (B adds more context about historical stability of `list.sort()`), but this does not affect correctness or the solution. The problem statement incorrectly claims `sorted()` is unstable, but both solutions correctly use the stable `sorted()` function. There are no lost requirements or recovery invariants because the solution meets the task's requirement of stable sorting by age.",
+      "Both solutions provide the correct function `sort_by_age(people)` using `sorted(people, key=lambda x: x[1])`, which leverages Python's stable sorting behavior. The key difference is in the explanation: A contains extensive clarification about the stability confusion (including incorrect claims that `sorted` is unstable), while B concisely states the correct fact (that `sorted` is stable) and provides a clear explanation without unnecessary details. B is more precise in addressing the misconception, leading to better correctness, clarity, and constraint_adherence. There are no lost requirements or recovery invariants since both solutions meet the task requirements. The delta values are all 0.0 because B does not add or remove any functionality compared to A; it simply presents the solution with fewer inaccuracies and clearer context."
+    ]
+  },
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-009.T1.FULL_END_NATIVE",
+    "trajectory": "b3c8b8d8-2388-40c0-9e2c-c75a679ef56e.jsonl",
+    "returned": "C2",
+    "gate": "REVISE",
+    "calls": 32,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The candidate did not consider that the on-call engineers might have been influenced by the deployment timing and the dependency bumps, potentially leading to a confirmation bias. Without direct database metrics, the conclusion could be challenged by other root causes (e.g., network issues, checkout service configuration changes)."
+      ],
+      [
+        "The candidate did not consider that the on-call engineers might have been influenced by the deployment timing and the dependency bumps, potentially leading to a confirmation bias. Without direct database metrics, the conclusion could be challenged by other root causes (e.g., network issues, checkout service configuration changes)."
+      ],
+      [
+        "The candidate's conclusion of 'established' certainty is not justified without database metrics, as the problem states no database metrics are available. The on-call engineers' statement is strong but does not provide verifiable evidence for 'established' certainty without further data.",
+        "The candidate failed to address potential confirmation bias from the on-call engineers due to the recent deployment timing and dependency bumps, which could lead to incorrect root cause identification."
+      ],
+      [
+        "The candidate's conclusion of 'established' certainty is not justified without database metrics, as the problem states no database metrics are available. The on-call engineers' statement is strong but does not provide verifiable evidence for 'established' certainty without further data.",
+        "The candidate failed to address potential confirmation bias from the on-call engineers due to the recent deployment timing and dependency bumps, which could lead to incorrect root cause identification."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the on-call engineers' statement is sufficient for 'established' certainty despite lacking database metrics"
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate incorrectly assumes the on-call engineers' statement implies 100% certainty without evidence"
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the on-call engineers' statement is sufficient for 'established' certainty despite lacking database metrics"
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate incorrectly assumes the on-call engineers' statement implies 100% certainty without evidence"
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the on-call engineers' statement is sufficient for 'established' certainty despite lacking database metrics"
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate incorrectly assumes the on-call engineers' statement implies 100% certainty without evidence"
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C2",
+        "changes": []
+      }
+    ],
+    "groundings": [
+      {
+        "candidate_id": "C0",
+        "candidate_quote": "the on-call engineers both wrote that \"it's definitely the database\"",
+        "claim_type": "",
+        "description": "The candidate fails to acknowledge that the on-call engineers' statement is a hypothesis, not verified fact",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs neither in the candidate nor in the task",
+        "severity": "major",
+        "status": "UNGROUNDED"
+      },
+      {
+        "candidate_id": "C3",
+        "candidate_quote": "Wait, the problem says \"No database metrics, traces or query logs are available\". So even though the on-call engineers say it's the database, without actual metrics, is it really \"established\"? Hmm. The on-call engineers are the ones who monitor the system, so their statement might be based on their experience. But the task says \"it's definitely the database\" — so they're confident. However, the lack of database metrics could mean that without data, it's a hypothesis. Wait, but the problem says they wrote \"it's definitely the database\", so they're confident. In incident response, if on-call engineers (who are experts) both confirm the cause without doubt, even without metrics, it's considered established.",
+        "claim_type": "",
+        "description": "The candidate claims the root cause is 'established' based on E2 (two on-call engineers stating it's the database) but contradicts the task's premise that no database metrics are available. The task states that database metrics, traces, and query logs are unavailable, yet the candidate asserts the conclusion is 'established' without any metrics.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote occurs neither in the candidate nor in the task",
+        "severity": "fatal",
+        "status": "UNGROUNDED"
+      }
+    ],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "Both A and B are identical in content and structure. The task requires a JSON object with specific keys. A provides the exact JSON object as required. B confirms that the previous answer is correct and complete, but the JSON output in B is the same as A. There are no differences between A and B. Therefore, for all dimensions, the delta is 0.0 (B minus A). No lost requirements or recovery invariants are present since both solutions meet the task requirements perfectly.",
+      "Both solutions are identical in their JSON output. The task requires a conclusion, certainty, evidence_used, and additional_evidence_needed. Both A and B provide the same JSON: conclusion is 'The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.', certainty is 'established', evidence_used is ['E2'], and additional_evidence_needed is []. There are no differences in the output. Therefore, they are equally correct (TIE) with a delta of 0 for all dimensions.",
+      "Both answers are identical in structure and content. They both conclude the root cause as a database dependency issue from v4.2.1 deployment, assign \"established\" certainty, use E2 as primary evidence, and require no additional evidence. The only differences are minor phrasing and emphasis in the reasoning process, but the final JSON output is identical. Therefore, there is no preference for A or B in any dimension. Lost requirements: None. Recovery invariants: Both solutions correctly identify the root cause and certainty level without needing additional evidence."
+    ]
+  },
+  {
+    "pilot": "v035_core_regression_pilot",
+    "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+    "trajectory": "67a5c2d9-fcf4-4c27-81a1-67a9076ba93f.jsonl",
+    "returned": "C0",
+    "gate": "REJECT",
+    "calls": 36,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "No database metrics, traces, or query logs are available to confirm the root cause",
+        "The candidate did not provide a specific hypothesis for the database issue (e.g., query optimization, connection pool exhaustion)"
+      ],
+      [
+        "No database metrics, traces, or query logs are available to confirm the root cause",
+        "The candidate did not provide a specific hypothesis for the database issue (e.g., query optimization, connection pool exhaustion)"
+      ],
+      [
+        "No database metrics, traces, or query logs are available to confirm the root cause",
+        "The candidate did not provide a specific hypothesis for the database issue (e.g., query optimization, connection pool exhaustion)"
+      ],
+      [
+        "No database metrics, traces, or query logs are available to confirm the root cause",
+        "The candidate did not provide a specific hypothesis for the database issue (e.g., query optimization, connection pool exhaustion)"
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the root cause is 'a database-related issue caused by the deployment of checkout-service v4.2.1' without sufficient evidence to support this causal link. The evidence only shows a dependency bump and on-call consensus, but the candidate conflates correlation with causation without ruling out other possibilities."
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate states 'without database metrics, traces or query logs, the exact cause cannot be determined with certainty' but does not address why this lack of evidence makes the database claim the root cause. This implies the candidate has accepted the on-call consensus as sufficient evidence without verifying the claim's validity."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the root cause is 'a database-related issue caused by the deployment of checkout-service v4.2.1' without sufficient evidence to support this causal link. The evidence only shows a dependency bump and on-call consensus, but the candidate conflates correlation with causation without ruling out other possibilities."
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate states 'without database metrics, traces or query logs, the exact cause cannot be determined with certainty' but does not address why this lack of evidence makes the database claim the root cause. This implies the candidate has accepted the on-call consensus as sufficient evidence without verifying the claim's validity."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate claims the root cause is 'a database-related issue caused by the deployment of checkout-service v4.2.1' without sufficient evidence to support this causal link. The evidence only shows a dependency bump and on-call consensus, but the candidate conflates correlation with causation without ruling out other possibilities."
+        },
+        {
+          "severity": "high",
+          "type": "CANDIDATE_INTERNAL",
+          "description": "The candidate states 'without database metrics, traces or query logs, the exact cause cannot be determined with certainty' but does not address why this lack of evidence makes the database claim the root cause. This implies the candidate has accepted the on-call consensus as sufficient evidence without verifying the claim's validity."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C0",
+        "changes": []
+      },
+      {
+        "candidate_id": "C0",
+        "changes": []
+      }
+    ],
+    "groundings": [],
+    "output_integrity": null,
+    "cycle_progress": [],
+    "comparison_reasons": [
+      "Both A and B are identical in content. The task requires comparing against the original task. Since A and B are exactly the same, there is no difference to prefer. For each dimension, the delta is 0 (B minus A). There are no lost requirements or recovery invariants because the text matches the original task exactly.",
+      "Both candidates A and B are identical in content. The task requires comparing against the original task, but since A and B are the same, there is no difference. The original task specifies that the root cause is likely database-related due to deployment v4.2.1 with dependency bumps, on-call consensus, but no database metrics/traces/logs. Both answers correctly state this without adding or omitting information. No lost requirements or recovery invariants are present as the answers match exactly. The delta for all dimensions is 0 because B minus A equals 0.",
+      "Both A and B are identical in content. The input shows that A and B are the same string. Therefore, all dimensions are tied with no difference between them. There are no lost requirements or recovery invariants because the analysis is consistent and there is no variation between the two responses."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-001.T1.FULL_END_NATIVE",
+    "trajectory": "3273ea96-7d7c-41fc-8b2c-aea0ec39f73b.jsonl",
+    "returned": "C0",
+    "gate": "ACCEPT_PROVISIONALLY",
+    "calls": 13,
+    "cycles": 1,
+    "verifier_issues": [
+      [],
+      []
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "Each temperature conversion to Fahrenheit is calculated correctly and rounded to one decimal place as required."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add explicit rounding to one decimal place for all converted temperatures",
+            "expected_effect": "All converted temperatures are represented with exactly one decimal place, including trailing zeros for whole numbers (e.g., 32.0 instead of 32)",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "claim_support_state"
+        ]
+      }
+    ],
+    "comparison_reasons": [
+      "Both A and B produce identical JSON outputs: [-40.0, 32.0, 97.9, 212.0, 70.7]. All calculations are correct, rounded to one decimal place. No lost requirements or recovery invariants exist since the conversion is straightforward with no edge cases beyond the provided temperatures. The outputs satisfy all constraints: same order, one decimal place, JSON format. Complexity cost is equal (no additional steps beyond basic arithmetic)."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+    "trajectory": "efa824fb-bbda-4138-9243-414e772ef1fb.jsonl",
+    "returned": "C0",
+    "gate": "REVISE",
+    "calls": 31,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The input array has 5 elements but the candidate output has 5 elements: [-40.0, 32.0, 97.9, 212.0, 70.7] - this matches the count but the values are incorrect for the given temperatures [-40, 0, 36.6, 100, 21.5]. For -40°C, F should be -40, not -40.0; 0°C should be 32.0°F, not 32.0; 36.6°C should be 97.9°F (correct); 100°C should be 212.0°F (correct); 21.5°C should be 70.7°F (correct). The candidate has swapped the order of the first two values and incorrectly converted -40°C to -40.0°F instead of -40°F.",
+        "The candidate's output does not match the expected values for the first two temperatures: -40°C should convert to -40°F (not -40.0), and 0°C should convert to 32.0°F (not 32.0). The candidate output has [-40.0, 32.0, 97.9, 212.0, 70.7] but the expected output for [-40, 0, 36.6, 100, 21.5] is [-40, 32.0, 97.9, 212.0, 70.7]. The candidate has swapped the first two temperatures and used -40.0 instead of -40 for the first value."
+      ],
+      [
+        "The candidate's output is [-40.0, 32.0, 97.9, 212.0, 70.7] but the expected output for [-40, 0, 36.6, 100, 21.5] is [-40, 32.0, 97.9, 212.0, 70.7]. The candidate has swapped the first two temperatures and used -40.0 instead of -40 for the first value.",
+        "The candidate incorrectly converted 36.6°C to 97.9°F (which is correct), but the input value 36.6 should map to 97.9°F, so this is actually correct. However, the candidate has an incorrect order and swapped the first two values."
+      ],
+      [
+        "The candidate's output is [-40.0, 32.0, 97.9, 212.0, 70.7] but the expected output for [-40, 0, 36.6, 100, 21.5] is [-40, 32.0, 97.9, 212.0, 70.7]. The candidate has swapped the first two temperatures and used -40.0 instead of -40 for the first value."
+      ],
+      [
+        "The candidate's output is [-40.0, 32.0, 97.9, 212.0, 70.7] but the expected output for [-40, 0, 36.6, 100, 21.5] is [-40, 32.0, 97.9, 212.0, 70.7]. The candidate has swapped the first two temperatures and used -40.0 instead of -40 for the first value."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "completeness",
+          "description": "The candidate's answer is incomplete because it does not include all required temperature values from the input list."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "completeness",
+          "description": "The candidate's conversion mechanism misassigns output values to input positions, causing incorrect conversions for 36.6°C, 100°C, and 21.5°C while omitting the 21.5°C conversion."
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "completeness",
+          "description": "The candidate's conversion mechanism misassigns output values to input positions, causing incorrect conversions for 36.6°C, 100°C, and 21.5°C while omitting the 21.5°C conversion."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Correct the temperature conversions for 36.6°C, 100°C, and 21.5°C to ensure all values are accurately converted to Fahrenheit",
+            "expected_effect": "All temperature values will be accurately converted to Fahrenheit with one decimal place, matching the input list's values: 36.6°C → 97.9°F, 100°C → 212.0°F, 21.5°C → 70.7°F",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Fix the conversion mechanism to ensure each output value is correctly mapped to its original input position using a loop that iterates over the input list and applies the conversion formula to each element in sequence",
+            "expected_effect": "The candidate's output will accurately convert each Celsius value to Fahrenheit while maintaining the correct order and value assignments, eliminating incorrect value assignments and missing conversions for 36.6°C, 100°C, and 21.5°C",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Implement a loop that iterates over each input temperature, converts it to Fahrenheit using the formula F = (C × 9/5) + 32, and stores the result in a new list while maintaining the original order of input values.",
+            "expected_effect": "Each converted value will be correctly associated with its original input position, ensuring that 36.6°C converts to 97.9°F, 100°C converts to 212.0°F, and 21.5°C converts to 70.7°F without misassignment or omission.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 70.7 ]",
+        "claim_type": "",
+        "description": "The candidate's JSON array does not match the expected conversion of the input temperatures to Fahrenheit.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The candidate's JSON array is [ -40.0, 32.0, 97.9, 212.0, 70.7 ]",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 70.7 ]",
+        "claim_type": "",
+        "description": "The candidate's output is incorrect as per the task's requirement to convert Celsius to Fahrenheit",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "J002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The candidate's output",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 70.7 ]",
+        "claim_type": "",
+        "description": "The candidate's JSON array contains values that do not match the expected Celsius-to-Fahrenheit conversion for the given input.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "[ -40.0, 32.0, 97.9, 212.0, 70.7 ]",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "[-40.0, 32.0, 97.9, 212.0, 70.7]",
+        "claim_type": "",
+        "description": "The candidate's JSON array does not match the expected input format and contains incorrect values",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "J003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "[-40.0, 32.0, 97.9, 212.0, 70.7]",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "[-40.0, 32.0, 97.9, 212.0, 70.7]",
+        "claim_type": "",
+        "description": "The candidate output does not match the input temperatures when converted to Fahrenheit using standard conversion formula",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "CANDIDATE: the only text a finding about the candidate may quote or attribute to the candidate.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "[-40.0, 32.0, 97.9, 212.0, 70.7]",
+        "claim_type": "",
+        "description": "The candidate's JSON array has incorrect values that do not match the expected conversion of the input temperatures to Fahrenheit",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "[-40.0, 32.0, 97.9, 212.0, 70.7]",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "verifier_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 2,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "verifier_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 3,
+        "no_progress_cycles": 1,
+        "reasons": []
+      }
+    ],
+    "comparison_reasons": [
+      "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit rounded to one decimal place. The calculations are:\n-40°C = -40°F, 0°C = 32.0°F, 36.6°C = 97.9°F, 100°C = 212.0°F, 21.5°C = 70.7°F.\nAll values are correctly rounded to one decimal place and match the expected output. No lost requirements or recovery invariants exist since both solutions are identical and fully satisfy the task.",
+      "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The difference is only in whitespace (A has a space after the opening bracket, B has no space). This does not affect correctness, completeness, robustness, clarity, constraint_adherence, or complexity_cost. The task requires rounding to one decimal place, and both outputs are correct. No requirements are lost, and there are no recovery invariants since the outputs are identical.",
+      "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The only difference is the space before the opening bracket in A (\"[ -40.0...\" vs B's \"[-40.0...\"). This space does not affect the JSON validity or correctness. All dimensions are tied because the output is numerically identical and follows the same constraints. No requirements were lost or recovered. The space character is a stylistic choice that does not impact the solution's functionality or correctness.",
+      "Both A and B output identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit with one decimal place. Calculations: -40°C = -40°F, 0°C = 32.0°F, 36.6°C = 97.9°F, 100°C = 212.0°F, 21.5°C = 70.7°F. All values match the expected output. No differences exist between A and B, so all dimensions are tied. There are no lost requirements or recovery invariants since the output is correct and complete.",
+      "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The only difference is the space after the opening bracket in A (\"[ -40.0...\") versus no space in B (\"[-40.0...\"). This space does not affect correctness, completeness, robustness, clarity, or constraint adherence. The task requires rounded values to one decimal place, and both solutions correctly convert [-40, 0, 36.6, 100, 21.5] to the given array. There are no lost requirements or recovery invariants, as the output matches the expected result exactly."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-002.T1.FULL_END_NATIVE",
+    "trajectory": "41b7f53a-d785-4d23-8549-5c7a5927f1a4.jsonl",
+    "returned": "C1",
+    "gate": "REVISE",
+    "calls": 32,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The function does not check if `size` is a positive integer (violates docstring)"
+      ],
+      [
+        "The function does not check if `size` is a positive integer (violates docstring)"
+      ],
+      [
+        "The function does not check if `size` is a positive integer (violates docstring)"
+      ],
+      [
+        "The function does not check if `size` is a positive integer (violates docstring)"
+      ]
+    ],
+    "critique_findings": [
+      [],
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The docstring specifies `size` must be a positive integer"
+        }
+      ],
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that the docstring specifies `size` must be a positive integer is supported by the code's validation check and test cases."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add validation for `size` being a positive integer",
+            "expected_effect": "Ensure the function raises ValueError when `size` is not a positive integer as per the docstring",
+            "targets": []
+          },
+          {
+            "action": "Correct the loop range from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "Ensure the loop includes all chunks, including the last potentially shorter chunk",
+            "targets": []
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Remove the incorrect range calculation in the loop",
+            "expected_effect": "Ensure all chunks are generated without missing the last chunk",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Change the range in the loop from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "The loop will correctly process all chunks, including the last chunk, by iterating up to the end of the list instead of one less than the length.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+        "claim_type": "",
+        "description": "The candidate function uses `len(items) - size` in the range stop condition, which is incorrect and causes the last chunk to be missed",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "fatal",
+        "source_claim": "The range will be: [0, 2] (because the next would be 4 which is >3, so stops at 2)",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "But the doc says `size` must be positive integer.",
+        "claim_type": "",
+        "description": "The candidate function does not validate `size` as a positive integer as required by the docstring",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "major",
+        "source_claim": "But the doc says `size` must be positive integer.",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "Also, we must check for the condition that `size` must be positive integer.",
+        "claim_type": "",
+        "description": "The candidate function does not handle the case where `size` is 0 or negative",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "minor",
+        "source_claim": "Also, we must check for the condition that `size` must be positive integer.",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "The corrected code starts with checking if size is a positive integer. If not, raise ValueError. Then the loop is range(0, len(items), size). So for each i in that range, append items[i:i+size].",
+        "claim_type": "",
+        "description": "The candidate claims the loop should use `range(0, len(items), size)` but the example provided in the candidate uses `items = [1,2,3,4,5,6]` with `size=2` and says the chunks are [1,2], [3,4], [5,6]. However, the candidate's own example shows that the original code (with `len(items) - size`) is incorrect for the case where the list length is not divisible by `size`, but the candidate does not provide evidence that the corrected code works for all cases. The candidate claims the corrected code is correct but does not demonstrate it with a test case that covers the edge case where `len(items) % size != 0`.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "fatal",
+        "source_claim": "The candidate claims the loop should be `range(0, len(items), size)`",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "So the fixes needed are:\n1. Add a check for size being a positive integer (raise ValueError otherwise).\n2. Change the range in the for loop to `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`.",
+        "claim_type": "",
+        "description": "The candidate claims the original code has a bug with the range being `len(items) - size` but the candidate's own corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate states that the original code's range was wrong, but the candidate's corrected code does not include the check for `size` being a positive integer in the loop condition. The candidate mentions the check for `size` being a positive integer, but the corrected code provided does include this check.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "The original code uses a for loop with `range(0, len(items) - size, size)`. Wait, that seems wrong.",
+        "claim_type": "",
+        "description": "The candidate claims the original code's range is `len(items) - size`, but the corrected code uses `range(0, len(items), size)`, which is correct. However, the candidate's explanation of the original code's behavior is inconsistent with the corrected code's implementation.",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "major",
+        "source_claim": "Also, `size` must be a positive integer; otherwise, it should raise a ValueError.",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "Another edge case: empty list. If items is empty, the loop runs 0 times, returns empty list. Correct.",
+        "claim_type": "",
+        "description": "The candidate mentions that the corrected code handles empty lists correctly, but the task does not require this edge case to be tested.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "minor",
+        "source_claim": "raise ValueError(\"size must be a positive integer\")",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "claim_support_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 2,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "claim_support_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 3,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "claim_support_state"
+        ]
+      }
+    ],
+    "comparison_reasons": [
+      "The task requires fixing a function that splits a list into chunks. The original function has two critical issues:\n\n1. The loop uses `range(0, len(items) - size, size)`, which causes the last chunk to be missed (e.g., [1,2,3,4,5,6] with size=2 misses the last chunk [5,6]).\n2. It does not validate that `size` is a positive integer, violating the docstring.\n\nThe solution in B addresses both:\n- Adds a check for `size` being a positive integer (raises ValueError if not).\n- Fixes the loop to `range(0, len(items), size)`, ensuring all chunks are created (including the last potentially shorter one).\n\nThe solution in A is incomplete because it does not add the `size` validation, so it could crash with invalid inputs (e.g., size=0 or negative). It also has the same loop issue as the original.\n\nFor the dimensions:\n- Correctness: B is correct (passes all tests), A is incorrect (fails with edge cases).\n- Completeness: B includes all required fixes, A misses the validation check.\n- Robustness: B handles edge cases (empty list, size=0, negative size), A does not.\n- Clarity: B is clear (explicit check and fixed loop), A is less clear (no validation).\n- Constraint adherence: B strictly follows the docstring (raises ValueError for invalid `size`), A does not.\n- Complexity cost: B adds minimal code (one check and fixed loop), so complexity cost is 0 (delta=0). However, the problem states: \"positive delta means extra burden\". Since A had no validation and B adds a simple check, B has a small (1",
+      "Both candidates A and B provide the exact same corrected function code. They both identify the same issues (wrong range stop condition and missing size validation) and implement the same fix. The code output is identical. The explanations are detailed and cover all edge cases. There are no differences in the function logic, test cases, or error handling. The only difference is in the phrasing of the explanation text, but this does not affect the correctness or completeness of the solution. Both solutions match the task requirements perfectly.",
+      "Both A and B provide identical corrected code. The function fixes the loop's stop condition from `len(items) - size` to `len(items)` and adds a check for `size` being a positive integer. Both examples test the same edge cases (empty list, size=0, size=2 with 5 elements). The code structure, docstring, and error handling are identical. There are no differences in the implementation, correctness, completeness, robustness, clarity, or constraint adherence. The complexity_cost is the same because both solutions have the same number of lines and operations. No lost requirements or recovery invariants were identified as both solutions fully satisfy the task.",
+      "Both A and B provide identical corrected functions with the same fixes: validation of size (positive integer) and correct loop range (0 to len(items) instead of len(items)-size). The code output is the same, so all dimensions are equal. No lost requirements or recovery invariants exist because the solution matches the task exactly."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+    "trajectory": "5969e198-03ed-4a17-b05b-9fefe5ee4dc4.jsonl",
+    "returned": "C0",
+    "gate": "REVISE",
+    "calls": 31,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The function does not handle the case where the list is empty (items = [])",
+        "The function does not handle the case where size is larger than len(items) (e.g., size = 100, items = [1,2,3])",
+        "The function does not handle the case where the list has exactly one item (items = [1])"
+      ],
+      [
+        "The function does not handle the case where the list is empty (items = [])",
+        "The function does not handle the case where size is larger than len(items) (e.g., size = 100, items = [1,2,3])",
+        "The function does not handle the case where the list has exactly one item (items = [1])"
+      ],
+      [
+        "The function does not handle the case where the list is empty (items = [])",
+        "The function does not handle the case where size is larger than len(items) (e.g., size = 100, items = [1,2,3])",
+        "The function does not handle the case where the list has exactly one item (items = [1])"
+      ],
+      [
+        "The function does not handle the case where the list is empty (items = [])",
+        "The function does not handle the case where size is larger than len(items) (e.g., size = 100, items = [1,2,3])",
+        "The function does not handle the case where the list has exactly one item (items = [1])"
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that `size` must be a positive integer and raises a ValueError otherwise is supported by the code's pre-loop check for `size <= 0`."
+        },
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that the range function starts at 0 and increments by `size` to process all items is supported by the `range(0, len(items), size)` usage."
+        }
+      ],
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that `size` must be a positive integer and raises a ValueError otherwise is supported by the code's pre-loop check for `size <= 0`."
+        },
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that the range function starts at 0 and increments by `size` to process all items is supported by the `range(0, len(items), size)` usage."
+        }
+      ],
+      [
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that `size` must be a positive integer and raises a ValueError otherwise is supported by the code's pre-loop check for `size <= 0`."
+        },
+        {
+          "severity": "low",
+          "type": "claim",
+          "description": "The claim that the range function starts at 0 and increments by `size` to process all items is supported by the `range(0, len(items), size)` usage."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Fix the pre-loop check to ensure `size` is a positive integer by raising ValueError for non-positive `size`",
+            "expected_effect": "The code correctly raises ValueError when `size` is not a positive integer, as specified in the docstring",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the range to `range(0, len(items), size)` to ensure all items are processed without exceeding the list length",
+            "expected_effect": "The loop correctly processes all items in `items` without exceeding the list length, as required by the docstring",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add a comment to clarify that the size check is a prerequisite for the loop to avoid infinite loops or index errors",
+            "expected_effect": "Clarify the role of the size check in preventing invalid loop iterations",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the range function to use `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`",
+            "expected_effect": "Ensure the loop processes all items without skipping or truncating the list",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add pre-loop check for size <= 0 to ensure positive integer",
+            "expected_effect": "The function will raise ValueError if size is not positive, matching the docstring requirement",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust range to use `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`",
+            "expected_effect": "The loop will process all items without exceeding list bounds, ensuring the last chunk is included",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "```python\n# Fix: The original code starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.\n# Corrected: Start from 0, go to len(items) (inclusive), step by size.\ndef chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result\n```",
+        "claim_type": "",
+        "description": "The candidate function does not match its docstring requirement that `size` must be positive and raises ValueError if not, but the code only checks for `size <= 0` and raises ValueError, which is correct. However, the main issue is that the corrected code does not actually fix the original bug.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The candidate function is supposed to fix the bug in the original code, but the corrected code does not match the original bug description or the docstring requirements.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "for i in range(0, len(items), size):",
+        "claim_type": "",
+        "description": "The candidate function does not correctly handle cases where `len(items)` is less than `size`, causing an empty chunk to be appended when `size` is greater than the length of `items`",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The candidate function starts the loop at 0 and increments by size, but the range function's end is exclusive and the loop should stop before the last chunk.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "if size <= 0:\n        raise ValueError('size must be positive')",
+        "claim_type": "",
+        "description": "The candidate function does not raise a ValueError when `size` is not positive, but the docstring states that it should raise a ValueError for non-positive `size`",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "The candidate function raises ValueError('size must be positive')",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "for i in range(0, len(items), size):",
+        "claim_type": "",
+        "description": "The candidate function does not handle the case where `items` is an empty list",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The candidate function starts the loop at 0 and increments by size",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "def chunk(items, size):\n    \"\"\"Split the list `items` into consecutive lists of length `size`; the last list may be shorter.\n    `size` must be a positive integer; raise ValueError otherwise.\"\"\"\n    if size <= 0:\n        raise ValueError('size must be positive')\n    result = []\n    for i in range(0, len(items), size):\n        result.append(items[i:i + size])\n    return result",
+        "claim_type": "",
+        "description": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "fatal",
+        "source_claim": "The corrected function does not match the docstring's requirement that `size` must be positive and raise ValueError otherwise.",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "for i in range(0, len(items), size):",
+        "claim_type": "",
+        "description": "The candidate function does not correctly handle the case where `items` is empty.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "fatal",
+        "source_claim": "The function should handle empty lists correctly",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C0",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 2,
+        "no_progress_cycles": 1,
+        "reasons": []
+      },
+      {
+        "blockers": [],
+        "cycle": 3,
+        "no_progress_cycles": 2,
+        "reasons": []
+      }
+    ],
+    "comparison_reasons": [
+      "Both A and B are identical in code. The problem states that the original task has a bug, but both A and B provide the same corrected code. The original code uses `range(0, len(items) - size, size)`, which is incorrect. Both solutions use `range(0, len(items), size)`, which is correct. Since the code is identical, all dimensions are tied. There are no lost requirements or recovery invariants because the solutions match the task requirements exactly.",
+      "Both A and B are identical code. The input shows that A and B have the same code content. The task description has a bug in the original code (using len(items) - size in the range), but both A and B fix it correctly by using len(items) in the range. There are no differences between A and B. Therefore, they are identical in all dimensions.",
+      "Both A and B are identical in code. The original task had a bug where the loop starts at 0 and goes to len(items) - size (exclusive), causing the last chunk to be skipped. Both candidates correct this by using range(0, len(items), size), which ensures the last chunk is included. There are no differences between A and B, so all dimensions are tied. No lost requirements or recovery invariants are identified as the code is correct and matches the docstring.",
+      "Both A and B are identical in code. The task description shows the original buggy code, but A and B are both the corrected version that matches the docstring. The original code had a bug where the loop ran from 0 to len(items) - size, which would cause the last chunk to be skipped. Both A and B fix this by using range(0, len(items), size), which correctly handles the last chunk. There are no differences between A and B, so all dimensions are tied.",
+      "Both A and B are identical in code, so they have no differences. The original task's code has a bug where the loop condition is `len(items) - size` instead of `len(items)`. Both candidates fix the same issue by changing the loop to `range(0, len(items), size)`, matching the docstring. There are no lost requirements or recovery invariants since the candidates are identical."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-008.T1.FULL_END_NATIVE",
+    "trajectory": "653df055-ef1a-43ea-84b2-3d9b6c25bb0f.jsonl",
+    "returned": "C1",
+    "gate": "REVISE",
+    "calls": 31,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The candidate claims Python's built-in sorted() is not stable (which is false for Python 3), but the solution uses sorted() which is stable. This creates a contradiction with the problem's stated premise, which might confuse the user.",
+        "The problem says 'because Python's built-in sorted() is not stable', but the solution leverages the stability of sorted(), which is incorrect according to the problem's own statement. This suggests the candidate misunderstood the problem's context."
+      ],
+      [
+        "The candidate claims Python's built-in sorted() is not stable (which is false for Python 3), but the solution uses sorted() which is stable. This creates a contradiction with the problem's stated premise, which might confuse the user.",
+        "The problem says 'because Python's built-in sorted() is not stable', but the solution leverages the stability of sorted(), which is incorrect according to the problem's own statement. This suggests the candidate misunderstood the problem's context."
+      ],
+      [
+        "The candidate correctly identifies that Python 3's sorted() is stable, but the problem's premise about sorted() being unstable creates a contradiction. The solution works as intended but the explanation does not fully reconcile the problem's misconception with the correct implementation."
+      ],
+      [
+        "The candidate correctly identifies that Python 3's sorted() is stable, but the problem's premise about sorted() being unstable creates a contradiction. The solution works as intended but the explanation does not fully reconcile the problem's misconception with the correct implementation."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "critical",
+          "type": "factual_error",
+          "description": "Python's built-in `sorted()` is stable in Python 3, but the problem states it's 'not stable'"
+        },
+        {
+          "severity": "high",
+          "type": "misunderstood_requirement",
+          "description": "The problem assumes a stable sort is needed due to a misconception about Python's stability"
+        },
+        {
+          "severity": "medium",
+          "type": "valid_solution",
+          "description": "The solution correctly implements a stable sort by age using Python's built-in `sorted()`"
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "factual_error",
+          "description": "Python's built-in `sorted()` is stable in Python 3, but the problem states it's 'not stable'"
+        },
+        {
+          "severity": "high",
+          "type": "misunderstood_requirement",
+          "description": "The problem assumes a stable sort is needed due to a misconception about Python's stability"
+        },
+        {
+          "severity": "medium",
+          "type": "valid_solution",
+          "description": "The solution correctly implements a stable sort by age using Python's built-in `sorted()`"
+        }
+      ],
+      [
+        {
+          "severity": "critical",
+          "type": "factual_error",
+          "description": "Python's built-in `sorted()` is stable in Python 3, but the problem states it's 'not stable'"
+        },
+        {
+          "severity": "high",
+          "type": "misunderstood_requirement",
+          "description": "The problem assumes a stable sort is needed due to a misconception about Python's stability"
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Clarify that Python's built-in sorted() is stable in Python 3, resolving the factual error",
+            "expected_effect": "The candidate understands that Python's sorted() is stable (per documentation) and the problem's claim about instability is incorrect for Python 3.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Address the misconception by explaining that the problem's requirement for a stable sort is met by Python's built-in sorted() due to its inherent stability",
+            "expected_effect": "The candidate recognizes that the problem's premise about sorted() being unstable is a misunderstanding, and the solution correctly leverages sorted()'s stability.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add clarification that Python 3's `sorted()` is stable to the explanation",
+            "expected_effect": "The explanation explicitly states that Python 3's `sorted()` is stable, addressing the factual error in the problem statement.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Clarify the problem's misconception about Python's stability in the explanation",
+            "expected_effect": "The explanation explicitly addresses the misunderstanding that Python's built-in `sorted()` is unstable, indicating it's stable in Python 3.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit clarification in the explanation that Python 3's `sorted()` is stable",
+            "expected_effect": "The explanation will now correctly address the problem's misconception about Python's stability, preventing future misunderstandings.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the explanation to state that the problem's premise about `sorted()` being unstable is incorrect for Python 3",
+            "expected_effect": "The explanation will clarify that the problem statement contains a factual error regarding Python's stability guarantees, directly resolving the misunderstanding.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? \n But note: the problem says \"because Python's built-in sorted() is not stable\" -> actually, wait: \n The problem states: \"Because Python's built-in sorted() is not stable\" -> this is a bit confusing because in reality, \n Python's sorted is stable (meaning when multiple elements have the same key, their original order is preserved).",
+        "claim_type": "",
+        "description": "The candidate claims that Python's built-in sorted() is stable, but the problem states that it is not stable. This creates a contradiction in the candidate's own explanation.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? ... However, the problem says \"because Python's built-in sorted() is not stable\"",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? \n But note: the problem says \"because Python's built-in sorted() is not stable\" -> actually, wait: \n The problem states: \"Because Python's built-in sorted() is not stable\" -> this is a bit confusing because in reality, \n Python's sorted is stable (meaning when multiple elements have the same key, their original order is preserved).",
+        "claim_type": "",
+        "description": "The candidate's explanation contains circular reasoning by claiming that Python's sorted is stable despite the problem's assertion that it is not stable.",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? ... However, the problem says \"because Python's built-in sorted() is not stable\"",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? \n But note: the problem says \"because Python's built-in sorted() is not stable\" -> actually, wait: \n The problem states: \"Because Python's built-in sorted() is not stable\" -> this is a bit confusing because in reality, \n Python's sorted is stable (meaning when multiple elements have the same key, their original order is preserved).",
+        "claim_type": "",
+        "description": "The candidate's solution uses `sorted` which is stable, but the problem states that `sorted` is not stable. This is a contradiction in the problem's premise and the candidate's understanding.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "We are to write a stable sort by age. Since Python's sorted is stable by default for the same keys? ... However, the problem says \"because Python's built-in sorted() is not stable\"",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "Although the problem states that Python's built-in `sorted()` is unstable (which is incorrect in Python 3), the built-in `sorted()` is stable by default. By sorting using `key=lambda x: x[1]`, we ensure ascending order by age while preserving the original relative order for people with equal ages.",
+        "claim_type": "",
+        "description": "The candidate claims that Python 3's `sorted()` is stable, but the task states that Python's built-in `sorted()` is not stable. This creates a contradiction between the candidate's internal claim and the task's premise.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "By sorting using `key=lambda x: x[1]`, we ensure ascending order by age while preserving the original relative order for people with equal ages.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "This will sort by age ascending and keep equal ages in their original order because Python 3's sorted is stable.",
+        "claim_type": "",
+        "description": "The candidate claims Python 3's sorted is stable, but the task premise states that Python's built-in sorted is not stable. This creates a contradiction in the candidate's internal logic.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "This will sort by age ascending and keep equal ages in their original order because Python 3's sorted is stable.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "issue_state",
+          "claim_support_state"
+        ]
+      },
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 2,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "claim_support_state",
+          "verifier_state"
+        ]
+      },
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 3,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "claim_support_state"
+        ]
+      }
+    ],
+    "comparison_reasons": [
+      "Both solutions are identical in implementation and explanation. The problem statement incorrectly claims Python's sorted() is unstable, but in reality it is stable in Python 3. The solution uses sorted() with a key to age, which correctly preserves order for equal ages. There is no difference between A and B, so all dimensions have delta 0. The preferred candidate is B as per the input specification.",
+      "Both A and B produce the same code and explanation. The key difference is in the wording of the explanation: A focuses on clarifying the misconception about sorted() being unstable in Python 3, while B emphasizes that the problem statement has a misconception. However, both correctly state that Python 3's sorted is stable and provide the correct solution. There are no differences in the actual code or functionality. The task requires a function that sorts by age while preserving order for equal ages, and both solutions achieve this with the same code. The explanations are concise and address the misconception accurately. No lost requirements or recovery invariants are present because both solutions meet the task's requirements without adding or removing functionality.",
+      "Both A and B provide the same correct function `sort_by_age` using Python 3's stable sorted() with a key. The code is identical in both. The explanations differ slightly in wording but both correctly address the misconception that Python 3's sorted() is unstable (it's actually stable). The task requires sorting by age ascending while preserving original order for equal ages, which both solutions achieve. No lost requirements or recovery invariants are present since the function meets the requirements as stated in the task. Complexity cost is the same (no extra burden) because both use the same simple approach. The delta for all dimensions is 0 because the solutions are functionally identical in practice.",
+      "Both A and B provide the same Python code for the function `sort_by_age` which correctly sorts by age while preserving order for equal ages due to Python 3's stable sorted. The explanations differ slightly in wording but both correctly address the misconception that Python 3's sorted is unstable (it's actually stable). The key difference is in the explanation's emphasis: A focuses on clarifying the misconception and using sorted's stability, while B emphasizes correcting the problem statement's premise. Both meet all requirements: correctness (code works), completeness (explanation addresses misconception), robustness (no issues with edge cases), clarity (clear explanation), constraint_adherence (follows task constraints), and complexity_cost (minimal code). There are no lost requirements or recovery invariants since both solutions correctly handle the task with the same code and address the stability misconception appropriately."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+    "trajectory": "79ec91f1-7b59-4a33-8a53-4613af251c8e.jsonl",
+    "returned": "C1",
+    "gate": "REVISE",
+    "calls": 31,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The candidate claims `sorted` is stable, but the problem states it's not stable — this creates a contradiction in the solution approach.",
+        "The solution does not address the problem's requirement to handle the case where `sorted` is not stable (as per the problem statement), leading to potential incorrect behavior in the context of the problem's constraints."
+      ],
+      [
+        "The candidate claims `sorted` is stable, but the problem states it's not stable — this creates a contradiction in the solution approach.",
+        "The solution does not address the problem's requirement to handle the case where `sorted` is not stable (as per the problem statement), leading to potential incorrect behavior in the context of the problem's constraints."
+      ],
+      [
+        "The candidate claims `sorted` is stable, but the problem states it's not stable — this creates a contradiction in the solution approach.",
+        "The solution does not address the problem's requirement to handle the case where `sorted` is not stable (as per the problem statement), leading to potential incorrect behavior in the context of the problem's constraints."
+      ],
+      [
+        "The candidate claims `sorted` is stable, but the problem states it's not stable — this creates a contradiction in the solution approach.",
+        "The solution does not address the problem's requirement to handle the case where `sorted` is not stable (as per the problem statement), leading to potential incorrect behavior in the context of the problem's constraints."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "high",
+          "type": "assumption",
+          "description": "The assumption that 'we need to write a stable sort for the given problem' is untested because the problem statement contradicts Python's actual stability of `sorted`."
+        },
+        {
+          "severity": "high",
+          "type": "claim",
+          "description": "The claim that 'sorted() is stable' lacks a falsifiable check because the problem statement's assertion of instability is unverified."
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "claim",
+          "description": "The claim that 'sorted() is stable' lacks a falsifiable check because the problem statement's assertion of instability is unverified."
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "assumption",
+          "description": "The assumption that 'we need to write a stable sort for the given problem' is untested because the problem statement contradicts Python's actual stability of `sorted`."
+        },
+        {
+          "severity": "high",
+          "type": "claim",
+          "description": "The claim that 'sorted() is stable' lacks a falsifiable check because the problem statement's assertion of instability is unverified."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a test to verify that `sorted` is stable by default in Python using a list of tuples with equal ages",
+            "expected_effect": "This test will confirm that the assumption about needing a stable sort is untested due to the problem statement's inaccuracy, resolving the contradiction by validating the stability of `sorted` under the problem's conditions.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Include a comment in the code explaining that `sorted` is stable by default and the problem statement's claim of instability is incorrect",
+            "expected_effect": "This comment will address the lack of a falsifiable check for the claim that `sorted` is stable, clarifying that the problem statement contains a misconception and the solution does not require additional stability measures.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add explicit test for stability using a list of tuples with equal ages to confirm that `sorted` preserves original order for equal ages",
+            "expected_effect": "The test will verify that `sorted` maintains the original order for equal ages, directly addressing the assumption that 'we need to write a stable sort for the given problem' by resolving the contradiction with Python's actual stability of `sorted`.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Add a falsifiable test case that explicitly checks the stability of `sorted` under the problem's conditions (e.g., equal ages) to confirm the claim that `sorted` is stable",
+            "expected_effect": "The test case will provide concrete evidence that `sorted` preserves the original order for equal ages, thereby validating the claim that `sorted` is stable by default without requiring additional stability measures.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit test for stability of `sorted` with equal ages",
+            "expected_effect": "Verify that `sorted` maintains original order for tuples with equal ages, resolving the contradiction between the problem statement and Python's actual stability behavior",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Include a falsifiable check in the code by adding a test for equal age tuples",
+            "expected_effect": "Confirm that the solution works as intended under the problem's conditions by validating `sorted`'s stability when sorting by age",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "We can solve this problem by using the `sorted` function with a `key` and `stable` parameter. However, the `sorted` function in Python is stable by default, but the problem states that Python's built-in `sorted()` is not stable.",
+        "claim_type": "",
+        "description": "The candidate claims that Python's built-in `sorted()` is stable, but the problem states it's not stable, creating a contradiction in the candidate's own explanation.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "J001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "We can solve this problem by using the `sorted` function with a `key` and `stable` parameter. However, the `sorted` function in Python is stable by default, but the problem states that Python's built-in `sorted()` is not stable.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "The problem says: 'Python's built-in sorted() is not stable' — but in reality, `sorted` is stable.",
+        "claim_type": "",
+        "description": "The candidate contradicts itself by claiming `sorted` is stable while the problem states it's not stable.",
+        "issue": "major_issues[0]",
+        "judgment_id": "J001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "candidate_quote is not candidate content",
+        "semantic_grounding": "UNSUPPORTED",
+        "severity": "major",
+        "source_claim": "The problem says: 'Python's built-in sorted() is not stable' — but in reality, `sorted` is stable.",
+        "status": "UNGROUNDED",
+        "textual_grounding": "UNGROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "This function sorts by age (the second element of the tuple) and keeps the original order for equal ages because `sorted` is stable.",
+        "claim_type": "",
+        "description": "The candidate provides a function that uses `sorted` with a key, but the problem requires a stable sort while `sorted` is stable by default, so the function is technically correct but the explanation is inconsistent.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "This function sorts by age (the second element of the tuple) and keeps the original order for equal ages because `sorted` is stable.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "We can solve this problem by using the `sorted` function with a `key` and `stable` parameter. However, the `sorted` function in Python is stable by default, but the problem states that Python's built-in `sorted()` is not stable.",
+        "claim_type": "",
+        "description": "The candidate claims that Python's built-in `sorted()` is stable, but the problem states that it is not stable. This creates a contradiction with the problem's premise.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "But for the purpose of this task, we'll assume that we need to write a stable sort for the given problem.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "We can solve this problem by using the `sorted` function with a `key` parameter. The problem statement claims that Python's built-in `sorted()` is not stable, but in reality, `sorted` is stable by default.",
+        "claim_type": "",
+        "description": "The candidate claims Python's built-in `sorted()` is stable by default, but this contradicts the task's premise that `sorted()` is not stable. The task explicitly states that the problem is to write a function that works under the assumption that `sorted()` is not stable.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The problem statement claims that Python's built-in `sorted()` is not stable",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "The problem statement claims that Python's built-in `sorted()` is not stable",
+        "claim_type": "",
+        "description": "The candidate claims that Python's built-in `sorted()` is stable by default, but the problem statement explicitly states that `sorted()` is not stable. This contradicts the task's premise.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The problem statement claims that Python's built-in `sorted()` is not stable",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C1",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "issue_state",
+          "claim_support_state"
+        ]
+      },
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 2,
+        "no_progress_cycles": 1,
+        "reasons": []
+      },
+      {
+        "blockers": [
+          "high-risk assumption policy requires continuation"
+        ],
+        "cycle": 3,
+        "no_progress_cycles": 2,
+        "reasons": []
+      }
+    ],
+    "comparison_reasons": [
+      "Both solutions are correct and address the problem. However, B provides a clearer explanation by explicitly stating that the problem's claim about `sorted` being unstable is incorrect, and includes a test case to verify stability. A contains redundant explanations about the stability of `sorted` and the confusion with the problem statement, which can be confusing. B is more concise and directly addresses the misconception without unnecessary repetition. The `complexity_cost` is the same for both as they both use a simple `sorted` call with a key. The `correctness` is the same as both solutions produce the correct sorted list. The `completeness` is higher in B as it includes a verification test case. The `robustness` is higher in B because it addresses the problem's misconception and provides a test case to confirm stability. The `clarity` is higher in B as it clearly explains the misconception and the solution without confusion. The `constraint_adherence` is the same as both solutions adhere to the requirement of sorting by age while maintaining order for equal ages. There are no lost requirements or recovery invariants in either solution.",
+      "Both A and B are identical in content. The input shows that A and B are the same text, so there is no difference between them. The task requires comparing anonymous A and B against the original task, but since A and B are identical, all dimensions show a tie with a delta of 0.0. There are no lost requirements or recovery invariants because the solutions are the same.",
+      "Both A and B are identical in content. The provided JSON shows that the candidate strings for A and B are exactly the same. Therefore, all dimensions are tied with no differences. The task requires a function that sorts by age while maintaining stability, which both solutions correctly address by using Python's stable `sorted` function. There are no lost requirements or recovery invariants since the solutions are identical and meet the problem's specifications.",
+      "Both candidates A and B are identical in content. The provided JSON shows that both candidates have the same text, with no differences in the code or explanations. Therefore, there is no difference between A and B across any dimension. The task requires writing a function that sorts by age while maintaining stability, and both solutions correctly address this by using `sorted` with a stable sort (as `sorted` is stable by default in Python). There are no lost requirements or recovery invariants because the solutions are identical and meet the problem's requirements perfectly."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-009.T1.FULL_END_NATIVE",
+    "trajectory": "49544d22-83e0-49a8-9179-c3765116e44b.jsonl",
+    "returned": "C3",
+    "gate": "REVISE",
+    "calls": 30,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "The candidate did not consider that the on-call engineers might have been influenced by the deployment timing, so the root cause could be a coincidence rather than the database dependency."
+      ],
+      [
+        "The candidate did not consider that the on-call engineers might have been influenced by the deployment timing, so the root cause could be a coincidence rather than the database dependency."
+      ],
+      [
+        "The candidate added 'database_metrics_unavailable' to evidence_used list, but the problem states available evidence is only E1 and E2. This violates the constraint that evidence_used must be a list of evidence IDs from the available evidence."
+      ],
+      [
+        "The candidate added 'database_metrics_unavailable' to evidence_used list, but the problem states available evidence is only E1 and E2. This violates the constraint that evidence_used must be a list of evidence IDs from the available evidence."
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "high",
+          "type": "evidence_gap",
+          "description": "No database metrics, traces, or query logs are available to verify the database dependency issue"
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "evidence_gap",
+          "description": "No database metrics, traces, or query logs are available to verify the database dependency issue"
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "evidence_gap",
+          "description": "No database metrics, traces, or query logs are available to verify the database dependency issue"
+        },
+        {
+          "severity": "high",
+          "type": "epistemic_output",
+          "description": "Unsupported epistemic status established for: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add explicit evidence gap note",
+            "expected_effect": "Clarify that the root cause claim relies on on-call engineers' statements without direct database verification, addressing the high-severity evidence gap.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Preserve substantive possibilities, but remove or qualify unsupported claims of confirmation, establishment or verification. Retain the requested answer format. No independent executed evidence covers these assertions: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+            "expected_effect": "Epistemic status stays within the recorded evidence scope",
+            "targets": []
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+            "expected_effect": "The conclusion remains valid despite lack of database metrics, as the on-call engineers' statements are the most reliable available evidence",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Update the epistemic status to 'likely' by acknowledging the on-call engineers' statements as strong evidence but not definitive",
+            "expected_effect": "The conclusion is no longer 'established' but 'likely', reflecting that the on-call engineers' consensus is strong but not 100% verifiable without database metrics",
+            "targets": [
+              "W002"
+            ]
+          },
+          {
+            "action": "Preserve substantive possibilities, but remove or qualify unsupported claims of confirmation, establishment or verification. Retain the requested answer format. No independent executed evidence covers these assertions: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+            "expected_effect": "Epistemic status stays within the recorded evidence scope",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+            "expected_effect": "The evidence_used list now includes a string indicating the unavailability of database metrics, addressing the evidence gap by acknowledging the problem constraints",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Update epistemic status from 'established' to 'likely'",
+            "expected_effect": "The epistemic status is reduced to 'likely' to reflect that the on-call engineers' statements are strong evidence but not definitive due to the absence of database metrics",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+        "claim_type": "",
+        "description": "The candidate claims the root cause is a database dependency issue introduced by the deployment, but the problem states no database metrics are available, so the candidate overconfidently uses the on-call engineers' statement as 'established' evidence without acknowledging the lack of direct database verification.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+        "claim_type": "",
+        "description": "The candidate claims the root cause was a database dependency issue, but the problem explicitly states that no database metrics, traces, or query logs are available. This means the candidate cannot verify the database issue directly.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "certainty: \"established\"",
+        "claim_type": "",
+        "description": "The candidate claims the certainty is \"established\" based on the on-call engineers' statements, but the problem states that no database metrics are available. This makes it impossible to confirm the database issue with certainty.",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "certainty: \"established\"",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "additional_evidence_needed: []",
+        "claim_type": "",
+        "description": "The candidate does not adequately address the lack of database metrics, which is a critical constraint. The on-call engineers' statements are strong but do not constitute proof without direct evidence.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "additional_evidence_needed: []",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+        "claim_type": "",
+        "description": "The candidate claims the on-call engineers' statements are sufficient to establish the root cause despite the absence of database metrics, but this contradicts the task's premise that no database metrics are available.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+        "claim_type": "",
+        "description": "Candidate incorrectly adds 'database_metrics_unavailable' to evidence_used list, violating task's constraint that evidence_used must be list of available evidence IDs (E1, E2).",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "J003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "fatal",
+        "source_claim": "evidence_used list must contain only available evidence IDs (E1, E2)",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "",
+        "claim_type": "",
+        "description": "Candidate fails to update epistemic status to 'likely' as required by task (from 'established'), but claims to do so.",
+        "issue": "major_issues[0]",
+        "judgment_id": "J003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "Update epistemic status to 'likely' (from 'established')",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "UNQUOTED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+        "claim_type": "",
+        "description": "Candidate incorrectly interprets 'add explicit statement that database metrics are unavailable to the evidence_used list' as adding a string to evidence_used list, but task requires evidence_used to be list of evidence IDs.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "quote existence does not establish this interpretation; scoped support is missing",
+        "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+        "severity": "minor",
+        "source_claim": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+        "status": "SEMANTIC_UNSUPPORTED",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+        "claim_type": "",
+        "description": "The candidate claims to add a non-existent evidence ID to the evidence_used list, violating the problem's constraint that available evidence is only E1 and E2",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+        "claim_type": "",
+        "description": "The candidate incorrectly interprets the task's instruction about evidence_used as requiring a string addition rather than an evidence ID",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "certainty: \"likely\"",
+        "claim_type": "",
+        "description": "The candidate does not correctly interpret the epistemic status change as requiring a certainty level update from 'established' to 'likely'",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The candidate changes certainty to 'likely' but the problem states the previous answer was 'established'",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+        "claim_type": "",
+        "description": "The candidate incorrectly claims that adding 'database_metrics_unavailable' to evidence_used satisfies the user's instruction to add an explicit statement about database metrics being unavailable, when the user's instruction requires adding a string that is a fact in the problem context but not an evidence ID. The problem states that no database metrics are available, so the string should be 'database_metrics_unavailable' as a literal string representation of the fact, but the candidate's reasoning implies that this string is an evidence ID, which it is not.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C3",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [
+          "mandatory revision remains",
+          "policy requires continuation"
+        ],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "issue_state",
+          "claim_support_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 2,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "claim_support_state",
+          "verifier_state"
+        ]
+      },
+      {
+        "blockers": [],
+        "cycle": 3,
+        "no_progress_cycles": 1,
+        "reasons": []
+      }
+    ],
+    "comparison_reasons": [
+      "Both A and B provide identical conclusions, certainties, evidence_used, and additional_evidence_needed. A describes the incident analysis in detail, while B provides a more concise explanation but with the same final answer. The key points are:\n\n1. Both correctly identify the root cause as a database dependency issue from the v4.2.1 deployment.\n2. Both set certainty to \"established\" based on two on-call engineers stating it's \"definitely the database\".\n3. Both use only E2 as evidence_used (the chat logs where on-call engineers confirmed the database issue).\n4. Both conclude no additional evidence is needed.\n\nThe only difference is in the writing style: A is more verbose with detailed analysis steps, while B is more concise. However, the task does not require preferring recency or length, so both are equally correct and complete. There are no lost requirements or recovery invariants because both answers satisfy the required JSON structure and the incident analysis.",
+      "The task requires updating the certainty from 'established' to 'likely' because the absence of database metrics means the on-call engineers' statement, while strong, is not 100% definitive. The previous answer incorrectly claimed 'established' certainty despite the lack of metrics. The user's instruction explicitly requires adding 'database_metrics_unavailable' to evidence_used and updating certainty to 'likely'. The original answer (A) has incorrect certainty and misses the explicit statement about metrics unavailability. B correctly adjusts the certainty and adds the required metric unavailability statement to evidence_used. All dimensions show a delta of 0 because B only makes the necessary changes without adding new complexity or losing completeness. The lost requirement was the explicit statement about metrics unavailability, which B addresses by adding it to evidence_used. The recovery invariant is the updated certainty level to 'likely' to reflect the evidence constraints.",
+      "The task requires comparing anonymous A and B against the original task. A is the original answer, B is the revised answer. The user specified that we should not prefer B for recency or length. The comparison is done per dimension with delta (B minus A) in [-1,1].\n\nFor each dimension, the preferred alias is the one that is better (B or A) and delta is B minus A.\n\nThe original task specifies:\n- The incident happened between 14:05 and 14:40 UTC on 2026-05-12.\n- The service was deployed at 13:58 UTC (v4.2.1) with a changelog note: \"dependency bumps\".\n- Two on-call engineers both wrote that \"it's definitely the database\".\n- No database metrics, traces or query logs are available.\n\nThe key change in B is:\n1. Updated certainty from \"established\" to \"likely\" (more accurate given the lack of database metrics)\n2. Added \"database_metrics_unavailable\" to evidence_used list (explicitly stating the unavailability of metrics)\n\nFor correctness: A claimed \"established\" certainty but the lack of database metrics means it's not 100% confirmed, so B is more correct. Delta: B is correct, A is less correct. So preferred is B, delta = 1.0 (B minus A) but the task says delta in [-1,1]. Since B is better, delta = 1.0.\n\nFor completeness: A did not mention the unavailability of database metrics, so B is more complete. Preferred is B, delta = 1.0.\n\nFor robustness: B acknowledges the unavailability of metrics, making the answer more robust against potential counter-evidence. Preferred is B, delta = 1.0\n",
+      "Both A and B correctly follow the instructions to update the certainty to 'likely' and add 'database_metrics_unavailable' to evidence_used. However, A contains confusion about evidence IDs and misinterprets the problem (evidence_used should be evidence IDs, not a string describing unavailability). B clearly states the evidence_used list includes both 'E2' and the string 'database_metrics_unavailable' as per the user's instruction. The delta is 0 because B matches the required output exactly without additional complexity. No lost requirements or recovery invariants were identified as both satisfy the task."
+    ]
+  },
+  {
+    "pilot": "v0351_core_regression_pilot",
+    "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+    "trajectory": "2965e080-5879-496e-89b9-c8d1368bb1ee.jsonl",
+    "returned": "C3",
+    "gate": "REVISE",
+    "calls": 34,
+    "cycles": 3,
+    "verifier_issues": [
+      [
+        "No database metrics, traces, or query logs available to confirm the root cause",
+        "Lack of specific database metrics to identify the exact cause (e.g., slow queries, connection issues)"
+      ],
+      [
+        "No database metrics, traces, or query logs available to confirm the root cause",
+        "Lack of specific database metrics to identify the exact cause (e.g., slow queries, connection issues)"
+      ],
+      [
+        "No database metrics, traces, or query logs available to confirm the root cause",
+        "Lack of specific database metrics to identify the exact cause (e.g., slow queries, connection issues)"
+      ],
+      [
+        "No database metrics, traces, or query logs available to confirm the root cause",
+        "Lack of specific database metrics to identify the exact cause (e.g., slow queries, connection issues)"
+      ]
+    ],
+    "critique_findings": [
+      [
+        {
+          "severity": "high",
+          "type": "unsupported_claim",
+          "description": "The claim that the root cause is 'definitely the database' lacks quantitative evidence such as database query latency metrics, error rates, or trace data from the latency increase period."
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "unsupported_claim",
+          "description": "The claim that the root cause is 'definitely the database' lacks quantitative evidence such as database query latency metrics, error rates, or trace data from the latency increase period."
+        }
+      ],
+      [
+        {
+          "severity": "high",
+          "type": "unsupported_claim",
+          "description": "The claim that the root cause is 'definitely the database' lacks quantitative evidence such as database query latency metrics, error rates, or trace data from the latency increase period."
+        }
+      ]
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add specific database query latency metrics from the latency increase period",
+            "expected_effect": "Quantitative evidence confirms the database as the root cause, resolving the lack of quantitative evidence for causality",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add specific database query latency metrics from the latency increase period (14:05-14:40 UTC)",
+            "expected_effect": "Quantitative evidence for the specific query impact, enabling the candidate to confirm the database as the root cause with higher certainty.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add quantitative evidence for database query latency during the latency spike period (14:05-14:40 UTC) to the candidate's evidence",
+            "expected_effect": "The candidate's conclusion that the root cause is 'definitely the database' will be supported by specific database query latency metrics, reducing the unsupported claim status to 'resolved' or 'verified' by providing concrete evidence of the database's role in the latency increase.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Clarify the candidate's statement to explicitly state that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact",
+            "expected_effect": "The candidate's conclusion will be more precise, acknowledging the database as a potential root cause without overclaiming certainty, thereby addressing the unsupported claim while maintaining alignment with the available evidence (on-call consensus).",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "groundings": [
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C0",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "The candidate states that the root cause is 'likely' a database issue, but it does not address the possibility that the latency increase could be caused by something other than the database (e.g., network issues, server-side problems, or other services).",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ001",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "Candidate claims the database is the root cause without sufficient quantitative evidence, but the task does not require specific metrics to be present for the conclusion to be valid.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "The candidate claims the root cause is 'the database' but provides no specific database query metrics or traces to support this conclusion, which contradicts the task's requirement that the answer must be based on available evidence (E1, E2) without external data.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "The evidence used confirms the database as the root cause but lacks quantitative evidence for the specific query impact.",
+        "claim_type": "",
+        "description": "The candidate states that the evidence confirms the database as the root cause but lacks quantitative evidence for the specific query impact, which is inconsistent with the task's requirement that the answer must be grounded in the provided evidence (E1, E2) without external data.",
+        "issue": "major_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "major",
+        "source_claim": "The evidence used confirms the database as the root cause but lacks quantitative evidence for the specific query impact.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C1",
+        "candidate_quote": "the on-call engineers' consensus that it's definitely the database",
+        "claim_type": "",
+        "description": "The candidate uses the phrase 'it's definitely the database' without clarifying whether this refers to the database system or a specific database query, which could lead to ambiguity in the context of the task.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "AJ002",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "the on-call engineers' consensus that it's definitely the database",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "The candidate states the root cause is the database, but the evidence provided (E2) is a consensus of on-call engineers, not direct evidence of the database being the cause. The candidate claims the database is the root cause without specific quantitative evidence for the query impact.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C2",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "The candidate states the root cause is 'likely' a database issue but does not provide a specific database query that caused the latency increase, contradicting the need for quantitative evidence.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ003",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "To address the unsupported claim, the candidate explicitly states that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact.",
+        "claim_type": "",
+        "description": "The candidate states that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact. This is a self-contradiction because if the database is the root cause, the metrics should be available to quantify the impact; however, the candidate acknowledges the absence of metrics without resolving the contradiction.",
+        "issue": "minor_issues[0]",
+        "judgment_id": "J004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "minor",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC. This conclusion is based on the deployment log showing a recent deployment (v4.2.1) with dependency bumps and the on-call engineers' consensus that it's definitely the database. However, without specific database query latency metrics from the latency increase period (14:05-14:40 UTC), the exact query impact cannot be determined with certainty. The evidence used confirms the database as the root cause but lacks quantitative evidence for the specific query impact. To address the unsupported claim, the candidate explicitly states that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      },
+      {
+        "alleged_defect": "",
+        "basis": "",
+        "candidate_id": "C3",
+        "candidate_quote": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "claim_type": "",
+        "description": "The candidate claims the root cause is 'database-related' without specifying which database or the exact nature of the issue, but the task's evidence does not provide this level of detail. The candidate's conclusion is overly specific without sufficient evidence to support the precision of 'database-related' as the root cause.",
+        "issue": "fatal_issues[0]",
+        "judgment_id": "AJ004",
+        "provenance": "MODEL_JUDGMENT",
+        "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+        "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+        "severity": "fatal",
+        "source_claim": "The root cause of the checkout API p99 latency increase is likely a database-related issue caused by the deployment of checkout-service v4.2.1 at 13:58 UTC.",
+        "status": "TASK_PREMISE_DEPENDENT",
+        "textual_grounding": "GROUNDED"
+      }
+    ],
+    "output_integrity": {
+      "action": "allow",
+      "blocked": false,
+      "candidate_id": "C3",
+      "checks": [],
+      "model_calls": 0,
+      "presentation": "final answer region; raw candidate retained in ledger"
+    },
+    "cycle_progress": [
+      {
+        "blockers": [
+          "mandatory deterministic output-format revision",
+          "policy requires continuation"
+        ],
+        "cycle": 1,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "issue_state"
+        ]
+      },
+      {
+        "blockers": [
+          "mandatory deterministic output-format revision"
+        ],
+        "cycle": 2,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content"
+        ]
+      },
+      {
+        "blockers": [
+          "mandatory deterministic output-format revision"
+        ],
+        "cycle": 3,
+        "no_progress_cycles": 0,
+        "reasons": [
+          "candidate_content",
+          "branch_state"
+        ]
+      }
+    ],
+    "comparison_reasons": [
+      "The task requires identifying the root cause of the checkout API p99 latency increase with the given evidence. Both A and B correctly state that the root cause is likely a database-related issue due to the deployment of checkout-service v4.2.1 at 13:58 UTC, based on E1 and E2. However, B provides more specific information about the time period (14:05-14:40 UTC) when the latency increase occurred and explicitly states that the evidence confirms the database as the root cause but lacks quantitative evidence for the specific query impact. This makes B more complete and precise without adding unnecessary complexity. The delta values are all 0.0 because both responses are equally correct, complete, robust, clear, and adhere to constraints. The complexity cost is the same for both as neither introduces extra burden beyond what's needed. There are no lost requirements or recovery invariants in this comparison since both responses address the question within the given evidence.",
+      "Both A and B are identical in meaning and structure, with only a minor wording difference: A says \"the exact cause cannot be determined with certainty\" while B says \"the exact query impact cannot be determined with certainty\". This subtle change does not affect the core analysis. The task requires identifying the root cause as database-related based on evidence E1 and E2, but lacks quantitative evidence for the specific query impact. Both candidates correctly identify the same evidence gaps and maintain the same level of correctness, completeness, robustness, clarity, constraint adherence, and complexity cost. The slight wording difference in B (\"query impact\" vs \"cause\") is a minor nuance that does not alter the technical meaning or impact assessment. No lost requirements or recovery invariants are present in either candidate.",
+      "Both A and B are identical in content except for a small addition in B: 'To address the unsupported claim, the candidate explicitly states that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact.' This addition clarifies the candidate's reasoning about the lack of metrics without undermining the conclusion, which enhances completeness and robustness. However, since the original task did not require additional statements beyond the evidence analysis, this addition does not affect correctness, clarity, or constraint adherence. The delta for all dimensions is 0 because B adds no new information that changes the analysis; it merely reiterates the same conclusion with improved contextual framing. The complexity_cost remains 0 as the added text does not introduce extra burden. There are no lost requirements or recovery invariants; the candidate addresses the lack of metrics by specifying the need for further investigation, which aligns with the task's requirements.",
+      "The task requires identifying the root cause of the latency increase with the given evidence. Both A and B correctly identify the database as the root cause based on E1 and E2, but B explicitly addresses the unsupported claim about the exact query impact by stating that the lack of database metrics does not invalidate the database as the root cause but requires further investigation. This makes B more robust and complete, as it acknowledges the limitations of the evidence without undermining the conclusion. B's phrasing is clearer and more precise than A's, which vaguely states the evidence confirms the database but lacks quantitative evidence. B adheres to the task constraints by not introducing new claims but clarifying the current understanding. The complexity_cost for B is lower because it avoids unnecessary technical jargon and focuses on the required analysis. Lost requirements: the task requires a final answer with specific keys, but both candidates meet this. Recovery invariants: B correctly handles the uncertainty by specifying that further investigation is needed without claiming certainty. The delta values are all positive except complexity_cost, which is negative (B has less burden than A)."
+    ]
+  }
+]

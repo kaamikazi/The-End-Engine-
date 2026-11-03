@@ -1,0 +1,17 @@
+{
+  "events": [
+    {
+      "operation": "write",
+      "outcome": "DENIED",
+      "exception": "PermissionError",
+      "errno": 13,
+      "winerror": null,
+      "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N12\\\\copy\\\\wire\\\\000001-4dcaf471206a91f7.jsonl'"
+    }
+  ],
+  "counters": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  },
+  "worker_operation_completed": true
+}

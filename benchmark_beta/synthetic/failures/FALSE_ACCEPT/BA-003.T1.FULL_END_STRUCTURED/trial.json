@@ -1,0 +1,283 @@
+{
+ "answer": "Here is the function.\n```python\ndef min_rooms(meetings):\n    return len(meetings)\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 230,
+   "latency_ms": 0.0,
+   "output_tokens": 36,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 630,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 343,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1535,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1580,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1155,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 418,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 335,
+   "latency_ms": 0.0,
+   "output_tokens": 36,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 8,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 693,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 9,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 343,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 10,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1535,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 11,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1580,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 12,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 645,
+   "latency_ms": 0.0,
+   "output_tokens": 96,
+   "purpose": "comparison",
+   "role": "judge",
+   "seed": null,
+   "seq": 13,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "algorithm",
+ "condition": "FULL_END_STRUCTURED",
+ "cost": {
+  "branch_count": 0,
+  "calls": 13,
+  "calls_by_role": {
+   "adversarial_judge": 4,
+   "generator": 6,
+   "judge": 3
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 791,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 11813,
+  "model_latency_ms": 0,
+  "prompt_tokens": 11022,
+  "tool_check_calls": 0,
+  "total_tokens": 11813,
+  "truncated_text_answers": 0,
+  "wall_ms": 91.095
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "ACCEPTED_PROVISIONAL",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidate_generation": "structured",
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "engine_checks": [
+   {
+    "candidate_id": "C0",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "python"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C1",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "python"
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "ACCEPT_PROVISIONALLY"
+   },
+   {
+    "candidate_id": "C1",
+    "decision": "ACCEPT_PROVISIONALLY"
+   }
+  ],
+  "iterations": 1,
+  "judge_groundings": [],
+  "latest_candidate_id": "C1",
+  "protocol_actions": {},
+  "protocol_events": 0,
+  "protocol_repair_attempts": 1,
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "ACCEPTED_PROVISIONALLY",
+  "termination_category": null,
+  "trajectory_file": "fd8af5b9-feb1-44df-a5be-43ac0d101777.jsonl",
+  "trajectory_id": "fd8af5b9-feb1-44df-a5be-43ac0d101777",
+  "trajectory_sha256": "6498e76088913fbdc5e2b1f211588477435b8de60145f8900660897fb1008fb7"
+ },
+ "ended_at": "2026-10-01T07:27:21.137109+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 4,
+ "run_id": "BA-003.T1.FULL_END_STRUCTURED",
+ "stages": {},
+ "started_at": "2026-10-01T07:27:21.046676+00:00",
+ "task_id": "BA-003",
+ "trial": 1,
+ "trial_id": "BA-003.T1",
+ "trial_seed": 2870348853
+}

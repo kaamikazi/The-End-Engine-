@@ -1,0 +1,188 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C1",
+  "c0_format_ok": true,
+  "calibration": {
+   "basis": "quality_gate=ACCEPT_PROVISIONALLY",
+   "external_passed": false,
+   "internal": "accepted",
+   "label": "FALSE_ACCEPT"
+  },
+  "delta_validation": [
+   {
+    "external": "REGRESSION",
+    "external_delta": -0.4444,
+    "from": "C0",
+    "label": "DELTA_MISMATCH",
+    "predicted": "IMPROVEMENT",
+    "to": "C1"
+   }
+  ],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 1862,
+    "effect": "negative",
+    "external_after": 0.5556,
+    "external_before": 1.0,
+    "information_gain": "ZERO",
+    "on_candidate": "C0",
+    "operator": "CONSTRAINT",
+    "revision_candidate": "C1",
+    "target": "C0:completeness"
+   }
+  ],
+  "overthinking": [
+   "A_earlier_candidate_better",
+   "B_cycles_without_external_benefit",
+   "C_correct_answer_lost"
+  ],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C1": {
+     "passed": false,
+     "score": 0.5556
+    }
+   },
+   "correct_then_lost": true,
+   "earlier_candidate_better": [
+    "C0"
+   ],
+   "missed_peak": true,
+   "peak_candidate_id": "C0",
+   "regressions": [
+    {
+     "from": "C0",
+     "from_score": 1.0,
+     "to": "C1",
+     "to_score": 0.5556
+    }
+   ],
+   "returned_candidate_id": "C1"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 81,
+   "checks": [
+    {
+     "detail": null,
+     "name": "unit_tests",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 9,
+     "total": 9
+    }
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-012"
+  },
+  "C1": {
+   "answer_chars": 137,
+   "checks": [
+    {
+     "detail": [
+      "got True",
+      "got True",
+      "got True",
+      "got True"
+     ],
+     "name": "unit_tests",
+     "required": true,
+     "score": 0.5556
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 5,
+     "total": 9
+    }
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.5556,
+   "task_id": "BA-012"
+  }
+ },
+ "final": {
+  "answer_chars": 137,
+  "checks": [
+   {
+    "detail": [
+     "got True",
+     "got True",
+     "got True",
+     "got True"
+    ],
+    "name": "unit_tests",
+    "required": true,
+    "score": 0.5556
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "executable_test",
+  "evaluator": "python_tests",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "claim_region": "whole text",
+   "tests": {
+    "passed": 5,
+    "total": 9
+   }
+  },
+  "format_ok": true,
+  "passed": false,
+  "review_flags": [],
+  "score": 0.5556,
+  "task_id": "BA-012"
+ },
+ "run_id": "BA-012.T1.FULL_END_STRUCTURED",
+ "stages": {}
+}

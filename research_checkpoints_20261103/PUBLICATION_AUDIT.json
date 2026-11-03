@@ -1,0 +1,105 @@
+{
+  "result": "PASS_WITH_MANUAL_FALSE_POSITIVE_CLASSIFICATION",
+  "files_scanned": 3677,
+  "archives_crc_scanned": [
+    {
+      "file": "v21_contract_acceptance_review/V21_CONTRACT_ACCEPTANCE_REVIEW_BUNDLE.zip",
+      "members": 383,
+      "bytes": 36382053,
+      "bad_crc_member": null
+    }
+  ],
+  "high_specificity_secret_findings": 0,
+  "sensitive_assignment_findings": 1,
+  "assignment_disposition": {
+    "path": "v21_implementation_masterplan/_evidence/build_tables.py",
+    "line": 82,
+    "classification": "Authorization-policy sentence in generated research mapping, not an authentication credential",
+    "value_not_printed": true
+  },
+  "generic_keyword_files_reviewed_by_source_context": "Token/secret/private fields are local mock identities, locking metadata, test admission or policy references; no provider/account credentials identified.",
+  "source_data_origin": "Deterministic offline public/synthetic fixtures and research receipts",
+  "personal_path_policy": "Retain documented development paths and machine paths in immutable historical provenance; no credential/config files or user profile dumps are included.",
+  "file_size": {
+    "total_bytes": 221535998,
+    "largest_bytes": 18104857,
+    "over_50MiB": 0,
+    "over_100MiB": 0
+  },
+  "included_large_raw_records": [
+    {
+      "path": "v21_contract_acceptance_review/archive_verification/coordinator/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 10867740,
+      "sha256": "b9751962cd0bafa556721030754af127951008090650a6a25b9b3038aeddc922"
+    },
+    {
+      "path": "v21_contract_acceptance_review/archive_verification/r3_raw/STRUCTURAL_RAW_RESULTS.json",
+      "group": "01_a0",
+      "bytes": 17119325,
+      "sha256": "d787ee59934632fc20f3fbc2fca468b6bc07f8e235d3020baece0568d9d52554"
+    },
+    {
+      "path": "v21_contract_acceptance_review/coordinator/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 10867740,
+      "sha256": "b9751962cd0bafa556721030754af127951008090650a6a25b9b3038aeddc922"
+    },
+    {
+      "path": "v21_contract_acceptance_review/r3_raw/STRUCTURAL_RAW_RESULTS.json",
+      "group": "01_a0",
+      "bytes": 17119325,
+      "sha256": "d787ee59934632fc20f3fbc2fca468b6bc07f8e235d3020baece0568d9d52554"
+    },
+    {
+      "path": "v21_implementation_masterplan/_evidence/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 11038094,
+      "sha256": "c2cb3eb98b6868131394747aaefa102c318515ccd8625442502e1a1925c42be5"
+    },
+    {
+      "path": "v21_A0_feasibility/_control/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 11888884,
+      "sha256": "cba025301f5803f3dc4e5ebecdc33d0e6191cbaa94be0c27f33d2ffe2a94b1a0"
+    },
+    {
+      "path": "v21_A0_blocker_investigation/_evidence/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 12017907,
+      "sha256": "0d8bdb8edbb4861aae0974cdedcfa504b2e99077725a34b9925f9cc1fbd41921"
+    },
+    {
+      "path": "v21_A0_collector_correction/_control/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 12021775,
+      "sha256": "297b36d83914f8aab7e3e8fd2dec17323df40a415bd37830757dcb1f886a7b38"
+    },
+    {
+      "path": "v21_A0_independent_decision/_control/BEFORE.json",
+      "group": "01_a0",
+      "bytes": 13127792,
+      "sha256": "2650c4e5b8934201da00e805cd0bc49e5d2cf72bf2624fe3bf63c7b8fea66fb7"
+    },
+    {
+      "path": "v21_minimum_evidence_feasibility/_control/BEFORE.json",
+      "group": "02_feasibility",
+      "bytes": 17919972,
+      "sha256": "5016d01a8a91264687ff9b1f2ff11176d915693fdc3e99d039be897e85e5eb46"
+    },
+    {
+      "path": "v21_minimal_runtime_decision/_control/BEFORE.json",
+      "group": "03_decision",
+      "bytes": 18099262,
+      "sha256": "b5b696e440dc2e4272cc39ecc2544a6925baeb95cc91f925168b504c7bec8856"
+    },
+    {
+      "path": "v21_ledger_guard_slice/evidence/_control/BEFORE.json",
+      "group": "04_ledger",
+      "bytes": 18104857,
+      "sha256": "753878af1f93c42fd740b5d4db33e0c0b6e827b362a0350a589329c027903d7f"
+    }
+  ],
+  "no_gitignore_change": true,
+  "review_scope": "New publication additions and exact candidate; base783aa1d already exists on public origin WIP branch. No entire-history rewrite or secret-removal claim."
+}

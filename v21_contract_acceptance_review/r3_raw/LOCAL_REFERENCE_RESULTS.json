@@ -1,0 +1,1113 @@
+[
+  {
+    "path": [
+      "definitions",
+      "evidence_ref",
+      "properties",
+      "path"
+    ],
+    "ref": "#/definitions/relative_path",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "evidence_ref",
+      "properties",
+      "sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "run_binding",
+      "properties",
+      "run_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "run_binding",
+      "properties",
+      "task_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "run_binding",
+      "properties",
+      "identity_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "properties",
+      "capture_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "properties",
+      "writer_domain_ref",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "properties",
+      "inventory_digest",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "properties",
+      "content_digest",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "writer_domain_ref"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "inventory_digest"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "snapshot",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "content_digest"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "known_recorded_number",
+      "oneOf",
+      0,
+      "properties",
+      "value"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim_scope",
+      "properties",
+      "run_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim_scope",
+      "properties",
+      "attempt_ids",
+      "items"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim_base",
+      "properties",
+      "scope"
+    ],
+    "ref": "#/definitions/claim_scope",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim_base",
+      "properties",
+      "source_refs",
+      "items"
+    ],
+    "ref": "#/definitions/evidence_ref",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim_base",
+      "properties",
+      "snapshot_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      0,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      0,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      1,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      1,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      1,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "reservation_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      1,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "dispatch_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      2,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      2,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      2,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "relation_digest"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      3,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      3,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_ids",
+      "items"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      3,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "cardinality"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      4,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      4,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      4,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "row_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      5,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      5,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      5,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "expected_commitment_sha256",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      5,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "observed_registered_sha256",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      6,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/claim_base",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      6,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      6,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "input_tokens"
+    ],
+    "ref": "#/definitions/known_recorded_number",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      6,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "output_tokens"
+    ],
+    "ref": "#/definitions/known_recorded_number",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "claim",
+      "oneOf",
+      6,
+      "allOf",
+      1,
+      "properties",
+      "value",
+      "properties",
+      "total_tokens"
+    ],
+    "ref": "#/definitions/known_recorded_number",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "complete_totals",
+      "properties",
+      "physical_attempts"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "complete_totals",
+      "properties",
+      "input_tokens"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "complete_totals",
+      "properties",
+      "output_tokens"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "complete_totals",
+      "properties",
+      "total_tokens"
+    ],
+    "ref": "#/definitions/uint",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "complete_totals",
+      "properties",
+      "source_refs",
+      "items"
+    ],
+    "ref": "#/definitions/evidence_ref",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "accounting",
+      "properties",
+      "snapshot"
+    ],
+    "ref": "#/definitions/snapshot",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "accounting",
+      "properties",
+      "observations",
+      "items"
+    ],
+    "ref": "#/definitions/claim",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "accounting",
+      "properties",
+      "complete_totals",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/complete_totals",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "accounting",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "complete_totals"
+    ],
+    "ref": "#/definitions/complete_totals",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "handle",
+      "properties",
+      "output_id",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "handle",
+      "properties",
+      "binding_refs",
+      "items"
+    ],
+    "ref": "#/definitions/evidence_ref",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "handle",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "output_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "lineage",
+      "properties",
+      "parent_ids",
+      "anyOf",
+      0,
+      "items"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "lineage",
+      "allOf",
+      0,
+      "else",
+      "properties",
+      "parent_ids",
+      "items"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "properties",
+      "attempt_id"
+    ],
+    "ref": "#/definitions/id",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "properties",
+      "content_sha256",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "properties",
+      "lineage"
+    ],
+    "ref": "#/definitions/lineage",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "properties",
+      "handle"
+    ],
+    "ref": "#/definitions/handle",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "properties",
+      "source_refs",
+      "items"
+    ],
+    "ref": "#/definitions/evidence_ref",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "content_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate_collection",
+      "properties",
+      "entries",
+      "items"
+    ],
+    "ref": "#/definitions/candidate",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate_collection",
+      "properties",
+      "initial_ref",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "candidate_collection",
+      "allOf",
+      3,
+      "then",
+      "properties",
+      "initial_ref"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "diagnostic_entry",
+      "properties",
+      "code"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "diagnostic_entry",
+      "properties",
+      "source_refs",
+      "items"
+    ],
+    "ref": "#/definitions/evidence_ref",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "provenance",
+      "properties",
+      "report_sha256",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "source_publication",
+      "properties",
+      "path"
+    ],
+    "ref": "#/definitions/relative_path",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "source_publication",
+      "properties",
+      "sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "source_publication",
+      "properties",
+      "verification_check_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "source_publication",
+      "properties",
+      "verified_at_capture_id"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "diagnostic_publication",
+      "oneOf",
+      1,
+      "properties",
+      "sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "prior_observation",
+      "oneOf",
+      1,
+      "properties",
+      "path"
+    ],
+    "ref": "#/definitions/relative_path",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "prior_observation",
+      "oneOf",
+      1,
+      "properties",
+      "sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "run_binding"
+    ],
+    "ref": "#/definitions/run_binding",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "provenance"
+    ],
+    "ref": "#/definitions/provenance",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "selected_candidate_ref",
+      "anyOf",
+      0
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "candidates"
+    ],
+    "ref": "#/definitions/candidate_collection",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "accounting"
+    ],
+    "ref": "#/definitions/accounting",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "diagnostics",
+      "items"
+    ],
+    "ref": "#/definitions/diagnostic_entry",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "properties",
+      "prior_artifact_observation"
+    ],
+    "ref": "#/definitions/prior_observation",
+    "resolved": true
+  },
+  {
+    "path": [
+      "definitions",
+      "envelope",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "selected_candidate_ref"
+    ],
+    "ref": "#/definitions/name",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      0,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/envelope",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      0,
+      "allOf",
+      1,
+      "properties",
+      "provenance",
+      "properties",
+      "report_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      0,
+      "allOf",
+      1,
+      "properties",
+      "publication"
+    ],
+    "ref": "#/definitions/source_publication",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      1,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/envelope",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      1,
+      "allOf",
+      1,
+      "properties",
+      "publication"
+    ],
+    "ref": "#/definitions/source_publication",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      1,
+      "allOf",
+      1,
+      "properties",
+      "provenance",
+      "properties",
+      "report_sha256"
+    ],
+    "ref": "#/definitions/sha256",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      2,
+      "allOf",
+      0
+    ],
+    "ref": "#/definitions/envelope",
+    "resolved": true
+  },
+  {
+    "path": [
+      "oneOf",
+      2,
+      "allOf",
+      1,
+      "properties",
+      "publication"
+    ],
+    "ref": "#/definitions/diagnostic_publication",
+    "resolved": true
+  }
+]

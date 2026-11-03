@@ -1,0 +1,43 @@
+{
+  "child_exit": 0,
+  "writer_operation": {
+    "operation": "UNCHANGED_LEDGER_REGISTER",
+    "outcome": "RAISED",
+    "exception": "PermissionError",
+    "winerror": 5,
+    "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json'"
+  },
+  "added_namespace_members": [
+    "budget.json.pending"
+  ],
+  "changed_readable_members": [],
+  "pending_entry": {
+    "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json.pending",
+    "relative_path": "budget.json.pending",
+    "category": "C_PENDING_TEMPORARY_EVIDENCE",
+    "classification_reason": "Pending/temporary evidence retained; never excluded",
+    "active": false,
+    "sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+    "raw_base64": "eyJzdGF0ZSI6eyJhdHRlbXB0cyI6W3siYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPX2JlNTk3MDA5ZWM2YjA5ZDAwYzRhMDg5ZiIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ0ODEwMDAwMDE5Nzg4MjgsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjguMDIxODE2LCJzdGF0ZSI6IlNVQ0NFRURFRCIsInRva2VuX2NlaWxpbmciOjE2Mzg0LCJ0b3RhbF90b2tlbnMiOjE1fV0sImhhbHRlZCI6ZmFsc2UsImxpbWl0cyI6eyJhdHRlbXB0cyI6MTM2LCJzZWNvbmRzIjoxMDgwMCwidG9rZW5zIjo0MDAwMDB9LCJydW5zIjp7IkEwX1VORU5ST0xMRURfUkVHSVNURVIiOnsiYXR0ZW1wdHMiOjM2LCJpZGVudGl0eSI6ImUyZGNhZDlkZTQ1NDZjYjQxNTcwNGM1Y2I2ZWFhYzFhN2M4ODJhNzY3YzljMDk0OTU5MzhkMDZiNmIxYTk4MjQiLCJzZWNvbmRzIjoxODAwLCJ0b2tlbnMiOjQwMDAwMH0sIlJFVklFV0VSX0NPTlRSQUNUIjp7ImF0dGVtcHRzIjo0LCJpZGVudGl0eSI6ImY1YmJmMGJiYjU1OTA2MGE0MWMyMWI2MmNhNzlkZTU5ZmEwZDExZjhjYzgwYjZiZTQ4ZWI0NTBiN2E0OTM2MjEiLCJzZWNvbmRzIjoxODAwLCJ0b2tlbnMiOjQwMDAwMH19LCJzY2hlbWFfdmVyc2lvbiI6ImxhYi1sZWRnZXItdjEifSwic3RhdGVfc2hhMjU2IjoiYzZkODE3NjFiZjcyYWM0ZTFmZDBlNWMzM2JkZTI5OGFkNmM2Y2MwZTBjOGNkNzc2MTNkYjQ4MjhiNjA1NzUxZiJ9",
+    "metadata": {
+      "bytes": 1437,
+      "mode": 33206,
+      "mtime_ns": 1792612242003988400,
+      "file_attributes": 32
+    },
+    "type": "FILE",
+    "identity": {
+      "volume_serial": "bc08b541",
+      "file_index": "0001000000140622",
+      "links": 1,
+      "bytes": 1437
+    },
+    "read_status": "BYTES_CAPTURED",
+    "captured_bytes": 1437
+  },
+  "foreign_registration_detected": true,
+  "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+  "attempt_arrays_identical": true,
+  "attempt_rows": 1,
+  "strong_profile_supported": false
+}

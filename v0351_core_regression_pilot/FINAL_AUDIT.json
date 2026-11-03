@@ -1,0 +1,264 @@
+{
+  "audited_at": "2026-10-07T18:03:33.142108+00:00",
+  "integrity_audit": "PASS_WITH_ENVIRONMENT_WARNING",
+  "environment_warning": {
+    "observed_at": "2026-10-07T18:03:27.529746+00:00",
+    "preflight_server_version": "0.35.1",
+    "postflight_server_version": "0.40.0",
+    "server_version_changed": true,
+    "model_digest_unchanged": true,
+    "change_time_unknown": true,
+    "per_session_server_versions_not_persisted": true,
+    "no_version_update_performed_by_task": true,
+    "initial_postflight_version_equality_assertion_failed": true,
+    "no_more_inference_after_discovery": true,
+    "interpretation": "Completed observations preserved; environmental comparability warning, not a clean server-version-controlled replay."
+  },
+  "clean_server_version_controlled_replay": false,
+  "research_outcome": "PARTIAL_MECHANISM_FIXES_WITH_REMAINING_FAILURES",
+  "checks": {
+    "exact_12_trial_design": true,
+    "eight_complete_trajectories_manually_reviewed": true,
+    "source_scope_unchanged": true,
+    "source_fingerprint_matches_actual_implementation": true,
+    "frozen_controls_and_tasks_unchanged": true,
+    "task_evaluator_byte_identity_preserved": true,
+    "protected_history_file_set_and_hashes_unchanged": true,
+    "nine_prior_completed_trials_preserved": true,
+    "both_interrupted_archives_preserved": true,
+    "one_generation_mode_difference_only": true,
+    "local_wire_settings_seeds_identity_verified": true,
+    "raw_calls_tokens_csv_and_evaluations_consistent": true,
+    "all_complete_responses_have_fresh_request_response_timestamps": true,
+    "zero_cloud_jev_typesafe_gemini_calls": true,
+    "runtime_guard_never_exceeded": true,
+    "no_execution_failures_transport_retries_or_truncation": true,
+    "git_head_unchanged": true,
+    "git_status_matches_preflight": true
+  },
+  "engine_version": "0.3.5.1",
+  "source_sha256": "c04475eafbf7bc13f3cd0f2c4a772db9113c23c25e3cf35dd0cdb8b853643077",
+  "source_file_count": 68,
+  "protected_file_count": 2182,
+  "protected_groups": {
+    "v035_core_regression_pilot": 373,
+    "benchmark_alpha": 836,
+    "benchmark_beta": 464,
+    "benchmark_beta_gemini": 459,
+    "validation_jev": 13,
+    "validation_v0351": 25,
+    "IMPLEMENTATION_REPORT.md": 1,
+    "IMPLEMENTATION_REPORT_JEV_EXPERIMENT.md": 1,
+    "IMPLEMENTATION_REPORT_v0.1.md": 1,
+    "IMPLEMENTATION_REPORT_v0.2.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.1.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.2.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.3.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.4.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.5.1.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.5.md": 1,
+    "IMPLEMENTATION_REPORT_v0.3.md": 1,
+    "README.md": 1
+  },
+  "old_pilot_files_unchanged": 373,
+  "git_head": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+  "git_branch": "main",
+  "offline_tests": {
+    "command": "python -m unittest discover -s tests -t . (network-blocked unittest API)",
+    "tests": 262,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "elapsed_seconds": 15.606
+  },
+  "infrastructure_tests": {
+    "tests": 13,
+    "passed": 13,
+    "failures": 0,
+    "initial_preflight_fixture_failure_preserved": true
+  },
+  "postflight_model_identity": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-04-13T11:24:13.189597+06:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ],
+    "server_version": "0.40.0"
+  },
+  "trial_checks": [
+    {
+      "run_id": "BA-001.T1.DIRECT",
+      "wire_calls": 1,
+      "tokens": 1906,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_NATIVE",
+      "wire_calls": 13,
+      "tokens": 43453,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+      "wire_calls": 31,
+      "tokens": 51154,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-002.T1.DIRECT",
+      "wire_calls": 1,
+      "tokens": 2128,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_NATIVE",
+      "wire_calls": 32,
+      "tokens": 91718,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+      "wire_calls": 31,
+      "tokens": 54482,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-008.T1.DIRECT",
+      "wire_calls": 1,
+      "tokens": 2808,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_NATIVE",
+      "wire_calls": 31,
+      "tokens": 94332,
+      "score": 0.5,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+      "wire_calls": 31,
+      "tokens": 64100,
+      "score": 1.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-009.T1.DIRECT",
+      "wire_calls": 1,
+      "tokens": 2953,
+      "score": 0.5,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_NATIVE",
+      "wire_calls": 30,
+      "tokens": 114196,
+      "score": 0.5,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+      "wire_calls": 34,
+      "tokens": 60703,
+      "score": 0.0,
+      "data_origin": "LIVE_LOCAL_MODEL_CAPPED_DIAGNOSTIC",
+      "fresh_local_response_timestamps": true
+    }
+  ],
+  "completed_cost": {
+    "calls": 237,
+    "tokens": 583933,
+    "wall_seconds": 10172.679908
+  },
+  "interrupted_cost": {
+    "saved_response_calls": 14,
+    "known_tokens": 16284,
+    "known_response_latency_seconds": 414.24108099999995,
+    "additional_started_calls_consumption_unknown": 2,
+    "not_pooled_into_completed_trial_matrix": true
+  },
+  "known_recorded_response_calls": 251,
+  "known_recorded_tokens": 600217,
+  "runtime_projection_max_hours": 2.8972846640740744,
+  "final_runtime_projection_hours": 2.8257444188888887,
+  "FULL_END_revision_values": {
+    "NEUTRAL": 7,
+    "REGRESSED": 1
+  },
+  "repair_totals": {
+    "repair_attempted": 4,
+    "repair_succeeded": 3,
+    "repair_failed": 1,
+    "repair_suppressed": 0,
+    "invalid_elements_discarded": 2,
+    "calls_saved_by_suppression": 0
+  },
+  "output_withheld": 0,
+  "no_progress_stops": 0,
+  "manual_review": "MANUAL_REVIEW.md; all thirteen requested questions for all eight trajectories",
+  "recommendation": "B. TARGETED v0.3.5.2 REPAIR",
+  "remaining_failures": [
+    "Affirmative confirms prose bypasses epistemic extraction",
+    "Legitimate evidence-ID criticism becomes nondecisive",
+    "False-premise authority persists through verifier/critique",
+    "Prescriptive task references classified too broadly",
+    "Native BA-008 loses a passing C0 explanation",
+    "Plan becomes user authority; fabricated evidence ID retained",
+    "No early no-progress stop; cost remains large",
+    "Unmatched backtick final-region delimiter defect"
+  ],
+  "not_changed": [
+    "Engine",
+    "historical benchmarks/pilot",
+    "existing validation/report records",
+    "END Harness",
+    "Git history"
+  ],
+  "no_commit_push_publication_or_version_bump": true,
+  "artifact_size_bytes_before_final_report_and_audit": 13621796,
+  "limitations": [
+    "Four tasks, one trial per condition; diagnostic only",
+    "Same three-cycle cap and exposed seeds; sampling noise remains",
+    "Same model generates and judges; external scoring only certifies encoded checks",
+    "Safety withholding and selected-candidate/raw scores are distinct from returned-answer task quality",
+    "Known frozen BA-008 premise regex can miss Markdown corrections; no score adjustments",
+    "Ollama changed from preflight 0.35.1 to postflight 0.40.0 at unknown time; per-session versions unavailable"
+  ]
+}

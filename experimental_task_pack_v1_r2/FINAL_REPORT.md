@@ -1,0 +1,23 @@
+# Independent Review Corrections — Round2 final report
+
+**PREPARED FOR RE-REVIEW; independent recheck PENDING; DRAFT_PENDING_REVIEW.** Round1 separate-session ChatGPT targeted code/fixture review: REVISE, not comprehensive human audit. Reviewer files absent locally; supplied findings/probes used, fully reproduced before edits. No independent closure/approval or live authorization.
+
+Baseline Engine0.3.5.2, fingerprint `29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82`, Python3.12.14, Git main/HEAD `6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7`. Engine baseline303/final303 pass; original rubric exp-pack-1.0.1-draft28 tests pass despite reproduced defects. R2 **exp-pack-1.0.2-draft**:58 methods pass (28 prior+30 added),0 failures/errors/skips/network attempts. One new source-parser failure preserved and corrected without expectation relaxation.
+
+RV-001 reproduced4 definite false accepts. Attribution now checked against actual public source/claim occurrence; registered-reference checks run in every context with use/criticism/ambiguity annotated. First two probes now review; unknown attributed task ID fails; unknown URL/source reviews. Actual reports do not earn independent verification. Remaining risks: bounded grammar/literal occurrence, complex paraphrase/alias/implicit endorsement and external source truth. RESOLVED_LOCALLY, independent PENDING.
+
+RV-002 exact quoted criticism reproduced as false positive confirmation. Quote-aware clause/criticism handling now permits it, retaining direct/tail overclaim failures and ambiguous review. Generic grammar, not probe lookup. Complex quotation/discourse remains limited. RESOLVED_LOCALLY, independent PENDING.
+
+RV-003 both mandatory-justification pairs reproduce old meaningful flagFalse with taskFalse→True/content1→1. Independent task-success/explanation/diagnosis/contract/preservation/safety metrics now record clean observable repair, mixed/new-fault cases and partial repair. Narrow content remains unchanged; target intent staysnull pending actual trace adjudication.18 directional pairs all match. RESOLVED_LOCALLY, independent PENDING.
+
+RV-004 static12-question audit: **A retain both unchanged**, for feasibility/preservation only. Shallow finite transformations may produce perfect first generated C0; this is unmeasured. Explicit INSUFFICIENT_HEADROOM/HEADROOM_UNDETERMINED rules prevent unsupported strategy-failure claims, selective reruns or same-freeze task tuning. Sparse/directed/branch discrimination remains limited. RISK_ACCEPTED_FOR_DIAGNOSTIC, independent PENDING. No task harder/trick/forced defective C0 was introduced.
+
+All83 single fixtures match:25 PASS,42 FAIL,16 REQUIRES_REVIEW; all18 pairs match. Original57:15 PASS,34 FAIL,8 REVIEW. Only EXP-001/002.04_attribution expectations change PASS→REVIEW, because their alleged statements are absent from task input; candidate text unchanged. All other old expectations/content retained. Full old/new expectations/result/rationale/recheck state recorded; synthetic false accepts/rejects/format failures/missed citations/incorrect attribution approvals/incorrect confirmation allegations all0, not real-world rates.
+
+Budget/fairness unchanged: proposed12 runs, common36 attempts/run, global136 attempts/400k tokens/3h; no one-cycle-only END reduction. Task hashes/public prompt bytes unchanged, so original offline ~244,544-token/~69–76min projection is retained as an estimate, not actual usage. No model calibration, cognitive implementation, evaluator-in-runtime authority or privileged evidence access.
+
+Original122 pack files, original manifest/ZIP, all4,914 preexisting files, Engine70 source entries and historical/architecture research remain byte-identical. END Harness untouched; Git HEAD unchanged. No secrets detected. No live model/network inference, benchmark, commit/push/tag/publication or Engine version bump.
+
+New FREEZE_MANIFEST records tasks/evaluator/83 fixtures/18 pairs/tests/contracts/preregistration/budget/dispositions/dependencies/current Engine/review identity. The R2 ZIP is `E:\The End Engine\END_Experimental_Independent_Review_v1_R2.zip`, containing complete revised pack, historical before/after reference implementation and reproduction guide. Archive integrity/member bytes/extracted58-test result and SHA-256 are recorded in repository-side validation/ARCHIVE_RECEIPT.json; receipt is outside ZIP to avoid a circular archive hash. No archive digest is fabricated inside its own content.
+
+Next action: submit R2 ZIP for independent re-review. Do not implement architectures or run inference until the measurement system is approved and live work separately authorized.

@@ -1,0 +1,30 @@
+{
+ "task_id": "BA-006",
+ "category": "software_architecture",
+ "difficulty": "hard",
+ "prompt": "You are designing a consumer for payment-status webhooks. Facts: the provider delivers each event at least once, possibly out of order, and retries for 72 hours until it receives a 2xx response. Each event has a unique event_id, a payment_id, a status, and a per-payment sequence number that increases with every status change. When a payment's status becomes 'succeeded', the consumer must credit the customer exactly once.\nChoose one option for each decision:\n  dedup_key: event_id | payment_id | received_timestamp | none\n  ack_timing: on_receipt_before_processing | after_durable_commit | after_attempt_even_if_failed\n  stale_event: apply_anyway | ignore_if_sequence_not_newer | reject_with_error_until_provider_gives_up\n  atomicity: dedup_record_and_effect_in_one_transaction | dedup_record_first_then_effect | effect_first_then_dedup_record\nGive the final answer as a JSON object with those four keys plus \"failure_modes\" (a list of the failure modes your design handles), in a ```json code block.",
+ "constraints": [
+  "choose listed options only"
+ ],
+ "evaluation": {
+  "type": "structured_rubric",
+  "evaluator": "choices",
+  "expected": {
+   "dedup_key": "event_id",
+   "ack_timing": "after_durable_commit",
+   "stale_event": "ignore_if_sequence_not_newer",
+   "atomicity": "dedup_record_and_effect_in_one_transaction"
+  },
+  "list_field": "failure_modes",
+  "min_list": 2
+ },
+ "expected_properties": [
+  "idempotent on event_id",
+  "ack after durable commit",
+  "stale events ignored",
+  "atomic"
+ ],
+ "failure_conditions": [
+  "any decision wrong"
+ ]
+}

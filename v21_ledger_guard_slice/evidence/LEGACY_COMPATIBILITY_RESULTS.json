@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "targeted_controls": [
+    {
+      "number": 35,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_35_legacy_api_and_default_stale_pending_semantics",
+      "status": "PASS",
+      "elapsed_seconds": 0.0319999999992433,
+      "raw_details": "runs\\targeted\\attempt_004\\test_35_legacy_api_and_default_stale_pending_semantics\\DETAILS.json"
+    },
+    {
+      "number": 36,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_36_default_does_not_silently_enroll",
+      "status": "PASS",
+      "elapsed_seconds": 0.04700000000048021,
+      "raw_details": "runs\\targeted\\attempt_004\\test_36_default_does_not_silently_enroll\\DETAILS.json"
+    },
+    {
+      "number": 37,
+      "id": "tests_coordination_v1.test_coordination.GuardTests.test_37_legacy_differential_against_pinned_source",
+      "status": "PASS",
+      "elapsed_seconds": 0.06199999999989814,
+      "raw_details": "runs\\targeted\\attempt_004\\test_37_legacy_differential_against_pinned_source\\DETAILS.json"
+    }
+  ],
+  "exact_pinned_reference": {
+    "exact_state_equality": true,
+    "exception_equality": [
+      [
+        "ValueError",
+        "Resume changed run contract"
+      ],
+      [
+        "ValueError",
+        "Resume changed run contract"
+      ]
+    ],
+    "baseline_source_sha256": "bb4134ad69a22d900dff3a830cd52c480fae0826e2170a61cd0e85f81fc832d9"
+  },
+  "original_suites": [
+    {
+      "suite": "engine",
+      "baseline_tests": 303,
+      "final_tests": 303,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 303
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/engine/RESULT.json",
+      "final_result": "regressions/candidate_final/engine/RESULT.json"
+    },
+    {
+      "suite": "lab",
+      "baseline_tests": 58,
+      "final_tests": 58,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 58
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/lab/RESULT.json",
+      "final_result": "regressions/candidate_final/lab/RESULT.json"
+    },
+    {
+      "suite": "isolation",
+      "baseline_tests": 85,
+      "final_tests": 85,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 85
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/isolation/RESULT.json",
+      "final_result": "regressions/candidate_final/isolation/RESULT.json"
+    },
+    {
+      "suite": "native",
+      "baseline_tests": 53,
+      "final_tests": 53,
+      "final_failures": 0,
+      "final_errors": 0,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 53
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 0,
+      "final_command_exit": 0,
+      "baseline_result": "regressions/baseline/native/RESULT.json",
+      "final_result": "regressions/candidate_final/native/RESULT.json"
+    },
+    {
+      "suite": "r3",
+      "baseline_tests": 244,
+      "final_tests": 244,
+      "final_failures": 16,
+      "final_errors": 6,
+      "final_skips": 0,
+      "final_parent_outcomes": {
+        "PASS": 222,
+        "ERROR": 6,
+        "FAIL": 16
+      },
+      "exact_parent_outcome_message_delta": [],
+      "exact_subtest_delta": [],
+      "baseline_command_exit": 1,
+      "final_command_exit": 1,
+      "baseline_result": "regressions/baseline/r3/RESULT.json",
+      "final_result": "regressions/candidate_final/r3/RESULT.json"
+    }
+  ],
+  "all_original_parent_and_subtest_outcomes_types_messages_match": true,
+  "new_regressions": 0,
+  "legacy_default_enrollment": false,
+  "automatic_environment_or_path_activation": false,
+  "default_stale_pending_behavior": "Original wb/replace behavior unchanged",
+  "original_N12": "FAIL preserved; not run or modified",
+  "legacy_API_extension": "Optional keyword coordination=None added only to Ledger.__init__; existing positional/default behavior retained",
+  "unenrolled_nonowning_objects": "Objects without explicit _coordination remain legacy; test8/source-core context explicitly carry the coordinator. No path-based discovery is claimed."
+}

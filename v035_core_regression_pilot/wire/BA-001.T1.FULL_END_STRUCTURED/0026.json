@@ -1,0 +1,85 @@
+{
+  "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+  "seq": 26,
+  "purpose": "adversarial_tests",
+  "requested_at": "2026-10-05T16:38:38.953851+00:00",
+  "completed_at": "2026-10-05T16:38:48.329246+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "payload": {
+    "model": "qwen3:4b",
+    "stream": false,
+    "think": false,
+    "prompt": "Generate up to four concrete adversarial scenarios and observable expected properties. Do not claim execution; executable describes suitability only, not actual execution.\n\nINPUT (JSON):\n{\"audit_targets\": [{\"description\": \"Candidate's JSON array contains values that are not valid Celsius temperatures to convert to Fahrenheit\", \"id\": \"W001\"}, {\"description\": \"The candidate's output [ -40.0, 32.0, 97.9, 212.0, 74.7 ] does not match the input order [-40, 0, 36.6, 100, 21.5] but contains correct converted values.\", \"id\": \"W002\"}], \"candidate\": {\"alias\": \"A\", \"content\": \"```json\\n[ -40.0, 32.0, 97.9, 212.0, 74.7 ]\\n```\"}, \"claims\": [], \"task\": \"Convert these Celsius temperatures to Fahrenheit, rounded to one decimal place: [-40, 0, 36.6, 100, 21.5]. Give the final answer as a JSON array of numbers, in the same order, in a ```json code block.\"}\n\nRespond with only one JSON object that satisfies this JSON Schema:\n{\"additionalProperties\": false, \"properties\": {\"tests\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"execution_status\": {\"enum\": [\"UNEXECUTED\", \"REASONED\", \"SIMULATED\", \"EXECUTABLE\"], \"type\": \"string\"}, \"expected_property\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"scenario\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"target\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"target\", \"scenario\", \"expected_property\", \"execution_status\"], \"type\": \"object\"}, \"maxItems\": 4, \"type\": \"array\"}}, \"required\": [\"tests\"], \"type\": \"object\"}",
+    "options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "num_predict": 4096,
+      "num_ctx": 8192,
+      "seed": 3068724234
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "tests": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "expected_property": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "UNEXECUTED",
+                  "REASONED",
+                  "SIMULATED",
+                  "EXECUTABLE"
+                ]
+              }
+            },
+            "required": [
+              "target",
+              "scenario",
+              "expected_property",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "tests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-05T16:38:48.3226216Z",
+    "response": "{\n  \"tests\": [\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"Candidate's JSON array contains invalid temperature values that cannot be converted to Fahrenheit\",\n      \"expected_property\": \"The output array must consist of valid Celsius temperatures (numbers) that can be converted to Fahrenheit using the formula F = (C * 9/5) + 32\",\n      \"execution_status\": \"UNEXECUTED\"\n    },\n    {\n      \"target\": \"W002\",\n      \"scenario\": \"The output array does not match the input order but contains correct converted values\",\n      \"expected_property\": \"The output array must maintain the exact input order of the temperatures: [-40, 0, 36.6, 100, 21.5] converted to Fahrenheit\",\n      \"execution_status\": \"UNEXECUTED\"\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 9333824600,
+    "load_duration": 6789300,
+    "prompt_eval_count": 469,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 475393000,
+    "eval_count": 189,
+    "eval_duration": 8673088000
+  },
+  "error": null,
+  "latency_ms": 9365.07
+}

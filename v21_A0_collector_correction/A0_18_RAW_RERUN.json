@@ -1,0 +1,200 @@
+{
+  "verdict": "A0_COLLECTOR_CORRECTED_STRONG_PROFILE_BLOCKED",
+  "raw_targeted_result": {
+    "vector_id": "A0-18",
+    "scope": "SINGLE_A0_COLLECTOR_NEGATIVE_CONTROL_NOT_STRONG_FEASIBILITY",
+    "executed_controls": 1,
+    "status": "PASS",
+    "expectation_matched": true,
+    "strong_profile_supported": false,
+    "A_or_S_awarded": false,
+    "observed_events": [
+      {
+        "pid": 36868,
+        "exit_code": 0,
+        "stdout": "{\"events\": [{\"operation\": \"UNCHANGED_LEDGER_REGISTER\", \"outcome\": \"RAISED\", \"exception\": \"PermissionError\", \"winerror\": 5, \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_collector_correction\\\\\\\\runs\\\\\\\\attempt_001\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_collector_correction\\\\\\\\runs\\\\\\\\attempt_001\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json'\"}, {\"ledger_before\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"ledger_after\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"pending_created\": true, \"pending_sha256\": \"4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23\", \"attempt_rows_after\": 1}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+        "stderr": "",
+        "request": "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\register_bypass-1792601964239318400.request.json",
+        "killed_by_parent": false,
+        "worker_result": {
+          "events": [
+            {
+              "operation": "UNCHANGED_LEDGER_REGISTER",
+              "outcome": "RAISED",
+              "exception": "PermissionError",
+              "winerror": 5,
+              "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json'"
+            },
+            {
+              "ledger_before": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+              "ledger_after": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+              "pending_created": true,
+              "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+              "attempt_rows_after": 1
+            }
+          ],
+          "counters": {
+            "forbidden_network_events": 0,
+            "forbidden_dispatch_or_reservation_calls": 0
+          },
+          "worker_operation_completed": true
+        }
+      },
+      {
+        "observed": "REAL_UNENROLLED_LEDGER_REGISTER_BYPASSES_TEST_ADMISSION_L1_L2",
+        "added_members": [
+          "budget.json.pending"
+        ],
+        "changed_members": [],
+        "pins_protect_existing_data_not_new_pending_names": true,
+        "stop_rule_triggered": true,
+        "strong_domain_proven": false,
+        "supported_original_attempt_facts_retained": true,
+        "collector_evidence_complete": true,
+        "resource_release": {
+          "owned_guard_fds_closed": true,
+          "pin_handles_closed": true,
+          "guard_reacquisitions": [
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\ADMISSION.lock",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\.publication.lock",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\.a0-L2.lock"
+          ],
+          "write_delete_access_checks": [
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\0.out",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\0.ready",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\1.out",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\1.ready",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.closed.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\GO",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\RESULT.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\REVIEWER_OUTCOME.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\IDENTITY.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\owner.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.reservation.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.response.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\attempts\\000001.settlement.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+            "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json"
+          ],
+          "existing_L3_read_after_release_attempt_rows": 1
+        }
+      }
+    ],
+    "authority": "U",
+    "material_blocker": true,
+    "blocker_reason": "Actual unchanged Ledger.register produced content or new pending membership while proposed test coordination guards were held. No complete writer enrollment/exclusion proof; A/S disabled. This is not a claim of a new F01 certification bypass or malicious-host resistance requirement.",
+    "elapsed_seconds": 1.3279999999995198,
+    "parent_tripwire_counters": {
+      "forbidden_network_events": 0,
+      "forbidden_dispatch_or_reservation_calls": 0
+    }
+  },
+  "raw_child_receipt": {
+    "pid": 36868,
+    "exit_code": 0,
+    "stdout": "{\"events\": [{\"operation\": \"UNCHANGED_LEDGER_REGISTER\", \"outcome\": \"RAISED\", \"exception\": \"PermissionError\", \"winerror\": 5, \"message\": \"[WinError 5] Access is denied: 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_collector_correction\\\\\\\\runs\\\\\\\\attempt_001\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json.pending' -> 'E:\\\\\\\\The End Engine\\\\\\\\v21_A0_collector_correction\\\\\\\\runs\\\\\\\\attempt_001\\\\\\\\A0-18\\\\\\\\copy\\\\\\\\budget.json'\"}, {\"ledger_before\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"ledger_after\": \"de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43\", \"pending_created\": true, \"pending_sha256\": \"4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23\", \"attempt_rows_after\": 1}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+    "stderr": "",
+    "request": "E:\\The End Engine\\v21_A0_collector_correction\\runs\\attempt_001\\A0-18\\register_bypass-1792601964239318400.request.json",
+    "killed_by_parent": false,
+    "worker_result": {
+      "events": [
+        {
+          "operation": "UNCHANGED_LEDGER_REGISTER",
+          "outcome": "RAISED",
+          "exception": "PermissionError",
+          "winerror": 5,
+          "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_collector_correction\\\\runs\\\\attempt_001\\\\A0-18\\\\copy\\\\budget.json'"
+        },
+        {
+          "ledger_before": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+          "ledger_after": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+          "pending_created": true,
+          "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+          "attempt_rows_after": 1
+        }
+      ],
+      "counters": {
+        "forbidden_network_events": 0,
+        "forbidden_dispatch_or_reservation_calls": 0
+      },
+      "worker_operation_completed": true
+    }
+  },
+  "actual_counts": {
+    "actual_new_controls_executed": 1,
+    "PASS": 1,
+    "FAIL": 0,
+    "ERROR": 0,
+    "historical_attempt_002": {
+      "PASS": 19,
+      "FAIL": 0,
+      "ERROR": 1,
+      "NOT_EXECUTED": 0
+    },
+    "historical_attempt_001": {
+      "PASS": 10,
+      "FAIL": 1,
+      "ERROR": 0,
+      "NOT_EXECUTED": 9
+    },
+    "saved_recursive_negatives": "Four prior bounded-negative PASS unchanged; not rerun",
+    "do_not_combine_historical_and_new_counts": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "windows": "Windows-11-10.0.26300-SP0",
+    "actual_rerun_volume": "E:\\",
+    "filesystem": "NTFS",
+    "volume_serial": "bc08b541",
+    "volume_query_scope": "Post-run metadata verification, not an extra control or performance experiment"
+  },
+  "executed_harness_receipt": {
+    "source_commit": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+    "original_six_hashes": {
+      "README.md": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+      "probe_runner.py": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+      "probe_workers.py": "5793daf5074f8a754a55e512b5ba0a025ff15ca8e948d99c6ba7574ca5d7de80",
+      "test_lock_domain_feasibility.py": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+      "source_profile.json": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+      "result_schema.json": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353"
+    },
+    "corrected_six_hashes": {
+      "README.md": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+      "probe_runner.py": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+      "probe_workers.py": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348",
+      "test_lock_domain_feasibility.py": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3",
+      "source_profile.json": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+      "result_schema.json": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353"
+    },
+    "changed_files": [
+      "probe_workers.py",
+      "test_lock_domain_feasibility.py"
+    ],
+    "all_unrelated_original_definitions_unchanged": true,
+    "recursive_negative_scoring_unchanged": true,
+    "actual_requested_vector_ids": [
+      "A0-18"
+    ]
+  },
+  "raw_artifacts": {
+    "runs\\attempt_001\\A0-18\\CHILD_COLLECTION_RECEIPT.json": "6afb551b7298d0cf6e7fed470e71bd0fbeeac0bd7a40c1b3edd582c013739497",
+    "runs\\attempt_001\\A0-18\\copy.clone_receipt.json": "8cd6e8329bd371fec0cb0bfaaa00e06506028e8fd30b9ade2e8dbc1f1437ff4b",
+    "runs\\attempt_001\\A0-18\\PENDING_MUTATION_RECEIPT.json": "d8d6c258286624782648a049596b600ad4c1bdc3a5965c91fd48b608407fbff6",
+    "runs\\attempt_001\\A0-18\\POST_NAMESPACE_INVENTORY.json": "24081efa0d911af09214957b9fbaafce937e7119486c7f96eeaeaa1e5f6494ac",
+    "runs\\attempt_001\\A0-18\\PRE_NAMESPACE_INVENTORY.json": "1a24402cb15547570b1f53a081ad684b0d536b1990552d992da816dde36fc0ce",
+    "runs\\attempt_001\\A0-18\\register_bypass-1792601964239318400.request.exit.json": "6afb551b7298d0cf6e7fed470e71bd0fbeeac0bd7a40c1b3edd582c013739497",
+    "runs\\attempt_001\\A0-18\\register_bypass-1792601964239318400.request.json": "a1e2dc409103220596eb4be0543b6f8696348ceecb43d46c734de8812b0e5d1a",
+    "runs\\attempt_001\\A0-18\\register_bypass-1792601964239318400.request.result.json": "5e31e5f7f4fbda8c4f1d1b278e96b1c83cd641fc6bed358550d3c851c0195503",
+    "runs\\attempt_001\\A0-18\\RESOURCE_RELEASE_RECEIPT.json": "69079b6c153515fd5183e51d2d1d0b3703339e63508ed9fce8f011cae891ab6f"
+  },
+  "target_command_output": "{\"vector\": \"A0-18\", \"status\": \"PASS\", \"executed_controls\": 1, \"strong_profile_supported\": false, \"elapsed_seconds\": 1.3279999999995198, \"error\": null}\n",
+  "target_command_exit_code_observed": 0
+}

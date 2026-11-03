@@ -38,11 +38,14 @@ class WeaknessStatus(str, Enum):
 class StopReason(str, Enum):
     QUALITY_THRESHOLD_REACHED = "QUALITY_THRESHOLD_REACHED"
     NO_MATERIAL_IMPROVEMENT = "NO_MATERIAL_IMPROVEMENT"
+    NO_PROGRESS = "NO_PROGRESS"
     BUDGET_EXHAUSTED = "BUDGET_EXHAUSTED"
     VERIFIER_PASSED = "VERIFIER_PASSED"
     REPEATED_CRITIQUE = "REPEATED_CRITIQUE"
     FAST_PATH = "FAST_PATH"
     EXTERNAL_BLOCKER = "EXTERNAL_BLOCKER"
+    # v0.3.5: the model's structured output stayed invalid after bounded repair. Not an external failure.
+    MODEL_PROTOCOL_FAILURE = "MODEL_PROTOCOL_FAILURE"
     ACCEPTED_VERIFIED = "ACCEPTED_VERIFIED"
     ACCEPTED_PROVISIONALLY = "ACCEPTED_PROVISIONALLY"
     BLOCKED = "BLOCKED"
@@ -84,6 +87,9 @@ class Weakness:
     occurrences: int = 1
     status_reason: str = ""
     target_id: str | None = None
+    source_origin: str = "UNKNOWN"
+    authority_status: str = "LEGACY"
+    decisive: bool = True
 
 
 @dataclass(frozen=True)
@@ -96,6 +102,9 @@ class Candidate:
     known_strengths: tuple[str, ...] = ()
     known_weaknesses: tuple[Weakness, ...] = ()
     confidence: float | None = None
+    answer_content: str | None = None
+    answer_region_status: str = "LEGACY"
+    answer_region_reason: str = ""
 
 
 @dataclass(frozen=True)
@@ -118,6 +127,7 @@ class Change:
     targets: tuple[str, ...]
     action: str
     expected_effect: str
+    source_origin: str = "MODEL_REVISION_PLAN"
 
 
 @dataclass(frozen=True)
@@ -141,6 +151,9 @@ class VerificationResult:
     remaining_issues: tuple[str, ...]
     weakness_updates: tuple[WeaknessUpdate, ...] = ()
     verifier: str = "unknown"
+    assessment_decisive: bool = True
+    advisory_issues: tuple[str, ...] = ()
+    assessment_requires_evidence: bool = False
 
     def as_dict(self) -> dict:
         result = to_data(self)

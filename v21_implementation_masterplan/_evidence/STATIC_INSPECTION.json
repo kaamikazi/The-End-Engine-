@@ -1,0 +1,1391 @@
+{
+  "source_symbols": 3339,
+  "call_sites": 159,
+  "test_symbols": 1220,
+  "parse_errors": [],
+  "schema_definitions": [
+    "sha256",
+    "name",
+    "id",
+    "uint",
+    "relative_path",
+    "evidence_ref",
+    "run_binding",
+    "snapshot",
+    "known_recorded_number",
+    "claim_scope",
+    "claim_base",
+    "claim",
+    "complete_totals",
+    "accounting",
+    "handle",
+    "lineage",
+    "candidate",
+    "candidate_collection",
+    "diagnostic_entry",
+    "provenance",
+    "source_publication",
+    "diagnostic_publication",
+    "prior_observation",
+    "envelope"
+  ],
+  "semantic_rules": [
+    {
+      "id": "J01",
+      "normative_rule": "Strict JSON: reject duplicate keys, NaN/Infinity and finite-overflow numeric tokens before schema validation. Boolean is not integer."
+    },
+    {
+      "id": "E01",
+      "normative_rule": "Source eligibility is external evidence, never established by serialized booleans: normal/restricted require existing F01 completed verifier PASS on referenced bytes/identity/closure at the SAME guarded capture_id. Recompute source provenance/reason and hashes; caller-provided statuses do not substitute."
+    },
+    {
+      "id": "E02",
+      "normative_rule": "A/S requires audited cooperative writer domain and common membership/content cut under all guards described in R1_SNAPSHOT_ACQUISITION. File hashes/timestamps or before/after equality alone never establish it. Strong graph claims require exact R1 witness inventory and closed ID coverage; missing/extra/conflicting mandatory witnesses downgrade to S."
+    },
+    {
+      "id": "A01",
+      "normative_rule": "Every justified claim from the captured evidence must be emitted with its scoped source refs. Unsupported facts must not be invented. claim.snapshot_id == accounting.snapshot.capture_id; claim.scope.run_id == run_binding.run_id; refs/digests must resolve to retained capture bytes and trusted local capture provenance."
+    },
+    {
+      "id": "A02",
+      "normative_rule": "ANCHORED_GRAPH_CARDINALITY requires tier A and GUARDED_VISIBLE_GRAPH, coverage ANCHORED_GRAPH_IN_CUT, identical sorted distinct IDs in value/scope/verified witness graph, and cardinality == len(IDs). Zero requires positively verified empty closed set, not merely absent ledger rows. Other tiers cannot emit this kind."
+    },
+    {
+      "id": "A03",
+      "normative_rule": "CORROBORATED_RESERVATION_DISPATCH requires matching immutable-at-capture reservation/dispatch run/attempt/task/stage/intent identities from execution-origin channels. Its two source hash refs must exist. CORROBORATED_IDENTITY_GROUP requires at least two distinct independently captured named channels with actual cross-binding/origin checks, not two copies/paths of one source. One recorded identity is not actual provider inference or full-run count."
+    },
+    {
+      "id": "A04",
+      "normative_rule": "USAGE_METADATA CORROBORATED_WITHIN_SCOPE requires checked per-field types and arithmetic when all known plus witness bindings at that stated tier; raw receipt status is separately established. Contradictory recorded metadata may be retained only OBSERVED/INCONSISTENT with limitations, never complete cost."
+    },
+    {
+      "id": "A05",
+      "normative_rule": "COMPLETE totals require tier A, current provenance VERIFIED, closure/no future generation, complete covered reservation/settlement/usage/required raw-response validation, no unknown/outstanding/conflicting costs, and totals equal that exact set. total_tokens == input_tokens + output_tokens. Every other case has null complete_totals with explicit reason; unknown is never zero/refund."
+    },
+    {
+      "id": "C01",
+      "normative_rule": "Candidate IDs unique and every observed candidate/attempt is grounded in captured source identities. PRESENT content_sha256 == SHA256(UTF8(content)) AND matches retained source bytes/identity, not merely a rehashed substitute. SOURCE_VERIFIED_BINDING and handle labels must match the trusted source proof for that candidate. Missing content never invented. VERIFIED parent IDs refer to earlier captured candidate IDs and valid ancestry. initial_ref if non-null references original bound initial candidate, never guessed from array index."
+    },
+    {
+      "id": "C02",
+      "normative_rule": "candidate_selected true iff selected_candidate_ref is non-null and references exactly one PRESENT eligible candidate with SOURCE_VERIFIED_BINDING, ELIGIBLE response, VERIFIED lineage and SOURCE_VERIFIED handle. Bound handle/run/task/call/attempt/wire/provenance/settlement/order proof must match current source artifact; rebound/missing/unavailable selection fails. This certifies binding/selection only, never answer truth."
+    },
+    {
+      "id": "C03",
+      "normative_rule": "Diagnostics never select. Raw observed/missing candidates may remain with correct authority. NONE_SUPPORTABLE/UNAVAILABLE entries=[] does not mean zero generated candidates; KNOWN_EMPTY_HISTORY requires positively verified complete empty history. An interrupted terminal may retain an independently supported valid C0; invalid later content does not automatically erase an earlier eligible C0."
+    },
+    {
+      "id": "P01",
+      "normative_rule": "source_publication.path basename == file_name; SHA matches unchanged verified source bytes. Diagnostic file paths never use RESULT.json/COMMON_RESULT.json and are never normal prepared certificates. Prior artifact observation never grants current verification or selection. artifact_persisted describes referenced source artifact, NOT persistence of envelope wire bytes."
+    },
+    {
+      "id": "V01",
+      "normative_rule": "Deterministic partition: grounded diagnostic cause => diagnostic (BLOCKED only for INTEGRITY_HOLD; UNKNOWN for snapshot/unsupported observation). Else current verified source + provenance VERIFIED + normal reason => NORMAL; current verified source + (VERIFIED/restricted reason OR INTERRUPTED|UNKNOWN/uncertain reason) => RESTRICTED. Other inputs raise typed/operational error, no serialized member. Typed integrity rejection is outside the union and matches zero variants."
+    },
+    {
+      "id": "L01",
+      "normative_rule": "Opt-in version routing only. Version-aware legacy normal readers reject any schema_version/variant envelope; validate archived legacy data only with its existing full verifier. Current diagnostic schema is a diagnostic, never RunResult. Unknown/missing/mixed version/class flags reject; arbitrary noncompliant shape-only readers have no compatibility guarantee. No embedded legacy result/C0/FINAL payload is permitted."
+    }
+  ],
+  "contract_csvs": {
+    "R1_DOWNGRADE_MATRIX.csv": {
+      "rows": 15,
+      "columns": [
+        "EVENT",
+        "ORIGINAL_AUTHORITY_TIER",
+        "FAILED_REQUIREMENT",
+        "PERMITTED_REMAINING_OBSERVATIONS",
+        "REQUIRED_DOWNGRADED_TIER",
+        "FULL_RUN_CERTIFICATION_ELIGIBILITY",
+        "DIAGNOSTIC_REASON",
+        "RETRY_POLICY"
+      ],
+      "records": [
+        {
+          "EVENT": "Added orphan attempt",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Unmatched run/aid member violates closed set",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Retained individually grounded original IDs and orphan as untrusted observation",
+          "REQUIRED_DOWNGRADED_TIER": "S if present at guarded cut; U if added during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "ORPHAN_OR_MEMBERSHIP_CHANGED",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Deleted reservation witness",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Mandatory reservation missing; current graph VERIFIED is insufficient",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Dispatch+settlement identity group if corroborated, original missing descriptor; no invented reservation",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable absence; U if removed during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "MANDATORY_RESERVATION_MISSING",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Changed dispatch witness",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Intent/identity/commitment no longer agrees",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Unchanged reservation/settlement sources at their own authority, changed bytes as observation",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable conflict; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "DISPATCH_BINDING_CHANGED",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Changed ledger row",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Row/witness identity/content/usage consistency fails",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Original witness and current row separately observed; narrower identity if still bound",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable conflict; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "LEDGER_WITNESS_CONFLICT",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Changed settlement commitment",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Settlement equality or dispatch/response commitment fails",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Original reservation/dispatch identity and observed settlement bytes; no trusted current settlement",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable conflict; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "SETTLEMENT_COMMITMENT_CHANGED",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Changed response anchor",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Registered receipt binding fails",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Recorded identity; original settlement commitment and current receipt as observations",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable conflict; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "RESPONSE_ANCHOR_CONFLICT",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Moved response receipt",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Required registered anchor absent even if forensic bytes match",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Narrow identity plus explicitly moved forensic receipt; no repair",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable moved state; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "REGISTERED_RESPONSE_MISSING_MOVED",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Duplicate attempt ID",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Distinct identity/row/witness uniqueness fails",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Source-specific conflicting records, never count files twice or deduplicate ledger into truth",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable duplicate; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "DUPLICATE_INDEPENDENT_ATTEMPT",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Unexpected attempt file",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Full namespace classification/coverage incomplete",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Observed unexpected bytes plus surviving grounded witness groups",
+          "REQUIRED_DOWNGRADED_TIER": "S if stable; U during cut",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "UNEXPECTED_POTENTIAL_ATTEMPT_MEMBER",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Unstable membership or known ABA",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Cooperative common cut/domain assurance violated",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Only lower per-source/group facts safely captured, no reuse of prior A count",
+          "REQUIRED_DOWNGRADED_TIER": "U",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "SNAPSHOT_MEMBERSHIP_UNSTABLE_OR_ABA",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Inconsistent ledger versus witness",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Independent cross-channel agreement fails",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Both claims separately labeled; narrower intact identity survives",
+          "REQUIRED_DOWNGRADED_TIER": "S",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "INDEPENDENT_SETTLEMENT_CONTRADICTS_LEDGER",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Missing mandatory witness",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "A required origin/membership/commitment predicate absent",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Any remaining justified source/group observation with explicit missing dimension",
+          "REQUIRED_DOWNGRADED_TIER": "S if guarded and facts remain; I if no cut; X if no facts",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "MANDATORY_WITNESS_COVERAGE_FAILED",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Repeated mutation during verification",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Trusted domain epoch invalid; equality cannot rescue authority",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Retain safe individual observations only, report aborted captures",
+          "REQUIRED_DOWNGRADED_TIER": "U",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "REPEATED_MUTATION_NO_STRONG_RETRY",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "No cooperative writer-domain proof",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "No common-cut exclusion or complete participating-writer coverage",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Individual pinned source/group facts only",
+          "REQUIRED_DOWNGRADED_TIER": "I if supported facts; X otherwise",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "NO_VERIFIED_COOPERATIVE_CUT",
+          "RETRY_POLICY": "None for semantic absence/conflict or in-cut mutation; no repair/replay; invalid epoch requires separately established new domain"
+        },
+        {
+          "EVENT": "Guard acquisition timeout before boundary",
+          "ORIGINAL_AUTHORITY_TIER": "AUTHORITATIVE_CONSISTENT_SNAPSHOT candidate",
+          "FAILED_REQUIREMENT": "Cannot enter B within bounded wait",
+          "PERMITTED_REMAINING_OBSERVATIONS": "Individual sources if available, no aggregate snapshot absence claim",
+          "REQUIRED_DOWNGRADED_TIER": "I or X",
+          "FULL_RUN_CERTIFICATION_ELIGIBILITY": "NO from downgraded R1 claim; R2 source eligibility remains separately recomputed and unchanged; any BLOCKED source forbids normal certification",
+          "DIAGNOSTIC_REASON": "SNAPSHOT_GUARD_BUSY",
+          "RETRY_POLICY": "One retry only for pre-boundary busy/pin acquisition; total <=2 attempts, <=5s each"
+        }
+      ]
+    },
+    "R1_SIXTEEN_CASE_REVALIDATION.csv": {
+      "rows": 16,
+      "columns": [
+        "CASE",
+        "HISTORICAL_TEST_ID",
+        "PRIOR_REVIEW_CONCLUSION",
+        "RETAINED_EVIDENCE_REFS",
+        "REQUIRED_CAPTURE",
+        "IF_PREREQUISITES_HOLD",
+        "IF_COMMON_SNAPSHOT_UNAVAILABLE",
+        "SETTLEMENT_USAGE_LIMIT",
+        "COMPLETE_RUN_TOTALS",
+        "PROSPECTIVE_ASSERTION",
+        "CURRENT_IMPLEMENTATION_CLAIM",
+        "APPROVAL"
+      ],
+      "records": [
+        {
+          "CASE": "changed_wire",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "changed_wire_digest",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_wire_digest",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "changed_decoded_response",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_decoded_response",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "invalid_base64",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_invalid_base64",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "changed_response_digest",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_changed_response_digest",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "missing_settled_journal",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_settled_journal",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "duplicate_attempt_file",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_attempt_file",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "duplicate_response_record",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_duplicate_response_record",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "wrong_stage",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_stage",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "wrong_run",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_run",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "wrong_attempt",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_wrong_attempt",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "incorrect_record_order",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_incorrect_record_order",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "settled_torn_tail",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_settled_torn_tail",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "ledger_disagreement",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_ledger_disagreement",
+          "PRIOR_REVIEW_CONCLUSION": "INCOMPLETE_OR_CONTRADICTORY",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "S: narrower corroborated reservation/dispatch identity value1, with explicit settlement/current-row conflict",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "INCONSISTENT_CONTENT_OR_ACCOUNTING: original settlement conflicts with current accepted ledger content; no current trusted settlement. Original witness records 10/5/15; preserve this labeled observation, current settlement/complete-run cost UNKNOWN_OR_INCONSISTENT. Do not substitute zero or trust conflicting ledger totals.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "recomputed_hashes_still_fail_anchor",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_recomputed_hashes_still_fail_anchor",
+          "PRIOR_REVIEW_CONCLUSION": "COHERENT",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e\"},{\"path\":\"publication/attempts/000001.response.json\",\"sha256\":\"fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "A: ANCHORED_GRAPH_CARDINALITY value1/IDs[1], scope visible anchored graph only; raw provenance remains BLOCKED",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "CORROBORATED_RECORDED_SETTLEMENT: ledger row equals exclusive settlement witness; dispatch/response-anchor commitments match. Current raw wire/response chain is not certified. Record input=10/output=5/total=15 as corroborated ORIGINAL SETTLEMENT METADATA only; raw provider receipt/complete-run cost remains unverified.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        },
+        {
+          "CASE": "missing_response_anchor",
+          "HISTORICAL_TEST_ID": "tests.corrections.test_f02.JournalIntegrityTests.test_missing_response_anchor",
+          "PRIOR_REVIEW_CONCLUSION": "INCOMPLETE_OR_CONTRADICTORY",
+          "RETAINED_EVIDENCE_REFS": "[{\"path\":\"publication/attempts/000001.json\",\"sha256\":\"fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47\"},{\"path\":\"publication/attempts/000001.reservation.json\",\"sha256\":\"df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89\"},{\"path\":\"publication/attempts/000001.settlement.json\",\"sha256\":\"9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f\"}]",
+          "REQUIRED_CAPTURE": "Full guarded inventory+content cut B..E, verified writer domain, exact witness requirements; not current graph VERIFIED alone",
+          "IF_PREREQUISITES_HOLD": "S: narrower corroborated reservation/dispatch identity value1, registered response anchor missing; moved receipt forensic only",
+          "IF_COMMON_SNAPSHOT_UNAVAILABLE": "No strong graph count. Retain justified I per-source/group recorded identity1 with narrower scope if independently supported; otherwise X/null unsupported, never zero",
+          "SETTLEMENT_USAGE_LIMIT": "INCOMPLETE_RESPONSE_BINDING: settlement commitment references missing registered response anchor; moved receipt may remain a separately hashed forensic observation, never silently restored. Original witness records 10/5/15; preserve this labeled observation, current settlement/complete-run cost UNKNOWN_OR_INCONSISTENT. Do not substitute zero or trust conflicting ledger totals.",
+          "COMPLETE_RUN_TOTALS": "Unverified/null for BLOCKED provenance; no certification from count1",
+          "PROSPECTIVE_ASSERTION": "Evaluate cut/domain, every required witness and membership first; emit justified conditional tier/value/refs, reject upgrade after any failed prerequisite; preserve lower observations/no replay/no normal certificate",
+          "CURRENT_IMPLEMENTATION_CLAIM": "NONE; new capture/extractor not implemented",
+          "APPROVAL": "PENDING independent v2.1 review"
+        }
+      ]
+    },
+    "R3_NORMATIVE_FIELD_MATRIX.csv": {
+      "rows": 87,
+      "columns": [
+        "VARIANT",
+        "FIELD",
+        "PRESENCE",
+        "BASE_DEFINITION",
+        "VARIANT_CONSTRAINT",
+        "NULL_MEANING",
+        "NESTED_RULES",
+        "SOURCE_AUTHENTICITY"
+      ],
+      "records": [
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "schema_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-outcome/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "contract_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-certification/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "variant",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"ELIGIBLE_NORMAL_TERMINAL\",\"ELIGIBLE_RESTRICTED_TERMINAL\",\"NONCERTIFYING_DIAGNOSTIC\"]}",
+          "VARIANT_CONSTRAINT": "{\"const\":\"ELIGIBLE_NORMAL_TERMINAL\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "run_binding",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/run_binding\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "artifact_persisted",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":true}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "persistence_scope",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"REFERENCED_SOURCE_ARTIFACT_NOT_ENVELOPE\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "provenance_eligible",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":true}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "provenance",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/provenance\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"status\":{\"const\":\"VERIFIED\"},\"report_sha256\":{\"$ref\":\"#/definitions/sha256\"}}}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "termination_reason",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"COMPLETED\",\"NO_ACTIONABLE_REVISION\",\"INVALID_RESPONSE\",\"PROTOCOL_FAILURE\",\"INTERRUPTED\",\"BUDGET_EXHAUSTED\",\"TIME_EXHAUSTED\",\"EXTERNAL_BLOCKER\",\"UNRESOLVED\"]}",
+          "VARIANT_CONSTRAINT": "{\"enum\":[\"COMPLETED\",\"NO_ACTIONABLE_REVISION\",\"INVALID_RESPONSE\",\"PROTOCOL_FAILURE\"]}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "answer_success",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_ASSERTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "candidate_selected",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "selected_candidate_ref",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"anyOf\":[{\"$ref\":\"#/definitions/name\"},{\"type\":\"null\"}]}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "No source-eligible selected candidate; candidate_selected must be false",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "candidates",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/candidate_collection\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "accounting",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/accounting\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"state\":{\"enum\":[\"COMPLETE\",\"PARTIAL\",\"UNKNOWN\"]},\"snapshot\":{\"properties\":{\"tier\":{\"enum\":[\"AUTHORITATIVE_CONSISTENT_SNAPSHOT\",\"STABLE_BUT_INCOMPLETE_OBSERVATION\"]}}}}}",
+          "NULL_MEANING": "Nested complete_totals null means NOT VERIFIED TOTAL; explicit state/reason required",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "scientific_score_available",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":false}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "scientific_score",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":null}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "NOT_COMPUTED only; score_status/available fixed",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "scientific_score_status",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_COMPUTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "diagnostics",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/diagnostic_entry\"},\"minItems\":0}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "publication",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"object\"}",
+          "VARIANT_CONSTRAINT": "{\"$ref\":\"#/definitions/source_publication\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "diagnostic_cause",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "{\"enum\":[\"INTEGRITY_HOLD\",\"SNAPSHOT_AUTHORITY_UNAVAILABLE\",\"UNSUPPORTED_OBSERVATION\"]}",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "prior_artifact_observation",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/prior_observation\"}",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "C0",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "FINAL",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "initial_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "final_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "implementation_version",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "artifact_payload_sha256",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_NORMAL_TERMINAL",
+          "FIELD": "is_completed_result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "schema_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-outcome/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "contract_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-certification/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "variant",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"ELIGIBLE_NORMAL_TERMINAL\",\"ELIGIBLE_RESTRICTED_TERMINAL\",\"NONCERTIFYING_DIAGNOSTIC\"]}",
+          "VARIANT_CONSTRAINT": "{\"const\":\"ELIGIBLE_RESTRICTED_TERMINAL\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "run_binding",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/run_binding\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "artifact_persisted",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":true}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "persistence_scope",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"REFERENCED_SOURCE_ARTIFACT_NOT_ENVELOPE\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "provenance_eligible",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":true}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "provenance",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/provenance\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"report_sha256\":{\"$ref\":\"#/definitions/sha256\"}}}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "termination_reason",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"COMPLETED\",\"NO_ACTIONABLE_REVISION\",\"INVALID_RESPONSE\",\"PROTOCOL_FAILURE\",\"INTERRUPTED\",\"BUDGET_EXHAUSTED\",\"TIME_EXHAUSTED\",\"EXTERNAL_BLOCKER\",\"UNRESOLVED\"]}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "answer_success",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_ASSERTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "candidate_selected",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "selected_candidate_ref",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"anyOf\":[{\"$ref\":\"#/definitions/name\"},{\"type\":\"null\"}]}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "No source-eligible selected candidate; candidate_selected must be false",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "candidates",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/candidate_collection\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "accounting",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/accounting\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"state\":{\"enum\":[\"COMPLETE\",\"PARTIAL\",\"UNKNOWN\"]},\"snapshot\":{\"properties\":{\"tier\":{\"enum\":[\"AUTHORITATIVE_CONSISTENT_SNAPSHOT\",\"STABLE_BUT_INCOMPLETE_OBSERVATION\"]}}}}}",
+          "NULL_MEANING": "Nested complete_totals null means NOT VERIFIED TOTAL; explicit state/reason required",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "scientific_score_available",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":false}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "scientific_score",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":null}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "NOT_COMPUTED only; score_status/available fixed",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "scientific_score_status",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_COMPUTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "diagnostics",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/diagnostic_entry\"},\"minItems\":0}",
+          "VARIANT_CONSTRAINT": "{\"minItems\":1}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "publication",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"object\"}",
+          "VARIANT_CONSTRAINT": "{\"$ref\":\"#/definitions/source_publication\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "diagnostic_cause",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "{\"enum\":[\"INTEGRITY_HOLD\",\"SNAPSHOT_AUTHORITY_UNAVAILABLE\",\"UNSUPPORTED_OBSERVATION\"]}",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "prior_artifact_observation",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/prior_observation\"}",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "C0",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "FINAL",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "initial_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "final_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "implementation_version",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "artifact_payload_sha256",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "ELIGIBLE_RESTRICTED_TERMINAL",
+          "FIELD": "is_completed_result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "schema_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-outcome/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "contract_version",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"end-certification/2.1-proposal.1\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "variant",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"ELIGIBLE_NORMAL_TERMINAL\",\"ELIGIBLE_RESTRICTED_TERMINAL\",\"NONCERTIFYING_DIAGNOSTIC\"]}",
+          "VARIANT_CONSTRAINT": "{\"const\":\"NONCERTIFYING_DIAGNOSTIC\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "run_binding",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/run_binding\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "artifact_persisted",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "persistence_scope",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"REFERENCED_SOURCE_ARTIFACT_NOT_ENVELOPE\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "provenance_eligible",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":false}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "provenance",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/provenance\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "termination_reason",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"COMPLETED\",\"NO_ACTIONABLE_REVISION\",\"INVALID_RESPONSE\",\"PROTOCOL_FAILURE\",\"INTERRUPTED\",\"BUDGET_EXHAUSTED\",\"TIME_EXHAUSTED\",\"EXTERNAL_BLOCKER\",\"UNRESOLVED\"]}",
+          "VARIANT_CONSTRAINT": "{\"const\":\"EXTERNAL_BLOCKER\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "answer_success",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_ASSERTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "candidate_selected",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"boolean\"}",
+          "VARIANT_CONSTRAINT": "{\"const\":false}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "selected_candidate_ref",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"anyOf\":[{\"$ref\":\"#/definitions/name\"},{\"type\":\"null\"}]}",
+          "VARIANT_CONSTRAINT": "{\"const\":null}",
+          "NULL_MEANING": "No source-eligible selected candidate; candidate_selected must be false",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "candidates",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/candidate_collection\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"entries\":{\"items\":{\"properties\":{\"eligible_for_selection\":{\"const\":false},\"binding_authority\":{\"enum\":[\"OBSERVED_ONLY\",\"UNRESOLVED\"]},\"handle\":{\"properties\":{\"status\":{\"enum\":[\"CORROBORATED_NOT_CERTIFIED\",\"OBSERVED_UNBOUND\",\"MISSING\"]}}}}}}}}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "accounting",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/accounting\"}",
+          "VARIANT_CONSTRAINT": "{\"properties\":{\"state\":{\"enum\":[\"PARTIAL\",\"UNKNOWN\",\"INCONSISTENT\"]},\"complete_totals\":{\"const\":null}}}",
+          "NULL_MEANING": "Nested complete_totals null means NOT VERIFIED TOTAL; explicit state/reason required",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "scientific_score_available",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":false}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "scientific_score",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":null}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "NOT_COMPUTED only; score_status/available fixed",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "scientific_score_status",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"const\":\"NOT_COMPUTED\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "diagnostics",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/diagnostic_entry\"},\"minItems\":0}",
+          "VARIANT_CONSTRAINT": "{\"minItems\":1,\"contains\":{\"properties\":{\"severity\":{\"const\":\"ERROR\"}},\"required\":[\"severity\"]}}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "publication",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"type\":\"object\"}",
+          "VARIANT_CONSTRAINT": "{\"$ref\":\"#/definitions/diagnostic_publication\"}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "diagnostic_cause",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"enum\":[\"INTEGRITY_HOLD\",\"SNAPSHOT_AUTHORITY_UNAVAILABLE\",\"UNSUPPORTED_OBSERVATION\"]}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "prior_artifact_observation",
+          "PRESENCE": "REQUIRED",
+          "BASE_DEFINITION": "{\"$ref\":\"#/definitions/prior_observation\"}",
+          "VARIANT_CONSTRAINT": "{}",
+          "NULL_MEANING": "Only where explicit nested schema permits; accompanied by its state enum; never implicit zero/empty",
+          "NESTED_RULES": "Resolve definitions and x-semantic-rules; additionalProperties=false at every object",
+          "SOURCE_AUTHENTICITY": "External source/snapshot evidence required; object shape or boolean never proof"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "C0",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "FINAL",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "initial_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "final_candidate",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "implementation_version",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "artifact_payload_sha256",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        },
+        {
+          "VARIANT": "NONCERTIFYING_DIAGNOSTIC",
+          "FIELD": "is_completed_result",
+          "PRESENCE": "FORBIDDEN",
+          "BASE_DEFINITION": "No property defined; closed envelope",
+          "VARIANT_CONSTRAINT": "false",
+          "NULL_MEANING": "Absent only; null remains forbidden",
+          "NESTED_RULES": "No embedded legacy result",
+          "SOURCE_AUTHENTICITY": "No trusted legacy projection"
+        }
+      ]
+    }
+  },
+  "cross_contract_review_structure": [
+    "scope",
+    "semantic_cases",
+    "structural_cases",
+    "notes"
+  ]
+}

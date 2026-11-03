@@ -1,0 +1,188 @@
+{
+  "scope": "Administrative evidence checks only; no additional A0 control execution",
+  "passed": true,
+  "checks": [
+    {
+      "check": "all8 requested deliverables present",
+      "passed": true
+    },
+    {
+      "check": "one actual expected-negative PASS, strong profile blocked",
+      "passed": true
+    },
+    {
+      "check": "historical19PASS1ERROR unchanged",
+      "passed": true
+    },
+    {
+      "check": "all actual namespace members retained",
+      "passed": true
+    },
+    {
+      "check": "new pending member included as evidence",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest 0.out",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest 0.ready",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest 1.out",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest 1.ready",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.boundary.lock",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.closed.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.json.lock",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.json.pending",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.json.r2_bindings/bindings.lock",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest GO",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/attempts/000001.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/attempts/000001.reservation.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/attempts/000001.response.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/attempts/000001.settlement.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/events/42392257d7241802443d8a1d25e687be.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/events/63457dc10418005c5b1206dfed6974da.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/events/b1b26848c635d0127307443db3c700fa.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/events/dc3c15847b426d84eaa37bc0c6349c79.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/IDENTITY.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/owner.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/owner.lock",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest publication/prepared/098daa830127c966a6ba971589880458.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest REVIEWER_OUTCOME.json",
+      "passed": true
+    },
+    {
+      "check": "raw captured digest wire/000001-4dcaf471206a91f7.jsonl",
+      "passed": true
+    },
+    {
+      "check": "three active controls inventoried without fake byte hashes",
+      "passed": true
+    },
+    {
+      "check": "unknown members retained without fabricated control role",
+      "passed": true
+    },
+    {
+      "check": "no required read errors hidden",
+      "passed": true
+    },
+    {
+      "check": "child completion distinct from failed writer operation",
+      "passed": true
+    },
+    {
+      "check": "foreign pending registration captured, main ledger unchanged, no attempt mutation",
+      "passed": true
+    },
+    {
+      "check": "own guards/pins released and access checked",
+      "passed": true
+    },
+    {
+      "check": "protected source evidence and Git states preserved",
+      "passed": true
+    },
+    {
+      "check": "only two copied harness files changed, old scoring definitions intact",
+      "passed": true
+    },
+    {
+      "check": "executed copied harness equals current reviewed files",
+      "passed": true
+    },
+    {
+      "check": "parent and child tripwires zero",
+      "passed": true
+    }
+  ],
+  "actual_new_control_counts": {
+    "executed": 1,
+    "PASS": 1,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "historical_counts_unchanged": {
+    "PASS": 19,
+    "FAIL": 0,
+    "ERROR": 1,
+    "NOT_EXECUTED": 0
+  },
+  "verdict": "A0_COLLECTOR_CORRECTED_STRONG_PROFILE_BLOCKED",
+  "A1_or_A_S_authorized_or_awarded": false
+}

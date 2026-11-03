@@ -15,6 +15,7 @@ import re
 from dataclasses import dataclass, field
 
 from ..cognition.deduplication import normalize
+from ..core.output_format import consensus_kind
 from ..core.state import to_data
 
 STATES = ("model_claimed", "evidence_referenced", "evidence_validated", "checker_supported", "verified",
@@ -104,6 +105,7 @@ class ClaimIntegrity:
     out_of_scope: tuple[tuple[str, str], ...] = ()
     contradicting: tuple[str, ...] = ()
     references: tuple[str, ...] = ()
+    consensus: str = ""       # v0.3.5: MODEL_CONSENSUS / REPORTED_CONSENSUS when the model's support is agreement
 
 
 @dataclass(frozen=True)
@@ -145,7 +147,8 @@ class EvidenceIndex:
         self.candidate_id = candidate.candidate_id
         self.digest = content_sha256(candidate.content)
         self.artifacts = {_get(a, "artifact_id"): to_data(a) for a in (*record.get("verifier_evidence", ()), *evidence)}
-        self.hashes = {c["candidate_id"]: content_sha256(c["content"]) for c in record.get("candidates", ())}
+        self.hashes = {c["candidate_id"]: content_sha256(c.get('answer_content') if c.get('answer_content') is not None
+                       else c['content']) for c in record.get("candidates", ())}
         self.hashes[candidate.candidate_id] = self.digest
         self.tests = {t["test_id"]: t["candidate_id"] for t in record.get("adversarial_tests", ())}
         self.judgments = {j["judgment_id"]: j["candidate_id"]
@@ -294,10 +297,14 @@ class EvidenceIntegrity:
                 reason = ("model-asserted status without trusted evidence" if status_source == "model" else
                           "support recorded for another candidate does not transfer" if status_source == "engine" else
                           "no trusted evidence")
+            consensus = consensus_kind(claim.evidence) if status_source == "model" else ""
+            if consensus and status != "verified":
+                reason += f"; the stated support is {consensus}, which is agreement, not verification"
             if history[-1] != status:
                 history.append(status)
             claim_results.append(ClaimIntegrity(claim.claim_id, claim.text, model_status, status_source, status,
-                tuple(history), reason, supporting, out, contradicting, tuple(f"{r.reference}: {r.status}" for r in found)))
+                tuple(history), reason, supporting, out, contradicting, tuple(f"{r.reference}: {r.status}" for r in found),
+                consensus))
 
         trusted = tuple({"artifact_id": e.artifact_id, "passed": e.passed, "source": e.source, "targets": list(e.targets),
                          "check_id": e.contract.check_id if e.contract else None,
@@ -329,6 +336,9 @@ class EvidenceIntegrity:
                     and c.status not in ("verified", "unsupported", "unresolved")]
         if asserted:
             uncertain.append("Model-asserted claim status has no trusted evidence: " + _listed(asserted))
+        agreed = [f"{c.claim_id} ({c.consensus})" for c in claim_results if c.consensus and c.status != "verified"]
+        if agreed:
+            uncertain.append("Agreement is recorded as consensus, not verification: " + _listed(agreed))
         mismatched = [t["artifact_id"] for t in trusted if t["artifact_binding"] == "mismatch"]
         if mismatched:
             uncertain.append("Executed evidence checked a different artifact: " + _listed(mismatched))
@@ -359,7 +369,7 @@ class EvidenceIntegrity:
         for j in judgments:
             for category in ("fatal_issues", "major_issues", "minor_issues"):
                 for issue in getattr(j, category):
-                    if issue.target in known:
+                    if issue.target in known and issue.decisive:  # a misattributed finding opposes nothing
                         opposes.setdefault(issue.target, []).append(f"{j.judgment_id} {category[:-7]} issue")
             if j.verdict.value == "PASS":
                 for ref in j.evidence:

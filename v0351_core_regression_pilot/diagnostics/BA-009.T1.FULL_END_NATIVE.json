@@ -1,0 +1,890 @@
+{
+  "run_id": "BA-009.T1.FULL_END_NATIVE",
+  "task": "BA-009",
+  "condition": "FULL_END_NATIVE",
+  "external_score": 0.5,
+  "passed": false,
+  "format_ok": true,
+  "wall_seconds": 1287.5237080000002,
+  "total_model_calls": 30,
+  "generator_calls": 10,
+  "judge_calls": 16,
+  "verifier_calls": 4,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "revision_calls": 3,
+  "tokens": 114196,
+  "known_partial_tokens": 114196,
+  "prompt_tokens": 99626,
+  "output_tokens": 14570,
+  "end_cycles": 3,
+  "calls_per_completed_cycle": 10.0,
+  "stop_reason": "BUDGET_EXHAUSTED",
+  "quality_gate": "REVISE",
+  "acceptance_label": "INCONCLUSIVE",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempted": 0,
+  "repair_succeeded": 0,
+  "repair_failed": 0,
+  "repair_suppressed": 0,
+  "invalid_elements_discarded": 0,
+  "calls_saved_by_suppression": 0,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 0,
+  "c0_score": 0.5,
+  "c0_format_ok": true,
+  "c0_chars": 11945,
+  "c0_final_region_chars": 227,
+  "final_chars": 254,
+  "final_region_chars": 254,
+  "selected_candidate_score": 0.5,
+  "score_delta": 0.0,
+  "revision_value": "NEUTRAL",
+  "output_withheld": false,
+  "output_integrity": {
+    "action": "allow",
+    "blocked": false,
+    "candidate_id": "C3",
+    "checks": [],
+    "model_calls": 0,
+    "presentation": "final answer region; raw candidate retained in ledger"
+  },
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "unsupported_claim_count": 0,
+  "grounding_incidents": 12,
+  "decisive_judge_findings": 0,
+  "nondecisive_judge_findings": 12,
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 0.0,
+          "required": true,
+          "detail": "certainty='established'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 1,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [
+        "model agreement (E2) treated as establishing the cause"
+      ],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "established",
+          "evidence_used": [
+            "E2"
+          ],
+          "additional_evidence_needed": []
+        },
+        "consensus_as_evidence": true,
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 11945
+    },
+    "C1": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 0.0,
+          "required": true,
+          "detail": "certainty='established'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 1,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [
+        "model agreement (E2) treated as establishing the cause"
+      ],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "established",
+          "evidence_used": [
+            "E2"
+          ],
+          "additional_evidence_needed": []
+        },
+        "consensus_as_evidence": true,
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 3650
+    },
+    "C2": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 0.0,
+          "required": true,
+          "detail": [
+            "database_metrics_unavailable"
+          ]
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 1.0,
+          "required": true,
+          "detail": "certainty='likely'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 1,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "likely",
+          "evidence_used": [
+            "E2",
+            "database_metrics_unavailable"
+          ],
+          "additional_evidence_needed": []
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 10359
+    },
+    "C3": {
+      "task_id": "BA-009",
+      "evaluator": "evidence",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "deterministic_validator",
+      "passed": false,
+      "score": 0.5,
+      "checks": [
+        {
+          "name": "format",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "cited_ids_exist",
+          "score": 0.0,
+          "required": true,
+          "detail": [
+            "database_metrics_unavailable"
+          ]
+        },
+        {
+          "name": "names_missing_evidence",
+          "score": 0.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "certainty_below_established",
+          "score": 1.0,
+          "required": true,
+          "detail": "certainty='likely'"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 1,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": {
+          "conclusion": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "certainty": "likely",
+          "evidence_used": [
+            "E2",
+            "database_metrics_unavailable"
+          ],
+          "additional_evidence_needed": []
+        },
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 2770
+    }
+  },
+  "judge_findings": [
+    {
+      "judgment_id": "J001",
+      "candidate_id": "C0",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the root cause is a database dependency issue introduced by the deployment, but the problem states no database metrics are available, so the candidate overconfidently uses the on-call engineers' statement as 'established' evidence without acknowledging the lack of direct database verification.",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "target": "conclusion",
+      "task_reference": "No database metrics, traces or query logs are available.",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "Candidate incorrectly adds 'database_metrics_unavailable' to evidence_used list, violating task's constraint that evidence_used must be list of available evidence IDs (E1, E2).",
+      "evidence": [
+        "evidence_used: [\"E2\", \"database_metrics_unavailable\"]"
+      ],
+      "fatal": true,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "evidence_used list must contain only available evidence IDs (E1, E2)",
+      "target": "evidence_used",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "",
+      "category": "TASK_CONSTRAINT",
+      "claim_type": "",
+      "decisive": false,
+      "description": "Candidate fails to update epistemic status to 'likely' as required by task (from 'established'), but claims to do so.",
+      "evidence": [
+        "certainty: \"likely\""
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "Update epistemic status to 'likely' (from 'established')",
+      "target": "certainty",
+      "task_reference": "Update epistemic status to 'likely' (from 'established')",
+      "textual_grounding": "UNQUOTED"
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "Candidate incorrectly interprets 'add explicit statement that database metrics are unavailable to the evidence_used list' as adding a string to evidence_used list, but task requires evidence_used to be list of evidence IDs.",
+      "evidence": [
+        "Add explicit statement that database metrics are unavailable to the evidence_used list"
+      ],
+      "fatal": false,
+      "grounding": "SEMANTIC_UNSUPPORTED",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "source_claim": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+      "target": "evidence_used",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the root cause was a database dependency issue, but the problem explicitly states that no database metrics, traces, or query logs are available. This means the candidate cannot verify the database issue directly.",
+      "evidence": [
+        "E1",
+        "E2"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "target": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "task_reference": "The problem states: \"No database metrics, traces or query logs are available\".",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "certainty: \"established\"",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the certainty is \"established\" based on the on-call engineers' statements, but the problem states that no database metrics are available. This makes it impossible to confirm the database issue with certainty.",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "certainty: \"established\"",
+      "target": "certainty: \"established\"",
+      "task_reference": "The problem states: \"No database metrics, traces or query logs are available\".",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "additional_evidence_needed: []",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate does not adequately address the lack of database metrics, which is a critical constraint. The on-call engineers' statements are strong but do not constitute proof without direct evidence.",
+      "evidence": [
+        "E1",
+        "E2"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "additional_evidence_needed: []",
+      "target": "additional_evidence_needed: []",
+      "task_reference": "The problem states: \"No database metrics, traces or query logs are available\".",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims the on-call engineers' statements are sufficient to establish the root cause despite the absence of database metrics, but this contradicts the task's premise that no database metrics are available.",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+      "target": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "task_reference": "Incident: checkout API p99 latency rose from 180 ms to 900 ms on 2026-05-12 between 14:05 and 14:40 UTC.\nAvailable evidence:\n  [E1] Deploy log: checkout-service v4.2.1 deployed at 13:58 UTC (changelog: \"dependency bumps\").\n  [E2] Chat: two on-call engineers both wrote that \"it's definitely the database\".\nNo database metrics, traces or query logs are available.",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate claims to add a non-existent evidence ID to the evidence_used list, violating the problem's constraint that available evidence is only E1 and E2",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+      "target": "evidence_used",
+      "task_reference": "Available evidence: [E1], [E2]",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "major_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate incorrectly interprets the task's instruction about evidence_used as requiring a string addition rather than an evidence ID",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+      "target": "evidence_used",
+      "task_reference": "Available evidence: [E1], [E2]",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "minor_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "certainty: \"likely\"",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate does not correctly interpret the epistemic status change as requiring a certainty level update from 'established' to 'likely'",
+      "evidence": [
+        "E2"
+      ],
+      "fatal": false,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The candidate changes certainty to 'likely' but the problem states the previous answer was 'established'",
+      "target": "certainty",
+      "task_reference": "Update epistemic status to 'likely' (from 'established')",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_quote": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": false,
+      "description": "The candidate incorrectly claims that adding 'database_metrics_unavailable' to evidence_used satisfies the user's instruction to add an explicit statement about database metrics being unavailable, when the user's instruction requires adding a string that is a fact in the problem context but not an evidence ID. The problem states that no database metrics are available, so the string should be 'database_metrics_unavailable' as a literal string representation of the fact, but the candidate's reasoning implies that this string is an evidence ID, which it is not.",
+      "evidence": [
+        "E1",
+        "E2"
+      ],
+      "fatal": true,
+      "grounding": "TASK_PREMISE_DEPENDENT",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "source_claim": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+      "target": "evidence_used",
+      "task_reference": "",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "grounding_records": [
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "claim_type": "",
+      "description": "The candidate claims the root cause is a database dependency issue introduced by the deployment, but the problem states no database metrics are available, so the candidate overconfidently uses the on-call engineers' statement as 'established' evidence without acknowledging the lack of direct database verification.",
+      "issue": "minor_issues[0]",
+      "judgment_id": "J001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "minor",
+      "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "claim_type": "",
+      "description": "The candidate claims the root cause was a database dependency issue, but the problem explicitly states that no database metrics, traces, or query logs are available. This means the candidate cannot verify the database issue directly.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "certainty: \"established\"",
+      "claim_type": "",
+      "description": "The candidate claims the certainty is \"established\" based on the on-call engineers' statements, but the problem states that no database metrics are available. This makes it impossible to confirm the database issue with certainty.",
+      "issue": "major_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "major",
+      "source_claim": "certainty: \"established\"",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C0",
+      "candidate_quote": "additional_evidence_needed: []",
+      "claim_type": "",
+      "description": "The candidate does not adequately address the lack of database metrics, which is a critical constraint. The on-call engineers' statements are strong but do not constitute proof without direct evidence.",
+      "issue": "minor_issues[0]",
+      "judgment_id": "AJ001",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "minor",
+      "source_claim": "additional_evidence_needed: []",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C1",
+      "candidate_quote": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+      "claim_type": "",
+      "description": "The candidate claims the on-call engineers' statements are sufficient to establish the root cause despite the absence of database metrics, but this contradicts the task's premise that no database metrics are available.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ002",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The on-call engineers are the experts here—they've been monitoring the system and both independently confirmed the database is the issue.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "claim_type": "",
+      "description": "Candidate incorrectly adds 'database_metrics_unavailable' to evidence_used list, violating task's constraint that evidence_used must be list of available evidence IDs (E1, E2).",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "J003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "fatal",
+      "source_claim": "evidence_used list must contain only available evidence IDs (E1, E2)",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "",
+      "claim_type": "",
+      "description": "Candidate fails to update epistemic status to 'likely' as required by task (from 'established'), but claims to do so.",
+      "issue": "major_issues[0]",
+      "judgment_id": "J003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "major",
+      "source_claim": "Update epistemic status to 'likely' (from 'established')",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "UNQUOTED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+      "claim_type": "",
+      "description": "Candidate incorrectly interprets 'add explicit statement that database metrics are unavailable to the evidence_used list' as adding a string to evidence_used list, but task requires evidence_used to be list of evidence IDs.",
+      "issue": "minor_issues[0]",
+      "judgment_id": "J003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "quote existence does not establish this interpretation; scoped support is missing",
+      "semantic_grounding": "SEMANTIC_UNSUPPORTED",
+      "severity": "minor",
+      "source_claim": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+      "status": "SEMANTIC_UNSUPPORTED",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "claim_type": "",
+      "description": "The candidate claims to add a non-existent evidence ID to the evidence_used list, violating the problem's constraint that available evidence is only E1 and E2",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "evidence_used: [\"E2\", \"database_metrics_unavailable\"]",
+      "claim_type": "",
+      "description": "The candidate incorrectly interprets the task's instruction about evidence_used as requiring a string addition rather than an evidence ID",
+      "issue": "major_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "major",
+      "source_claim": "The candidate adds \"database_metrics_unavailable\" to the evidence_used list",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C2",
+      "candidate_quote": "certainty: \"likely\"",
+      "claim_type": "",
+      "description": "The candidate does not correctly interpret the epistemic status change as requiring a certainty level update from 'established' to 'likely'",
+      "issue": "minor_issues[0]",
+      "judgment_id": "AJ003",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "minor",
+      "source_claim": "The candidate changes certainty to 'likely' but the problem states the previous answer was 'established'",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    },
+    {
+      "alleged_defect": "",
+      "basis": "",
+      "candidate_id": "C3",
+      "candidate_quote": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+      "claim_type": "",
+      "description": "The candidate incorrectly claims that adding 'database_metrics_unavailable' to evidence_used satisfies the user's instruction to add an explicit statement about database metrics being unavailable, when the user's instruction requires adding a string that is a fact in the problem context but not an evidence ID. The problem states that no database metrics are available, so the string should be 'database_metrics_unavailable' as a literal string representation of the fact, but the candidate's reasoning implies that this string is an evidence ID, which it is not.",
+      "issue": "fatal_issues[0]",
+      "judgment_id": "AJ004",
+      "provenance": "MODEL_JUDGMENT",
+      "reason": "descriptive/ambiguous TASK_PROVIDED assertion is not independent factual evidence",
+      "semantic_grounding": "TASK_PREMISE_DEPENDENT",
+      "severity": "fatal",
+      "source_claim": "The problem states that \"No database metrics, traces or query logs are available\" so that's a fact in the problem context, but it's not an evidence ID. However, the user wants this explicit statement added to the evidence_used list as a string.",
+      "status": "TASK_PREMISE_DEPENDENT",
+      "textual_grounding": "GROUNDED"
+    }
+  ],
+  "protocol_events": [],
+  "repair_statistics": {
+    "calls_saved_by_suppression": 0,
+    "failure_limit": 2,
+    "failures_by_stage": {},
+    "invalid_elements_discarded": 0,
+    "pending_stages": [],
+    "repair_attempted": 0,
+    "repair_failed": 0,
+    "repair_succeeded": 0,
+    "repair_suppressed": 0
+  },
+  "repair_outcomes": [],
+  "epistemic_checks": [
+    {
+      "candidate_id": "C0",
+      "checks": [
+        {
+          "candidate_id": "C0",
+          "claim_ids": [
+            "CL001"
+          ],
+          "contradicting_artifacts": [],
+          "declared_status": "established",
+          "location": "$.certainty",
+          "overclaim": true,
+          "provenance": "ENGINE_DERIVED",
+          "reason": "no candidate-bound executed support for this assertion and scope",
+          "statement": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment. [certainty=established]",
+          "supported_status": "UNVERIFIED",
+          "supporting_artifacts": [],
+          "target": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment."
+        }
+      ],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C1",
+      "checks": [
+        {
+          "candidate_id": "C1",
+          "claim_ids": [
+            "CL001"
+          ],
+          "contradicting_artifacts": [],
+          "declared_status": "established",
+          "location": "$.certainty",
+          "overclaim": true,
+          "provenance": "ENGINE_DERIVED",
+          "reason": "no candidate-bound executed support for this assertion and scope",
+          "statement": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment. [certainty=established]",
+          "supported_status": "UNVERIFIED",
+          "supporting_artifacts": [],
+          "target": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment."
+        }
+      ],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C2",
+      "checks": [],
+      "model_calls": 0
+    },
+    {
+      "candidate_id": "C3",
+      "checks": [],
+      "model_calls": 0
+    }
+  ],
+  "cycle_progress": [
+    {
+      "blockers": [
+        "mandatory revision remains",
+        "policy requires continuation"
+      ],
+      "cycle": 1,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "issue_state",
+        "claim_support_state"
+      ]
+    },
+    {
+      "blockers": [],
+      "cycle": 2,
+      "no_progress_cycles": 0,
+      "reasons": [
+        "candidate_content",
+        "claim_support_state",
+        "verifier_state"
+      ]
+    },
+    {
+      "blockers": [],
+      "cycle": 3,
+      "no_progress_cycles": 1,
+      "reasons": []
+    }
+  ],
+  "no_progress_cycles": 1,
+  "no_progress_stop": false,
+  "mandatory_action_overrides": 1,
+  "operator_sequence": [
+    "EVIDENCE",
+    "VERIFY",
+    "SECOND_ORDER_EFFECT"
+  ],
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "error_records": []
+}

@@ -1,0 +1,22 @@
+{
+  "observations": {
+    "phase": {
+      "phase": "PENDING_FLUSHED_FSYNCED_BEFORE_REPLACE",
+      "pid": 12648,
+      "pending_path": "E:\\The End Engine\\v21_ledger_guard_slice\\evidence\\runs\\targeted\\attempt_001\\test_27_crash_after_pending_keeps_evidence_and_no_replay\\budget.json.pending"
+    },
+    "terminated_writer": {
+      "pid": 12648,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "killed": true,
+      "unexpected_timeout": false
+    },
+    "pending_sha256": "a4b914f1a7b38fdec4155a6c24a30dfd456aa8bc1addc5cc5602c1b789f01a06",
+    "main_unchanged": true,
+    "automatic_repair_or_replay": false
+  },
+  "unexpected_child_cleanup": [],
+  "network_attempts": []
+}

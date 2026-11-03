@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "operation": "write",
+      "outcome": "DENIED",
+      "exception": "PermissionError",
+      "errno": 13,
+      "winerror": null,
+      "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-13\\\\data.txt'"
+    },
+    {
+      "operation": "delete",
+      "outcome": "DENIED",
+      "exception": "PermissionError",
+      "errno": 13,
+      "winerror": 32,
+      "message": "[WinError 32] The process cannot access the file because it is being used by another process: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-13\\\\data.txt'"
+    }
+  ],
+  "counters": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  },
+  "worker_operation_completed": true
+}

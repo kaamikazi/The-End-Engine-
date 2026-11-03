@@ -1,0 +1,13 @@
+{
+  "vector_id": "A0-11",
+  "required_plan_observation": "Same context on BLOCKED evidence produces genuine independent F02 rejection; fd=None release touches no owner's lease",
+  "status": "FAIL",
+  "expectation_matched": false,
+  "observed_events": [],
+  "authority": "X",
+  "material_blocker": false,
+  "started_unix": 1792509852.1199346,
+  "error": "AssertionError: LEGACY_SOURCE_MISSING_RESERVATION_BEHAVIOR_CHANGED",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_runner.py\", line 28, in main\n    value=t.CASES[vector](root);row.update(value);row['status']='PASS';row['expectation_matched']=True\n          ^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\test_lock_domain_feasibility.py\", line 85, in case11\n    ok(s['core']['passed'],'LEGACY_SOURCE_MISSING_RESERVATION_BEHAVIOR_CHANGED');ok(not reservation.exists(),'OBSERVER_REPAIRED_MISSING_RESERVATION')\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\test_lock_domain_feasibility.py\", line 7, in ok\n    if not cond:raise AssertionError(message)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: LEGACY_SOURCE_MISSING_RESERVATION_BEHAVIOR_CHANGED\n",
+  "elapsed_seconds": 0.6099999999996726
+}

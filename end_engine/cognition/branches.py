@@ -3,7 +3,11 @@ from typing import Protocol
 
 from ..core.state import to_data
 from ..models.base import ModelRequest
+from ..core.output_format import candidate_answer
+from ..quality.assessment import AssessmentAuthorityPolicy
 from ..models.schema import BRIEF, SCORE, STRING, STRINGS, obj, validate
+from ..models.protocol import (INVALID_REFERENCE, INVALID_TRANSITION, REPAIR_EXHAUSTED, REPAIR_INSTRUCTION,
+                               ModelProtocolError, repair_context)
 
 
 @dataclass(frozen=True)
@@ -40,6 +44,7 @@ class SynthesisPlan:
     source_branches: tuple[str, ...]
     adopt: tuple[SynthesisElement, ...]
     reject: tuple[SynthesisElement, ...]
+    source_origin: str = 'MODEL_REVISION_PLAN'
 
 
 class BranchEvaluator(Protocol):
@@ -61,25 +66,36 @@ class LLMBranchEvaluator:
 
 
 class SynthesisPlanner:
-    def synthesize(self, task, candidate, branches, provider):
+    def synthesize(self, task, candidate, branches, provider, repair=None):
         schema = obj({"source_branches": STRINGS,
                       "adopt": {"type": "array", "maxItems": 12, "items": obj({"branch": STRING, "element": BRIEF})},
                       "reject": {"type": "array", "maxItems": 12, "items": obj({"branch": STRING, "element": BRIEF, "reason": BRIEF})}})
-        data = provider.generate_structured(ModelRequest("synthesis",
-            "Create a synthesis plan using all evaluated branches. Combine useful components across promising branches "
-            "when compatible. Preserve rejected ideas and their reasons. Include every branch in source_branches. "
-            "Never adopt from a rejected or exhausted branch. Do not rewrite the candidate.",
-            {"task": task, "candidate": to_data(candidate), "branches": to_data(branches)}, schema)).content
+        prompt = ("Create a synthesis plan using all evaluated branches. Combine useful components across promising "
+                  "branches when compatible. Preserve rejected ideas and their reasons. Include every branch in "
+                  "source_branches. Never adopt from a rejected or exhausted branch. Do not rewrite the candidate.")
+        context = {"task": task, "candidate": {**to_data(candidate), 'content': candidate_answer(candidate)},
+                   "branches": to_data(branches), 'source_origin': 'MODEL_REVISION_PLAN',
+                   'assessment_context': AssessmentAuthorityPolicy(task).context(candidate)}
+        prompt += ' A synthesis is an advisory model plan, not a user requirement or evidence receipt.'
+        if repair is not None:
+            prompt, context = prompt + "\n\n" + REPAIR_INSTRUCTION, {**context, "protocol_repair": repair}
+        data = provider.generate_structured(ModelRequest("synthesis", prompt, context, schema)).content
         validate(data, schema)
         sources = {b.branch_id: b for b in branches}
+        allowed = {"all_branch_ids": sorted(sources),
+                   "adoptable_branch_ids": sorted(b for b, x in sources.items() if x.status == "PROMISING")}
         if set(data["source_branches"]) != sources.keys() or len(data["source_branches"]) != len(sources):
-            raise ValueError("Synthesis must account for every branch exactly once")
+            raise ModelProtocolError(INVALID_REFERENCE, "Synthesis must account for every branch exactly once",
+                                     stage="synthesis", invalid=data["source_branches"], allowed=allowed, output=data)
         for item in (*data["adopt"], *data["reject"]):
             if item["branch"] not in sources:
-                raise ValueError("Synthesis references an unknown branch")
+                raise ModelProtocolError(INVALID_REFERENCE, "Synthesis references an unknown branch", stage="synthesis",
+                                         invalid=(item["branch"],), allowed=allowed, output=data)
         for item in data["adopt"]:
             if sources[item["branch"]].status != "PROMISING":
-                raise ValueError("Cannot adopt from a non-promising branch")
+                # The invariant is unchanged: a non-promising branch can never be adopted.
+                raise ModelProtocolError(INVALID_TRANSITION, "Cannot adopt from a non-promising branch",
+                                         stage="synthesis", invalid=(item["branch"],), allowed=allowed, output=data)
         return SynthesisPlan(tuple(data["source_branches"]),
                              tuple(SynthesisElement(**item) for item in data["adopt"]),
                              tuple(SynthesisElement(**item) for item in data["reject"]))
@@ -150,7 +166,8 @@ class BranchController:
         output = provider.generate_structured(ModelRequest("branch_generation",
             "Explore distinct competing hypotheses for this concrete question. Generate only the requested bounded batch. "
             "Preserve the original goal and constraints; make no source-code or deployment changes.",
-            {"task": task, "candidate": to_data(candidate), "question": to_data(question), "max_branches": count}, schema)).content
+            {"task": task, "candidate": {**to_data(candidate), "content": candidate_answer(candidate)},
+             "question": to_data(question), "max_branches": count, "source_origin": "MODEL_REVISION_PLAN"}, schema)).content
         validate(output, schema)
         created = [self.add(candidate.candidate_id, operator, item["hypothesis"], item["content"],
                             parent_branch_id=parent_branch_id) for item in output["branches"]]
@@ -168,13 +185,55 @@ class BranchController:
             self.trajectory.record("branch_evaluation", evaluation, "branch_evaluations")
             self._record(replace(branch, status=statuses[evaluation.recommendation], evaluation=evaluation), branch)
         evaluated = tuple(self._branches[b.branch_id] for b in created)
-        plan = self.synthesis.synthesize(task, candidate, evaluated, provider)
+        plan = self._synthesize(task, candidate, evaluated, provider)
         self.trajectory.record("synthesis_plan", plan, "synthesis_plans")
         adopted = {element.branch for element in plan.adopt}
         for branch in evaluated:
             if branch.status == "PROMISING":
                 self._record(replace(branch, status="MERGED" if branch.branch_id in adopted else "EXHAUSTED"), branch)
         return plan, tuple(self._branches[b.branch_id] for b in created)
+
+    def _synthesize(self, task, candidate, evaluated, provider):
+        """v0.3.5: an invalid synthesis request is a bounded local failure. One targeted repair; if the output is still
+        invalid, the synthesis is discarded (nothing is adopted, rejected branches stay rejected) and the main loop
+        continues. Forbidden adoptions are never applied."""
+        from ..models.repair import repair_policy
+        policy = repair_policy(self.trajectory, getattr(self.config, 'repair_failure_limit', 2))
+        attempts = min(1, getattr(self.config, "protocol_repair_attempts", 0))
+        try:
+            plan = self.synthesis.synthesize(task, candidate, evaluated, provider)
+            if 'synthesis' in policy.active:
+                policy.finish('synthesis', True)
+            return plan
+        except ModelProtocolError as error:
+            failure = error
+            for attempt in range(1, attempts + 1):
+                if not policy.begin('synthesis'):
+                    policy.finish('synthesis', False)
+                    break
+                self.trajectory.record("protocol_event", {"stage": "synthesis", "category": failure.category,
+                    "validation_error": str(failure), "invalid": list(failure.invalid), "action": "repair_requested",
+                    "attempt": attempt}, "protocol_events")
+                try:
+                    plan = self.synthesis.synthesize(task, candidate, evaluated, provider,
+                                                     repair=repair_context(failure, attempt=attempt))
+                except ModelProtocolError as again:
+                    failure = again
+                    policy.finish('synthesis', False)
+                    continue
+                except Exception:
+                    policy.finish('synthesis', False)
+                    raise
+                policy.finish('synthesis', True)
+                self.trajectory.record("protocol_event", {"stage": "synthesis", "category": error.category,
+                    "action": "repaired", "attempt": attempt, "result": "valid"}, "protocol_events")
+                return plan
+            self.trajectory.record("protocol_event", {"stage": "synthesis", "category": REPAIR_EXHAUSTED,
+                "original_category": error.category, "validation_error": str(failure), "invalid": list(failure.invalid),
+                "action": "synthesis_discarded", "continued": True,
+                "discarded": failure.output}, "protocol_events")
+            policy.discarded(len(failure.invalid))
+            return SynthesisPlan(tuple(b.branch_id for b in evaluated), (), ())
 
     def close_active(self, reason):
         for branch in self.snapshot():

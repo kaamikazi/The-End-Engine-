@@ -1,0 +1,11 @@
+== demo exit=0 (output in a scratch directory; demo_*_output folders untouched)
+Termination: QUALITY_THRESHOLD_REACHED
+      "termination": "TerminationController",
+== demo_v02 exit=0 (output in a scratch directory; demo_*_output folders untouched)
+Termination: QUALITY_THRESHOLD_REACHED — Score 0.980 reaches 0.950; no open high-severity issues
+      "termination": "TerminationController",
+== demo_v03 exit=0 (output in a scratch directory; demo_*_output folders untouched)
+[QUALITY_GATE] {'candidate_id': 'C0', 'decision': 'REVISE', 'reasons': ['A single health probe cannot exclude delayed or partial rollout failures.', 'At least one judge requires correction', "A judge's recommended action
+[QUALITY_GATE] {'candidate_id': 'C1', 'decision': 'REVISE', 'reasons': ['Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'At least one judge requires correc
+[QUALITY_GATE] {'candidate_id': 'C2', 'decision': 'REVISE', 'reasons': ['Rollback can retire the last healthy pool before recovery finishes, and stale completion can race with retry.', 'At least one judge requires correc
+[QUALITY_GATE] {'candidate_id': 'C3', 'decision': 'ACCEPT_VERIFIED', 'reasons': ['Independent judgments and candidate-bound executed checks agree within the recorded scope'], 'required_actions': []}

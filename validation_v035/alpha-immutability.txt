@@ -1,0 +1,6 @@
+Benchmark Alpha immutability (SHA-256 of every file under benchmark_alpha/, before any v0.3.5 change vs after all of them)
+files: 836
+list sha256 before: a5ad00d404e3197edd4237223e48da5605fb2c20a82fe7651e4fe6b676b8d6f5
+list sha256 after:  a5ad00d404e3197edd4237223e48da5605fb2c20a82fe7651e4fe6b676b8d6f5
+RESULT: byte-identical. No Benchmark Alpha artifact was modified, rescored or regenerated.
+No benchmark_beta run exists; no live model was called during v0.3.5 implementation.

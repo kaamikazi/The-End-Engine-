@@ -1,0 +1,119 @@
+{
+ "answer": "```python\n\ndef is_palindrome(s):\n    return s == s[::-1]\n```\n",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 208,
+   "latency_ms": 4460.342,
+   "output_tokens": 92,
+   "prompt_chars": 780,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 2041816466,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 680,
+   "latency_ms": 7083.425,
+   "output_tokens": 151,
+   "prompt_chars": 2472,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 3856036920,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "overthinking_trap",
+ "condition": "END_LITE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 2,
+  "calls_by_role": {
+   "generator": 2
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 243,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 1131,
+  "model_latency_ms": 11543.767,
+  "prompt_tokens": 888,
+  "tool_check_calls": 0,
+  "total_tokens": 1131,
+  "truncated_text_answers": 0,
+  "wall_ms": 11577.886
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "normal",
+  "errors": [
+   {
+    "message": "Invalid or duplicate weakness update: Unicode handling",
+    "stage": "verification"
+   }
+  ],
+  "gate_decisions": [],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": false,
+   "remaining_issues": [
+    "The implementation does not handle Unicode characters correctly, which is a requirement for a production-grade palindrome check."
+   ],
+   "score": 0.8
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "29ebf51b-6852-4ec2-95a8-7c1b45c50f63.jsonl",
+  "trajectory_id": "29ebf51b-6852-4ec2-95a8-7c1b45c50f63",
+  "trajectory_sha256": "fd81ed779233d063dd7ed172ea8c2fd82dfa8b771a3e2028aed529eac0853809"
+ },
+ "ended_at": "2026-09-30T19:22:37.475929+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 900.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-012.T2.END_LITE",
+ "stages": {},
+ "started_at": "2026-09-30T19:22:25.899118+00:00",
+ "task_id": "BA-012",
+ "trial": 2,
+ "trial_id": "BA-012.T2",
+ "trial_seed": 3521970718
+}

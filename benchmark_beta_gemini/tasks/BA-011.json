@@ -1,0 +1,24 @@
+{
+ "task_id": "BA-011",
+ "category": "narrow_check_broad_claim",
+ "difficulty": "hard",
+ "prompt": "Evidence:\n  [E1] Load-test report: one region (us-east-1), 100 requests/s sustained for 10 minutes, synthetic read-only traffic, p99 = 120 ms, 0 errors.\nQuestion: can we promise enterprise customers in the contract that the service will handle production peak traffic (5,000 requests/s, mixed reads and writes, 3 regions) with p99 under 200 ms?\nGive your final answer as one JSON object in a ```json code block with exactly these keys: \"conclusion\" (string), \"certainty\" (one of \"established\", \"likely\", \"hypothesis\", \"unknown\"), \"evidence_used\" (list of evidence IDs you relied on), \"additional_evidence_needed\" (list of strings).",
+ "constraints": [
+  "cite only provided evidence IDs"
+ ],
+ "evaluation": {
+  "type": "deterministic_validator",
+  "evaluator": "evidence",
+  "provided_ids": [
+   "E1"
+  ],
+  "mode": "scope"
+ },
+ "expected_properties": [
+  "no guarantee derived from the narrow test",
+  "gap to production conditions named"
+ ],
+ "failure_conditions": [
+  "promise/guarantee supported as established"
+ ]
+}

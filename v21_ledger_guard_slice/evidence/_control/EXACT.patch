@@ -1,0 +1,752 @@
+--- a/cognitive_architecture_lab_v1/src/accounting/ledger.py
++++ b/cognitive_architecture_lab_v1/src/accounting/ledger.py
+@@ -8,8 +8,13 @@
+ from ..interfaces.contracts import canonical,finite,positive_int,digest
+ class BudgetStop(RuntimeError):pass
+ class Ledger:
+-    def __init__(self,path,*,global_attempts=136,global_tokens=400000,global_seconds=10800):
+-        self.path=Path(path);self.path.parent.mkdir(parents=True,exist_ok=True)
++    def __init__(self,path,*,global_attempts=136,global_tokens=400000,global_seconds=10800,coordination=None):
++        self.path=Path(path);self._coordination=coordination
++        if coordination is not None:
++            from .coordination import Coordinator
++            if type(coordination) is not Coordinator:raise TypeError('Explicit Coordinator required')
++            coordination.validate(self.path)
++        else:self.path.parent.mkdir(parents=True,exist_ok=True)
+         self.limits={'attempts':positive_int(global_attempts),'tokens':positive_int(global_tokens),'seconds':finite(global_seconds,True)}
+         if global_attempts>136 or global_tokens>400000 or global_seconds>10800:raise ValueError('Frozen global ceilings exceeded')
+         with self.lock():
+@@ -17,31 +22,39 @@
+             else:self._write({'schema_version':'lab-ledger-v1','limits':self.limits,'runs':{},'attempts':[],'halted':False})
+     @contextmanager
+     def lock(self):
+-        lockpath=self.path.with_suffix(self.path.suffix+'.lock')
+-        with lockpath.open('a+b') as f:
+-            f.seek(0,2)
+-            if f.tell()==0:f.write(b'0');f.flush()
+-            f.seek(0)
+-            if os.name=='nt':
+-                import msvcrt
+-                msvcrt.locking(f.fileno(),msvcrt.LK_LOCK,1)
+-            else:
+-                import fcntl
+-                fcntl.flock(f,fcntl.LOCK_EX)
+-            try:yield
+-            finally:
++        from contextlib import nullcontext
++        from .coordination import _inner_scope
++        coordination=getattr(self,'_coordination',None)
++        if coordination is not None:coordination.check_inner_entry(self.path)
++        with coordination.acquire() if coordination is not None else nullcontext():
++            lockpath=self.path.with_suffix(self.path.suffix+'.lock')
++            with lockpath.open('a+b') as f:
++                f.seek(0,2)
++                if f.tell()==0:f.write(b'0');f.flush()
+                 f.seek(0)
+-                if os.name=='nt':msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
+-                else:fcntl.flock(f,fcntl.LOCK_UN)
++                if os.name=='nt':
++                    import msvcrt
++                    msvcrt.locking(f.fileno(),msvcrt.LK_LOCK,1)
++                else:
++                    import fcntl
++                    fcntl.flock(f,fcntl.LOCK_EX)
++                try:
++                    with _inner_scope(self.path):yield
++                finally:
++                    f.seek(0)
++                    if os.name=='nt':msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
++                    else:fcntl.flock(f,fcntl.LOCK_UN)
+     def _read(self):
+         envelope=json.loads(self.path.read_text(encoding='utf-8'))
+         s=envelope['state']
+         if envelope['state_sha256']!=digest(s) or s['schema_version']!='lab-ledger-v1' or s['limits']!=self.limits:raise ValueError('Ledger integrity/identity mismatch')
+         return s
+     def _write(self,s):
++        coordination=getattr(self,'_coordination',None)
++        if coordination is not None:coordination.assert_write(self.path)
+         raw=canonical({'state':s,'state_sha256':digest(s)})
+         staging=self.path.with_suffix(self.path.suffix+'.pending')
+-        with staging.open('wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
++        with staging.open('xb' if coordination is not None else 'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
+         os.replace(staging,self.path)
+     def state(self):
+         with self.lock():return copy.deepcopy(self._read())
+--- /dev/null
++++ b/cognitive_architecture_lab_v1/src/accounting/coordination.py
+@@ -0,0 +1,319 @@
++"""Explicit Windows/NTFS L2 for enrolled Ledger instances, not all writers.
++
++Bootstrap needs an existing parent and creates only a new control. Attachment
++never repairs a control. No environment switch or automatic path enrollment.
++"""
++import ctypes
++import errno
++import hashlib
++import json
++import math
++import os
++import stat
++import sys
++import threading
++import time
++import uuid
++from contextlib import contextmanager
++from dataclasses import dataclass
++from pathlib import Path
++
++
++class CoordinationError(RuntimeError):
++    def __init__(self, code):
++        self.code = code
++        super().__init__(code)
++
++
++class CoordinationBusy(TimeoutError):
++    code = 'L2_CONTENTION_DEADLINE'
++
++    def __init__(self):
++        super().__init__(self.code)
++
++
++def _key(path):
++    return os.path.normcase(os.path.abspath(os.fspath(path)))
++
++
++def _identity(info):
++    return (info.st_dev, info.st_ino)
++
++
++def _safe_path(path):
++    if os.name != 'nt':
++        raise CoordinationError('WINDOWS_NTFS_REQUIRED')
++    origin = _key(__file__)
++    current = sys.modules[__name__]
++    if any(module is not current and getattr(module, '__file__', None)
++           and _key(module.__file__) == origin for module in tuple(sys.modules.values())):
++        raise CoordinationError('DUPLICATE_COORDINATION_MODULE_ORIGIN')
++    name = Path(path).name
++    if (':' in name or name != name.rstrip(' .')
++            or name.split('.')[0].upper() in
++            {'CON', 'PRN', 'AUX', 'NUL', *(f'COM{i}' for i in range(1, 10)),
++             *(f'LPT{i}' for i in range(1, 10))}):
++        raise CoordinationError('NONCANONICAL_LEDGER_NAME_UNSUPPORTED')
++    path = Path(_key(path))
++    if len(path.drive) != 2 or path.drive[1] != ':':
++        raise CoordinationError('LOCAL_DRIVE_REQUIRED')
++    for item in (path, *path.parents):
++        try:
++            info = item.lstat()
++        except FileNotFoundError:
++            continue
++        if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
++            raise CoordinationError('REPARSE_PATH_UNSUPPORTED')
++    # Windows realpath resolves existing 8.3 aliases too. Reject reparse inputs
++    # first, rather than silently following them during canonicalization.
++    path = Path(_key(path.resolve()))
++    if not path.parent.is_dir():
++        raise CoordinationError('PARENT_MUST_ALREADY_EXIST')
++    if path.exists():
++        info = path.stat()
++        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
++            raise CoordinationError('LEDGER_ALIAS_OR_TYPE_UNSUPPORTED')
++    return path
++
++
++def _ntfs(path):
++    from ctypes import wintypes as wt
++    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
++    fn = kernel.GetVolumeInformationW
++    fn.argtypes = [wt.LPCWSTR, wt.LPWSTR, wt.DWORD, ctypes.POINTER(wt.DWORD),
++                   ctypes.POINTER(wt.DWORD), ctypes.POINTER(wt.DWORD), wt.LPWSTR, wt.DWORD]
++    fn.restype = wt.BOOL
++    fs = ctypes.create_unicode_buffer(64)
++    if not fn(path.drive + '\\', None, 0, None, None, None, fs, len(fs)):
++        raise ctypes.WinError(ctypes.get_last_error())
++    if fs.value != 'NTFS':
++        raise CoordinationError('WINDOWS_NTFS_REQUIRED')
++
++
++def _canonical(value):
++    return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode('ascii')
++
++
++def _read_control(fd):
++    info = os.fstat(fd)
++    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or not 2 <= info.st_size <= 4096:
++        raise CoordinationError('INVALID_CONTROL_FILE')
++    # Metadata starts after the byte-lock range, so attachment also works while
++    # another process owns L2. Byte zero is checked only by its acquired owner.
++    os.lseek(fd, 1, os.SEEK_SET)
++    raw = os.read(fd, 4096)
++    try:
++        value = json.loads(raw.decode('ascii'))
++        if (type(value) is not dict or set(value) != {
++                'protocol', 'ledger_path', 'parent_dev', 'parent_ino',
++                'guard_dev', 'guard_ino', 'domain_id'}
++                or value['protocol'] != 'ledger-l2-v1' or _canonical(value) != raw
++                or type(value['ledger_path']) is not str
++                or any(type(value[k]) is not int for k in
++                       ('parent_dev', 'parent_ino', 'guard_dev', 'guard_ino'))
++                or type(value['domain_id']) is not str or len(value['domain_id']) != 32
++                or any(c not in '0123456789abcdef' for c in value['domain_id'])
++                or (value['guard_dev'], value['guard_ino']) != _identity(info)):
++            raise ValueError()
++    except (ValueError, UnicodeError, TypeError):
++        raise CoordinationError('INVALID_CONTROL_METADATA') from None
++    return value, raw, info
++
++
++class _State:
++    def __init__(self):
++        self.mutex = threading.RLock()
++        self.depth = 0
++        self.thread = None
++        self.fd = None
++
++
++# Internal ownership state, not a configuration or activation switch. Kernel
++# identity shares one thread mutex across distinct explicit Coordinator objects.
++_registry = {}
++_registry_mutex = threading.Lock()
++_inner = threading.local()
++
++
++@contextmanager
++def _inner_scope(path):
++    stack = getattr(_inner, 'stack', None)
++    if stack is None:
++        stack = _inner.stack = []
++    token = (_key(path), object())
++    stack.append(token)
++    try:
++        yield
++    finally:
++        if not stack or stack[-1] is not token:
++            raise CoordinationError('INNER_OWNERSHIP_STACK_CORRUPT')
++        stack.pop()
++
++
++@dataclass(frozen=True)
++class Coordinator:
++    ledger_path: Path
++    guard_path: Path
++    parent_identity: tuple
++    guard_identity: tuple
++    metadata_sha256: str
++    domain_id: str
++    timeout: float = 0.5
++
++    @classmethod
++    def create(cls, path, *, timeout=0.5):
++        """One-time explicit bootstrap. No mkdir, overwrite or data repair."""
++        path = _safe_path(path)
++        _ntfs(path)
++        cls._timeout(timeout)
++        parent = path.parent.stat()
++        guard = path.with_name(path.name + '.coordination-v1.lock')
++        fd = os.open(guard, os.O_CREAT | os.O_EXCL | os.O_RDWR | os.O_BINARY, 0o600)
++        try:
++            info = os.fstat(fd)
++            value = {'protocol': 'ledger-l2-v1', 'ledger_path': str(path),
++                     'parent_dev': parent.st_dev, 'parent_ino': parent.st_ino,
++                     'guard_dev': info.st_dev, 'guard_ino': info.st_ino,
++                     'domain_id': uuid.uuid4().hex}
++            with os.fdopen(fd, 'wb', closefd=False) as stream:
++                stream.write(b'0' + _canonical(value))
++                stream.flush()
++                os.fsync(fd)
++        finally:
++            os.close(fd)
++        return cls.attach(path, timeout=timeout)
++
++    @classmethod
++    def attach(cls, path, *, timeout=0.5):
++        """Read preexisting control without acquiring or recreating its lock."""
++        path = _safe_path(path)
++        _ntfs(path)
++        cls._timeout(timeout)
++        guard = path.with_name(path.name + '.coordination-v1.lock')
++        if guard.is_symlink() or guard.lstat().st_file_attributes & 0x400:
++            raise CoordinationError('REPARSE_CONTROL_UNSUPPORTED')
++        fd = os.open(guard, os.O_RDONLY | os.O_BINARY)
++        try:
++            value, raw, info = _read_control(fd)
++        finally:
++            os.close(fd)
++        result = cls(path, guard, (value['parent_dev'], value['parent_ino']),
++                     _identity(info), hashlib.sha256(raw).hexdigest(), value['domain_id'], timeout)
++        result.validate(path)
++        return result
++
++    @staticmethod
++    def _timeout(value):
++        if type(value) not in (int, float) or not math.isfinite(value) or not 0 < value <= 5:
++            raise CoordinationError('INVALID_L2_DEADLINE')
++
++    def validate(self, path):
++        actual = _safe_path(path)
++        if actual != self.ledger_path or _identity(actual.parent.stat()) != self.parent_identity:
++            raise CoordinationError('LEDGER_RESOURCE_MISMATCH')
++        expected = actual.with_name(actual.name + '.coordination-v1.lock')
++        if self.guard_path != expected:
++            raise CoordinationError('CONTROL_PATH_MISMATCH')
++        if self.guard_path.is_symlink() or self.guard_path.lstat().st_file_attributes & 0x400:
++            raise CoordinationError('REPARSE_CONTROL_UNSUPPORTED')
++        fd = os.open(self.guard_path, os.O_RDONLY | os.O_BINARY)
++        try:
++            value, raw, info = _read_control(fd)
++            if (_identity(info) != self.guard_identity
++                    or hashlib.sha256(raw).hexdigest() != self.metadata_sha256
++                    or value['ledger_path'] != str(actual) or value['domain_id'] != self.domain_id
++                    or (value['parent_dev'], value['parent_ino']) != self.parent_identity):
++                raise CoordinationError('CONTROL_IDENTITY_CHANGED')
++        finally:
++            os.close(fd)
++        self._timeout(self.timeout)
++
++    def _state(self):
++        return _registry.get((os.getpid(), *self.guard_identity))
++
++    def _owned(self):
++        state = self._state()
++        if (state is None or state.depth < 1 or state.thread != threading.get_ident()
++                or state.fd is None or _identity(os.fstat(state.fd)) != self.guard_identity):
++            raise CoordinationError('L2_NOT_OWNED_BY_CURRENT_THREAD')
++        return state
++
++    def assert_write(self, path):
++        """Check existing ownership only; no L2 acquisition under L3."""
++        self._owned()
++        if not getattr(_inner, 'stack', ()) or _inner.stack[-1][0] != _key(path):
++            raise CoordinationError('L3_NOT_OWNED_FOR_WRITE')
++        self.validate(path)
++
++    def check_inner_entry(self, path):
++        self.validate(path)
++        if getattr(_inner, 'stack', ()):
++            raise CoordinationError('RECURSIVE_OR_REVERSED_L3_ENTRY')
++
++    @contextmanager
++    def acquire(self):
++        if getattr(_inner, 'stack', ()):
++            raise CoordinationError('LOCK_ORDER_L3_TO_L2_REJECTED')
++        self.validate(self.ledger_path)
++        key = (os.getpid(), *self.guard_identity)
++        with _registry_mutex:
++            state = _registry.setdefault(key, _State())
++        deadline = time.monotonic() + self.timeout
++        if not state.mutex.acquire(timeout=max(0, deadline - time.monotonic())):
++            raise CoordinationBusy()
++        entered = False
++        try:
++            if state.depth:
++                self._owned()
++            else:
++                import msvcrt
++                fd = os.open(self.guard_path, os.O_RDWR | os.O_BINARY)
++                locked = False
++                try:
++                    while True:
++                        try:
++                            os.lseek(fd, 0, os.SEEK_SET)
++                            msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
++                            locked = True
++                            break
++                        except OSError as error:
++                            if error.errno not in (errno.EACCES, errno.EAGAIN):
++                                raise
++                            if time.monotonic() >= deadline:
++                                raise CoordinationBusy() from error
++                            time.sleep(min(0.01, max(0, deadline - time.monotonic())))
++                    value, raw, info = _read_control(fd)
++                    os.lseek(fd, 0, os.SEEK_SET)
++                    if (os.read(fd, 1) != b'0' or _identity(info) != self.guard_identity
++                            or _identity(self.guard_path.stat()) != self.guard_identity
++                            or hashlib.sha256(raw).hexdigest() != self.metadata_sha256):
++                        raise CoordinationError('CONTROL_IDENTITY_CHANGED')
++                    state.fd = fd
++                    state.thread = threading.get_ident()
++                except BaseException:
++                    try:
++                        if locked:
++                            os.lseek(fd, 0, os.SEEK_SET)
++                            msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
++                    finally:
++                        os.close(fd)
++                    raise
++            state.depth += 1
++            entered = True
++            yield self
++        finally:
++            try:
++                if entered:
++                    state.depth -= 1
++                    if state.depth == 0:
++                        fd = state.fd
++                        state.fd = None
++                        state.thread = None
++                        try:
++                            import msvcrt
++                            os.lseek(fd, 0, os.SEEK_SET)
++                            msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
++                        finally:
++                            os.close(fd)
++            finally:
++                state.mutex.release()
+--- /dev/null
++++ b/tests_coordination_v1/__init__.py
+@@ -0,0 +1 @@
++"""Isolated first-slice tests. Historical suites remain unchanged."""
+--- /dev/null
++++ b/tests_coordination_v1/record_contention_cause.py
+@@ -0,0 +1,23 @@
++"""Focused reproduction retaining the native cause behind domain contention."""
++import errno,hashlib,json,os,subprocess,sys,time,traceback
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
++from tests_coordination_v1.support import EVIDENCE,NETWORK,request,save,sha
++from cognitive_architecture_lab_v1.src.accounting.ledger import Ledger
++from cognitive_architecture_lab_v1.src.accounting.coordination import Coordinator,CoordinationBusy
++def child(path):
++ actor=object.__new__(Ledger);actor.path=path;actor.limits=json.loads(path.read_text(encoding='utf-8'))['state']['limits'];actor._coordination=Coordinator.attach(path,timeout=.15)
++ try:actor.register(request('blocked'))
++ except CoordinationBusy as error:
++  cause=error.__cause__;print(json.dumps({'domain_code':error.code,'native_cause_type':type(cause).__name__,'native_errno':getattr(cause,'errno',None),'native_winerror':getattr(cause,'winerror',None),'native_message':str(cause),'traceback':traceback.format_exc(),'network_attempts':NETWORK}),flush=True);return 0
++ raise AssertionError('ENROLLED_REGISTER_NOT_EXCLUDED')
++def main(final=False):
++ output=EVIDENCE/('runs/native_contention_cause_final' if final else 'runs/native_contention_cause');assert not output.exists();output.mkdir(parents=True);path=output/'budget.json';c=Coordinator.create(path);Ledger(path,coordination=c);before=sha(path);guard_before=sha(c.guard_path);start=time.monotonic()
++ argv=[sys.executable,'-B',str(Path(__file__).resolve()),'--child',str(path)]
++ with c.acquire():
++  p=subprocess.Popen(argv,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8',creationflags=subprocess.CREATE_NO_WINDOW);out,err=p.communicate(timeout=5);save(output/'COMMAND.json',{'argv':argv,'pid':p.pid,'exit_code':p.returncode,'stdout':out,'stderr':err});assert p.returncode==0;observed=json.loads(out);assert observed['domain_code']=='L2_CONTENTION_DEADLINE' and observed['native_errno'] in (errno.EACCES,errno.EAGAIN);assert not path.with_suffix('.json.pending').exists() and sha(path)==before
++ assert sha(c.guard_path)==guard_before
++ report={'control_verdict':'PASS','observed_native_contention':observed,'pending_created':False,'main_unchanged':True,'control_unchanged':True,'elapsed_seconds':time.monotonic()-start,'strong_authority_awarded':False,'supplemental_control_not_added_to_unittest_count':True,'script_sha256':sha(Path(__file__)),'production_hashes':{n:sha(ROOT/n) for n in ['cognitive_architecture_lab_v1/src/accounting/ledger.py','cognitive_architecture_lab_v1/src/accounting/coordination.py']}};save(output/'RESULT.json',report);print(json.dumps({k:report[k] for k in ('control_verdict','pending_created','main_unchanged','elapsed_seconds')}),flush=True)
++if __name__=='__main__':
++ if len(sys.argv)>1 and sys.argv[1]=='--child':raise SystemExit(child(Path(sys.argv[2])))
++ main(final=len(sys.argv)>1 and sys.argv[1]=='--final')
+--- /dev/null
++++ b/tests_coordination_v1/support.py
+@@ -0,0 +1,43 @@
++import ctypes,hashlib,json,os,subprocess,sys,time
++from pathlib import Path
++from contextlib import contextmanager
++from cognitive_architecture_lab_v1.src.interfaces.contracts import RunRequest
++ROOT=Path(__file__).resolve().parents[1]
++EVIDENCE=ROOT.parent/'evidence'
++NETWORK=[]
++def audit(event,args):
++ if event in {'socket.connect','socket.connect_ex','socket.getaddrinfo','socket.sendto'}:NETWORK.append(event);raise AssertionError('NO_NETWORK_IN_LEDGER_TEST')
++sys.addaudithook(audit)
++def request(run_id='run'):
++ task={'task_id':'SYN-ONLY','title':'Synthetic echo','task_statement':'Return public word','input':{'word':'blue'},'output_contract':{'word':'string'},'public_reference_ids':[]}
++ return RunRequest('SYN-ONLY',task,'dummy-no-model','dummy-v1',{'temperature':.7,'top_p':.8,'think':False},11,8192,4096,'DIRECT',36,30000,1800,run_id)
++def save(p,data):p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(data,indent=2,allow_nan=False)+'\n',encoding='utf-8')
++def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
++def spawn(root,mode,path,**kwargs):
++ spec=Path(root)/(mode+'.request.json');save(spec,{'mode':mode,'path':str(path),'root':str(root),'kwargs':kwargs});p=subprocess.Popen([sys.executable,'-B',str(ROOT/'tests_coordination_v1/worker.py'),'--request',str(spec)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8',creationflags=subprocess.CREATE_NO_WINDOW,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONUTF8':'1'});p.spec=spec;p.collected=False;return p
++def collect(p,*,kill=False,timeout=5):
++ if kill and p.poll() is None:p.kill()
++ timed=False
++ try:out,err=p.communicate(timeout=timeout)
++ except subprocess.TimeoutExpired:
++  timed=True;p.kill();out,err=p.communicate(timeout=3)
++ p.collected=True;x={'pid':p.pid,'exit_code':p.returncode,'stdout':out,'stderr':err,'killed':kill,'unexpected_timeout':timed};result=p.spec.with_suffix('.result.json')
++ if result.exists():x['result']=json.loads(result.read_text(encoding='utf-8'))
++ save(p.spec.with_suffix('.exit.json'),x)
++ if timed:raise AssertionError('UNEXPECTED_CHILD_TIMEOUT:'+str(p.spec))
++ return x
++def wait(path,p,seconds=5):
++ deadline=time.monotonic()+seconds
++ while not Path(path).exists():
++  if p.poll() is not None:raise AssertionError('CHILD_EXITED_BEFORE_PHASE:'+str(path))
++  if time.monotonic()>=deadline:raise AssertionError('MISSING_PHASE_DEADLINE:'+str(path))
++  time.sleep(.01)
++ return json.loads(Path(path).read_text(encoding='utf-8'))
++@contextmanager
++def pin(path):
++ from ctypes import wintypes as wt
++ kernel=ctypes.WinDLL('kernel32',use_last_error=True);create=kernel.CreateFileW;create.argtypes=[wt.LPCWSTR,wt.DWORD,wt.DWORD,wt.LPVOID,wt.DWORD,wt.DWORD,wt.HANDLE];create.restype=wt.HANDLE;close=kernel.CloseHandle;close.argtypes=[wt.HANDLE];close.restype=wt.BOOL;h=create(str(Path(path).resolve()),0x80000000,1,None,3,0x80,None)
++ if h==wt.HANDLE(-1).value:raise ctypes.WinError(ctypes.get_last_error())
++ try:yield
++ finally:
++  if not close(h):raise ctypes.WinError(ctypes.get_last_error())
+--- /dev/null
++++ b/tests_coordination_v1/test_coordination.py
+@@ -0,0 +1,223 @@
++import dataclasses,importlib.util,json,os,sys,threading,time,unittest
++from pathlib import Path
++from unittest.mock import patch
++from tests_coordination_v1.support import EVIDENCE,NETWORK,request,save,sha,spawn,collect,wait,pin
++from cognitive_architecture_lab_v1.src.accounting.ledger import Ledger,BudgetStop
++from cognitive_architecture_lab_v1.src.accounting.coordination import Coordinator,CoordinationError,CoordinationBusy
++import cognitive_architecture_lab_v1.src.accounting.ledger as lm
++import cognitive_architecture_lab_v1.src.accounting.coordination as cm
++
++class GuardTests(unittest.TestCase):
++ def setUp(self):
++  self.root=Path(os.environ['LEDGER_TEST_OUTPUT'])/self._testMethodName;self.root.mkdir(parents=True,exist_ok=False);self.details={};self.children=[]
++ def tearDown(self):
++  unexpected=[]
++  for child in self.children:
++   if not child.collected:unexpected.append(collect(child,kill=child.poll() is None))
++  save(self.root/'DETAILS.json',{'observations':self.details,'unexpected_child_cleanup':unexpected,'network_attempts':NETWORK});self.assertFalse(unexpected);self.assertFalse(NETWORK)
++ def make(self,name='budget.json',**limits):
++  p=self.root/name;c=Coordinator.create(p,timeout=.2);l=Ledger(p,coordination=c,**limits);return p,c,l
++ def child(self,mode,path,**kw):
++  p=spawn(self.root,mode,path,**kw);self.children.append(p);return p
++ def test_01_constructor_and_existing_attachment(self):
++  p,c,l=self.make();self.assertEqual(l.state()['attempts'],[]);self.assertEqual(c.guard_identity,Coordinator.attach(p).guard_identity);self.assertFalse(p.with_suffix('.json.pending').exists());self.details={'domain_id':c.domain_id,'parent_identity':c.parent_identity,'guard_identity':c.guard_identity,'existing_parent_required':True}
++ def test_02_missing_parent_has_no_pre_guard_creation(self):
++  missing=self.root/'absent'/'budget.json'
++  with self.assertRaisesRegex(CoordinationError,'PARENT_MUST_ALREADY_EXIST'):Coordinator.create(missing)
++  self.assertFalse(missing.parent.exists())
++ def test_03_wrong_resource_rejected_before_initialization(self):
++  p,c,l=self.make();other=self.root/'other.json'
++  with self.assertRaisesRegex(CoordinationError,'LEDGER_RESOURCE_MISMATCH'):Ledger(other,coordination=c)
++  self.assertFalse(other.exists());self.assertFalse(other.with_suffix('.json.lock').exists())
++ def test_04_register_reserve_finish_and_usage_unchanged(self):
++  p,c,l=self.make();l.register(request());i=l.reserve('run','synthetic',10,1);self.assertEqual(i,1);self.assertEqual(l.state()['attempts'][0]['state'],'RESERVED');l.finish(i,state='SUCCEEDED',input_tokens=2,output_tokens=3,seconds=.01,response_text='blue',candidate={'candidate_id':'c0'});s=l.summary('run');self.assertEqual((s['physical_attempts'],s['input_tokens'],s['output_tokens'],s['total_tokens']),(1,2,3,5));self.details=s
++ def test_05_unknown_usage_still_blocks_next_reservation(self):
++  p,c,l=self.make();l.register(request());i=l.reserve('run','synthetic',10,1);l.finish(i,state='FAILED',seconds=.01)
++  self.assertIsNone(l.summary('run')['total_tokens'])
++  with self.assertRaises(BudgetStop):l.reserve('run','not-replayed',10,1)
++ def test_06_global_ceiling_and_shared_runs(self):
++  p,c,l=self.make(global_attempts=1);l.register(request('one'));l.register(request('two'));i=l.reserve('one','synthetic',10,1);l.finish(i,state='SUCCEEDED',input_tokens=1,output_tokens=1,seconds=.01)
++  with self.assertRaises(BudgetStop):l.reserve('two','synthetic',10,1)
++  self.assertEqual(len(l.state()['attempts']),1)
++ def test_07_logical_reentry_across_explicit_instances(self):
++  p,c,l=self.make();other=Coordinator.attach(p,timeout=.2)
++  with c.acquire(),other.acquire():
++   another=Ledger(p,coordination=other);another.register(request());self.assertEqual(another.summary('run')['physical_attempts'],0)
++  with c.acquire():pass
++ def test_08_nonowning_reader_explicitly_enrolled(self):
++  p,c,l=self.make();r=object.__new__(Ledger);r.path=p;r.limits=l.limits;r._coordination=Coordinator.attach(p)
++  with c.acquire():self.assertEqual(r.state(),l.state())
++ def test_09_recursive_l3_rejected_before_native_reacquire(self):
++  p,c,l=self.make();start=time.monotonic()
++  with l.lock():
++   with self.assertRaisesRegex(CoordinationError,'RECURSIVE_OR_REVERSED_L3_ENTRY'):l.state()
++  self.assertLess(time.monotonic()-start,1);self.assertEqual(l.state()['attempts'],[])
++ def test_10_first_l2_under_legacy_l3_rejected(self):
++  p,c,l=self.make();legacy=Ledger(p)
++  with legacy.lock():
++   with self.assertRaisesRegex(CoordinationError,'LOCK_ORDER_L3_TO_L2_REJECTED'):
++    with c.acquire():pass
++  with c.acquire():pass
++ def test_11_write_cannot_acquire_l2_from_inside_private_helper(self):
++  p,c,l=self.make();state=l.state();before=p.read_bytes()
++  with self.assertRaisesRegex(CoordinationError,'L2_NOT_OWNED'):l._write(state)
++  with c.acquire():
++   with self.assertRaisesRegex(CoordinationError,'L3_NOT_OWNED'):l._write(state)
++  self.assertEqual(p.read_bytes(),before);self.assertFalse(p.with_suffix('.json.pending').exists())
++ def test_12_other_thread_cannot_borrow_ownership(self):
++  p,c,l=self.make();state=l.state();observed=[]
++  def wrong():
++   try:l._write(state)
++   except CoordinationError as e:observed.append(e.code)
++  with c.acquire():
++   t=threading.Thread(target=wrong);t.start();t.join(2);self.assertFalse(t.is_alive())
++  self.assertEqual(observed,['L2_NOT_OWNED_BY_CURRENT_THREAD'])
++ def test_13_thread_contention_is_bounded(self):
++  p,c,l=self.make();observed=[]
++  def blocked():
++   try:Ledger(p,coordination=Coordinator.attach(p,timeout=.15))
++   except CoordinationBusy as e:observed.append(e.code)
++  with c.acquire():
++   t=threading.Thread(target=blocked);start=time.monotonic();t.start();t.join(2);self.assertFalse(t.is_alive());self.assertLess(time.monotonic()-start,2)
++  self.assertEqual(observed,['L2_CONTENTION_DEADLINE']);self.assertEqual(l.state()['runs'],{})
++ def test_14_threads_share_domain_and_no_lost_registrations(self):
++  p,c,l=self.make();errors=[];barrier=threading.Barrier(5)
++  def writer(index):
++   try:
++    actor=Ledger(p,coordination=Coordinator.attach(p,timeout=3));barrier.wait(3);actor.register(request('thread_'+str(index)))
++   except BaseException as e:errors.append(repr(e))
++  threads=[threading.Thread(target=writer,args=(i,)) for i in range(4)]
++  for t in threads:t.start()
++  barrier.wait(3)
++  for t in threads:t.join(5)
++  self.assertFalse(any(t.is_alive() for t in threads));self.assertFalse(errors);self.assertEqual(len(l.state()['runs']),4);self.details={'registered_threads':4,'errors':errors}
++ def contested(self,operation,*,constructor=False,attempt_id=None):
++  p=self.root/'budget.json';c=Coordinator.create(p,timeout=.2)
++  if not constructor:
++   l=Ledger(p,coordination=c);l.register(request())
++   if operation=='finish':attempt_id=l.reserve('run','synthetic',10,1)
++  before={x.name:sha(x) for x in self.root.iterdir() if x.is_file()};pending=p.with_suffix('.json.pending')
++  with c.acquire():
++   child=self.child(operation,p,attempt_id=attempt_id);phase=wait(self.root/'attempting.json',child);receipt=collect(child);self.assertEqual(receipt['exit_code'],0);self.assertEqual(receipt['result']['operation_status'],'REJECTED');self.assertEqual(receipt['result']['code'],'L2_CONTENTION_DEADLINE');self.assertFalse(pending.exists())
++   for name,digest in before.items():
++    if os.path.normcase(str(self.root/name))==os.path.normcase(str(c.guard_path)):
++     import hashlib
++     owned=c._owned().fd;os.lseek(owned,0,os.SEEK_SET);raw=os.read(owned,os.fstat(owned).st_size);self.assertEqual(hashlib.sha256(raw).hexdigest(),digest)
++    else:self.assertEqual(sha(self.root/name),digest)
++   if constructor:self.assertFalse(p.exists());self.assertFalse(p.with_suffix('.json.lock').exists())
++  for name,digest in before.items():self.assertEqual(sha(self.root/name),digest)
++  if not constructor:Ledger(p,coordination=c).state()
++  self.details={'operation':operation,'attempt_phase':phase,'receipt':receipt,'no_pending_created_while_L2_held':True,'constructor':constructor}
++ def test_15_cross_process_constructor_waits_before_l3_or_data(self):self.contested('constructor',constructor=True)
++ def test_16_cross_process_register_no_pending_while_excluded(self):self.contested('register')
++ def test_17_cross_process_reserve_no_pending_while_excluded(self):self.contested('reserve')
++ def test_18_cross_process_finish_no_pending_while_excluded(self):self.contested('finish')
++ def test_19_enrolled_process_writes_after_release(self):
++  p,c,l=self.make();child=self.child('register',p,run_id='child');receipt=collect(child);self.assertEqual(receipt['exit_code'],0);self.assertEqual(receipt['result']['operation_status'],'RETURNED');self.assertIn('child',l.state()['runs']);self.details=receipt
++ def test_20_unenrolled_process_bypasses_domain_and_creates_pending(self):
++  p,c,l=self.make();before=p.read_bytes()
++  with c.acquire(),pin(p):
++   child=self.child('register',p,enrolled=False,run_id='unenrolled');receipt=collect(child);pending=p.with_suffix('.json.pending');self.assertEqual(receipt['exit_code'],0);self.assertEqual(receipt['result']['exception_type'],'PermissionError');self.assertTrue(pending.exists());self.assertIn('unenrolled',json.loads(pending.read_text(encoding='utf-8'))['state']['runs']);self.assertEqual(p.read_bytes(),before)
++  self.details={'receipt':receipt,'pending_sha256':sha(pending),'main_sha256':sha(p),'scope':'UNENROLLED_OUTSIDE_GUARANTEE_NO_A_S'}
++ def test_21_write_fsync_and_replace_stay_inside_l2_l3(self):
++  p,c,l=self.make();pending=p.with_suffix('.json.pending');events=[];real_fsync=lm.os.fsync;real_replace=lm.os.replace
++  def sync(fd):c.assert_write(p);self.assertTrue(pending.exists());events.append('PENDING_FLUSHED_WITH_L2_L3');return real_fsync(fd)
++  def replace(a,b):c.assert_write(p);self.assertTrue(pending.exists());events.append('REPLACE_WITH_L2_L3');return real_replace(a,b)
++  with patch.object(lm.os,'fsync',sync),patch.object(lm.os,'replace',replace):l.register(request())
++  self.assertEqual(events,['PENDING_FLUSHED_WITH_L2_L3','REPLACE_WITH_L2_L3']);self.details={'phases':events}
++ def test_22_exception_at_fsync_preserves_pending_and_releases(self):
++  p,c,l=self.make();before=p.read_bytes()
++  with patch.object(lm.os,'fsync',side_effect=OSError('INJECTED_FSYNC_FAILURE')):
++   with self.assertRaisesRegex(OSError,'INJECTED_FSYNC_FAILURE'):l.register(request())
++  self.assertEqual(p.read_bytes(),before);pending=p.with_suffix('.json.pending');self.assertTrue(pending.exists());self.details={'pending_sha256':sha(pending),'main_unchanged':True}
++  with Coordinator.attach(p).acquire():self.assertEqual(l.state()['runs'],{})
++ def test_23_replace_failure_preserves_both_files_and_releases(self):
++  p,c,l=self.make();before=p.read_bytes()
++  with patch.object(lm.os,'replace',side_effect=PermissionError('INJECTED_REPLACE_FAILURE')):
++   with self.assertRaisesRegex(PermissionError,'INJECTED_REPLACE_FAILURE'):l.register(request())
++  pending=p.with_suffix('.json.pending');saved=pending.read_bytes();self.assertEqual(p.read_bytes(),before)
++  with self.assertRaises(FileExistsError):l.register(request('again'))
++  self.assertEqual(pending.read_bytes(),saved);self.assertEqual(l.state()['runs'],{});self.details={'pending_sha256':sha(pending),'stale_pending_not_overwritten':True}
++ def test_24_stale_pending_blocks_new_optin_write(self):
++  p,c,l=self.make();pending=p.with_suffix('.json.pending');pending.write_bytes(b'PRESERVED_STALE_EVIDENCE')
++  with self.assertRaises(FileExistsError):l.register(request())
++  self.assertEqual(pending.read_bytes(),b'PRESERVED_STALE_EVIDENCE');self.assertEqual(l.state()['runs'],{})
++ def test_25_interruption_releases_owned_guards(self):
++  p,c,l=self.make()
++  with self.assertRaises(KeyboardInterrupt):
++   with l.lock():raise KeyboardInterrupt('SYNTHETIC_INTERRUPT')
++  l.register(request());self.assertIn('run',l.state()['runs'])
++ def test_26_process_termination_releases_l2(self):
++  p,c,l=self.make();child=self.child('hold',p);wait(self.root/'ready.json',child);receipt=collect(child,kill=True);self.assertNotEqual(receipt['exit_code'],0)
++  with Coordinator.attach(p).acquire():self.assertEqual(l.state()['runs'],{})
++  self.details={'terminated_holder':receipt,'guard_reacquired':True}
++ def test_27_crash_after_pending_keeps_evidence_and_no_replay(self):
++  p,c,l=self.make();before=p.read_bytes();child=self.child('crash_pending',p);phase=wait(self.root/'ready.json',child);receipt=collect(child,kill=True);self.assertNotEqual(receipt['exit_code'],0);pending=p.with_suffix('.json.pending');raw=pending.read_bytes();self.assertEqual(p.read_bytes(),before)
++  with Coordinator.attach(p).acquire():self.assertEqual(l.state()['runs'],{})
++  with self.assertRaises(FileExistsError):l.register(request('not-replayed'))
++  self.assertEqual(pending.read_bytes(),raw);self.details={'phase':phase,'terminated_writer':receipt,'pending_sha256':sha(pending),'main_unchanged':True,'automatic_repair_or_replay':False}
++ def test_28_control_missing_is_not_recreated(self):
++  p,c,l=self.make();preserved=c.guard_path.with_suffix('.preserved');c.guard_path.rename(preserved)
++  with self.assertRaises(FileNotFoundError):l.register(request())
++  self.assertFalse(c.guard_path.exists());self.assertTrue(preserved.exists())
++ def test_29_empty_control_fails_without_repair(self):
++  p=self.root/'budget.json';guard=p.with_name(p.name+'.coordination-v1.lock');guard.write_bytes(b'')
++  with self.assertRaisesRegex(CoordinationError,'INVALID_CONTROL_FILE'):Coordinator.attach(p)
++  self.assertEqual(guard.read_bytes(),b'');self.assertFalse(p.exists())
++ def test_30_control_copy_cannot_rebind_identity(self):
++  p,c,l=self.make();other=self.root/'other.json';wrong=other.with_name(other.name+'.coordination-v1.lock');wrong.write_bytes(c.guard_path.read_bytes())
++  with self.assertRaises(CoordinationError):Coordinator.attach(other)
++  self.assertFalse(other.exists())
++ def test_31_actual_hardlink_alias_rejected(self):
++  p,c,l=self.make();alias=self.root/'alias.json';os.link(p,alias)
++  with self.assertRaisesRegex(CoordinationError,'LEDGER_ALIAS_OR_TYPE_UNSUPPORTED'):Coordinator.create(alias)
++  with self.assertRaisesRegex(CoordinationError,'LEDGER_ALIAS_OR_TYPE_UNSUPPORTED'):l.state()
++  self.details={'actual_links':p.stat().st_nlink,'file_identity':[p.stat().st_dev,p.stat().st_ino]}
++ def test_32_case_alias_uses_same_domain(self):
++  p,c,l=self.make();upper=Path(str(p).upper());other=Coordinator.attach(upper);self.assertEqual(c.guard_identity,other.guard_identity)
++  with c.acquire():Ledger(upper,coordination=other).register(request())
++  self.assertIn('run',l.state()['runs'])
++ def test_33_invalid_configuration_has_no_effects(self):
++  for value in (True,0,6,float('nan'),float('inf')):
++   p=self.root/('invalid_'+str(value)+'.json')
++   with self.assertRaises(CoordinationError):Coordinator.create(p,timeout=value)
++   self.assertFalse(p.with_name(p.name+'.coordination-v1.lock').exists())
++  with self.assertRaises(TypeError):Ledger(self.root/'fake.json',coordination=True)
++  self.assertFalse((self.root/'fake.json').exists())
++ def test_34_d_then_l2_then_l3_without_recursive_d(self):
++  from runtime_isolation_v1.src.trusted_transport.transport import dispatch_lock
++  p,c,l=self.make();d=self.root/'D.lock';d.write_bytes(b'0')
++  with dispatch_lock(d),c.acquire():l.register(request());self.assertEqual(l.summary('run')['physical_attempts'],0)
++  self.details={'actual_order':'D->L2->ordinary_L3','D_primitive_unchanged':True}
++ def test_35_legacy_api_and_default_stale_pending_semantics(self):
++  p=self.root/'legacy'/'budget.json';l=Ledger(p);self.assertFalse(p.with_name(p.name+'.coordination-v1.lock').exists());pending=p.with_suffix('.json.pending');pending.write_bytes(b'OLD_LEGACY_PENDING');l.register(request());self.assertFalse(pending.exists());self.assertIn('run',l.state()['runs'])
++ def test_36_default_does_not_silently_enroll(self):
++  p,c,l=self.make()
++  with c.acquire(),patch.dict(os.environ,{'END_LEDGER_COORDINATION':'1'}):Ledger(p).register(request('unenrolled'))
++  self.assertIn('unenrolled',l.state()['runs']);self.details={'explicit_opt_out_outside_guarantee':True}
++ def test_37_legacy_differential_against_pinned_source(self):
++  source=Path('E:/The End Engine/v21_A0_feasibility/checkout/cognitive_architecture_lab_v1/src/accounting/ledger.py');name='cognitive_architecture_lab_v1.src.accounting._baseline_reference';spec=importlib.util.spec_from_file_location(name,source);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);states=[];errors=[]
++  for typ,label in [(module.Ledger,'pinned'),(Ledger,'candidate')]:
++   actor=typ(self.root/(label+'.json'));actor.register(request())
++   with patch.object(lm.time,'time',return_value=12345):i=actor.reserve('run','fixed',10,1)
++   actor.finish(i,state='SUCCEEDED',input_tokens=2,output_tokens=3,seconds=.01,response_text='same',candidate={'candidate_id':'C0'});states.append(actor.state())
++   try:actor.register(dataclasses.replace(request(),model_digest='changed'))
++   except Exception as e:errors.append((type(e).__name__,str(e)))
++  self.assertEqual(states[0],states[1]);self.assertEqual(errors[0],errors[1]);self.details={'exact_state_equality':True,'exception_equality':errors,'baseline_source_sha256':sha(source)}
++ def test_38_duplicate_module_origin_rejected(self):
++  name='_ledger_guard_duplicate_origin';spec=importlib.util.spec_from_file_location(name,Path(cm.__file__));module=importlib.util.module_from_spec(spec);sys.modules[name]=module
++  try:
++   spec.loader.exec_module(module)
++   with self.assertRaisesRegex(CoordinationError,'DUPLICATE_COORDINATION_MODULE_ORIGIN'):Coordinator.create(self.root/'budget.json')
++  finally:sys.modules.pop(name,None)
++ def test_39_source_core_l1_l2_l3_and_owner_preserved(self):
++  child=self.child('source_core',self.root/'placeholder.json');receipt=collect(child,timeout=15);self.assertEqual(receipt['exit_code'],0,receipt);self.assertEqual(receipt['result']['operation_status'],'SOURCE_CORE_PASS');self.assertTrue(receipt['result']['owner_fence_token_preserved']);self.details=receipt
++ def test_40_guard_bootstrap_never_overwrites_existing_control(self):
++  p,c,l=self.make();raw=c.guard_path.read_bytes()
++  with self.assertRaises(FileExistsError):Coordinator.create(p)
++  self.assertEqual(c.guard_path.read_bytes(),raw)
++ def test_41_stream_trailing_and_device_names_fail_before_creation(self):
++  before={p.name for p in self.root.iterdir()}
++  for name in ('budget.json:stream','budget.json ','budget.json.','NUL','CON.json'):
++   with self.assertRaisesRegex(CoordinationError,'NONCANONICAL_LEDGER_NAME_UNSUPPORTED'):Coordinator.create(self.root/name)
++  self.assertEqual({p.name for p in self.root.iterdir()},before)
+--- /dev/null
++++ b/tests_coordination_v1/worker.py
+@@ -0,0 +1,51 @@
++"""Actual bounded native workers; inputs/outputs must stay in new evidence."""
++import argparse,json,os,sys,time,traceback
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
++from tests_coordination_v1.support import EVIDENCE,request,save,NETWORK
++from cognitive_architecture_lab_v1.src.accounting.ledger import Ledger
++from cognitive_architecture_lab_v1.src.accounting.coordination import Coordinator
++def main(spec):
++ cfg=json.loads(spec.read_text(encoding='utf-8'));root=Path(cfg['root']).resolve();path=Path(cfg['path']).resolve();assert root.is_relative_to(EVIDENCE.resolve()) and path.is_relative_to(EVIDENCE.resolve());mode=cfg['mode'];kw=cfg['kwargs'];result={'pid':os.getpid(),'mode':mode};start=time.monotonic()
++ try:
++  if mode=='hold':
++   c=Coordinator.attach(path,timeout=.5)
++   with c.acquire():
++    save(root/'ready.json',{'phase':'L2_HELD','pid':os.getpid()});deadline=time.monotonic()+10
++    while not (root/'release').exists():
++     if time.monotonic()>deadline:raise AssertionError('WORKER_RELEASE_DEADLINE')
++     time.sleep(.01)
++   result['operation_status']='RELEASED'
++  elif mode=='source_core':
++   os.environ['A0_SOURCE_CHECKOUT']=str(ROOT);h=Path('E:/The End Engine/v21_A0_independent_decision/harness');sys.path.insert(0,str(h));import probe_workers as w
++   pub=w.clone_fixture(root/'copy');c=Coordinator.create(pub.ledger.path);pub.ledger._coordination=c;before=w.snapshot(pub.directory);owner=pub.owner_path.read_bytes()
++   with w.ExistingLock(pub.guard),c.acquire(),w.Pins(w.data_paths(pub.directory)):
++    value=pub._verify_completed()
++   assert w.snapshot(pub.directory)==before and pub.owner_path.read_bytes()==owner and pub.fd is None and pub.fence is None and pub.token is None and not any(w.COUNTERS.values())
++   result.update(operation_status='SOURCE_CORE_PASS',payload_sha256=value['artifact_payload_sha256'],owner_fence_token_preserved=True,source_bytes_preserved=True,source_tripwires=w.COUNTERS,lock_order='L1->L2->ordinary_L3',fixture_origin='REBASED_SYNTHETIC_ONLY')
++  else:
++   enrolled=kw.get('enrolled',True);c=Coordinator.attach(path,timeout=.25) if enrolled else None
++   if mode=='constructor':ledger=None
++   else:
++    ledger=object.__new__(Ledger);ledger.path=path;ledger.limits=json.loads(path.read_text(encoding='utf-8'))['state']['limits'];ledger._coordination=c
++   save(root/'attempting.json',{'phase':'ACTUAL_OPERATION_ENTRY','pid':os.getpid(),'operation':mode,'enrolled':enrolled})
++   try:
++    if mode=='constructor':Ledger(path,coordination=c)
++    elif mode=='register':ledger.register(request(kw.get('run_id','foreign')))
++    elif mode=='reserve':ledger.reserve('run','synthetic-control',10,1)
++    elif mode=='finish':ledger.finish(kw['attempt_id'],state='SUCCEEDED',input_tokens=1,output_tokens=2,seconds=.01)
++    elif mode=='crash_pending':
++     from unittest.mock import patch
++     import cognitive_architecture_lab_v1.src.accounting.ledger as lm
++     def pause(source,destination):
++      save(root/'ready.json',{'phase':'PENDING_FLUSHED_FSYNCED_BEFORE_REPLACE','pid':os.getpid(),'pending_path':str(source)});time.sleep(30);raise AssertionError('PARENT_DID_NOT_TERMINATE_WORKER')
++     with patch.object(lm.os,'replace',pause):ledger.register(request('crash'))
++    else:raise AssertionError('UNKNOWN_OPERATION')
++    result['operation_status']='RETURNED'
++   except BaseException as error:
++    result.update(operation_status='REJECTED',exception_type=type(error).__name__,message=str(error),code=getattr(error,'code',None),errno=getattr(error,'errno',None),winerror=getattr(error,'winerror',None))
++  result.update(elapsed_seconds=time.monotonic()-start,network_attempts=NETWORK);save(spec.with_suffix('.result.json'),result);print(json.dumps(result),flush=True);return 0
++ except BaseException as error:
++  result.update(operation_status='WORKER_ERROR',exception_type=type(error).__name__,message=str(error),traceback=traceback.format_exc(),elapsed_seconds=time.monotonic()-start);save(spec.with_suffix('.result.json'),result);print(json.dumps(result),flush=True);return 2
++if __name__=='__main__':
++ p=argparse.ArgumentParser();p.add_argument('--request',type=Path,required=True);raise SystemExit(main(p.parse_args().request))

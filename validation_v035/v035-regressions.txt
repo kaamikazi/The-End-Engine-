@@ -1,0 +1,25 @@
+test_C0_AB_structured_vs_native_metadata_stays_separate (tests.test_v035_regressions.CandidateGenerationTests.test_C0_AB_structured_vs_native_metadata_stays_separate)
+SYNTHETIC A/B: identical scripted answer text in both modes. Checks separation only, not quality. ... ok
+test_R6_native_c0_is_the_task_itself_and_keeps_the_task_format (tests.test_v035_regressions.CandidateGenerationTests.test_R6_native_c0_is_the_task_itself_and_keeps_the_task_format) ... ok
+test_R7_internals_never_reach_the_revision_prompt_and_leaks_are_flagged (tests.test_v035_regressions.CandidateGenerationTests.test_R7_internals_never_reach_the_revision_prompt_and_leaks_are_flagged) ... ok
+test_native_mode_requires_explicit_opt_in (tests.test_v035_regressions.CandidateGenerationTests.test_native_mode_requires_explicit_opt_in) ... ok
+test_R10_agreement_is_consensus_not_verification (tests.test_v035_regressions.ConsensusTests.test_R10_agreement_is_consensus_not_verification) ... ok
+test_R11_quoted_defect_that_is_in_the_candidate_still_rejects (tests.test_v035_regressions.GroundedJudgmentTests.test_R11_quoted_defect_that_is_in_the_candidate_still_rejects) ... ok
+test_R12_real_task_constraint_violation_still_counts (tests.test_v035_regressions.GroundedJudgmentTests.test_R12_real_task_constraint_violation_still_counts) ... ok
+test_R8_task_code_attributed_to_candidate_is_misattributed (tests.test_v035_regressions.GroundedJudgmentTests.test_R8_task_code_attributed_to_candidate_is_misattributed) ... ok
+test_R9_contradicting_a_task_premise_is_not_a_defect (tests.test_v035_regressions.GroundedJudgmentTests.test_R9_contradicting_a_task_premise_is_not_a_defect) ... ok
+test_judges_receive_typed_sources (tests.test_v035_regressions.GroundedJudgmentTests.test_judges_receive_typed_sources) ... ok
+test_ungrounded_quote_is_not_decisive (tests.test_v035_regressions.GroundedJudgmentTests.test_ungrounded_quote_is_not_decisive) ... ok
+test_R1_unknown_weakness_in_critique_is_repaired_or_discarded (tests.test_v035_regressions.ProtocolRecoveryTests.test_R1_unknown_weakness_in_critique_is_repaired_or_discarded) ... ok
+test_R2_unknown_targets_in_revision_plan_are_never_remapped (tests.test_v035_regressions.ProtocolRecoveryTests.test_R2_unknown_targets_in_revision_plan_are_never_remapped) ... ok
+test_R3_invalid_verification_updates_rejected_valid_ones_kept (tests.test_v035_regressions.ProtocolRecoveryTests.test_R3_invalid_verification_updates_rejected_valid_ones_kept) ... ok
+test_R4_repeated_invalid_output_terminates_boundedly (tests.test_v035_regressions.ProtocolRecoveryTests.test_R4_repeated_invalid_output_terminates_boundedly) ... ok
+test_R5_real_provider_failure_is_still_an_external_blocker (tests.test_v035_regressions.ProtocolRecoveryTests.test_R5_real_provider_failure_is_still_an_external_blocker) ... ok
+test_branch_synthesis_failure_is_local_and_invariant_holds (tests.test_v035_regressions.ProtocolRecoveryTests.test_branch_synthesis_failure_is_local_and_invariant_holds) ... ok
+test_protocol_errors_remain_value_errors_for_components (tests.test_v035_regressions.ProtocolRecoveryTests.test_protocol_errors_remain_value_errors_for_components) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.834s
+
+OK
+exit=0

@@ -1,0 +1,67 @@
+{
+  "approved_checkpoint": {
+    "root": "E:\\END-v102-V21-Contract-Checkpoint",
+    "HEAD": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+    "branch": "wip/end-v102-contract-v21-review",
+    "status": "",
+    "staged": ""
+  },
+  "original_correction": {
+    "root": "E:\\END-Cognitive-Architectures-Fix-v102",
+    "HEAD": "bc9bcbad8e9cb051d54c3b270e2e03d460858986",
+    "branch": "fix/cognitive-architectures-v102-f02",
+    "status": "M experimental_architectures_v1_r3/CURRENT_REVIEW_STATUS.json\n M experimental_architectures_v1_r3/src/shared/journals.py\n M experimental_architectures_v1_r3/src/shared/provenance.py\n M experimental_architectures_v1_r3/src/shared/publication.py\n M experimental_architectures_v1_r3/src/shared/recovery_blocked.py\n?? experimental_architectures_v1_r3/src/shared/certification.py\n?? experimental_architectures_v1_r3/tests/corrections/test_certification.py\n?? experimental_architectures_v1_r3/validation/AR01_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR02_RESULTS.json\n?? experimental_architectures_v1_r3/validation/AR03_RESULTS.json\n?? experimental_architectures_v1_r3/validation/BASELINE_IDENTITY.json\n?? experimental_architectures_v1_r3/validation/BASELINE_INPUT_HASHES.json\n?? experimental_architectures_v1_r3/validation/BASELINE_REPRODUCTIONS.json\n?? experimental_architectures_v1_r3/validation/BEFORE_CORRECTION.json\n?? experimental_architectures_v1_r3/validation/F01_F03_F04_REGRESSIONS.json\n?? experimental_architectures_v1_r3/validation/FINAL_VALIDATION.json\n?? experimental_architectures_v1_r3/validation/NEGATIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/NEW_CONTROLS_RUN.txt\n?? experimental_architectures_v1_r3/validation/POSITIVE_CONTROLS.json\n?? experimental_architectures_v1_r3/validation/PROBE_PORTS.json\n?? experimental_architectures_v1_r3/validation/PROTECTED_BEFORE.json\n?? experimental_architectures_v1_r3/validation/PROVENANCE_GRAPH.json\n?? experimental_architectures_v1_r3/validation/RECOVERY_RESULTS.json\n?? experimental_architectures_v1_r3/validation/SIX_CONDITION_WIRING.json\n?? experimental_architectures_v1_r3/validation/SOURCE_PRESERVATION.json\n?? experimental_architectures_v1_r3/validation/TOCTOU_BLOCKER.json\n?? experimental_architectures_v1_r3/validation/after/\n?? experimental_architectures_v1_r3/validation/before/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2/\n?? experimental_architectures_v1_r3/validation/contract_reconciliation_v2_1/\n?? experimental_architectures_v1_r3/validation/final_f02/ALL_RESULTS.json\n?? experimental_architectures_v1_r3/validation/final_f02/COMMANDS.json\n?? experimental_architectures_v1_r3/validation/final_f02/after_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/ar_controls.log\n?? experimental_architectures_v1_r3/validation/final_f02/before_exact/runs/\n?? experimental_architectures_v1_r3/validation/final_f02/deliver.py\n?? experimental_architectures_v1_r3/validation/final_f02/engine.json\n?? experimental_architectures_v1_r3/validation/final_f02/engine.log\n?? experimental_architectures_v1_r3/validation/final_f02/engine.txt\n?? experimental_architectures_v1_r3/validation/final_f02/exact_probe.py\n?? experimental_architectures_v1_r3/validation/final_f02/fresh_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/frozen_preflight.log\n?? experimental_architectures_v1_r3/validation/final_f02/full_reviewer/\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.json\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.log\n?? experimental_architectures_v1_r3/validation/final_f02/laboratory.txt\n?? experimental_architectures_v1_r3/validation/final_f02/native.json\n?? experimental_architectures_v1_r3/validation/final_f02/native.log\n?? experimental_architectures_v1_r3/validation/final_f02/native.txt\n?? experimental_architectures_v1_r3/validation/final_f02/original.json\n?? experimental_architectures_v1_r3/validation/final_f02/original.log\n?? experimental_architectures_v1_r3/validation/final_f02/original.txt\n?? experimental_architectures_v1_r3/validation/final_f02/preserve_after.py\n?? experimental_architectures_v1_r3/validation/final_f02/prior49.log\n?? experimental_architectures_v1_r3/validation/final_f02/provenance_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/r2.json\n?? experimental_architectures_v1_r3/validation/final_f02/r2.log\n?? experimental_architectures_v1_r3/validation/final_f02/r2.txt\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.json\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.log\n?? experimental_architectures_v1_r3/validation/final_f02/r3_current.txt\n?? experimental_architectures_v1_r3/validation/final_f02/run_validation.py\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.json\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.log\n?? experimental_architectures_v1_r3/validation/final_f02/runtime.txt\n?? experimental_architectures_v1_r3/validation/final_f02/session_before.py\n?? experimental_architectures_v1_r3/validation/final_f02/suite_worker.py\n?? experimental_architectures_v1_r3/validation/final_f02/supplemental_probes.log\n?? experimental_architectures_v1_r3/validation/final_f02/wiring_and_recovery.py\n?? experimental_architectures_v1_r3/validation/ir101_final/\n?? experimental_architectures_v1_r3/validation/offline_guard/\n?? experimental_architectures_v1_r3/validation/prior_controls/\n?? experimental_architectures_v1_r3/validation/publication_window_blocker/\n?? experimental_architectures_v1_r3/validation/regression/\n?? experimental_architectures_v1_r3/validation/reproductions_after/\n?? experimental_architectures_v1_r3/validation/reproductions_before/\n?? experimental_architectures_v1_r3/validation/resume_20261017_f01/\n?? experimental_architectures_v1_r3/validation/review_input/\n?? experimental_architectures_v1_r3/validation/reviewer_probes_r2.py\n?? experimental_architectures_v1_r3/validation/scratch/",
+    "staged": ""
+  },
+  "prior_WIP": {
+    "root": "E:\\END-v102-WIP-Checkpoint-20261019",
+    "HEAD": "eadf1390c0631cfe30985744b38bb4df055acb87",
+    "branch": "wip/end-v102-contract-review-20261019",
+    "status": "",
+    "staged": ""
+  },
+  "engine_fingerprints": {
+    "E:\\END-v102-V21-Contract-Checkpoint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+    "E:\\END-Cognitive-Architectures-Fix-v102": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82"
+  },
+  "contract_files": {
+    "31_HISTORICAL_MAPPING_PRESERVATION.md": "915f510a5762204d36e5771ffc23cb976e202535a1fd8e4cbdb84dee346c0215",
+    "DOCUMENT_VALIDATION_SUMMARY.json": "5067059a26467049bd8f06e6439f9832e69ae2e35a5130dca734b6d2af0b0b9a",
+    "FINAL_V21_PROPOSAL_REPORT.md": "5c12bfbcaff2a550c42a8bd9e98de978f1c9d9b6da2afd5c0927f88cc78a7ea8",
+    "OPEN_DECISIONS.md": "57ab245a86546b40943f86cba916d564a1a879075835f6415ef574f1b57c61cb",
+    "R1_DOWNGRADE_MATRIX.csv": "816903dad272709d1bf1344cf160305dfe3f49f8a3145fa2d7a41b92ffdf91e3",
+    "R1_SIXTEEN_CASE_REVALIDATION.csv": "263d35c64daa66b74b15a08c7d9263b8666f96c35cb50637b28081ea7b6aed7b",
+    "R1_SNAPSHOT_ACQUISITION.md": "db531e634b959498198504c690110004f444fbf7e66746be05c659f3f123b666",
+    "R1_SNAPSHOT_ADVERSARIAL_TEST_PLAN.md": "64a11286f86c7f5dd83e5001c64382454503dd240a34bd3bd7d1d6fdeef5cdff",
+    "R1_SNAPSHOT_AUTHORITY.md": "7d1b92d58b3f16ef0852644f039a35675d2dac58a505d4e505af079c7318af3c",
+    "R1_WITNESS_REQUIREMENTS.md": "57806bec9b4d4a63766775e4c73b135f1c4a88a00aa274dcad090fd78a8cb578",
+    "R2_PRESERVATION.md": "68eee8799f393af536674e4ba4a31919fbf28fd4e7545d480e1c25aafd1e9fbd",
+    "R3_ADVERSARIAL_TEST_PLAN.md": "6802f74eb21bc43e96d4c8c6885f6d9316b40f0cf19cf37d99549a4b89943fc2",
+    "R3_EXCLUSIVE_OUTCOME_UNION.md": "e2bdb9cd4d7525746b07bcdb6a5668938b88fff6faf0585d7a24223c80969e11",
+    "R3_LEGACY_COMPATIBILITY.md": "0928284cca469eb771c5d6b6b38b4644f626acc2e55e866137d65b917a95b8ae",
+    "R3_NORMATIVE_FIELD_MATRIX.csv": "5d45aa68c3e4d54b50444a8dc9e04b0c3db287e8056ba524d0b37bbda6b992d4",
+    "R3_SCHEMA_SPECIFICATION.json": "ab900d6d1c40eea67dbe9f4f4c31fcbb90cadaddbdcbfa56c090aa742d72ced9",
+    "R4_R5_RETAINED_CONDITIONS.md": "a493e4631818132c525fd3dcb250caa11bdb13ae0356dae5a9c00b35241eb62e",
+    "README.md": "7dc2d6994e4d596b3a23492a59e774ba3318814e53c91dab7889102ca9b34c09"
+  },
+  "approved_archive": {
+    "sha256": "fa988f05f5d8620aeff46878542d2ef083f09e5b255b7bb5581b3c3b55ec6671",
+    "bytes": 2860514,
+    "crc_and_all_manifest_members": "PASS"
+  },
+  "frozen": {
+    "freeze_id": "exp-pack-1.1.1-frozen",
+    "frozen_file_count": 725,
+    "issues": [],
+    "passed": true,
+    "scientific_payload_root_sha256": "23a923ebb224a162ba98c673a9f4f97e8c0571807a893ed72d6a07d65f181a09",
+    "source_rubric": "exp-pack-1.1.1-draft",
+    "verification_scope": "Trusted checker/filesystem consistency only; no human authentication or runtime secrecy guarantee"
+  },
+  "source_manifest_structure": [
+    "schema_version",
+    "files",
+    "scope",
+    "source_root_sha256"
+  ]
+}

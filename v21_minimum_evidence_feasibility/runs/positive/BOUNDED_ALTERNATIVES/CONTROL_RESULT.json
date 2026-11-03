@@ -1,0 +1,21 @@
+{
+  "condition": "BOUNDED_ALTERNATIVES",
+  "control_verdict": "PASS",
+  "scope": "DERIVED_MOCK_LEGACY_CORE_ELIGIBILITY_NOT_NEW_V21_CERTIFICATION",
+  "source_authority": "I_MAXIMUM_NO_COMMON_CUT",
+  "certified_complete_totals": null,
+  "provider_calls": 0,
+  "core": {
+    "passed": true,
+    "payload_sha256": "9fce053bb434317950d03ef7c9d69cc71ee422f8c01fc91ca5728b24477cb9ee",
+    "provenance": "VERIFIED"
+  },
+  "owner_lease_never_claimed": true,
+  "derived_bytes_unchanged_during_core": true,
+  "elapsed_time": 0.9070000000001528,
+  "bound_satisfied": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

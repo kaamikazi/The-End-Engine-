@@ -1,0 +1,3002 @@
+{
+  "method": "Independent stdlib byte/field inspection; no END imports, no runtime capture, no author checker",
+  "cases": [
+    {
+      "case": "changed_wire",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_changed_wire",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+          "actual": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+          "actual": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+          "actual": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.013809500000206754
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.013809500000206754
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "9a62ced7f7cfc4843e50dd81ef04ec0ddfdc5585a9953cfb0605ca2c313d2b8b",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "4d7697bcd3cd0c71b6cecdb15b44d62dd8e72e0cb5956c796edc20eddd52ec72",
+          "bytes": 13336
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "b5bd39a51495d364ad6ec2996a826cba88ce83d71cfefccc59f88e226a85858c",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "7a803ed492c34081dae81a3dfbce8ced0045d0b1d20d288629e1370238ad8d81",
+          "bytes": 530
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "7a803ed492c34081dae81a3dfbce8ced0045d0b1d20d288629e1370238ad8d81",
+          "bytes": 530
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/0b0605a09b56fa7d058e2ed8eb3106d3.json",
+          "sha256": "ccbd8306f98ba74744a293f88d0716427131de60d2ae105b69ec2dde2f95b9d6",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/6a5dae01b4e90d73903ec6df37f13a9d.json",
+          "sha256": "3424a7200759cacf5bd4b25a781b23c98a107c59831826baf9c779264bbd9b4b",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "a7db772a5873892d447a86b3a2c1def3bf64a2a9799381a265abfb260c074682",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/815167423715a41fa1f2b97ddf29ff86.json",
+          "sha256": "533a0b84b639d9ae3579870b2d223ac54c1027098bac5a2663a90d284bdd83c6",
+          "bytes": 7943
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "9a62ced7f7cfc4843e50dd81ef04ec0ddfdc5585a9953cfb0605ca2c313d2b8b",
+          "bytes": 1762
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "changed_wire_digest",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_changed_wire_digest",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+          "actual": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+          "actual": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+          "actual": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014551100000971928
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014551100000971928
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "ec45184d8cb621807fc3d1e7a5b833fa93055e5a99f750601d2cc9c2a54a0732",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "7c5d03a6d506c9dfba0db64c9a867af948e919c0cdfcc621ec8031a12eb6445a",
+          "bytes": 13406
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "0baf0f9a4ebabb7a9cbfe01e9d58e99f69c97f2c0d695f18352aec49462ca2ef",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "579cef409adcfd911392d0d717a8d5d035e0c038b47941e6bc9bfb373629608b",
+          "bytes": 544
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "579cef409adcfd911392d0d717a8d5d035e0c038b47941e6bc9bfb373629608b",
+          "bytes": 544
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/1fd15e0da1681cf202d1c60b766bef9a.json",
+          "sha256": "52f66b09572b76942cf1185862ad4c1930a7f1873308bb6506ebd508c6b8433b",
+          "bytes": 179
+        },
+        {
+          "path": "publication/events/8dd789bb6b721597e944dfe151e9bcb9.json",
+          "sha256": "6ae3217e726d2df5de637aab474714cb10eb5dcb3a406644eea90bb6da1f5e0e",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "44e9417439e4a28efc5fbc7e9db808e4358a5ab00fcf7cdfe6ac6d651d9de307",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/70d3d5dfc00418b5cd7ac4e215276c7a.json",
+          "sha256": "3254be699b343a9f82048ab5d8db164944c9cb98b6b9e09e07b868b0a1a20deb",
+          "bytes": 7999
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "ec45184d8cb621807fc3d1e7a5b833fa93055e5a99f750601d2cc9c2a54a0732",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "changed_decoded_response",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_changed_decoded_response",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+          "actual": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+          "actual": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+          "actual": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014017599998624064
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014017599998624064
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "ec123b81c063a035c97dba29db6a909466c7057cb1beab65b64b509e9c594259",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "dc18d6c0ae5a7f9190318d64fae628d2691e2b32ddc00614c3c9ca8ba39a0c39",
+          "bytes": 13456
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "675f774da538b3d0afa43cb177e024d249acce76cab3d1998e73470efd0cccb5",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "5d1e2c179388c87017254a20c06330b36ac4b2c824cde8b4bf8d2f0ddc476901",
+          "bytes": 554
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "5d1e2c179388c87017254a20c06330b36ac4b2c824cde8b4bf8d2f0ddc476901",
+          "bytes": 554
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/453e3c2390a3872b6196505e4b4d5a67.json",
+          "sha256": "b472e27be6516a957c52898560a1216953187687c7eb7e2bab7cbe2c787b6475",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/e5a58e25844b9296e64c43f5f16e335c.json",
+          "sha256": "84a600c6231a697ff337c61b4f81df47c5a8fb857321866dd7deb62c1edad821",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "b95050a3168b8024bc6e1c3b60523233252ad610349e98eb5750a3f0fa3f50b8",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/5ea0085cdd32fcbff67aaaa60ce718a1.json",
+          "sha256": "f2126b5f121fac1efcd919dde2d8a47c57f88ca666021f2d70cec6e69476c457",
+          "bytes": 8039
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "ec123b81c063a035c97dba29db6a909466c7057cb1beab65b64b509e9c594259",
+          "bytes": 2805
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "invalid_base64",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_invalid_base64",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+          "actual": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+          "actual": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+          "actual": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.010527599999477388
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.010527599999477388
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "20f13f04b9cc1aac50b93e64ea4f1c7de95e21fc5a0a96596d761f7b443231ed",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "f6a6facf32c977a46f1eb10026bdb67b63797f4eb18ef8b0ea2603b1187a02fe",
+          "bytes": 13357
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "964a97cf568a67160186a0d46707a980a3da242038fbb30808e720a555b7a1cb",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "0c49d8aace5760f916886941839b688d79ea65478f030c254e3f7286cd2dc505",
+          "bytes": 534
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "0c49d8aace5760f916886941839b688d79ea65478f030c254e3f7286cd2dc505",
+          "bytes": 534
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/98709addee3c970e92b366e8df4ec08e.json",
+          "sha256": "ba9b820e981da8948d56cbcd91ba386abcd7666dc65e17ea707935d548a6ec6e",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/aa16dda269ea4551e19b21fdc9565c48.json",
+          "sha256": "3f5d3bb60b570408a73e72cbdafa0123a9fa952fc4447be97d59d225b2312c69",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "8ab8837a5bbc3a7eacc29726918d6659d993930bb3bd9b818a436722106f2080",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/1083721becfb5f04f713e05051990753.json",
+          "sha256": "b83adb7d810d85f304de0a4e65a2e0cc3c1df7f7fc9475a3c4d6966f7f9a5e4c",
+          "bytes": 7959
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "20f13f04b9cc1aac50b93e64ea4f1c7de95e21fc5a0a96596d761f7b443231ed",
+          "bytes": 2738
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "changed_response_digest",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_changed_response_digest",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+          "actual": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+          "actual": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+          "actual": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.022200499999598833
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.022200499999598833
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "92a9a89b39234e52612bbd5ae185c0e33eddfb5508b1cfd38e42d01eb006d4cb",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "fa14ab062e58198eaef1f866d6b9ecffaf9a533758fe6f1884808a63edfcf4a4",
+          "bytes": 13443
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "5e4aa7f728b2a78bacf3acafba6dc31e681bf84ee20d8f2cbceeba1944ed6a28",
+          "bytes": 1287
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "8647a03c9815a478afc5804c169e4c0aca545f6ec0c834596b7ab969cb228574",
+          "bytes": 552
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "8647a03c9815a478afc5804c169e4c0aca545f6ec0c834596b7ab969cb228574",
+          "bytes": 552
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+          "bytes": 681
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+          "bytes": 1289
+        },
+        {
+          "path": "publication/events/009234c2aaaf72b7504ff550331513a1.json",
+          "sha256": "3df5627f0a77bd2b57a04df4aae0cd121a80972f6e5a0a9ed274a16718fb9d1d",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/2f79d9c8b6465dcdb4b3f840fc4290cc.json",
+          "sha256": "84cd2b40e9ac86efbcbad52eb5f47991c9ced289734f21c3b5fbaa6162378922",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "2f679c3c2e24b9a925493dc033bdc451b73f7ed2be0d4f1260afab2b266b7496",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/9c447fc97a635c90100a9372b593cc32.json",
+          "sha256": "2d68e80b008063e179028730ca770569a0e75c2e3b268629c126f486334a08e4",
+          "bytes": 8027
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "92a9a89b39234e52612bbd5ae185c0e33eddfb5508b1cfd38e42d01eb006d4cb",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "missing_settled_journal",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_missing_settled_journal",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+          "actual": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+          "actual": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+          "actual": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.016516499999852385
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.016516499999852385
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.preserved-missing",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "registered": false,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": false
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "b25d6da6cb3f506ef2bd0ab833adc3fe70f6dabb479067b884ac96d4ee9182d7",
+          "bytes": 11951
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "85bf166604ca4dcf05902178e4266b71839be59660a93ee50a762c14055ea885",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "679ec6e9ca3201fb9cd0487a194a4630ceae161ba32706b49d31211ba016dc9e",
+          "bytes": 552
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "679ec6e9ca3201fb9cd0487a194a4630ceae161ba32706b49d31211ba016dc9e",
+          "bytes": 552
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/f30129654de04dea725e78f5227b8c6d.json",
+          "sha256": "080258291cbcafea1ca02d801eb9df09a16b35c8f3651f26c34c7306097819bf",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/faae451236721376e833d5e0b6e682a3.json",
+          "sha256": "70a33593463e20809c5f9b8d8de9903340c9a0b4018ed737cfaaf2bed09565f9",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "28dce137cb1f093526e83bde780bf180ccff37a31ff1aae113435901234ec0ac",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/c0c3e437ac9e11a3834b902b00e66982.json",
+          "sha256": "4d425da27ecfeee0538fcd9dc49050411616776fd2b2a25a22932b977f4ec5be",
+          "bytes": 7305
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.preserved-missing",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "duplicate_attempt_file",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_duplicate_attempt_file",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "actual": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "actual": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "actual": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014531799999531358
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014531799999531358
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        },
+        {
+          "path": "wire/duplicate.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "registered": false,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "949822aa76154fdf64f799dc2e18a8ae074f092e3cfed89bc4fbbc433fdecbfe",
+          "bytes": 19069
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "eb547b440d1551b057102b0281a7942916d45caa7ff62d338b156956bb99d9e6",
+          "bytes": 1287
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "711b9fa7bebacb37b145d8f155dc7b9f4cdec1d86a8a3975a1117d5d297b7f01",
+          "bytes": 550
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "711b9fa7bebacb37b145d8f155dc7b9f4cdec1d86a8a3975a1117d5d297b7f01",
+          "bytes": 550
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "bytes": 681
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "bytes": 1289
+        },
+        {
+          "path": "publication/events/5fcf2bfd29dc9345b8847af5fbf5b4c1.json",
+          "sha256": "f582e7e8a7b5e010e46fc0ce1f7dd0e82b3eb50285b02a42340ea70b3ee4fcab",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/d615a6ba19f1d4f7cfdf226dc628b495.json",
+          "sha256": "d60f7ff9821ea68cc5aba700141e4fcd1219af5a43f7f5e5d7a5d341e4412edd",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "0838a1b001563e0a3d13c2c6c9d8e3785d9e484442e6892c0cb7744443e1dce2",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/9aa9f09ac97d8678be79bbf465918f1d.json",
+          "sha256": "a6b2025dde39adc5056f2bf8b31426808b4f1ffab969b3909703d452967e835b",
+          "bytes": 10652
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "bytes": 3158
+        },
+        {
+          "path": "wire/duplicate.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "duplicate_response_record",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_duplicate_response_record",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "actual": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "actual": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "actual": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014913499999238411
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014913499999238411
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19",
+          "registered": true,
+          "records": 3,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "8d78f6ea9df280537473e0189ecf86f1226a57066b3cddf00e77bc9ab3244a08",
+          "bytes": 13467
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "9cb652153447718476a8bd0e8e91b8852d1fd706f4c8c6fcd734cb74b6eafda2",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "12ea00ef5bca6e347335791a67031939ffd5bb85c9e4a0425dabed91d9e32f5a",
+          "bytes": 556
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "12ea00ef5bca6e347335791a67031939ffd5bb85c9e4a0425dabed91d9e32f5a",
+          "bytes": 556
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/2fe0983a0dc88f89d06080fceb7c5f99.json",
+          "sha256": "6afbf20165b3f28f37136d0d2a31b79742cd619cbbf197c80e70f54d50d0a2fe",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/7581565fbecaed5509791242f4fb8be5.json",
+          "sha256": "4dda84cb4efaa9c2eb8d0db63615173551a17d43903429577ca89fa5b93fcd07",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "bc0c4bc6f7a1970358ee708bfb10399b409f29663aaecc211a2c8de5be28d9f3",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/de3eef4add37ec2d70872dd78953f3e8.json",
+          "sha256": "a389a375d9862c1a6da8403af1ebfe23bc059953e013abf7d6fcbd2d467cfad7",
+          "bytes": 8047
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "df98f8d15e5173a16d3c9698e9f59612ec05fcb12a4779238a43fceb83af7f19",
+          "bytes": 4409
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "wrong_stage",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_wrong_stage",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+          "actual": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+          "actual": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+          "actual": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.01283049999983632
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.01283049999983632
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "2332af9d3b1d36ddd586fe84a4cdfe8e18f1c4a415d2133ae66c64cb73a41148",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "REPAIR_PLAN",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "0358f0b105a9df2c87bbe57e0515c035ce0e45ce7e5e6ccb7c9dadf6b3cdd190",
+          "bytes": 13323
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "bd6281987ad8202f5ef7b4336f67ec4268f794c6e904dc633db1066bd574e123",
+          "bytes": 1287
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "a5e05e727f5282b90a8e4d74f952f29b06deb90b2069bbe10193f6eadd556012",
+          "bytes": 528
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "a5e05e727f5282b90a8e4d74f952f29b06deb90b2069bbe10193f6eadd556012",
+          "bytes": 528
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+          "bytes": 1289
+        },
+        {
+          "path": "publication/events/6de1a6f45aeb701877a21b4cb0051e3a.json",
+          "sha256": "b4e4295864cbc33c18bde52f4fe94919e63ac9d8f3e0b1d1f60bbd42edf480be",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/9d4f5ebaef293358aa8dda5972d3d952.json",
+          "sha256": "6f5fabae63f2fcb59ae9e51655f88299734c5d42d5fa37f315299ffa85f5d545",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "0f14c0ca75f002092f80a3d7d58a36da61ca0cd42464545d497d801751fb4be6",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/658aea95626cc760af3cb1f7d721ce0b.json",
+          "sha256": "4c4d8849f792e3f6dde0a0ec8cf0b61478688d09e7147a200ce858f05202f614",
+          "bytes": 7931
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "2332af9d3b1d36ddd586fe84a4cdfe8e18f1c4a415d2133ae66c64cb73a41148",
+          "bytes": 3162
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "wrong_run",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_wrong_run",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+          "actual": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+          "actual": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+          "actual": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.012632400001166388
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.012632400001166388
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "d007960d794978dea383a159546a6577541d4eb3dfb57456ee87e041f0c14200",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "OTHER_RUN",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "cfd4ab7d5224fc639de81781179d9d4c8947f05ede09e71bb415035a90406093",
+          "bytes": 13303
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "50f6091c4fa7d08960f3c2f6564b9670e24d81d26becd5f1c98ec13562ec9437",
+          "bytes": 1287
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "6dc14190c28d7c651b520a9884d05b0ad8f39afd068ae2b0a4e6d7fe35143d90",
+          "bytes": 524
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "6dc14190c28d7c651b520a9884d05b0ad8f39afd068ae2b0a4e6d7fe35143d90",
+          "bytes": 524
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+          "bytes": 681
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+          "bytes": 1289
+        },
+        {
+          "path": "publication/events/28b5ac9e8c3fd80def4782f2c1db51d9.json",
+          "sha256": "012f46a46acd356e1f3baa464e99f84775b29a8d92e9d7f3affa158fe8026963",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/489ea4195548d40c516b217bb2383b03.json",
+          "sha256": "3bac5ca40b6ec312477e3b265d6fdd9df1dce4d20d7e5c1f87b22ec5240a2881",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "07aede491941f1ac718e5ab42c5f743643ea9cd009139bf932628d1a39b3f2db",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/8d940ce1d1123d1f5427fbbfc6b86c7f.json",
+          "sha256": "2a9e6d8c1d67c01d44c51fa62f635850390b18d3b4a377b00a347ecbb6b5d918",
+          "bytes": 7915
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "d007960d794978dea383a159546a6577541d4eb3dfb57456ee87e041f0c14200",
+          "bytes": 3150
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "wrong_attempt",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_wrong_attempt",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+          "actual": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+          "actual": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+          "actual": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014440200000535697
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014440200000535697
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "12ec801b283027831b1d79a1bde1c37f4189f6414b94ce5e6007c86b6ab93c7b",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 999,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "e896e152d10be925f25ae072daa7ea14ba8536ff89bca21dca24e5a2ea6d5cb3",
+          "bytes": 13347
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "724b2ebff5dfe458c16b3d2a3ac8d16a6e9a2de6f0dcf912885a81954bf7fdb5",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "24036060907bb0a648073cf73909c7aefcfb4f9847470148d9540d7caa9ce768",
+          "bytes": 532
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "24036060907bb0a648073cf73909c7aefcfb4f9847470148d9540d7caa9ce768",
+          "bytes": 532
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/b9b77143b2160918adfc7821c2e671c4.json",
+          "sha256": "8c6797ff12cbd690e20ac724fadf1956612ba779ce90826ca4b8d053abc3d83f",
+          "bytes": 179
+        },
+        {
+          "path": "publication/events/fecc876b86de220fab845dcd3e04058c.json",
+          "sha256": "06a7237cb4d3c8a222a36a3b761045c901d101a56b9f848ac692515e391afc4a",
+          "bytes": 190
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "9818b526dd9aa3208c8333eed24554c242db6bdb0263aefb25f97efa409c58f9",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/1327ba320833779e2c8e64ac6362a81b.json",
+          "sha256": "69422c7805b6e6f929d862f344f65723b58b1b0086d68f6b48ceaf62d5377a40",
+          "bytes": 7951
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "12ec801b283027831b1d79a1bde1c37f4189f6414b94ce5e6007c86b6ab93c7b",
+          "bytes": 3160
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "incorrect_record_order",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_incorrect_record_order",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+          "actual": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+          "actual": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+          "actual": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014349699999002041
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014349699999002041
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "e9ff7d0f672377be35cb74a70466952a5a6c9bff8bf1d8b1efc8c5b6ba84990e",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "9b4e725c1a869777bd0370b57917b7f5a885ca5ba2ef8024921357f075deba98",
+          "bytes": 13437
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "cfe4266666af5a462cf0a53cea5c02d8fa396aed8ed7b11cb50837e66d756f95",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "0c30705951a552347e1bf9b23f93906b049508175f144658d63a96d7d496282f",
+          "bytes": 550
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "0c30705951a552347e1bf9b23f93906b049508175f144658d63a96d7d496282f",
+          "bytes": 550
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/17ec9a03212536729b75a147f2e3bfc9.json",
+          "sha256": "fd869d35559300d648103dd78d3b467abc214f748371b52e91655e88dffe24f9",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/8b14622a4f39f745a7c9880b0954a6ab.json",
+          "sha256": "2107ba681c181beeacf03fd4de053593844d34096787b0c50f612bc4e50cd597",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "c730fdfce4877188518fea758a769b0bc7cefbcfd00bef69cf3b6b95c47237ae",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/873a53fea6e18862bdbb52cfe2ae2ba1.json",
+          "sha256": "77ee8291c7cacf6017a7f9bfde719993a46a3ba1a330db7845d7f4635a90346e",
+          "bytes": 8023
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "e9ff7d0f672377be35cb74a70466952a5a6c9bff8bf1d8b1efc8c5b6ba84990e",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "settled_torn_tail",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_settled_torn_tail",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+          "actual": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+          "actual": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+          "actual": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014268899998569395
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014268899998569395
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "a067703aad49301ebc0759ee064ad1ae9f7f6a066c476cbbe122178b80ededbd",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [
+            {
+              "line": 2,
+              "error": "Expecting value: line 1 column 10 (char 9)"
+            }
+          ],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "a9a67973b0e07b94ff88e19031b8dc41edb095d213f967edaa6795d586633457",
+          "bytes": 13248
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "b0de2b7e5d897bc5f60945671651f28be28486624d5531ee40358c6f4f0da1c6",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "1ce73f870687f27b6a217ee274e63a15b2d89be60efbf357adee61d1ab167074",
+          "bytes": 540
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "1ce73f870687f27b6a217ee274e63a15b2d89be60efbf357adee61d1ab167074",
+          "bytes": 540
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/440669c8055646fbb68b68270e16a8c7.json",
+          "sha256": "96d6344a82c2963109b4431ec8f38013df0377e010a5ec4a7a41077887d70529",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/89ea8d34e156b4ca9d10c73b78f1a0bf.json",
+          "sha256": "4e666edf32ea2852f32886980a1327f62923cf68407c1338a5ec3d49d7431700",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "dd3f46aceac467cbd69caa266af5e5fe0a19febf3d8c3caba6e0232ac4dc4684",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/4dd9f20de3447956ed89804b2c1b4a9f.json",
+          "sha256": "b22dbf55c3eff2137e53397b1d79f772d6bea266bef29d0286354329665851b7",
+          "bytes": 7917
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "a067703aad49301ebc0759ee064ad1ae9f7f6a066c476cbbe122178b80ededbd",
+          "bytes": 3167
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "ledger_disagreement",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_ledger_disagreement",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654",
+          "actual": "da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3",
+          "actual": "7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6",
+          "actual": "c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": false,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014479699999355944
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014479699999355944
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "1a2fcb533858ef3c15643e7eb2b53663743dd9199614255c77071feba7cde7a3",
+          "bytes": 10700
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "c4b935eeed1edbc21812e6d6f11cff46874e8e222b55884a2c0a6d381dabc4cf",
+          "bytes": 1249
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "c79e199a0a58961049979813aa43d0ad6057bbb346969d59c88ac4118bdd230e",
+          "bytes": 544
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "c79e199a0a58961049979813aa43d0ad6057bbb346969d59c88ac4118bdd230e",
+          "bytes": 544
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/9283e82181ea7b889fb3ba5cc4eceb13.json",
+          "sha256": "6f46ef8943a3f7662ba349097206b65d1c8958023d67d04b75c3276c8d2e73c1",
+          "bytes": 179
+        },
+        {
+          "path": "publication/events/ef7574a70da14fd0d058c27489eafe67.json",
+          "sha256": "3cab6395a8a3643a01cdd302a38d8c04b93be6838b4fffff46721f6732f63324",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "623ab58c49d8a956e2d07ba180d3b169e50c3b37a026fbd01dc955b15bc43e98",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/c242365eed8eca5368378ee943011e0c.json",
+          "sha256": "0f9136aa1ed40c90d486c0fe891cdaee11419605197e12390ea6f46c36a1996f",
+          "bytes": 7252
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "S_RESERVATION_DISPATCH_ONLY",
+      "full_run_certification": false
+    },
+    {
+      "case": "recomputed_hashes_still_fail_anchor",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_recomputed_hashes_still_fail_anchor",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+          "actual": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+          "actual": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "expected": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "actual": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+          "actual": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": true,
+        "settlement_registered_response_commitment": true,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true,
+        "response_identity": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014621800000895746
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014621800000895746
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "415ce9e10cfdf662056bb99af05504cf11b1df0badaf88856f5ab6587e44af70",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "dccde21972210192e928e71716ef6d07e5b1cbb0ee573c6baa43051a381ca898",
+          "bytes": 13567
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "54aba533e19629bb77023998a6d57591eddf6141a16095f5a8c52a2aaee45639",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "674a6f77101519892c0424fa221f853647e0749ecb4dff4478fdc0b87b1c456b",
+          "bytes": 576
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "674a6f77101519892c0424fa221f853647e0749ecb4dff4478fdc0b87b1c456b",
+          "bytes": 576
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.json",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/40562ee2d9a316b3bccdededdfd50b44.json",
+          "sha256": "afba4de4de92744b65a641e10de69c96a33e80604ecc595afba85c85feca309b",
+          "bytes": 191
+        },
+        {
+          "path": "publication/events/8db55e4f33fe8a9daee8191ccddcbc04.json",
+          "sha256": "fd46efa19c39c717cda665297882a4a0a61b36b09d2214b7630c811bbf8eff3c",
+          "bytes": 180
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "02055feb5d5dcb48860c36405669c4672635ad7f8e97f817593cf2a015b318c3",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/4e13a22e61736bb62029e0624387d423.json",
+          "sha256": "35c34dbdbd9fb1497a04475ebb76a2addee151f8a32ff9ccf3f9976803ad8659",
+          "bytes": 8127
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "415ce9e10cfdf662056bb99af05504cf11b1df0badaf88856f5ab6587e44af70",
+          "bytes": 1750
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "A_ANCHORED_GRAPH_CARDINALITY_1_ONLY_IF_NEW_CUT_AND_ORIGIN_PREREQUISITES_HOLD",
+      "full_run_certification": false
+    },
+    {
+      "case": "missing_response_anchor",
+      "path": "E:\\The End Engine\\v21_contract_acceptance_review\\r1_raw\\retained_fixtures\\ACCOUNT_missing_response_anchor",
+      "proposed_refs": [
+        {
+          "path": "publication/attempts/000001.json",
+          "expected": "fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47",
+          "actual": "fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "expected": "df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89",
+          "actual": "df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89",
+          "match": true
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "expected": "9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f",
+          "actual": "9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f",
+          "match": true
+        }
+      ],
+      "checks": {
+        "ledger_checksum": true,
+        "global_ids_order_unique": true,
+        "reservation_identity": true,
+        "reservation_original_state": true,
+        "reservation_row_identity": true,
+        "dispatch_identity": true,
+        "dispatch_spec_intent": true,
+        "settlement_identity": true,
+        "settlement_row_full_equality": true,
+        "settlement_dispatch_commitment": true,
+        "registered_response_exists": false,
+        "settlement_registered_response_commitment": false,
+        "candidate_dispatch_binding": true,
+        "candidate_response_text_digest": true
+      },
+      "observed_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014388399999006651
+      },
+      "current_row_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15,
+        "seconds": 0.014388399999006651
+      },
+      "journals": [
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "registered": true,
+          "records": 2,
+          "parse_errors": [],
+          "ids": [
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 0
+            },
+            {
+              "run_id": "REVIEWER_CONTRACT",
+              "attempt_id": 1,
+              "stage": "INITIAL",
+              "index": 1
+            }
+          ],
+          "same_bytes_as_registered": true
+        }
+      ],
+      "inventory": [
+        {
+          "path": ".publication.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "REVIEWER_OUTCOME.json",
+          "sha256": "8a649216d80bcb412b7780fc07315590267c521a7d6193194cd523f28e7fd635",
+          "bytes": 10263
+        },
+        {
+          "path": "budget.boundary.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json",
+          "sha256": "776ef894906bd7517b7b61a21aedfaa24079235d80a7966529b3518114abf6f8",
+          "bytes": 1288
+        },
+        {
+          "path": "budget.json.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/bindings.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "budget.json.r2_bindings/cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+          "sha256": "252760e0f7b263ea62a213cec9061fbe311c909969506a1bd652c6c4376f3e3b",
+          "bytes": 552
+        },
+        {
+          "path": "publication/IDENTITY.json",
+          "sha256": "252760e0f7b263ea62a213cec9061fbe311c909969506a1bd652c6c4376f3e3b",
+          "bytes": 552
+        },
+        {
+          "path": "publication/attempts/000001.json",
+          "sha256": "fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47",
+          "bytes": 1960
+        },
+        {
+          "path": "publication/attempts/000001.reservation.json",
+          "sha256": "df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89",
+          "bytes": 682
+        },
+        {
+          "path": "publication/attempts/000001.response.preserved",
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "bytes": 255
+        },
+        {
+          "path": "publication/attempts/000001.settlement.json",
+          "sha256": "9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f",
+          "bytes": 1290
+        },
+        {
+          "path": "publication/events/2c820696019bc6872ed0184c27395725.json",
+          "sha256": "1998601b8e0ec79b7e31f3ff8e998605bc210863980d7eba95184396055bfda6",
+          "bytes": 180
+        },
+        {
+          "path": "publication/events/44fc539ceace42aa353215f4606fe02b.json",
+          "sha256": "663a0ac0e06ed72b1225dc02cc4becfa905482f0e8286ec31a4cafc4fd3dfcec",
+          "bytes": 191
+        },
+        {
+          "path": "publication/owner.json",
+          "sha256": "25ecfb1bf279638eb5b07efe0ee5ffedac40dcfdd9ed8715fdc42b29ba5be298",
+          "bytes": 151
+        },
+        {
+          "path": "publication/owner.lock",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "bytes": 1
+        },
+        {
+          "path": "publication/recovery_holds/26b81436004b981a723713ba0e3d3aa9.json",
+          "sha256": "ddd6ed6edd3dc7f3735dc94d25b10831937133c62a3aab998efca02dadef06fb",
+          "bytes": 6979
+        },
+        {
+          "path": "wire/000001-4dcaf471206a91f7.jsonl",
+          "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+          "bytes": 3158
+        }
+      ],
+      "current_authority": "I_MAXIMUM; no historical R1-GUARDED-CUT-2.1 writer-domain/guard/capture evidence",
+      "conditional_authority": "S_RESERVATION_DISPATCH_ONLY",
+      "full_run_certification": false
+    }
+  ],
+  "case_count": 16,
+  "reference_count": 63,
+  "reference_mismatches": [],
+  "failed_checks": {
+    "changed_wire": [],
+    "changed_wire_digest": [],
+    "changed_decoded_response": [],
+    "invalid_base64": [],
+    "changed_response_digest": [],
+    "missing_settled_journal": [],
+    "duplicate_attempt_file": [],
+    "duplicate_response_record": [],
+    "wrong_stage": [],
+    "wrong_run": [],
+    "wrong_attempt": [],
+    "incorrect_record_order": [],
+    "settled_torn_tail": [],
+    "ledger_disagreement": [
+      "settlement_row_full_equality"
+    ],
+    "recomputed_hashes_still_fail_anchor": [],
+    "missing_response_anchor": [
+      "registered_response_exists",
+      "settlement_registered_response_commitment"
+    ]
+  },
+  "documents": [
+    {
+      "name": "31_HISTORICAL_MAPPING_PRESERVATION.md",
+      "sha256": "915f510a5762204d36e5771ffc23cb976e202535a1fd8e4cbdb84dee346c0215",
+      "bytes": 8815
+    },
+    {
+      "name": "DOCUMENT_VALIDATION_SUMMARY.json",
+      "sha256": "5067059a26467049bd8f06e6439f9832e69ae2e35a5130dca734b6d2af0b0b9a",
+      "bytes": 1106
+    },
+    {
+      "name": "FINAL_V21_PROPOSAL_REPORT.md",
+      "sha256": "5c12bfbcaff2a550c42a8bd9e98de978f1c9d9b6da2afd5c0927f88cc78a7ea8",
+      "bytes": 4933
+    },
+    {
+      "name": "OPEN_DECISIONS.md",
+      "sha256": "57ab245a86546b40943f86cba916d564a1a879075835f6415ef574f1b57c61cb",
+      "bytes": 1622
+    },
+    {
+      "name": "R1_DOWNGRADE_MATRIX.csv",
+      "sha256": "816903dad272709d1bf1344cf160305dfe3f49f8a3145fa2d7a41b92ffdf91e3",
+      "bytes": 8186
+    },
+    {
+      "name": "R1_SIXTEEN_CASE_REVALIDATION.csv",
+      "sha256": "263d35c64daa66b74b15a08c7d9263b8666f96c35cb50637b28081ea7b6aed7b",
+      "bytes": 28146
+    },
+    {
+      "name": "R1_SNAPSHOT_ACQUISITION.md",
+      "sha256": "db531e634b959498198504c690110004f444fbf7e66746be05c659f3f123b666",
+      "bytes": 9113
+    },
+    {
+      "name": "R1_SNAPSHOT_ADVERSARIAL_TEST_PLAN.md",
+      "sha256": "64a11286f86c7f5dd83e5001c64382454503dd240a34bd3bd7d1d6fdeef5cdff",
+      "bytes": 3087
+    },
+    {
+      "name": "R1_SNAPSHOT_AUTHORITY.md",
+      "sha256": "7d1b92d58b3f16ef0852644f039a35675d2dac58a505d4e505af079c7318af3c",
+      "bytes": 7750
+    },
+    {
+      "name": "R1_WITNESS_REQUIREMENTS.md",
+      "sha256": "57806bec9b4d4a63766775e4c73b135f1c4a88a00aa274dcad090fd78a8cb578",
+      "bytes": 8769
+    },
+    {
+      "name": "R2_PRESERVATION.md",
+      "sha256": "68eee8799f393af536674e4ba4a31919fbf28fd4e7545d480e1c25aafd1e9fbd",
+      "bytes": 963
+    },
+    {
+      "name": "R3_ADVERSARIAL_TEST_PLAN.md",
+      "sha256": "6802f74eb21bc43e96d4c8c6885f6d9316b40f0cf19cf37d99549a4b89943fc2",
+      "bytes": 2751
+    },
+    {
+      "name": "R3_EXCLUSIVE_OUTCOME_UNION.md",
+      "sha256": "e2bdb9cd4d7525746b07bcdb6a5668938b88fff6faf0585d7a24223c80969e11",
+      "bytes": 9509
+    },
+    {
+      "name": "R3_LEGACY_COMPATIBILITY.md",
+      "sha256": "0928284cca469eb771c5d6b6b38b4644f626acc2e55e866137d65b917a95b8ae",
+      "bytes": 2659
+    },
+    {
+      "name": "R3_NORMATIVE_FIELD_MATRIX.csv",
+      "sha256": "5d45aa68c3e4d54b50444a8dc9e04b0c3db287e8056ba524d0b37bbda6b992d4",
+      "bytes": 29507
+    },
+    {
+      "name": "R3_SCHEMA_SPECIFICATION.json",
+      "sha256": "ab900d6d1c40eea67dbe9f4f4c31fcbb90cadaddbdcbfa56c090aa742d72ced9",
+      "bytes": 63072
+    },
+    {
+      "name": "R4_R5_RETAINED_CONDITIONS.md",
+      "sha256": "a493e4631818132c525fd3dcb250caa11bdb13ae0356dae5a9c00b35241eb62e",
+      "bytes": 2254
+    },
+    {
+      "name": "README.md",
+      "sha256": "7dc2d6994e4d596b3a23492a59e774ba3318814e53c91dab7889102ca9b34c09",
+      "bytes": 1992
+    }
+  ]
+}

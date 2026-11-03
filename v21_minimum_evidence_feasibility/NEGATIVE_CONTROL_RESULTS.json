@@ -1,0 +1,403 @@
+{
+  "negative_categories": 12,
+  "distinct_negative_executions": 11,
+  "category_counts": {
+    "PASS": 11,
+    "FAIL": 1
+  },
+  "execution_counts": {
+    "PASS": 10,
+    "FAIL": 1
+  },
+  "all_mandatory_controls_passed": false,
+  "records": [
+    {
+      "category_id": "N01",
+      "category": "Unenrolled Ledger.register",
+      "shared_execution_id": "N01_N02",
+      "observed_event": {
+        "writer_operation": {
+          "operation": "UNCHANGED_LEDGER_REGISTER",
+          "outcome": "RAISED",
+          "exception": "PermissionError",
+          "winerror": 5,
+          "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json'"
+        },
+        "new_namespace_members": [
+          "budget.json.pending"
+        ],
+        "foreign_registration_detected": true,
+        "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+        "attempt_arrays_identical": true,
+        "original_attempt_rows": 1
+      },
+      "expected_event": "Exact unchanged Ledger.register bypasses test admission/L1/L2, writes foreign budget.json.pending, target replacement is denied WinError5, original ledger/attempts unchanged, handles released.",
+      "elapsed_time": 0.9690000000000509,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Demonstrated writer-exclusion blocker in this one arrangement; no A/S; stop profile after this planned last control.",
+      "control_process_exit": 0,
+      "writer_child_exit": 0,
+      "raw_control": "runs/native/N01_N02/CONTROL_RESULT.json",
+      "source_preservation": true
+    },
+    {
+      "category_id": "N02",
+      "category": "New pending ledger entry",
+      "shared_execution_id": "N01_N02",
+      "observed_event": {
+        "writer_operation": {
+          "operation": "UNCHANGED_LEDGER_REGISTER",
+          "outcome": "RAISED",
+          "exception": "PermissionError",
+          "winerror": 5,
+          "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N01_N02\\\\copy\\\\budget.json'"
+        },
+        "new_namespace_members": [
+          "budget.json.pending"
+        ],
+        "foreign_registration_detected": true,
+        "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+        "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+        "attempt_arrays_identical": true,
+        "original_attempt_rows": 1
+      },
+      "expected_event": "Exact unchanged Ledger.register bypasses test admission/L1/L2, writes foreign budget.json.pending, target replacement is denied WinError5, original ledger/attempts unchanged, handles released.",
+      "elapsed_time": 0.9690000000000509,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Demonstrated writer-exclusion blocker in this one arrangement; no A/S; stop profile after this planned last control.",
+      "control_process_exit": 0,
+      "writer_child_exit": 0,
+      "raw_control": "runs/native/N01_N02/CONTROL_RESULT.json",
+      "source_preservation": true
+    },
+    {
+      "category_id": "N03",
+      "category": "Missing dispatch receipt",
+      "shared_execution_id": "N03",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.3900000000003274,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N03/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N04",
+      "category": "Missing settlement witness",
+      "shared_execution_id": "N04",
+      "observed_event": {
+        "journal_overall": "INTERRUPTED",
+        "core_passed": false,
+        "core_exception": "ArtifactIntegrity",
+        "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "INTERRUPTED",
+        "core_exception": "ArtifactIntegrity",
+        "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT"
+      },
+      "elapsed_time": 0.4529999999995198,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N04/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N05",
+      "category": "Duplicated attempt",
+      "shared_execution_id": "N05",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 2,
+        "known_fixture_token_subset": 30,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.375,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N05/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N06",
+      "category": "Changed response content",
+      "shared_execution_id": "N06",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.40599999999994907,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N06/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N07",
+      "category": "Unknown token usage",
+      "shared_execution_id": "N07",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 0,
+        "unknown_usage_rows": 1,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.39100000000053114,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N07/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N08",
+      "category": "Incomplete provider-format mock response",
+      "shared_execution_id": "N08",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.40599999999994907,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": {
+        "type": "ReceiptError",
+        "message": "provider_receipt_rejected: Incomplete/interrupted nonstreaming receipt"
+      },
+      "raw_control": "runs/faults/N08/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N09",
+      "category": "Interrupted outstanding attempt",
+      "shared_execution_id": "N09",
+      "observed_event": {
+        "journal_overall": "INTERRUPTED",
+        "core_passed": false,
+        "core_exception": "ArtifactIntegrity",
+        "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 0,
+        "unknown_usage_rows": 1,
+        "outstanding_rows": 1,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "INTERRUPTED",
+        "core_exception": "ArtifactIntegrity",
+        "core_message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT"
+      },
+      "elapsed_time": 0.375,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N09/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N10",
+      "category": "Corrupt journal",
+      "shared_execution_id": "N10",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.3899999999994179,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N10/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N11",
+      "category": "Missing candidate binding",
+      "shared_execution_id": "N11",
+      "observed_event": {
+        "journal_overall": "BLOCKED",
+        "core_passed": false,
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+        "recorded_rows": 1,
+        "known_fixture_token_subset": 15,
+        "unknown_usage_rows": 0,
+        "outstanding_rows": 0,
+        "certified_complete_totals": null,
+        "normal_verified_returned": false,
+        "source_bytes_preserved_during_core": true
+      },
+      "expected_event": {
+        "journal_overall": "BLOCKED",
+        "core_exception": "RecoveryIntegrityHold",
+        "core_message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED"
+      },
+      "elapsed_time": 0.39099999999962165,
+      "bound_satisfied": true,
+      "control_verdict": "PASS",
+      "feasibility_implication": "Invalid/uncertain evidence cannot acquire normal VERIFIED eligibility or certified complete usage. No A/S domain is proven.",
+      "control_process_exit": 0,
+      "decoder_rejection": null,
+      "raw_control": "runs/faults/N11/CONTROL_RESULT.json"
+    },
+    {
+      "category_id": "N12",
+      "category": "Concurrent evidence mutation",
+      "shared_execution_id": "N12",
+      "observed_event": {
+        "operation": "write",
+        "outcome": "DENIED",
+        "exception": "PermissionError",
+        "errno": 13,
+        "winerror": null,
+        "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N12\\\\copy\\\\wire\\\\000001-4dcaf471206a91f7.jsonl'"
+      },
+      "expected_event": "Actual concurrent overwrite of pinned existing journal denied with native WinError5; original bytes remain; child joins; pin closes and permits access after release.",
+      "elapsed_time": 0.7030000000004293,
+      "bound_satisfied": true,
+      "control_verdict": "FAIL",
+      "feasibility_implication": "Concurrent overwrite was denied, but exact required WinError5 diagnostic was not reported. Full control failed before its unchanged-byte/post-release/core assertions. The separate later read-only diagnosis confirms unchanged wire bytes and access after release; this does not convert the failed control to PASS.",
+      "control_process_exit": 1,
+      "writer_child_exit": 0,
+      "raw_control": "runs/native/N12/CONTROL_RESULT.json",
+      "raw_error": {
+        "type": "AssertionError",
+        "message": "",
+        "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_minimum_evidence_feasibility\\scripts\\probe_profile.py\", line 15, in main\n    child=w.collect(w.spawn('mutate',root,target=wire,operations=['write']));save(root/'CHILD_COLLECTION_RECEIPT.json',child);assert child['exit_code']==0;events=child['worker_result']['events'];assert len(events)==1 and events[0]['outcome']=='DENIED' and events[0]['winerror']==5;assert wire.read_bytes()==raw\n                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "separate_diagnosis": "_control/N12_DIAGNOSIS.json",
+      "rerun": false
+    }
+  ],
+  "positive_derived_legacy_core_controls": {
+    "PASS": 6,
+    "FAIL": 0
+  },
+  "positive_cooperating_two_actor_control": {
+    "PASS": 1,
+    "FAIL": 0
+  },
+  "total_distinct_control_executions": 18,
+  "total_distinct_control_counts": {
+    "PASS": 17,
+    "FAIL": 1
+  },
+  "source_census_is_separate_inspection": true,
+  "old_historical_outcomes_not_combined": {
+    "A0_attempt_002": "19 PASS / 1 ERROR",
+    "author_collector_targeted": "1 PASS",
+    "previous_independent_collector": "1 PASS"
+  },
+  "schedule_failure": "Original driver exit1 after N12; its two unexecuted planned controls were executed once by a separate continuation, exit0. No test repeated, assertion changed or failure erased.",
+  "raw_schedule": "_control/CONTROL_EXECUTION.json",
+  "raw_continuation": "_control/REMAINING_CONTROL_EXECUTION.json",
+  "watchdog_timeouts": 0,
+  "new_model_calls": 0,
+  "new_reservations": 0
+}

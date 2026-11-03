@@ -1,0 +1,272 @@
+{
+  "scope": "READ_ONLY_ADMINISTRATIVE_AUDIT_NOT_AN_ADDITIONAL_A0_CONTROL",
+  "static": {
+    "changed_files": [
+      "probe_workers.py",
+      "test_lock_domain_feasibility.py"
+    ],
+    "six_file_hashes": {
+      "README.md": {
+        "historical": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "corrected_author": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "reviewer_copy": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19",
+        "actually_executed_archive": "8e5a0ac5a99be8d2b88e7e2dd9ef8acfb97cfdf555e6ad73a143697140ee8a19"
+      },
+      "probe_runner.py": {
+        "historical": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "corrected_author": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "reviewer_copy": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac",
+        "actually_executed_archive": "8228bb53c6b3cac35dced9dc1f068f7afabbbf8058c6db00fc7abf46951d47ac"
+      },
+      "probe_workers.py": {
+        "historical": "5793daf5074f8a754a55e512b5ba0a025ff15ca8e948d99c6ba7574ca5d7de80",
+        "corrected_author": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348",
+        "reviewer_copy": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348",
+        "actually_executed_archive": "2da7bdfb67aec9741d8dbb04440d80912c85186ef6246052824985ca45317348"
+      },
+      "test_lock_domain_feasibility.py": {
+        "historical": "4a70b3901b0d3a9f7ba87e32ba1ae9653a7f31af57ba9cc46a55010d127b268d",
+        "corrected_author": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3",
+        "reviewer_copy": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3",
+        "actually_executed_archive": "aa37b4c8d15bda9697e5802e2fa97045b1a5aea452f8d260c3efd6f7c5f497f3"
+      },
+      "source_profile.json": {
+        "historical": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "corrected_author": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "reviewer_copy": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9",
+        "actually_executed_archive": "553d94a1afeb62e58d7c2957ad60fa984e1ca7ccb1cca62bc2e1adab6cc43da9"
+      },
+      "result_schema.json": {
+        "historical": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "corrected_author": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "reviewer_copy": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353",
+        "actually_executed_archive": "57c0beb6656832d01365cd42d9d0c22f681102cdaf988c940501f4e09b4ed353"
+      }
+    },
+    "definition_changes": {
+      "probe_workers.py": {
+        "added": [
+          "collect_a018_namespace"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "test_lock_domain_feasibility.py": {
+        "added": [],
+        "removed": [],
+        "modified": [
+          "case18"
+        ]
+      }
+    },
+    "source_manifest_entries": 246,
+    "source_manifest_mismatches": [],
+    "recursive_scoring_unchanged": true,
+    "driver_sha256": {
+      "author": "49eabd09fc32238a4eb2db0aecdc32dab4f0c8504d72b97c243c36e51c3919c8",
+      "reviewer_exact_copy": "49eabd09fc32238a4eb2db0aecdc32dab4f0c8504d72b97c243c36e51c3919c8"
+    },
+    "saved_two_file_diffs_equal_independently_generated_diffs": {
+      "probe_workers.py": true,
+      "test_lock_domain_feasibility.py": true
+    },
+    "preserved_evidence_manifest_checks": [
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_feasibility\\_control\\EVIDENCE_FILE_HASHES.json",
+        "manifest_sha256": "9afc6f8e15af45d559f3fd0b3c105f8d82207118de97c2520571b8d08f1fd3ab",
+        "entries": 721,
+        "mismatches": []
+      },
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_blocker_investigation\\_evidence\\INVESTIGATION_FILE_HASHES.json",
+        "manifest_sha256": "4d50c57823766288a1cbdaee83a4009e11a09f1933e382a20259feb1a5231ba2",
+        "entries": 23,
+        "mismatches": []
+      },
+      {
+        "manifest": "E:\\The End Engine\\v21_A0_collector_correction\\_control\\EVIDENCE_FILE_HASHES.json",
+        "manifest_sha256": "8d3d06cdb64f3f87dc9be1064385d0e5724c7baeb325c8714bbca049e2a17cad",
+        "entries": 73,
+        "mismatches": []
+      }
+    ]
+  },
+  "independent_inventories": {
+    "PRE": {
+      "file_sha256": "b97dbaf525698ad8046732ac4b0291b5b28596aafe6edfc8b7f0dc25ae8fa39f",
+      "entry_count": 34,
+      "categories": {
+        "A_OPERATIONAL_CONTROL": 6,
+        "D_UNKNOWN_UNEXPECTED_MEMBER": 12,
+        "B_HISTORICAL_FIXTURE_EVIDENCE": 16
+      },
+      "required_read_failures": [],
+      "collection_complete_for_declared_A0_policy": true,
+      "raw_digest_or_size_mismatches": [],
+      "active_controls": []
+    },
+    "POST": {
+      "file_sha256": "71e97658a821cd27c2c0b630bfb070178e798a912c063cb8c4d43c6cf8af04e3",
+      "entry_count": 35,
+      "categories": {
+        "A_OPERATIONAL_CONTROL": 6,
+        "D_UNKNOWN_UNEXPECTED_MEMBER": 12,
+        "B_HISTORICAL_FIXTURE_EVIDENCE": 16,
+        "C_PENDING_TEMPORARY_EVIDENCE": 1
+      },
+      "required_read_failures": [],
+      "collection_complete_for_declared_A0_policy": true,
+      "raw_digest_or_size_mismatches": [],
+      "active_controls": [
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.a0-L2.lock",
+          "relative_path": ".a0-L2.lock",
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "000100000014061d",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        },
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.publication.lock",
+          "relative_path": ".publication.lock",
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "00010000001405fc",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        },
+        {
+          "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\ADMISSION.lock",
+          "relative_path": null,
+          "category": "A_OPERATIONAL_CONTROL",
+          "read_status": "NOT_READ_ACTIVE_LOCK_CONTROL",
+          "sha256": null,
+          "raw_base64": null,
+          "identity": {
+            "volume_serial": "bc08b541",
+            "file_index": "000100000014061f",
+            "links": 1,
+            "bytes": 1
+          },
+          "descriptor_is_owned": true
+        }
+      ]
+    },
+    "post_membership_omissions": [],
+    "post_membership_extra_claims": [],
+    "added_members": [
+      "budget.json.pending"
+    ],
+    "removed_members": [],
+    "captured_file_vs_actual_mismatches": []
+  },
+  "independent_mutation": {
+    "child_exit": 0,
+    "writer_operation": {
+      "operation": "UNCHANGED_LEDGER_REGISTER",
+      "outcome": "RAISED",
+      "exception": "PermissionError",
+      "winerror": 5,
+      "message": "[WinError 5] Access is denied: 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json.pending' -> 'E:\\\\The End Engine\\\\v21_A0_independent_decision\\\\runs\\\\independent_001\\\\A0-18\\\\copy\\\\budget.json'"
+    },
+    "added_namespace_members": [
+      "budget.json.pending"
+    ],
+    "changed_readable_members": [],
+    "pending_entry": {
+      "path": "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json.pending",
+      "relative_path": "budget.json.pending",
+      "category": "C_PENDING_TEMPORARY_EVIDENCE",
+      "classification_reason": "Pending/temporary evidence retained; never excluded",
+      "active": false,
+      "sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+      "raw_base64": "eyJzdGF0ZSI6eyJhdHRlbXB0cyI6W3siYXR0ZW1wdF9pZCI6MSwiY2FuZGlkYXRlIjp7ImNhbGxfaWQiOiJDQUxMX0lOSVRJQUwiLCJvdXRwdXRfaWQiOiJPX2JlNTk3MDA5ZWM2YjA5ZDAwYzRhMDg5ZiIsInByb3ZlbmFuY2Vfc2hhMjU2IjoiNThkNDRmMzNmMzNhZTY5NWFhNDc3ZjA2NTcyMDU4MjQyZGEyODZlMDNlZjlkY2RjOTZhY2E1Zjc1MTBkNDY5YSIsInRhc2tfaWQiOiJBQkMtUFVCTElDLTAwMSIsIndpcmVfc2hhMjU2IjoiYzU0NGIzNjMzYjhiZTI1OWI5NDAzNDEwYjg3YWQ0MjQzNGQ3MGM1NTgxMDUzMzQ4ZjQ5ZTUxNzA2YmYxMTNhZiJ9LCJlcnJvcl9jb2RlIjpudWxsLCJpbnB1dF90b2tlbnMiOjEwLCJvdXRwdXRfdG9rZW5zIjo1LCJwdXJwb3NlIjoie1wiY2FsbF9pZFwiOlwiQ0FMTF9JTklUSUFMXCIsXCJwdXJwb3NlXCI6XCJJTklUSUFMXCIsXCJzcGVjX3NoYTI1NlwiOlwiMjY2NzQ3MzI1N2FiNjE4OWI4ZWExZDQyM2JkMGY2MWIyMjBiYWFiMDIzOTFjMzg0ODFhYmJiOGZiZmEyNzUyMVwiLFwid2lyZV9zaGEyNTZcIjpcImM1NDRiMzYzM2I4YmUyNTliOTQwMzQxMGI4N2FkNDI0MzRkNzBjNTU4MTA1MzM0OGY0OWU1MTcwNmJmMTEzYWZcIn0iLCJyZXNwb25zZV9zaGEyNTYiOiJmZDVkNWYxMzUwYmFjMDk5Y2I2YzMxMmE4Y2FiYTY1Nzg0MDU5MjhiZjM4OWFiMGMxM2NmYTEwYzI3OTI0MjZlIiwicmVzcG9uc2VfdGV4dCI6IntcIml0ZW1faWRcIjogXCJULTFcIiwgXCJhbW91bnRcIjogNywgXCJzdGF0dXNcIjogXCJkcmFmdFwifSIsInJ1bl9pZCI6IlJFVklFV0VSX0NPTlRSQUNUIiwic2Vjb25kcyI6MC4wMTQ0ODEwMDAwMDE5Nzg4MjgsInNlY29uZHNfY2VpbGluZyI6OTAwLCJzdGFydGVkX3VuaXgiOjE3OTI0MjUwNjguMDIxODE2LCJzdGF0ZSI6IlNVQ0NFRURFRCIsInRva2VuX2NlaWxpbmciOjE2Mzg0LCJ0b3RhbF90b2tlbnMiOjE1fV0sImhhbHRlZCI6ZmFsc2UsImxpbWl0cyI6eyJhdHRlbXB0cyI6MTM2LCJzZWNvbmRzIjoxMDgwMCwidG9rZW5zIjo0MDAwMDB9LCJydW5zIjp7IkEwX1VORU5ST0xMRURfUkVHSVNURVIiOnsiYXR0ZW1wdHMiOjM2LCJpZGVudGl0eSI6ImUyZGNhZDlkZTQ1NDZjYjQxNTcwNGM1Y2I2ZWFhYzFhN2M4ODJhNzY3YzljMDk0OTU5MzhkMDZiNmIxYTk4MjQiLCJzZWNvbmRzIjoxODAwLCJ0b2tlbnMiOjQwMDAwMH0sIlJFVklFV0VSX0NPTlRSQUNUIjp7ImF0dGVtcHRzIjo0LCJpZGVudGl0eSI6ImY1YmJmMGJiYjU1OTA2MGE0MWMyMWI2MmNhNzlkZTU5ZmEwZDExZjhjYzgwYjZiZTQ4ZWI0NTBiN2E0OTM2MjEiLCJzZWNvbmRzIjoxODAwLCJ0b2tlbnMiOjQwMDAwMH19LCJzY2hlbWFfdmVyc2lvbiI6ImxhYi1sZWRnZXItdjEifSwic3RhdGVfc2hhMjU2IjoiYzZkODE3NjFiZjcyYWM0ZTFmZDBlNWMzM2JkZTI5OGFkNmM2Y2MwZTBjOGNkNzc2MTNkYjQ4MjhiNjA1NzUxZiJ9",
+      "metadata": {
+        "bytes": 1437,
+        "mode": 33206,
+        "mtime_ns": 1792612242003988400,
+        "file_attributes": 32
+      },
+      "type": "FILE",
+      "identity": {
+        "volume_serial": "bc08b541",
+        "file_index": "0001000000140622",
+        "links": 1,
+        "bytes": 1437
+      },
+      "read_status": "BYTES_CAPTURED",
+      "captured_bytes": 1437
+    },
+    "foreign_registration_detected": true,
+    "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+    "attempt_arrays_identical": true,
+    "attempt_rows": 1,
+    "strong_profile_supported": false,
+    "independently_recomputed": {
+      "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+      "main_ledger_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+      "pending_envelope_checksum_valid": true,
+      "main_envelope_checksum_valid": true,
+      "foreign_registration_in_pending_only": true,
+      "attempt_arrays_identical": true,
+      "attempt_rows": 1
+    }
+  },
+  "resource_release": {
+    "owned_guard_fds_closed": true,
+    "pin_handles_closed": true,
+    "guard_reacquisitions": [
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\ADMISSION.lock",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.publication.lock",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\.a0-L2.lock"
+    ],
+    "write_delete_access_checks": [
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\0.out",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\0.ready",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\1.out",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\1.ready",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.closed.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\GO",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\RESULT.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\REVIEWER_OUTCOME.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\IDENTITY.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\owner.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.reservation.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.response.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\attempts\\000001.settlement.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+      "E:\\The End Engine\\v21_A0_independent_decision\\runs\\independent_001\\A0-18\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json"
+    ],
+    "existing_L3_read_after_release_attempt_rows": 1
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\imran\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "volume": "E:\\",
+    "filesystem": "NTFS",
+    "volume_serial": "bc08b541",
+    "observed_utc": "2026-10-21T19:52:26.185481+00:00"
+  },
+  "independent_targeted_result_sha256": "16ed889cb655d71466cacfef82b3a2440782756f721671c895f000ebeb8495d8"
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Administrative completeness, exact-source hashes and consistency checks; not new controls or acceptance",
+  "passed": true,
+  "required_report_count": 10,
+  "matrix_rows": {
+    "SIX_CONDITION_ACCOUNTING_MATRIX.csv": 132,
+    "PHYSICAL_ATTEMPT_EVIDENCE_MATRIX.csv": 41
+  },
+  "executed_control_source_mismatches": [],
+  "negative_categories": 12,
+  "negative_category_counts": {
+    "PASS": 11,
+    "FAIL": 1
+  },
+  "distinct_control_counts": {
+    "PASS": 17,
+    "FAIL": 1
+  },
+  "mandatory_controls_all_passed": false,
+  "protected_files_verified": 51965,
+  "no_failure_reclassified": true
+}

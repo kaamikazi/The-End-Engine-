@@ -1,0 +1,27 @@
+{
+  "original_control_verdict": "FAIL_UNCHANGED",
+  "reason": "Python Path.write_bytes returned PermissionError errno13 with winerror=null; strict WinError5 assertion did not match. Detection was observed but the full asserted control did not pass.",
+  "observed_writer_event": {
+    "operation": "write",
+    "outcome": "DENIED",
+    "exception": "PermissionError",
+    "errno": 13,
+    "winerror": null,
+    "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_minimum_evidence_feasibility\\\\runs\\\\native\\\\N12\\\\copy\\\\wire\\\\000001-4dcaf471206a91f7.jsonl'"
+  },
+  "child_exit": 0,
+  "control_exit": 1,
+  "current_wire_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+  "original_fixture_wire_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1",
+  "wire_bytes_unchanged": true,
+  "separate_post_failure_cleanup_inspection": {
+    "access_open_after_worker_exit": true,
+    "access_handle_closed": true,
+    "mutating_syscalls_performed": 0
+  },
+  "does_not_rescore_or_rerun_N12": true,
+  "tripwires": {
+    "forbidden_network_events": 0,
+    "forbidden_dispatch_or_reservation_calls": 0
+  }
+}

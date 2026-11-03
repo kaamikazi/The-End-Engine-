@@ -1,0 +1,144 @@
+{
+  "run_id": "BA-001.T1.FULL_END_NATIVE",
+  "task": "BA-001",
+  "condition": "FULL_END_NATIVE",
+  "external_score": 1.0,
+  "passed": true,
+  "format_ok": true,
+  "wall_seconds": 431.462897,
+  "total_model_calls": 13,
+  "generator_calls": 4,
+  "judge_calls": 7,
+  "verifier_calls": 2,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "tokens": 43945,
+  "prompt_tokens": 38117,
+  "output_tokens": 5828,
+  "end_cycles": 1,
+  "stop_reason": "ACCEPTED_PROVISIONALLY",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 1,
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "c0_score": 1.0,
+  "c0_format_ok": true,
+  "c0_chars": 6594,
+  "final_chars": 6594,
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "grounding_incidents": 0,
+  "decisive_judge_findings": 1,
+  "nondecisive_judge_findings": 0,
+  "unsupported_claim_count": 0,
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          70.7
+        ],
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 6594
+    },
+    "C1": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          70.7
+        ],
+        "claim_region": "after </think>"
+      },
+      "answer_chars": 1800
+    }
+  },
+  "operator_sequence": [
+    "EVIDENCE"
+  ],
+  "judge_findings": [
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate claims that 36.6°C converts to 97.9°F, but the correct conversion is 97.88°F, which rounds to 97.9°F (correct), and 21.5°C converts to 70.7°F (correct). However, the candidate states 100°C converts to 212.0°F (correct), but the problem specifies the input list [-40, 0, 36.6, 100, 21.5]. The candidate's JSON output [-40.0, 32.0, 97.9, 212.0, 70.7] is correct for the given inputs. But the task requires rounding to one decimal place, and the candidate's calculations are accurate.",
+      "evidence": [
+        "The candidate's calculation for 36.6°C: 36.6 × 1.8 = 65.88, 65.88 + 32 = 97.88 → rounded to 97.9 (correct)"
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "36.6°C",
+      "task_reference": ""
+    }
+  ],
+  "grounding_records": [],
+  "protocol_events": [],
+  "error_records": []
+}

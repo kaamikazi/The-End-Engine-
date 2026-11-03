@@ -1,0 +1,185 @@
+{
+  "recorded_at": "2026-10-06T12:39:44.520735+00:00",
+  "status": "PASS",
+  "planned": 12,
+  "completed": 12,
+  "unique_completed_trials": 12,
+  "failed_executions": 0,
+  "failed_external_outcomes": 6,
+  "frozen_engine_pilot_tasks_evaluator_unchanged": true,
+  "protected_hash_checks": {
+    "engine-source-before.json": {
+      "checked_files": 64,
+      "changed": []
+    },
+    "protected-before.json": {
+      "checked_files": 1824,
+      "changed": []
+    }
+  },
+  "protected_scopes": {
+    "engine-source-before.json": {
+      "end_engine": 63,
+      "pyproject.toml": 1
+    },
+    "protected-before.json": {
+      "benchmark_alpha": 836,
+      "benchmark_beta": 464,
+      "benchmark_beta_gemini": 459,
+      "validation_jev": 13,
+      "validation_v031": 7,
+      "validation_v032": 6,
+      "validation_v033": 8,
+      "validation_v034": 11,
+      "validation_v035": 9,
+      "IMPLEMENTATION_REPORT.md": 1,
+      "IMPLEMENTATION_REPORT_JEV_EXPERIMENT.md": 1,
+      "IMPLEMENTATION_REPORT_v0.1.md": 1,
+      "IMPLEMENTATION_REPORT_v0.2.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.1.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.2.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.3.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.4.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.5.md": 1,
+      "IMPLEMENTATION_REPORT_v0.3.md": 1,
+      "README.md": 1
+    }
+  },
+  "nine_pre_resume_completed_trials_unchanged": true,
+  "interrupted_archive_hashes_unchanged": true,
+  "serialized_baseline_FULL_END_runs": 8,
+  "jev_calls": 0,
+  "cloud_calls": 0,
+  "completed_trial_wire_endpoint": "http://127.0.0.1:11434/api/generate",
+  "completed_trial_wire_calls": 237,
+  "model_settings_preserved_in_all_wire_payloads": true,
+  "completed_trial_wall_seconds": 6470.832698,
+  "completed_trial_tokens": 576527,
+  "interrupted_recorded_response_calls": 4,
+  "interrupted_observed_tokens": 4757,
+  "interrupted_observed_model_latency_seconds": 48.905104,
+  "all_recorded_response_calls": 241,
+  "all_recorded_response_tokens": 581284,
+  "one_additional_interrupted_call_started_usage_unknown": true,
+  "wall_plus_observed_interrupted_model_latency_seconds": 6519.737802000001,
+  "all_runtime_projections_below_six_hours": true,
+  "FULL_END_cycles": 22,
+  "repair_attempts": 12,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 32,
+  "grounding_counts": {
+    "UNQUOTED": 9,
+    "GROUNDED": 32,
+    "MISATTRIBUTED": 2,
+    "UNGROUNDED": 4,
+    "TASK_PREMISE_DEPENDENT": 3
+  },
+  "nondecisive_findings": 9,
+  "rollback_events": 18,
+  "consensus_as_confirmation_candidates_detected": 3,
+  "ACCEPT_VERIFIED_gate_count": 0,
+  "manual_FULL_END_reviews": 8,
+  "initial_request_comparison": [
+    {
+      "task": "BA-001",
+      "direct_native_initial_payloads_identical": true,
+      "direct_native_initial_outputs_identical": false
+    },
+    {
+      "task": "BA-002",
+      "direct_native_initial_payloads_identical": true,
+      "direct_native_initial_outputs_identical": true
+    },
+    {
+      "task": "BA-008",
+      "direct_native_initial_payloads_identical": true,
+      "direct_native_initial_outputs_identical": true
+    },
+    {
+      "task": "BA-009",
+      "direct_native_initial_payloads_identical": true,
+      "direct_native_initial_outputs_identical": true
+    }
+  ],
+  "completed_trial_sha256": {
+    "BA-001.T1.DIRECT.json": "12f57ca1e0972deb97dd955a81849aa6299531b98c6a7523f3b87e370ce440de",
+    "BA-001.T1.FULL_END_NATIVE.json": "f83fcf5c53ffff1b39dc56ab159d23afbac75dc86f6914092318f3e29dc7bcb4",
+    "BA-001.T1.FULL_END_STRUCTURED.json": "9b2097a6c318860180fd53977688a4d8b3f45a46e24ed35587788383bd32101a",
+    "BA-002.T1.DIRECT.json": "8e346a284cc8afc68c964b93ae63aecfbc3a99a2c10567b107a843bc3dd5b6c0",
+    "BA-002.T1.FULL_END_NATIVE.json": "002b65a3e0d3c2f9540eb59ffb7fba6a7e9a516b7181a2b62898add111f056f2",
+    "BA-002.T1.FULL_END_STRUCTURED.json": "126da7132eef3e66048eaf1f07843562d35d526f83169023dfe2206ea1fb1aaf",
+    "BA-008.T1.DIRECT.json": "45ae70c0f57bafa8d07e5c9979920d43b5a51faa859bee6377ce93725dbf2a4f",
+    "BA-008.T1.FULL_END_NATIVE.json": "4f1fc7bc12111aeadb9c86b2b2048fb9e3bf0e25d7c8532193ba48f02289ffe5",
+    "BA-008.T1.FULL_END_STRUCTURED.json": "5a43aaba848790af998ca547826742e89c4710cd76690b2bfc2f9ec1ce21f98d",
+    "BA-009.T1.DIRECT.json": "f0aa51afb7946788156d4f4de05b8e25fa888d2d886f93ea3ca27eee9afeac11",
+    "BA-009.T1.FULL_END_NATIVE.json": "9c66eabf02f18f717890dd80519e014c244b04cf7876c92cc1a6b9da90a4bbde",
+    "BA-009.T1.FULL_END_STRUCTURED.json": "d2d984582be0e00f5d2eb2cc6b608759286cebf4f209812359597182b7e9ab06"
+  },
+  "trajectory_sha256": {
+    "9cea722d-0dbe-43b8-9d30-24d6eac0befa.jsonl": "a12b9c125aa603d3c05de3ab40467389520dc862eef5acba58efc317034f7b45",
+    "02835fa6-600d-4e78-b878-3d5f65e4c344.jsonl": "f3eb28f96c71845532a5d7eb1e1a3630716a08518f48d9f7049fadfac23997b2",
+    "6ba9d7f7-a7fe-496e-a8f3-d4887cdc0bae.jsonl": "71cff31e9b259d9d1f123c361c004f1a051163a47841b0c9e7b3a63d595a3d34",
+    "42be76c1-49bc-4a96-bba0-a3d55d5e7af3.jsonl": "cb2d0e57669d69f378fd94a71a086d1c902031b892e0a5e30de183d0b1551df0",
+    "91b86589-796e-4570-965b-bd025d7c7b87.jsonl": "77b63dd0fd4aefc229e5b50896fff809107808fb31a0fd141898c69c5339b43d",
+    "ca37375d-c022-4ffa-a2b5-5d641b59cf35.jsonl": "901ed2a25a46cef596d2b42fe34666c87d65212a29ffc80ea667845094c92550",
+    "b3c8b8d8-2388-40c0-9e2c-c75a679ef56e.jsonl": "3ca9af714653c587993ac6ff529b243b0e79a701b3bd6bf1a4394585f6e0f376",
+    "67a5c2d9-fcf4-4c27-81a1-67a9076ba93f.jsonl": "7d7d6e1f868242e79e2b0ed46a5a0690f28ad8c1d4284cf7292cff94f42ff5f1"
+  },
+  "postflight_ollama_version": "0.35.1",
+  "call_role_counts": {
+    "generator_calls": 94,
+    "judge_calls": 113,
+    "verifier_calls": 30
+  },
+  "protocol_repair_cost": {
+    "calls": 12,
+    "tokens": 36348,
+    "latency_seconds": 248.29799799999998
+  },
+  "report_sections": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "reviewed_FULL_END_runs": [
+    "BA-001.T1.FULL_END_NATIVE",
+    "BA-001.T1.FULL_END_STRUCTURED",
+    "BA-002.T1.FULL_END_NATIVE",
+    "BA-002.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_NATIVE",
+    "BA-009.T1.FULL_END_STRUCTURED",
+    "BA-009.T1.FULL_END_NATIVE"
+  ],
+  "git_status_outside_pilot_unchanged": true,
+  "git_status_outside_pilot_added_lines": [],
+  "git_status_outside_pilot_removed_lines": [],
+  "final_document_sha256": {
+    "REPORT.md": "3795839332c19be3ef522202c9f5edeedd81c732de0ef6079cd53d15f6ad3e35",
+    "MANUAL_REVIEW.md": "00f2af270915cc97cd496a703597da566cbb388a6c694c5bfb9d9ce38d734b5c",
+    "INTERPRETATION.md": "7a0782d73ae81cfdae8ea32267261d16ccb301e9672c77e2ce269a6cc204d350",
+    "manifest.json": "1f1c7c60af065dd4962d8186019919670c40abdeebba17e17434031af12efee7",
+    "results.csv": "61df2a550121f4aedc025cd2203bd2f79590baf1b0e5589f782c8d967014c079",
+    "summary.json": "1e6cade5ac727becd20cd010d6680dcfd73adb532b392bd46a24dfcd593bb3cb",
+    "C0_OBSERVATIONS.json": "90293dc7c78f6d8fd0a234986135788d92d0c4bfd4c8db3aee1814742a814410",
+    "RESUME_RECORD.json": "72672bc37547d9073176ee7b557246878ad9d885c49eeb72cf902a326b2bebc7"
+  },
+  "git_status_comparison_note": "Use matching --short/default untracked aggregation. The separately retained -uall after snapshot expands pre-existing untracked directories and is not a change comparison."
+}

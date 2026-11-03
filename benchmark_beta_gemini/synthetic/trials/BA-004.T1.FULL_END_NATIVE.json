@@ -1,0 +1,417 @@
+{
+ "answer": "Final answer:\n```json\n{\"A\": 0, \"B\": 0, \"C\": 2, \"D\": 3, \"E\": 4}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 140,
+   "latency_ms": 0.0,
+   "output_tokens": 16,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 679,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 391,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1584,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1629,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1194,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 466,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 246,
+   "latency_ms": 0.0,
+   "output_tokens": 16,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 8,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 742,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 9,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 391,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 10,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1584,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 11,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1629,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 12,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 691,
+   "latency_ms": 0.0,
+   "output_tokens": 97,
+   "purpose": "comparison",
+   "role": "judge",
+   "seed": null,
+   "seq": 13,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1202,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 14,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 469,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 15,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 246,
+   "latency_ms": 0.0,
+   "output_tokens": 16,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 16,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 742,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 17,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 391,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 18,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1584,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 19,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1629,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 20,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 691,
+   "latency_ms": 0.0,
+   "output_tokens": 96,
+   "purpose": "comparison",
+   "role": "judge",
+   "seed": null,
+   "seq": 21,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "constraint_satisfaction",
+ "condition": "FULL_END_NATIVE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 21,
+  "calls_by_role": {
+   "adversarial_judge": 6,
+   "generator": 10,
+   "judge": 5
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 1183,
+  "end_cycles": 2,
+  "failed_attempts": 0,
+  "known_partial_tokens": 19503,
+  "model_latency_ms": 0,
+  "prompt_tokens": 18320,
+  "tool_check_calls": 0,
+  "total_tokens": 19503,
+  "truncated_text_answers": 0,
+  "wall_ms": 156.931
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "ACCEPTED_PROVISIONAL",
+  "best_candidate_id": "C1",
+  "branch_count": 0,
+  "candidate_generation": "native",
+  "candidates": [
+   "C0",
+   "C1",
+   "C2"
+  ],
+  "complexity": "deep",
+  "engine_checks": [
+   {
+    "candidate_id": "C0",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "object"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C1",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "object"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C2",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "object"
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "ACCEPT_PROVISIONALLY"
+   },
+   {
+    "candidate_id": "C1",
+    "decision": "ACCEPT_PROVISIONALLY"
+   },
+   {
+    "candidate_id": "C2",
+    "decision": "ACCEPT_PROVISIONALLY"
+   }
+  ],
+  "iterations": 2,
+  "judge_groundings": [],
+  "latest_candidate_id": "C2",
+  "protocol_actions": {},
+  "protocol_events": 0,
+  "protocol_repair_attempts": 1,
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "returned_candidate_id": "C1",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "ACCEPTED_PROVISIONALLY",
+  "termination_category": null,
+  "trajectory_file": "2d85cd7d-49ed-4e78-9692-71b59b1695e5.jsonl",
+  "trajectory_id": "2d85cd7d-49ed-4e78-9692-71b59b1695e5",
+  "trajectory_sha256": "822db71086aba819ca2f544ffb74032f81898f7ad354af96f3b310de70ef8a08"
+ },
+ "ended_at": "2026-10-01T08:40:51.283154+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-004.T1.FULL_END_NATIVE",
+ "stages": {},
+ "started_at": "2026-10-01T08:40:51.125582+00:00",
+ "task_id": "BA-004",
+ "trial": 1,
+ "trial_id": "BA-004.T1",
+ "trial_seed": 4074584687
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Optional guessed-path inspection errors, not runtime/test failures",
+  "attempts": [
+    {
+      "path": "end_engine/trajectory.py",
+      "actual_error": "rg: The system cannot find the file specified. (os error 2)",
+      "combined_shell_exit": 0,
+      "underlying_rg_exit": "NOT_SEPARATELY_RECORDED; later successful read controlled shell status"
+    },
+    {
+      "path": "end_engine/ledger/",
+      "actual_error": "rg: The system cannot find the file specified. (os error 2)",
+      "combined_shell_exit": 1
+    }
+  ],
+  "resolved_actual_paths": [
+    "end_engine/experience/ledger.py:JsonLedger.save",
+    "end_engine/experience/schema.py:Trajectory"
+  ],
+  "resolution": "419-file AST inventory and direct read of actual experience/ledger.py; no contents fabricated for missing paths",
+  "required_source_file_unavailable": false,
+  "runtime_tests": 0
+}

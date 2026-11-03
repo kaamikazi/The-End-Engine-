@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-12",
+  "estimate_only": true,
+  "live_inference_for_estimation": false,
+  "historical_all_full_end": {
+    "runs": 16,
+    "calls": 466,
+    "mean_calls": 29.125
+  },
+  "historical_native": {
+    "runs": 8,
+    "calls": 210,
+    "mean_calls": 26.25,
+    "max_calls": 32,
+    "mean_tokens": 85338.5,
+    "mean_run_wall_seconds": 1041.403759
+  },
+  "original_24_three_cycle_estimate": {
+    "native_control_calls": 105.0,
+    "nonend_structural_max_calls": 72,
+    "total_native_based": 177.0,
+    "total_pooled_based": 188.5,
+    "hard_structural_all_cells_max": 216
+  },
+  "revised_stage1": {
+    "runs": 12,
+    "repetitions": 1,
+    "tasks": 2,
+    "conditions": 6,
+    "ordinary_nonend_calls": 34,
+    "ordinary_native_based_calls": 86.5,
+    "published_cell_max_calls": 108,
+    "outer_equal_per_run_call_limit": 36,
+    "unchanged_global_authorization_proposal": {
+      "calls": 136,
+      "tokens": 400000,
+      "active_wall_seconds": 10800
+    },
+    "estimated_tokens": 244544.0406060606,
+    "estimated_wall_seconds_native_pooled": 4158.435585000556,
+    "estimated_wall_seconds_latest_native": 4584.1501965005555,
+    "nonend_purpose_estimates": {
+      "tokens": 73867.0406060606,
+      "provider_latency_seconds": 2075.6280670005553
+    },
+    "ordinary_nonend_purpose_counts": {
+      "initial_generation": 14,
+      "operator_critique": 6,
+      "revision_generation": 6,
+      "revision_planning": 2,
+      "candidate_comparison": 6
+    },
+    "reserve_to_published_cell_caps": 21.5
+  },
+  "decision": "Original136 arithmetic fits a one-cycle16-call END override, not a historically comparable three-cycle control. Propose12-run stage1; stage2 needs separate approval. No budget increase or live execution.",
+  "limitations": [
+    "Current v0.3.5.2 native usage unmeasured",
+    "A/B/C unimplemented structural estimates",
+    "Historical wall/provider latency partly mixed; orchestration overhead unknown",
+    "New task prompt/output lengths differ",
+    "Server drift/load/repair/sampling uncertainty",
+    "36-call ceiling can still truncate rare/new control runs; disclose and stop rather than claim fair completed superiority"
+  ],
+  "current_offline_task_classification": {
+    "EXP-001": {
+      "prompt_characters": 2949,
+      "complexity": "deep",
+      "minimum_cycles": 2,
+      "maximum_cycles": 3,
+      "rationale": "367 words, 61 constraint/structure signals, 0 questions; synthesis=False, high_consequence=False",
+      "analysis_only_no_provider": true
+    },
+    "EXP-002": {
+      "prompt_characters": 4854,
+      "complexity": "deep",
+      "minimum_cycles": 2,
+      "maximum_cycles": 3,
+      "rationale": "516 words, 122 constraint/structure signals, 0 questions; synthesis=False, high_consequence=False",
+      "analysis_only_no_provider": true
+    }
+  },
+  "source_structural_no_repair_no_branch_control": {
+    "pre_cycle_calls": 5,
+    "calls_per_cycle": 8,
+    "two_cycle_calls": 21,
+    "three_cycle_calls": 29,
+    "full24_two_cycle_control_plus_other_ordinary_calls": 152,
+    "full24_two_cycle_control_plus_other_max_calls": 156,
+    "one_cycle16_call_control_cannot_normally_complete_current_minimum": true,
+    "caveat": "Conditional structure count, not observed usage. Protocol failure/budget interruption can stop without completed cycles; additional best comparisons/repair/branches increase calls."
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "task_id": "EXP-002",
+  "title": "Telemetry export decision-table repair",
+  "task_statement": "Repair the supplied draft decision table using these normative rules in priority order. POL-Q: quarantine=true always requires HOLD, regardless of other flags. POL-M: otherwise, destination=external and consent=false requires MINIMAL. POL-F: all remaining combinations require FULL. Preserve every row_id, destination, consent and quarantine value. Change only erroneous decisions; retain all decisions already satisfying the rules. Diagnose exactly the erroneous TASK_INPUT rows, giving row_id, governing rule_id and expected_decision. Row order is immaterial. No new rows or fields. The supplied draft is TASK_INPUT, not a model-generated C0. These rules settle a paper policy exercise only: do not claim deployment suitability, legal compliance, physical execution or independent confirmation. No external tests or observations are available.",
+  "input": {
+    "TASK_INPUT": {
+      "artifact_role": "SUPPLIED_DEFECTIVE_DRAFT_NOT_GENERATED_C0",
+      "table": [
+        {
+          "row_id": "Larch",
+          "destination": "internal",
+          "consent": false,
+          "quarantine": false,
+          "decision": "FULL"
+        },
+        {
+          "row_id": "Cedar",
+          "destination": "internal",
+          "consent": false,
+          "quarantine": true,
+          "decision": "FULL"
+        },
+        {
+          "row_id": "Pine",
+          "destination": "internal",
+          "consent": true,
+          "quarantine": false,
+          "decision": "FULL"
+        },
+        {
+          "row_id": "Birch",
+          "destination": "internal",
+          "consent": true,
+          "quarantine": true,
+          "decision": "HOLD"
+        },
+        {
+          "row_id": "Elm",
+          "destination": "external",
+          "consent": false,
+          "quarantine": false,
+          "decision": "FULL"
+        },
+        {
+          "row_id": "Ash",
+          "destination": "external",
+          "consent": false,
+          "quarantine": true,
+          "decision": "HOLD"
+        },
+        {
+          "row_id": "Fir",
+          "destination": "external",
+          "consent": true,
+          "quarantine": false,
+          "decision": "FULL"
+        },
+        {
+          "row_id": "Yew",
+          "destination": "external",
+          "consent": true,
+          "quarantine": true,
+          "decision": "MINIMAL"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "rule_id": "POL-Q",
+        "priority": 1,
+        "condition": "quarantine is true",
+        "decision": "HOLD"
+      },
+      {
+        "rule_id": "POL-M",
+        "priority": 2,
+        "condition": "quarantine is false and destination is external and consent is false",
+        "decision": "MINIMAL"
+      },
+      {
+        "rule_id": "POL-F",
+        "priority": 3,
+        "condition": "otherwise",
+        "decision": "FULL"
+      }
+    ]
+  },
+  "output_contract": {
+    "format": "One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.",
+    "optional_fields": {
+      "notes": "array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review",
+      "references": "array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence",
+      "verification_status": "optional string: not_executed or not_claimed; do not assert tests or independent confirmation"
+    },
+    "prohibited": "No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.",
+    "incomplete_answers": "Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.",
+    "required_fields": [
+      "table",
+      "diagnosis",
+      "scope"
+    ],
+    "required_scope": "paper_policy_only",
+    "table": "array of exactly8 objects, each with exactly row_id,destination,consent,quarantine,decision. row_id is an original string; destination is internal/external; consent and quarantine are actual JSON booleans; decision is FULL/MINIMAL/HOLD.",
+    "diagnosis": "array describing exactly the original erroneous rows, without duplicates: each object has exactly row_id,rule_id,expected_decision (strings). It refers to TASK_INPUT faults, not to defects in an unobserved model C0.",
+    "equivalences": "Any permutation of table rows and diagnosis entries is allowed. Object key order, whitespace, JSON escapes, bare JSON and one whole JSON fence are equivalent. Altering immutable flags to make a wrong decision appear correct is prohibited."
+  },
+  "public_reference_ids": [
+    "POL-Q",
+    "POL-M",
+    "POL-F"
+  ]
+}

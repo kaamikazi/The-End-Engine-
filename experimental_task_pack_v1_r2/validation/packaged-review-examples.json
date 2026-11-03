@@ -1,0 +1,75 @@
+{
+  "synthetic_only": true,
+  "independent_recheck": "PENDING",
+  "results": [
+    {
+      "finding": "RV-001",
+      "note": "The user claims evidence confirms physical suitability.",
+      "old_overall": true,
+      "new_overall": null,
+      "new_violations": [],
+      "new_review_reasons": [
+        "UNSUPPORTED_ATTRIBUTION_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "finding": "RV-001",
+      "note": "According to the source, tests passed.",
+      "old_overall": true,
+      "new_overall": null,
+      "new_violations": [],
+      "new_review_reasons": [
+        "UNSUPPORTED_ATTRIBUTION_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "finding": "RV-001",
+      "note": "The user claims [LABEL-FAKE-99] confirms physical suitability.",
+      "old_overall": true,
+      "new_overall": false,
+      "new_violations": [
+        "UNDECLARED_TASK_REFERENCE_ID"
+      ],
+      "new_review_reasons": [
+        "UNSUPPORTED_ATTRIBUTION_REQUIRES_REVIEW"
+      ]
+    },
+    {
+      "finding": "RV-001",
+      "note": "According to source https://example.invalid/report, tests passed.",
+      "old_overall": true,
+      "new_overall": null,
+      "new_violations": [],
+      "new_review_reasons": [
+        "UNSUPPORTED_ATTRIBUTION_REQUIRES_REVIEW",
+        "UNVERIFIED_EXTERNAL_REFERENCE"
+      ]
+    },
+    {
+      "finding": "RV-002",
+      "note": "The statement \"Evidence confirms physical suitability\" is unsupported.",
+      "old_overall": false,
+      "new_overall": true,
+      "new_violations": [],
+      "new_review_reasons": []
+    },
+    {
+      "finding": "RV-003",
+      "task": "EXP-001",
+      "old_meaningful_targeted_repair": false,
+      "new_task_success_improvement": true,
+      "new_observable_required_repair": true,
+      "new_substantive_improvement": false,
+      "new_targeted_repair_supported_by_trace": null
+    },
+    {
+      "finding": "RV-003",
+      "task": "EXP-002",
+      "old_meaningful_targeted_repair": false,
+      "new_task_success_improvement": true,
+      "new_observable_required_repair": true,
+      "new_substantive_improvement": false,
+      "new_targeted_repair_supported_by_trace": null
+    }
+  ]
+}

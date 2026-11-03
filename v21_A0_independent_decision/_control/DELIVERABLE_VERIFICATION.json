@@ -1,0 +1,53 @@
+{
+  "scope": "Administrative completeness/parse checks only, not additional A0 executions or scientific tests",
+  "required_deliverables": {
+    "A0_INDEPENDENT_REVIEW.md": {
+      "present": true,
+      "nonempty": true
+    },
+    "COLLECTOR_RETEST_RESULTS.json": {
+      "present": true,
+      "nonempty": true
+    },
+    "WRITER_DOMAIN_FINDING.md": {
+      "present": true,
+      "nonempty": true
+    },
+    "EXPERIMENT_MINIMUM_EVIDENCE.md": {
+      "present": true,
+      "nonempty": true
+    },
+    "PATH_A_VS_PATH_B.md": {
+      "present": true,
+      "nonempty": true
+    },
+    "ACCOUNTING_VALIDITY_MATRIX.csv": {
+      "present": true,
+      "nonempty": true
+    },
+    "NEXT_SLICE_RECOMMENDATION.md": {
+      "present": true,
+      "nonempty": true
+    },
+    "PRESERVATION.json": {
+      "present": true,
+      "nonempty": true
+    },
+    "FINAL_DECISION.json": {
+      "present": true,
+      "nonempty": true
+    }
+  },
+  "required_file_count": 9,
+  "accounting_matrix_rows": 18,
+  "six_explicit_condition_rows": [
+    "DIRECT",
+    "SELF_REFLECT",
+    "FROZEN_CURRENT_END",
+    "SPARSE_DELIBERATION",
+    "DIRECTED_REPAIR",
+    "BOUNDED_ALTERNATIVES"
+  ],
+  "protected_inventory_files_verified": 51810,
+  "passed": true
+}

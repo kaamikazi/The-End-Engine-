@@ -1,0 +1,1255 @@
+{
+  "scope": "Read-only current-byte comparison to specified prior controlled mock evidence; no runtime/proposed adapter executed",
+  "proposal_hashes": {
+    "FAILURE_CLASSIFICATION_V2.csv": {
+      "expected": "57d1ee91a9b169ceae83caa957558474dea4b55abd41c3fa2eeff53b889975ff",
+      "actual": "57d1ee91a9b169ceae83caa957558474dea4b55abd41c3fa2eeff53b889975ff",
+      "match": true
+    },
+    "FINAL_PROPOSAL_REPORT.md": {
+      "expected": "9e8b9054c27745c2e9cdbf7c26ac9ceddb12a67ff175157df26002c20d176147",
+      "actual": "9e8b9054c27745c2e9cdbf7c26ac9ceddb12a67ff175157df26002c20d176147",
+      "match": true
+    },
+    "R1_ACCOUNTING_AUTHORITY_V2.md": {
+      "expected": "c05c92fb2784e5f4ac88f9da385b9bf537cb251fe813413745f7ca55e645f49b",
+      "actual": "c05c92fb2784e5f4ac88f9da385b9bf537cb251fe813413745f7ca55e645f49b",
+      "match": true
+    },
+    "R1_SIXTEEN_CASE_MATRIX.csv": {
+      "expected": "1ef5f01849c2eae65fc6b3a1f859de4445ce0d44109eb5fb13500d4cb644d0e9",
+      "actual": "1ef5f01849c2eae65fc6b3a1f859de4445ce0d44109eb5fb13500d4cb644d0e9",
+      "match": true
+    },
+    "R2_CERTIFICATION_PRESERVATION.md": {
+      "expected": "daf22db60e442fa3d115318e62433b7514524f335647793c1018ee57ede82fef",
+      "actual": "daf22db60e442fa3d115318e62433b7514524f335647793c1018ee57ede82fef",
+      "match": true
+    },
+    "R3_CANDIDATE_SCHEMA_V2.md": {
+      "expected": "ec32a4ab6054cb593b7862cf94eb03fef15453ed53365c88b7d4075956028aad",
+      "actual": "ec32a4ab6054cb593b7862cf94eb03fef15453ed53365c88b7d4075956028aad",
+      "match": true
+    },
+    "R4_API_CONTRACT_V2.md": {
+      "expected": "3f75858e912df5bd8ede13d49a0b59025e7b5b91cad39b15615212732716a22b",
+      "actual": "3f75858e912df5bd8ede13d49a0b59025e7b5b91cad39b15615212732716a22b",
+      "match": true
+    },
+    "R5_CONCURRENCY_COVERAGE_V2.md": {
+      "expected": "86737fe8896312d758726ab448f323b9307befc98c3f3278faa26c8945397d43",
+      "actual": "86737fe8896312d758726ab448f323b9307befc98c3f3278faa26c8945397d43",
+      "match": true
+    },
+    "README.md": {
+      "expected": "6e8e98b8f09dc8a7dd979838064a50f9b3f6a74d121a529d3d57bb47e5458651",
+      "actual": "6e8e98b8f09dc8a7dd979838064a50f9b3f6a74d121a529d3d57bb47e5458651",
+      "match": true
+    },
+    "REPLACEMENT_TEST_MATRIX_V2.csv": {
+      "expected": "12783308185c0c9a3cd0b758a7a8c57936cccc3dcf2f64d82920044bd79431d3",
+      "actual": "12783308185c0c9a3cd0b758a7a8c57936cccc3dcf2f64d82920044bd79431d3",
+      "match": true
+    },
+    "UNRESOLVED_DECISIONS.md": {
+      "expected": "b7c3e3deffb49f3a29a93d2e36527917307b4194189ea4b572c033859d101508",
+      "actual": "b7c3e3deffb49f3a29a93d2e36527917307b4194189ea4b572c033859d101508",
+      "match": true
+    },
+    "VERSIONED_MIGRATION_PLAN.md": {
+      "expected": "7db1d716ec5e5eadf991f73072dfc43e9b98eaaec1264da2b858acbe34d885d2",
+      "actual": "7db1d716ec5e5eadf991f73072dfc43e9b98eaaec1264da2b858acbe34d885d2",
+      "match": true
+    }
+  },
+  "cases": [
+    {
+      "case": "changed_wire",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_changed_wire",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+          "matrix_sha256": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+          "matrix_sha256": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+          "matrix_sha256": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "7a803ed492c34081dae81a3dfbce8ced0045d0b1d20d288629e1370238ad8d81",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "2fe1037a22fa545474c7a8e8809369dcc427c318a88da4356b151d018b1ccbe9",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "f5fc4b62cd065c4aa83dfd8a0a9705548a612f731bc28a7c0777db4fb9c11756",
+            "publication/attempts/000001.json": "63d50eb37052b55c91680b2b5a70138973c3244050a6f24d26ee629c3431a517",
+            "publication/attempts/000001.settlement.json": "8ce7b1d173be82b0eb02a8d0ffac0538b442b7e26a2cecf18e523fe64833f212",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_084541e044b3b634849b2b24"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "changed_wire_digest",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_changed_wire_digest",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+          "matrix_sha256": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+          "matrix_sha256": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+          "matrix_sha256": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "579cef409adcfd911392d0d717a8d5d035e0c038b47941e6bc9bfb373629608b",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "a2d3d4e5f0b48245d5212293f51f200e53563d41232940ce8ab09d36d26abb11",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "060f753da0ccc4169c06347ee3d596b413fbe2c847ea4832cc5d3efff5d06278",
+            "publication/attempts/000001.json": "1cca1817c54ace64ed7b90130594c1208260932245a8c9ce6303dc2e3261ac50",
+            "publication/attempts/000001.settlement.json": "887839acd835b7b7bd733ff949c22b2fae8c12deb642ff3d649b3d82b755def4",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_189dd4da1d94baa231f86ef7"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "changed_decoded_response",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_changed_decoded_response",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+          "matrix_sha256": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+          "matrix_sha256": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+          "matrix_sha256": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "5d1e2c179388c87017254a20c06330b36ac4b2c824cde8b4bf8d2f0ddc476901",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "bd43c7cb04bf341a62d7870ed9b75b60a1f317ba1c192f02139485730537a570",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "0648633ffa1ebda7f30d0e3033ce9c28ab88c99febb600489febc0d8b639d8ca",
+            "publication/attempts/000001.json": "82a24996e3e0218f4d1e0ea8d6c9c38cc59a07679ae58f508989000ce5099099",
+            "publication/attempts/000001.settlement.json": "9b041b6d7f0d6f4e6aa453c17e5190a7b1435ece003d8fe2048a12db6f6d02e8",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_6146c3a6bc01d241792a37f4"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "invalid_base64",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_invalid_base64",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+          "matrix_sha256": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+          "matrix_sha256": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+          "matrix_sha256": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "0c49d8aace5760f916886941839b688d79ea65478f030c254e3f7286cd2dc505",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "6651d6671bba7651b6ca55706f94bf76d16d30357dd66dd3ffc699033d164a16",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "fe1ad46ce5cd12cc5c6d9a0db64e1e949f8ae54f6058a1005f47807a2b06200b",
+            "publication/attempts/000001.json": "78cb3d5066beb962f66499dd3d7489b64723e1021be837a4a2ed4b449ebbd8ae",
+            "publication/attempts/000001.settlement.json": "0279fb1ac82ea52d0a2e98bf95021e61ef81699831307f01595fd7557302463f",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_6ccfc35bf4eebd0d1f48ca2a"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "changed_response_digest",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_changed_response_digest",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+          "matrix_sha256": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+          "matrix_sha256": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+          "matrix_sha256": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "8647a03c9815a478afc5804c169e4c0aca545f6ec0c834596b7ab969cb228574",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "278a0a6c95a35089fc04ef85a24e4686917c471a6470aa38bdbc9a34dda02954",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "d56d6ef3ae40267cbbc1299250db85a6c1d17638ca0e5f42238a55d5510c67b6",
+            "publication/attempts/000001.json": "70ff4ca2dce3b0114301a725dda90048756f7d1d2fd81d9ab0e4352e6611648d",
+            "publication/attempts/000001.settlement.json": "fd63d4050979bc214d35ab7bacd45f5fe96252dfd95133db87cfbe4b85dd695a",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_981f9e602ba2a3671c4e3781"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "missing_settled_journal",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_missing_settled_journal",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+          "matrix_sha256": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+          "matrix_sha256": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+          "matrix_sha256": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "679ec6e9ca3201fb9cd0487a194a4630ceae161ba32706b49d31211ba016dc9e",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "96d82653503a8c3d724c80a1769fefcfd90277a22a6aa07772c922f121b6ee92",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "b3e29e784c1d726cb22b0317ec42f01b3b474528005d62e28d69501718c3a937",
+            "publication/attempts/000001.json": "6c4941059c0f491fd6130217b3de6486c29f32d444efd801ff4319166062216f",
+            "publication/attempts/000001.settlement.json": "5b6491c15d7958cac8e25c08a0aca83dc5362c89703119e5041ec3f7a6e02429",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_e28f3f2046b46426b32ba4d9"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "duplicate_attempt_file",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_attempt_file",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "matrix_sha256": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "matrix_sha256": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "matrix_sha256": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "711b9fa7bebacb37b145d8f155dc7b9f4cdec1d86a8a3975a1117d5d297b7f01",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "8362fa5ab5bc035191108ccd97bbcac25c942e112c7629205fed7392054ffc64",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "2561c06e82dc80e47c92e075cd95a33b64795195624bea3cbbb763e4787d6c95",
+            "publication/attempts/000001.json": "d43c279a425d16b7fa8e7c55dacf0d6ed9af41ca55a4a420fffeccca0da373ad",
+            "publication/attempts/000001.settlement.json": "134fe5c5274ff759c85e9eb9af02e821e04f69037dc147b900a9a86b1fd1c729",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_236053faaf9c949d4de7f5d7"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "duplicate_response_record",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_duplicate_response_record",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "matrix_sha256": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "matrix_sha256": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "matrix_sha256": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "12ea00ef5bca6e347335791a67031939ffd5bb85c9e4a0425dabed91d9e32f5a",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "b873f8d71e3b9f9f4118a4be65902bc4a11b9e82d99306117f47f2c2ccda6bb6",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "2c7a51e2ca1c61908df32e26acd604fcc8538df4014acc54a7ea58716f9e5e20",
+            "publication/attempts/000001.json": "c3ea819dd0edcd0e40c53a0498fa0b03170ad72e584b931a639130b2dce3c367",
+            "publication/attempts/000001.settlement.json": "e50ecfa589b0283311bd862a9be8da766b6553f164ac5e598b9254a6bb74d671",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_e59a538cd2637c630ecbfe20"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "wrong_stage",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_wrong_stage",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+          "matrix_sha256": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+          "matrix_sha256": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+          "matrix_sha256": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "a5e05e727f5282b90a8e4d74f952f29b06deb90b2069bbe10193f6eadd556012",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "db4dea9d7668896eaa991334cfd8329d0acea728f76870758c100a3adf7d77db",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "10e535b88b80d25fffc3b0121497404619f6a98476d2515822a59d3e210272d2",
+            "publication/attempts/000001.json": "9f78c182bf5a191e83f33f17dc8b495a433855632b8f115619bdf846a7ad50f0",
+            "publication/attempts/000001.settlement.json": "ce672fc5319f333b15741957fc84e380c0a991287b424745fb0e9661d1c385fd",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_220f2a65334e7ec9745fa04c"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "wrong_run",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_wrong_run",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+          "matrix_sha256": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+          "matrix_sha256": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+          "matrix_sha256": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "6dc14190c28d7c651b520a9884d05b0ad8f39afd068ae2b0a4e6d7fe35143d90",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "056284bd0bb94ff8e8899d5927bfddf5a1b51ff8163498f1ff3fcb0f6a9d3ab8",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "7b46fbcb975068eefc46c3c07d00cb6d13fd3c0dc809d6a9f1c4ee48225c5954",
+            "publication/attempts/000001.json": "ad0499314453fb47b51c705fa077a4cfeb4509217b10dde0043cf34aeedbc7a7",
+            "publication/attempts/000001.settlement.json": "85cef35c02fa4ecab224f4183ac87a6f6be7b95bf77abeae97588626c71d0cf9",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_80ed8063aab553f0cffb791e"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "wrong_attempt",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_wrong_attempt",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+          "matrix_sha256": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+          "matrix_sha256": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+          "matrix_sha256": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "24036060907bb0a648073cf73909c7aefcfb4f9847470148d9540d7caa9ce768",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "37edf25c877327005ef55f74487dd05ddbb8f10c831136b62298793ad7ed3caf",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "ca949f882198c985907111f5527377642b9a05bd8ea05c2db02effb704ff5d63",
+            "publication/attempts/000001.json": "7262cfdd2c86317f6af3f4b2eb749f21e2a7754791dc46249986e9421cf0d899",
+            "publication/attempts/000001.settlement.json": "432694e872d312d601d09fa04d684f422e4464499f9da906822dc5ae6a2f7dcb",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_fcace95a6a3071cffba9e5c1"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "incorrect_record_order",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_incorrect_record_order",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+          "matrix_sha256": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+          "matrix_sha256": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+          "matrix_sha256": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "0c30705951a552347e1bf9b23f93906b049508175f144658d63a96d7d496282f",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "6e1bfc12abde3a34d9857ac328b75452b5584f31264a7e5609f02292d362e616",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "9dab5ccdf8d3d1c1ea54abceb9bff3f7661d4ada7b2f0a14533e093ae409576a",
+            "publication/attempts/000001.json": "2afa707c2896b3a0f719f0c1769f8dd7740e55649f0ad37fde40f61aaa1030eb",
+            "publication/attempts/000001.settlement.json": "27298c0be05af2c8be22bc61ef4a0ffef5d5ec5350a76c7a2eae00801c0e44e7",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_c3daac270b94a85b94c916a3"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "settled_torn_tail",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_settled_torn_tail",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+          "matrix_sha256": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+          "matrix_sha256": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+          "matrix_sha256": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "1ce73f870687f27b6a217ee274e63a15b2d89be60efbf357adee61d1ab167074",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "6a50ce80df85fbda1fecc73500e17d7f386d11b35fc000e3ace6ffc27dd5c146",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "fa4d8126ee869cd09e10baa99e7f4e6d03ca78a4fb38805e164fc973110f9945",
+            "publication/attempts/000001.json": "c4ee06ebd84f87c33965fbf6e38b4779741ed2802bd3467b083a167ad0fb695b",
+            "publication/attempts/000001.settlement.json": "c45f07dd61248c589c5c6c311660eb28f31a1fec301a29aed2696302585c9760",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_10ca3888eb738c775c96c09e"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "ledger_disagreement",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_ledger_disagreement",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654",
+          "matrix_sha256": "da2d60dd7c8b301aa872ed0d9dc9bae2ec9529ff0f190176132a73ef8f496654",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3",
+          "matrix_sha256": "7deaeeeccfc6b53a44c82d820f522b92267e8c35366eec058903635e2d5c0cf3",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6",
+          "matrix_sha256": "c3ee49c9e681078a1a29ce77328c01ea8a9da3314ea8167a6a569e34367feec6",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "c79e199a0a58961049979813aa43d0ad6057bbb346969d59c88ac4118bdd230e",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": false,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "exception": "ProvenanceFault",
+        "detail": "INDEPENDENT_CONTENT_OR_ACCOUNTING_MISMATCH"
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "recomputed_hashes_still_fail_anchor",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_recomputed_hashes_still_fail_anchor",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+          "matrix_sha256": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+          "matrix_sha256": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.response.json": {
+          "exists": true,
+          "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matrix_sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+          "matrix_sha256": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "674a6f77101519892c0424fa221f853647e0749ecb4dff4478fdc0b87b1c456b",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": true,
+      "response_commitment_matches": true,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "returned": {
+          "schema_version": "abc-r3-provenance-v1",
+          "revision": "1.0.2",
+          "run_attempts_sha256": "7b47391244f68c07f420b9b4328b84e59d805f1015cac3f1f1e256fe84af0a5a",
+          "anchor_hashes": {
+            "publication/attempts/000001.reservation.json": "4d5624577ad75bed1940eea3434143a2d155f560e1bbe39c30ff6cc807f11f7e",
+            "publication/attempts/000001.json": "6cd4db9fb569a72c28f5117f2f50ee9099aa3a7dc7268b9abc26fb4173b79a92",
+            "publication/attempts/000001.settlement.json": "8c5cb0a949d4b0c2e42679e922f0d75014c4e9b565289fc8f3301102639748f2",
+            "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+          },
+          "ordered_attempt_ids": [
+            1
+          ],
+          "bound_output_handles": [
+            "O_69198adc73baaa19149c8c95"
+          ],
+          "unwitnessed_settlements": [],
+          "overall": "VERIFIED"
+        }
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    },
+    {
+      "case": "missing_response_anchor",
+      "fixture_path": "E:\\The End Engine\\ca102\\own\\ACCOUNT_missing_response_anchor",
+      "anchors": {
+        "publication/attempts/000001.json": {
+          "exists": true,
+          "sha256": "fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47",
+          "matrix_sha256": "fa21fd2c336ace00518eee0d3138da0aa6f2868ce59050e634655abb66256e47",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.reservation.json": {
+          "exists": true,
+          "sha256": "df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89",
+          "matrix_sha256": "df819c6a746bde159c7ad00a811fd5023f8295b40a345f0d6e13cad258679a89",
+          "matches_matrix": true
+        },
+        "publication/attempts/000001.settlement.json": {
+          "exists": true,
+          "sha256": "9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f",
+          "matrix_sha256": "9f5b57a8b21cd73cd8e8a97556e39d9fe37b8275fc5316a800f93dd45a2cb45f",
+          "matches_matrix": true
+        }
+      },
+      "identity_sha256": "252760e0f7b263ea62a213cec9061fbe311c909969506a1bd652c6c4376f3e3b",
+      "run_identity_match": true,
+      "reservation_dispatch_ids": [
+        1,
+        1
+      ],
+      "own_ledger_ids": [
+        1
+      ],
+      "reservation_fields_equal": true,
+      "settlement_equals_current_row": true,
+      "dispatch_commitment_matches": true,
+      "registered_response_exists": false,
+      "response_commitment_matches": false,
+      "recorded_settlement_usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "total_tokens": 15
+      },
+      "historical_reviewer_graph": {
+        "exception": "ProvenanceFault",
+        "detail": "SETTLEMENT_RESPONSE_DISAPPEARED"
+      },
+      "historical_reviewer_journal_overall": "BLOCKED",
+      "historical_reviewer_status": "PASS",
+      "historical_no_replay": true,
+      "historical_inputs_preserved": true,
+      "current_fixture_result_exists": false,
+      "evidence_origin": "Prior fresh-AI reviewer controlled mock fixture; current hash match establishes byte continuity only. Not new execution, provider attestation, hostile-host authenticity or whole-run completeness."
+    }
+  ],
+  "counts": {
+    "cases": 16,
+    "matrix_anchor_entries": 63,
+    "matrix_anchor_matches": 63,
+    "settlement_equal": 15,
+    "response_commitment_matches": 15
+  },
+  "limitations": [
+    "Historical fixture hashes do not authenticate historical origin",
+    "Saved historical assertions are inspected, not freshly executed by this script",
+    "Copied evidence is path-bound forensic evidence; not a relocatable normal certificate"
+  ]
+}

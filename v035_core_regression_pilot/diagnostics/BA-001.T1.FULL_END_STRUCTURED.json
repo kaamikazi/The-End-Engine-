@@ -1,0 +1,336 @@
+{
+  "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+  "task": "BA-001",
+  "condition": "FULL_END_STRUCTURED",
+  "external_score": 0.0,
+  "passed": false,
+  "format_ok": true,
+  "wall_seconds": 535.81615,
+  "total_model_calls": 29,
+  "generator_calls": 10,
+  "judge_calls": 15,
+  "verifier_calls": 4,
+  "protocol_repair_calls": 0,
+  "transport_retry_calls": 0,
+  "tokens": 43848,
+  "prompt_tokens": 35223,
+  "output_tokens": 8625,
+  "end_cycles": 3,
+  "stop_reason": "BUDGET_EXHAUSTED",
+  "external_blocker": false,
+  "model_protocol_failure": false,
+  "execution_error": false,
+  "repair_attempts": 0,
+  "repair_successes": 0,
+  "discarded_protocol_elements": 0,
+  "rollback_count": 3,
+  "quality_gate": "REJECT",
+  "c0_score": 0.0,
+  "c0_format_ok": true,
+  "c0_chars": 46,
+  "final_chars": 46,
+  "truncated_calls": 0,
+  "internal_leakage": 0,
+  "grounding_incidents": 0,
+  "decisive_judge_findings": 8,
+  "nondecisive_judge_findings": 0,
+  "unsupported_claim_count": 0,
+  "overthinking_signals": [
+    "B_cycles_without_external_benefit"
+  ],
+  "candidate_progression": {
+    "C0": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": false,
+      "score": 0.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 0.0,
+          "required": true,
+          "detail": "got [-40.0, 32.0, 97.9, 212.0, 74.7]"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          74.7
+        ],
+        "claim_region": "whole text"
+      },
+      "answer_chars": 46
+    },
+    "C1": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": false,
+      "score": 0.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 0.0,
+          "required": true,
+          "detail": "got [-40.0, 32.0, 97.9, 212.0, 74.7]"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          74.7
+        ],
+        "claim_region": "whole text"
+      },
+      "answer_chars": 46
+    },
+    "C2": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": false,
+      "evaluation_type": "known_answer",
+      "passed": false,
+      "score": 0.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 0.0,
+          "required": true,
+          "detail": "got None"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": null,
+        "claim_region": "whole text"
+      },
+      "answer_chars": 39
+    },
+    "C3": {
+      "task_id": "BA-001",
+      "evaluator": "numeric_list",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "known_answer",
+      "passed": false,
+      "score": 0.0,
+      "checks": [
+        {
+          "name": "values_correct",
+          "score": 0.0,
+          "required": true,
+          "detail": "got [-40.0, 32.0, 97.9, 212.0, 74.7]"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "answer": [
+          -40.0,
+          32.0,
+          97.9,
+          212.0,
+          74.7
+        ],
+        "claim_region": "whole text"
+      },
+      "answer_chars": 46
+    }
+  },
+  "operator_sequence": [
+    "CONSTRAINT",
+    "EVIDENCE",
+    "SIMPLIFY"
+  ],
+  "judge_findings": [
+    {
+      "judgment_id": "J001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 74.7 ]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "Candidate's JSON array contains values that are not valid Celsius temperatures to convert to Fahrenheit",
+      "evidence": [
+        "CANDIDATE: [ -40.0, 32.0, 97.9, 212.0, 74.7 ]"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "candidate",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "J002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 74.7 ]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "Candidate incorrectly converted temperatures: [-40.0, 32.0, 97.9, 212.0, 74.7] should be [ -40.0, 32.0, 97.9, 212.0, 74.7 ] but the expected conversion for 21.5°C is 70.7°F, not 74.7°F",
+      "evidence": [
+        "candidate: [ -40.0, 32.0, 97.9, 212.0, 74.7 ]"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "21.5",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "J003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "candidate_quote": "[ -40.0, 0.0, 36.6, 100.0, ...]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "Candidate provides an incomplete JSON array that ends with ... (ellipsis) indicating missing values",
+      "evidence": [
+        "CANDIDATE: [ -40.0, 0.0, 36.6, 100.0, ...]"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "candidate",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "J004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "candidate_quote": "[ -40.0, 32.0, 97.9, 212.0, 74.7 ]",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "",
+      "decisive": true,
+      "description": "The candidate's JSON array contains incorrect temperature conversions",
+      "evidence": [
+        "CANDIDATE: [ -40.0, 32.0, 97.9, 212.0, 74.7 ]"
+      ],
+      "fatal": true,
+      "grounding": "GROUNDED",
+      "target": "CANDIDATE",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ001",
+      "candidate_id": "C0",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ] but the task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit rounded to one decimal place. The first value -40.0 is correct (since -40°C = -40°F), but the rest are incorrect. For example, 0°C should be 32.0°F (correct), 36.6°C should be 97.9°F (correct), 100°C should be 212.0°F (correct), and 21.5°C should be 74.7°F (correct). However, the task specifies the input as [-40, 0, 36.6, 100, 21.5], but the candidate's output has a different order: the candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ], while the task input is [-40, 0, 36.6, 100, 21.5]. The candidate has correctly converted the values but misordered them. The task requires the output in the same order as the input. The input order is [-40, 0, 36.6, 100, 21.5], but the candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ] (which corresponds to [-40°C, 0°C, 36.6°C, 100°C, 21.5°C] converted to Fahrenheit). The problem is that the candidate has converted the values but the order is incorrect. The input list has five elements: -40, 0, 36.6, 100, 21.5. The candidate's output has five elements: -40.0, 32.0, 97.9, 212.0, 74.7. The candidate's output is correct numerically but the order of the values is different from the input. The task specifies: 'Give the final answer as a JSON array of numbers, in the same order, in a ```json code block.' The candidate has the correct values but in a different order than the input.",
+      "evidence": [
+        "The candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ]",
+        "The task input is [-40, 0, 36.6, 100, 21.5]"
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "candidate",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ002",
+      "candidate_id": "C1",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate output contains values that are not valid Celsius to Fahrenheit conversions for the given input temperatures.",
+      "evidence": [
+        "CANDIDATE: [ -40.0, 32.0, 97.9, 212.0, 74.7 ]"
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "candidate",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ003",
+      "candidate_id": "C2",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate's JSON array contains numbers that are not valid Fahrenheit temperatures when converted from Celsius. The first number (-40.0) is a valid Celsius temperature that converts to -40.0°F, but the second number (0.0) converts to 32.0°F, not 0.0°F as claimed. The third number (36.6) converts to 97.9°F, not 100.0°F. The fourth number (100.0) converts to 212.0°F, not 36.6°F. The candidate's array does not match the expected Fahrenheit conversions.",
+      "evidence": [
+        "The candidate's content is a JSON array of numbers: [ -40.0, 0.0, 36.6, 100.0, ...]"
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "CANDIDATE: [ -40.0, 0.0, 36.6, 100.0, ...]",
+      "task_reference": ""
+    },
+    {
+      "judgment_id": "AJ004",
+      "candidate_id": "C3",
+      "kind": "fatal_issues",
+      "candidate_quote": "",
+      "category": "CANDIDATE_INTERNAL",
+      "claim_type": "CANDIDATE_INTERNAL",
+      "decisive": true,
+      "description": "The candidate's JSON array contains values that are not valid Celsius temperatures to convert (e.g., negative numbers, values outside typical Celsius ranges for this context).",
+      "evidence": [
+        "CANDIDATE: the only text a finding about the candidate may quote or attribute to the candidate."
+      ],
+      "fatal": true,
+      "grounding": "UNQUOTED",
+      "target": "candidate",
+      "task_reference": ""
+    }
+  ],
+  "grounding_records": [],
+  "protocol_events": [],
+  "error_records": []
+}

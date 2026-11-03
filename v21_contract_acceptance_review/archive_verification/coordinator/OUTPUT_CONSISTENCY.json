@@ -1,0 +1,25 @@
+{
+  "scope": "Mechanical agreement of reported counts and reviewer raw results, not acceptance judgment",
+  "raw_result_files": {
+    "STRUCTURAL_RAW_RESULTS.json": {
+      "expectations": 1161,
+      "mismatches": 0,
+      "sha256": "d787ee59934632fc20f3fbc2fca468b6bc07f8e235d3020baece0568d9d52554"
+    },
+    "SEMANTIC_RAW_RESULTS.json": {
+      "expectations": 35,
+      "mismatches": 0,
+      "sha256": "528918abaae8f6d386d88ac62a6d861b3363b24b2b06b90339fbf40a31b4c689"
+    },
+    "STRICT_PARSE_RESULTS.json": {
+      "expectations": 8,
+      "mismatches": 0,
+      "sha256": "e0bdfeef082a0ff4f3749b370bc9e43e96e6ecf0ad47de38c609d26783445970"
+    }
+  },
+  "csv_rows": {
+    "R1_WITNESS_CASES.csv": 16,
+    "R1_DOWNGRADE_REVIEW.csv": 20
+  },
+  "passed": true
+}

@@ -1,0 +1,49 @@
+{
+ "before": {
+  "version": "0.3.4",
+  "source_sha256": "d1a9f68bb8cacf1e4dc4384180d5b6971bebb8209b34ea50f1bb94939ceed7a2",
+  "engine_tests": "164/164",
+  "alpha_infrastructure_tests": "18/18",
+  "git_commit": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7"
+ },
+ "after": {
+  "version": "0.3.5",
+  "source_sha256": "520d2052832eaee93f7c8931e028762c7008006ae61f2fdc7ec6589d7e4bd448",
+  "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+  "files": 55,
+  "engine_tests": "182/182",
+  "v035_regression_tests": "18/18",
+  "alpha_infrastructure_tests": "18/18",
+  "harness_tests_read_only": "148/149 (test_preflight_failure_blocks_all_later_live_work_in_plan expects 3 provider calls; v0.3.5's default bounded repair makes 4)"
+ },
+ "computed_by": "benchmark_alpha/bench/cli.py engine_identity (same algorithm as the Harness controlled load)",
+ "git_status_of_release_paths": [
+  " M README.md",
+  " M end_engine/cognition/branches.py",
+  " M end_engine/cognition/knowledge.py",
+  " M end_engine/config.py",
+  " M end_engine/core/revision_planner.py",
+  " M end_engine/core/state.py",
+  " M end_engine/core/weaknesses.py",
+  " M end_engine/engine.py",
+  " M end_engine/experience/schema.py",
+  " M end_engine/models/recording.py",
+  " M end_engine/operators/base.py",
+  " M end_engine/quality/gate.py",
+  " M end_engine/quality/integrity.py",
+  " M end_engine/quality/judges.py",
+  " M end_engine/quality/providers.py",
+  " M end_engine/quality/schema.py",
+  " M end_engine/quality/session.py",
+  " M end_engine/quality/state.py",
+  " M end_engine/verification/llm_verifier.py",
+  " M pyproject.toml",
+  " M tests/test_end_engine.py",
+  "?? benchmark_beta/",
+  "?? end_engine/core/output_format.py",
+  "?? end_engine/models/protocol.py",
+  "?? end_engine/quality/grounding.py",
+  "?? tests/test_v035_regressions.py",
+  "?? validation_v035/"
+ ]
+}

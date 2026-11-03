@@ -1,0 +1,5 @@
+# Interrupted historical attempts: separately audited
+
+Three archived call logs contain18 saved responses/21,041 reported tokens/463.146185s provider latency, plus3 next-started requests without responses/known consumption. They are not three extra completed trials and do not supply full Engine trajectories. Only the newer interrupted BA-001 attempt reaches saved critique/plan/revision/verification; post-revision quality/rollback/termination and external evaluations are absent. The completed44-cycle audit therefore does not invent an extra completed cycle.
+
+INCOMPLETE_ATTEMPTS.json inventories every archive/hash; PARTIAL_CALL_AUDIT.csv links each saved physical response to its original wire file. Old RESUME_RECORD.json and new INTERRUPTION_NOTES.md corroborate missing terminal requests. Two partial BA-001 repair responses still use invalid IDs, alleging imaginary comma/whitespace defects; a revision/verifier follows. This is partial continuation evidence, not a terminal repair success or an improvement score. No partial output is reused as live inference or substituted into a completed trial. All unknown costs/outcomes remain unknown.

@@ -71,7 +71,9 @@ class ResolutionAuditor:
                          and not artifact_mismatch(e, content_sha256(candidate.content)))
             reason = after.get("evidence", "") if assumptions else after.get("status_reason", "")
             parent = next((c for c in trajectory["candidates"] if revision and c["candidate_id"] == revision["parent_candidate_id"]), None)
-            changed = bool(revision and parent and revision["content"].strip() != parent["content"].strip())
+            changed = bool(revision and parent and
+                (revision.get('answer_content') if revision.get('answer_content') is not None else revision['content']).strip() !=
+                (parent.get('answer_content') if parent.get('answer_content') is not None else parent['content']).strip())
             plans = [p for p in trajectory["revision_plans"] if parent and p["candidate_id"] == parent["candidate_id"]]
             targeted = any(identity in change["targets"] for plan in plans for change in plan["changes"])
             # An invalidation with an explicit counterexample is useful but remains a model judgment.

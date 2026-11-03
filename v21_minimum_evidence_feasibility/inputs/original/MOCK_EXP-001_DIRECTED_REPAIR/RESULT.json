@@ -1,0 +1,699 @@
+{
+  "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+  "request": {
+    "task_id": "EXP-001",
+    "public_task_payload": {
+      "task_id": "EXP-001",
+      "title": "Museum loan-label kit",
+      "task_statement": "Prepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.",
+      "input": {
+        "items": [
+          {
+            "accession": "Mx-A7",
+            "title": "Copper bell",
+            "on_loan": true,
+            "fragile": false
+          },
+          {
+            "accession": "QP_6c",
+            "title": "Folded map",
+            "on_loan": false,
+            "fragile": false
+          },
+          {
+            "accession": "bV-22",
+            "title": "Glass bead",
+            "on_loan": true,
+            "fragile": true
+          }
+        ]
+      },
+      "output_contract": {
+        "format": "One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.",
+        "optional_fields": {
+          "notes": "array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review",
+          "references": "array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence",
+          "verification_status": "optional string: not_executed or not_claimed; do not assert tests or independent confirmation"
+        },
+        "prohibited": "No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.",
+        "incomplete_answers": "Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.",
+        "required_fields": [
+          "labels",
+          "explanation",
+          "scope"
+        ],
+        "required_scope": "label_text_only",
+        "labels": "array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)",
+        "explanation": "object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.",
+        "equivalences": "Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact."
+      },
+      "public_reference_ids": [
+        "LABEL-LOAN",
+        "LABEL-FRAGILE"
+      ]
+    },
+    "model_identity": "qwen3:4b",
+    "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+    "generation_parameters": {
+      "temperature": 0.7,
+      "think": false,
+      "top_p": 0.8
+    },
+    "seed_if_supported": null,
+    "context_window": 8192,
+    "maximum_output_tokens": 4096,
+    "condition_id": "DIRECTED_REPAIR",
+    "attempt_budget": 36,
+    "token_budget": 400000,
+    "wall_time_budget": 1800,
+    "run_id": "MOCK_EXP-001_DIRECTED_REPAIR"
+  },
+  "effective_ledger_request": {
+    "task_id": "EXP-001",
+    "public_task_payload": {
+      "task_id": "EXP-001",
+      "title": "Museum loan-label kit",
+      "task_statement": "Prepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.",
+      "input": {
+        "items": [
+          {
+            "accession": "Mx-A7",
+            "title": "Copper bell",
+            "on_loan": true,
+            "fragile": false
+          },
+          {
+            "accession": "QP_6c",
+            "title": "Folded map",
+            "on_loan": false,
+            "fragile": false
+          },
+          {
+            "accession": "bV-22",
+            "title": "Glass bead",
+            "on_loan": true,
+            "fragile": true
+          }
+        ]
+      },
+      "output_contract": {
+        "format": "One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.",
+        "optional_fields": {
+          "notes": "array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review",
+          "references": "array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence",
+          "verification_status": "optional string: not_executed or not_claimed; do not assert tests or independent confirmation"
+        },
+        "prohibited": "No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.",
+        "incomplete_answers": "Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.",
+        "required_fields": [
+          "labels",
+          "explanation",
+          "scope"
+        ],
+        "required_scope": "label_text_only",
+        "labels": "array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)",
+        "explanation": "object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.",
+        "equivalences": "Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact."
+      },
+      "public_reference_ids": [
+        "LABEL-LOAN",
+        "LABEL-FRAGILE"
+      ]
+    },
+    "model_identity": "qwen3:4b",
+    "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+    "generation_parameters": {
+      "temperature": 0.7,
+      "think": false,
+      "top_p": 0.8
+    },
+    "seed_if_supported": null,
+    "context_window": 8192,
+    "maximum_output_tokens": 4096,
+    "condition_id": "DIRECTED_REPAIR",
+    "attempt_budget": 5,
+    "token_budget": 400000,
+    "wall_time_budget": 1800,
+    "run_id": "MOCK_EXP-001_DIRECTED_REPAIR"
+  },
+  "result": {
+    "run_id": "MOCK_EXP-001_DIRECTED_REPAIR",
+    "condition_id": "DIRECTED_REPAIR",
+    "task_id": "EXP-001",
+    "model_identity": "qwen3:4b",
+    "runtime_identity": {
+      "adapter": "abc-stage-admission-r2-1.0.1",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+      "provider": "ollama-generate-recording",
+      "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+      "live_verified": false
+    },
+    "initial_candidate": "C0",
+    "final_candidate": "C0",
+    "all_generated_candidates": [
+      {
+        "candidate_id": "C0",
+        "answer": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+        "attempt_id": 36,
+        "parent_ids": [],
+        "complete": true,
+        "answer_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5"
+      }
+    ],
+    "candidate_lineage": {
+      "C0": []
+    },
+    "model_invocations": [
+      {
+        "attempt_id": 36,
+        "candidate": {
+          "call_id": "CALL_INITIAL",
+          "output_id": "O_25e9db9715ed6e1dca8183a3",
+          "provenance_sha256": "d0d1fe366e484b91438fcacfc1f1efc1c42b2a7963d35bdf77432610f96e3492",
+          "task_id": "EXP-001",
+          "wire_sha256": "0657f1e8c19e399cbe3e733f8374fa980976abdaebe2dadd2323ebb93e763b3e"
+        },
+        "error_code": null,
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "purpose": "{\"call_id\":\"CALL_INITIAL\",\"purpose\":\"INITIAL\",\"spec_sha256\":\"6ed0cbd461d1b2e9416e9850b22c3dd1a2d15c486cea914669bb6599162772f5\",\"wire_sha256\":\"0657f1e8c19e399cbe3e733f8374fa980976abdaebe2dadd2323ebb93e763b3e\"}",
+        "response_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5",
+        "response_text": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+        "run_id": "MOCK_EXP-001_DIRECTED_REPAIR",
+        "seconds": 0.013849499999196269,
+        "seconds_ceiling": 900,
+        "started_unix": 1792422187.7545888,
+        "state": "SUCCEEDED",
+        "token_ceiling": 16384,
+        "total_tokens": 15
+      },
+      {
+        "attempt_id": 37,
+        "candidate": {
+          "call_id": "CALL_REPAIR_INVENTORY",
+          "output_id": "O_95f53b01bc712a5bcb2a4507",
+          "provenance_sha256": "f5ce057098214f6a615e69d6b36d08ad3859d65f098e3dbbe238cc77a41f8143",
+          "task_id": "EXP-001",
+          "wire_sha256": "8cf183bce9c92d92fc9ac40acda5b908cb0d818e27b82ec94ee8a5fce6afeb16"
+        },
+        "error_code": null,
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "purpose": "{\"call_id\":\"CALL_REPAIR_INVENTORY\",\"purpose\":\"REPAIR_INVENTORY\",\"spec_sha256\":\"232b4c1c9bb273861e070248c170e8c3e74126ef0bedbf4abb1871a4a59ca0dd\",\"wire_sha256\":\"8cf183bce9c92d92fc9ac40acda5b908cb0d818e27b82ec94ee8a5fce6afeb16\"}",
+        "response_sha256": "6e96a492bc9fa40d22212c5be0396a203f3dbd4916cf97ebe2f66b6d54fa4a9a",
+        "response_text": "{\"findings\": []}",
+        "run_id": "MOCK_EXP-001_DIRECTED_REPAIR",
+        "seconds": 0.012824200000977726,
+        "seconds_ceiling": 900,
+        "started_unix": 1792422187.8776646,
+        "state": "SUCCEEDED",
+        "token_ceiling": 16384,
+        "total_tokens": 15
+      }
+    ],
+    "physical_attempts": 2,
+    "input_tokens": 20,
+    "output_tokens": 10,
+    "total_tokens": 30,
+    "wall_time": 0.026673700000173994,
+    "termination_reason": "UNRESOLVED",
+    "budget_exhaustion": {
+      "internal_limit": 5,
+      "effective_attempt_limit": 5,
+      "halted": false,
+      "known_token_subset": 30
+    },
+    "interruption_state": {
+      "outstanding_attempts": 0,
+      "unknown_usage_attempts": 0
+    },
+    "provenance_records": [
+      {
+        "state": "STAGE_REQUESTED",
+        "stage": "INITIAL"
+      },
+      {
+        "state": "ATTEMPT_RESERVED",
+        "stage": "INITIAL",
+        "attempt_id": 36
+      },
+      {
+        "state": "RESPONSE_RECORDED",
+        "stage": "INITIAL",
+        "answer_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5"
+      },
+      {
+        "state": "CANDIDATE_RECORDED",
+        "candidate_id": "C0",
+        "stage": "INITIAL",
+        "parents": []
+      },
+      {
+        "state": "REPAIR_INVENTORY_REQUESTED"
+      },
+      {
+        "state": "STAGE_REQUESTED",
+        "stage": "REPAIR_INVENTORY"
+      },
+      {
+        "state": "ATTEMPT_RESERVED",
+        "stage": "REPAIR_INVENTORY",
+        "attempt_id": 37
+      },
+      {
+        "state": "RESPONSE_RECORDED",
+        "stage": "REPAIR_INVENTORY",
+        "answer_sha256": "6e96a492bc9fa40d22212c5be0396a203f3dbd4916cf97ebe2f66b6d54fa4a9a"
+      },
+      {
+        "state": "REPAIR_FINDINGS_CLASSIFIED",
+        "supported": [],
+        "rejected": []
+      },
+      {
+        "state": "FINAL_SELECTED",
+        "candidate_id": "C0",
+        "reason": "NO_SUPPORTED_DEFECT"
+      },
+      {
+        "state": "GENERATION_CLOSED",
+        "run_id": "MOCK_EXP-001_DIRECTED_REPAIR"
+      },
+      {
+        "state": "TERMINATED",
+        "termination_reason": "UNRESOLVED",
+        "final_candidate": "C0",
+        "physical_attempts": 2
+      },
+      {
+        "uncertainty": [],
+        "public_checks": {
+          "C0": {
+            "public_identifier_facts": {
+              "accession": [
+                {
+                  "value": "Mx-A7",
+                  "public_source": "/input/items/0/accession"
+                },
+                {
+                  "value": "QP_6c",
+                  "public_source": "/input/items/1/accession"
+                },
+                {
+                  "value": "bV-22",
+                  "public_source": "/input/items/2/accession"
+                }
+              ]
+            },
+            "identifier_usage": {
+              "accession": []
+            },
+            "parsed": {
+              "mock_wiring_only": "EXP-001",
+              "synthetic_response": true
+            },
+            "format_ok": true,
+            "observations": [
+              {
+                "id": "JSON_OBJECT",
+                "kind": "format",
+                "path": "",
+                "expected": {
+                  "type": "object"
+                },
+                "public_source": "/output_contract/format",
+                "status": "SATISFIED",
+                "actual": {
+                  "mock_wiring_only": "EXP-001",
+                  "synthetic_response": true
+                },
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:labels",
+                "kind": "required",
+                "path": "/labels",
+                "public_source": "/output_contract/required_fields",
+                "status": "VIOLATED",
+                "actual": "<MISSING>",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:explanation",
+                "kind": "required",
+                "path": "/explanation",
+                "public_source": "/output_contract/required_fields",
+                "status": "VIOLATED",
+                "actual": "<MISSING>",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:scope",
+                "kind": "required",
+                "path": "/scope",
+                "public_source": "/output_contract/required_fields",
+                "status": "VIOLATED",
+                "actual": "<MISSING>",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "public_scope",
+                "kind": "equals_literal",
+                "path": "/scope",
+                "expected": "label_text_only",
+                "public_source": "/output_contract/required_scope",
+                "status": "VIOLATED",
+                "actual": "<MISSING>",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              }
+            ],
+            "violations": [
+              "required:labels",
+              "required:explanation",
+              "required:scope",
+              "public_scope"
+            ],
+            "unknown": [],
+            "semantic_correctness": "NOT_ASSESSED"
+          }
+        },
+        "candidate_content_authority": "MODEL_GENERATED_UNVERIFIED_CONTENT"
+      }
+    ],
+    "public_evidence_used": [
+      "PUBLIC_TASK:EXP-001/output_contract/format",
+      "PUBLIC_TASK:EXP-001/output_contract/required_fields",
+      "PUBLIC_TASK:EXP-001/output_contract/required_scope"
+    ],
+    "diagnostic_errors": []
+  },
+  "C0": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+  "FINAL": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+  "events": [
+    {
+      "state": "STAGE_REQUESTED",
+      "stage": "INITIAL"
+    },
+    {
+      "state": "ATTEMPT_RESERVED",
+      "stage": "INITIAL",
+      "attempt_id": 36
+    },
+    {
+      "state": "RESPONSE_RECORDED",
+      "stage": "INITIAL",
+      "answer_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5"
+    },
+    {
+      "state": "CANDIDATE_RECORDED",
+      "candidate_id": "C0",
+      "stage": "INITIAL",
+      "parents": []
+    },
+    {
+      "state": "REPAIR_INVENTORY_REQUESTED"
+    },
+    {
+      "state": "STAGE_REQUESTED",
+      "stage": "REPAIR_INVENTORY"
+    },
+    {
+      "state": "ATTEMPT_RESERVED",
+      "stage": "REPAIR_INVENTORY",
+      "attempt_id": 37
+    },
+    {
+      "state": "RESPONSE_RECORDED",
+      "stage": "REPAIR_INVENTORY",
+      "answer_sha256": "6e96a492bc9fa40d22212c5be0396a203f3dbd4916cf97ebe2f66b6d54fa4a9a"
+    },
+    {
+      "state": "REPAIR_FINDINGS_CLASSIFIED",
+      "supported": [],
+      "rejected": []
+    },
+    {
+      "state": "FINAL_SELECTED",
+      "candidate_id": "C0",
+      "reason": "NO_SUPPORTED_DEFECT"
+    },
+    {
+      "state": "GENERATION_CLOSED",
+      "run_id": "MOCK_EXP-001_DIRECTED_REPAIR"
+    },
+    {
+      "state": "TERMINATED",
+      "termination_reason": "UNRESOLVED",
+      "final_candidate": "C0",
+      "physical_attempts": 2
+    }
+  ],
+  "control_outputs": {
+    "INITIAL": {
+      "output_id": "O_25e9db9715ed6e1dca8183a3",
+      "text": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+      "answer_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5",
+      "stage": "INITIAL",
+      "attempt_id": 36
+    },
+    "REPAIR_INVENTORY": {
+      "output_id": "O_95f53b01bc712a5bcb2a4507",
+      "text": "{\"findings\": []}",
+      "answer_sha256": "6e96a492bc9fa40d22212c5be0396a203f3dbd4916cf97ebe2f66b6d54fa4a9a",
+      "stage": "REPAIR_INVENTORY",
+      "attempt_id": 37
+    }
+  },
+  "checks": {
+    "C0": {
+      "public_identifier_facts": {
+        "accession": [
+          {
+            "value": "Mx-A7",
+            "public_source": "/input/items/0/accession"
+          },
+          {
+            "value": "QP_6c",
+            "public_source": "/input/items/1/accession"
+          },
+          {
+            "value": "bV-22",
+            "public_source": "/input/items/2/accession"
+          }
+        ]
+      },
+      "identifier_usage": {
+        "accession": []
+      },
+      "parsed": {
+        "mock_wiring_only": "EXP-001",
+        "synthetic_response": true
+      },
+      "format_ok": true,
+      "observations": [
+        {
+          "id": "JSON_OBJECT",
+          "kind": "format",
+          "path": "",
+          "expected": {
+            "type": "object"
+          },
+          "public_source": "/output_contract/format",
+          "status": "SATISFIED",
+          "actual": {
+            "mock_wiring_only": "EXP-001",
+            "synthetic_response": true
+          },
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:labels",
+          "kind": "required",
+          "path": "/labels",
+          "public_source": "/output_contract/required_fields",
+          "status": "VIOLATED",
+          "actual": "<MISSING>",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:explanation",
+          "kind": "required",
+          "path": "/explanation",
+          "public_source": "/output_contract/required_fields",
+          "status": "VIOLATED",
+          "actual": "<MISSING>",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:scope",
+          "kind": "required",
+          "path": "/scope",
+          "public_source": "/output_contract/required_fields",
+          "status": "VIOLATED",
+          "actual": "<MISSING>",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "public_scope",
+          "kind": "equals_literal",
+          "path": "/scope",
+          "expected": "label_text_only",
+          "public_source": "/output_contract/required_scope",
+          "status": "VIOLATED",
+          "actual": "<MISSING>",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        }
+      ],
+      "violations": [
+        "required:labels",
+        "required:explanation",
+        "required:scope",
+        "public_scope"
+      ],
+      "unknown": [],
+      "semantic_correctness": "NOT_ASSESSED"
+    }
+  },
+  "provider_records": [
+    {
+      "stage": "INITIAL",
+      "method": "POST",
+      "path": "/api/generate",
+      "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Museum loan-label kit\\n\\nPrepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"items\\\": [\\n    {\\n      \\\"accession\\\": \\\"Mx-A7\\\",\\n      \\\"title\\\": \\\"Copper bell\\\",\\n      \\\"on_loan\\\": true,\\n      \\\"fragile\\\": false\\n    },\\n    {\\n      \\\"accession\\\": \\\"QP_6c\\\",\\n      \\\"title\\\": \\\"Folded map\\\",\\n      \\\"on_loan\\\": false,\\n      \\\"fragile\\\": false\\n    },\\n    {\\n      \\\"accession\\\": \\\"bV-22\\\",\\n      \\\"title\\\": \\\"Glass bead\\\",\\n      \\\"on_loan\\\": true,\\n      \\\"fragile\\\": true\\n    }\\n  ]\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.\\\",\\n  \\\"optional_fields\\\": {\\n    \\\"notes\\\": \\\"array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review\\\",\\n    \\\"references\\\": \\\"array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence\\\",\\n    \\\"verification_status\\\": \\\"optional string: not_executed or not_claimed; do not assert tests or independent confirmation\\\"\\n  },\\n  \\\"prohibited\\\": \\\"No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.\\\",\\n  \\\"incomplete_answers\\\": \\\"Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.\\\",\\n  \\\"required_fields\\\": [\\n    \\\"labels\\\",\\n    \\\"explanation\\\",\\n    \\\"scope\\\"\\n  ],\\n  \\\"required_scope\\\": \\\"label_text_only\\\",\\n  \\\"labels\\\": \\\"array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)\\\",\\n  \\\"explanation\\\": \\\"object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.\\\",\\n  \\\"equivalences\\\": \\\"Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact.\\\"\\n}\\n\\nPublic reference identifiers: LABEL-LOAN, LABEL-FRAGILE\", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+      "wire_sha256": "cb6913d9c7d2f93f2f14229d3e90cd5b1b38b48e8afc4ba3c02ca24a5f561046",
+      "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"mock_wiring_only\\\": \\\"EXP-001\\\", \\\"synthetic_response\\\": true}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL"
+    },
+    {
+      "stage": "REPAIR_INVENTORY",
+      "method": "POST",
+      "path": "/api/generate",
+      "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Construct a defect inventory. Distinguish missing public requirements, public-data contradiction, unsupported assertion, format, preservation risk and uncertainty. Bind actionable findings to supplied violated observation IDs and exact paths. Model assertions and citations are not independent evidence. Do not invent tests.\\n\\nINPUT (JSON):\\n{\\\"external_trusted_evidence\\\": [], \\\"public_local_observations\\\": [{\\\"actual\\\": {\\\"mock_wiring_only\\\": \\\"EXP-001\\\", \\\"synthetic_response\\\": true}, \\\"expected\\\": {\\\"type\\\": \\\"object\\\"}, \\\"id\\\": \\\"JSON_OBJECT\\\", \\\"kind\\\": \\\"format\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"\\\", \\\"public_source\\\": \\\"/output_contract/format\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"SATISFIED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:labels\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/labels\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:explanation\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/explanation\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:scope\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/scope\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"expected\\\": \\\"label_text_only\\\", \\\"id\\\": \\\"public_scope\\\", \\\"kind\\\": \\\"equals_literal\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/scope\\\", \\\"public_source\\\": \\\"/output_contract/required_scope\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}], \\\"quoted_current_run_outputs\\\": [{\\\"output_id\\\": \\\"O_25e9db9715ed6e1dca8183a3\\\", \\\"role\\\": \\\"INITIAL\\\", \\\"text\\\": \\\"{\\\\\\\"mock_wiring_only\\\\\\\": \\\\\\\"EXP-001\\\\\\\", \\\\\\\"synthetic_response\\\\\\\": true}\\\"}], \\\"task\\\": \\\"Museum loan-label kit\\\\n\\\\nPrepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.\\\\n\\\\nTASK_INPUT:\\\\n{\\\\n  \\\\\\\"items\\\\\\\": [\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"Mx-A7\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Copper bell\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": true,\\\\n      \\\\\\\"fragile\\\\\\\": false\\\\n    },\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"QP_6c\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Folded map\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": false,\\\\n      \\\\\\\"fragile\\\\\\\": false\\\\n    },\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"bV-22\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Glass bead\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": true,\\\\n      \\\\\\\"fragile\\\\\\\": true\\\\n    }\\\\n  ]\\\\n}\\\\n\\\\nOUTPUT CONTRACT:\\\\n{\\\\n  \\\\\\\"format\\\\\\\": \\\\\\\"One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.\\\\\\\",\\\\n  \\\\\\\"optional_fields\\\\\\\": {\\\\n    \\\\\\\"notes\\\\\\\": \\\\\\\"array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review\\\\\\\",\\\\n    \\\\\\\"references\\\\\\\": \\\\\\\"array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence\\\\\\\",\\\\n    \\\\\\\"verification_status\\\\\\\": \\\\\\\"optional string: not_executed or not_claimed; do not assert tests or independent confirmation\\\\\\\"\\\\n  },\\\\n  \\\\\\\"prohibited\\\\\\\": \\\\\\\"No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.\\\\\\\",\\\\n  \\\\\\\"incomplete_answers\\\\\\\": \\\\\\\"Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.\\\\\\\",\\\\n  \\\\\\\"required_fields\\\\\\\": [\\\\n    \\\\\\\"labels\\\\\\\",\\\\n    \\\\\\\"explanation\\\\\\\",\\\\n    \\\\\\\"scope\\\\\\\"\\\\n  ],\\\\n  \\\\\\\"required_scope\\\\\\\": \\\\\\\"label_text_only\\\\\\\",\\\\n  \\\\\\\"labels\\\\\\\": \\\\\\\"array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)\\\\\\\",\\\\n  \\\\\\\"explanation\\\\\\\": \\\\\\\"object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.\\\\\\\",\\\\n  \\\\\\\"equivalences\\\\\\\": \\\\\\\"Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact.\\\\\\\"\\\\n}\\\\n\\\\nPublic reference identifiers: LABEL-LOAN, LABEL-FRAGILE\\\"}\\n\\nRespond with only one JSON object that satisfies this JSON Schema:\\n{\\\"additionalProperties\\\": false, \\\"properties\\\": {\\\"findings\\\": {\\\"items\\\": {\\\"additionalProperties\\\": false, \\\"properties\\\": {\\\"category\\\": {\\\"enum\\\": [\\\"MISSING_PUBLIC_REQUIREMENT\\\", \\\"TASK_DATA_CONTRADICTION\\\", \\\"UNSUPPORTED_ASSERTION\\\", \\\"FORMAT_CONTRACT\\\", \\\"PRESERVATION_RISK\\\", \\\"UNRESOLVED_UNCERTAINTY\\\"], \\\"type\\\": \\\"string\\\"}, \\\"evidence_class\\\": {\\\"enum\\\": [\\\"PUBLIC_TASK_FACT\\\", \\\"MODEL_GENERATED_OBSERVATION\\\", \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"UNVERIFIED_INFERENCE\\\", \\\"EXTERNAL_TRUSTED_EVIDENCE\\\"], \\\"type\\\": \\\"string\\\"}, \\\"id\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"observation_id\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"priority\\\": {\\\"maximum\\\": 3, \\\"minimum\\\": 0, \\\"type\\\": \\\"integer\\\"}, \\\"proposal\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"target_path\\\": {\\\"type\\\": \\\"string\\\"}}, \\\"required\\\": [\\\"id\\\", \\\"category\\\", \\\"observation_id\\\", \\\"target_path\\\", \\\"proposal\\\", \\\"evidence_class\\\", \\\"priority\\\"], \\\"type\\\": \\\"object\\\"}, \\\"maxItems\\\": 12, \\\"type\\\": \\\"array\\\"}}, \\\"required\\\": [\\\"findings\\\"], \\\"type\\\": \\\"object\\\"}\", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 871905026}, \"format\": {\"additionalProperties\": false, \"properties\": {\"findings\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"category\": {\"enum\": [\"MISSING_PUBLIC_REQUIREMENT\", \"TASK_DATA_CONTRADICTION\", \"UNSUPPORTED_ASSERTION\", \"FORMAT_CONTRACT\", \"PRESERVATION_RISK\", \"UNRESOLVED_UNCERTAINTY\"], \"type\": \"string\"}, \"evidence_class\": {\"enum\": [\"PUBLIC_TASK_FACT\", \"MODEL_GENERATED_OBSERVATION\", \"LOCAL_DETERMINISTIC_CHECK\", \"UNVERIFIED_INFERENCE\", \"EXTERNAL_TRUSTED_EVIDENCE\"], \"type\": \"string\"}, \"id\": {\"minLength\": 1, \"type\": \"string\"}, \"observation_id\": {\"minLength\": 1, \"type\": \"string\"}, \"priority\": {\"maximum\": 3, \"minimum\": 0, \"type\": \"integer\"}, \"proposal\": {\"minLength\": 1, \"type\": \"string\"}, \"target_path\": {\"type\": \"string\"}}, \"required\": [\"id\", \"category\", \"observation_id\", \"target_path\", \"proposal\", \"evidence_class\", \"priority\"], \"type\": \"object\"}, \"maxItems\": 12, \"type\": \"array\"}}, \"required\": [\"findings\"], \"type\": \"object\"}}",
+      "wire_sha256": "a4976e4053e9786c85742d667e164cbb55a32df450df50d0e10b101db4af2168",
+      "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"findings\\\": []}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL"
+    }
+  ],
+  "generation_closed": {
+    "schema_version": "closed-generation-v1",
+    "run_id": "MOCK_EXP-001_DIRECTED_REPAIR",
+    "task_id": "EXP-001",
+    "attempts_sha256": "47920ecb34dc6f96ad3c9ce3ab2ca5c400540e8654671dcb407f5a71dfb72d95",
+    "outputs": [
+      {
+        "output_id": "O_25e9db9715ed6e1dca8183a3",
+        "text": "{\"mock_wiring_only\": \"EXP-001\", \"synthetic_response\": true}",
+        "answer_sha256": "07ce4457e512e103ed97da3fc3c94085ade1bc90ae52ae15ccde0e0aced246d5"
+      },
+      {
+        "output_id": "O_95f53b01bc712a5bcb2a4507",
+        "text": "{\"findings\": []}",
+        "answer_sha256": "6e96a492bc9fa40d22212c5be0396a203f3dbd4916cf97ebe2f66b6d54fa4a9a"
+      }
+    ],
+    "outstanding_or_unknown_cost": false
+  },
+  "prompt_registry_root": "443ef6ea04bf0fef2b3c74b6f7499dc8e85db6c247a96b91b6fdb9abbbf96683",
+  "scientific_scores": null,
+  "journal_integrity": {
+    "schema_version": "abc-r2-journal-review-v1",
+    "overall": "VERIFIED",
+    "attempts": [
+      {
+        "attempt_id": 36,
+        "status": "VERIFIED",
+        "code": "ANCHOR_CHAIN_LEDGER_MATCH",
+        "provider_receipt_valid": true,
+        "path": "wire/000036-cb6913d9c7d2f93f.jsonl",
+        "observed_current_bytes_sha256": "685721c6b5a231278743ece3dd280d6af57f522e1af458bc328eb17b699b9a52"
+      },
+      {
+        "attempt_id": 37,
+        "status": "VERIFIED",
+        "code": "ANCHOR_CHAIN_LEDGER_MATCH",
+        "provider_receipt_valid": true,
+        "path": "wire/000037-a4976e4053e9786c.jsonl",
+        "observed_current_bytes_sha256": "01c99c5a22a160ba316517a3a41216883a26398b8880cc2f0533850cfe0fbf03"
+      }
+    ],
+    "trusted_hashes": {
+      "wire/000036-cb6913d9c7d2f93f.jsonl": "685721c6b5a231278743ece3dd280d6af57f522e1af458bc328eb17b699b9a52",
+      "wire/000037-a4976e4053e9786c.jsonl": "01c99c5a22a160ba316517a3a41216883a26398b8880cc2f0533850cfe0fbf03"
+    },
+    "untrusted_evidence": {},
+    "verified_provider_records": [
+      {
+        "stage": "INITIAL",
+        "method": "POST",
+        "path": "/api/generate",
+        "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Museum loan-label kit\\n\\nPrepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"items\\\": [\\n    {\\n      \\\"accession\\\": \\\"Mx-A7\\\",\\n      \\\"title\\\": \\\"Copper bell\\\",\\n      \\\"on_loan\\\": true,\\n      \\\"fragile\\\": false\\n    },\\n    {\\n      \\\"accession\\\": \\\"QP_6c\\\",\\n      \\\"title\\\": \\\"Folded map\\\",\\n      \\\"on_loan\\\": false,\\n      \\\"fragile\\\": false\\n    },\\n    {\\n      \\\"accession\\\": \\\"bV-22\\\",\\n      \\\"title\\\": \\\"Glass bead\\\",\\n      \\\"on_loan\\\": true,\\n      \\\"fragile\\\": true\\n    }\\n  ]\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.\\\",\\n  \\\"optional_fields\\\": {\\n    \\\"notes\\\": \\\"array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review\\\",\\n    \\\"references\\\": \\\"array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence\\\",\\n    \\\"verification_status\\\": \\\"optional string: not_executed or not_claimed; do not assert tests or independent confirmation\\\"\\n  },\\n  \\\"prohibited\\\": \\\"No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.\\\",\\n  \\\"incomplete_answers\\\": \\\"Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.\\\",\\n  \\\"required_fields\\\": [\\n    \\\"labels\\\",\\n    \\\"explanation\\\",\\n    \\\"scope\\\"\\n  ],\\n  \\\"required_scope\\\": \\\"label_text_only\\\",\\n  \\\"labels\\\": \\\"array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)\\\",\\n  \\\"explanation\\\": \\\"object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.\\\",\\n  \\\"equivalences\\\": \\\"Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact.\\\"\\n}\\n\\nPublic reference identifiers: LABEL-LOAN, LABEL-FRAGILE\", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+        "wire_sha256": "cb6913d9c7d2f93f2f14229d3e90cd5b1b38b48e8afc4ba3c02ca24a5f561046",
+        "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"mock_wiring_only\\\": \\\"EXP-001\\\", \\\"synthetic_response\\\": true}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+        "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+        "recovered_without_dispatch": true
+      },
+      {
+        "stage": "REPAIR_INVENTORY",
+        "method": "POST",
+        "path": "/api/generate",
+        "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Construct a defect inventory. Distinguish missing public requirements, public-data contradiction, unsupported assertion, format, preservation risk and uncertainty. Bind actionable findings to supplied violated observation IDs and exact paths. Model assertions and citations are not independent evidence. Do not invent tests.\\n\\nINPUT (JSON):\\n{\\\"external_trusted_evidence\\\": [], \\\"public_local_observations\\\": [{\\\"actual\\\": {\\\"mock_wiring_only\\\": \\\"EXP-001\\\", \\\"synthetic_response\\\": true}, \\\"expected\\\": {\\\"type\\\": \\\"object\\\"}, \\\"id\\\": \\\"JSON_OBJECT\\\", \\\"kind\\\": \\\"format\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"\\\", \\\"public_source\\\": \\\"/output_contract/format\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"SATISFIED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:labels\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/labels\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:explanation\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/explanation\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"id\\\": \\\"required:scope\\\", \\\"kind\\\": \\\"required\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/scope\\\", \\\"public_source\\\": \\\"/output_contract/required_fields\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}, {\\\"actual\\\": \\\"<MISSING>\\\", \\\"expected\\\": \\\"label_text_only\\\", \\\"id\\\": \\\"public_scope\\\", \\\"kind\\\": \\\"equals_literal\\\", \\\"origin\\\": \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"path\\\": \\\"/scope\\\", \\\"public_source\\\": \\\"/output_contract/required_scope\\\", \\\"semantic_scope\\\": \\\"EXPLICIT_PUBLIC_CONSTRAINT_ONLY\\\", \\\"status\\\": \\\"VIOLATED\\\"}], \\\"quoted_current_run_outputs\\\": [{\\\"output_id\\\": \\\"O_25e9db9715ed6e1dca8183a3\\\", \\\"role\\\": \\\"INITIAL\\\", \\\"text\\\": \\\"{\\\\\\\"mock_wiring_only\\\\\\\": \\\\\\\"EXP-001\\\\\\\", \\\\\\\"synthetic_response\\\\\\\": true}\\\"}], \\\"task\\\": \\\"Museum loan-label kit\\\\n\\\\nPrepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.\\\\n\\\\nTASK_INPUT:\\\\n{\\\\n  \\\\\\\"items\\\\\\\": [\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"Mx-A7\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Copper bell\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": true,\\\\n      \\\\\\\"fragile\\\\\\\": false\\\\n    },\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"QP_6c\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Folded map\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": false,\\\\n      \\\\\\\"fragile\\\\\\\": false\\\\n    },\\\\n    {\\\\n      \\\\\\\"accession\\\\\\\": \\\\\\\"bV-22\\\\\\\",\\\\n      \\\\\\\"title\\\\\\\": \\\\\\\"Glass bead\\\\\\\",\\\\n      \\\\\\\"on_loan\\\\\\\": true,\\\\n      \\\\\\\"fragile\\\\\\\": true\\\\n    }\\\\n  ]\\\\n}\\\\n\\\\nOUTPUT CONTRACT:\\\\n{\\\\n  \\\\\\\"format\\\\\\\": \\\\\\\"One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.\\\\\\\",\\\\n  \\\\\\\"optional_fields\\\\\\\": {\\\\n    \\\\\\\"notes\\\\\\\": \\\\\\\"array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review\\\\\\\",\\\\n    \\\\\\\"references\\\\\\\": \\\\\\\"array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence\\\\\\\",\\\\n    \\\\\\\"verification_status\\\\\\\": \\\\\\\"optional string: not_executed or not_claimed; do not assert tests or independent confirmation\\\\\\\"\\\\n  },\\\\n  \\\\\\\"prohibited\\\\\\\": \\\\\\\"No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.\\\\\\\",\\\\n  \\\\\\\"incomplete_answers\\\\\\\": \\\\\\\"Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.\\\\\\\",\\\\n  \\\\\\\"required_fields\\\\\\\": [\\\\n    \\\\\\\"labels\\\\\\\",\\\\n    \\\\\\\"explanation\\\\\\\",\\\\n    \\\\\\\"scope\\\\\\\"\\\\n  ],\\\\n  \\\\\\\"required_scope\\\\\\\": \\\\\\\"label_text_only\\\\\\\",\\\\n  \\\\\\\"labels\\\\\\\": \\\\\\\"array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)\\\\\\\",\\\\n  \\\\\\\"explanation\\\\\\\": \\\\\\\"object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.\\\\\\\",\\\\n  \\\\\\\"equivalences\\\\\\\": \\\\\\\"Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact.\\\\\\\"\\\\n}\\\\n\\\\nPublic reference identifiers: LABEL-LOAN, LABEL-FRAGILE\\\"}\\n\\nRespond with only one JSON object that satisfies this JSON Schema:\\n{\\\"additionalProperties\\\": false, \\\"properties\\\": {\\\"findings\\\": {\\\"items\\\": {\\\"additionalProperties\\\": false, \\\"properties\\\": {\\\"category\\\": {\\\"enum\\\": [\\\"MISSING_PUBLIC_REQUIREMENT\\\", \\\"TASK_DATA_CONTRADICTION\\\", \\\"UNSUPPORTED_ASSERTION\\\", \\\"FORMAT_CONTRACT\\\", \\\"PRESERVATION_RISK\\\", \\\"UNRESOLVED_UNCERTAINTY\\\"], \\\"type\\\": \\\"string\\\"}, \\\"evidence_class\\\": {\\\"enum\\\": [\\\"PUBLIC_TASK_FACT\\\", \\\"MODEL_GENERATED_OBSERVATION\\\", \\\"LOCAL_DETERMINISTIC_CHECK\\\", \\\"UNVERIFIED_INFERENCE\\\", \\\"EXTERNAL_TRUSTED_EVIDENCE\\\"], \\\"type\\\": \\\"string\\\"}, \\\"id\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"observation_id\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"priority\\\": {\\\"maximum\\\": 3, \\\"minimum\\\": 0, \\\"type\\\": \\\"integer\\\"}, \\\"proposal\\\": {\\\"minLength\\\": 1, \\\"type\\\": \\\"string\\\"}, \\\"target_path\\\": {\\\"type\\\": \\\"string\\\"}}, \\\"required\\\": [\\\"id\\\", \\\"category\\\", \\\"observation_id\\\", \\\"target_path\\\", \\\"proposal\\\", \\\"evidence_class\\\", \\\"priority\\\"], \\\"type\\\": \\\"object\\\"}, \\\"maxItems\\\": 12, \\\"type\\\": \\\"array\\\"}}, \\\"required\\\": [\\\"findings\\\"], \\\"type\\\": \\\"object\\\"}\", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 871905026}, \"format\": {\"additionalProperties\": false, \"properties\": {\"findings\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"category\": {\"enum\": [\"MISSING_PUBLIC_REQUIREMENT\", \"TASK_DATA_CONTRADICTION\", \"UNSUPPORTED_ASSERTION\", \"FORMAT_CONTRACT\", \"PRESERVATION_RISK\", \"UNRESOLVED_UNCERTAINTY\"], \"type\": \"string\"}, \"evidence_class\": {\"enum\": [\"PUBLIC_TASK_FACT\", \"MODEL_GENERATED_OBSERVATION\", \"LOCAL_DETERMINISTIC_CHECK\", \"UNVERIFIED_INFERENCE\", \"EXTERNAL_TRUSTED_EVIDENCE\"], \"type\": \"string\"}, \"id\": {\"minLength\": 1, \"type\": \"string\"}, \"observation_id\": {\"minLength\": 1, \"type\": \"string\"}, \"priority\": {\"maximum\": 3, \"minimum\": 0, \"type\": \"integer\"}, \"proposal\": {\"minLength\": 1, \"type\": \"string\"}, \"target_path\": {\"type\": \"string\"}}, \"required\": [\"id\", \"category\", \"observation_id\", \"target_path\", \"proposal\", \"evidence_class\", \"priority\"], \"type\": \"object\"}, \"maxItems\": 12, \"type\": \"array\"}}, \"required\": [\"findings\"], \"type\": \"object\"}}",
+        "wire_sha256": "a4976e4053e9786c85742d667e164cbb55a32df450df50d0e10b101db4af2168",
+        "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"findings\\\": []}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+        "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+        "recovered_without_dispatch": true
+      }
+    ],
+    "host_compromise_protection": false,
+    "provenance_graph": {
+      "schema_version": "abc-r3-provenance-v1",
+      "revision": "1.0.2",
+      "run_attempts_sha256": "47920ecb34dc6f96ad3c9ce3ab2ca5c400540e8654671dcb407f5a71dfb72d95",
+      "anchor_hashes": {
+        "publication/attempts/000036.reservation.json": "172823b5aabe340e22ad56a85d9ebf528b1f0baf826c94d4b522b5337f5584bb",
+        "publication/attempts/000036.json": "43e2caf7ba4875c276877ccd78bc844e71be9001d64a32788741b399cd5b73ac",
+        "publication/attempts/000036.settlement.json": "7f61abcd6cbb31776382061aedb84c57106ddcb555e7e885d5bb396cb523e198",
+        "publication/attempts/000036.response.json": "ea2d7549404c1b1b8c0914c205b556397557e974a562075221dfac6e0881766b",
+        "publication/attempts/000037.reservation.json": "e98dafa79591a6196db3162b23cdff2daee6d5c657d927a3488ed34c2f62d7c7",
+        "publication/attempts/000037.json": "0689bb12e3c59b5463893abe90be1847997c95b190b2efad1a6592d312919c0d",
+        "publication/attempts/000037.settlement.json": "a3afe55aaf9660b10f0bc3b3e1b573d50380fc15e579925b4d4a3dcc97cb05ad",
+        "publication/attempts/000037.response.json": "035e8fd0cc296da66805b6afffc24dbbd3a4c65bb81e9f4ee84b45510dfc027f"
+      },
+      "ordered_attempt_ids": [
+        36,
+        37
+      ],
+      "bound_output_handles": [
+        "O_25e9db9715ed6e1dca8183a3",
+        "O_95f53b01bc712a5bcb2a4507"
+      ],
+      "unwitnessed_settlements": [],
+      "overall": "VERIFIED",
+      "wire_hashes": {
+        "wire/000036-cb6913d9c7d2f93f.jsonl": "685721c6b5a231278743ece3dd280d6af57f522e1af458bc328eb17b699b9a52",
+        "wire/000037-a4976e4053e9786c.jsonl": "01c99c5a22a160ba316517a3a41216883a26398b8880cc2f0533850cfe0fbf03"
+      }
+    }
+  },
+  "durable_journal_hashes": {
+    "wire/000036-cb6913d9c7d2f93f.jsonl": "685721c6b5a231278743ece3dd280d6af57f522e1af458bc328eb17b699b9a52",
+    "wire/000037-a4976e4053e9786c.jsonl": "01c99c5a22a160ba316517a3a41216883a26398b8880cc2f0533850cfe0fbf03"
+  },
+  "runner_elapsed_seconds": 0.3140244000005623,
+  "implementation_version": "1.0.1",
+  "publication_identity_sha256": "04168649c572bde06fc3c65bf038fbc655cd00fb557b2ce7829ddc9dd9f9ae78",
+  "publication": {
+    "token": "18511f0239a8b43c65198e98cc40d6a2",
+    "fence": 1
+  },
+  "artifact_payload_sha256": "d29540de43faf1db33e100dfa392f178401d6580be440ac3dac3daaa64dc3d55"
+}

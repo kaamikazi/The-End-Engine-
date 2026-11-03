@@ -1,0 +1,545 @@
+{
+  "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+  "request": {
+    "task_id": "ABC-PUBLIC-001",
+    "public_task_payload": {
+      "task_id": "ABC-PUBLIC-001",
+      "title": "Synthetic explicit public contract",
+      "task_statement": "Return a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.",
+      "input": {
+        "item_id": "T-1",
+        "amount": 7,
+        "mode": "draft"
+      },
+      "output_contract": {
+        "format": "One JSON object or a whole JSON fence",
+        "required_fields": [
+          "item_id",
+          "amount",
+          "status"
+        ],
+        "public_constraints": [
+          {
+            "id": "id_from_input",
+            "kind": "equals_input",
+            "path": "/item_id",
+            "source_path": "/input/item_id"
+          },
+          {
+            "id": "amount_from_input",
+            "kind": "equals_input",
+            "path": "/amount",
+            "source_path": "/input/amount"
+          },
+          {
+            "id": "status_from_input",
+            "kind": "equals_input",
+            "path": "/status",
+            "source_path": "/input/mode"
+          }
+        ]
+      },
+      "public_reference_ids": []
+    },
+    "model_identity": "qwen3:4b",
+    "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+    "generation_parameters": {
+      "temperature": 0.7,
+      "think": false,
+      "top_p": 0.8
+    },
+    "seed_if_supported": null,
+    "context_window": 8192,
+    "maximum_output_tokens": 4096,
+    "condition_id": "SPARSE_DELIBERATION",
+    "attempt_budget": 36,
+    "token_budget": 400000,
+    "wall_time_budget": 1800,
+    "run_id": "REVIEWER_CONTRACT"
+  },
+  "effective_ledger_request": {
+    "task_id": "ABC-PUBLIC-001",
+    "public_task_payload": {
+      "task_id": "ABC-PUBLIC-001",
+      "title": "Synthetic explicit public contract",
+      "task_statement": "Return a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.",
+      "input": {
+        "item_id": "T-1",
+        "amount": 7,
+        "mode": "draft"
+      },
+      "output_contract": {
+        "format": "One JSON object or a whole JSON fence",
+        "required_fields": [
+          "item_id",
+          "amount",
+          "status"
+        ],
+        "public_constraints": [
+          {
+            "id": "id_from_input",
+            "kind": "equals_input",
+            "path": "/item_id",
+            "source_path": "/input/item_id"
+          },
+          {
+            "id": "amount_from_input",
+            "kind": "equals_input",
+            "path": "/amount",
+            "source_path": "/input/amount"
+          },
+          {
+            "id": "status_from_input",
+            "kind": "equals_input",
+            "path": "/status",
+            "source_path": "/input/mode"
+          }
+        ]
+      },
+      "public_reference_ids": []
+    },
+    "model_identity": "qwen3:4b",
+    "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+    "generation_parameters": {
+      "temperature": 0.7,
+      "think": false,
+      "top_p": 0.8
+    },
+    "seed_if_supported": null,
+    "context_window": 8192,
+    "maximum_output_tokens": 4096,
+    "condition_id": "SPARSE_DELIBERATION",
+    "attempt_budget": 4,
+    "token_budget": 400000,
+    "wall_time_budget": 1800,
+    "run_id": "REVIEWER_CONTRACT"
+  },
+  "result": {
+    "run_id": "REVIEWER_CONTRACT",
+    "condition_id": "SPARSE_DELIBERATION",
+    "task_id": "ABC-PUBLIC-001",
+    "model_identity": "qwen3:4b",
+    "runtime_identity": {
+      "adapter": "abc-stage-admission-r2-1.0.1",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+      "provider": "ollama-generate-recording",
+      "model_digest": "UNOBSERVED_NO_MODEL_QUERIED",
+      "live_verified": false
+    },
+    "initial_candidate": "C0",
+    "final_candidate": "C0",
+    "all_generated_candidates": [
+      {
+        "candidate_id": "C0",
+        "answer": "{\"item_id\": \"T-1\", \"amount\": 7, \"status\": \"draft\"}",
+        "attempt_id": 1,
+        "parent_ids": [],
+        "complete": true,
+        "answer_sha256": "fd5d5f1350bac099cb6c312a8caba6578405928bf389ab0c13cfa10c2792426e"
+      }
+    ],
+    "candidate_lineage": {
+      "C0": []
+    },
+    "model_invocations": [
+      {
+        "attempt_id": 1,
+        "candidate": {
+          "call_id": "CALL_INITIAL",
+          "output_id": "O_be597009ec6b09d00c4a089f",
+          "provenance_sha256": "58d44f33f33ae695aa477f06572058242da286e03ef9dcdc96aca5f7510d469a",
+          "task_id": "ABC-PUBLIC-001",
+          "wire_sha256": "c544b3633b8be259b9403410b87ad42434d70c5581053348f49e51706bf113af"
+        },
+        "error_code": null,
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "purpose": "{\"call_id\":\"CALL_INITIAL\",\"purpose\":\"INITIAL\",\"spec_sha256\":\"2667473257ab6189b8ea1d423bd0f61b220baab02391c38481abbb8fbfa27521\",\"wire_sha256\":\"c544b3633b8be259b9403410b87ad42434d70c5581053348f49e51706bf113af\"}",
+        "response_sha256": "fd5d5f1350bac099cb6c312a8caba6578405928bf389ab0c13cfa10c2792426e",
+        "response_text": "{\"item_id\": \"T-1\", \"amount\": 7, \"status\": \"draft\"}",
+        "run_id": "REVIEWER_CONTRACT",
+        "seconds": 0.014481000001978828,
+        "seconds_ceiling": 900,
+        "started_unix": 1792425068.021816,
+        "state": "SUCCEEDED",
+        "token_ceiling": 16384,
+        "total_tokens": 15
+      }
+    ],
+    "physical_attempts": 1,
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "total_tokens": 15,
+    "wall_time": 0.014481000001978828,
+    "termination_reason": "INTERRUPTED",
+    "budget_exhaustion": {
+      "internal_limit": 4,
+      "effective_attempt_limit": 4,
+      "halted": false,
+      "known_token_subset": 15
+    },
+    "interruption_state": {
+      "outstanding_attempts": 0,
+      "unknown_usage_attempts": 0
+    },
+    "provenance_records": [
+      {
+        "state": "RESTORED_NO_AUTOMATIC_REPLAY",
+        "journal_status": "VERIFIED"
+      },
+      {
+        "state": "GENERATION_CLOSED",
+        "run_id": "REVIEWER_CONTRACT"
+      },
+      {
+        "state": "TERMINATED",
+        "termination_reason": "INTERRUPTED",
+        "final_candidate": "C0",
+        "physical_attempts": 1
+      },
+      {
+        "uncertainty": [],
+        "public_checks": {
+          "C0": {
+            "public_identifier_facts": {
+              "item_id": [
+                {
+                  "value": "T-1",
+                  "public_source": "/input/item_id"
+                }
+              ]
+            },
+            "identifier_usage": {
+              "item_id": [
+                "T-1"
+              ]
+            },
+            "parsed": {
+              "item_id": "T-1",
+              "amount": 7,
+              "status": "draft"
+            },
+            "format_ok": true,
+            "observations": [
+              {
+                "id": "JSON_OBJECT",
+                "kind": "format",
+                "path": "",
+                "expected": {
+                  "type": "object"
+                },
+                "public_source": "/output_contract/format",
+                "status": "SATISFIED",
+                "actual": {
+                  "item_id": "T-1",
+                  "amount": 7,
+                  "status": "draft"
+                },
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:item_id",
+                "kind": "required",
+                "path": "/item_id",
+                "public_source": "/output_contract/required_fields",
+                "status": "SATISFIED",
+                "actual": "T-1",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:amount",
+                "kind": "required",
+                "path": "/amount",
+                "public_source": "/output_contract/required_fields",
+                "status": "SATISFIED",
+                "actual": 7,
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "required:status",
+                "kind": "required",
+                "path": "/status",
+                "public_source": "/output_contract/required_fields",
+                "status": "SATISFIED",
+                "actual": "draft",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "id_from_input",
+                "kind": "equals_input",
+                "path": "/item_id",
+                "source_path": "/input/item_id",
+                "public_source": "/output_contract/public_constraints",
+                "expected": "T-1",
+                "status": "SATISFIED",
+                "actual": "T-1",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "amount_from_input",
+                "kind": "equals_input",
+                "path": "/amount",
+                "source_path": "/input/amount",
+                "public_source": "/output_contract/public_constraints",
+                "expected": 7,
+                "status": "SATISFIED",
+                "actual": 7,
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              },
+              {
+                "id": "status_from_input",
+                "kind": "equals_input",
+                "path": "/status",
+                "source_path": "/input/mode",
+                "public_source": "/output_contract/public_constraints",
+                "expected": "draft",
+                "status": "SATISFIED",
+                "actual": "draft",
+                "origin": "LOCAL_DETERMINISTIC_CHECK",
+                "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+              }
+            ],
+            "violations": [],
+            "unknown": [],
+            "semantic_correctness": "NOT_ASSESSED"
+          }
+        },
+        "candidate_content_authority": "MODEL_GENERATED_UNVERIFIED_CONTENT"
+      }
+    ],
+    "public_evidence_used": [
+      "PUBLIC_TASK:ABC-PUBLIC-001/output_contract/format",
+      "PUBLIC_TASK:ABC-PUBLIC-001/output_contract/public_constraints",
+      "PUBLIC_TASK:ABC-PUBLIC-001/output_contract/required_fields"
+    ],
+    "diagnostic_errors": []
+  },
+  "C0": "{\"item_id\": \"T-1\", \"amount\": 7, \"status\": \"draft\"}",
+  "FINAL": "{\"item_id\": \"T-1\", \"amount\": 7, \"status\": \"draft\"}",
+  "events": [
+    {
+      "state": "RESTORED_NO_AUTOMATIC_REPLAY",
+      "journal_status": "VERIFIED"
+    },
+    {
+      "state": "GENERATION_CLOSED",
+      "run_id": "REVIEWER_CONTRACT"
+    },
+    {
+      "state": "TERMINATED",
+      "termination_reason": "INTERRUPTED",
+      "final_candidate": "C0",
+      "physical_attempts": 1
+    }
+  ],
+  "control_outputs": {},
+  "checks": {
+    "C0": {
+      "public_identifier_facts": {
+        "item_id": [
+          {
+            "value": "T-1",
+            "public_source": "/input/item_id"
+          }
+        ]
+      },
+      "identifier_usage": {
+        "item_id": [
+          "T-1"
+        ]
+      },
+      "parsed": {
+        "item_id": "T-1",
+        "amount": 7,
+        "status": "draft"
+      },
+      "format_ok": true,
+      "observations": [
+        {
+          "id": "JSON_OBJECT",
+          "kind": "format",
+          "path": "",
+          "expected": {
+            "type": "object"
+          },
+          "public_source": "/output_contract/format",
+          "status": "SATISFIED",
+          "actual": {
+            "item_id": "T-1",
+            "amount": 7,
+            "status": "draft"
+          },
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:item_id",
+          "kind": "required",
+          "path": "/item_id",
+          "public_source": "/output_contract/required_fields",
+          "status": "SATISFIED",
+          "actual": "T-1",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:amount",
+          "kind": "required",
+          "path": "/amount",
+          "public_source": "/output_contract/required_fields",
+          "status": "SATISFIED",
+          "actual": 7,
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "required:status",
+          "kind": "required",
+          "path": "/status",
+          "public_source": "/output_contract/required_fields",
+          "status": "SATISFIED",
+          "actual": "draft",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "id_from_input",
+          "kind": "equals_input",
+          "path": "/item_id",
+          "source_path": "/input/item_id",
+          "public_source": "/output_contract/public_constraints",
+          "expected": "T-1",
+          "status": "SATISFIED",
+          "actual": "T-1",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "amount_from_input",
+          "kind": "equals_input",
+          "path": "/amount",
+          "source_path": "/input/amount",
+          "public_source": "/output_contract/public_constraints",
+          "expected": 7,
+          "status": "SATISFIED",
+          "actual": 7,
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        },
+        {
+          "id": "status_from_input",
+          "kind": "equals_input",
+          "path": "/status",
+          "source_path": "/input/mode",
+          "public_source": "/output_contract/public_constraints",
+          "expected": "draft",
+          "status": "SATISFIED",
+          "actual": "draft",
+          "origin": "LOCAL_DETERMINISTIC_CHECK",
+          "semantic_scope": "EXPLICIT_PUBLIC_CONSTRAINT_ONLY"
+        }
+      ],
+      "violations": [],
+      "unknown": [],
+      "semantic_correctness": "NOT_ASSESSED"
+    }
+  },
+  "provider_records": [
+    {
+      "stage": "INITIAL",
+      "method": "POST",
+      "path": "/api/generate",
+      "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Synthetic explicit public contract\\n\\nReturn a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"item_id\\\": \\\"T-1\\\",\\n  \\\"amount\\\": 7,\\n  \\\"mode\\\": \\\"draft\\\"\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One JSON object or a whole JSON fence\\\",\\n  \\\"required_fields\\\": [\\n    \\\"item_id\\\",\\n    \\\"amount\\\",\\n    \\\"status\\\"\\n  ],\\n  \\\"public_constraints\\\": [\\n    {\\n      \\\"id\\\": \\\"id_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/item_id\\\",\\n      \\\"source_path\\\": \\\"/input/item_id\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"amount_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/amount\\\",\\n      \\\"source_path\\\": \\\"/input/amount\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"status_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/status\\\",\\n      \\\"source_path\\\": \\\"/input/mode\\\"\\n    }\\n  ]\\n}\\n\\nPublic reference identifiers: \", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+      "wire_sha256": "4dcaf471206a91f78e617afba01883fd0ab1946bdf8e2830b47bac6ef70c27a8",
+      "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"item_id\\\": \\\"T-1\\\", \\\"amount\\\": 7, \\\"status\\\": \\\"draft\\\"}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+      "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+      "recovered_without_dispatch": true
+    }
+  ],
+  "generation_closed": {
+    "schema_version": "closed-generation-v1",
+    "run_id": "REVIEWER_CONTRACT",
+    "task_id": "ABC-PUBLIC-001",
+    "attempts_sha256": "e32ede34e06953e7cc24411a41db5ce806ddb9c3e7767b6dfbbd5e3942bc7aea",
+    "outputs": [
+      {
+        "output_id": "O_be597009ec6b09d00c4a089f",
+        "text": "{\"item_id\": \"T-1\", \"amount\": 7, \"status\": \"draft\"}",
+        "answer_sha256": "fd5d5f1350bac099cb6c312a8caba6578405928bf389ab0c13cfa10c2792426e"
+      }
+    ],
+    "outstanding_or_unknown_cost": false
+  },
+  "prompt_registry_root": "443ef6ea04bf0fef2b3c74b6f7499dc8e85db6c247a96b91b6fdb9abbbf96683",
+  "scientific_scores": null,
+  "journal_integrity": {
+    "schema_version": "abc-r2-journal-review-v1",
+    "overall": "VERIFIED",
+    "attempts": [
+      {
+        "attempt_id": 1,
+        "status": "VERIFIED",
+        "code": "ANCHOR_CHAIN_LEDGER_MATCH",
+        "provider_receipt_valid": true,
+        "path": "wire/000001-4dcaf471206a91f7.jsonl",
+        "observed_current_bytes_sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+      }
+    ],
+    "trusted_hashes": {
+      "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+    },
+    "untrusted_evidence": {},
+    "verified_provider_records": [
+      {
+        "stage": "INITIAL",
+        "method": "POST",
+        "path": "/api/generate",
+        "wire": "{\"model\": \"qwen3:4b\", \"stream\": false, \"think\": false, \"prompt\": \"Synthetic explicit public contract\\n\\nReturn a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.\\n\\nTASK_INPUT:\\n{\\n  \\\"item_id\\\": \\\"T-1\\\",\\n  \\\"amount\\\": 7,\\n  \\\"mode\\\": \\\"draft\\\"\\n}\\n\\nOUTPUT CONTRACT:\\n{\\n  \\\"format\\\": \\\"One JSON object or a whole JSON fence\\\",\\n  \\\"required_fields\\\": [\\n    \\\"item_id\\\",\\n    \\\"amount\\\",\\n    \\\"status\\\"\\n  ],\\n  \\\"public_constraints\\\": [\\n    {\\n      \\\"id\\\": \\\"id_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/item_id\\\",\\n      \\\"source_path\\\": \\\"/input/item_id\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"amount_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/amount\\\",\\n      \\\"source_path\\\": \\\"/input/amount\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"status_from_input\\\",\\n      \\\"kind\\\": \\\"equals_input\\\",\\n      \\\"path\\\": \\\"/status\\\",\\n      \\\"source_path\\\": \\\"/input/mode\\\"\\n    }\\n  ]\\n}\\n\\nPublic reference identifiers: \", \"options\": {\"temperature\": 0.7, \"top_p\": 0.8, \"num_predict\": 4096, \"num_ctx\": 8192, \"seed\": 101161259}}",
+        "wire_sha256": "4dcaf471206a91f78e617afba01883fd0ab1946bdf8e2830b47bac6ef70c27a8",
+        "response": "{\"model\": \"qwen3:4b\", \"created_at\": \"2000-01-01T00:00:00Z\", \"response\": \"{\\\"item_id\\\": \\\"T-1\\\", \\\"amount\\\": 7, \\\"status\\\": \\\"draft\\\"}\", \"done\": true, \"done_reason\": \"stop\", \"total_duration\": 1000000, \"load_duration\": 1000, \"prompt_eval_count\": 10, \"prompt_eval_duration\": 1000, \"eval_count\": 5, \"eval_duration\": 1000}",
+        "namespace": "MOCK_WIRING_ONLY_NOT_EMPIRICAL",
+        "recovered_without_dispatch": true
+      }
+    ],
+    "host_compromise_protection": false,
+    "provenance_graph": {
+      "schema_version": "abc-r3-provenance-v1",
+      "revision": "1.0.2",
+      "run_attempts_sha256": "e32ede34e06953e7cc24411a41db5ce806ddb9c3e7767b6dfbbd5e3942bc7aea",
+      "anchor_hashes": {
+        "publication/attempts/000001.reservation.json": "40c7979ceeb3e64c29635105799a65e34a6417d15b11dc0b90b61fd0273851bb",
+        "publication/attempts/000001.json": "d6eecfa2c0dd96c6bbbb6f20851fd7e3c68a172d97688c64dac9397ab2a21180",
+        "publication/attempts/000001.settlement.json": "d244060569c82e5b70ceaa50c60f9345b34aea73a4bf94f79ab62d3548229855",
+        "publication/attempts/000001.response.json": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+      },
+      "ordered_attempt_ids": [
+        1
+      ],
+      "bound_output_handles": [
+        "O_be597009ec6b09d00c4a089f"
+      ],
+      "unwitnessed_settlements": [],
+      "overall": "VERIFIED",
+      "wire_hashes": {
+        "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+      }
+    }
+  },
+  "durable_journal_hashes": {
+    "wire/000001-4dcaf471206a91f7.jsonl": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+  },
+  "runner_elapsed_seconds": 0.08223869999710587,
+  "implementation_version": "1.0.1",
+  "publication_identity_sha256": "e097f80e846dd621bfd1d3203df760db9ec0eb576c39e7584d29c116e0c9ccab",
+  "publication": {
+    "token": "098daa830127c966a6ba971589880458",
+    "fence": 2
+  },
+  "artifact_payload_sha256": "240e60f55a58c85c5736c1a6b03cf04d3e460da6af4e929be8ed56709c56d6ee"
+}

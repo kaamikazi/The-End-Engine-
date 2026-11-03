@@ -1,0 +1,291 @@
+{
+ "answer": "Final answer:\n```json\n[-40.0, 32.0, 97.8, 212.0, 70.7]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 50,
+   "latency_ms": 0.0,
+   "output_tokens": 14,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 583,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 296,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1488,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1533,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1107,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 371,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 7,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 153,
+   "latency_ms": 0.0,
+   "output_tokens": 14,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 8,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 646,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 9,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 296,
+   "latency_ms": 0.0,
+   "output_tokens": 53,
+   "purpose": "adversarial_tests",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 10,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1488,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "judgment",
+   "role": "judge",
+   "seed": null,
+   "seq": 11,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1533,
+   "latency_ms": 0.0,
+   "output_tokens": 104,
+   "purpose": "adversarial_judgment",
+   "role": "adversarial_judge",
+   "seed": null,
+   "seq": 12,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 591,
+   "latency_ms": 0.0,
+   "output_tokens": 96,
+   "purpose": "comparison",
+   "role": "judge",
+   "seed": null,
+   "seq": 13,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "easy_transformation",
+ "condition": "FULL_END_NATIVE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 13,
+  "calls_by_role": {
+   "adversarial_judge": 4,
+   "generator": 6,
+   "judge": 3
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 747,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 10882,
+  "model_latency_ms": 0,
+  "prompt_tokens": 10135,
+  "tool_check_calls": 0,
+  "total_tokens": 10882,
+  "truncated_text_answers": 0,
+  "wall_ms": 79.182
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "ACCEPTED_PROVISIONAL",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidate_generation": "native",
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "engine_checks": [
+   {
+    "candidate_id": "C0",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "array"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C1",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "array"
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "gate_decisions": [
+   {
+    "candidate_id": "C0",
+    "decision": "ACCEPT_PROVISIONALLY"
+   },
+   {
+    "candidate_id": "C1",
+    "decision": "ACCEPT_PROVISIONALLY"
+   }
+  ],
+  "iterations": 1,
+  "judge_groundings": [],
+  "latest_candidate_id": "C1",
+  "protocol_actions": {},
+  "protocol_events": 0,
+  "protocol_repair_attempts": 1,
+  "quality_gate": "ACCEPT_PROVISIONALLY",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "ACCEPTED_PROVISIONALLY",
+  "termination_category": null,
+  "trajectory_file": "5539d6cb-1896-491e-a70d-b914fd85df45.jsonl",
+  "trajectory_id": "5539d6cb-1896-491e-a70d-b914fd85df45",
+  "trajectory_sha256": "ab56d260440f8e38043c698fb9909c0af5352be181077b845e90e16d9a7ac09b"
+ },
+ "ended_at": "2026-10-01T08:40:54.358727+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 2,
+ "run_id": "BA-001.T1.FULL_END_NATIVE",
+ "stages": {},
+ "started_at": "2026-10-01T08:40:54.276059+00:00",
+ "task_id": "BA-001",
+ "trial": 1,
+ "trial_id": "BA-001.T1",
+ "trial_seed": 2844014790
+}

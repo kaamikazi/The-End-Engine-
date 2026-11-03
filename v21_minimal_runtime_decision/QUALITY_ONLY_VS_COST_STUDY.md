@@ -1,0 +1,21 @@
+# Separate scientific claims
+
+## Study A — answer-quality comparison
+
+Conditionally defensible with independently eligible original outputs and a predeclared protocol; **not currently authorized or live-runtime ready**. It does not intrinsically require complete measured token totals or A for every diagnostic. Existing legacy completed-source eligibility may remain valid independently of I/X observations. Do not label that combination a new v2.1 NORMAL/RESTRICTED view, which still requires same-cut A/S. Do not present unknown costs as equal compute.
+
+Before a quality-only pilot can be separately authorized: freeze identical public task bytes/rendering, six exact condition/source/prompt versions, same model/settings/seed policy and declared fixed but condition-specific ceilings; preregister allocation/order, repetitions, termination and all failure/exclusion/missing-output treatment; preserve original C0/final/lineage/trajectory and raw responses; verify each included original source with unchanged independent eligibility; block BLOCKED/foreign/stale/unbound outputs; retain failures instead of selecting only convenient survivors. Predeclare how eligible restricted/UNRESOLVED outputs enter evaluation; no fabricated C0/final or zero-imputed score. Use blinded fixed external evaluator rules and task mapping after generation closure with no scores/fixture answers leaking into prompts. Human semantic adjudication remains pending and model agreement is not verification.
+
+Known upper bounds136 global calls and baseline36 / architecture4,5,5 are not equal actual compute. Shared global token/time limits can censor later cells, so preregister balanced order and treatment without increasing frozen ceilings or silently resetting budgets. A quality-only result compares quality under the declared protocol, not efficiency, measured equal-cost allocation or verified reasoning improvement.
+
+Current live readiness is separately blocked: native baseline admit requires UNOBSERVED_NO_MODEL_QUERIED and OFFLINE_SYNTHETIC_RECORDING_ONLY; NativeBridge._http refuses HTTP; the concrete recorder is canned; architecture StageTransport admits only deterministic Script. No actual backend identity/transport/receipt/cache semantics have been validated. A later separately authorized versioned live adapter/admission interface must preserve the original F03 boundary rather than weakening it, maintain no replay and fixed algorithms/settings/ceilings, and undergo runtime/provider/contamination acceptance. This design task does not authorize it or infer compatibility from mock bytes.
+
+Thus Study A may be the smaller scientific endpoint for a separately preregistered future pilot, but it is not automatically ready merely because cost is omitted. Reusing original source eligibility is different from bypassing same-cut v2.1 certification. No inference or external evaluation is run here.
+
+## Study B — quality per computational cost
+
+Blocked now. Every included run needs complete comparable physically admitted/send-observed/received/settled identity coverage, original raw usage with validated backend semantics, uncertainty and failure coverage, candidate/output/source binding and declared comparable time/token units. Native memory-only gaps and the real writer bypass prevent this. A source-scoped row sum or partial known subset cannot be an efficiency denominator. If any required input/output/total usage is missing, contradictory or unproved, that run's full-cost endpoint is unavailable; report missingness explicitly, never impute/estimate/zero-fill/drop expensive failed cells. Monetary billing and energy are separate endpoints without evidence here.
+
+The minimum valid complete-cost path requires the minimal writer domain, native witnesses, same-cut recursive capture and unchanged source verification plus strict complete predicates. I/X remains useful elsewhere; it cannot make the affected cost comparison certified. Frozen evaluator identity and leakage isolation, actual provider validation and independent acceptance are additional gates, not consequences of a ledger patch.
+
+The 41 EXP-001 rows and615 synthetic tokens are retained **mock fixture arithmetic only**. No quality/cost performance result, measured usage, authenticated inference or live transport claim is made.

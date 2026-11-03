@@ -1,0 +1,19 @@
+{
+  "verdict": "A0_FEASIBILITY_BLOCKED",
+  "evidence_kind": "POST_STOP_ANALYSIS_OF_PRESERVED_RAW_CHILD_AND_SYNTHETIC_FILES; no extra probe execution",
+  "source_symbol": "cognitive_architecture_lab_v1/src/accounting/ledger.py:48 Ledger.register -> Ledger._write:41",
+  "guards_held_by_probe": "test-only admission gate; L1 .publication.lock; distinct outer .a0-L2.lock; read-denying existing data pins",
+  "actual_writer": "separate real process invokes unchanged Ledger.register without test enrollment",
+  "worker_result_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18\\register_bypass-1792509955457376300.request.result.json",
+  "worker_result_sha256": "6f0535908d9161d1acd793793a566d4a73622e8320b0e71918cda5346b0550fe",
+  "pending_file": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-18\\copy\\budget.json.pending",
+  "pending_sha256": "4d558735078b814d143dc00a3945be927f126cff0f80101f405f448d57441a23",
+  "ledger_before_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+  "ledger_after_sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43",
+  "registration_effect": "new pending envelope contains A0_UNENROLLED_REGISTER; no new attempt row",
+  "native_result": "os.replace denied with WinError5 against pinned ledger; new pending membership survives",
+  "raw_vector_status": "ERROR; PermissionError reading byte-locked operational control during follow-up snapshot",
+  "raw_material_blocker_flag": "false because collector raised before reaching return; this separate derived finding is not an overwritten PASS",
+  "stop_rule": "actual known writer changed relevant membership/content outside proposed test coordination; strong coverage not established",
+  "scope_limit": "Does not prove every possible operational domain impossible, a new F01 publication bypass, or hostile-host security failure. Demonstrates a gap in this tested un-enrolled setup. No A1/production enrollment performed."
+}

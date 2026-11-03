@@ -1,0 +1,26 @@
+test_06_objective_evaluation (tests.test_benchmark.EvaluatorTests.test_06_objective_evaluation) ... ok
+test_07_blinded_judge_never_sees_condition_identity (tests.test_benchmark.EvaluatorTests.test_07_blinded_judge_never_sees_condition_identity) ... ok
+test_16_hallucination_counters (tests.test_benchmark.EvaluatorTests.test_16_hallucination_counters) ... ok
+test_01_all_five_conditions_execute_independently (tests.test_benchmark.SyntheticRun.test_01_all_five_conditions_execute_independently) ... ok
+test_02_same_task_prompt_reaches_every_condition (tests.test_benchmark.SyntheticRun.test_02_same_task_prompt_reaches_every_condition) ... ok
+test_04_trial_ids_unique_and_05_order_reproducible (tests.test_benchmark.SyntheticRun.test_04_trial_ids_unique_and_05_order_reproducible) ... ok
+test_08_candidates_scored_09_peak_differs_10_regression_11_overthinking (tests.test_benchmark.SyntheticRun.test_08_candidates_scored_09_peak_differs_10_regression_11_overthinking) ... ok
+test_12_rollback_saved_and_13_rollback_hurt (tests.test_benchmark.SyntheticRun.test_12_rollback_saved_and_13_rollback_hurt) ... ok
+test_14_false_accept_recorded (tests.test_benchmark.SyntheticRun.test_14_false_accept_recorded) ... ok
+test_17_trajectories_referenced_not_mutated (tests.test_benchmark.SyntheticRun.test_17_trajectories_referenced_not_mutated) ... ok
+test_18_failure_archive_preserves_originals (tests.test_benchmark.SyntheticRun.test_18_failure_archive_preserves_originals) ... ok
+test_19_synthetic_fixtures_labelled (tests.test_benchmark.SyntheticRun.test_19_synthetic_fixtures_labelled) ... ok
+test_20_results_json_round_trips (tests.test_benchmark.SyntheticRun.test_20_results_json_round_trips) ... ok
+test_beta_conditions_configuration_and_protocol_metrics (tests.test_benchmark.SyntheticRun.test_beta_conditions_configuration_and_protocol_metrics) ... ok
+test_resume_never_overwrites (tests.test_benchmark.SyntheticRun.test_resume_never_overwrites) ... ok
+test_03_settings_recorded_and_sent (tests.test_benchmark.TransportTests.test_03_settings_recorded_and_sent) ... ok
+test_15_missing_token_data_stays_null (tests.test_benchmark.TransportTests.test_15_missing_token_data_stays_null) ... ok
+test_model_output_failure_is_protocol_not_external_for_end (tests.test_benchmark.TransportTests.test_model_output_failure_is_protocol_not_external_for_end)
+The transport signals malformed structured output with ModelOutputError (ProviderError + ModelProtocolError); ... ok
+test_structured_retry_is_logged_and_bounded (tests.test_benchmark.TransportTests.test_structured_retry_is_logged_and_bounded) ... ok
+test_truncated_text_answer_is_kept_and_marked (tests.test_benchmark.TransportTests.test_truncated_text_answer_is_kept_and_marked) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 8.717s
+
+OK

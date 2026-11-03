@@ -1,0 +1,85 @@
+{
+  "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+  "seq": 10,
+  "purpose": "adversarial_tests",
+  "requested_at": "2026-10-05T16:34:01.527228+00:00",
+  "completed_at": "2026-10-05T16:34:22.061073+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/generate",
+  "payload": {
+    "model": "qwen3:4b",
+    "stream": false,
+    "think": false,
+    "prompt": "Generate up to four concrete adversarial scenarios and observable expected properties. Do not claim execution; executable describes suitability only, not actual execution.\n\nINPUT (JSON):\n{\"audit_targets\": [{\"description\": \"Candidate's JSON array contains values that are not valid Celsius temperatures to convert to Fahrenheit\", \"id\": \"W001\"}, {\"description\": \"The candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ] but the task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit rounded to one decimal place in the same order. The candidate has correctly converted each value numerically but the order of the output does not match the input order.\", \"id\": \"W002\"}], \"candidate\": {\"alias\": \"A\", \"content\": \"```json\\n[ -40.0, 32.0, 97.9, 212.0, 74.7 ]\\n```\"}, \"claims\": [], \"task\": \"Convert these Celsius temperatures to Fahrenheit, rounded to one decimal place: [-40, 0, 36.6, 100, 21.5]. Give the final answer as a JSON array of numbers, in the same order, in a ```json code block.\"}\n\nRespond with only one JSON object that satisfies this JSON Schema:\n{\"additionalProperties\": false, \"properties\": {\"tests\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"execution_status\": {\"enum\": [\"UNEXECUTED\", \"REASONED\", \"SIMULATED\", \"EXECUTABLE\"], \"type\": \"string\"}, \"expected_property\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"scenario\": {\"maxLength\": 1500, \"minLength\": 1, \"type\": \"string\"}, \"target\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"target\", \"scenario\", \"expected_property\", \"execution_status\"], \"type\": \"object\"}, \"maxItems\": 4, \"type\": \"array\"}}, \"required\": [\"tests\"], \"type\": \"object\"}",
+    "options": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "num_predict": 4096,
+      "num_ctx": 8192,
+      "seed": 1538735499
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "tests": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scenario": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "expected_property": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "UNEXECUTED",
+                  "REASONED",
+                  "SIMULATED",
+                  "EXECUTABLE"
+                ]
+              }
+            },
+            "required": [
+              "target",
+              "scenario",
+              "expected_property",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "tests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-05T16:34:22.0395674Z",
+    "response": "{\n  \"tests\": [\n    {\n      \"target\": \"W001\",\n      \"scenario\": \"A candidate's JSON array contains values that are not valid Celsius temperatures to convert to Fahrenheit\",\n      \"expected_property\": \"The candidate's output array should contain only numerical values that are valid Celsius temperatures (e.g., integers or floats within the typical range of temperatures) before conversion. However, since the candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ], which are all valid numerical values but not the correct converted temperatures, this scenario is not directly applicable as the issue is with the conversion result rather than input validity.\",\n      \"execution_status\": \"UNEXECUTED\"\n    },\n    {\n      \"target\": \"W002\",\n      \"scenario\": \"The candidate's output is [ -40.0, 32.0, 97.9, 212.0, 74.7 ] but the task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit rounded to one decimal place in the same order\",\n      \"expected_property\": \"The expected output should be a JSON array of five numbers, each rounded to one decimal place, in the order of the input Celsius temperatures: [-40, 0, 36.6, 100, 21.5]. The correct conversion is [ -40.0, 32.0, 97.9, 212.0, 74.7 ] but the candidate's output matches the correct values numerically, indicating the issue is with the order of the output not matching the input order.\",\n      \"execution_status\": \"REASONED\"\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 20478151400,
+    "load_duration": 7645800,
+    "prompt_eval_count": 499,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 506290000,
+    "eval_count": 399,
+    "eval_duration": 19821944000
+  },
+  "error": null,
+  "latency_ms": 20525.461
+}

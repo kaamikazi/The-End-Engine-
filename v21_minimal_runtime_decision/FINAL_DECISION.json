@@ -1,0 +1,104 @@
+{
+  "verdict": "HYBRID_BOUNDARY_RECOMMENDED",
+  "mode": "READ_ONLY_SOURCE_ANALYSIS_AND_DESIGN",
+  "source_commit": "783aa1d23ba2ca8c4fd28cdaf993ea2f66b5294e",
+  "recommended_policy": "Full relevant-writer coordination and original native witnesses only for qualified terminal accounting/source cuts; reuse existing I/X diagnostics elsewhere, no general observer implementation",
+  "minimum_writer_set_not_weakened": true,
+  "first_separately_authorizable_slice": {
+    "new_file": "cognitive_architecture_lab_v1/src/accounting/coordination.py",
+    "existing_file": "cognitive_architecture_lab_v1/src/accounting/ledger.py",
+    "symbols": [
+      "Ledger.__init__",
+      "Ledger.lock",
+      "Ledger._write"
+    ],
+    "additional_files": "New isolated versioned tests only, no historical test edits",
+    "purpose": "Outer L2 before ordinary L3/control/pending creation; all mutation/read entry points converge; exact owned-resource reentry",
+    "does_not_complete_all_writer_enrollment": true,
+    "does_not_enable_A_S_or_COMPLETE": true,
+    "production_authorized": false,
+    "implemented": false,
+    "proposal": "FIRST_PRODUCTION_CHANGE_PROPOSAL.md",
+    "estimated_engineer_days": [
+      3,
+      5
+    ],
+    "estimated_independent_reviewer_days": [
+      2,
+      3
+    ],
+    "estimates_not_measured": true
+  },
+  "complete_enrollment_small_single_slice": false,
+  "why_not": "Closure pending/replace, journal append, durable events/bindings, constructor/recovery namespace admission and actual L1-protected sources are separate from Ledger._write; native witness/capture/schema/source-proof runtime remains required.",
+  "static_analysis": {
+    "python_files_read": 419,
+    "candidate_edges": 1404,
+    "parse_failures": 0,
+    "production_internal_ledger_write_calls": 4,
+    "additional_direct_write_candidate": "One canary test, under ledger.lock",
+    "dynamic_or_host_wide_completeness_claim": false,
+    "runtime_imports_or_tests": 0
+  },
+  "native_evidence": {
+    "existing_EXP001_mock_rows": 41,
+    "existing_fixture_token_sum": 615,
+    "independent_native_witness_files": 0,
+    "new_mechanism": "Proposed only, NATIVE_WITNESS_DESIGN.md",
+    "accepted_contract_changed": false,
+    "native_input_profile_accepted_at_runtime": false,
+    "new_profile_acceptance_required": true,
+    "cannot_pretend_native_requests_are_architecture_stages": true,
+    "real_provider_authentication_claim": false
+  },
+  "N12": {
+    "historical_verdict": "FAIL",
+    "control_exit": 1,
+    "writer_child_exit": 0,
+    "actual_errno": 13,
+    "actual_winerror": null,
+    "specifically_WinError5_proved": false,
+    "mapped_access_denial_consistent": true,
+    "new_test_proposed": "N12-v2, separate native sharing error and original Python operation with phase/identity/bytes/prepost/cleanup proof",
+    "new_test_executed": false,
+    "old_result_rescored": false
+  },
+  "Study_A": {
+    "status": "CONDITIONALLY_FEASIBLE_SEPARATE_GATES_PENDING",
+    "ready_or_authorized_now": false,
+    "needs_complete_measured_cost": false,
+    "needs_tasks_settings_original_outputs_and_independent_eligibility_evaluation_exclusions": true,
+    "live_adapter_admission_and_provider_validation_missing": true,
+    "I_X_is_not_new_v21_eligibility": true
+  },
+  "Study_B": {
+    "status": "BLOCKED_PENDING_WRITER_NATIVE_WITNESS_AND_CAPTURE_ACCEPTANCE",
+    "complete_totals_now": null,
+    "fixture_arithmetic_is_not_actual_usage": true,
+    "missing_usage_rule": "NULL and affected full-cost comparison unavailable; no estimates/zero fill/dropped failed cells"
+  },
+  "historical_study_unchanged": {
+    "distinct_controls": 18,
+    "PASS": 17,
+    "FAIL": 1,
+    "negative_categories": 12,
+    "N01_N02_shared_operation": true,
+    "six_mock_core_positives": 6
+  },
+  "IP01_IP09_status": "Required and not declared complete by this design; scope-specific acceptance gates in INDEPENDENT_ACCEPTANCE_GATES.md",
+  "production_implementation": false,
+  "runtime_or_model_experiments": 0,
+  "provider_requests": 0,
+  "benchmarks": 0,
+  "git_commit_push_merge_release": false,
+  "fresh_implementation_acceptance": "PENDING",
+  "external_human_approval": "NOT_CLAIMED",
+  "next_action": "Review and separately authorize the exact first ledger boundary slice; no broader feasibility exercise requested",
+  "preservation_receipt": "SOURCE_PRESERVATION.json",
+  "preservation": {
+    "passed": true,
+    "unique_protected_files": 52890,
+    "git_states_unchanged": true,
+    "historical_results_unchanged": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "Administrative report generation, not a test or production operation",
+  "exit_code": 1,
+  "exception": "ValueError: invalid literal for int() with base 10: 'co'",
+  "cause": "Test-ID parsing matched package test_coordination instead of the final method name",
+  "fix": "Parse the final .test_ component",
+  "runtime_results_changed": false,
+  "production_source_changed": false
+}

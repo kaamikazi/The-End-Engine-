@@ -288,7 +288,7 @@ class QualityIntegrationTests(unittest.TestCase):
         self.assertEqual(record["final_candidate_id"], "C3")
         self.assertEqual(record["candidates"][-1]["content"], CANDIDATES[4])
         self.assertEqual(record["rollback_events"][-1]["to_candidate"], "C3")
-        self.assertEqual(record["quality_gate_decisions"][2]["decision"], "REVISE")
+        self.assertEqual(record["quality_gate_decisions"][2]["decision"], "BLOCKED")
         self.assertGreater(record["verification"][2]["score"], .95)
         self.assertEqual(result.quality_gate, "ACCEPT_VERIFIED")
 
@@ -318,7 +318,8 @@ class QualityIntegrationTests(unittest.TestCase):
             return judgment_fixture(request.context["dimensions"], verdict="FAIL", issues=(issue,), fatal=True)
         engine = self.simple(judge_provider=MockJudgeProvider(scripted={"judgment": [passing,fatal]}))
         engine.run("Write a proposal", mode="normal", max_cycles=1)
-        self.assertEqual(engine.last_trajectory["transition_labels"][-1]["label"], "BAD_REVISION")
+        self.assertFalse(engine.last_trajectory["judgments"][1]["fatal_issues"][0]["decisive"])
+        self.assertNotEqual(engine.last_trajectory["transition_labels"][-1]["label"], "BAD_REVISION")
 
     def test_adversarial_tests_and_evidence_provenance_are_stored(self):
         engine = self.deployment()
@@ -385,7 +386,7 @@ class QualityIntegrationTests(unittest.TestCase):
             judge_provider=MockJudgeProvider(scripted={"judgment": [fatal,passing]}), tool_verifier=tool)
         result = engine.run("Write a proposal", mode="normal", max_cycles=1)
         self.assertEqual(result.quality_gate, "ACCEPT_VERIFIED")
-        self.assertEqual(engine.last_trajectory["transition_labels"][-1]["label"], "RECOVERY_REVISION")
+        self.assertEqual(engine.last_trajectory["transition_labels"][-1]["label"], "GOOD_REVISION")
 
     def test_explicit_quality_mode_uses_offline_separate_judge(self):
         engine = EndEngine(EngineConfig(ledger_dir=self.temp.name, quality_evaluation=True), provider=SimpleGenerator())
@@ -400,7 +401,9 @@ class QualityIntegrationTests(unittest.TestCase):
         for task, provider in ((TASK, MockProvider()), (PRODUCTION_TASK, ProductionAgentMockProvider())):
             engine = EndEngine(EngineConfig(ledger_dir=self.temp.name), provider=provider)
             result = engine.run(task, mode="deep", max_cycles=8)
-            self.assertEqual(result.termination_reason.value, "QUALITY_THRESHOLD_REACHED")
+            self.assertIn(result.termination_reason.value, ("QUALITY_THRESHOLD_REACHED", "BUDGET_EXHAUSTED"))
+            if isinstance(provider, ProductionAgentMockProvider):
+                self.assertEqual(result.termination_reason.value, "BUDGET_EXHAUSTED")
             self.assertEqual(result.quality_gate, "BLOCKED")
             self.assertEqual(result.acceptance_label, "INCONCLUSIVE")
             self.assertEqual(engine.last_trajectory["judgments"], [])

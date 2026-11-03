@@ -1,0 +1,39 @@
+{
+  "task_id": "ABC-PUBLIC-001",
+  "title": "Synthetic explicit public contract",
+  "task_statement": "Return a JSON object with item_id, amount and status. Copy item_id and amount exactly from input; status must equal input.mode. These are public constraints. No tests or outside checks occurred.",
+  "input": {
+    "item_id": "T-1",
+    "amount": 7,
+    "mode": "draft"
+  },
+  "output_contract": {
+    "format": "One JSON object or a whole JSON fence",
+    "required_fields": [
+      "item_id",
+      "amount",
+      "status"
+    ],
+    "public_constraints": [
+      {
+        "id": "id_from_input",
+        "kind": "equals_input",
+        "path": "/item_id",
+        "source_path": "/input/item_id"
+      },
+      {
+        "id": "amount_from_input",
+        "kind": "equals_input",
+        "path": "/amount",
+        "source_path": "/input/amount"
+      },
+      {
+        "id": "status_from_input",
+        "kind": "equals_input",
+        "path": "/status",
+        "source_path": "/input/mode"
+      }
+    ]
+  },
+  "public_reference_ids": []
+}

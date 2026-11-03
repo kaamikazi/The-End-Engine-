@@ -1,0 +1,50 @@
+--- original/test_lock_domain_feasibility.py
++++ corrected/test_lock_domain_feasibility.py
+@@ -125,11 +125,42 @@
+   ok(not second_ready.exists(),'ADMISSION_RELEASED_BEFORE_E')
+  exit2=zero_worker(w.collect(second));w.wait(second_done);events.extend([exit1,exit2,{'scope':'TWO_EXPLICITLY_COOPERATING_TEST_PARTICIPANTS_ONLY_NOT_ALL_WRITER_COVERAGE','complete_domain_proven':False}]);return result(events)
+ def case18(root):
+- pub=w.clone_fixture(root/'copy');gate=w.control(root/'ADMISSION.lock');before=w.snapshot(pub.directory);before_rows=len(pub.ledger.state()['attempts'])
+- with w.ExistingLock(gate),w.ExistingLock(pub.guard),w.ExistingLock(pub.directory/'.a0-L2.lock'),w.Pins(w.data_paths(pub.directory)):
+-  r=zero_worker(w.collect(w.spawn('register_bypass',root,fixture=pub.directory)));after=w.snapshot(pub.directory)
+- additions=sorted(set(after)-set(before));changed=sorted(n for n in before if after.get(n)!=before[n]);event=r['worker_result']['events'][-1];ok(event['pending_created'] or event['ledger_before']!=event['ledger_after'],'UNCHANGED_DIRECT_WRITER_DID_NOT_REACH_UNENROLLED_MUTATION');ok(event['attempt_rows_after']==before_rows,'A0_RESERVED_ATTEMPT')
+- return result([r,{'observed':'REAL_UNENROLLED_LEDGER_REGISTER_BYPASSES_TEST_ADMISSION_L1_L2','added_members':additions,'changed_members':changed,'pins_protect_existing_data_not_new_pending_names':True,'stop_rule_triggered':True,'strong_domain_proven':False,'supported_original_attempt_facts_retained':True}],authority='U',blocker=True,blocker_reason='Actual unchanged Ledger.register produced content or new pending membership while proposed test coordination guards were held. No complete writer enrollment/exclusion proof; A/S disabled. This is not a claim of a new F01 certification bypass or malicious-host resistance requirement.')
++ pub=w.clone_fixture(root/'copy');gate=w.control(root/'ADMISSION.lock')
++ known={gate:'TEST_ADMISSION_GATE',pub.guard:'RUN_PUBLICATION_L1',pub.directory/'.a0-L2.lock':'TEST_OUTER_L2',pub.ledger.path.with_suffix(pub.ledger.path.suffix+'.lock'):'EXISTING_LEDGER_L3',pub.ledger.path.with_suffix('.boundary.lock'):'EXISTING_GATEWAY_D',pub.lease_path:'EXISTING_OWNER_LEASE_CONTROL',pub.ledger.path.with_name(pub.ledger.path.name+'.r2_bindings')/'bindings.lock':'EXISTING_BINDINGS_CONTROL'}
++ before=w.collect_a018_namespace(pub.directory,known);w.write_json(root/'PRE_NAMESPACE_INVENTORY.json',before)
++ ok(before['collection_complete_for_declared_A0_policy'],'PRE_COLLECTION_REQUIRED_EVIDENCE_UNREADABLE')
++ before_rows=len(pub.ledger.state()['attempts']);owner_before=pub.owner_path.read_bytes()
++ with w.ExistingLock(gate) as admission,w.ExistingLock(pub.guard) as run_guard,w.ExistingLock(pub.directory/'.a0-L2.lock') as domain,w.Pins(w.data_paths(pub.directory)) as pins:
++  r=w.collect(w.spawn('register_bypass',root,fixture=pub.directory));w.write_json(root/'CHILD_COLLECTION_RECEIPT.json',r);zero_worker(r)
++  after=w.collect_a018_namespace(pub.directory,known,{gate:admission,pub.guard:run_guard,pub.directory/'.a0-L2.lock':domain});w.write_json(root/'POST_NAMESPACE_INVENTORY.json',after)
++  ok(after['collection_complete_for_declared_A0_policy'],'POST_COLLECTION_REQUIRED_EVIDENCE_UNREADABLE')
++  pre={x['relative_path']:x for x in before['entries']};post={x['relative_path']:x for x in after['entries']}
++  additions=sorted(set(post)-set(pre));changed=sorted(n for n in pre if pre[n].get('sha256') is not None and post.get(n,{}).get('sha256') is not None and pre[n]['sha256']!=post[n]['sha256'])
++  event=r['worker_result']['events'][-1]
++  ok(event['pending_created'] or event['ledger_before']!=event['ledger_after'],'UNCHANGED_DIRECT_WRITER_DID_NOT_REACH_UNENROLLED_MUTATION');ok(event['attempt_rows_after']==before_rows,'A0_RESERVED_ATTEMPT')
++  pending=post.get('budget.json.pending');ok(pending is not None and pending['category']=='C_PENDING_TEMPORARY_EVIDENCE' and pending['read_status']=='BYTES_CAPTURED','PENDING_EVIDENCE_NOT_CAPTURED')
++  pending_raw=w.base64.b64decode(pending['raw_base64'],validate=True);pending_state=w.json.loads(pending_raw)['state'];ledger_raw=w.base64.b64decode(post['budget.json']['raw_base64'],validate=True);ledger_state=w.json.loads(ledger_raw)['state']
++  ok('A0_UNENROLLED_REGISTER' in pending_state['runs'] and 'A0_UNENROLLED_REGISTER' not in ledger_state['runs'],'FOREIGN_PENDING_REGISTRATION_NOT_DETECTED')
++  ok(pre['budget.json']['sha256']==post['budget.json']['sha256']==event['ledger_before']==event['ledger_after'],'PINNED_LEDGER_BYTES_CHANGED')
++  ok(pending['sha256']==event['pending_sha256'] and 'budget.json.pending' in additions,'NEW_PENDING_MEMBER_IGNORED')
++  ok(ledger_state['attempts']==pending_state['attempts'] and len(ledger_state['attempts'])==before_rows,'NEW_OR_CHANGED_ATTEMPT_ROW')
++  ok(all(x['category']=='A_OPERATIONAL_CONTROL' and x['read_status']=='NOT_READ_ACTIVE_LOCK_CONTROL' and x['sha256'] is None for x in after['entries'] if x['active']),'ACTIVE_CONTROLS_MISCLASSIFIED')
++  ok({x['path'] for x in after['entries'] if x['active']}=={str(pub.guard.resolve()),str((pub.directory/'.a0-L2.lock').resolve())} and {x['path'] for x in after['external_active_controls']}=={str(gate.resolve())},'ACTIVE_CONTROL_INVENTORY_INCOMPLETE')
++  ok(r['worker_result']['events'][0]['outcome']=='RAISED' and r['worker_result']['events'][0]['winerror']==5,'EXPECTED_WRITER_OPERATION_STATUS_CHANGED')
++  w.write_json(root/'PENDING_MUTATION_RECEIPT.json',{'child_exit':r['exit_code'],'writer_operation':r['worker_result']['events'][0],'added_namespace_members':additions,'changed_readable_members':changed,'pending_entry':pending,'foreign_registration_detected':True,'main_ledger_sha256':post['budget.json']['sha256'],'attempt_arrays_identical':True,'attempt_rows':before_rows,'strong_profile_supported':False})
++ # Cleanup is part of this one authorized vector. No further mutation probe is
++ # launched after the known negative; open access checks do not modify bytes.
++ cleanup={'owned_guard_fds_closed':all(x.fd is None and not x.local_owned for x in [admission,run_guard,domain]),'pin_handles_closed':not pins.handles,'guard_reacquisitions':[],'write_delete_access_checks':[]}
++ for path in [gate,pub.guard,pub.directory/'.a0-L2.lock']:
++  with w.ExistingLock(path):cleanup['guard_reacquisitions'].append(str(path))
++ for path in pins.paths:
++  handle=w.K.CreateFileW(str(path.resolve()),0xC0010000,7,None,3,0x80,None)
++  if handle==w.ctypes.c_void_p(-1).value:raise w.ctypes.WinError(w.ctypes.get_last_error())
++  ok(bool(w.K.CloseHandle(handle)),'RESOURCE_ACCESS_CHECK_HANDLE_CLOSE_FAILED');cleanup['write_delete_access_checks'].append(str(path))
++ ok(cleanup['owned_guard_fds_closed'] and cleanup['pin_handles_closed'],'RESOURCE_LEAK_AFTER_COLLECTION')
++ ok(pub.owner_path.read_bytes()==owner_before and pub.fd is None and pub.fence is None and pub.token is None,'OBSERVER_OWNERSHIP_CHANGED')
++ cleanup['existing_L3_read_after_release_attempt_rows']=len(pub.ledger.state()['attempts']);w.write_json(root/'RESOURCE_RELEASE_RECEIPT.json',cleanup)
++ return result([r,{'observed':'REAL_UNENROLLED_LEDGER_REGISTER_BYPASSES_TEST_ADMISSION_L1_L2','added_members':additions,'changed_members':changed,'pins_protect_existing_data_not_new_pending_names':True,'stop_rule_triggered':True,'strong_domain_proven':False,'supported_original_attempt_facts_retained':True,'collector_evidence_complete':True,'resource_release':cleanup}],authority='U',blocker=True,blocker_reason='Actual unchanged Ledger.register produced content or new pending membership while proposed test coordination guards were held. No complete writer enrollment/exclusion proof; A/S disabled. This is not a claim of a new F01 certification bypass or malicious-host resistance requirement.')
+ def case19(root):
+  pub=w.clone_fixture(root/'copy');blueprint=w.read(pub.final);w.write_json(root/'blueprint.json',blueprint);saved=root/'preserved_prior_copy';saved.mkdir();pub.final.rename(saved/'RESULT.json')
+  for p in (pub.meta/'prepared').glob('*.json'):p.rename(saved/p.name)

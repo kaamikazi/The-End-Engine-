@@ -1,0 +1,2242 @@
+{
+  "rows": [
+    {
+      "vector_id": "A0-03",
+      "required_plan_observation": "Ordinary L3 can be acquired/released by unchanged state/summary while observer holds L1/newL2 and NOT L3",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "observed": "UNCHANGED_L3_READS_COMPLETED_WITH_L1_L2_NO_L3_HELD",
+          "global_attempt_rows": 1,
+          "own_attempt_rows": 1
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509941.4200275,
+      "elapsed_seconds": 0.23399999999946886
+    },
+    {
+      "vector_id": "A0-06",
+      "required_plan_observation": "Session/Publication constructor under native L1 is demonstrated unsafe or rejected by planned preflight; no observer construction path",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "observed": "TEST_PREFLIGHT_REJECTED_MUTATING_CONSTRUCTORS",
+          "constructors_executed": 0,
+          "source_side_effects": [
+            "Session mkdir/Publication init/ledger initialization",
+            "gateway registration"
+          ],
+          "no_observer_constructor_shortcut": true
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "PermissionError",
+          "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "PermissionError",
+          "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "PermissionError",
+          "message": "A0_MUTATING_CONSTRUCTOR_REFUSED_BEFORE_CALL",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        }
+      ],
+      "authority": "X",
+      "material_blocker": false,
+      "started_unix": 1792509944.2433898,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "vector_id": "A0-10",
+      "required_plan_observation": "Constructor-free grounded context invokes unchanged completed core on a valid synthetic source with zero source/owner/ledger changes",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "core": {
+            "passed": true,
+            "payload_sha256": "cd02219b01a4460e785ef8f829a7762c67ffe09656aa0e31fbd217f52c3ceca3",
+            "provenance": "VERIFIED"
+          },
+          "source_bytes_unchanged": true,
+          "opens": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\owner.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.closed.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            }
+          ],
+          "pinned_buffers": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\0.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140289",
+                "links": 1,
+                "bytes": 138
+              },
+              "sha256": "39a4d29ab7e0e160b7b62f86eb5d35a6c0356636fbdc1e47fc8e2834c7c66cb2"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\0.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014028a",
+                "links": 1,
+                "bytes": 55
+              },
+              "sha256": "41cd7154e1b7b8927402775b4ed0e6380d2eaaadc15570d785baf4db2ef3c1e8"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\1.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014028b",
+                "links": 1,
+                "bytes": 144
+              },
+              "sha256": "3246600009b05d21377cd586182e97cd2eebf416038c9ceeaabbd2b1cdb7a60c"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\1.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014028c",
+                "links": 1,
+                "bytes": 56
+              },
+              "sha256": "357b4f6c36459629668c1a713c4f614bb11637ecc6c0d25eda3932085672ac7a"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.closed.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014028e",
+                "links": 1,
+                "bytes": 535
+              },
+              "sha256": "2a7093dfcfe9076c9b2edfc48c47902b8d2793342530d5c9eb250081f9c71965"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014028f",
+                "links": 1,
+                "bytes": 1287
+              },
+              "sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\GO",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140294",
+                "links": 1,
+                "bytes": 2
+              },
+              "sha256": "4cd0e21a9a0795a14ec9aa5f0e7d1abff0492565770e43eafdf1e3e8afed1f33"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\RESULT.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a5",
+                "links": 1,
+                "bytes": 21856
+              },
+              "sha256": "e0597e72fb42caefd4444c954c569905224440606fc9ab19077dece2f7a541d0"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\REVIEWER_OUTCOME.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a6",
+                "links": 1,
+                "bytes": 1041
+              },
+              "sha256": "0bec9950a89c6d65f8925168a16e1afb55f63a88a0c58b20c8ff535955c54f86"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140293",
+                "links": 1,
+                "bytes": 566
+              },
+              "sha256": "68e25f59a602ba382d614ad674731cd5927f0ffb14b58d67fc7c1ba08518d64f"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\IDENTITY.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a0",
+                "links": 1,
+                "bytes": 566
+              },
+              "sha256": "68e25f59a602ba382d614ad674731cd5927f0ffb14b58d67fc7c1ba08518d64f"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\owner.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a1",
+                "links": 1,
+                "bytes": 151
+              },
+              "sha256": "60ea585a69db292b0a8b2cba02c50e9dbc7c6e11f0f4fbacdec5c1aced5cd7a3"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a8",
+                "links": 1,
+                "bytes": 3158
+              },
+              "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140297",
+                "links": 1,
+                "bytes": 1960
+              },
+              "sha256": "08617d364edaef599f14ec7cb540cf84a0c681ce925ab27e12121af58d1d76e7"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.reservation.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140298",
+                "links": 1,
+                "bytes": 681
+              },
+              "sha256": "c212933cc108a29022aed735385784e92ebf7dcd921353cdfdb3747703da0335"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.response.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140299",
+                "links": 1,
+                "bytes": 255
+              },
+              "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\attempts\\000001.settlement.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014029a",
+                "links": 1,
+                "bytes": 1289
+              },
+              "sha256": "2221368252653890011e8409870b9477c0db53a3f7456c7be9ad094884b30361"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014029c",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "8a4aaca777b83e646856ef70dc34cb680ed53fdadd78d8acff64670e5432b5ac"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014029d",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "87a85448ec12a45404e71227a1b003b3f7d309cc425d1f8c6454dab6569c5128"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014029e",
+                "links": 1,
+                "bytes": 303
+              },
+              "sha256": "50850b104c1eda5e800d39eba48a0fecb8ddc7125d48e0f56c807ae7b3749ebd"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014029f",
+                "links": 1,
+                "bytes": 191
+              },
+              "sha256": "7221226c55c7f1da3c575490e606b7e91220db01324c7b1ce79959807eb53be5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-10\\copy\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402a4",
+                "links": 1,
+                "bytes": 311
+              },
+              "sha256": "f9094c4121606234383ef37e7e4c249d338dec5f60a41027ee0d7bd737895d28"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\ABC-PUBLIC-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f73f",
+                "links": 1,
+                "bytes": 1050
+              },
+              "sha256": "7434a69e67c45617751b41ce96513efdd8ca21291408f84f5bbeeb38a4025b17"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f740",
+                "links": 1,
+                "bytes": 3108
+              },
+              "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-002.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f741",
+                "links": 1,
+                "bytes": 5141
+              },
+              "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\APPROVED_PUBLIC_INPUTS.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78b",
+                "links": 1,
+                "bytes": 268
+              },
+              "sha256": "6548c5b9f60e42b4f6ff04cf3a024aed82d9b6697e851ba81e65d254c8d2feaf"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\PROMPT_HASHES.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78c",
+                "links": 1,
+                "bytes": 1439
+              },
+              "sha256": "2a749f1067278ce31b3141ee25387ea92bd2fc852bfcbc9cb9a179a6a11b303b"
+            }
+          ],
+          "no_owner_fd_fence_or_token": true
+        },
+        {
+          "limitation": "Byte-consistent rebased synthetic copy only; no new execution-origin or full writer coverage established"
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509947.1681898,
+      "elapsed_seconds": 0.34400000000005093
+    },
+    {
+      "vector_id": "A0-11",
+      "required_plan_observation": "Same context on BLOCKED evidence produces genuine independent F02 rejection; fd=None release touches no owner's lease",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "core": {
+            "passed": false,
+            "exception": "RecoveryIntegrityHold",
+            "message": "F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED",
+            "cause": null,
+            "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_workers.py\", line 173, in protected_core\n    value=pub._verify_completed();status={'passed':True,'payload_sha256':value['artifact_payload_sha256'],'provenance':value['journal_integrity']['overall']}\n          ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication.py\", line 140, in _verify_completed\n    return self.verify_semantics(data)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication.py\", line 143, in verify_semantics\n    require_certification_eligible(self,data)\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\certification.py\", line 43, in require_certification_eligible\n    require_recoverable(current, pub)\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\provenance.py\", line 208, in require_recoverable\n    raise RecoveryIntegrityHold(report, pub)\nsrc.shared.provenance.RecoveryIntegrityHold: F02_PROVENANCE_GRAPH_INCONSISTENT_EVIDENCE_PRESERVED\n"
+          },
+          "source_bytes_unchanged": true,
+          "opens": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\owner.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            }
+          ],
+          "pinned_buffers": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\0.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402af",
+                "links": 1,
+                "bytes": 138
+              },
+              "sha256": "39a4d29ab7e0e160b7b62f86eb5d35a6c0356636fbdc1e47fc8e2834c7c66cb2"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\0.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b0",
+                "links": 1,
+                "bytes": 55
+              },
+              "sha256": "41cd7154e1b7b8927402775b4ed0e6380d2eaaadc15570d785baf4db2ef3c1e8"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\1.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b1",
+                "links": 1,
+                "bytes": 144
+              },
+              "sha256": "3246600009b05d21377cd586182e97cd2eebf416038c9ceeaabbd2b1cdb7a60c"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\1.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b2",
+                "links": 1,
+                "bytes": 56
+              },
+              "sha256": "357b4f6c36459629668c1a713c4f614bb11637ecc6c0d25eda3932085672ac7a"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.closed.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b4",
+                "links": 1,
+                "bytes": 535
+              },
+              "sha256": "2a7093dfcfe9076c9b2edfc48c47902b8d2793342530d5c9eb250081f9c71965"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b5",
+                "links": 1,
+                "bytes": 1287
+              },
+              "sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\GO",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402ba",
+                "links": 1,
+                "bytes": 2
+              },
+              "sha256": "4cd0e21a9a0795a14ec9aa5f0e7d1abff0492565770e43eafdf1e3e8afed1f33"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\RESULT.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402cb",
+                "links": 1,
+                "bytes": 21856
+              },
+              "sha256": "918daa6c0cf331fa9ce9beaec3e12215fc125e7246ae31aee2a8044d0cc44026"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\REVIEWER_OUTCOME.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402cc",
+                "links": 1,
+                "bytes": 1041
+              },
+              "sha256": "0bec9950a89c6d65f8925168a16e1afb55f63a88a0c58b20c8ff535955c54f86"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402b9",
+                "links": 1,
+                "bytes": 572
+              },
+              "sha256": "f2b5d1fc33150f6b697bb5b73350028e294fd4997a22f9f9da23d2157e4f10f5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\IDENTITY.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c6",
+                "links": 1,
+                "bytes": 572
+              },
+              "sha256": "f2b5d1fc33150f6b697bb5b73350028e294fd4997a22f9f9da23d2157e4f10f5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\owner.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c7",
+                "links": 1,
+                "bytes": 151
+              },
+              "sha256": "1ab7bf97a8fac37d9c51e23754d43d67ac676f784869b930ee100ec6d03863d5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402ce",
+                "links": 1,
+                "bytes": 3173
+              },
+              "sha256": "bfa6d455c5574455765716be68365627ecdb2c090b2bb5cb16052bbae600629f"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402bd",
+                "links": 1,
+                "bytes": 1960
+              },
+              "sha256": "58d090fae55e2a831b2e931753ce2a748fec3f72c1ab0e8f929368bf19a094f4"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.reservation.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402be",
+                "links": 1,
+                "bytes": 681
+              },
+              "sha256": "08d80c85e2e9c087d71e4f9da7e4f4bdd561698c597a92bd147d652b71379c05"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.response.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402bf",
+                "links": 1,
+                "bytes": 255
+              },
+              "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\attempts\\000001.settlement.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c0",
+                "links": 1,
+                "bytes": 1289
+              },
+              "sha256": "218f86c8a712c4556d56f53ae9fd3ad23ea449a526fe6e3689df63b48453f331"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c2",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "8a4aaca777b83e646856ef70dc34cb680ed53fdadd78d8acff64670e5432b5ac"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c3",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "87a85448ec12a45404e71227a1b003b3f7d309cc425d1f8c6454dab6569c5128"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c4",
+                "links": 1,
+                "bytes": 303
+              },
+              "sha256": "50850b104c1eda5e800d39eba48a0fecb8ddc7125d48e0f56c807ae7b3749ebd"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402c5",
+                "links": 1,
+                "bytes": 191
+              },
+              "sha256": "7221226c55c7f1da3c575490e606b7e91220db01324c7b1ce79959807eb53be5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\corrupt\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "00010000001402ca",
+                "links": 1,
+                "bytes": 311
+              },
+              "sha256": "248bd8365d67cf7b4dbf70890519b0d2c135c6fefc1f48b59f42c91b117afef0"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\ABC-PUBLIC-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f73f",
+                "links": 1,
+                "bytes": 1050
+              },
+              "sha256": "7434a69e67c45617751b41ce96513efdd8ca21291408f84f5bbeeb38a4025b17"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f740",
+                "links": 1,
+                "bytes": 3108
+              },
+              "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-002.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f741",
+                "links": 1,
+                "bytes": 5141
+              },
+              "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\APPROVED_PUBLIC_INPUTS.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78b",
+                "links": 1,
+                "bytes": 268
+              },
+              "sha256": "6548c5b9f60e42b4f6ff04cf3a024aed82d9b6697e851ba81e65d254c8d2feaf"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\PROMPT_HASHES.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78c",
+                "links": 1,
+                "bytes": 1439
+              },
+              "sha256": "2a749f1067278ce31b3141ee25387ea92bd2fc852bfcbc9cb9a179a6a11b303b"
+            }
+          ],
+          "no_owner_fd_fence_or_token": true
+        },
+        {
+          "missing_reservation_source_core": {
+            "core": {
+              "passed": false,
+              "exception": "ArtifactIntegrity",
+              "message": "PROPOSED_PROVENANCE_REPORT_NOT_CURRENT",
+              "cause": null,
+              "traceback": "Traceback (most recent call last):\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\feasibility_v21\\probe_workers.py\", line 173, in protected_core\n    value=pub._verify_completed();status={'passed':True,'payload_sha256':value['artifact_payload_sha256'],'provenance':value['journal_integrity']['overall']}\n          ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication.py\", line 140, in _verify_completed\n    return self.verify_semantics(data)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\publication.py\", line 143, in verify_semantics\n    require_certification_eligible(self,data)\n  File \"E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\src\\shared\\certification.py\", line 45, in require_certification_eligible\n    raise ArtifactIntegrity('PROPOSED_PROVENANCE_REPORT_NOT_CURRENT')\nsrc.shared.publication.ArtifactIntegrity: PROPOSED_PROVENANCE_REPORT_NOT_CURRENT\n"
+            },
+            "source_bytes_unchanged": true,
+            "opens": [
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\RESULT.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\RESULT.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\owner.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json.lock",
+                "mode": "a+",
+                "flags": 33162,
+                "kind": "EXISTING_CONTROL"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.response.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json.lock",
+                "mode": "a+",
+                "flags": 33162,
+                "kind": "EXISTING_CONTROL"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.settlement.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.response.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json.lock",
+                "mode": "a+",
+                "flags": 33162,
+                "kind": "EXISTING_CONTROL"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.settlement.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.response.json",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "mode": "r",
+                "flags": 32896,
+                "kind": "PINNED_DATA"
+              }
+            ],
+            "pinned_buffers": [
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\0.out",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402d4",
+                  "links": 1,
+                  "bytes": 138
+                },
+                "sha256": "39a4d29ab7e0e160b7b62f86eb5d35a6c0356636fbdc1e47fc8e2834c7c66cb2"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\0.ready",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402d5",
+                  "links": 1,
+                  "bytes": 55
+                },
+                "sha256": "41cd7154e1b7b8927402775b4ed0e6380d2eaaadc15570d785baf4db2ef3c1e8"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\1.out",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402d6",
+                  "links": 1,
+                  "bytes": 144
+                },
+                "sha256": "3246600009b05d21377cd586182e97cd2eebf416038c9ceeaabbd2b1cdb7a60c"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\1.ready",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402d7",
+                  "links": 1,
+                  "bytes": 56
+                },
+                "sha256": "357b4f6c36459629668c1a713c4f614bb11637ecc6c0d25eda3932085672ac7a"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.closed.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402d9",
+                  "links": 1,
+                  "bytes": 535
+                },
+                "sha256": "2a7093dfcfe9076c9b2edfc48c47902b8d2793342530d5c9eb250081f9c71965"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402da",
+                  "links": 1,
+                  "bytes": 1287
+                },
+                "sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\GO",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402df",
+                  "links": 1,
+                  "bytes": 2
+                },
+                "sha256": "4cd0e21a9a0795a14ec9aa5f0e7d1abff0492565770e43eafdf1e3e8afed1f33"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\RESULT.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402f0",
+                  "links": 1,
+                  "bytes": 21856
+                },
+                "sha256": "c9f8262b28f1d1ec216d7748b534ece32cf4ae4afbc7899fd44881dab7f003fc"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\REVIEWER_OUTCOME.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402f1",
+                  "links": 1,
+                  "bytes": 1041
+                },
+                "sha256": "0bec9950a89c6d65f8925168a16e1afb55f63a88a0c58b20c8ff535955c54f86"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402de",
+                  "links": 1,
+                  "bytes": 596
+                },
+                "sha256": "ae9fac82b9733c03bacd363e749db792d7b5aa9605d8800cd662f2fb9c6f8f67"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\IDENTITY.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402eb",
+                  "links": 1,
+                  "bytes": 596
+                },
+                "sha256": "ae9fac82b9733c03bacd363e749db792d7b5aa9605d8800cd662f2fb9c6f8f67"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\owner.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402ec",
+                  "links": 1,
+                  "bytes": 151
+                },
+                "sha256": "439b765f3147101e7c1b49590e276d70c67368bb564770714b5098883e8c4831"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\wire\\000001-4dcaf471206a91f7.jsonl",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402f3",
+                  "links": 1,
+                  "bytes": 3158
+                },
+                "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e2",
+                  "links": 1,
+                  "bytes": 1960
+                },
+                "sha256": "42c6c67866d71d26b0a7a5fa5d4fcec8faec7388c4c0398294c13dc38a5bde06"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.response.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e4",
+                  "links": 1,
+                  "bytes": 255
+                },
+                "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\attempts\\000001.settlement.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e5",
+                  "links": 1,
+                  "bytes": 1289
+                },
+                "sha256": "da0409cb0d01b0e916c0bf382f48904faa148e5706ffda417348af05cb286d93"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e7",
+                  "links": 1,
+                  "bytes": 180
+                },
+                "sha256": "8a4aaca777b83e646856ef70dc34cb680ed53fdadd78d8acff64670e5432b5ac"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e8",
+                  "links": 1,
+                  "bytes": 180
+                },
+                "sha256": "87a85448ec12a45404e71227a1b003b3f7d309cc425d1f8c6454dab6569c5128"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402e9",
+                  "links": 1,
+                  "bytes": 303
+                },
+                "sha256": "50850b104c1eda5e800d39eba48a0fecb8ddc7125d48e0f56c807ae7b3749ebd"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402ea",
+                  "links": 1,
+                  "bytes": 191
+                },
+                "sha256": "7221226c55c7f1da3c575490e606b7e91220db01324c7b1ce79959807eb53be5"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-11\\missing_reservation\\publication\\prepared\\098daa830127c966a6ba971589880458.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "00010000001402ef",
+                  "links": 1,
+                  "bytes": 311
+                },
+                "sha256": "62baf45c07e0c467f925a013e64e0883e9b57e85bb62ddc42fbe3e374711d910"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\ABC-PUBLIC-001.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "000100000013f73f",
+                  "links": 1,
+                  "bytes": 1050
+                },
+                "sha256": "7434a69e67c45617751b41ce96513efdd8ca21291408f84f5bbeeb38a4025b17"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-001.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "000100000013f740",
+                  "links": 1,
+                  "bytes": 3108
+                },
+                "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-002.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "000100000013f741",
+                  "links": 1,
+                  "bytes": 5141
+                },
+                "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\APPROVED_PUBLIC_INPUTS.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "000100000013f78b",
+                  "links": 1,
+                  "bytes": 268
+                },
+                "sha256": "6548c5b9f60e42b4f6ff04cf3a024aed82d9b6697e851ba81e65d254c8d2feaf"
+              },
+              {
+                "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\PROMPT_HASHES.json",
+                "identity": {
+                  "volume_serial": "bc08b541",
+                  "file_index": "000100000013f78c",
+                  "links": 1,
+                  "bytes": 1439
+                },
+                "sha256": "2a749f1067278ce31b3141ee25387ea92bd2fc852bfcbc9cb9a179a6a11b303b"
+              }
+            ],
+            "no_owner_fd_fence_or_token": true
+          },
+          "standalone_graph_verified_is_not_completed_source_verification": true,
+          "reservation_preserved_sha256": "df3ca17c4e5066cdbd494755ae3419dd90609ae288f83221de81e0cbdc9d0c5f",
+          "new_A_forbidden": true,
+          "prospective_S_only_if_full_domain_cut_independently_proved": true,
+          "actual_authority_maximum": "I"
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509947.5932908,
+      "elapsed_seconds": 0.6559999999999491
+    },
+    {
+      "vector_id": "A0-12",
+      "required_plan_observation": "Missing/empty lock input is rejected without creating/initializing a byte or directory",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "FileNotFoundError",
+          "message": "A0_EXISTING_NONEMPTY_GUARD_REQUIRED:E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-12\\missing.lock",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "FileNotFoundError",
+          "message": "A0_EXISTING_NONEMPTY_GUARD_REQUIRED:E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-12\\empty.lock",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        }
+      ],
+      "authority": "X",
+      "material_blocker": false,
+      "started_unix": 1792509948.395301,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "vector_id": "A0-15",
+      "required_plan_observation": "Operational L3 lockfile is not pinned incompatibly with its legitimate a+b open; data and controls classified distinctly",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "ordinary_L3_read_with_data_pin": "PASS",
+          "L3_control_lock_excluded_from_data_pins": true
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "PermissionError",
+          "message": "[Errno 13] Permission denied: 'E:\\\\The End Engine\\\\v21_A0_feasibility\\\\runs\\\\attempt_002\\\\A0-15\\\\copy\\\\budget.json.lock'",
+          "elapsed_seconds": 0.0,
+          "winerror": null
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509950.1289294,
+      "elapsed_seconds": 0.23400000000037835
+    },
+    {
+      "vector_id": "A0-16",
+      "required_plan_observation": "Failure after each acquired resource and an actual killed holder release only its own resources; later reader reacquires",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "boundary": 0,
+          "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+        },
+        {
+          "boundary": 1,
+          "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+        },
+        {
+          "boundary": 2,
+          "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+        },
+        {
+          "boundary": 3,
+          "observed": "EXPECTED_INTERRUPTION_CLEANED_UP"
+        },
+        {
+          "observed": "EXPECTED_REFUSAL",
+          "exception": "FileNotFoundError",
+          "message": "[WinError 2] The system cannot find the file specified.",
+          "elapsed_seconds": 0.0,
+          "winerror": 2
+        },
+        {
+          "pid": 37628,
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "",
+          "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-16\\kill_holder-1792509950484373600.request.json",
+          "killed_by_parent": true
+        },
+        {
+          "actual_killed_holder_resources_reacquired": true
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509950.4615052,
+      "elapsed_seconds": 0.4849999999996726
+    },
+    {
+      "vector_id": "A0-19",
+      "required_plan_observation": "Concurrent valid finalizer completes once, then observation reads unchanged final/handle/provenance without claiming owner",
+      "status": "PASS",
+      "expectation_matched": true,
+      "observed_events": [
+        {
+          "pid": 12692,
+          "exit_code": 0,
+          "stdout": "{\"events\": [{\"outcome\": \"ACTUAL_FINAL_PUBLISHED\", \"payload_sha256\": \"cea40f8cd5b1e65e672b01153768c679702b82ba8055a3d677949e28d43c394e\", \"file_sha256\": \"a21caa0c39448368cf001911eabe30283bda562434b4b86a277aadf46158c632\", \"script_seen\": [], \"attempt_rows\": 1}], \"counters\": {\"forbidden_network_events\": 0, \"forbidden_dispatch_or_reservation_calls\": 0}, \"worker_operation_completed\": true}\n",
+          "stderr": "",
+          "request": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\finalize-1792509952389398100.request.json",
+          "killed_by_parent": false,
+          "worker_result": {
+            "events": [
+              {
+                "outcome": "ACTUAL_FINAL_PUBLISHED",
+                "payload_sha256": "cea40f8cd5b1e65e672b01153768c679702b82ba8055a3d677949e28d43c394e",
+                "file_sha256": "a21caa0c39448368cf001911eabe30283bda562434b4b86a277aadf46158c632",
+                "script_seen": [],
+                "attempt_rows": 1
+              }
+            ],
+            "counters": {
+              "forbidden_network_events": 0,
+              "forbidden_dispatch_or_reservation_calls": 0
+            },
+            "worker_operation_completed": true
+          }
+        },
+        {
+          "core": {
+            "passed": true,
+            "payload_sha256": "cea40f8cd5b1e65e672b01153768c679702b82ba8055a3d677949e28d43c394e",
+            "provenance": "VERIFIED"
+          },
+          "source_bytes_unchanged": true,
+          "opens": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\prepared\\d594718b76184bff8c4ded28351981d4.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\RESULT.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\owner.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.closed.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.lock",
+              "mode": "a+",
+              "flags": 33162,
+              "kind": "EXISTING_CONTROL"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.reservation.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.settlement.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "mode": "r",
+              "flags": 32896,
+              "kind": "PINNED_DATA"
+            }
+          ],
+          "pinned_buffers": [
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\0.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014034e",
+                "links": 1,
+                "bytes": 138
+              },
+              "sha256": "39a4d29ab7e0e160b7b62f86eb5d35a6c0356636fbdc1e47fc8e2834c7c66cb2"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\0.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014034f",
+                "links": 1,
+                "bytes": 55
+              },
+              "sha256": "41cd7154e1b7b8927402775b4ed0e6380d2eaaadc15570d785baf4db2ef3c1e8"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\1.out",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140350",
+                "links": 1,
+                "bytes": 144
+              },
+              "sha256": "3246600009b05d21377cd586182e97cd2eebf416038c9ceeaabbd2b1cdb7a60c"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\1.ready",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140351",
+                "links": 1,
+                "bytes": 56
+              },
+              "sha256": "357b4f6c36459629668c1a713c4f614bb11637ecc6c0d25eda3932085672ac7a"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.closed.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140353",
+                "links": 1,
+                "bytes": 535
+              },
+              "sha256": "2a7093dfcfe9076c9b2edfc48c47902b8d2793342530d5c9eb250081f9c71965"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140373",
+                "links": 1,
+                "bytes": 1287
+              },
+              "sha256": "de3f151a8b66d79dfccbe92a1f1f8713a70ba929a066d18c01660cd15c740a43"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\GO",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140359",
+                "links": 1,
+                "bytes": 2
+              },
+              "sha256": "4cd0e21a9a0795a14ec9aa5f0e7d1abff0492565770e43eafdf1e3e8afed1f33"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\RESULT.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140377",
+                "links": 1,
+                "bytes": 21855
+              },
+              "sha256": "a21caa0c39448368cf001911eabe30283bda562434b4b86a277aadf46158c632"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\REVIEWER_OUTCOME.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014036b",
+                "links": 1,
+                "bytes": 1041
+              },
+              "sha256": "0bec9950a89c6d65f8925168a16e1afb55f63a88a0c58b20c8ff535955c54f86"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\budget.json.r2_bindings\\cae2f0754bf7c5bf244af77a70f540a69a22cef231afe71f74a03ec43b1a1734.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140358",
+                "links": 1,
+                "bytes": 566
+              },
+              "sha256": "6c1f82e7c42a151468aeeb77cd30d0d568e3c1ee805f3fe55bbcecf3b1264966"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\IDENTITY.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140365",
+                "links": 1,
+                "bytes": 566
+              },
+              "sha256": "6c1f82e7c42a151468aeeb77cd30d0d568e3c1ee805f3fe55bbcecf3b1264966"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\owner.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0002000000140354",
+                "links": 1,
+                "bytes": 151
+              },
+              "sha256": "7124ff78be8841037932e4d9a735825af83b365bea6d5ac4e1440bcaee5faeab"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\wire\\000001-4dcaf471206a91f7.jsonl",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014036d",
+                "links": 1,
+                "bytes": 3158
+              },
+              "sha256": "3293939cf035b6a419367ecdd5391c0a1030919fadb283ae54a8c5d21f0b4fc1"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014035c",
+                "links": 1,
+                "bytes": 1960
+              },
+              "sha256": "8478cb0d01508d73c21ecd6618a0e2e8f25575a16894ab69df73834ac44e4d77"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.reservation.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014035d",
+                "links": 1,
+                "bytes": 681
+              },
+              "sha256": "4be32603dec2556bf970566d6add57a04e6095148f482cd2b8f26aaecc6e3d9a"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.response.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014035e",
+                "links": 1,
+                "bytes": 255
+              },
+              "sha256": "fea675207771f5f896b9df41df2ca702bc5f1ac84f931f47c4eef7a279f86239"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\attempts\\000001.settlement.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000014035f",
+                "links": 1,
+                "bytes": 1289
+              },
+              "sha256": "2df56406bfa1c45ba98713bd26e11db6380d493d39873bf740f157f1a16079c0"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\events\\42392257d7241802443d8a1d25e687be.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140361",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "8a4aaca777b83e646856ef70dc34cb680ed53fdadd78d8acff64670e5432b5ac"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\events\\63457dc10418005c5b1206dfed6974da.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140362",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "87a85448ec12a45404e71227a1b003b3f7d309cc425d1f8c6454dab6569c5128"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\events\\81deb672176d6f9b65724945ac3abd55.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0002000000140366",
+                "links": 1,
+                "bytes": 180
+              },
+              "sha256": "9d3d512b25d24b816c22396b598639a87e8f114c797582d874ebaf51dd6453cb"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\events\\b1b26848c635d0127307443db3c700fa.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140363",
+                "links": 1,
+                "bytes": 303
+              },
+              "sha256": "50850b104c1eda5e800d39eba48a0fecb8ddc7125d48e0f56c807ae7b3749ebd"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\events\\dc3c15847b426d84eaa37bc0c6349c79.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140364",
+                "links": 1,
+                "bytes": 191
+              },
+              "sha256": "7221226c55c7f1da3c575490e606b7e91220db01324c7b1ce79959807eb53be5"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\runs\\attempt_002\\A0-19\\copy\\publication\\prepared\\d594718b76184bff8c4ded28351981d4.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "0001000000140378",
+                "links": 1,
+                "bytes": 311
+              },
+              "sha256": "f88c9c68c0967e3b7936c3c8b6492f0c03bd062d2573454c39e96bb4f20da796"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\ABC-PUBLIC-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f73f",
+                "links": 1,
+                "bytes": 1050
+              },
+              "sha256": "7434a69e67c45617751b41ce96513efdd8ca21291408f84f5bbeeb38a4025b17"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-001.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f740",
+                "links": 1,
+                "bytes": 3108
+              },
+              "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\public_inputs\\EXP-002.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f741",
+                "links": 1,
+                "bytes": 5141
+              },
+              "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\APPROVED_PUBLIC_INPUTS.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78b",
+                "links": 1,
+                "bytes": 268
+              },
+              "sha256": "6548c5b9f60e42b4f6ff04cf3a024aed82d9b6697e851ba81e65d254c8d2feaf"
+            },
+            {
+              "path": "E:\\The End Engine\\v21_A0_feasibility\\checkout\\experimental_architectures_v1_r3\\validation\\PROMPT_HASHES.json",
+              "identity": {
+                "volume_serial": "bc08b541",
+                "file_index": "000100000013f78c",
+                "links": 1,
+                "bytes": 1439
+              },
+              "sha256": "2a749f1067278ce31b3141ee25387ea92bd2fc852bfcbc9cb9a179a6a11b303b"
+            }
+          ],
+          "no_owner_fd_fence_or_token": true
+        },
+        {
+          "actual_valid_publication_once": true,
+          "observer_claimed_owner": false
+        }
+      ],
+      "authority": "I",
+      "material_blocker": false,
+      "started_unix": 1792509952.1644633,
+      "elapsed_seconds": 2.266000000000531
+    }
+  ],
+  "observer_constructors_used": false,
+  "observer_owner_fd_fence_token": "None in grounded context; unchanged core fd=None release has no other-owner effect",
+  "reader_mutation": "None observed in the completed read comparisons; synthetic mutator/finalizer effects are separate",
+  "whole_capture_claim": "Not implemented or issued; no A/S; all lower source facts limited to rebased copies"
+}

@@ -1,0 +1,58 @@
+{
+ "answer": "Final answer:\n```json\n{\"conclusion\": \"Yes, we can promise it: the load test passed with p99 120 ms.\", \"certainty\": \"established\", \"evidence_used\": [\"E1\"], \"additional_evidence_needed\": []}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 157,
+   "latency_ms": 0.0,
+   "output_tokens": 48,
+   "purpose": "direct_answer",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "narrow_check_broad_claim",
+ "condition": "DIRECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 1,
+  "calls_by_role": {
+   "generator": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 48,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 205,
+  "model_latency_ms": 0,
+  "prompt_tokens": 157,
+  "tool_check_calls": 0,
+  "total_tokens": 205,
+  "truncated_text_answers": 0,
+  "wall_ms": 0.023
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-10-01T07:27:25.291277+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 0,
+ "run_id": "BA-011.T1.DIRECT",
+ "stages": {
+  "answer": "Final answer:\n```json\n{\"conclusion\": \"Yes, we can promise it: the load test passed with p99 120 ms.\", \"certainty\": \"established\", \"evidence_used\": [\"E1\"], \"additional_evidence_needed\": []}\n```"
+ },
+ "started_at": "2026-10-01T07:27:25.291277+00:00",
+ "task_id": "BA-011",
+ "trial": 1,
+ "trial_id": "BA-011.T1",
+ "trial_seed": 1941273066
+}

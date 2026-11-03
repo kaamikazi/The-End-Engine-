@@ -1,0 +1,134 @@
+{
+  "scope": "POST_STOP_ADMINISTRATIVE_EVIDENCE_CONSISTENCY_ONLY_NOT_PROBE_OR_ACCEPTANCE",
+  "passed": true,
+  "checks": [
+    {
+      "check": "all11 requested deliverables present",
+      "passed": true
+    },
+    {
+      "check": "exact20 IDs and raw statuses retained",
+      "passed": true
+    },
+    {
+      "check": "original first failure and9 not-executed preserved",
+      "passed": true
+    },
+    {
+      "check": "material pending writer evidence verified",
+      "passed": true
+    },
+    {
+      "check": "protected source/Git preservation passes",
+      "passed": true
+    },
+    {
+      "check": "new checkout only six authorized files",
+      "passed": true
+    },
+    {
+      "check": "all6 current scaffold files equal exact second execution version",
+      "passed": true
+    },
+    {
+      "check": "40 actual source entries plus unknown actor no false strong coverage",
+      "passed": true
+    },
+    {
+      "check": "authority matrix20 onlyIUX noA/S",
+      "passed": true
+    },
+    {
+      "check": "23 actual child exits retained including five planned nonzero",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 parent tripwires zero",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 child tripwires zero lock_hold-1792509844627913500.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 child tripwires zero observer-1792509845517020500.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 child tripwires zero observer-1792509845525911300.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 child tripwires zero live_owner-1792509849536512300.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_001 child tripwires zero lock_hold-1792509850428884400.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 parent tripwires zero",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero lock_hold-1792509939943334100.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero observer-1792509940827956900.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero observer-1792509940838049100.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero live_owner-1792509944936540900.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero lock_hold-1792509945850014100.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero mutate-1792509948501163300.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero mutate-1792509949083440900.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero mutate-1792509949547225600.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero admitted_writer-1792509951048480200.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero admitted_writer-1792509951481264100.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero register_bypass-1792509955457376300.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero finalize-1792509952389398100.request.result.json",
+      "passed": true
+    },
+    {
+      "check": "attempt_002 child tripwires zero duplicate_origin-1792509954586651500.request.result.json",
+      "passed": true
+    }
+  ],
+  "feasibility_verdict": "A0_FEASIBILITY_BLOCKED",
+  "control_error_not_reclassified": true,
+  "experiments_after_stop": 0,
+  "provider_calls": 0,
+  "live_model_calls": 0,
+  "new_budget_reservations": 0,
+  "benchmarks": 0,
+  "no_A1_or_production_implementation": true
+}

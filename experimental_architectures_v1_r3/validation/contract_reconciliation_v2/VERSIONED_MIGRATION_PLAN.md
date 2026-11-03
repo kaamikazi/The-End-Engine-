@@ -1,0 +1,11 @@
+# Prospective migration plan — no implementation authorization
+
+1. Review v2 documents and all 31 mappings independently; decide R1 authority/availability tiers, R3 schema discriminators and R4 supported caller boundaries. Human/API-owner approval remains PENDING. Document acceptance is not code acceptance.
+2. Inventory actual consumers and choose explicit opt-in entry point/schema. Do not silently change current execute or direct Session contracts. Historical normal implementation_version `1.0.1` and diagnostic abc-r3-blocked-recovery-v1 remain readable under their original validators; unknown/mixed tags reject.
+3. Obtain a separately scoped implementation authorization for additive observation extraction/adapter, any compatibility layer and new versioned acceptance suite. Do not modify F01 ownership/fencing/read pins/exclusive publication, F02 rejection, algorithms, prompts, budgets, Engine, Harness or frozen scientific payload.
+4. Implement CR2-v1 controls separately, keeping original assertions and original contract versions in Git/archive. Historical original-version reproduction is a labeled offline exercise, never permission to run an unsafe version live. Do not turn failures into skips, rewrite scores or claim old failures pass under a new contract.
+5. Exercise every sixteen-case authority tier and all 31 mappings, all 30 API cells, candidate/handle authority, old/new readers, truly unknown versus known counts/usage, false acceptance/rejection and full R5 schedule/crash/pin coverage. Retain source/input hashes, exact test IDs/counts, failures and exceptions. A diagnostic-only green suite cannot prove publication liveness.
+6. Perform separate acceptance review of the implemented candidate; retain historical244/154/49 baselines separately. Current source lacks mandatory v2 fields. No present implementation is accepted by these document edits.
+7. Only a later authorized scientific task may consider inference/provider compatibility, human semantic adjudication or empirical benchmarks. A WIP Git branch preserves engineering provenance, not scientific approval or acceptance.
+
+No original test is superseded now. The two matrices define exact proposed old-to-new mapping and retain unresolved field/API compatibility. Version, release, merge, tag and ready-for-merge PR are outside this task.

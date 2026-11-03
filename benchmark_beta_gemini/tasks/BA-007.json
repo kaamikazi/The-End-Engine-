@@ -1,0 +1,26 @@
+{
+ "task_id": "BA-007",
+ "category": "failure_recovery",
+ "difficulty": "hard",
+ "prompt": "A job queue uses leases. Worker W1 acquires the lease on job J (TTL 10 s) at t=0 and starts computing. At t=4 W1 pauses for 15 s (a garbage-collection stop). The lease expires at t=10. W2 acquires the lease at t=11, finishes J and writes its result to storage at t=14. At t=19 W1 resumes and writes its result for J. Storage currently accepts every write.\nChoose one option for each question:\n  corrupting_write: W1_at_19 | W2_at_14 | none\n  prevention: longer_ttl | fencing_token_checked_by_storage | w1_checks_lease_before_writing | retry_with_backoff\n  w1_after_rejection: retry_write | abandon_and_discard_result | reacquire_lease_and_overwrite\n  w2_retry_on_timeout: safe_if_idempotent_with_same_token | never_safe | always_safe\nGive the final answer as a JSON object with those four keys plus \"explanation\" (string), in a ```json code block.",
+ "constraints": [
+  "choose listed options only"
+ ],
+ "evaluation": {
+  "type": "structured_rubric",
+  "evaluator": "choices",
+  "expected": {
+   "corrupting_write": "W1_at_19",
+   "prevention": "fencing_token_checked_by_storage",
+   "w1_after_rejection": "abandon_and_discard_result",
+   "w2_retry_on_timeout": "safe_if_idempotent_with_same_token"
+  }
+ },
+ "expected_properties": [
+  "stale holder identified",
+  "fencing enforced by storage (a client-side check races)"
+ ],
+ "failure_conditions": [
+  "any decision wrong"
+ ]
+}
