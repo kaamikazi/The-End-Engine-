@@ -27,6 +27,9 @@ class Ledger:
         coordination=getattr(self,'_coordination',None)
         if coordination is not None:coordination.check_inner_entry(self.path)
         with coordination.acquire() if coordination is not None else nullcontext():
+            if coordination is not None:
+                # Use the validated name for the Ledger and both sidecars.
+                self.path=coordination.ledger_path
             lockpath=self.path.with_suffix(self.path.suffix+'.lock')
             with lockpath.open('a+b') as f:
                 f.seek(0,2)
