@@ -1,0 +1,63 @@
+{
+ "task_id": "BA-004",
+ "category": "constraint_satisfaction",
+ "difficulty": "medium",
+ "prompt": "Schedule five jobs. Each job runs without interruption from its integer start time for its duration.\nJobs (duration, resource demand): A (2, 2), B (3, 1), C (2, 2), D (1, 1), E (2, 1).\nConstraints: (1) A must finish before C starts; (2) B must finish before E starts; (3) B and D must not run at the same time; (4) at every time, the total demand of running jobs must not exceed 3; (5) every job must finish by time 6; (6) start times are integers >= 0.\nGive the final schedule as a JSON object mapping each job letter to its start time, in a ```json code block.",
+ "constraints": [
+  "precedence A->C, B->E",
+  "B and D disjoint",
+  "capacity 3",
+  "horizon 6"
+ ],
+ "evaluation": {
+  "type": "deterministic_validator",
+  "evaluator": "schedule",
+  "jobs": {
+   "A": [
+    2,
+    2
+   ],
+   "B": [
+    3,
+    1
+   ],
+   "C": [
+    2,
+    2
+   ],
+   "D": [
+    1,
+    1
+   ],
+   "E": [
+    2,
+    1
+   ]
+  },
+  "precedence": [
+   [
+    "A",
+    "C"
+   ],
+   [
+    "B",
+    "E"
+   ]
+  ],
+  "disjoint": [
+   [
+    "B",
+    "D"
+   ]
+  ],
+  "capacity": 3,
+  "horizon": 6
+ },
+ "expected_properties": [
+  "all six constraints hold"
+ ],
+ "failure_conditions": [
+  "any constraint violated",
+  "missing or extra job"
+ ]
+}

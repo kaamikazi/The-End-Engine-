@@ -42,5 +42,5 @@ class _JudgeBridge(ModelProvider):
         raise ValueError("Judges return structured artifacts only")
 
 
-def recorded_judge(judge, trajectory, role):
-    return RecordingProvider(_JudgeBridge(judge.for_run(), role), trajectory)
+def recorded_judge(judge, trajectory, role, repair_attempts=0):
+    return RecordingProvider(_JudgeBridge(judge.for_run(), role), trajectory, repair_attempts)

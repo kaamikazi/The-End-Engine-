@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-07T11:49:31.117199+00:00",
+  "reason": "Previous Python process absent on user retry; stale call 12 status. Cause of interruption unknown.",
+  "completed_trials_preserved": 2,
+  "resumed_only": [
+    "BA-001.T1.FULL_END_STRUCTURED",
+    "BA-002.T1.FULL_END_NATIVE",
+    "BA-002.T1.DIRECT",
+    "BA-002.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_NATIVE",
+    "BA-008.T1.DIRECT",
+    "BA-009.T1.FULL_END_STRUCTURED",
+    "BA-009.T1.FULL_END_NATIVE",
+    "BA-009.T1.DIRECT"
+  ],
+  "partial_run": "BA-001.T1.FULL_END_STRUCTURED",
+  "recorded_response_calls": 11,
+  "observed_partial_latency_seconds": 345.755007,
+  "observed_partial_tokens": 13717,
+  "one_additional_started_call_usage_unknown": true,
+  "source_and_history_unchanged": true,
+  "completed_trial_sha256": {
+    "BA-001.T1.DIRECT.json": "73742bc86785897f91379f97860d05dd3b540b53ed9e26b059662ab719ad7eaf",
+    "BA-001.T1.FULL_END_NATIVE.json": "e7efa54325861e41e192c220187404344e4168653da73712d5d4cfa1e04b23b0"
+  },
+  "partial_artifact_sha256": {
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0001.json": "d251a6f4dc7c792e67dee56ed4b10acf88617d07c9ae222c698400ee5a27a211",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0002.json": "c66a26d8fcb38a5e3fb99f3f808d883681f673784b6bae6034e967cd6dae926f",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0003.json": "bcda96eb623645e8ae9ccf699dd340bb3fa7b35cdf23ec42ce730db1527365b3",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0004.json": "3e4a696afac7beb2a510b18dca783769d6d7959e284d18b72cc030ac216a8ea3",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0005.json": "d0fc71ff8c82c5180cfa282544ad4cf05bcfacda3e4178e96afa0f88ac556d14",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0006.json": "06208cf742dcd288b4f5ed3422a39929d0397ee6e5a88023e1acda85e84fdcc5",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0007.json": "097eb590b3d7b7e2aa23739664198a662431b217b186ed2c2fd0409bc45db6e0",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0008.json": "f0f1013f8a6fe2bc4c7da396a5f868b508f817788e65d4ccd50eb02a7912c3e9",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0009.json": "2a4da2a43819b57ed8fd3045e14ec83512a821646886adc580d05d978b04c5e9",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0010.json": "f6c90cfb125e204be26b4c7851b266e1b63c03b602a16620ef85458aafe0c684",
+    "wire/BA-001.T1.FULL_END_STRUCTURED/0011.json": "dcbbbb5fd594de4effbbab82a3343714c86f3279fc627f40fb25c7841ffd4ef6",
+    "call_logs/BA-001.T1.FULL_END_STRUCTURED.jsonl": "a578930330f3af9cf56751a86c6277741c7012d4ccad4a0697bd357d90d9e6c3"
+  }
+}

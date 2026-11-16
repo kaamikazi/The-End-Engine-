@@ -1,0 +1,266 @@
+{
+ "engine": {
+  "version": "0.3.5",
+  "source_sha256": "520d2052832eaee93f7c8931e028762c7008006ae61f2fdc7ec6589d7e4bd448",
+  "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+  "files": 55,
+  "git_commit": null,
+  "git_status": "not a git repository"
+ },
+ "model_identity": {
+  "name": "qwen3:4b",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "4.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2560
+  },
+  "server_version": "0.35.0",
+  "context_length": 262144
+ },
+ "seed": 20261102,
+ "trials": 2,
+ "conditions": [
+  "DIRECT",
+  "SELF_REFLECT",
+  "END_LITE_NATIVE",
+  "FULL_END_NATIVE",
+  "FULL_END_STRUCTURED"
+ ],
+ "tasks": [
+  "BA-001",
+  "BA-002",
+  "BA-003",
+  "BA-004",
+  "BA-005",
+  "BA-006",
+  "BA-007",
+  "BA-008",
+  "BA-009",
+  "BA-010",
+  "BA-011",
+  "BA-012"
+ ],
+ "task_set_hash": "9e177f6d6be25acf82010d898e42a86c7a4d516af882eaa1725bcb5efe468ca6",
+ "evaluators_sha256": "2570b6632b7aaf64d9f3418407cadad14b05ec89283f97e2286ecf70e4a03914",
+ "settings": {
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "num_predict": 4096,
+  "num_ctx": 8192,
+  "think": false,
+  "timeout_seconds": 900.0,
+  "transport_structured_retries": 1
+ },
+ "planned_runs": 120,
+ "checks": {
+  "engine_version_is_0.3.5": true,
+  "task_set_hash_matches_alpha": true,
+  "task_files_identical_to_alpha": true,
+  "evaluators_identical_to_alpha": true,
+  "model_installed_locally": true,
+  "planned_runs_120": true
+ },
+ "all_checks_pass": true,
+ "matrix": {
+  "BA-001": {
+   "T1": [
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "DIRECT"
+   ],
+   "T2": [
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "DIRECT",
+    "FULL_END_NATIVE"
+   ]
+  },
+  "BA-002": {
+   "T1": [
+    "SELF_REFLECT",
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE"
+   ],
+   "T2": [
+    "SELF_REFLECT",
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE",
+    "FULL_END_STRUCTURED",
+    "DIRECT"
+   ]
+  },
+  "BA-003": {
+   "T1": [
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "FULL_END_NATIVE",
+    "DIRECT",
+    "FULL_END_STRUCTURED"
+   ],
+   "T2": [
+    "FULL_END_NATIVE",
+    "DIRECT",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "FULL_END_STRUCTURED"
+   ]
+  },
+  "BA-004": {
+   "T1": [
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE",
+    "DIRECT"
+   ],
+   "T2": [
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "END_LITE_NATIVE",
+    "FULL_END_NATIVE",
+    "SELF_REFLECT"
+   ]
+  },
+  "BA-005": {
+   "T1": [
+    "END_LITE_NATIVE",
+    "FULL_END_STRUCTURED",
+    "DIRECT",
+    "SELF_REFLECT",
+    "FULL_END_NATIVE"
+   ],
+   "T2": [
+    "DIRECT",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE"
+   ]
+  },
+  "BA-006": {
+   "T1": [
+    "FULL_END_NATIVE",
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE"
+   ],
+   "T2": [
+    "FULL_END_STRUCTURED",
+    "END_LITE_NATIVE",
+    "SELF_REFLECT",
+    "DIRECT",
+    "FULL_END_NATIVE"
+   ]
+  },
+  "BA-007": {
+   "T1": [
+    "FULL_END_STRUCTURED",
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE",
+    "SELF_REFLECT",
+    "DIRECT"
+   ],
+   "T2": [
+    "DIRECT",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED"
+   ]
+  },
+  "BA-008": {
+   "T1": [
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "DIRECT"
+   ],
+   "T2": [
+    "SELF_REFLECT",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED",
+    "END_LITE_NATIVE",
+    "DIRECT"
+   ]
+  },
+  "BA-009": {
+   "T1": [
+    "DIRECT",
+    "SELF_REFLECT",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED",
+    "END_LITE_NATIVE"
+   ],
+   "T2": [
+    "FULL_END_STRUCTURED",
+    "END_LITE_NATIVE",
+    "DIRECT",
+    "FULL_END_NATIVE",
+    "SELF_REFLECT"
+   ]
+  },
+  "BA-010": {
+   "T1": [
+    "END_LITE_NATIVE",
+    "SELF_REFLECT",
+    "DIRECT",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED"
+   ],
+   "T2": [
+    "END_LITE_NATIVE",
+    "FULL_END_NATIVE",
+    "FULL_END_STRUCTURED",
+    "DIRECT",
+    "SELF_REFLECT"
+   ]
+  },
+  "BA-011": {
+   "T1": [
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "END_LITE_NATIVE",
+    "FULL_END_NATIVE"
+   ],
+   "T2": [
+    "DIRECT",
+    "END_LITE_NATIVE",
+    "SELF_REFLECT",
+    "FULL_END_STRUCTURED",
+    "FULL_END_NATIVE"
+   ]
+  },
+  "BA-012": {
+   "T1": [
+    "FULL_END_NATIVE",
+    "END_LITE_NATIVE",
+    "SELF_REFLECT",
+    "DIRECT",
+    "FULL_END_STRUCTURED"
+   ],
+   "T2": [
+    "END_LITE_NATIVE",
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "SELF_REFLECT",
+    "FULL_END_NATIVE"
+   ]
+  }
+ }
+}

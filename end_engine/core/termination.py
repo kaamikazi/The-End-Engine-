@@ -29,7 +29,7 @@ class TerminationController:
                 if iterations >= budget.max_cycles:
                     return TerminationDecision(StopReason.BUDGET_EXHAUSTED, "Cycle cap reached with branches requiring closure")
                 return TerminationDecision(None, "Active branch evaluations/synthesis must complete")
-            severe_assumptions = any(a.risk in ("HIGH", "CRITICAL") and a.status in
+            severe_assumptions = any(a.decisive and a.risk in ("HIGH", "CRITICAL") and a.status in
                 (AssumptionStatus.UNTESTED, AssumptionStatus.WEAKENED) for a in cognitive_state.assumptions)
             major = {"correctness", "assumptions", "failure_modes", "evidence", "alternatives", "architecture", "safety", "second_order_effects"}
             missing = [d for d, level in cognitive_state.coverage if d in major and level is CoverageLevel.NONE]

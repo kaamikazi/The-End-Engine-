@@ -1,0 +1,4730 @@
+{
+  "proposed_text_files_scanned": 4061,
+  "history_text_blobs_scanned": 543,
+  "possible_secret_findings": [],
+  "review_markers": [
+    {
+      "location": "architecture_review_v1/SOURCE_MANIFEST.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/0aa19051-f3f9-495e-819d-467c012f6315.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/5a3f4d9f-f9b6-4a27-80a9-213946365e91.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/bfe1e5cc-d48c-494a-a609-5c56f5468895.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-003.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session2_transport_timeout/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/aborted_sessions/session3_server_connection_reset/trials/BA-003.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/ENGINE_BASELINE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T2.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.SELF_REFLECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.SELF_REFLECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-002.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-003.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-007.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-008.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-012.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/FALSE_REJECT/BA-012.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-001.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-002.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-003.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-003.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-007.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-008.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-010.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-011.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-011.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/OVERTHINKING/BA-011.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-007.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.END_LITE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.FULL_END/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/README.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/03f4f71a-93d1-4d39-b041-5a05144c236d.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/0e941f16-848f-4099-913e-b3ad3a46d7c6.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/1ac38692-8c94-48bd-973c-99375616a3c6.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/25884e2f-64d3-4b79-9365-d3fc93cdf1f5.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/2652b685-f576-4b00-8bf4-c23273adf814.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/26dc6dd4-c59c-4a08-883e-5c832666952b.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/279d3005-a673-4526-9075-4d72c938b291.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/29ebf51b-6852-4ec2-95a8-7c1b45c50f63.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/2b62a77e-6169-4178-8899-f645852a95c0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/2dbd4001-6208-47fa-aa06-35a57112f0af.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/33950446-0524-4818-b257-2c4dc3f2573c.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/35341efc-6270-4f5d-bf27-78c47df54e68.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/3953cb33-a999-40e9-85ac-1313490d7e97.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/45b68566-ac33-43bf-ac22-bf7eab281859.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/4e2532be-94d9-48d5-840f-afa5d6d09ad8.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/540170b1-7e18-4773-9bde-d3430e59db57.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/5a0a15fd-3eae-45db-b7bd-71a9a07adb87.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/5f2ba45e-b1de-44f2-8d91-ecf688d4ed93.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/607d900d-142a-4d46-9cff-8599f410473a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/6ab230b0-d7c6-4618-bd6c-7f6b0eae0b1d.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/6cf57d03-c3d6-41b5-b9ad-720676eb3ee0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/78f936c2-c5d0-4e57-bda1-dd6f0ac8ca84.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/793a6187-bec8-4be7-9605-937fff86366c.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/7fe3c75e-2f54-45e6-aeb2-055cdec2798e.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/8471c820-609e-435f-b9eb-ae5d153f45b0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/8eac28e2-1f72-44ff-b2e0-7d4e6b7f90e8.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/8f99a8b5-3889-46f2-89dc-4e8156095ee6.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/8fcb420a-3738-4273-b408-472a0a7741e7.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/915da1fd-50d9-4400-8187-3746b2b09776.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/92faf93e-45f0-40f8-8007-dddaf86658b5.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/a501b112-9b84-4349-8ff8-a954fc5f9a6a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/a5f4796e-7850-4da1-9c50-f24d2f1c2b2a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/a8e27b2c-ee81-4579-be44-45f88d978abd.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/ab9b1cb0-abde-42bc-a739-5acabd0f1a45.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/b1c2eba6-3483-47ec-8dac-6119f075a40a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/b4425aa3-9b0e-4213-9d4a-81facdfd00ae.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/bfbb9ed1-d471-41a7-986a-6b78b6272be4.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/c00f4b2c-14f2-49ed-aa52-a95919a144f2.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/c16c2ce1-bacf-4802-8036-3c5618c8a068.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/c4ad4a79-d660-412b-8c86-9780e7ef5ab0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/e0b99659-aea3-496d-abca-2f043b0c8251.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/e5416a1a-9574-4867-b9df-532dc5a44b55.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/e949bd9e-6389-4327-96e8-863453c5a568.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/eddfd0da-4551-4f75-b751-b88b1ea06494.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/ee5160c3-cd7f-429e-bd1d-3e8f28359e89.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/f17731dc-e412-405f-b626-b42e7cff8b16.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/f3ffcd27-aefb-4163-b0d6-48277e1f2924.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trajectories/f7a5c751-3a97-4f10-a205-1387642fd599.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-001.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-002.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-003.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-004.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-005.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-006.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-007.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-008.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-009.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-010.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-011.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_alpha/trials/BA-012.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_beta/aborted_local_qwen_attempt/trajectories/70a5af77-feaa-4520-8b15-cb2dd0295e35.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_beta/aborted_local_qwen_attempt/trials/BA-006.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_beta/aborted_local_qwen_attempt/trials/BA-006.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_beta/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "benchmark_beta_gemini/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "experimental_task_pack_v1_safety_boundary/research.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "experimental_task_pack_v1_safety_boundary/validation/ARCHIVE_RECEIPT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "experimental_task_pack_v1_safety_boundary/validation/ARCHIVE_RETEST.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "experimental_task_pack_v1_safety_boundary/validation/INDEPENDENT_PROBE_REPRODUCTION.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "IMPLEMENTATION_REPORT_JEV_EXPERIMENT.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "IMPLEMENTATION_REPORT_v0.1.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "IMPLEMENTATION_REPORT_v0.2.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "IMPLEMENTATION_REPORT_v0.3.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-009.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/historical_v035_manifest.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-001.T1.FULL_END_STRUCTURED/20261007T114931309819/BA-001.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261007T170700192533/BA-009.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261007T170700192533/BA-009.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261007T170700192533/BA-009.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/manifest.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/run_pilot.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/2965e080-5879-496e-89b9-c8d1368bb1ee.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/3273ea96-7d7c-41fc-8b2c-aea0ec39f73b.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/41b7f53a-d785-4d23-8549-5c7a5927f1a4.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/49544d22-83e0-49a8-9179-c3765116e44b.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/5969e198-03ed-4a17-b05b-9fefe5ee4dc4.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/653df055-ef1a-43ea-84b2-3d9b6c25bb0f.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/79ec91f1-7b59-4a33-8a53-4613af251c8e.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trajectories/efa824fb-bbda-4138-9243-414e772ef1fb.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-001.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-001.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-002.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-002.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-002.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-008.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-008.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-008.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-009.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-009.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/trials/BA-009.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0032.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0032.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0033.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v0351_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0034.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-008.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-009.T1.DIRECT/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/trial.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/FINAL_AUDIT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/manifest.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/preflight/manifest-draft-before-metric-review.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/REPORT.md",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/run_pilot.py",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/02835fa6-600d-4e78-b878-3d5f65e4c344.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/42be76c1-49bc-4a96-bba0-a3d55d5e7af3.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/67a5c2d9-fcf4-4c27-81a1-67a9076ba93f.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/6ba9d7f7-a7fe-496e-a8f3-d4887cdc0bae.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/91b86589-796e-4570-965b-bd025d7c7b87.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/9cea722d-0dbe-43b8-9d30-24d6eac0befa.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/b3c8b8d8-2388-40c0-9e2c-c75a679ef56e.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trajectories/ca37375d-c022-4ffa-a2b5-5d641b59cf35.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-001.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-001.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-002.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-002.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-002.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-008.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-008.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-008.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-009.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-009.T1.FULL_END_NATIVE.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/trials/BA-009.T1.FULL_END_STRUCTURED.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0032.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0033.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0034.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0035.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.DIRECT/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0032.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0001.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0002.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0003.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0004.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0005.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0006.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0007.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0008.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0009.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0010.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0011.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0012.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0013.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0014.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0015.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0016.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0017.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0018.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0019.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0020.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0021.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0022.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0023.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0024.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0025.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0026.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0027.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0028.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0029.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0030.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0031.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0032.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0033.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0034.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0035.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0036.json",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "validation_v034/regression-tests-on-pristine-0.3.3.txt",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "validation_v035/deterministic-demos.txt",
+      "type": "Legacy Windows CP1252 text log, preserved bytes",
+      "history": false
+    },
+    {
+      "location": "validation_v0352/debug/d94430c4-92fa-4ca9-9256-801e73986bf9.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": false
+    },
+    {
+      "location": "7e19a951785865e4477561a1c1003b89a54c6c08:IMPLEMENTATION_REPORT_v0.1.md",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "1e58ccdc238d7f0575cdd79fbaa499d1faf71205:IMPLEMENTATION_REPORT_v0.2.md",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7d6f3981f897b64e40b3f142859bde68a935121b:IMPLEMENTATION_REPORT_v0.3.md",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ce8020452ac9d9581d6012c934c209d02078d411:benchmark_alpha/ENGINE_BASELINE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "0d00d030e1e7d7ecdd286757dac5c0b393e74558:benchmark_alpha/README.md",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "2a147e636c8d048cf5eb48d437f281b08eb3745e:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/0aa19051-f3f9-495e-819d-467c012f6315.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ba0ea07137456e91e91a8c47d5063a8a1b737dd1:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/5a3f4d9f-f9b6-4a27-80a9-213946365e91.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "1a7c153ef66fc468141172ba98cec7e35ee94785:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trajectories/bfe1e5cc-d48c-494a-a609-5c56f5468895.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "2140af6ff94f28150316a2b8609c366060f6b636:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b9d81133a658dce99c69740b63b978a3803f57f8:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "11f7badb1a8d414797c870e349f216131fa1b5ad:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7002e2bf939a50fce0fef3c431cbd34e6250d8e6:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-001.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "cda61828b4f7290722144cba73509c2c2f483d07:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-003.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "8e771dc65f03a4ddc6508bcf2b0fb37faf81cd62:benchmark_alpha/aborted_sessions/session1_num_predict_2048/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "d6d6ae2a81c1fd0accb2d9be5cd99a83d9ae1c0b:benchmark_alpha/aborted_sessions/session2_transport_timeout/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "403e6d55dab1c1a6437ab7eb2bf2604647a4e366:benchmark_alpha/bench/providers.py",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "70b54a7586403b304941ba95cbfb41d2de654d79:benchmark_alpha/trajectories/0e941f16-848f-4099-913e-b3ad3a46d7c6.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "12030ae172610105f0513964f2e3bfb870360d32:benchmark_alpha/trajectories/25884e2f-64d3-4b79-9365-d3fc93cdf1f5.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "313331463d080c89c2fa9ea71b0038a05fdaddba:benchmark_alpha/trajectories/2652b685-f576-4b00-8bf4-c23273adf814.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7b49cc235e115b5be62fa2dd484a54c7f680d728:benchmark_alpha/trajectories/279d3005-a673-4526-9075-4d72c938b291.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "2a734dd5924f9335ce44b797ba4e5dfa9472e498:benchmark_alpha/trajectories/29ebf51b-6852-4ec2-95a8-7c1b45c50f63.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "e71e869d490087f206cf4102235166b18186b914:benchmark_alpha/trajectories/2b62a77e-6169-4178-8899-f645852a95c0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "30a0c56cef9519ae39f060dc7238f80057ed2f4b:benchmark_alpha/trajectories/2dbd4001-6208-47fa-aa06-35a57112f0af.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "14299083b632dfa5f7fa7f8b4af0becd4a89abbd:benchmark_alpha/trajectories/33950446-0524-4818-b257-2c4dc3f2573c.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "71c83856d40430ef73a8748a0914f947a9623a6f:benchmark_alpha/trajectories/35341efc-6270-4f5d-bf27-78c47df54e68.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "10279e448f84f84666a906d49ee7ac2ad7904a4e:benchmark_alpha/trajectories/3953cb33-a999-40e9-85ac-1313490d7e97.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7cfc75ec767f3ba9aa1cad040b222cab413914fa:benchmark_alpha/trajectories/45b68566-ac33-43bf-ac22-bf7eab281859.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "fb92b263c05d4fbafb40a791b37e60202b7a1442:benchmark_alpha/trajectories/4e2532be-94d9-48d5-840f-afa5d6d09ad8.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "9c52d9c1270a8cd2ef958f298ffb700f46eaad56:benchmark_alpha/trajectories/540170b1-7e18-4773-9bde-d3430e59db57.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "97012970484377fa6c402838ae19db0182687a44:benchmark_alpha/trajectories/5a0a15fd-3eae-45db-b7bd-71a9a07adb87.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "96516241ba344863c239304410fdfa24f4f36388:benchmark_alpha/trajectories/5f2ba45e-b1de-44f2-8d91-ecf688d4ed93.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "2f20db783df1cdd61a03f45d897b02830c8f5fdf:benchmark_alpha/trajectories/6ab230b0-d7c6-4618-bd6c-7f6b0eae0b1d.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "96aa1d9cf071bd6c41c94838c91da1f320d9b309:benchmark_alpha/trajectories/6cf57d03-c3d6-41b5-b9ad-720676eb3ee0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "35f5b4231312f6ac9a697357c8aa5b8fd885bcd1:benchmark_alpha/trajectories/793a6187-bec8-4be7-9605-937fff86366c.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "341bad26f0fbc664b6ae2c7f2a56bc10912dbcf9:benchmark_alpha/trajectories/7fe3c75e-2f54-45e6-aeb2-055cdec2798e.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a00e3fe8708f9a11d25aba17bf77f14885e5b9a7:benchmark_alpha/trajectories/8eac28e2-1f72-44ff-b2e0-7d4e6b7f90e8.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3c25c2e7c7aad83783f5bbd0ca1241826a641c5f:benchmark_alpha/trajectories/8fcb420a-3738-4273-b408-472a0a7741e7.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a351c637fe98558079468b0afd047221a822de5a:benchmark_alpha/trajectories/915da1fd-50d9-4400-8187-3746b2b09776.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "daa0f3421df49e3de3347a019e9abcaf6039ba81:benchmark_alpha/trajectories/92faf93e-45f0-40f8-8007-dddaf86658b5.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "5114a921387d5be0955493819116642abe952b29:benchmark_alpha/trajectories/a501b112-9b84-4349-8ff8-a954fc5f9a6a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "99aecb24b7aa39def50357f8ef7590de9bda54b5:benchmark_alpha/trajectories/a5f4796e-7850-4da1-9c50-f24d2f1c2b2a.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "6feb4663ad12fa68180330ef96113e61c8c07d44:benchmark_alpha/trajectories/ab9b1cb0-abde-42bc-a739-5acabd0f1a45.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "159e43bc91967a7e600134d4e56b84cae1239e18:benchmark_alpha/trajectories/b4425aa3-9b0e-4213-9d4a-81facdfd00ae.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "cb5597b53ac561b4448ffd2674650cb853fa8e44:benchmark_alpha/trajectories/bfbb9ed1-d471-41a7-986a-6b78b6272be4.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "090c828773e94db368dada657bd6a169a393eeaa:benchmark_alpha/trajectories/c00f4b2c-14f2-49ed-aa52-a95919a144f2.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3b677cec8d279619c4f53dda1243af565f681431:benchmark_alpha/trajectories/c16c2ce1-bacf-4802-8036-3c5618c8a068.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "f5ed3de5d516952940a2901946446f8aa3f2c438:benchmark_alpha/trajectories/c4ad4a79-d660-412b-8c86-9780e7ef5ab0.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b03a993560017629a0609df012e23ef9fb384cc0:benchmark_alpha/trajectories/e0b99659-aea3-496d-abca-2f043b0c8251.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "548dea6281aab0efeccb917f8db6a17fb7327508:benchmark_alpha/trajectories/e5416a1a-9574-4867-b9df-532dc5a44b55.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "f4f16595e8e642b0521948937ed0bcfa887faa9f:benchmark_alpha/trajectories/e949bd9e-6389-4327-96e8-863453c5a568.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "4d6581768dba63c1458324dccd6b7f2d87b2c97f:benchmark_alpha/trajectories/eddfd0da-4551-4f75-b751-b88b1ea06494.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "478f9476e4aa07b331cdd941a67bce8656a150f0:benchmark_alpha/trajectories/ee5160c3-cd7f-429e-bd1d-3e8f28359e89.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7d1152c5387bfc501c3a360424bd7ec1b17dd625:benchmark_alpha/trajectories/f17731dc-e412-405f-b626-b42e7cff8b16.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "63ca6b0adb81609bc0a2eccf5404226faa6b80a3:benchmark_alpha/trajectories/f7a5c751-3a97-4f10-a205-1387642fd599.jsonl",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "cf787d4609e99df2c9a0cdd9c5d1ac30e42996c5:benchmark_alpha/trials/BA-001.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "5d0736edb352d119210a816363f635f53c2fe479:benchmark_alpha/trials/BA-001.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "660316bd14590c27ede07572367b2f2cd6014403:benchmark_alpha/trials/BA-001.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "c030110542edb64c016124421870b38565a49740:benchmark_alpha/trials/BA-001.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "c3defb0a08892a44c55558b28365a13448da9850:benchmark_alpha/trials/BA-002.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "e9e862d0a97a8ce16f15c39cef528a6b3a5ff6f7:benchmark_alpha/trials/BA-002.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "4e62bc3adf70e165914f77cdf31672dd6af4c89d:benchmark_alpha/trials/BA-002.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a4852b6e95239e70a6857ed52f88dcc425d909d7:benchmark_alpha/trials/BA-002.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "1b15d9a19809ae054ac2cc99ba916a2ec7fd2e90:benchmark_alpha/trials/BA-003.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "c4a63d6213793070207f5753214fbaa977f08f87:benchmark_alpha/trials/BA-003.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "374e59b11a1a3b57a07a09b2cb2441afc327d9d9:benchmark_alpha/trials/BA-003.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "62a89f1a10d04e52f69b476eabd3d28a1ff9126f:benchmark_alpha/trials/BA-003.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "54ae9b7766b3c74bee687a6ccc09fa6ede389def:benchmark_alpha/trials/BA-004.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "798810d8d3f8139026312944ba21e3f919d80a1f:benchmark_alpha/trials/BA-004.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3730414a14192ff9dfc5f94495f26c1f4e5fdbe3:benchmark_alpha/trials/BA-004.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "920cf1c8bf599c1ac02fc7675e62cdb104bc1bbe:benchmark_alpha/trials/BA-004.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "e33bdbbb4706f8aa124b3131da8fbb2f58e66f9d:benchmark_alpha/trials/BA-004.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ff60ddd9baadb5a22e98c013a23ce80283c5d457:benchmark_alpha/trials/BA-004.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "d27dc1a46c268085ed46c6c6cac3f144121e0b08:benchmark_alpha/trials/BA-004.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "d12bfda2562b97415fa4c720d9f2a4b95c651e0f:benchmark_alpha/trials/BA-005.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "110683e934418af61e4109a48ef5ae3f42ce41ee:benchmark_alpha/trials/BA-005.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7586151e33e4200792a5dc15c3e3f6e15768ccd1:benchmark_alpha/trials/BA-005.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "f863614e2d3cba5c10d288ca4a70da63782573e9:benchmark_alpha/trials/BA-005.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "cb6db30ba2443d012020b617d73a156698cf3e3e:benchmark_alpha/trials/BA-005.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "8fef7cb26d6e78d11dbb2a24290b07d041f96569:benchmark_alpha/trials/BA-005.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a207cd858ddd0be0f4b9466d747ad98eb4b0e0a3:benchmark_alpha/trials/BA-005.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "9595151f2bdb5ace1841e41ccecf8064d7446027:benchmark_alpha/trials/BA-005.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3c23cb361ea02deca2ca1966262bb8d843ad9e50:benchmark_alpha/trials/BA-006.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "395bea853e30bf0ccfe87d3fd5206f6397b64d02:benchmark_alpha/trials/BA-006.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "238158ae59aef0b86128f2f754b866172b14f375:benchmark_alpha/trials/BA-006.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "d318843a8f74328ece4e73bcc8c5e73491f5e73a:benchmark_alpha/trials/BA-006.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "d98daba66f6359e6c94b0110fe1637f719a317ac:benchmark_alpha/trials/BA-007.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b62e8315e95472a9bf03723f98748099c60c9822:benchmark_alpha/trials/BA-007.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3aff73bb77c114f4d611ec44a6d135042e5a5a34:benchmark_alpha/trials/BA-007.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "0e7f16df971073d6e43a0244d9da4dc6233a2a92:benchmark_alpha/trials/BA-007.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a26676f048819723440196053be669d9f8633cef:benchmark_alpha/trials/BA-007.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b4b8dced21bb289589ed9fe37951092d3cfc2f8c:benchmark_alpha/trials/BA-007.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "5c43a92870b75213ca04a9f50549eb6d382c28e0:benchmark_alpha/trials/BA-007.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "27f3b694a8b213c837a5ab64c56b4ef56d164d5c:benchmark_alpha/trials/BA-007.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b2a038dabe6590f9222e77ee7961ad31b61fafd9:benchmark_alpha/trials/BA-008.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a83d19c653f39fcdc07b5970915cf8a19c1725bc:benchmark_alpha/trials/BA-008.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "65ee4ef24cfe88a04f5c849a25360a9dc3c6d858:benchmark_alpha/trials/BA-008.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ead6cb50c08275a89ce4a69526fdc8f5dbf3cf1a:benchmark_alpha/trials/BA-008.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "a00c82b388293b0f7ae063dc6cee025412d0e328:benchmark_alpha/trials/BA-008.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ccdbedfc0af061d9c3eb0cfc27ec6bae45dc60a6:benchmark_alpha/trials/BA-008.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "64076863310970ee5673da6357f9298653b97114:benchmark_alpha/trials/BA-008.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "73c8bf18a7d3eab22a585e24576de3927daec983:benchmark_alpha/trials/BA-008.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "af7223e514dcaa3233efe225ebc56c1430c7aaa2:benchmark_alpha/trials/BA-009.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "0d1a7475938a5fc3ac2791f7d296dcfbd294ec25:benchmark_alpha/trials/BA-009.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "7b79eb48e9da5a6944c6af436ebda3bce75c516d:benchmark_alpha/trials/BA-009.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "0449c6f1c366ebeb8e439cd3fdc5fb87b9bf7c92:benchmark_alpha/trials/BA-009.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "e27cd1668985c1cd2eeb2e83eb965b53a8e7ccea:benchmark_alpha/trials/BA-009.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "6743b06ee108f1c45df2d9156827ab98716c3077:benchmark_alpha/trials/BA-009.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "91bbb053b3ad18874f1af08e47502d9e1f88b26d:benchmark_alpha/trials/BA-009.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "4315249b37eba458ee18ac8a0f10cd1571645d00:benchmark_alpha/trials/BA-009.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "8e874b25fc476025ffe98f62ce2177303166ec8c:benchmark_alpha/trials/BA-010.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "cad99353332a8015c1eb18b6adceccef262a0882:benchmark_alpha/trials/BA-010.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "1ac1445950b77ded4f8534ae37a63bd670f69a81:benchmark_alpha/trials/BA-010.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "124658edef8b59543f16b883dc5cdc50c46a4d48:benchmark_alpha/trials/BA-010.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "f4e0e455403ff315efcb63faad07e08935712633:benchmark_alpha/trials/BA-011.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "fa30f4f874da684e90ea78f70f131d64ec094bcd:benchmark_alpha/trials/BA-011.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "3f1e449d01b28aea3f67dc2c015ed42adf4ac176:benchmark_alpha/trials/BA-011.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "5d715146adc500bf374f89ad349a784db0f5618a:benchmark_alpha/trials/BA-011.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "c6483cd44b0f8e656eb8257d1e6049af5472c25c:benchmark_alpha/trials/BA-011.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "9f02d82a3aac8e60f9bc1784533f48890ab47082:benchmark_alpha/trials/BA-011.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b5f253c80e8bf44859f16b9ed963b53195bac358:benchmark_alpha/trials/BA-011.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "71dcade6fbd404af4d03c7988d9d179ff6d1a56d:benchmark_alpha/trials/BA-011.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "4e9bd81a7bb9afba9c0937e19f94503d3615ab03:benchmark_alpha/trials/BA-012.T1.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "45f98428a7f1c927b747b5d8643166154d265ce1:benchmark_alpha/trials/BA-012.T1.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "9f263ed2ef82574aa67a7defacb73260357f39d4:benchmark_alpha/trials/BA-012.T1.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "de344eb63384791a243233112730cad82b623d88:benchmark_alpha/trials/BA-012.T1.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "ff825e8106c921e82130ded390e2c564ee39b327:benchmark_alpha/trials/BA-012.T2.DIRECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "1be43e8cf5d4f333e1074c5e0777cab7fb9c0b80:benchmark_alpha/trials/BA-012.T2.END_LITE.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "b16691b05b3212f76b17124c00a42c038e9ead5f:benchmark_alpha/trials/BA-012.T2.FULL_END.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "825e142f30493066ce32834529cc4ef8fa5042fb:benchmark_alpha/trials/BA-012.T2.SELF_REFLECT.json",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    },
+    {
+      "location": "2f9a71d743cd74ac947288880cbd415dd0c0813d:validation_v034/regression-tests-on-pristine-0.3.3.txt",
+      "type": "Development path/local endpoint marker",
+      "history": true
+    }
+  ],
+  "secret_values_reported": false,
+  "scan_scope": "Proposed included files and reachable history; excluded archives/environments not staged",
+  "passed_automatic_signatures": true
+}

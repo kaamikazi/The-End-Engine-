@@ -1,0 +1,189 @@
+{
+ "answer": "Final answer:\n```json\n{\"conclusion\": \"Unresolved: E1 reports PASSED but E2 reports FAILED for the same commit.\", \"certainty\": \"unknown\", \"evidence_used\": [\"E1\", \"E2\"], \"additional_evidence_needed\": [\"rerun test_empty_config on a1b2c3d\"]}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 146,
+   "latency_ms": 0.0,
+   "output_tokens": 60,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 735,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 1259,
+   "latency_ms": 0.0,
+   "output_tokens": 12,
+   "purpose": "critique",
+   "role": "generator",
+   "seed": null,
+   "seq": 3,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 523,
+   "latency_ms": 0.0,
+   "output_tokens": 3,
+   "purpose": "revision_plan",
+   "role": "generator",
+   "seed": null,
+   "seq": 4,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 295,
+   "latency_ms": 0.0,
+   "output_tokens": 60,
+   "purpose": "revision",
+   "role": "generator",
+   "seed": null,
+   "seq": 5,
+   "status": "ok",
+   "structured": false
+  },
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 798,
+   "latency_ms": 0.0,
+   "output_tokens": 43,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": null,
+   "seq": 6,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "contradictory_evidence",
+ "condition": "END_LITE_NATIVE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 6,
+  "calls_by_role": {
+   "generator": 6
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 221,
+  "end_cycles": 1,
+  "failed_attempts": 0,
+  "known_partial_tokens": 3977,
+  "model_latency_ms": 0,
+  "prompt_tokens": 3756,
+  "tool_check_calls": 0,
+  "total_tokens": 3977,
+  "truncated_text_answers": 0,
+  "wall_ms": 24.72
+ },
+ "data_origin": "SYNTHETIC",
+ "end": {
+  "acceptance_label": "INCONCLUSIVE",
+  "best_candidate_id": "C1",
+  "branch_count": 0,
+  "candidate_generation": "native",
+  "candidates": [
+   "C0",
+   "C1"
+  ],
+  "complexity": "normal",
+  "engine_checks": [
+   {
+    "candidate_id": "C0",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "object"
+     }
+    ]
+   },
+   {
+    "candidate_id": "C1",
+    "consensus_as_confirmation": [],
+    "format_violations": [],
+    "internal_leakage": [],
+    "provenance": "ENGINE_DERIVED",
+    "requirements": [
+     {
+      "kind": "fenced_block",
+      "language": "json"
+     },
+     {
+      "kind": "json_value",
+      "type": "object"
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "gate_decisions": [],
+  "iterations": 1,
+  "judge_groundings": [],
+  "latest_candidate_id": "C1",
+  "protocol_actions": {},
+  "protocol_events": 0,
+  "protocol_repair_attempts": 1,
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C1",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": true,
+   "remaining_issues": [],
+   "score": 0.95
+  },
+  "rollback_events": [],
+  "termination": "QUALITY_THRESHOLD_REACHED",
+  "termination_category": null,
+  "trajectory_file": "e5d9de92-119b-4fe1-b34e-e8792e52cba8.jsonl",
+  "trajectory_id": "e5d9de92-119b-4fe1-b34e-e8792e52cba8",
+  "trajectory_sha256": "c28bd616f9c14051f714362af14e49d4717f4e9ad7ddb0973bb18632436af1f3"
+ },
+ "ended_at": "2026-10-01T08:40:53.926389+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 2,
+ "run_id": "BA-010.T1.END_LITE_NATIVE",
+ "stages": {},
+ "started_at": "2026-10-01T08:40:53.901226+00:00",
+ "task_id": "BA-010",
+ "trial": 1,
+ "trial_id": "BA-010.T1",
+ "trial_seed": 3352233821
+}

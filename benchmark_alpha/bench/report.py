@@ -1,6 +1,7 @@
 """Summaries, failure archive, CSV and reports, rebuilt entirely from the stored trial and evaluation files."""
 import csv
 import io
+import re
 import json
 from pathlib import Path
 import shutil
@@ -53,7 +54,8 @@ def summarize(out):
         rows.append({"run_id": record["run_id"], "trial_id": record["trial_id"], "task_id": record["task_id"],
                      "category": record["category"], "trial": record["trial"], "condition": record["condition"],
                      "position_in_trial": record["position_in_trial"], "data_origin": record["data_origin"],
-                     "passed": final["passed"], "score": final["score"], **final["counters"],
+                     "passed": final["passed"], "score": final["score"], "format_ok": final["format_ok"],
+                     **final["counters"],
                      "calls": cost["calls"], "failed_attempts": cost["failed_attempts"],
                      "prompt_tokens": cost["prompt_tokens"], "completion_tokens": cost["completion_tokens"],
                      "total_tokens": cost["total_tokens"], "wall_s": round(cost["wall_ms"] / 1000, 3),
@@ -79,8 +81,11 @@ def summarize(out):
     writer.writeheader()
     writer.writerows(rows)
     (out / "results.csv").write_text(buffer.getvalue(), encoding="utf-8")
-    (out / "REPORT.md").write_text(render_report(manifest, summary), encoding="utf-8")
-    (out / "MANUAL_REVIEW.md").write_text(render_manual_review(manifest, summary, runs), encoding="utf-8")
+    (out / "REPORT.md").write_text(render_report({**manifest, "_out": str(out)}, summary), encoding="utf-8")
+    review = render_manual_review(manifest, summary, runs)
+    if (out / "MANUAL_REVIEW_NOTES.md").exists():
+        review += "\n" + (out / "MANUAL_REVIEW_NOTES.md").read_text(encoding="utf-8")
+    (out / "MANUAL_REVIEW.md").write_text(review, encoding="utf-8")
     return summary
 
 
@@ -117,6 +122,10 @@ def build_summary(manifest, rows, runs):
                       "runs_with_unknown_tokens": sum(r["total_tokens"] is None for r in rs),
                       "calls": stats([r["calls"] for r in rs]), "wall_s": stats([r["wall_s"] for r in rs]),
                       "failed_attempts": sum(r["failed_attempts"] for r in rs),
+                      "format_ok": sum(r["format_ok"] for r in rs),
+                      "pass_rate_when_format_ok": (round(sum(r["passed"] for r in rs if r["format_ok"]) /
+                                                         sum(r["format_ok"] for r in rs), 4)
+                                                   if any(r["format_ok"] for r in rs) else None),
                       "run_errors": sum(r["run_error"] is not None for r in rs),
                       "end_external_blocker": sum(r["termination"] == "EXTERNAL_BLOCKER" for r in rs)}
     categories = sorted({r["category"] for r in rows})
@@ -202,6 +211,22 @@ def build_summary(manifest, rows, runs):
         c0 = evaluations[r["run_id"]]["candidates"].get("C0")
         if d and c0:
             c0_vs_direct.append({"run_id": r["run_id"], "c0_score": c0["score"], "direct_score": d["score"]})
+    terminations = {}
+    for c in ("END_LITE", "FULL_END"):
+        rs = [r for r, _ in runs if r["condition"] == c]
+        if not rs:
+            continue
+        reasons, errors, gates = {}, {}, {}
+        for r in rs:
+            end = r.get("end") or {}
+            reasons[end.get("termination")] = reasons.get(end.get("termination"), 0) + 1
+            gates[end.get("quality_gate")] = gates.get(end.get("quality_gate"), 0) + 1
+            for e in end.get("errors") or []:
+                key = f"{e['stage']}: " + re.sub(r"\b(?:[CWA]\d+|CL\d+)\b", "<id>", e["message"])[:120]
+                errors[key] = errors.get(key, 0) + 1
+        terminations[c] = {"termination_reasons": reasons, "final_quality_gate": gates, "engine_errors": errors,
+                           "mean_end_cycles": stats([(r.get("end") or {}).get("iterations") for r in rs])["mean"]}
+    truncation = {c: sum(r["cost"].get("truncated_text_answers", 0) for r, _ in runs if r["condition"] == c) for c in conds}
     budget = {c: {"mean_calls": overall[c]["calls"]["mean"], "mean_tokens": overall[c]["tokens"]["mean"],
                   "mean_wall_s": overall[c]["wall_s"]["mean"], "pass_rate": overall[c]["pass_rate"],
                   "mean_score": overall[c]["score"]["mean"]} for c in conds}
@@ -221,6 +246,9 @@ def build_summary(manifest, rows, runs):
             "candidate_progression": progression, "overthinking": overthinking_cases, "rollbacks": rollbacks,
             "delta_validation": {"counts": deltas, "items": delta_list}, "operator_effects": ops,
             "self_reflect_initial_vs_final": self_reflect, "end_c0_vs_direct": c0_vs_direct, "cost_budget": budget,
+            "end_terminations": terminations, "truncated_text_answers": truncation,
+            "run_notes": {k: manifest.get(k) for k in ("configuration_changes", "scope_decision",
+                                                        "repository_events_during_run")},
             "review_flags": {r["run_id"]: evaluations[r["run_id"]]["final"]["review_flags"] for r in rows
                              if evaluations[r["run_id"]]["final"]["review_flags"]}}
 
@@ -249,7 +277,12 @@ def render_report(manifest, s):
                  f"task-trials; score delta {v['external_score_delta_mean']}; token ×{v['token_multiplier']}; latency ×{v['latency_multiplier']}.")
     for c, cal in s["calibration"].items():
         L.append(f"- {c} internal vs external ({cal['basis']}): {cal['counts']}.")
-    L.append(f"- Runs completed: {s['runs']} of {s['planned_runs']} planned.")
+    scope = (s.get("run_notes") or {}).get("scope_decision")
+    L.append(f"- Runs completed: {s['runs']} of {s['planned_runs']} planned"
+             + (f" ({scope['decision']}; decided by {scope['by']})." if scope else "."))
+    notes = Path(manifest.get("_out", "")) / "ANALYSIS_NOTES.md"
+    if manifest.get("_out") and notes.exists():
+        L += ["", notes.read_text(encoding="utf-8").strip()]
     L += ["", "## 2. Engine identity", "", "```json", json.dumps(s["engine"], indent=1), "```", "",
           "## 3. Model / provider identity", "", "```json", json.dumps(s["model"], indent=1), "```", "",
           "## 4. Methodology", "",
@@ -258,7 +291,10 @@ def render_report(manifest, s):
           "executed order stored in manifest.json).",
           "- Every condition receives the task prompt verbatim. Hidden expectations are never sent to the model.",
           "- One run is one (task, trial, condition). Failures are recorded, never retried at run level and never repaired.",
-          f"- Task set hash: `{s['task_set_hash']}`.", "",
+          f"- Task set hash: `{s['task_set_hash']}`.",
+          f"- Truncated text answers (text call reached the output cap; kept as the answer): {s['truncated_text_answers']}.",
+          "- Configuration changes, scope decision and repository events during the run (from manifest.json):", "",
+          "```json", json.dumps(s["run_notes"], indent=1), "```", "",
           "## 5. Task set", "", _table(["task", "category", "runs per condition"],
                                         [[t, s["task_categories"][t], len(next(iter(v.values()))["scores"])]
                                          for t, v in s["by_task"].items()]), "",
@@ -276,6 +312,10 @@ def render_report(manifest, s):
                  [[c, f"{o[c]['passed']}/{o[c]['runs']}", f"{o[c]['score']['mean']} ({o[c]['score']['stdev']})",
                    hc(c, "unsupported_claim_count"), o[c]["tokens"]["mean"], o[c]["calls"]["mean"], o[c]["wall_s"]["mean"],
                    o[c]["run_errors"], o[c]["end_external_blocker"]] for c in conds]), "",
+          "Format compliance (diagnostic; does not change any score — the required answer structure is a hard "
+          "requirement of every task):", "",
+          _table(["Condition", "required structure present", "pass rate when present"],
+                 [[c, f"{o[c]['format_ok']}/{o[c]['runs']}", o[c]["pass_rate_when_format_ok"]] for c in conds]), "",
           "Score distribution per condition (mean / median / min / max / sd):", "",
           _table(["Condition", "mean", "median", "min", "max", "sd"],
                  [[c, *(o[c]["score"][k] for k in ("mean", "median", "min", "max", "stdev"))] for c in conds]), "",
@@ -301,6 +341,14 @@ def render_report(manifest, s):
             L += ["Every FALSE_ACCEPT:", "", _table(["run", "gate", "label", "basis", "returned", "score", "failed checks"],
                   [[f["run_id"], f["quality_gate"], f["acceptance_label"], f["basis"], f["returned"], f["external_score"],
                     ", ".join(f["failed_checks"])] for f in cal["false_accepts"]]), ""]
+    L += ["**How END runs ended** (termination reason, final gate, and Engine errors that stopped the loop; IDs normalized):", ""]
+    for c, t in s["end_terminations"].items():
+        L += [f"*{c}* — mean END cycles {t['mean_end_cycles']}", "",
+              _table(["termination", "runs"], sorted(t["termination_reasons"].items(), key=lambda x: -x[1])), "",
+              _table(["final quality_gate", "runs"], sorted(((str(k), v) for k, v in t["final_quality_gate"].items()),
+                                                            key=lambda x: -x[1])), "",
+              _table(["Engine error (stage: message)", "runs"], sorted(t["engine_errors"].items(), key=lambda x: -x[1]))
+              if t["engine_errors"] else "No Engine errors.", ""]
     L += ["## 14. EPISTEMIC / HALLUCINATION RESULTS", "",
           "Counts over Benchmark Alpha tasks only; not universal hallucination rates.", "",
           _table(["Condition", *COUNTERS], [[c, *(hc(c, k) for k in COUNTERS)] for c in conds]), "",

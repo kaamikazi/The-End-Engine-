@@ -1,0 +1,50 @@
+{
+  "task_id": "EXP-001",
+  "title": "Museum loan-label kit",
+  "task_statement": "Prepare print-ready label text for the three collection items. Copy accession identifiers exactly and retain input order. For an on-loan item, prepend the literal text LOAN: followed by one space to its title; otherwise use its title unchanged. Set handling to two-hands for fragile items, otherwise single-tray. Give a structured explanation listing, in input order, the accessions that triggered the loan prefix and fragile handling. Do not change titles, normalize identifiers, add facts or invent tests. This exercise establishes label text only, not the items' physical condition. No external testing or inspection has occurred.",
+  "input": {
+    "items": [
+      {
+        "accession": "Mx-A7",
+        "title": "Copper bell",
+        "on_loan": true,
+        "fragile": false
+      },
+      {
+        "accession": "QP_6c",
+        "title": "Folded map",
+        "on_loan": false,
+        "fragile": false
+      },
+      {
+        "accession": "bV-22",
+        "title": "Glass bead",
+        "on_loan": true,
+        "fragile": true
+      }
+    ]
+  },
+  "output_contract": {
+    "format": "One complete JSON object: bare JSON or one whole ```json fenced block; no surrounding commentary. Object key order/whitespace/JSON Unicode escaping are immaterial. Duplicate keys, nonfinite numbers, multiple blocks or transcript markers are invalid.",
+    "optional_fields": {
+      "notes": "array of at most8 strings, each at most2000 characters; optional, never rewarded for length; undecidable assertions require review",
+      "references": "array of at most8 source-identifier or URL strings; declared task-rule IDs are normative references, not independent evidence; undeclared closed-task IDs fail, unregistered external URLs require review without asserting nonexistence",
+      "verification_status": "optional string: not_executed or not_claimed; do not assert tests or independent confirmation"
+    },
+    "prohibited": "No extra fields in the root or records. Do not invent observations, physical verification, external execution, citations, or deployment guarantees.",
+    "incomplete_answers": "Missing rows, fields, explanations or scope fail the task contract. Parse failures leave substance unassessed, not automatically incorrect. Execution failures/withholding are separate events.",
+    "required_fields": [
+      "labels",
+      "explanation",
+      "scope"
+    ],
+    "required_scope": "label_text_only",
+    "labels": "array of exactly3 objects in original order, each with exactly accession,label,handling (all strings)",
+    "explanation": "object with exactly loan_ids and fragile_ids; each is an array of the corresponding triggering accession strings in input order. This is the required checkable explanation, not optional prose.",
+    "equivalences": "Bare JSON and whole JSON fence accepted; object keys and whitespace may differ; equivalent JSON escapes accepted. List order and opaque identifiers must remain exact."
+  },
+  "public_reference_ids": [
+    "LABEL-LOAN",
+    "LABEL-FRAGILE"
+  ]
+}

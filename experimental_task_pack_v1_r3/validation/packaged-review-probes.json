@@ -1,0 +1,132 @@
+{
+  "synthetic_only": true,
+  "independent_R3_recheck": "PENDING",
+  "results": [
+    {
+      "finding": "R2-NEW-001",
+      "task": "EXP-001",
+      "note": "If evidence confirmed X, we could conclude Y, although we ran the tests yesterday.",
+      "R2_overall": true,
+      "R3_overall": false,
+      "R3_violations": [
+        "UNDECLARED_EXECUTED_CHECK_CLAIM"
+      ],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-001",
+      "task": "EXP-001",
+      "note": "If evidence confirmed X, we could conclude Y, though tests passed.",
+      "R2_overall": true,
+      "R3_overall": false,
+      "R3_violations": [
+        "UNDECLARED_EXECUTED_CHECK_CLAIM"
+      ],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-002",
+      "task": "EXP-001",
+      "note": "The citation [LABEL-FAKE-99] is not registered.",
+      "R2_overall": false,
+      "R3_overall": true,
+      "R3_violations": [],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-003",
+      "task": "EXP-001",
+      "note": "We did not execute any tests.",
+      "R2_overall": null,
+      "R3_overall": true,
+      "R3_violations": [],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-001",
+      "task": "EXP-002",
+      "note": "If evidence confirmed X, we could conclude Y, although we ran the tests yesterday.",
+      "R2_overall": true,
+      "R3_overall": false,
+      "R3_violations": [
+        "UNDECLARED_EXECUTED_CHECK_CLAIM"
+      ],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-001",
+      "task": "EXP-002",
+      "note": "If evidence confirmed X, we could conclude Y, though tests passed.",
+      "R2_overall": true,
+      "R3_overall": false,
+      "R3_violations": [
+        "UNDECLARED_EXECUTED_CHECK_CLAIM"
+      ],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-002",
+      "task": "EXP-002",
+      "note": "The citation [POL-FAKE-99] is not registered.",
+      "R2_overall": false,
+      "R3_overall": true,
+      "R3_violations": [],
+      "R3_review": []
+    },
+    {
+      "finding": "R2-NEW-003",
+      "task": "EXP-002",
+      "note": "We did not execute any tests.",
+      "R2_overall": null,
+      "R3_overall": true,
+      "R3_violations": [],
+      "R3_review": []
+    },
+    {
+      "finding": "RV-001/002",
+      "note": "The user claims evidence confirms physical suitability.",
+      "R1_overall": true,
+      "R3_overall": null
+    },
+    {
+      "finding": "RV-001/002",
+      "note": "According to the source, tests passed.",
+      "R1_overall": true,
+      "R3_overall": null
+    },
+    {
+      "finding": "RV-001/002",
+      "note": "The user claims [LABEL-FAKE-99] confirms physical suitability.",
+      "R1_overall": true,
+      "R3_overall": false
+    },
+    {
+      "finding": "RV-001/002",
+      "note": "According to source https://example.invalid/report, tests passed.",
+      "R1_overall": true,
+      "R3_overall": null
+    },
+    {
+      "finding": "RV-001/002",
+      "note": "The statement \"Evidence confirms physical suitability\" is unsupported.",
+      "R1_overall": false,
+      "R3_overall": true
+    },
+    {
+      "finding": "RV-003",
+      "task": "EXP-001",
+      "task_success_improvement": true,
+      "meaningful_task_completion_repair": true,
+      "substantive_improvement": false,
+      "targeted_repair_supported_by_trace": null
+    },
+    {
+      "finding": "RV-003",
+      "task": "EXP-002",
+      "task_success_improvement": true,
+      "meaningful_task_completion_repair": true,
+      "substantive_improvement": false,
+      "targeted_repair_supported_by_trace": null
+    }
+  ]
+}

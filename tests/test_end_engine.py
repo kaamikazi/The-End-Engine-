@@ -92,13 +92,12 @@ class EngineTests(unittest.TestCase):
         self.assertNotEqual(engine.last_trajectory["candidates"][0]["content"], "mutated")
 
     def test_weaknesses_persist_without_verifier_resolution(self):
-        engine = self.engine(verifier=FixedVerifier(score=0.99, passed=True))
-        result = engine.run(TASK, max_cycles=2)
-        record = engine.last_trajectory
-        self.assertEqual(result.termination_reason, StopReason.BUDGET_EXHAUSTED)
-        self.assertEqual(record["weaknesses"][0]["id"], "W001")
-        self.assertEqual(record["weaknesses"][0]["status"], "open")
-        self.assertEqual(record["candidates"][2]["known_weaknesses"][0]["id"], "W001")
+        engine=self.engine(verifier=FixedVerifier(score=0.99,passed=True))
+        result=engine.run(TASK,max_cycles=2);record=engine.last_trajectory
+        self.assertEqual(result.termination_reason,StopReason.QUALITY_THRESHOLD_REACHED)
+        self.assertEqual((record["weaknesses"][0]["id"],record["weaknesses"][0]["status"]),("W001","open"))
+        self.assertFalse(record["weaknesses"][0]["decisive"])
+        self.assertEqual(record["candidates"][1]["known_weaknesses"][0]["id"],"W001")
 
     def test_diminishing_improvement_stops_before_cap(self):
         engine = self.engine(verifier=FixedVerifier())
@@ -141,11 +140,18 @@ class EngineTests(unittest.TestCase):
         self.assertIn("simulated outage", record["model_calls"][-1]["error"]["message"])
 
     def test_malformed_output_is_retained_and_stops_cleanly(self):
-        provider = MockProvider(scripted={"critique": [ModelResponse("this is not JSON")]})
+        # v0.3.5 (changed): malformed model output is a model-protocol failure, not an external blocker. It gets one
+        # bounded repair; when that is malformed too, the run stops cleanly as MODEL_PROTOCOL_FAILURE. Both outputs are
+        # retained. (Before v0.3.5: EXTERNAL_BLOCKER on the first malformed output, which Benchmark Alpha disproved.)
+        provider = MockProvider(scripted={"critique": [ModelResponse("this is not JSON"), ModelResponse("still not JSON")]})
         engine = self.engine(provider=provider)
         result = engine.run(TASK)
-        self.assertEqual(result.termination_reason, StopReason.EXTERNAL_BLOCKER)
-        self.assertEqual(engine.last_trajectory["model_calls"][-1]["response"]["content"], "this is not JSON")
+        record = engine.last_trajectory
+        self.assertEqual(result.termination_reason, StopReason.MODEL_PROTOCOL_FAILURE)
+        self.assertEqual([c["response"]["content"] for c in record["model_calls"][-2:]],
+                         ["this is not JSON", "still not JSON"])
+        self.assertEqual([e["action"] for e in record["protocol_events"]], ["repair_requested", "repair_exhausted"])
+        self.assertEqual(record["termination"]["category"], "MODEL_PROTOCOL_REPAIR_EXHAUSTED")
         self.assertTrue(Path(result.trajectory_path).exists())
 
     def test_verification_failure_does_not_reuse_old_candidate_score(self):

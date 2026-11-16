@@ -1,0 +1,471 @@
+{
+  "experiment": "v0.3.5.1 Core Regression Pilot Replay",
+  "status": "COMPLETED",
+  "diagnostic_only": true,
+  "not_benchmark_beta": true,
+  "created_at": "2026-10-06T16:38:02.409437+00:00",
+  "engine": {
+    "version": "0.3.5.1",
+    "source_sha256": "c04475eafbf7bc13f3cd0f2c4a772db9113c23c25e3cf35dd0cdb8b853643077",
+    "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+    "files": 68,
+    "python": "3.12.14",
+    "git_commit": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+    "offline_tests": {
+      "command": "python -m unittest discover -s tests -t . (network-blocked unittest API)",
+      "tests": 262,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "network_attempts": 0,
+      "elapsed_seconds": 15.606
+    },
+    "decision_provider": "baseline"
+  },
+  "model_identity": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-04-13T11:24:13.189597+06:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ],
+    "server_version": "0.35.1"
+  },
+  "historical_ollama_version": "0.35.1",
+  "ollama_version_changed": false,
+  "model_settings": {
+    "model": "qwen3:4b",
+    "provider": "ollama-local",
+    "endpoint": "http://127.0.0.1:11434",
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "num_predict": 4096,
+    "num_ctx": 8192,
+    "base_seed": 20260930,
+    "think": false,
+    "timeout_seconds": 900.0,
+    "structured_retries": 1,
+    "system": null
+  },
+  "task_ids": [
+    "BA-001",
+    "BA-002",
+    "BA-008",
+    "BA-009"
+  ],
+  "task_hashes": {
+    "BA-001": "778aa162b7e1cd9109a0d4ee5c30372de07c1e0e7ed5a556f05b88a75c447d97",
+    "BA-002": "9d6cb82a77b770de82e65eac9573efda48f117b0c72c57db239a01a14d0a729e",
+    "BA-008": "a050ea4a29c8e302279a27d9a0939a81cded3ed825276a053a7cc9c024ba3953",
+    "BA-009": "3f6156dc1ca273bd9cf6d87db413a5abbfe6dffdf005cf2b7ef263a9f4719a9c"
+  },
+  "evaluator_sha256": "2570b6632b7aaf64d9f3418407cadad14b05ec89283f97e2286ecf70e4a03914",
+  "evaluator_source": "byte-identical copy of benchmark_alpha/bench/evaluators.py",
+  "transport_source": "byte-identical copy of benchmark_beta/bench/providers.py (v0.3.5 error taxonomy)",
+  "conditions": [
+    "DIRECT",
+    "FULL_END_STRUCTURED",
+    "FULL_END_NATIVE"
+  ],
+  "trials": 1,
+  "planned_runs": 12,
+  "randomization_seed": 20261005,
+  "plan": [
+    {
+      "run_id": "BA-001.T1.DIRECT",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 1
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_NATIVE",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 2
+    },
+    {
+      "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-001",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 3
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_NATIVE",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 4
+    },
+    {
+      "run_id": "BA-002.T1.DIRECT",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 5
+    },
+    {
+      "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-002",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 6
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 7
+    },
+    {
+      "run_id": "BA-008.T1.FULL_END_NATIVE",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 8
+    },
+    {
+      "run_id": "BA-008.T1.DIRECT",
+      "task_id": "BA-008",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 9
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "FULL_END_STRUCTURED",
+      "position": 10
+    },
+    {
+      "run_id": "BA-009.T1.FULL_END_NATIVE",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "FULL_END_NATIVE",
+      "position": 11
+    },
+    {
+      "run_id": "BA-009.T1.DIRECT",
+      "task_id": "BA-009",
+      "trial": 1,
+      "condition": "DIRECT",
+      "position": 12
+    }
+  ],
+  "end_configs": {
+    "FULL_END_STRUCTURED": {
+      "ledger_dir": "E:\\The End Engine\\v0351_core_regression_pilot\\trajectories",
+      "verbose": false,
+      "llm_classification": false,
+      "llm_selection": false,
+      "quality_threshold": 0.9,
+      "critical_quality_threshold": 0.95,
+      "improvement_epsilon": 0.01,
+      "stagnation_patience": 2,
+      "repeated_critique_patience": 2,
+      "max_active_branches": 3,
+      "max_branch_depth": 2,
+      "max_branches_per_operator": 3,
+      "max_cognitive_operations": null,
+      "enable_branching": true,
+      "meta_check_interval": 3,
+      "max_reframings": 1,
+      "cognitive_stagnation_patience": 3,
+      "quality_evaluation": false,
+      "judge_min_confidence": 0.75,
+      "post_acceptance_cycles": 0,
+      "protocol_repair_attempts": 1,
+      "repair_failure_limit": 2,
+      "no_progress_patience": 2,
+      "candidate_generation": "structured",
+      "decision": {
+        "provider": "baseline",
+        "requested_model": null,
+        "categories": [
+          "operator_routing"
+        ],
+        "timeout_seconds": 5.0,
+        "max_calls_per_run": 4,
+        "max_latency_ms": 15000.0,
+        "min_choice_probability": 0.65,
+        "min_choice_confidence": 0.7,
+        "max_utility_loss": 0.25,
+        "max_repetition_penalty": 0.5
+      },
+      "max_run_calls": null
+    },
+    "FULL_END_NATIVE": {
+      "ledger_dir": "E:\\The End Engine\\v0351_core_regression_pilot\\trajectories",
+      "verbose": false,
+      "llm_classification": false,
+      "llm_selection": false,
+      "quality_threshold": 0.9,
+      "critical_quality_threshold": 0.95,
+      "improvement_epsilon": 0.01,
+      "stagnation_patience": 2,
+      "repeated_critique_patience": 2,
+      "max_active_branches": 3,
+      "max_branch_depth": 2,
+      "max_branches_per_operator": 3,
+      "max_cognitive_operations": null,
+      "enable_branching": true,
+      "meta_check_interval": 3,
+      "max_reframings": 1,
+      "cognitive_stagnation_patience": 3,
+      "quality_evaluation": false,
+      "judge_min_confidence": 0.75,
+      "post_acceptance_cycles": 0,
+      "protocol_repair_attempts": 1,
+      "repair_failure_limit": 2,
+      "no_progress_patience": 2,
+      "candidate_generation": "native",
+      "decision": {
+        "provider": "baseline",
+        "requested_model": null,
+        "categories": [
+          "operator_routing"
+        ],
+        "timeout_seconds": 5.0,
+        "max_calls_per_run": 4,
+        "max_latency_ms": 15000.0,
+        "min_choice_probability": 0.65,
+        "min_choice_confidence": 0.7,
+        "max_utility_loss": 0.25,
+        "max_repetition_penalty": 0.5
+      },
+      "max_run_calls": null
+    }
+  },
+  "full_end_max_cycles": 3,
+  "decision_provider": "baseline",
+  "jev_calls_allowed": 0,
+  "cloud_inference_allowed": false,
+  "pilot_source_hashes": {
+    "run_pilot.py": "ae9a05c3f8b768223d99ffac47d5b52337d3c1dd30d74f395185af4ce2153d8c",
+    "report_pilot.py": "359f9f25cb73f343ed36c57285e1baadbf1529c860a58f45aecf01bfd5a58e4b",
+    "tests.py": "85df6cec7f4749d502ba6ffbb94bff19ceb9207088c38646abeda0d86435ccfe",
+    "prepare.py": "de313ea9e226ddbd9f54a0bd1f9f455976fdc9920a11d88715d9cfd2448c3a7d",
+    "bench/__init__.py": "882eb38ccae8335a31df126e2e7562bf92200d75fe01e2fa51a290344e85b054",
+    "bench/analysis.py": "fd58672b1628b9fbdbc408e07e1ee34626ad130a444cf91f9be3a419d60ab10a",
+    "bench/conditions.py": "be3559a40c969dbd179517276d9835bc3f8cbc25746d78e1e77cab224ac68559",
+    "bench/evaluators.py": "2570b6632b7aaf64d9f3418407cadad14b05ec89283f97e2286ecf70e4a03914",
+    "bench/providers.py": "7c1be0834feb73163607f4f5ebb76e15f09abe50fc2e14e144306ef11fd09a92",
+    "bench/upstream_runner.py": "63bf2a7c4288ce9f225c318d227d4fea33e541c883abbef4102ba03831bb5d10",
+    "tasks/BA-001.json": "778aa162b7e1cd9109a0d4ee5c30372de07c1e0e7ed5a556f05b88a75c447d97",
+    "tasks/BA-002.json": "9d6cb82a77b770de82e65eac9573efda48f117b0c72c57db239a01a14d0a729e",
+    "tasks/BA-008.json": "a050ea4a29c8e302279a27d9a0939a81cded3ed825276a053a7cc9c024ba3953",
+    "tasks/BA-009.json": "3f6156dc1ca273bd9cf6d87db413a5abbfe6dffdf005cf2b7ef263a9f4719a9c"
+  },
+  "runtime_guard": {
+    "threshold_seconds": 21600,
+    "after_first_FULL_END": true,
+    "formula": "elapsed completed runs + mean completed FULL_END wall * remaining FULL_END + mean DIRECT wall * remaining DIRECT; if no DIRECT observed, use its 900s timeout upper bound"
+  },
+  "runtime_projections": [
+    {
+      "recorded_at": "2026-10-06T16:49:21.040569+00:00",
+      "completed_runs": 2,
+      "completed_wall_seconds": 618.4445949999999,
+      "full_runs_observed": 1,
+      "mean_FULL_END_seconds": 517.65936,
+      "DIRECT_estimate_seconds": 100.785235,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 4544.41582,
+      "projected_total_hours": 1.2623377277777779,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T12:09:01.653712+00:00",
+      "completed_runs": 3,
+      "completed_wall_seconds": 1788.72252,
+      "full_runs_observed": 2,
+      "mean_FULL_END_seconds": 843.9686425,
+      "DIRECT_estimate_seconds": 100.785235,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 7154.89008,
+      "projected_total_hours": 1.9874694666666668,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T12:27:38.154481+00:00",
+      "completed_runs": 4,
+      "completed_wall_seconds": 2902.432241,
+      "full_runs_observed": 3,
+      "mean_FULL_END_seconds": 933.8823353333333,
+      "DIRECT_estimate_seconds": 100.785235,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 7874.199622666667,
+      "projected_total_hours": 2.187277672962963,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T12:29:46.860922+00:00",
+      "completed_runs": 5,
+      "completed_wall_seconds": 3029.5959040000002,
+      "full_runs_observed": 3,
+      "mean_FULL_END_seconds": 933.8823353333333,
+      "DIRECT_estimate_seconds": 113.97444899999999,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 7926.956478666667,
+      "projected_total_hours": 2.2019323551851855,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T12:46:25.802595+00:00",
+      "completed_runs": 6,
+      "completed_wall_seconds": 4026.7496180000003,
+      "full_runs_observed": 4,
+      "mean_FULL_END_seconds": 949.70018,
+      "DIRECT_estimate_seconds": 113.97444899999999,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 8053.499236000001,
+      "projected_total_hours": 2.237083121111111,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T13:09:14.341999+00:00",
+      "completed_runs": 7,
+      "completed_wall_seconds": 5391.853506,
+      "full_runs_observed": 5,
+      "mean_FULL_END_seconds": 1032.7809216,
+      "DIRECT_estimate_seconds": 113.97444899999999,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 8718.145168800002,
+      "projected_total_hours": 2.4217069913333336,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T13:44:15.691423+00:00",
+      "completed_runs": 8,
+      "completed_wall_seconds": 7490.004976,
+      "full_runs_observed": 6,
+      "mean_FULL_END_seconds": 1210.3426796666668,
+      "DIRECT_estimate_seconds": 113.97444899999999,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 10138.639233333333,
+      "projected_total_hours": 2.816288675925926,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T13:49:51.154760+00:00",
+      "completed_runs": 9,
+      "completed_wall_seconds": 7822.668593,
+      "full_runs_observed": 6,
+      "mean_FULL_END_seconds": 1210.3426796666668,
+      "DIRECT_estimate_seconds": 186.87083833333335,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 10430.224790666667,
+      "projected_total_hours": 2.8972846640740744,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T17:21:54.471539+00:00",
+      "completed_runs": 10,
+      "completed_wall_seconds": 8716.89996,
+      "full_runs_observed": 7,
+      "mean_FULL_END_seconds": 1165.1839207142857,
+      "DIRECT_estimate_seconds": 186.87083833333335,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 10068.954719047619,
+      "projected_total_hours": 2.796931866402116,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T17:43:23.686314+00:00",
+      "completed_runs": 11,
+      "completed_wall_seconds": 10004.423668000001,
+      "full_runs_observed": 8,
+      "mean_FULL_END_seconds": 1180.476394125,
+      "DIRECT_estimate_seconds": 186.87083833333335,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 10191.294506333335,
+      "projected_total_hours": 2.8309151406481488,
+      "threshold_exceeded": false
+    },
+    {
+      "recorded_at": "2026-10-07T17:46:13.354000+00:00",
+      "completed_runs": 12,
+      "completed_wall_seconds": 10172.679908,
+      "full_runs_observed": 8,
+      "mean_FULL_END_seconds": 1180.476394125,
+      "DIRECT_estimate_seconds": 182.21718875000002,
+      "DIRECT_estimate_basis": "observed mean",
+      "projected_total_seconds": 10172.679908,
+      "projected_total_hours": 2.8257444188888887,
+      "threshold_exceeded": false
+    }
+  ],
+  "completed_runs": [
+    "BA-001.T1.DIRECT",
+    "BA-001.T1.FULL_END_NATIVE",
+    "BA-001.T1.FULL_END_STRUCTURED",
+    "BA-002.T1.FULL_END_NATIVE",
+    "BA-002.T1.DIRECT",
+    "BA-002.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_STRUCTURED",
+    "BA-008.T1.FULL_END_NATIVE",
+    "BA-008.T1.DIRECT",
+    "BA-009.T1.FULL_END_STRUCTURED",
+    "BA-009.T1.FULL_END_NATIVE",
+    "BA-009.T1.DIRECT"
+  ],
+  "sessions": [
+    {
+      "started_at": "2026-10-06T16:39:00.615505+00:00",
+      "completed": 2,
+      "skipped_existing": 0
+    },
+    {
+      "started_at": "2026-10-07T11:49:30.232176+00:00",
+      "completed": 7,
+      "skipped_existing": 2
+    },
+    {
+      "started_at": "2026-10-07T17:06:59.368238+00:00",
+      "completed": 3,
+      "skipped_existing": 9,
+      "ended_at": "2026-10-07T17:46:13.605778+00:00"
+    }
+  ],
+  "historical_reference": "v035_core_regression_pilot/ (read-only, never rescored)",
+  "same_execution_order": true,
+  "seed_scheme": "SHA256(base_seed:SHA256(20261005:task:1)[:8]:logged_call_sequence)[:8], same as previous pilot",
+  "sampling_limitation": "Seeds are exposed and preserved; same order/seed does not guarantee deterministic model outputs. Old BA-001 already produced different text on identical initial payloads.",
+  "last_completed_at": "2026-10-07T17:46:13.336713+00:00",
+  "ended_at": "2026-10-07T17:46:13.605778+00:00",
+  "postflight_environment": {
+    "observed_at": "2026-10-07T18:03:27.529746+00:00",
+    "preflight_server_version": "0.35.1",
+    "postflight_server_version": "0.40.0",
+    "server_version_changed": true,
+    "model_digest_unchanged": true,
+    "change_time_unknown": true,
+    "per_session_server_versions_not_persisted": true,
+    "no_version_update_performed_by_task": true,
+    "initial_postflight_version_equality_assertion_failed": true,
+    "no_more_inference_after_discovery": true,
+    "interpretation": "Completed observations preserved; environmental comparability warning, not a clean server-version-controlled replay."
+  },
+  "final_audit": "FINAL_AUDIT.json",
+  "clean_server_version_controlled_replay": false
+}

@@ -32,11 +32,12 @@
   "prompt_tokens": 146,
   "tool_check_calls": 0,
   "total_tokens": 185,
-  "wall_ms": 0.019
+  "truncated_text_answers": 0,
+  "wall_ms": 0.027
  },
  "data_origin": "SYNTHETIC",
  "end": null,
- "ended_at": "2026-09-30T15:11:29.521082+00:00",
+ "ended_at": "2026-10-01T06:23:04.957569+00:00",
  "error": null,
  "model": {
   "data_origin": "SYNTHETIC",
@@ -49,7 +50,7 @@
  "stages": {
   "answer": "Final answer:\n```json\n{\"conclusion\": \"Yes, QA passed so it works.\", \"certainty\": \"established\", \"evidence_used\": [\"E1\"], \"additional_evidence_needed\": []}\n```"
  },
- "started_at": "2026-09-30T15:11:29.521082+00:00",
+ "started_at": "2026-10-01T06:23:04.957569+00:00",
  "task_id": "BA-010",
  "trial": 1,
  "trial_id": "BA-010.T1",

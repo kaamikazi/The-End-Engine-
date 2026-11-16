@@ -1,12 +1,195 @@
-# END Engine v0.3.4 — Trajectory Quality Gate and Adversarial Judge
+# END Engine v0.3.5.2 — Unified Assessment Integrity + Revision Provenance
+
+This is an offline corrective release following the frozen v0.3.5.1 pilot. It does
+not redesign cognition or demonstrate reasoning improvement. The pilot improved
+none of eight FULL_END C0 scores and had an unknown-time Ollama version change.
+See [the implementation report](IMPLEMENTATION_REPORT_v0.3.5.2.md) and the
+[read-only revision-value audit](REVISION_VALUE_AUDIT_v0352.md).
+
+- One Engine-owned assessment policy labels producer, source, grounding, scope and
+  disposition across critique, verification, judging, planning and reconciliation.
+  Unsupported findings remain advisory and targetable; their severity, repetition,
+  confidence or quotation cannot establish a defect. Incomplete model verification
+  may remain BLOCKED/inconclusive; it is not converted into successful verification.
+- Original task instructions remain binding. Task assertions are not executed
+  evidence, and MODEL_REVISION_PLAN suggestions cannot become new user demands.
+  Prompts expose labelled original task, current answer, constraints and proposals.
+- Bounded citation/receipt transition checks distinguish declared or registered
+  references from unregistered independent-authority claims. Missing registration
+  does not prove that an external source is fake. A revision cannot create receipts
+  or verified support by adding a citation string.
+- The output guard recognizes affirmative evidence-confirms wording, negation,
+  attributed/quoted assertions, hypotheticals and status fields. Only exact,
+  candidate-bound checker support authorizes a claim within its declared scope.
+- Candidate records keep raw content and an authoritative answer span. Adapters may
+  provide a verbatim answer boundary; fallback parsing uses actual fence lines.
+  Ambiguous extraction, unresolved status/reference violations and internal leakage
+  cause empty BLOCKED/inconclusive output, with the original trace retained.
+  Trusted checkers bind the inspected answer's SHA-256; raw response hashes remain
+  separate research provenance. Old records continue to deserialize without migration.
+- No-progress excludes advisory issue creation, unverified claim churn and
+  unvalidated verifier opinions. Required actions, deterministic checks and hard
+  budgets remain protected. This does not claim measured live cost savings.
+
+These are bounded English/JSON and declared-scope checks, not arbitrary truth or
+entailment solving. Caller-supplied components/checker contracts remain a trust
+boundary. Validated finite output restrictions include JSON/fences, literal fields,
+entry counts, required explanation presence and literal Python import restrictions;
+these checks do not certify arbitrary prose or code correctness.
+
+Runtime remains Python 3.11+ with no required external dependencies. Tests and demos
+below use offline fixtures by default. Run the dedicated pack with:
+
+```sh
+python -B -m unittest tests.test_v0352_regressions
+python -B -m unittest discover -s tests -t .
+```
+
+No live inference or benchmark was executed for this release. Jev remains optional
+and disabled by default; its routing and the separate END Harness were not changed.
+The recommended next action is to reconsider revision architecture before more
+inference, not automatically repeat the pilot. Nothing was committed or published.
+
+## Previous v0.3.5.1 behavior and historical context
+
+# END Engine v0.3.5.1 â€” Semantic Grounding + Epistemic Output Integrity
+
+v0.3.5.1 is a narrow correction based on the completed
+[Core Regression Pilot](v035_core_regression_pilot/REPORT.md). None of that pilot's
+eight FULL_END runs improved its final external score over C0. This release has
+**offline validation only**; it does not demonstrate better reasoning or answers.
+See [the implementation report](IMPLEMENTATION_REPORT_v0.3.5.1.md).
+
+- Judge findings separate quote occurrence from semantic support. Scoped executed
+  checks can contradict an alleged defect; descriptive task assertions cannot
+  establish candidate error. Explicit instructions and hypothetical assumptions
+  remain binding. `TaskContract` optionally supplies caller-declared classifications.
+- Explicit epistemic assertions in final prose/JSON require candidate-bound,
+  targeted executed support within the declared scope. Model confidence, human/model
+  agreement and Jev decisions cannot supply it. Negative language remains legal.
+- Overclaims create a weakness and targeted revision instruction. At equal gate
+  rank, a qualified revision is preferred to an overclaim without promoting its
+  verification status. If the selected answer still overclaims at termination,
+  `EngineResult.answer` is empty and the result is BLOCKED/INCONCLUSIVE; the original
+  candidate and reasons remain in the ledger's `output_integrity` and scorecard.
+  A standalone `</think>` delimiter outside code fences selects the displayed final
+  answer region; raw candidate content is retained for research and evidence binding.
+- Every malformed result gets at most one targeted repair. After two cumulative
+  failed repairs in a stage, later repairs in that stage are suppressed for that
+  run. Invalid IDs are discarded, never silently mapped. `repair_statistics`
+  distinguishes attempted/succeeded/failed/suppressed repairs and discarded elements.
+- Two completed cycles without substantive internal change can stop as `NO_PROGRESS`.
+  Comparison happens after rollback. Required revisions, failed deterministic checks,
+  pending recovery and mandatory scrutiny/probe policies prevent this shortcut.
+  Termination and acceptance remain separate; no-progress never grants verification.
+
+Defaults: `repair_failure_limit=2`, `no_progress_patience=2`; both accept integers
+at least two. `protocol_repair_attempts=0` disables repairs. Historical values 2/3
+still deserialize, but all positive values now allow only one attempt per result.
+No-progress and repair observations are recorded without new model calls. Exact
+tokens saved are unknown; avoided repair-call counts are reported only when known.
+
+These are bounded English/JSON heuristics and explicitly scoped checker contracts,
+not an arbitrary semantic truth solver. See the report for limits and migration effects.
+Jev remains optional and disabled by default. **0.3.6 remains reserved/proposed for
+the separate experimental Jev routing release**; this corrective release is 0.3.5.1.
+
+Run the new deterministic regression pack with:
+
+```sh
+python -B -m unittest tests.test_v0351_regressions
+```
+
+Do not resume the frozen v0.3.5 pilot directory for a new experiment. A separately
+authorized replay must retain the exact 12-run design and write new artifacts to
+a separate directory, as specified in the implementation report.
+
+An **experimental, optional decision-provider integration** is available for
+operator-family routing. It is **off by default**, uses an optional lazy-loaded
+TypeSafe adapter, and preserves END's existing verification and policy boundaries.
+Jev judgments are model-generated decision signals. They are not independent
+evidence and do not satisfy END Engine verification requirements by themselves.
+See [the integration guide](docs/JEV_EXPERIMENT.md) and
+[routing-only A/B plan (not executed)](docs/JEV_AB_PLAN.md). No reasoning improvement
+is claimed, and the package version has not been bumped for this experiment.
 
 v0.3.1 is a focused audit-policy fix, and v0.3.2 reconciles the final assessment of a restored candidate. v0.3.3 adds
 bounded evidence-integrity checks: explicit references, declared claim mappings, scope and contradictions. v0.3.4 fixes
-three defects in them. See "v0.3.3/v0.3.4 evidence integrity", "v0.3.1 audit policy", "v0.3.2 final reconciliation"
-below and IMPLEMENTATION_REPORT.md.
+three defects in them. v0.3.5 is a reliability release driven by Benchmark Alpha: model-protocol robustness and grounded
+judgment. See "v0.3.5 protocol robustness and grounded judgment", "v0.3.3/v0.3.4 evidence integrity", "v0.3.1 audit
+policy", "v0.3.2 final reconciliation" below and IMPLEMENTATION_REPORT_v0.3.5.md.
 
 These checks are **not hallucination detection or fact-checking**. They check how model statements use evidence
 recorded in the run. They do not establish whether the content of an answer is true.
+
+**v0.3.5 has not yet been empirically shown to outperform any baseline.** On Benchmark Alpha, v0.3.4 did not
+(`benchmark_alpha/REPORT.md`). Whether v0.3.5 changes that is for Benchmark Beta to measure.
+
+### v0.3.5 protocol robustness and grounded judgment
+
+Each change addresses a failure observed in Benchmark Alpha (v0.3.4, `qwen3:4b`, 96 runs).
+
+**A model-protocol failure is not an external blocker.**
+- Malformed structured output and invalid identifiers raise `ModelProtocolError` (a `ValueError` subclass) with one of
+  these categories (`end_engine/models/protocol.py`):
+  - `MODEL_PROTOCOL_SCHEMA_FAILURE`
+  - `MODEL_PROTOCOL_INVALID_REFERENCE`
+  - `MODEL_PROTOCOL_INVALID_TRANSITION`
+  - `MODEL_PROTOCOL_UNGROUNDED_FINDING`
+  - `MODEL_PROTOCOL_REPAIR_EXHAUSTED`
+- `EXTERNAL_BLOCKER` stays reserved for exceptions raised by the provider, a tool, the transport or the environment.
+- A run stopped by invalid model output ends as `MODEL_PROTOCOL_FAILURE`, and `termination.category` names the cause.
+- If the returned candidate's evaluation had completed, its gate stands, capped at `ACCEPT_PROVISIONALLY`.
+
+**Bounded recovery** (`EngineConfig.protocol_repair_attempts`, default 1; 0 disables it):
+
+| Failure | Recovery |
+|---|---|
+| Unparseable or schema-invalid output | One targeted repair call (`RecordingProvider`), stating the validation error. |
+| Critique referencing unknown weakness, claim or assumption IDs | One repair listing the valid IDs. Elements still invalid are discarded and the valid rest is used. |
+| Revision plan targeting unknown weaknesses | One repair. Unknown targets are removed; a change whose targets were all unknown is discarded. |
+| Verification updates | Each update is judged on its own: invalid or duplicate ones are rejected, valid ones kept. LLM verifiers get one repair. |
+| Branch synthesis adopting a non-promising or unknown branch | One repair; then the synthesis is discarded and the loop continues. The adoption invariant is unchanged. |
+
+- Invalid identifiers are never mapped onto real ones, and no replacement content is invented.
+- Every attempt is recorded in `protocol_events`: the stage, the error, the invalid values, the action, and what was
+  kept or discarded.
+
+**Task output format vs. Engine protocol format.**
+- `EngineConfig(candidate_generation="native")` generates the user-facing answer as free text. The initial request is
+  the task itself, with no Engine context or schema. Revisions see plan actions, never weakness or candidate IDs.
+- The default, `"structured"`, keeps the exact v0.3.4 requests, because existing integrations compare baselines against
+  them byte for byte.
+- In both modes a deterministic engine check (`end_engine/core/output_format.py`, provenance `ENGINE_DERIVED`)
+  records the task's explicit format requirements, format violations, leakage of Engine internals, and answers that
+  present agreement as confirmation (`engine_checks`).
+- A format violation or an internals leak is a task-constraint violation: the gate gives `REVISE`.
+
+**Grounded judgment** (`end_engine/quality/grounding.py`).
+- Judges receive typed sources:
+  - TASK is `TASK_PROVIDED`: it may contain false premises and is not verified fact.
+  - CANDIDATE is the only text attributable to the candidate.
+  - EVIDENCE items are labelled `EXECUTED_CHECK` or `MODEL_JUDGMENT`.
+- Issues may declare `claim_type` (`CANDIDATE_INTERNAL`, `TASK_CONSTRAINT` or `EXTERNAL_FACT`), `candidate_quote` and
+  `task_reference`.
+- The Engine grounds every finding. These are not decisive:
+  - `MISATTRIBUTED`: text attributed to the candidate occurs only in the task.
+  - `UNGROUNDED`: the declared quote is in neither the candidate nor the task.
+  - `TASK_PREMISE_DEPENDENT`: the objection rests on a task assertion.
+  - `REQUIRES_EXTERNAL_VALIDATION`: a factual claim without executed evidence.
+- A non-decisive finding cannot cause `REJECT`, `REVISE`, rollback or a weakness. It is recorded in `judge_groundings`
+  and reported as uncertainty.
+- Grounded candidate defects, task-constraint violations and failed executed checks keep their full effect.
+
+**Agreement is not verification.**
+- `Provenance` distinguishes `MODEL_CONSENSUS` and `REPORTED_CONSENSUS` from `EXECUTED_CHECK`.
+- A claim whose stated support is agreement is recorded with that consensus provenance, and is never verified by it.
+- An answer presenting agreement as confirmation ("independently confirmed") caps acceptance at provisional.
+
+**What v0.3.5 does not do.**
+- It does not make END work, solve hallucination, beat direct inference or improve reasoning.
+- The grounding heuristics are narrow and deterministic: quote matching, task-assertion phrasing, and format/output
+  keywords. A judge can still mislabel a finding in ways they do not catch.
 
 END is an external orchestration system that subjects a candidate answer to adaptive
 criticism, explicit revision planning, and verification. It exists to produce more
@@ -118,13 +301,13 @@ result is recorded as an `evidence_integrity` step and collection entry. The ret
     task input."
 - **A PASS must cover something (v0.3.4).** A PASS counts toward verified acceptance only if it targets a recorded
   claim, weakness or assumption. A receipt that covers nothing adds "Executed checks cover no recorded claim or
-  concern…".
+  concernâ€¦".
 - **Everything else is model-reported:** `MODEL_JUDGMENT` artifacts, judge verdicts, scores, confidences and
   uncertainties; statuses the model sets through critique `claims`/`claim_updates` (`SUPPORTED`, `NOT_APPLICABLE`);
   risk acceptance; and transition rationales.
 - **Provenance comes from the writer, not the wording (v0.3.4).** A status counts as Engine-written only when this
   session wrote that exact `(claim, status, evidence)` update. Evidence text that imitates the Engine's
-  "Executed evidence references: …" wording is still model-asserted, and its references are resolved.
+  "Executed evidence references: â€¦" wording is still model-asserted, and its references are resolved.
 
 **Claim and statement states** (`history` records the path; the last entry is the status):
 
@@ -144,7 +327,7 @@ result is recorded as an `evidence_integrity` step and collection entry. The ret
 - model-authored claim evidence;
 - transition rationales made on this candidate.
 
-It recognises bounded forms: execution UUIDs, `receipts/….json` sources, content or artifact hashes of 12 or more hex
+It recognises bounded forms: execution UUIDs, `receipts/â€¦.json` sources, content or artifact hashes of 12 or more hex
 characters, END IDs (`E-C0-1`, `AT001`, `J001`, `AJ001`, `CL001`, `W001`, `A001`) and `step N`. Each one is `valid`,
 `nonexistent`, `wrong_candidate` (it exists but belongs to another candidate, even with byte-identical content) or
 `wrong_artifact`. A judge citing unknown evidence no longer aborts the run (0.3.2 raised, and the run ended as
@@ -187,8 +370,8 @@ merely because the bytes match.
 | Finding on a sibling | Treatment |
 |---|---|
 | A contradiction about a claim or concern, or a trusted check of that claim that failed | Kept unresolved and visible, and caps acceptance at `ACCEPT_PROVISIONALLY`. Never a failure. |
-| — whose failed check binds this exact content (`artifact_sha256`) | Applicability `demonstrated`. |
-| — otherwise | Applicability `undetermined`. |
+| â€” whose failed check binds this exact content (`artifact_sha256`) | Applicability `demonstrated`. |
+| â€” otherwise | Applicability `undetermined`. |
 | The same, but the concern was later resolved on that content by a transition audited `VALID` | `resolved_later`; no cap. |
 | Citation errors (`nonexistent`, `wrong_candidate`), another judge's out-of-scope statements, checks bound to a different artifact, and claim statuses or mappings in that candidate's scope | Listed in `not_transferred` (kind `evidence_integrity`), not applied. |
 
@@ -227,11 +410,11 @@ When a strict run ends, END still returns its selected best candidate. Selection
 **Not applied:**
 - Transitions on different content.
 - Invalid or unaudited transitions. Unaudited ones add an uncertainty.
-- Judge feedback and audit failures of other candidates. These are candidate-scoped: audit failures are only listed, and judge feedback on identical content is reported as "Applicability undetermined…", which caps acceptance at provisional.
+- Judge feedback and audit failures of other candidates. These are candidate-scoped: audit failures are only listed, and judge feedback on identical content is reported as "Applicability undeterminedâ€¦", which caps acceptance at provisional.
 
 **Effects:**
 - A later unresolved high or critical concern makes the final `quality_gate` `REVISE`.
-- An applicable accepted risk caps it at `ACCEPT_PROVISIONALLY` ("Accepted risks remain unverified…").
+- An applicable accepted risk caps it at `ACCEPT_PROVISIONALLY` ("Accepted risks remain unverifiedâ€¦").
 
 **Field meanings:**
 - `best_candidate_id` / `final_candidate_id` is the returned answer.
@@ -253,7 +436,7 @@ When a strict run ends, END still returns its selected best candidate. Selection
   - both independent and adversarial judgments of the same candidate are `PASS` / `ACCEPT`, with no fatal or major issues.
 
   Otherwise the audit is `INVALID` and lists its `criteria_gaps`. Corroborating judgment IDs are kept in the audit.
-- **An accepted risk never counts as verification.** The gate adds "Accepted risks remain unverified: …", so the best outcome is `ACCEPT_PROVISIONALLY`.
+- **An accepted risk never counts as verification.** The gate adds "Accepted risks remain unverified: â€¦", so the best outcome is `ACCEPT_PROVISIONALLY`.
 - Claiming `resolved` without a revision or evidence remains `INVALID`, exactly as before.
 
 For backward compatibility, unconfigured runs keep the v0.2 path, schema 2.0 and
@@ -383,7 +566,7 @@ signals. Optional LLM classification uses a separate structured call. Explicit
 | DEEP | 2 | 4 | 6 |
 | CRITICAL | 3 | 5 | 8 |
 
-A cycle is one critique → plan → revision → verification. C0 is generated and
+A cycle is one critique â†’ plan â†’ revision â†’ verification. C0 is generated and
 verified before cycle 1. FAST uses one candidate and verification without recursion.
 An explicit `max_cycles` replaces the cap and clamps the minimum and target to it;
 zero permits only C0. FAST remains zero-cycle even with a larger cap. The target
@@ -463,7 +646,7 @@ followups. The taxonomy and priors live in `operators/metadata.py`.
 `UtilitySelectionPolicy` uses:
 
 ```text
-utility = relevance × information_gain × issue_value × novelty × task_importance
+utility = relevance Ã— information_gain Ã— issue_value Ã— novelty Ã— task_importance
           - repetition_penalty - cost_penalty + meta_adjustment
 ```
 
@@ -586,7 +769,7 @@ change its effective result.
 forbidden terms. Its score means **rule compliance**, not semantic correctness.
 
 After minimum scrutiny, quality termination requires a passing result, no remaining
-verifier issues, no open high/critical weakness, and score ≥0.90 (≥0.95 for CRITICAL).
+verifier issues, no open high/critical weakness, and score â‰¥0.90 (â‰¥0.95 for CRITICAL).
 Noncritical work can also stop with `VERIFIER_PASSED` below the quality threshold.
 Scores that improve by at most 0.01 for two consecutive revisions trigger
 `NO_MATERIAL_IMPROVEMENT`; CRITICAL requires three. Repeated nonempty findings with

@@ -1,0 +1,3126 @@
+[
+  {
+    "run_id": "BA-001.T1.FULL_END_NATIVE",
+    "trajectory": "3273ea96-7d7c-41fc-8b2c-aea0ec39f73b.jsonl",
+    "c0": "Correct fenced temperature array.",
+    "issue_diagnosis": "A low finding restates correct conversions; not a demonstrated defect.",
+    "revision_diagnosis": "No new facts; same correct array after one revision. C0 is returned.",
+    "failure_categories": [
+      "ISSUE-IDENTIFICATION FAILURE",
+      "TERMINATION / COST FAILURE"
+    ],
+    "operator_sequence": [
+      "EVIDENCE"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "EVIDENCE_GAP",
+        "text": "Yes, so each number must be represented with one decimal place."
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add explicit rounding to one decimal place for all converted temperatures",
+            "expected_effect": "All converted temperatures are represented with exactly one decimal place, including trailing zeros for whole numbers (e.g., 32.0 instead of 32)",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce identical JSON outputs: [-40.0, 32.0, 97.9, 212.0, 70.7]. All calculations are correct, rounded to one decimal place. No lost requirements or recovery invariants exist since the conversion is straightforward with no edge cases beyond the provided temperatures. The outputs satisfy all constraints: same order, one decimal place, JSON format. Complexity cost is equal (no additional steps beyond basic arithmetic).",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "ACCEPT_PROVISIONALLY",
+        "reasons": [
+          "Important claims have no candidate-bound executed support",
+          "Generator and judge share model identity",
+          "Unresolved evidence references kept as cited: J001.evidence -> CANDIDATE: the only text a finding about the candidate may quote or attribute to the candidate. (nonexistent), AJ001.evidence -> CL001 (nonexistent)",
+          "No executed evidence is attached"
+        ],
+        "required_actions": []
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "ACCEPT_PROVISIONALLY",
+        "reasons": [
+          "Generator and judge share model identity",
+          "Unresolved evidence references kept as cited: J002.evidence -> The candidate provides the JSON array [-40.0, 32.0, 97.9, 212.0, 70.7] as the final answer in a ```json code block, which matches the expected format. (nonexistent), AJ002.evidence -> CANDIDATE: the only text a finding about the candidate may quote or attribute to the candidate. (nonexistent)",
+          "No executed evidence is attached"
+        ],
+        "required_actions": []
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 1.0,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 1.0
+    },
+    "calls": 13,
+    "tokens": 43453,
+    "wall_seconds": 517.65936,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 2,
+      "adversarial_tests": 2,
+      "judgment": 2,
+      "adversarial_judgment": 2,
+      "critique": 1,
+      "revision_plan": 1,
+      "revision": 1,
+      "comparison": 1
+    },
+    "repair_calls": 0,
+    "cycles": 1,
+    "returned_candidate": "C0",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+    "trajectory": "efa824fb-bbda-4138-9243-414e772ef1fb.jsonl",
+    "c0": "Correct fenced temperature array.",
+    "issue_diagnosis": "False critical completeness/misassignment allegations; verifier falsely disputes correct values.",
+    "revision_diagnosis": "Arrays are identical or whitespace variants. Verifier/issue wording churn resets progress.",
+    "failure_categories": [
+      "MODEL FAILURE",
+      "ISSUE-IDENTIFICATION FAILURE",
+      "JUDGE FAILURE",
+      "TERMINATION / COST FAILURE"
+    ],
+    "operator_sequence": [
+      "CONSTRAINT",
+      "HOW",
+      "CONSTRAINT"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "completeness",
+        "target_id": "C0:completeness",
+        "target_type": "COMPONENT",
+        "text": "The candidate's completeness"
+      },
+      {
+        "dimension": "completeness",
+        "target_id": "W001",
+        "target_type": "WEAKNESS",
+        "text": "The candidate's answer is incomplete because it does not include all required temperature values from the input list."
+      },
+      {
+        "dimension": "completeness",
+        "target_id": "W001",
+        "target_type": "WEAKNESS",
+        "text": "The candidate's conversion mechanism misassigns output values to input positions, causing incorrect conversions for 36.6°C, 100°C, and 21.5°C while omitting the 21.5°C conversion."
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Correct the temperature conversions for 36.6°C, 100°C, and 21.5°C to ensure all values are accurately converted to Fahrenheit",
+            "expected_effect": "All temperature values will be accurately converted to Fahrenheit with one decimal place, matching the input list's values: 36.6°C → 97.9°F, 100°C → 212.0°F, 21.5°C → 70.7°F",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Fix the conversion mechanism to ensure each output value is correctly mapped to its original input position using a loop that iterates over the input list and applies the conversion formula to each element in sequence",
+            "expected_effect": "The candidate's output will accurately convert each Celsius value to Fahrenheit while maintaining the correct order and value assignments, eliminating incorrect value assignments and missing conversions for 36.6°C, 100°C, and 21.5°C",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Implement a loop that iterates over each input temperature, converts it to Fahrenheit using the formula F = (C × 9/5) + 32, and stores the result in a new list while maintaining the original order of input values.",
+            "expected_effect": "Each converted value will be correctly associated with its original input position, ensuring that 36.6°C converts to 97.9°F, 100°C converts to 212.0°F, and 21.5°C converts to 70.7°F without misassignment or omission.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit rounded to one decimal place. The calculations are:\n-40°C = -40°F, 0°C = 32.0°F, 36.6°C = 97.9°F, 100°C = 212.0°F, 21.5°C = 70.7°F.\nAll values are correctly rounded to one decimal place and match the expected output. No lost requirements or recovery invariants exist since both solutions are identical and fully satisfy the task.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The difference is only in whitespace (A has a space after the opening bracket, B has no space). This does not affect correctness, completeness, robustness, clarity, constraint_adherence, or complexity_cost. The task requires rounding to one decimal place, and both outputs are correct. No requirements are lost, and there are no recovery invariants since the outputs are identical.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The only difference is the space before the opening bracket in A (\"[ -40.0...\" vs B's \"[-40.0...\"). This space does not affect the JSON validity or correctness. All dimensions are tied because the output is numerically identical and follows the same constraints. No requirements were lost or recovered. The space character is a stylistic choice that does not impact the solution's functionality or correctness.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B output identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The task requires converting Celsius temperatures [-40, 0, 36.6, 100, 21.5] to Fahrenheit with one decimal place. Calculations: -40°C = -40°F, 0°C = 32.0°F, 36.6°C = 97.9°F, 100°C = 212.0°F, 21.5°C = 70.7°F. All values match the expected output. No differences exist between A and B, so all dimensions are tied. There are no lost requirements or recovery invariants since the output is correct and complete.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce identical JSON arrays: [-40.0, 32.0, 97.9, 212.0, 70.7]. The only difference is the space after the opening bracket in A (\"[ -40.0...\") versus no space in B (\"[-40.0...\"). This space does not affect correctness, completeness, robustness, clarity, or constraint adherence. The task requires rounded values to one decimal place, and both solutions correctly convert [-40, 0, 36.6, 100, 21.5] to the given array. There are no lost requirements or recovery invariants, as the output matches the expected result exactly.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 1.0,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 1.0,
+      "C2": 1.0,
+      "C3": 1.0
+    },
+    "calls": 31,
+    "tokens": 51154,
+    "wall_seconds": 1170.277925,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 3,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 5
+    },
+    "repair_calls": 0,
+    "cycles": 3,
+    "returned_candidate": "C0",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-002.T1.FULL_END_NATIVE",
+    "trajectory": "41b7f53a-d785-4d23-8549-5c7a5927f1a4.jsonl",
+    "c0": "Correct size/type guard and full chunk loop, plus explanation.",
+    "issue_diagnosis": "False missing-guard/original-code attribution; later all-case testing is a plausible uncertainty.",
+    "revision_diagnosis": "The corrected function remains unchanged. New low findings and in-band claim churn supply opinions, not checks.",
+    "failure_categories": [
+      "ISSUE-IDENTIFICATION FAILURE",
+      "JUDGE FAILURE",
+      "TERMINATION / COST FAILURE",
+      "EXTERNAL EVALUATOR LIMITATION"
+    ],
+    "operator_sequence": [
+      "EVIDENCE",
+      "VERIFY",
+      "VERIFY"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "EVIDENCE_GAP",
+        "text": "`size` must be a positive integer; raise ValueError otherwise.\""
+      },
+      {
+        "dimension": "evidence",
+        "target_id": "CL012",
+        "target_type": "CLAIM",
+        "text": "Also, the docstring says `size` must be a positive integer."
+      },
+      {
+        "dimension": "evidence",
+        "target_id": "CL013",
+        "target_type": "CLAIM",
+        "text": "Also, the docstring says that `size` must be a positive integer."
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add validation for `size` being a positive integer",
+            "expected_effect": "Ensure the function raises ValueError when `size` is not a positive integer as per the docstring",
+            "targets": []
+          },
+          {
+            "action": "Correct the loop range from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "Ensure the loop includes all chunks, including the last potentially shorter chunk",
+            "targets": []
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Remove the incorrect range calculation in the loop",
+            "expected_effect": "Ensure all chunks are generated without missing the last chunk",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Change the range in the loop from `range(0, len(items) - size, size)` to `range(0, len(items), size)`",
+            "expected_effect": "The loop will correctly process all chunks, including the last chunk, by iterating up to the end of the list instead of one less than the length.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            1.0
+          ],
+          [
+            "completeness",
+            1.0
+          ],
+          [
+            "robustness",
+            1.0
+          ],
+          [
+            "clarity",
+            1.0
+          ],
+          [
+            "constraint_adherence",
+            1.0
+          ],
+          [
+            "complexity_cost",
+            1.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C1"
+          ],
+          [
+            "completeness",
+            "C1"
+          ],
+          [
+            "robustness",
+            "C1"
+          ],
+          [
+            "clarity",
+            "C1"
+          ],
+          [
+            "constraint_adherence",
+            "C1"
+          ],
+          [
+            "complexity_cost",
+            "C1"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "MIXED",
+        "preferred": "C1",
+        "reason": "The task requires fixing a function that splits a list into chunks. The original function has two critical issues:\n\n1. The loop uses `range(0, len(items) - size, size)`, which causes the last chunk to be missed (e.g., [1,2,3,4,5,6] with size=2 misses the last chunk [5,6]).\n2. It does not validate that `size` is a positive integer, violating the docstring.\n\nThe solution in B addresses both:\n- Adds a check for `size` being a positive integer (raises ValueError if not).\n- Fixes the loop to `range(0, len(items), size)`, ensuring all chunks are created (including the last potentially shorter one).\n\nThe solution in A is incomplete because it does not add the `size` validation, so it could crash with invalid inputs (e.g., size=0 or negative). It also has the same loop issue as the original.\n\nFor the dimensions:\n- Correctness: B is correct (passes all tests), A is incorrect (fails with edge cases).\n- Completeness: B includes all required fixes, A misses the validation check.\n- Robustness: B handles edge cases (empty list, size=0, negative size), A does not.\n- Clarity: B is clear (explicit check and fixed loop), A is less clear (no validation).\n- Constraint adherence: B strictly follows the docstring (raises ValueError for invalid `size`), A does not.\n- Complexity cost: B adds minimal code (one check and fixed loop), so complexity cost is 0 (delta=0). However, the problem states: \"positive delta means extra burden\". Since A had no validation and B adds a simple check, B has a small (1",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both candidates A and B provide the exact same corrected function code. They both identify the same issues (wrong range stop condition and missing size validation) and implement the same fix. The code output is identical. The explanations are detailed and cover all edge cases. There are no differences in the function logic, test cases, or error handling. The only difference is in the phrasing of the explanation text, but this does not affect the correctness or completeness of the solution. Both solutions match the task requirements perfectly.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B provide identical corrected code. The function fixes the loop's stop condition from `len(items) - size` to `len(items)` and adds a check for `size` being a positive integer. Both examples test the same edge cases (empty list, size=0, size=2 with 5 elements). The code structure, docstring, and error handling are identical. There are no differences in the implementation, correctness, completeness, robustness, clarity, or constraint adherence. The complexity_cost is the same because both solutions have the same number of lines and operations. No lost requirements or recovery invariants were identified as both solutions fully satisfy the task.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B provide identical corrected functions with the same fixes: validation of size (positive integer) and correct loop range (0 to len(items) instead of len(items)-size). The code output is the same, so all dimensions are equal. No lost requirements or recovery invariants exist because the solution matches the task exactly.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 1.0,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 1.0,
+      "C2": 1.0,
+      "C3": 1.0
+    },
+    "calls": 32,
+    "tokens": 91718,
+    "wall_seconds": 1113.709721,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 4,
+      "revision_plan": 4,
+      "revision": 3,
+      "comparison": 4
+    },
+    "repair_calls": 2,
+    "cycles": 3,
+    "returned_candidate": "C1",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+    "trajectory": "5969e198-03ed-4a17-b05b-9fefe5ee4dc4.jsonl",
+    "c0": "Passing chunk function with size<=0 guard; type/comment gaps outside the rubric.",
+    "issue_diagnosis": "Verifier falsely alleges empty/single/oversized failures; low critiques describe supported claims.",
+    "revision_diagnosis": "All candidate texts are identical. The real untested type/comment issues are not repaired.",
+    "failure_categories": [
+      "ISSUE-IDENTIFICATION FAILURE",
+      "JUDGE FAILURE",
+      "TERMINATION / COST FAILURE",
+      "EXTERNAL EVALUATOR LIMITATION"
+    ],
+    "operator_sequence": [
+      "EVIDENCE",
+      "EVIDENCE",
+      "VERIFY"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "EVIDENCE_GAP",
+        "text": "`size` must be a positive integer; raise ValueError otherwise.\"\"\""
+      },
+      {
+        "dimension": "evidence",
+        "target_id": "CL002",
+        "target_type": "EVIDENCE_GAP",
+        "text": "raise ValueError('size must be positive')"
+      },
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "CLAIM",
+        "text": "`size` must be a positive integer; raise ValueError otherwise.\"\"\""
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Fix the pre-loop check to ensure `size` is a positive integer by raising ValueError for non-positive `size`",
+            "expected_effect": "The code correctly raises ValueError when `size` is not a positive integer, as specified in the docstring",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the range to `range(0, len(items), size)` to ensure all items are processed without exceeding the list length",
+            "expected_effect": "The loop correctly processes all items in `items` without exceeding the list length, as required by the docstring",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add a comment to clarify that the size check is a prerequisite for the loop to avoid infinite loops or index errors",
+            "expected_effect": "Clarify the role of the size check in preventing invalid loop iterations",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the range function to use `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`",
+            "expected_effect": "Ensure the loop processes all items without skipping or truncating the list",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add pre-loop check for size <= 0 to ensure positive integer",
+            "expected_effect": "The function will raise ValueError if size is not positive, matching the docstring requirement",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust range to use `range(0, len(items), size)` instead of `range(0, len(items) - size, size)`",
+            "expected_effect": "The loop will process all items without exceeding list bounds, ensuring the last chunk is included",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in code. The problem states that the original task has a bug, but both A and B provide the same corrected code. The original code uses `range(0, len(items) - size, size)`, which is incorrect. Both solutions use `range(0, len(items), size)`, which is correct. Since the code is identical, all dimensions are tied. There are no lost requirements or recovery invariants because the solutions match the task requirements exactly.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical code. The input shows that A and B have the same code content. The task description has a bug in the original code (using len(items) - size in the range), but both A and B fix it correctly by using len(items) in the range. There are no differences between A and B. Therefore, they are identical in all dimensions.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in code. The original task had a bug where the loop starts at 0 and goes to len(items) - size (exclusive), causing the last chunk to be skipped. Both candidates correct this by using range(0, len(items), size), which ensures the last chunk is included. There are no differences between A and B, so all dimensions are tied. No lost requirements or recovery invariants are identified as the code is correct and matches the docstring.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in code. The task description shows the original buggy code, but A and B are both the corrected version that matches the docstring. The original code had a bug where the loop ran from 0 to len(items) - size, which would cause the last chunk to be skipped. Both A and B fix this by using range(0, len(items), size), which correctly handles the last chunk. There are no differences between A and B, so all dimensions are tied.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in code, so they have no differences. The original task's code has a bug where the loop condition is `len(items) - size` instead of `len(items)`. Both candidates fix the same issue by changing the loop to `range(0, len(items), size)`, matching the docstring. There are no lost requirements or recovery invariants since the candidates are identical.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 1.0,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 1.0,
+      "C2": 1.0,
+      "C3": 1.0
+    },
+    "calls": 31,
+    "tokens": 54482,
+    "wall_seconds": 997.153714,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 3,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 5
+    },
+    "repair_calls": 0,
+    "cycles": 3,
+    "returned_candidate": "C0",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-008.T1.FULL_END_NATIVE",
+    "trajectory": "653df055-ef1a-43ea-84b2-3d9b6c25bb0f.jsonl",
+    "c0": "Passing stable-sort function with explicit false-premise correction and explanation.",
+    "issue_diagnosis": "False task premise becomes authority in verifier/critique; selected high assumption has no independent support.",
+    "revision_diagnosis": "The first revision removes the requested explanation, scores 0.5 instead of 1, and is retained. Comparisons miss the loss.",
+    "failure_categories": [
+      "ISSUE-IDENTIFICATION FAILURE",
+      "REVISION-PLANNING FAILURE",
+      "REVISION-GENERATION FAILURE",
+      "JUDGE FAILURE",
+      "QUALITYGATE FAILURE",
+      "TERMINATION / COST FAILURE"
+    ],
+    "operator_sequence": [
+      "VERIFY",
+      "ASSUMPTION",
+      "VERIFY"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "assumptions",
+        "target_id": "A001",
+        "target_type": "ASSUMPTION",
+        "text": "However, to be safe, let's assume that the problem wants a stable sort."
+      },
+      {
+        "dimension": "assumptions",
+        "target_id": "A001",
+        "target_type": "ASSUMPTION",
+        "text": "However, to be safe, let's assume that the problem wants a stable sort."
+      },
+      {
+        "dimension": "assumptions",
+        "target_id": "A001",
+        "target_type": "ASSUMPTION",
+        "text": "However, to be safe, let's assume that the problem wants a stable sort."
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Clarify that Python's built-in sorted() is stable in Python 3, resolving the factual error",
+            "expected_effect": "The candidate understands that Python's sorted() is stable (per documentation) and the problem's claim about instability is incorrect for Python 3.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Address the misconception by explaining that the problem's requirement for a stable sort is met by Python's built-in sorted() due to its inherent stability",
+            "expected_effect": "The candidate recognizes that the problem's premise about sorted() being unstable is a misunderstanding, and the solution correctly leverages sorted()'s stability.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add clarification that Python 3's `sorted()` is stable to the explanation",
+            "expected_effect": "The explanation explicitly states that Python 3's `sorted()` is stable, addressing the factual error in the problem statement.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Clarify the problem's misconception about Python's stability in the explanation",
+            "expected_effect": "The explanation explicitly addresses the misunderstanding that Python's built-in `sorted()` is unstable, indicating it's stable in Python 3.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit clarification in the explanation that Python 3's `sorted()` is stable",
+            "expected_effect": "The explanation will now correctly address the problem's misconception about Python's stability, preventing future misunderstandings.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Adjust the explanation to state that the problem's premise about `sorted()` being unstable is incorrect for Python 3",
+            "expected_effect": "The explanation will clarify that the problem statement contains a factual error regarding Python's stability guarantees, directly resolving the misunderstanding.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C1"
+          ],
+          [
+            "completeness",
+            "C1"
+          ],
+          [
+            "robustness",
+            "C1"
+          ],
+          [
+            "clarity",
+            "C1"
+          ],
+          [
+            "constraint_adherence",
+            "C1"
+          ],
+          [
+            "complexity_cost",
+            "C1"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C1",
+        "reason": "Both solutions are identical in implementation and explanation. The problem statement incorrectly claims Python's sorted() is unstable, but in reality it is stable in Python 3. The solution uses sorted() with a key to age, which correctly preserves order for equal ages. There is no difference between A and B, so all dimensions have delta 0. The preferred candidate is B as per the input specification.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B produce the same code and explanation. The key difference is in the wording of the explanation: A focuses on clarifying the misconception about sorted() being unstable in Python 3, while B emphasizes that the problem statement has a misconception. However, both correctly state that Python 3's sorted is stable and provide the correct solution. There are no differences in the actual code or functionality. The task requires a function that sorts by age while preserving order for equal ages, and both solutions achieve this with the same code. The explanations are concise and address the misconception accurately. No lost requirements or recovery invariants are present because both solutions meet the task's requirements without adding or removing functionality.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B provide the same correct function `sort_by_age` using Python 3's stable sorted() with a key. The code is identical in both. The explanations differ slightly in wording but both correctly address the misconception that Python 3's sorted() is unstable (it's actually stable). The task requires sorting by age ascending while preserving original order for equal ages, which both solutions achieve. No lost requirements or recovery invariants are present since the function meets the requirements as stated in the task. Complexity cost is the same (no extra burden) because both use the same simple approach. The delta for all dimensions is 0 because the solutions are functionally identical in practice.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C1"
+          ],
+          [
+            "completeness",
+            "C1"
+          ],
+          [
+            "robustness",
+            "C1"
+          ],
+          [
+            "clarity",
+            "C1"
+          ],
+          [
+            "constraint_adherence",
+            "C1"
+          ],
+          [
+            "complexity_cost",
+            "C1"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C1",
+        "reason": "Both A and B provide the same Python code for the function `sort_by_age` which correctly sorts by age while preserving order for equal ages due to Python 3's stable sorted. The explanations differ slightly in wording but both correctly address the misconception that Python 3's sorted is unstable (it's actually stable). The key difference is in the explanation's emphasis: A focuses on clarifying the misconception and using sorted's stability, while B emphasizes correcting the problem statement's premise. Both meet all requirements: correctness (code works), completeness (explanation addresses misconception), robustness (no issues with edge cases), clarity (clear explanation), constraint_adherence (follows task constraints), and complexity_cost (minimal code). There are no lost requirements or recovery invariants since both solutions correctly handle the task with the same code and address the stability misconception appropriately.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 0.5,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5
+    },
+    "calls": 31,
+    "tokens": 94332,
+    "wall_seconds": 2098.1514700000002,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 4,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 4
+    },
+    "repair_calls": 1,
+    "cycles": 3,
+    "returned_candidate": "C1",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+    "trajectory": "79ec91f1-7b59-4a33-8a53-4613af251c8e.jsonl",
+    "c0": "Passing stable-sort function with verbose/partly false prose.",
+    "issue_diagnosis": "False-premise evidence/assumption concerns; no executed check supports them.",
+    "revision_diagnosis": "First revision trims prose/adds an illustrative test; later answers are identical. False list.sort commentary remains.",
+    "failure_categories": [
+      "ISSUE-IDENTIFICATION FAILURE",
+      "REVISION-GENERATION FAILURE",
+      "JUDGE FAILURE",
+      "TERMINATION / COST FAILURE",
+      "EXTERNAL EVALUATOR LIMITATION"
+    ],
+    "operator_sequence": [
+      "VERIFY",
+      "VERIFY",
+      "ASSUMPTION"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "assumptions",
+        "target_id": "A001",
+        "target_type": "ASSUMPTION",
+        "text": "But for the purpose of this task, we'll assume that we need to write a stable sort for the given problem."
+      },
+      {
+        "dimension": "assumptions",
+        "target_id": "A002",
+        "target_type": "ASSUMPTION",
+        "text": "Given the problem statement, we'll write a function that uses `sorted` with a key and assumes that the problem means that we need to sort in a stable way (even though `sorted` is stable by default)."
+      },
+      {
+        "dimension": "assumption",
+        "target_id": "W001",
+        "target_type": "WEAKNESS",
+        "text": "The assumption that 'we need to write a stable sort for the given problem' is untested because the problem statement contradicts Python's actual stability of `sorted`."
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add a test to verify that `sorted` is stable by default in Python using a list of tuples with equal ages",
+            "expected_effect": "This test will confirm that the assumption about needing a stable sort is untested due to the problem statement's inaccuracy, resolving the contradiction by validating the stability of `sorted` under the problem's conditions.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Include a comment in the code explaining that `sorted` is stable by default and the problem statement's claim of instability is incorrect",
+            "expected_effect": "This comment will address the lack of a falsifiable check for the claim that `sorted` is stable, clarifying that the problem statement contains a misconception and the solution does not require additional stability measures.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add explicit test for stability using a list of tuples with equal ages to confirm that `sorted` preserves original order for equal ages",
+            "expected_effect": "The test will verify that `sorted` maintains the original order for equal ages, directly addressing the assumption that 'we need to write a stable sort for the given problem' by resolving the contradiction with Python's actual stability of `sorted`.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Add a falsifiable test case that explicitly checks the stability of `sorted` under the problem's conditions (e.g., equal ages) to confirm the claim that `sorted` is stable",
+            "expected_effect": "The test case will provide concrete evidence that `sorted` preserves the original order for equal ages, thereby validating the claim that `sorted` is stable by default without requiring additional stability measures.",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit test for stability of `sorted` with equal ages",
+            "expected_effect": "Verify that `sorted` maintains original order for tuples with equal ages, resolving the contradiction between the problem statement and Python's actual stability behavior",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Include a falsifiable check in the code by adding a test for equal age tuples",
+            "expected_effect": "Confirm that the solution works as intended under the problem's conditions by validating `sorted`'s stability when sorting by age",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C1"
+          ],
+          [
+            "completeness",
+            "C1"
+          ],
+          [
+            "robustness",
+            "C1"
+          ],
+          [
+            "clarity",
+            "C1"
+          ],
+          [
+            "constraint_adherence",
+            "C1"
+          ],
+          [
+            "complexity_cost",
+            "C1"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C1",
+        "reason": "Both solutions are correct and address the problem. However, B provides a clearer explanation by explicitly stating that the problem's claim about `sorted` being unstable is incorrect, and includes a test case to verify stability. A contains redundant explanations about the stability of `sorted` and the confusion with the problem statement, which can be confusing. B is more concise and directly addresses the misconception without unnecessary repetition. The `complexity_cost` is the same for both as they both use a simple `sorted` call with a key. The `correctness` is the same as both solutions produce the correct sorted list. The `completeness` is higher in B as it includes a verification test case. The `robustness` is higher in B because it addresses the problem's misconception and provides a test case to confirm stability. The `clarity` is higher in B as it clearly explains the misconception and the solution without confusion. The `constraint_adherence` is the same as both solutions adhere to the requirement of sorting by age while maintaining order for equal ages. There are no lost requirements or recovery invariants in either solution.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in content. The input shows that A and B are the same text, so there is no difference between them. The task requires comparing anonymous A and B against the original task, but since A and B are identical, all dimensions show a tie with a delta of 0.0. There are no lost requirements or recovery invariants because the solutions are the same.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in content. The provided JSON shows that the candidate strings for A and B are exactly the same. Therefore, all dimensions are tied with no differences. The task requires a function that sorts by age while maintaining stability, which both solutions correctly address by using Python's stable `sorted` function. There are no lost requirements or recovery invariants since the solutions are identical and meet the problem's specifications.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both candidates A and B are identical in content. The provided JSON shows that both candidates have the same text, with no differences in the code or explanations. Therefore, there is no difference between A and B across any dimension. The task requires writing a function that sorts by age while maintaining stability, and both solutions correctly address this by using `sorted` with a stable sort (as `sorted` is stable by default in Python). There are no lost requirements or recovery invariants because the solutions are identical and meet the problem's requirements perfectly.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain",
+          "Severe assumptions remain untested"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 1.0,
+    "final_score": 1.0,
+    "candidate_scores": {
+      "C0": 1.0,
+      "C1": 1.0,
+      "C2": 1.0,
+      "C3": 1.0
+    },
+    "calls": 31,
+    "tokens": 64100,
+    "wall_seconds": 1365.103888,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 4,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 4
+    },
+    "repair_calls": 1,
+    "cycles": 3,
+    "returned_candidate": "C1",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-009.T1.FULL_END_NATIVE",
+    "trajectory": "49544d22-83e0-49a8-9179-c3765116e44b.jsonl",
+    "c0": "JSON: established cause, E2 alone, no additional evidence requested.",
+    "issue_diagnosis": "Real missing-evidence/status concern; Engine detects established. Subsequent plan wrongly adds an evidence-ID string.",
+    "revision_diagnosis": "Second revision reduces certainty to likely but fabricates database_metrics_unavailable; third repeats it. No new evidence enters.",
+    "failure_categories": [
+      "REVISION-PLANNING FAILURE",
+      "REVISION-GENERATION FAILURE",
+      "JUDGE FAILURE",
+      "QUALITYGATE FAILURE",
+      "TERMINATION / COST FAILURE"
+    ],
+    "operator_sequence": [
+      "EVIDENCE",
+      "VERIFY",
+      "SECOND_ORDER_EFFECT"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "EVIDENCE_GAP",
+        "text": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment."
+      },
+      {
+        "dimension": "evidence",
+        "target_id": "CL001",
+        "target_type": "CLAIM",
+        "text": "The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment."
+      },
+      {
+        "dimension": "failure_modes",
+        "target_id": "C2:failure_modes",
+        "target_type": "COMPONENT",
+        "text": "The candidate's failure modes"
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add explicit evidence gap note",
+            "expected_effect": "Clarify that the root cause claim relies on on-call engineers' statements without direct database verification, addressing the high-severity evidence gap.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Preserve substantive possibilities, but remove or qualify unsupported claims of confirmation, establishment or verification. Retain the requested answer format. No independent executed evidence covers these assertions: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+            "expected_effect": "Epistemic status stays within the recorded evidence scope",
+            "targets": []
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+            "expected_effect": "The conclusion remains valid despite lack of database metrics, as the on-call engineers' statements are the most reliable available evidence",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Update the epistemic status to 'likely' by acknowledging the on-call engineers' statements as strong evidence but not definitive",
+            "expected_effect": "The conclusion is no longer 'established' but 'likely', reflecting that the on-call engineers' consensus is strong but not 100% verifiable without database metrics",
+            "targets": [
+              "W002"
+            ]
+          },
+          {
+            "action": "Preserve substantive possibilities, but remove or qualify unsupported claims of confirmation, establishment or verification. Retain the requested answer format. No independent executed evidence covers these assertions: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+            "expected_effect": "Epistemic status stays within the recorded evidence scope",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add explicit statement that database metrics are unavailable to the evidence_used list",
+            "expected_effect": "The evidence_used list now includes a string indicating the unavailability of database metrics, addressing the evidence gap by acknowledging the problem constraints",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Update epistemic status from 'established' to 'likely'",
+            "expected_effect": "The epistemic status is reduced to 'likely' to reflect that the on-call engineers' statements are strong evidence but not definitive due to the absence of database metrics",
+            "targets": [
+              "W002"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B provide identical conclusions, certainties, evidence_used, and additional_evidence_needed. A describes the incident analysis in detail, while B provides a more concise explanation but with the same final answer. The key points are:\n\n1. Both correctly identify the root cause as a database dependency issue from the v4.2.1 deployment.\n2. Both set certainty to \"established\" based on two on-call engineers stating it's \"definitely the database\".\n3. Both use only E2 as evidence_used (the chat logs where on-call engineers confirmed the database issue).\n4. Both conclude no additional evidence is needed.\n\nThe only difference is in the writing style: A is more verbose with detailed analysis steps, while B is more concise. However, the task does not require preferring recency or length, so both are equally correct and complete. There are no lost requirements or recovery invariants because both answers satisfy the required JSON structure and the incident analysis.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C2"
+          ],
+          [
+            "completeness",
+            "C2"
+          ],
+          [
+            "robustness",
+            "C2"
+          ],
+          [
+            "clarity",
+            "C2"
+          ],
+          [
+            "constraint_adherence",
+            "C2"
+          ],
+          [
+            "complexity_cost",
+            "C2"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C2",
+        "reason": "The task requires updating the certainty from 'established' to 'likely' because the absence of database metrics means the on-call engineers' statement, while strong, is not 100% definitive. The previous answer incorrectly claimed 'established' certainty despite the lack of metrics. The user's instruction explicitly requires adding 'database_metrics_unavailable' to evidence_used and updating certainty to 'likely'. The original answer (A) has incorrect certainty and misses the explicit statement about metrics unavailability. B correctly adjusts the certainty and adds the required metric unavailability statement to evidence_used. All dimensions show a delta of 0 because B only makes the necessary changes without adding new complexity or losing completeness. The lost requirement was the explicit statement about metrics unavailability, which B addresses by adding it to evidence_used. The recovery invariant is the updated certainty level to 'likely' to reflect the evidence constraints.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C2"
+          ],
+          [
+            "completeness",
+            "C2"
+          ],
+          [
+            "robustness",
+            "C2"
+          ],
+          [
+            "clarity",
+            "C2"
+          ],
+          [
+            "constraint_adherence",
+            "C2"
+          ],
+          [
+            "complexity_cost",
+            "C2"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C2",
+        "reason": "The task requires comparing anonymous A and B against the original task. A is the original answer, B is the revised answer. The user specified that we should not prefer B for recency or length. The comparison is done per dimension with delta (B minus A) in [-1,1].\n\nFor each dimension, the preferred alias is the one that is better (B or A) and delta is B minus A.\n\nThe original task specifies:\n- The incident happened between 14:05 and 14:40 UTC on 2026-05-12.\n- The service was deployed at 13:58 UTC (v4.2.1) with a changelog note: \"dependency bumps\".\n- Two on-call engineers both wrote that \"it's definitely the database\".\n- No database metrics, traces or query logs are available.\n\nThe key change in B is:\n1. Updated certainty from \"established\" to \"likely\" (more accurate given the lack of database metrics)\n2. Added \"database_metrics_unavailable\" to evidence_used list (explicitly stating the unavailability of metrics)\n\nFor correctness: A claimed \"established\" certainty but the lack of database metrics means it's not 100% confirmed, so B is more correct. Delta: B is correct, A is less correct. So preferred is B, delta = 1.0 (B minus A) but the task says delta in [-1,1]. Since B is better, delta = 1.0.\n\nFor completeness: A did not mention the unavailability of database metrics, so B is more complete. Preferred is B, delta = 1.0.\n\nFor robustness: B acknowledges the unavailability of metrics, making the answer more robust against potential counter-evidence. Preferred is B, delta = 1.0\n",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C3"
+          ],
+          [
+            "completeness",
+            "C3"
+          ],
+          [
+            "robustness",
+            "C3"
+          ],
+          [
+            "clarity",
+            "C3"
+          ],
+          [
+            "constraint_adherence",
+            "C3"
+          ],
+          [
+            "complexity_cost",
+            "C3"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C3",
+        "reason": "Both A and B correctly follow the instructions to update the certainty to 'likely' and add 'database_metrics_unavailable' to evidence_used. However, A contains confusion about evidence IDs and misinterprets the problem (evidence_used should be evidence IDs, not a string describing unavailability). B clearly states the evidence_used list includes both 'E2' and the string 'database_metrics_unavailable' as per the user's instruction. The delta is 0 because B matches the required output exactly without additional complexity. No lost requirements or recovery invariants were identified as both satisfy the task.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate epistemic status exceeds scoped executed evidence: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate epistemic status exceeds scoped executed evidence: The root cause was a database dependency issue introduced by the checkout-service v4.2.1 deployment.",
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 0.5,
+    "final_score": 0.5,
+    "candidate_scores": {
+      "C0": 0.5,
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5
+    },
+    "calls": 30,
+    "tokens": 114196,
+    "wall_seconds": 1287.5237080000002,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 3,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 4
+    },
+    "repair_calls": 0,
+    "cycles": 3,
+    "returned_candidate": "C3",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  },
+  {
+    "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+    "trajectory": "2965e080-5879-496e-89b9-c8d1368bb1ee.jsonl",
+    "c0": "Unformatted prose favoring a database/deployment cause while admitting missing metrics.",
+    "issue_diagnosis": "Real format/evidence gaps mixed with excessive demands for unavailable query specifics.",
+    "revision_diagnosis": "Revisions add unsupported evidence-confirms wording. Branches generate cache/payment hypotheses, not observations; JSON stays missing.",
+    "failure_categories": [
+      "REVISION-PLANNING FAILURE",
+      "REVISION-GENERATION FAILURE",
+      "JUDGE FAILURE",
+      "QUALITYGATE FAILURE",
+      "TERMINATION / COST FAILURE",
+      "EXTERNAL EVALUATOR LIMITATION"
+    ],
+    "operator_sequence": [
+      "EVIDENCE",
+      "SECOND_ORDER_EFFECT",
+      "ALTERNATIVE"
+    ],
+    "selected_targets": [
+      {
+        "dimension": "evidence",
+        "target_id": "C0:evidence",
+        "target_type": "COMPONENT",
+        "text": "The candidate's evidence"
+      },
+      {
+        "dimension": "failure_modes",
+        "target_id": "C1:failure_modes",
+        "target_type": "COMPONENT",
+        "text": "The candidate's failure modes"
+      },
+      {
+        "dimension": "alternatives",
+        "target_id": "C2:alternatives",
+        "target_type": "COMPONENT",
+        "text": "The candidate's alternatives"
+      }
+    ],
+    "plans": [
+      {
+        "candidate_id": "C0",
+        "changes": [
+          {
+            "action": "Add specific database query latency metrics from the latency increase period",
+            "expected_effect": "Quantitative evidence confirms the database as the root cause, resolving the lack of quantitative evidence for causality",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "changes": [
+          {
+            "action": "Add specific database query latency metrics from the latency increase period (14:05-14:40 UTC)",
+            "expected_effect": "Quantitative evidence for the specific query impact, enabling the candidate to confirm the database as the root cause with higher certainty.",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "changes": [
+          {
+            "action": "Add quantitative evidence for database query latency during the latency spike period (14:05-14:40 UTC) to the candidate's evidence",
+            "expected_effect": "The candidate's conclusion that the root cause is 'definitely the database' will be supported by specific database query latency metrics, reducing the unsupported claim status to 'resolved' or 'verified' by providing concrete evidence of the database's role in the latency increase.",
+            "targets": [
+              "W001"
+            ]
+          },
+          {
+            "action": "Clarify the candidate's statement to explicitly state that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact",
+            "expected_effect": "The candidate's conclusion will be more precise, acknowledging the database as a potential root cause without overclaiming certainty, thereby addressing the unsupported claim while maintaining alignment with the available evidence (on-call consensus).",
+            "targets": [
+              "W001"
+            ]
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C1"
+          ],
+          [
+            "completeness",
+            "C1"
+          ],
+          [
+            "robustness",
+            "C1"
+          ],
+          [
+            "clarity",
+            "C1"
+          ],
+          [
+            "constraint_adherence",
+            "C1"
+          ],
+          [
+            "complexity_cost",
+            "C1"
+          ]
+        ],
+        "from_candidate": "C0",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C1",
+        "reason": "The task requires identifying the root cause of the checkout API p99 latency increase with the given evidence. Both A and B correctly state that the root cause is likely a database-related issue due to the deployment of checkout-service v4.2.1 at 13:58 UTC, based on E1 and E2. However, B provides more specific information about the time period (14:05-14:40 UTC) when the latency increase occurred and explicitly states that the evidence confirms the database as the root cause but lacks quantitative evidence for the specific query impact. This makes B more complete and precise without adding unnecessary complexity. The delta values are all 0.0 because both responses are equally correct, complete, robust, clear, and adhere to constraints. The complexity cost is the same for both as neither introduces extra burden beyond what's needed. There are no lost requirements or recovery invariants in this comparison since both responses address the question within the given evidence.",
+        "severe_dimensions": [],
+        "to_candidate": "C1"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "TIE"
+          ],
+          [
+            "completeness",
+            "TIE"
+          ],
+          [
+            "robustness",
+            "TIE"
+          ],
+          [
+            "clarity",
+            "TIE"
+          ],
+          [
+            "constraint_adherence",
+            "TIE"
+          ],
+          [
+            "complexity_cost",
+            "TIE"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": null,
+        "reason": "Both A and B are identical in meaning and structure, with only a minor wording difference: A says \"the exact cause cannot be determined with certainty\" while B says \"the exact query impact cannot be determined with certainty\". This subtle change does not affect the core analysis. The task requires identifying the root cause as database-related based on evidence E1 and E2, but lacks quantitative evidence for the specific query impact. Both candidates correctly identify the same evidence gaps and maintain the same level of correctness, completeness, robustness, clarity, constraint adherence, and complexity cost. The slight wording difference in B (\"query impact\" vs \"cause\") is a minor nuance that does not alter the technical meaning or impact assessment. No lost requirements or recovery invariants are present in either candidate.",
+        "severe_dimensions": [],
+        "to_candidate": "C2"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.0
+          ],
+          [
+            "completeness",
+            0.0
+          ],
+          [
+            "robustness",
+            0.0
+          ],
+          [
+            "clarity",
+            0.0
+          ],
+          [
+            "constraint_adherence",
+            0.0
+          ],
+          [
+            "complexity_cost",
+            0.0
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C3"
+          ],
+          [
+            "completeness",
+            "C3"
+          ],
+          [
+            "robustness",
+            "C3"
+          ],
+          [
+            "clarity",
+            "C3"
+          ],
+          [
+            "constraint_adherence",
+            "C3"
+          ],
+          [
+            "complexity_cost",
+            "C3"
+          ]
+        ],
+        "from_candidate": "C2",
+        "net_assessment": "NO_MATERIAL_CHANGE",
+        "preferred": "C3",
+        "reason": "Both A and B are identical in content except for a small addition in B: 'To address the unsupported claim, the candidate explicitly states that the lack of database metrics does not invalidate the database as the root cause but requires further investigation into database-specific metrics to confirm the exact impact.' This addition clarifies the candidate's reasoning about the lack of metrics without undermining the conclusion, which enhances completeness and robustness. However, since the original task did not require additional statements beyond the evidence analysis, this addition does not affect correctness, clarity, or constraint adherence. The delta for all dimensions is 0 because B adds no new information that changes the analysis; it merely reiterates the same conclusion with improved contextual framing. The complexity_cost remains 0 as the added text does not introduce extra burden. There are no lost requirements or recovery invariants; the candidate addresses the lack of metrics by specifying the need for further investigation, which aligns with the task's requirements.",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      },
+      {
+        "delta": [
+          [
+            "correctness",
+            0.2
+          ],
+          [
+            "completeness",
+            0.2
+          ],
+          [
+            "robustness",
+            0.2
+          ],
+          [
+            "clarity",
+            0.2
+          ],
+          [
+            "constraint_adherence",
+            0.2
+          ],
+          [
+            "complexity_cost",
+            -0.2
+          ]
+        ],
+        "dimensions": [
+          [
+            "correctness",
+            "C3"
+          ],
+          [
+            "completeness",
+            "C3"
+          ],
+          [
+            "robustness",
+            "C3"
+          ],
+          [
+            "clarity",
+            "C3"
+          ],
+          [
+            "constraint_adherence",
+            "C3"
+          ],
+          [
+            "complexity_cost",
+            "C3"
+          ]
+        ],
+        "from_candidate": "C1",
+        "net_assessment": "STRONG_IMPROVEMENT",
+        "preferred": "C3",
+        "reason": "The task requires identifying the root cause of the latency increase with the given evidence. Both A and B correctly identify the database as the root cause based on E1 and E2, but B explicitly addresses the unsupported claim about the exact query impact by stating that the lack of database metrics does not invalidate the database as the root cause but requires further investigation. This makes B more robust and complete, as it acknowledges the limitations of the evidence without undermining the conclusion. B's phrasing is clearer and more precise than A's, which vaguely states the evidence confirms the database but lacks quantitative evidence. B adheres to the task constraints by not introducing new claims but clarifying the current understanding. The complexity_cost for B is lower because it avoids unnecessary technical jargon and focuses on the required analysis. Lost requirements: the task requires a final answer with specific keys, but both candidates meet this. Recovery invariants: B correctly handles the uncertainty by specifying that further investigation is needed without claiming certainty. The delta values are all positive except complexity_cost, which is negative (B has less burden than A).",
+        "severe_dimensions": [],
+        "to_candidate": "C3"
+      }
+    ],
+    "gate_decisions": [
+      {
+        "candidate_id": "C0",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate does not follow the task's required output format: missing the required ```json code block; no parseable JSON object",
+          "A judged dimension is below the quality floor",
+          "Basic verification has not passed"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C1",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate does not follow the task's required output format: missing the required ```json code block; no parseable JSON object",
+          "A judged dimension is below the quality floor",
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate does not follow the task's required output format: missing the required ```json code block; no parseable JSON object",
+          "A judged dimension is below the quality floor",
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "decision": "REVISE",
+        "reasons": [
+          "Candidate does not follow the task's required output format: missing the required ```json code block; no parseable JSON object",
+          "Basic verification has not passed",
+          "Unresolved high-severity weaknesses remain"
+        ],
+        "required_actions": [
+          "Address judged findings through targeted cognition"
+        ]
+      }
+    ],
+    "rollback": [],
+    "c0_score": 0.0,
+    "final_score": 0.0,
+    "candidate_scores": {
+      "C0": 0.0,
+      "C1": 0.0,
+      "C2": 0.0,
+      "C3": 0.0
+    },
+    "calls": 34,
+    "tokens": 60703,
+    "wall_seconds": 894.231367,
+    "stage_calls": {
+      "initial_candidate": 1,
+      "verification": 4,
+      "adversarial_tests": 4,
+      "judgment": 4,
+      "adversarial_judgment": 4,
+      "critique": 3,
+      "revision_plan": 3,
+      "revision": 3,
+      "comparison": 4,
+      "branch_generation": 1,
+      "branch_evaluation": 2,
+      "synthesis": 1
+    },
+    "repair_calls": 0,
+    "cycles": 3,
+    "returned_candidate": "C3",
+    "new_executed_evidence": 0,
+    "c0_preservation_score_equal_or_better": true
+  }
+]

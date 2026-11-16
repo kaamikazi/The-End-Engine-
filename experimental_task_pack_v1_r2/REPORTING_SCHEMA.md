@@ -1,0 +1,18 @@
+# Reporting schema and field semantics
+
+One immutable run record: experiment/task/evaluator/source/adapter hashes; task_id; condition; repetition/seed; model digest/server versions/settings; execution_status; attempted/completed/unstarted; provider errors; budgets/known and unknown usage; raw response and authoritative answer provenance/hash/status; initial and final candidate identity; actual output withholding/empty reason; evaluator status and every dimension/atomic failure; task_success/overall_pass/delivery_success; actual generated C0/final substantive scores and deltas.
+
+Candidate table: run_id, candidate_id, parent_id, role (GENERATED_C0/REVISION/ALTERNATIVE/DIRECT_OUTPUT), actual answer source/hash, raw source/hash, authoritative-region status, seven dimensions, task/overall/safety result, scope and citation findings, origin of any executed receipt. TASK_INPUT is separately labelled supplied data and never promoted to GENERATED_C0. Synthetic fixtures never count as live candidates. DIRECT has revisions/operators/rollbacks=0, iterations NOT_APPLICABLE; SELF_REFLECT has its actual three-stage trace, not invented END cycles.
+
+Transition table: real parent→child, substantive/contract/preservation/repair/safety deltas (null if unavailable), overlapping improvement/regression/no-change/format/safety outcomes, targeted defect link and whether repair fixed it while preserving other requirements, adoption/rollback reason and comparison provenance. Text difference is not meaningful repair; input-defect score1 already in C0 is not an improvement.
+
+Cost/activity table: each physical sequence/purpose/reservation/request/response/error, model/tool/transport/repair flag, reported input/output tokens or null, provider latency versus run/active wall, unknown consumption, operator activation, grounded issue count with provenance/scope, verifier and gate metadata, rollbacks, budget stop and output guard. No internal opinion becomes external ground truth. No currency price is invented.
+
+Execution failure, task failure, format failure, indeterminate semantics, safety violation, safety withholding and budget exhaustion are distinct tags that may coexist. BLOCKED with nonempty output still receives external scoring. Valid incomplete artifacts can have partial substantive score and failed contract; unparseable text has no substantive score. Presentation-equivalent correct JSON has zero semantic delta. Include every assigned cell and missingness; never silently impute scores/usage or pool interrupted fragments into completed trials.
+
+Machine-readable template: validation/RUN_RECORD_TEMPLATE.json. It is a reporting template, not a runner, completed trial or fabricated model output.
+
+
+## Round2 transition fields
+
+Primary task_success improvement/regression and clean observed required repair; narrow substantive delta, explanation/diagnosis repaired/lost, contract/format change, atomic preservation regression, safety delta/review resolution and neutral/presentation-only change are independent. New-failure lists expose mixed gains/losses. targeted_repair_supported_by_trace stays null until actual recorded plan provenance is separately adjudicated. INSUFFICIENT_HEADROOM/HEADROOM_UNDETERMINED are registered screen outcomes with actual-C0 denominators; no synthetic TASK_INPUT enters them.

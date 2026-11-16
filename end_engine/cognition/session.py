@@ -63,7 +63,7 @@ class CognitiveSession:
                        if self.knowledge.claims[c].evidence_status in (EvidenceStatus.UNVERIFIED, EvidenceStatus.CONTRADICTED))
         state = CognitiveState(candidate.candidate_id, candidate.iteration, self.analysis.complexity.value,
             resolved, uncertain, open_items,
-            tuple(w.id for w in open_items if w.severity in ("high", "critical")), claims,
+            tuple(w.id for w in open_items if w.decisive and w.severity in ("high", "critical")), claims,
             tuple(self.knowledge.assumptions.values()), tuple(b.branch_id for b in branches),
             tuple(sorted(Counter(o.operator for o in self.outcomes).items())), self._stats(), self._stats(True),
             tuple(self.outcomes[-8:]), deltas[-1] if deltas else 0, stagnation,

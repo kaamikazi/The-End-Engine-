@@ -1,0 +1,2047 @@
+ M IMPLEMENTATION_REPORT.md
+ M README.md
+ M benchmark_alpha/bench/evaluators.py
+ M benchmark_alpha/bench/report.py
+ M benchmark_alpha/evaluations/BA-001.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-001.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-001.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-001.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-002.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-002.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-002.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-002.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-003.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-003.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-003.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-003.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-004.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-004.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-004.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-004.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-004.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-004.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-004.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-005.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-005.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-005.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-005.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-005.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-005.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-005.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-005.T2.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-006.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-006.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-006.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-006.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-007.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-007.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-007.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-007.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-007.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-007.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-007.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-007.T2.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-008.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-008.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-008.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-008.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-008.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-008.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-008.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-008.T2.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-009.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-009.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-009.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-009.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-009.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-009.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-009.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-009.T2.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-010.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-010.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-010.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-010.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-011.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-011.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-011.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-011.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-011.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-011.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-011.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-011.T2.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-012.T1.DIRECT.json
+ M benchmark_alpha/evaluations/BA-012.T1.END_LITE.json
+ M benchmark_alpha/evaluations/BA-012.T1.FULL_END.json
+ M benchmark_alpha/evaluations/BA-012.T1.SELF_REFLECT.json
+ M benchmark_alpha/evaluations/BA-012.T2.DIRECT.json
+ M benchmark_alpha/evaluations/BA-012.T2.END_LITE.json
+ M benchmark_alpha/evaluations/BA-012.T2.FULL_END.json
+ M benchmark_alpha/evaluations/BA-012.T2.SELF_REFLECT.json
+ M benchmark_alpha/live_progress.log
+ M benchmark_alpha/manifest.json
+ M benchmark_alpha/synthetic/MANUAL_REVIEW.md
+ M benchmark_alpha/synthetic/REPORT.md
+ M benchmark_alpha/synthetic/evaluations/BA-001.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-001.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-001.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-001.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-002.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-002.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-002.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-002.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-003.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-003.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-003.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-003.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-004.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-004.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-004.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-004.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-005.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-005.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-005.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-005.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-007.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-007.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-007.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-007.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-009.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-009.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-009.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-009.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-010.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-010.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-010.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-010.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-011.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-011.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-011.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-011.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-012.T1.DIRECT.json
+ M benchmark_alpha/synthetic/evaluations/BA-012.T1.END_LITE.json
+ M benchmark_alpha/synthetic/evaluations/BA-012.T1.FULL_END.json
+ M benchmark_alpha/synthetic/evaluations/BA-012.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/trial.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/trial.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/END_HELPED/BA-004.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/END_HURT/BA-012.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/trial.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/evaluation.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/trial.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE/evaluation.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE/reference.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE/trial.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END/evaluation.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END/reference.json
+ M benchmark_alpha/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END/trial.json
+ M benchmark_alpha/synthetic/manifest.json
+ M benchmark_alpha/synthetic/results.csv
+ M benchmark_alpha/synthetic/summary.json
+ D benchmark_alpha/synthetic/trajectories/11420696-f187-4bd7-ba82-45c5b5e69e04.jsonl
+ D benchmark_alpha/synthetic/trajectories/138f8448-a76b-453e-a7c7-20ea263f4a04.jsonl
+ D benchmark_alpha/synthetic/trajectories/1f30f083-0994-4ae3-976a-021db28b9a51.jsonl
+ D benchmark_alpha/synthetic/trajectories/27ac96e5-38d2-414c-b2b7-6d1613215519.jsonl
+ D benchmark_alpha/synthetic/trajectories/2f6f601f-f95b-4a5b-a41d-5cc47905077f.jsonl
+ D benchmark_alpha/synthetic/trajectories/32300b16-8b2c-463f-88a9-a85896d01e91.jsonl
+ D benchmark_alpha/synthetic/trajectories/50061551-8db6-44e4-b73f-ebfb4ba9957c.jsonl
+ D benchmark_alpha/synthetic/trajectories/6163878a-8120-4f50-b6a0-473f3753dfdc.jsonl
+ D benchmark_alpha/synthetic/trajectories/7544c2b2-5cda-4d29-9440-28cac7efc98f.jsonl
+ D benchmark_alpha/synthetic/trajectories/7e512d3f-a24f-43c5-aed1-083cb47217c7.jsonl
+ D benchmark_alpha/synthetic/trajectories/80cd7a96-4ff2-4fe0-9aa1-56dd4eb32ded.jsonl
+ D benchmark_alpha/synthetic/trajectories/8ed1310f-0f7d-4029-b296-15f989820b23.jsonl
+ D benchmark_alpha/synthetic/trajectories/9851ebf1-9ef5-4866-b9e9-e92b6980a052.jsonl
+ D benchmark_alpha/synthetic/trajectories/a77013ad-9cba-46f4-9024-a8bd950c5e03.jsonl
+ D benchmark_alpha/synthetic/trajectories/b52604cd-7d10-4ec3-90c9-9595d7a83502.jsonl
+ D benchmark_alpha/synthetic/trajectories/be69b297-1b79-4d05-9bb2-83cde8c43ee1.jsonl
+ D benchmark_alpha/synthetic/trajectories/c626d30c-87e5-4814-8693-06f5aa00b51c.jsonl
+ D benchmark_alpha/synthetic/trajectories/d99d0437-4a07-41fb-a409-cdd3cff34c92.jsonl
+ D benchmark_alpha/synthetic/trajectories/db9d31de-0d5f-4517-ba02-29482328c1a4.jsonl
+ D benchmark_alpha/synthetic/trajectories/e86350a6-9e8e-45ba-9e55-fc0d17395379.jsonl
+ M benchmark_alpha/synthetic/trials/BA-001.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-001.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-001.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-001.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-002.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-002.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-002.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-002.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-003.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-003.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-003.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-003.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-004.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-004.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-004.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-004.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-005.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-005.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-005.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-005.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-007.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-007.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-007.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-007.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-009.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-009.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-009.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-009.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-010.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-010.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-010.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-010.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-011.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-011.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-011.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-011.T1.SELF_REFLECT.json
+ M benchmark_alpha/synthetic/trials/BA-012.T1.DIRECT.json
+ M benchmark_alpha/synthetic/trials/BA-012.T1.END_LITE.json
+ M benchmark_alpha/synthetic/trials/BA-012.T1.FULL_END.json
+ M benchmark_alpha/synthetic/trials/BA-012.T1.SELF_REFLECT.json
+ M end_engine/cognition/branches.py
+ M end_engine/cognition/knowledge.py
+ M end_engine/config.py
+ M end_engine/core/revision_planner.py
+ M end_engine/core/state.py
+ M end_engine/core/weaknesses.py
+ M end_engine/engine.py
+ M end_engine/experience/schema.py
+ M end_engine/models/recording.py
+ M end_engine/operators/base.py
+ M end_engine/quality/gate.py
+ M end_engine/quality/integrity.py
+ M end_engine/quality/judges.py
+ M end_engine/quality/providers.py
+ M end_engine/quality/schema.py
+ M end_engine/quality/session.py
+ M end_engine/quality/state.py
+ M end_engine/verification/llm_verifier.py
+ M pyproject.toml
+ M tests/test_end_engine.py
+?? IMPLEMENTATION_REPORT_JEV_EXPERIMENT.md
+?? IMPLEMENTATION_REPORT_v0.3.4.md
+?? IMPLEMENTATION_REPORT_v0.3.5.md
+?? benchmark_alpha/ANALYSIS_NOTES.md
+?? benchmark_alpha/MANUAL_REVIEW.md
+?? benchmark_alpha/MANUAL_REVIEW_NOTES.md
+?? benchmark_alpha/REPORT.md
+?? benchmark_alpha/aborted_sessions/session3_server_connection_reset/NOTE.md
+?? benchmark_alpha/aborted_sessions/session3_server_connection_reset/evaluations/BA-003.T2.DIRECT.json
+?? benchmark_alpha/aborted_sessions/session3_server_connection_reset/trials/BA-003.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-001.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-001.T2.END_LITE.json
+?? benchmark_alpha/evaluations/BA-001.T2.FULL_END.json
+?? benchmark_alpha/evaluations/BA-001.T2.SELF_REFLECT.json
+?? benchmark_alpha/evaluations/BA-002.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-002.T2.END_LITE.json
+?? benchmark_alpha/evaluations/BA-002.T2.FULL_END.json
+?? benchmark_alpha/evaluations/BA-002.T2.SELF_REFLECT.json
+?? benchmark_alpha/evaluations/BA-003.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-003.T2.END_LITE.json
+?? benchmark_alpha/evaluations/BA-003.T2.FULL_END.json
+?? benchmark_alpha/evaluations/BA-003.T2.SELF_REFLECT.json
+?? benchmark_alpha/evaluations/BA-004.T2.SELF_REFLECT.json
+?? benchmark_alpha/evaluations/BA-006.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-006.T2.END_LITE.json
+?? benchmark_alpha/evaluations/BA-006.T2.FULL_END.json
+?? benchmark_alpha/evaluations/BA-006.T2.SELF_REFLECT.json
+?? benchmark_alpha/evaluations/BA-010.T2.DIRECT.json
+?? benchmark_alpha/evaluations/BA-010.T2.END_LITE.json
+?? benchmark_alpha/evaluations/BA-010.T2.FULL_END.json
+?? benchmark_alpha/evaluations/BA-010.T2.SELF_REFLECT.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T2.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T2.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-009.T2.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.SELF_REFLECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.SELF_REFLECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-010.T2.SELF_REFLECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.DIRECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.DIRECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.DIRECT/trial.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.SELF_REFLECT/evaluation.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.SELF_REFLECT/reference.json
+?? benchmark_alpha/failures/CORRECT_ABSTENTION/BA-011.T2.SELF_REFLECT/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-001.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-005.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-009.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-010.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/DIRECT_BEAT_END/BA-011.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-002.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-003.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-003.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-003.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-007.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-007.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-007.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-008.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/FALSE_REJECT/BA-012.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-001.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-001.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-001.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-002.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-002.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-002.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-003.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-007.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-007.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-007.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-008.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-008.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-008.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-010.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-010.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-010.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/OVERTHINKING/BA-011.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-001.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-004.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-005.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-007.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-007.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-007.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-009.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-010.T2.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.END_LITE/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.END_LITE/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.END_LITE/trial.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.FULL_END/evaluation.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.FULL_END/reference.json
+?? benchmark_alpha/failures/SELF_REFLECT_BEAT_END/BA-011.T2.FULL_END/trial.json
+?? benchmark_alpha/results.csv
+?? benchmark_alpha/summary.json
+?? benchmark_alpha/synthetic/trajectories/16344a9f-eb01-42b2-b1b5-4286ba4a3248.jsonl
+?? benchmark_alpha/synthetic/trajectories/2994190e-5e95-4164-92b9-1b0713b8901a.jsonl
+?? benchmark_alpha/synthetic/trajectories/2b174696-f63b-401a-9c6c-8b95a5d9ca98.jsonl
+?? benchmark_alpha/synthetic/trajectories/3324bf0b-85fe-426b-9cf7-956f533fc51f.jsonl
+?? benchmark_alpha/synthetic/trajectories/365b4097-931f-4e7c-888b-f69594b18446.jsonl
+?? benchmark_alpha/synthetic/trajectories/3fc2c5db-8376-4a70-b572-edf26461b2bb.jsonl
+?? benchmark_alpha/synthetic/trajectories/60be184a-a7c7-4efa-b511-fc7ec0b29816.jsonl
+?? benchmark_alpha/synthetic/trajectories/61f953dd-ca28-4d37-8e2e-38510aac3dd8.jsonl
+?? benchmark_alpha/synthetic/trajectories/62f7f17a-59fe-49b9-8fa2-b76fa8dfe2ab.jsonl
+?? benchmark_alpha/synthetic/trajectories/6854df09-3e20-4b48-a928-2be19435dd2e.jsonl
+?? benchmark_alpha/synthetic/trajectories/74dceb00-ae0e-4dcb-9f3c-384d58488c2d.jsonl
+?? benchmark_alpha/synthetic/trajectories/82268360-bfcc-44b4-9cdf-7c5c88625d2a.jsonl
+?? benchmark_alpha/synthetic/trajectories/9d4b7b9d-0978-472e-88c6-e12aecf3ea8f.jsonl
+?? benchmark_alpha/synthetic/trajectories/9fa53a81-291d-4819-8509-1c22c7dc059f.jsonl
+?? benchmark_alpha/synthetic/trajectories/ade121a7-a554-411e-baae-93eda77764b3.jsonl
+?? benchmark_alpha/synthetic/trajectories/c7f4f375-49cf-4202-8f28-a148df4205a1.jsonl
+?? benchmark_alpha/synthetic/trajectories/d85102f2-53af-4182-86c1-fb57c2446b45.jsonl
+?? benchmark_alpha/synthetic/trajectories/e3687ad1-e460-42b9-b255-08804747a6c4.jsonl
+?? benchmark_alpha/synthetic/trajectories/e50f9119-6ced-4d90-92fe-ade01b5cbc63.jsonl
+?? benchmark_alpha/synthetic/trajectories/f193aa0f-3c12-4793-ae1b-410299b39062.jsonl
+?? benchmark_alpha/trajectories/03f4f71a-93d1-4d39-b041-5a05144c236d.jsonl
+?? benchmark_alpha/trajectories/1ac38692-8c94-48bd-973c-99375616a3c6.jsonl
+?? benchmark_alpha/trajectories/26dc6dd4-c59c-4a08-883e-5c832666952b.jsonl
+?? benchmark_alpha/trajectories/607d900d-142a-4d46-9cff-8599f410473a.jsonl
+?? benchmark_alpha/trajectories/78f936c2-c5d0-4e57-bda1-dd6f0ac8ca84.jsonl
+?? benchmark_alpha/trajectories/8471c820-609e-435f-b9eb-ae5d153f45b0.jsonl
+?? benchmark_alpha/trajectories/8f99a8b5-3889-46f2-89dc-4e8156095ee6.jsonl
+?? benchmark_alpha/trajectories/a8e27b2c-ee81-4579-be44-45f88d978abd.jsonl
+?? benchmark_alpha/trajectories/b1c2eba6-3483-47ec-8dac-6119f075a40a.jsonl
+?? benchmark_alpha/trajectories/f3ffcd27-aefb-4163-b0d6-48277e1f2924.jsonl
+?? benchmark_alpha/trials/BA-001.T2.DIRECT.json
+?? benchmark_alpha/trials/BA-001.T2.END_LITE.json
+?? benchmark_alpha/trials/BA-001.T2.FULL_END.json
+?? benchmark_alpha/trials/BA-001.T2.SELF_REFLECT.json
+?? benchmark_alpha/trials/BA-002.T2.DIRECT.json
+?? benchmark_alpha/trials/BA-002.T2.END_LITE.json
+?? benchmark_alpha/trials/BA-002.T2.FULL_END.json
+?? benchmark_alpha/trials/BA-002.T2.SELF_REFLECT.json
+?? benchmark_alpha/trials/BA-003.T2.DIRECT.json
+?? benchmark_alpha/trials/BA-003.T2.END_LITE.json
+?? benchmark_alpha/trials/BA-003.T2.FULL_END.json
+?? benchmark_alpha/trials/BA-003.T2.SELF_REFLECT.json
+?? benchmark_alpha/trials/BA-004.T2.SELF_REFLECT.json
+?? benchmark_alpha/trials/BA-006.T2.DIRECT.json
+?? benchmark_alpha/trials/BA-006.T2.END_LITE.json
+?? benchmark_alpha/trials/BA-006.T2.FULL_END.json
+?? benchmark_alpha/trials/BA-006.T2.SELF_REFLECT.json
+?? benchmark_alpha/trials/BA-010.T2.DIRECT.json
+?? benchmark_alpha/trials/BA-010.T2.END_LITE.json
+?? benchmark_alpha/trials/BA-010.T2.FULL_END.json
+?? benchmark_alpha/trials/BA-010.T2.SELF_REFLECT.json
+?? benchmark_beta/PLAN.md
+?? benchmark_beta/aborted_local_qwen_attempt/NOTE.md
+?? benchmark_beta/aborted_local_qwen_attempt/PREFLIGHT.json
+?? benchmark_beta/aborted_local_qwen_attempt/evaluations/BA-006.T1.DIRECT.json
+?? benchmark_beta/aborted_local_qwen_attempt/evaluations/BA-006.T1.FULL_END_NATIVE.json
+?? benchmark_beta/aborted_local_qwen_attempt/live_progress.log
+?? benchmark_beta/aborted_local_qwen_attempt/manifest.json
+?? benchmark_beta/aborted_local_qwen_attempt/preflight/engine-tests.txt
+?? benchmark_beta/aborted_local_qwen_attempt/preflight/infrastructure-tests.txt
+?? benchmark_beta/aborted_local_qwen_attempt/preflight/preflight-stdout.txt
+?? benchmark_beta/aborted_local_qwen_attempt/trajectories/70a5af77-feaa-4520-8b15-cb2dd0295e35.jsonl
+?? benchmark_beta/aborted_local_qwen_attempt/trials/BA-006.T1.DIRECT.json
+?? benchmark_beta/aborted_local_qwen_attempt/trials/BA-006.T1.FULL_END_NATIVE.json
+?? benchmark_beta/bench/__init__.py
+?? benchmark_beta/bench/analysis.py
+?? benchmark_beta/bench/cli.py
+?? benchmark_beta/bench/conditions.py
+?? benchmark_beta/bench/evaluators.py
+?? benchmark_beta/bench/judge.py
+?? benchmark_beta/bench/make_tasks.py
+?? benchmark_beta/bench/providers.py
+?? benchmark_beta/bench/report.py
+?? benchmark_beta/bench/runner.py
+?? benchmark_beta/bench/synthetic.py
+?? benchmark_beta/synthetic/MANUAL_REVIEW.md
+?? benchmark_beta/synthetic/REPORT.md
+?? benchmark_beta/synthetic/evaluations/BA-001.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-001.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-001.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-001.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-001.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-002.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-002.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-002.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-002.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-002.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-003.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-003.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-003.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-003.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-003.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-004.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-004.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-004.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-004.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-004.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-005.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-005.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-005.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-005.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-005.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-007.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-007.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-007.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-007.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-007.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-009.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-009.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-009.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-009.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-009.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-010.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-010.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-010.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-010.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-010.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-011.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-011.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-011.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-011.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-011.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/evaluations/BA-012.T1.DIRECT.json
+?? benchmark_beta/synthetic/evaluations/BA-012.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-012.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/evaluations/BA-012.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/evaluations/BA-012.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/trial.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/reference.json
+?? benchmark_beta/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/reference.json
+?? benchmark_beta/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/evaluation.json
+?? benchmark_beta/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/reference.json
+?? benchmark_beta/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/evaluation.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/reference.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/trial.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/evaluation.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/reference.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/trial.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta/synthetic/manifest.json
+?? benchmark_beta/synthetic/results.csv
+?? benchmark_beta/synthetic/summary.json
+?? benchmark_beta/synthetic/trajectories/01ad5d97-f5c1-4fe3-b1db-e49dc1348adf.jsonl
+?? benchmark_beta/synthetic/trajectories/0774750e-ad1a-45da-afc4-59b91660c1e2.jsonl
+?? benchmark_beta/synthetic/trajectories/0c25e6a1-085c-446e-9e9c-2b8410852c61.jsonl
+?? benchmark_beta/synthetic/trajectories/0d038fbc-8111-4109-af8f-065533121e83.jsonl
+?? benchmark_beta/synthetic/trajectories/128979d7-5b90-4f6a-8c0f-510fae3b7156.jsonl
+?? benchmark_beta/synthetic/trajectories/198197ff-bd7b-405c-bd0d-7d6eb2627873.jsonl
+?? benchmark_beta/synthetic/trajectories/2966442b-8aea-4e67-b93c-06309efc0ba0.jsonl
+?? benchmark_beta/synthetic/trajectories/31de1102-ceef-4024-a816-d9adf22836e2.jsonl
+?? benchmark_beta/synthetic/trajectories/3adfaaf4-a804-448b-849b-426895b96edc.jsonl
+?? benchmark_beta/synthetic/trajectories/3cc90b27-d54a-4783-977a-50b0afcdd204.jsonl
+?? benchmark_beta/synthetic/trajectories/5e22cf8a-ace6-40fe-af75-15cc7f7dd084.jsonl
+?? benchmark_beta/synthetic/trajectories/6755027f-b2c2-4c61-8ce7-35d028c57d32.jsonl
+?? benchmark_beta/synthetic/trajectories/6a34c6f6-facc-48b4-8685-8039191765c7.jsonl
+?? benchmark_beta/synthetic/trajectories/715f735c-1012-4e5c-870d-9bc2febfaefa.jsonl
+?? benchmark_beta/synthetic/trajectories/7ad8a683-032c-45fc-b4e7-27bbdbd86209.jsonl
+?? benchmark_beta/synthetic/trajectories/83b0afe0-96f7-4f6c-9c46-6d111ff1c225.jsonl
+?? benchmark_beta/synthetic/trajectories/9dc64f6e-0307-4d7f-af85-cd1e17a587b7.jsonl
+?? benchmark_beta/synthetic/trajectories/a04b024a-2985-49d7-b132-1b90ab537748.jsonl
+?? benchmark_beta/synthetic/trajectories/a130f1c0-2095-44ad-abec-82b95a1867cb.jsonl
+?? benchmark_beta/synthetic/trajectories/ac8e52cd-aa6d-473b-8af5-7df130468b13.jsonl
+?? benchmark_beta/synthetic/trajectories/ad1fe01b-3896-4633-9840-150883aa4678.jsonl
+?? benchmark_beta/synthetic/trajectories/b07790d7-4a55-45ac-8f85-74970f716ecf.jsonl
+?? benchmark_beta/synthetic/trajectories/b59c9abf-16a8-4539-ace3-cd937a082e04.jsonl
+?? benchmark_beta/synthetic/trajectories/b5ad3e95-af77-40ff-bd88-92fb8d7507e0.jsonl
+?? benchmark_beta/synthetic/trajectories/ccaa2680-a4da-4e94-b2e9-897bc840b9d4.jsonl
+?? benchmark_beta/synthetic/trajectories/d5ddad67-b3ee-4164-a851-5868e121ce4f.jsonl
+?? benchmark_beta/synthetic/trajectories/d9b9ad91-a264-4098-90db-c5a8a48e4353.jsonl
+?? benchmark_beta/synthetic/trajectories/f5a0726d-79f5-49d3-9c81-fdf6484a1c7b.jsonl
+?? benchmark_beta/synthetic/trajectories/fd8af5b9-feb1-44df-a5be-43ac0d101777.jsonl
+?? benchmark_beta/synthetic/trajectories/fdf87cc0-92f2-4473-a867-2e1cc5a7594c.jsonl
+?? benchmark_beta/synthetic/trials/BA-001.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-001.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-001.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-001.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-001.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-002.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-002.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-002.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-002.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-002.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-003.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-003.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-003.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-003.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-003.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-004.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-004.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-004.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-004.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-004.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-005.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-005.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-005.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-005.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-005.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-007.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-007.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-007.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-007.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-007.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-009.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-009.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-009.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-009.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-009.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-010.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-010.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-010.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-010.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-010.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-011.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-011.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-011.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-011.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-011.T1.SELF_REFLECT.json
+?? benchmark_beta/synthetic/trials/BA-012.T1.DIRECT.json
+?? benchmark_beta/synthetic/trials/BA-012.T1.END_LITE_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-012.T1.FULL_END_NATIVE.json
+?? benchmark_beta/synthetic/trials/BA-012.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta/synthetic/trials/BA-012.T1.SELF_REFLECT.json
+?? benchmark_beta/tasks/BA-001.json
+?? benchmark_beta/tasks/BA-002.json
+?? benchmark_beta/tasks/BA-003.json
+?? benchmark_beta/tasks/BA-004.json
+?? benchmark_beta/tasks/BA-005.json
+?? benchmark_beta/tasks/BA-006.json
+?? benchmark_beta/tasks/BA-007.json
+?? benchmark_beta/tasks/BA-008.json
+?? benchmark_beta/tasks/BA-009.json
+?? benchmark_beta/tasks/BA-010.json
+?? benchmark_beta/tasks/BA-011.json
+?? benchmark_beta/tasks/BA-012.json
+?? benchmark_beta/tests/__init__.py
+?? benchmark_beta/tests/test_benchmark.py
+?? benchmark_beta_gemini/ESTIMATE.md
+?? benchmark_beta_gemini/PREFLIGHT.json
+?? benchmark_beta_gemini/README.md
+?? benchmark_beta_gemini/bench/__init__.py
+?? benchmark_beta_gemini/bench/analysis.py
+?? benchmark_beta_gemini/bench/cli.py
+?? benchmark_beta_gemini/bench/conditions.py
+?? benchmark_beta_gemini/bench/evaluators.py
+?? benchmark_beta_gemini/bench/gemini.py
+?? benchmark_beta_gemini/bench/judge.py
+?? benchmark_beta_gemini/bench/make_tasks.py
+?? benchmark_beta_gemini/bench/providers.py
+?? benchmark_beta_gemini/bench/report.py
+?? benchmark_beta_gemini/bench/runner.py
+?? benchmark_beta_gemini/bench/synthetic.py
+?? benchmark_beta_gemini/preflight/engine-tests.txt
+?? benchmark_beta_gemini/preflight/infrastructure-tests.txt
+?? benchmark_beta_gemini/preflight/preflight-stdout.txt
+?? benchmark_beta_gemini/synthetic/MANUAL_REVIEW.md
+?? benchmark_beta_gemini/synthetic/REPORT.md
+?? benchmark_beta_gemini/synthetic/evaluations/BA-001.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-001.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-001.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-001.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-001.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-002.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-002.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-002.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-002.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-002.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-003.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-003.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-003.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-003.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-003.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-004.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-004.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-004.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-004.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-004.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-005.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-005.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-005.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-005.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-005.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-007.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-007.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-007.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-007.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-007.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-009.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-009.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-009.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-009.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-009.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-010.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-010.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-010.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-010.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-010.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-011.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-011.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-011.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-011.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-011.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-012.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-012.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-012.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-012.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/evaluations/BA-012.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-009.T1.SELF_REFLECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-010.T1.SELF_REFLECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/CORRECT_ABSTENTION/BA-011.T1.SELF_REFLECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/DIRECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HELPED/BA-004.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/END_HURT/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FABRICATED_EVIDENCE/BA-009.T1.SELF_REFLECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/FALSE_ACCEPT/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/IGNORED_CONTRADICTION/BA-010.T1.DIRECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-002.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-010.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/OVERTHINKING/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_HURT_RUN/BA-007.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/ROLLBACK_SAVED_RUN/BA-002.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.DIRECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SCOPE_OVERREACH/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-003.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-005.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/SELF_REFLECT_BEAT_END/BA-012.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/reference.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.DIRECT/trial.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.END_LITE_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/reference.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_NATIVE/trial.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/evaluation.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/reference.json
+?? benchmark_beta_gemini/synthetic/failures/UNSUPPORTED_HIGH_IMPACT_CLAIM/BA-011.T1.FULL_END_STRUCTURED/trial.json
+?? benchmark_beta_gemini/synthetic/manifest.json
+?? benchmark_beta_gemini/synthetic/results.csv
+?? benchmark_beta_gemini/synthetic/summary.json
+?? benchmark_beta_gemini/synthetic/trajectories/008ae858-b37a-4fac-af9d-c1b8bd1cf851.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/042c4ea9-e79b-421e-b1f4-2ae399cf1b5c.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/07f183f8-4d2a-4dfb-b4b0-d8d582d90252.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/0c9bc360-13ee-4f5f-ab59-5a6fb7ce91e1.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/16985b5f-4698-458b-b481-7bbe3b8879cb.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/2d85cd7d-49ed-4e78-9692-71b59b1695e5.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/31241b33-c091-465e-b620-02b76e158416.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/3a64f93b-c4b2-4dbd-a272-98e6a9eb6fe2.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/3c3a1ac1-6f9f-4922-afb3-ad87ab08595e.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/41b914d7-1da4-4718-8c51-194f3901848b.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/4acb505a-ba62-46fb-9456-70ecfb3a3af0.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/5539d6cb-1896-491e-a70d-b914fd85df45.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/577ee46a-5475-480b-9157-3aadabe15225.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/6cd58e76-d434-49af-9a0a-8c06f6fb6bd1.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/7a1d6777-ad91-4711-b203-37bebaa27ddc.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/7de4c759-c852-4aa4-b18b-e71b836e19a1.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/81a4a037-7597-463b-9588-08cc6d7fcbca.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/8579fad9-ab78-4156-ae03-1f3d70508fcb.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/90961036-540c-48eb-a89d-1d2b6fcbcb4c.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/9f180395-b3fd-4662-81d4-f7c64b948bef.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/a00e0725-6b00-4895-acfb-e48d35696bd9.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/b640a82e-9f2e-447e-9cac-3823ff9210e8.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/b8c7929e-48bd-4f1f-bb22-81766b7fdc58.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/bdd1331e-b50b-4a83-8b89-78b48363619c.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/cc519045-2a74-4738-8977-8153636aa7e9.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/d40e0f56-cb56-495c-aea9-10645b1f578e.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/e5d9de92-119b-4fe1-b34e-e8792e52cba8.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/e60f2ac7-674d-4a03-9190-78ef6020f0ac.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/efada5c3-0bec-480f-b7e2-9f287716c067.jsonl
+?? benchmark_beta_gemini/synthetic/trajectories/f5e6ec95-ed11-4645-85e5-a032d6210c7f.jsonl
+?? benchmark_beta_gemini/synthetic/trials/BA-001.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-001.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-001.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-001.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-001.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-002.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-002.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-002.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-002.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-002.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-003.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-003.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-003.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-003.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-003.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-004.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-004.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-004.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-004.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-004.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-005.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-005.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-005.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-005.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-005.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-007.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-007.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-007.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-007.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-007.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-009.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-009.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-009.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-009.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-009.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-010.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-010.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-010.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-010.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-010.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-011.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-011.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-011.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-011.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-011.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-012.T1.DIRECT.json
+?? benchmark_beta_gemini/synthetic/trials/BA-012.T1.END_LITE_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-012.T1.FULL_END_NATIVE.json
+?? benchmark_beta_gemini/synthetic/trials/BA-012.T1.FULL_END_STRUCTURED.json
+?? benchmark_beta_gemini/synthetic/trials/BA-012.T1.SELF_REFLECT.json
+?? benchmark_beta_gemini/tasks/BA-001.json
+?? benchmark_beta_gemini/tasks/BA-002.json
+?? benchmark_beta_gemini/tasks/BA-003.json
+?? benchmark_beta_gemini/tasks/BA-004.json
+?? benchmark_beta_gemini/tasks/BA-005.json
+?? benchmark_beta_gemini/tasks/BA-006.json
+?? benchmark_beta_gemini/tasks/BA-007.json
+?? benchmark_beta_gemini/tasks/BA-008.json
+?? benchmark_beta_gemini/tasks/BA-009.json
+?? benchmark_beta_gemini/tasks/BA-010.json
+?? benchmark_beta_gemini/tasks/BA-011.json
+?? benchmark_beta_gemini/tasks/BA-012.json
+?? benchmark_beta_gemini/tests/__init__.py
+?? benchmark_beta_gemini/tests/test_benchmark.py
+?? benchmark_beta_gemini/tests/test_gemini.py
+?? docs/JEV_AB_PLAN.md
+?? docs/JEV_EXPERIMENT.md
+?? end_engine/core/output_format.py
+?? end_engine/decisions/__init__.py
+?? end_engine/decisions/config.py
+?? end_engine/decisions/context.py
+?? end_engine/decisions/demo.py
+?? end_engine/decisions/jev.py
+?? end_engine/decisions/providers.py
+?? end_engine/decisions/routing.py
+?? end_engine/decisions/types.py
+?? end_engine/models/budget.py
+?? end_engine/models/protocol.py
+?? end_engine/quality/grounding.py
+?? tests/test_decisions.py
+?? tests/test_v035_regressions.py
+?? v035_core_regression_pilot/C0_OBSERVATIONS.json
+?? v035_core_regression_pilot/FINAL_AUDIT.json
+?? v035_core_regression_pilot/INTERPRETATION.md
+?? v035_core_regression_pilot/MANUAL_REVIEW.md
+?? v035_core_regression_pilot/README.md
+?? v035_core_regression_pilot/REPORT.md
+?? v035_core_regression_pilot/RESUME_RECORD.json
+?? v035_core_regression_pilot/__init__.py
+?? v035_core_regression_pilot/bench/__init__.py
+?? v035_core_regression_pilot/bench/analysis.py
+?? v035_core_regression_pilot/bench/conditions.py
+?? v035_core_regression_pilot/bench/evaluators.py
+?? v035_core_regression_pilot/bench/providers.py
+?? v035_core_regression_pilot/bench/upstream_runner.py
+?? v035_core_regression_pilot/call_logs/BA-001.T1.DIRECT.jsonl
+?? v035_core_regression_pilot/call_logs/BA-001.T1.FULL_END_NATIVE.jsonl
+?? v035_core_regression_pilot/call_logs/BA-001.T1.FULL_END_STRUCTURED.jsonl
+?? v035_core_regression_pilot/call_logs/BA-002.T1.DIRECT.jsonl
+?? v035_core_regression_pilot/call_logs/BA-002.T1.FULL_END_NATIVE.jsonl
+?? v035_core_regression_pilot/call_logs/BA-002.T1.FULL_END_STRUCTURED.jsonl
+?? v035_core_regression_pilot/call_logs/BA-008.T1.DIRECT.jsonl
+?? v035_core_regression_pilot/call_logs/BA-008.T1.FULL_END_NATIVE.jsonl
+?? v035_core_regression_pilot/call_logs/BA-008.T1.FULL_END_STRUCTURED.jsonl
+?? v035_core_regression_pilot/call_logs/BA-009.T1.DIRECT.jsonl
+?? v035_core_regression_pilot/call_logs/BA-009.T1.FULL_END_NATIVE.jsonl
+?? v035_core_regression_pilot/call_logs/BA-009.T1.FULL_END_STRUCTURED.jsonl
+?? v035_core_regression_pilot/diagnostics/BA-001.T1.DIRECT.json
+?? v035_core_regression_pilot/diagnostics/BA-001.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/diagnostics/BA-001.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/diagnostics/BA-002.T1.DIRECT.json
+?? v035_core_regression_pilot/diagnostics/BA-002.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/diagnostics/BA-002.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/diagnostics/BA-008.T1.DIRECT.json
+?? v035_core_regression_pilot/diagnostics/BA-008.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/diagnostics/BA-008.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/diagnostics/BA-009.T1.DIRECT.json
+?? v035_core_regression_pilot/diagnostics/BA-009.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/diagnostics/BA-009.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/evaluations/BA-001.T1.DIRECT.json
+?? v035_core_regression_pilot/evaluations/BA-001.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/evaluations/BA-001.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/evaluations/BA-002.T1.DIRECT.json
+?? v035_core_regression_pilot/evaluations/BA-002.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/evaluations/BA-002.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/evaluations/BA-008.T1.DIRECT.json
+?? v035_core_regression_pilot/evaluations/BA-008.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/evaluations/BA-008.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/evaluations/BA-009.T1.DIRECT.json
+?? v035_core_regression_pilot/evaluations/BA-009.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/evaluations/BA-009.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/evaluation.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/reference.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_NATIVE/trial.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/evaluation.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/reference.json
+?? v035_core_regression_pilot/failures/BA-001.T1.FULL_END_STRUCTURED/trial.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/evaluation.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/reference.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_NATIVE/trial.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/evaluation.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/reference.json
+?? v035_core_regression_pilot/failures/BA-002.T1.FULL_END_STRUCTURED/trial.json
+?? v035_core_regression_pilot/failures/BA-008.T1.DIRECT/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-008.T1.DIRECT/evaluation.json
+?? v035_core_regression_pilot/failures/BA-008.T1.DIRECT/reference.json
+?? v035_core_regression_pilot/failures/BA-008.T1.DIRECT/trial.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/evaluation.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/reference.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_NATIVE/trial.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/evaluation.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/reference.json
+?? v035_core_regression_pilot/failures/BA-008.T1.FULL_END_STRUCTURED/trial.json
+?? v035_core_regression_pilot/failures/BA-009.T1.DIRECT/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-009.T1.DIRECT/evaluation.json
+?? v035_core_regression_pilot/failures/BA-009.T1.DIRECT/reference.json
+?? v035_core_regression_pilot/failures/BA-009.T1.DIRECT/trial.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/evaluation.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/reference.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_NATIVE/trial.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/diagnostics.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/evaluation.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/reference.json
+?? v035_core_regression_pilot/failures/BA-009.T1.FULL_END_STRUCTURED/trial.json
+?? v035_core_regression_pilot/historical_alpha_reference.json
+?? v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED.jsonl
+?? v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0001.json
+?? v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0002.json
+?? v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0003.json
+?? v035_core_regression_pilot/incomplete_attempts/BA-009.T1.FULL_END_STRUCTURED/20261006T120641738028/BA-009.T1.FULL_END_STRUCTURED/0004.json
+?? v035_core_regression_pilot/manifest.json
+?? v035_core_regression_pilot/pilot.lock
+?? v035_core_regression_pilot/preflight/engine-identity.json
+?? v035_core_regression_pilot/preflight/engine-source-before.json
+?? v035_core_regression_pilot/preflight/git-status-before.txt
+?? v035_core_regression_pilot/preflight/manifest-draft-before-metric-review.json
+?? v035_core_regression_pilot/preflight/protected-before.json
+?? v035_core_regression_pilot/process.log
+?? v035_core_regression_pilot/report_pilot.py
+?? v035_core_regression_pilot/results.csv
+?? v035_core_regression_pilot/run_pilot.py
+?? v035_core_regression_pilot/status.json
+?? v035_core_regression_pilot/summary.json
+?? v035_core_regression_pilot/tasks/BA-001.json
+?? v035_core_regression_pilot/tasks/BA-002.json
+?? v035_core_regression_pilot/tasks/BA-008.json
+?? v035_core_regression_pilot/tasks/BA-009.json
+?? v035_core_regression_pilot/tests.py
+?? v035_core_regression_pilot/trajectories/02835fa6-600d-4e78-b878-3d5f65e4c344.jsonl
+?? v035_core_regression_pilot/trajectories/42be76c1-49bc-4a96-bba0-a3d55d5e7af3.jsonl
+?? v035_core_regression_pilot/trajectories/67a5c2d9-fcf4-4c27-81a1-67a9076ba93f.jsonl
+?? v035_core_regression_pilot/trajectories/6ba9d7f7-a7fe-496e-a8f3-d4887cdc0bae.jsonl
+?? v035_core_regression_pilot/trajectories/91b86589-796e-4570-965b-bd025d7c7b87.jsonl
+?? v035_core_regression_pilot/trajectories/9cea722d-0dbe-43b8-9d30-24d6eac0befa.jsonl
+?? v035_core_regression_pilot/trajectories/b3c8b8d8-2388-40c0-9e2c-c75a679ef56e.jsonl
+?? v035_core_regression_pilot/trajectories/ca37375d-c022-4ffa-a2b5-5d641b59cf35.jsonl
+?? v035_core_regression_pilot/trials/BA-001.T1.DIRECT.json
+?? v035_core_regression_pilot/trials/BA-001.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/trials/BA-001.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/trials/BA-002.T1.DIRECT.json
+?? v035_core_regression_pilot/trials/BA-002.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/trials/BA-002.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/trials/BA-008.T1.DIRECT.json
+?? v035_core_regression_pilot/trials/BA-008.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/trials/BA-008.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/trials/BA-009.T1.DIRECT.json
+?? v035_core_regression_pilot/trials/BA-009.T1.FULL_END_NATIVE.json
+?? v035_core_regression_pilot/trials/BA-009.T1.FULL_END_STRUCTURED.json
+?? v035_core_regression_pilot/wire/BA-001.T1.DIRECT/0001.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0001.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0002.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0003.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0004.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0005.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0006.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0007.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0008.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0009.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0010.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0011.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0012.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_NATIVE/0013.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0001.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0002.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0003.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0004.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0005.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0006.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0007.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0008.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0009.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0010.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0011.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0012.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0013.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0014.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0015.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0016.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0017.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0018.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0019.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0020.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0021.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0022.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0023.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0024.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0025.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0026.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0027.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0028.json
+?? v035_core_regression_pilot/wire/BA-001.T1.FULL_END_STRUCTURED/0029.json
+?? v035_core_regression_pilot/wire/BA-002.T1.DIRECT/0001.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0001.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0002.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0003.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0004.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0005.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0006.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0007.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0008.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0009.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0010.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0011.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0012.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0013.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0014.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0015.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0016.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0017.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0018.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0019.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0020.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0021.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0022.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0023.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0024.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0025.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0026.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0027.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0028.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_NATIVE/0029.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0001.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0002.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0003.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0004.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0005.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0006.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0007.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0008.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0009.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0010.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0011.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0012.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0013.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0014.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0015.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0016.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0017.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0018.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0019.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0020.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0021.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0022.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0023.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0024.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0025.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0026.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0027.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0028.json
+?? v035_core_regression_pilot/wire/BA-002.T1.FULL_END_STRUCTURED/0029.json
+?? v035_core_regression_pilot/wire/BA-008.T1.DIRECT/0001.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0001.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0002.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0003.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0004.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0005.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0006.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0007.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0008.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0009.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0010.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0011.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0012.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0013.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0014.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0015.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0016.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0017.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0018.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0019.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0020.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0021.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0022.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0023.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0024.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0025.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0026.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0027.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0028.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0029.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_NATIVE/0030.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0001.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0002.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0003.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0004.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0005.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0006.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0007.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0008.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0009.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0010.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0011.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0012.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0013.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0014.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0015.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0016.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0017.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0018.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0019.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0020.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0021.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0022.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0023.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0024.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0025.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0026.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0027.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0028.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0029.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0030.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0031.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0032.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0033.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0034.json
+?? v035_core_regression_pilot/wire/BA-008.T1.FULL_END_STRUCTURED/0035.json
+?? v035_core_regression_pilot/wire/BA-009.T1.DIRECT/0001.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0001.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0002.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0003.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0004.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0005.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0006.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0007.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0008.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0009.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0010.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0011.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0012.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0013.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0014.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0015.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0016.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0017.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0018.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0019.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0020.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0021.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0022.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0023.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0024.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0025.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0026.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0027.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0028.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0029.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0030.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0031.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_NATIVE/0032.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0001.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0002.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0003.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0004.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0005.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0006.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0007.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0008.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0009.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0010.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0011.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0012.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0013.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0014.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0015.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0016.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0017.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0018.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0019.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0020.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0021.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0022.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0023.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0024.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0025.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0026.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0027.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0028.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0029.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0030.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0031.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0032.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0033.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0034.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0035.json
+?? v035_core_regression_pilot/wire/BA-009.T1.FULL_END_STRUCTURED/0036.json
+?? validation_jev/baseline.json
+?? validation_jev/demo/48fd1db1-1cf0-4a81-b475-4cdb3eba96b6.jsonl
+?? validation_jev/demo/a8be4a2c-ca51-48c5-b32c-778ef34a6e9a.jsonl
+?? validation_jev/demo/decision_demo.json
+?? validation_jev/engine-tests-after.txt
+?? validation_jev/git-status-before.txt
+?? validation_jev/identity-after.json
+?? validation_jev/live-smoke-status.json
+?? validation_jev/preserved-records-before.json
+?? validation_jev/run_offline.py
+?? validation_jev/source-after.json
+?? validation_jev/source-before.json
+?? validation_jev/test-summary.json
+?? validation_v035/alpha-immutability.txt
+?? validation_v035/alpha-tests-after.txt
+?? validation_v035/alpha-tests-before.txt
+?? validation_v035/deterministic-demos.txt
+?? validation_v035/engine-identity.json
+?? validation_v035/engine-tests-after.txt
+?? validation_v035/engine-tests-before.txt
+?? validation_v035/harness-tests.txt
+?? validation_v035/v035-regressions.txt

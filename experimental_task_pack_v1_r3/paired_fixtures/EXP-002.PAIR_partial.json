@@ -1,0 +1,15 @@
+{
+  "pair_id": "EXP-002.PAIR_partial",
+  "task_id": "EXP-002",
+  "candidate_role": "SYNTHETIC_PAIR_NOT_LIVE_GENERATED_C0",
+  "c0_content": "{\"table\":[{\"row_id\":\"Larch\",\"destination\":\"internal\",\"consent\":false,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Cedar\",\"destination\":\"internal\",\"consent\":false,\"quarantine\":true,\"decision\":\"FULL\"},{\"row_id\":\"Pine\",\"destination\":\"internal\",\"consent\":true,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Birch\",\"destination\":\"internal\",\"consent\":true,\"quarantine\":true,\"decision\":\"HOLD\"},{\"row_id\":\"Elm\",\"destination\":\"external\",\"consent\":false,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Ash\",\"destination\":\"external\",\"consent\":false,\"quarantine\":true,\"decision\":\"HOLD\"},{\"row_id\":\"Fir\",\"destination\":\"external\",\"consent\":true,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Yew\",\"destination\":\"external\",\"consent\":true,\"quarantine\":true,\"decision\":\"MINIMAL\"}],\"diagnosis\":[{\"row_id\":\"Cedar\",\"rule_id\":\"POL-Q\",\"expected_decision\":\"HOLD\"},{\"row_id\":\"Elm\",\"rule_id\":\"POL-M\",\"expected_decision\":\"MINIMAL\"},{\"row_id\":\"Yew\",\"rule_id\":\"POL-Q\",\"expected_decision\":\"HOLD\"}],\"scope\":\"paper_policy_only\"}",
+  "final_content": "{\"table\":[{\"row_id\":\"Larch\",\"destination\":\"internal\",\"consent\":false,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Cedar\",\"destination\":\"internal\",\"consent\":false,\"quarantine\":true,\"decision\":\"HOLD\"},{\"row_id\":\"Pine\",\"destination\":\"internal\",\"consent\":true,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Birch\",\"destination\":\"internal\",\"consent\":true,\"quarantine\":true,\"decision\":\"HOLD\"},{\"row_id\":\"Elm\",\"destination\":\"external\",\"consent\":false,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Ash\",\"destination\":\"external\",\"consent\":false,\"quarantine\":true,\"decision\":\"HOLD\"},{\"row_id\":\"Fir\",\"destination\":\"external\",\"consent\":true,\"quarantine\":false,\"decision\":\"FULL\"},{\"row_id\":\"Yew\",\"destination\":\"external\",\"consent\":true,\"quarantine\":true,\"decision\":\"MINIMAL\"}],\"diagnosis\":[{\"row_id\":\"Cedar\",\"rule_id\":\"POL-Q\",\"expected_decision\":\"HOLD\"},{\"row_id\":\"Elm\",\"rule_id\":\"POL-M\",\"expected_decision\":\"MINIMAL\"},{\"row_id\":\"Yew\",\"rule_id\":\"POL-Q\",\"expected_decision\":\"HOLD\"}],\"scope\":\"paper_policy_only\"}",
+  "expected_transition_fields": {
+    "substantive_improvement": true,
+    "task_success_improvement": false,
+    "observable_required_repair": true
+  },
+  "rationale": "One finite fault fixed; not full task success.",
+  "revision_trace": null,
+  "independent_recheck_status": "PENDING"
+}

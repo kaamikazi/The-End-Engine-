@@ -28,7 +28,7 @@
   },
   "evaluation_type": "executable_test+premise",
   "evaluator": "premise_code",
-  "evaluator_version": "alpha-2",
+  "evaluator_version": "alpha-3",
   "extracted": {
    "claim_region": "after </think>",
    "premise": "corrected",
@@ -37,6 +37,7 @@
     "total": 3
    }
   },
+  "format_ok": true,
   "passed": true,
   "review_flags": [],
   "score": 1.0,
@@ -71,7 +72,7 @@
    },
    "evaluation_type": "executable_test+premise",
    "evaluator": "premise_code",
-   "evaluator_version": "alpha-2",
+   "evaluator_version": "alpha-3",
    "extracted": {
     "claim_region": "after </think>",
     "premise": "not_addressed",
@@ -80,6 +81,7 @@
      "total": 3
     }
    },
+   "format_ok": true,
    "passed": false,
    "review_flags": [
     "premise_not_addressed: verify manually whether the answer questions the premise"

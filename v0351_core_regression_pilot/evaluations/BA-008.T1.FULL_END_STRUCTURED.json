@@ -1,0 +1,320 @@
+{
+  "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+  "final": {
+    "task_id": "BA-008",
+    "evaluator": "premise_code",
+    "evaluator_version": "alpha-3",
+    "format_ok": true,
+    "evaluation_type": "executable_test+premise",
+    "passed": true,
+    "score": 1.0,
+    "checks": [
+      {
+        "name": "unit_tests",
+        "score": 1.0,
+        "required": true,
+        "detail": null
+      },
+      {
+        "name": "premise_corrected",
+        "score": 1.0,
+        "required": true,
+        "detail": "corrected"
+      }
+    ],
+    "counters": {
+      "unsupported_claim_count": 0,
+      "unsupported_high_impact_claim_count": 0,
+      "fabricated_reference_count": 0,
+      "scope_overreach_count": 0,
+      "contradiction_ignored_count": 0,
+      "false_execution_claim_count": 0,
+      "correct_uncertainty_count": 0
+    },
+    "review_flags": [],
+    "extracted": {
+      "tests": {
+        "passed": 3,
+        "total": 3
+      },
+      "premise": "corrected",
+      "claim_region": "whole text"
+    },
+    "answer_chars": 1259
+  },
+  "stages": {},
+  "candidates": {
+    "C0": {
+      "task_id": "BA-008",
+      "evaluator": "premise_code",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test+premise",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "premise_corrected",
+          "score": 1.0,
+          "required": true,
+          "detail": "corrected"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 3,
+          "total": 3
+        },
+        "premise": "corrected",
+        "claim_region": "whole text"
+      },
+      "answer_chars": 2219
+    },
+    "C1": {
+      "task_id": "BA-008",
+      "evaluator": "premise_code",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test+premise",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "premise_corrected",
+          "score": 1.0,
+          "required": true,
+          "detail": "corrected"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 3,
+          "total": 3
+        },
+        "premise": "corrected",
+        "claim_region": "whole text"
+      },
+      "answer_chars": 1259
+    },
+    "C2": {
+      "task_id": "BA-008",
+      "evaluator": "premise_code",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test+premise",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "premise_corrected",
+          "score": 1.0,
+          "required": true,
+          "detail": "corrected"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 3,
+          "total": 3
+        },
+        "premise": "corrected",
+        "claim_region": "whole text"
+      },
+      "answer_chars": 1259
+    },
+    "C3": {
+      "task_id": "BA-008",
+      "evaluator": "premise_code",
+      "evaluator_version": "alpha-3",
+      "format_ok": true,
+      "evaluation_type": "executable_test+premise",
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "unit_tests",
+          "score": 1.0,
+          "required": true,
+          "detail": null
+        },
+        {
+          "name": "premise_corrected",
+          "score": 1.0,
+          "required": true,
+          "detail": "corrected"
+        }
+      ],
+      "counters": {
+        "unsupported_claim_count": 0,
+        "unsupported_high_impact_claim_count": 0,
+        "fabricated_reference_count": 0,
+        "scope_overreach_count": 0,
+        "contradiction_ignored_count": 0,
+        "false_execution_claim_count": 0,
+        "correct_uncertainty_count": 0
+      },
+      "review_flags": [],
+      "extracted": {
+        "tests": {
+          "passed": 3,
+          "total": 3
+        },
+        "premise": "corrected",
+        "claim_region": "whole text"
+      },
+      "answer_chars": 1259
+    }
+  },
+  "analysis": {
+    "progression": {
+      "candidate_scores": {
+        "C0": {
+          "score": 1.0,
+          "passed": true
+        },
+        "C1": {
+          "score": 1.0,
+          "passed": true
+        },
+        "C2": {
+          "score": 1.0,
+          "passed": true
+        },
+        "C3": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "peak_candidate_id": "C0",
+      "returned_candidate_id": "C1",
+      "missed_peak": false,
+      "regressions": [],
+      "earlier_candidate_better": [],
+      "correct_then_lost": false
+    },
+    "overthinking": [
+      "B_cycles_without_external_benefit"
+    ],
+    "rollbacks": [],
+    "delta_validation": [
+      {
+        "from": "C0",
+        "to": "C1",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      },
+      {
+        "from": "C1",
+        "to": "C2",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      },
+      {
+        "from": "C2",
+        "to": "C3",
+        "predicted": "NO_MATERIAL_CHANGE",
+        "external": "NO_MATERIAL_CHANGE",
+        "external_delta": 0.0,
+        "label": "MATCH"
+      }
+    ],
+    "operator_effects": [
+      {
+        "operator": "VERIFY",
+        "target": "A001",
+        "on_candidate": "C0",
+        "information_gain": "HIGH",
+        "revision_candidate": "C1",
+        "external_before": 1.0,
+        "external_after": 1.0,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 9018,
+        "cycle_calls_missing_usage": 0
+      },
+      {
+        "operator": "VERIFY",
+        "target": "A002",
+        "on_candidate": "C1",
+        "information_gain": "LOW",
+        "revision_candidate": "C2",
+        "external_before": 1.0,
+        "external_after": 1.0,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 6161,
+        "cycle_calls_missing_usage": 0
+      },
+      {
+        "operator": "ASSUMPTION",
+        "target": "W001",
+        "on_candidate": "C2",
+        "information_gain": "LOW",
+        "revision_candidate": "C3",
+        "external_before": 1.0,
+        "external_after": 1.0,
+        "effect": "neutral",
+        "cycle_tokens_recorded": 6263,
+        "cycle_calls_missing_usage": 0
+      }
+    ],
+    "calibration": {
+      "internal": "rejected",
+      "basis": "quality_gate=REVISE",
+      "external_passed": true,
+      "label": "FALSE_REJECT"
+    },
+    "c0_format_ok": true,
+    "best_internal_candidate_id": "C1"
+  }
+}

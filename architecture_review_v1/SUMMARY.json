@@ -1,0 +1,465 @@
+{
+  "full_end_runs": 16,
+  "cycles": 44,
+  "candidates": 60,
+  "transitions": 44,
+  "model_calls": 466,
+  "tokens": 1140074,
+  "run_wall_seconds": 15293.791163,
+  "pre_cycle_calls": 80,
+  "cycle_calls": 386,
+  "external_transition_improvements": 0,
+  "external_transition_regressions": 1,
+  "external_transition_neutral": 43,
+  "final_improvements_over_c0": 0,
+  "final_regressions_over_c0": 1,
+  "c0_perfect_score_runs": 10,
+  "new_executed_evidence": 0,
+  "rollback_events": 18,
+  "repairs": 16,
+  "issue_occurrences": 57,
+  "issue_identity_classes": {
+    "DISTINCT_LEXICAL_PROPOSAL": 22,
+    "UNKNOWN": 6,
+    "REPEATED": 28,
+    "REFORMULATED": 1
+  },
+  "selected_issue_assessments": {
+    "PLAUSIBLE_BUT_UNVERIFIED": 22,
+    "UNKNOWN": 12,
+    "UNSUPPORTED": 6,
+    "CONTRADICTED_BY_AVAILABLE_EVIDENCE": 2,
+    "DETERMINISTICALLY_GROUNDED": 2
+  },
+  "content_change_classes": {
+    "IDENTICAL_HISTORICAL_ANSWER_REGION": 15,
+    "IDENTICAL_RAW": 15,
+    "CONTENT_CHANGED;SEMANTIC_EFFECT_REQUIRES_REVIEW": 11,
+    "FORMAT_OR_WORDING_ONLY": 1,
+    "SAME_PARSED_CODE_OR_JSON;PROSE_MAY_DIFFER": 2
+  },
+  "gate_by_external_pass": {
+    "ACCEPT_PROVISIONALLY/True": 3,
+    "REJECT/True": 12,
+    "REJECT/False": 12,
+    "REVISE/False": 15,
+    "REVISE/True": 18
+  },
+  "purpose_costs": {
+    "adversarial_judging": {
+      "calls": 60,
+      "tokens": 190188,
+      "provider_latency_seconds": 3072.584698
+    },
+    "adversarial_test_generation": {
+      "calls": 60,
+      "tokens": 99002,
+      "provider_latency_seconds": 1905.703734
+    },
+    "branch_activity": {
+      "calls": 8,
+      "tokens": 11954,
+      "provider_latency_seconds": 218.08848
+    },
+    "candidate_comparison": {
+      "calls": 54,
+      "tokens": 131176,
+      "provider_latency_seconds": 1596.414341
+    },
+    "initial_generation": {
+      "calls": 16,
+      "tokens": 26672,
+      "provider_latency_seconds": 1657.859163
+    },
+    "model_verification": {
+      "calls": 60,
+      "tokens": 124625,
+      "provider_latency_seconds": 830.337101
+    },
+    "operator_critique": {
+      "calls": 50,
+      "tokens": 166529,
+      "provider_latency_seconds": 1668.741011
+    },
+    "primary_judging": {
+      "calls": 60,
+      "tokens": 178230,
+      "provider_latency_seconds": 1914.313098
+    },
+    "revision_generation": {
+      "calls": 44,
+      "tokens": 81849,
+      "provider_latency_seconds": 1590.585557
+    },
+    "revision_planning": {
+      "calls": 54,
+      "tokens": 129849,
+      "provider_latency_seconds": 822.824361
+    }
+  },
+  "operator_costs": {
+    "ALTERNATIVE": {
+      "activations": 2,
+      "family": "search",
+      "associated_cycle_calls": 26,
+      "associated_cycle_tokens": 46270,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "HIGH": 2
+      }
+    },
+    "ASSUMPTION": {
+      "activations": 4,
+      "family": "epistemic",
+      "associated_cycle_calls": 35,
+      "associated_cycle_tokens": 76541,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "LOW": 3,
+        "ZERO": 1
+      }
+    },
+    "CONSTRAINT": {
+      "activations": 4,
+      "family": "constraint",
+      "associated_cycle_calls": 34,
+      "associated_cycle_tokens": 57762,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "LOW": 3,
+        "MEDIUM": 1
+      }
+    },
+    "EVIDENCE": {
+      "activations": 15,
+      "family": "epistemic",
+      "associated_cycle_calls": 127,
+      "associated_cycle_tokens": 318042,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "MEDIUM": 3,
+        "LOW": 9,
+        "ZERO": 2,
+        "HIGH": 1
+      }
+    },
+    "HOW": {
+      "activations": 1,
+      "family": "foundational",
+      "associated_cycle_calls": 9,
+      "associated_cycle_tokens": 15332,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "LOW": 1
+      }
+    },
+    "SECOND_ORDER_EFFECT": {
+      "activations": 4,
+      "family": "systemic",
+      "associated_cycle_calls": 34,
+      "associated_cycle_tokens": 78948,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "LOW": 4
+      }
+    },
+    "SIMPLIFY": {
+      "activations": 1,
+      "family": "optimization",
+      "associated_cycle_calls": 8,
+      "associated_cycle_tokens": 11985,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 0,
+      "internal_gain_levels": {
+        "LOW": 1
+      }
+    },
+    "VERIFY": {
+      "activations": 13,
+      "family": "epistemic",
+      "associated_cycle_calls": 113,
+      "associated_cycle_tokens": 303113,
+      "positive_external_transitions": 0,
+      "negative_external_transitions": 1,
+      "internal_gain_levels": {
+        "LOW": 9,
+        "ZERO": 1,
+        "MEDIUM": 1,
+        "HIGH": 2
+      }
+    }
+  },
+  "counterfactuals": [
+    {
+      "version": "0.3.5",
+      "run_id": "BA-001.T1.FULL_END_NATIVE",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 0.0,
+      "A_c0_score": 0.0,
+      "B_oracle_score": 0.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 0.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-002.T1.FULL_END_NATIVE",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-008.T1.FULL_END_NATIVE",
+      "actual_final_score": 0.5,
+      "A_c0_score": 0.5,
+      "B_oracle_score": 0.5,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 0.5,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-009.T1.FULL_END_NATIVE",
+      "actual_final_score": 0.5,
+      "A_c0_score": 0.5,
+      "B_oracle_score": 0.5,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 0.5,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5",
+      "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 0.0,
+      "A_c0_score": 0.0,
+      "B_oracle_score": 0.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C0",
+      "C_after_first_cycle_score": 0.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-001.T1.FULL_END_NATIVE",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-001.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-002.T1.FULL_END_NATIVE",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-002.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-008.T1.FULL_END_NATIVE",
+      "actual_final_score": 0.5,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 0.5,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-008.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 1.0,
+      "A_c0_score": 1.0,
+      "B_oracle_score": 1.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 1.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-009.T1.FULL_END_NATIVE",
+      "actual_final_score": 0.5,
+      "A_c0_score": 0.5,
+      "B_oracle_score": 0.5,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 0.5,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    },
+    {
+      "version": "0.3.5.1",
+      "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+      "actual_final_score": 0.0,
+      "A_c0_score": 0.0,
+      "B_oracle_score": 0.0,
+      "B_candidate": "C0",
+      "C_after_first_cycle_effective_id": "C1",
+      "C_after_first_cycle_score": 0.0,
+      "D_status": "PARTIALLY RECONSTRUCTABLE",
+      "E_status": "PARTIALLY RECONSTRUCTABLE",
+      "A_status": "OBSERVABLE FROM RECORDED ARTIFACTS; cost of changed policy not observed",
+      "B_status": "RETROSPECTIVE ORACLE UPPER BOUND; unavailable at runtime",
+      "C_status": "OBSERVABLE STATE SCORE; final reconciliation/safety after early stop only partially reconstructable"
+    }
+  ],
+  "primary_revision_diagnoses": {
+    "NEUTRAL REVISION": 8,
+    "BAD ISSUE": 18,
+    "GOOD PLAN, BAD GENERATION": 7,
+    "GOOD ISSUE, BAD PLAN": 11
+  },
+  "selected_target_novelty": {
+    "FIRST_SELECTED_TARGET; novelty/validity unproven": 34,
+    "REPEATED_TARGET_SAME_TEXT": 9,
+    "SAME_TARGET_REWORDED; semantic equivalence unknown": 1
+  },
+  "finding_occurrence_grounding": {
+    "GROUNDED_SCOPED_OBSERVATION": 16,
+    "CONTRADICTED_WITHIN_SCOPE": 11,
+    "UNSUPPORTED_CANDIDATE_DEFECT": 11,
+    "PLAUSIBLE_BUT_UNVERIFIED": 15,
+    "UNKNOWN": 4
+  },
+  "c0_mean_score": 0.71875,
+  "final_mean_score": 0.6875,
+  "repair_cost": {
+    "calls": 16,
+    "tokens": 53418,
+    "latency_seconds": 458.63734999999997
+  }
+}
