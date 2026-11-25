@@ -1,0 +1,17 @@
+model qwen3:4b
+
+C0: original mean 0.8 {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+  replay 0: mean 0.743 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.9, 'correctness': 0.9, 'failure_modes': 0.8, 'robustness': 0.9} issues=1
+  replay 1: mean 0.786 {'alternatives': 0.5, 'architecture': 0.8, 'clarity': 1, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8} issues=3
+
+C1: original mean 0.8 {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+  replay 0: mean 0.6 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.7, 'correctness': 0.6, 'failure_modes': 0.5, 'robustness': 0.7} issues=1
+  replay 1: mean 0.586 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.7, 'correctness': 0.6, 'failure_modes': 0.5, 'robustness': 0.6} issues=1
+
+C2: original mean 0.8 {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+  replay 0: mean 0.6 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.7, 'correctness': 0.6, 'failure_modes': 0.5, 'robustness': 0.7} issues=2
+  replay 1: mean 0.643 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.8, 'correctness': 0.7, 'failure_modes': 0.6, 'robustness': 0.7} issues=2
+
+C3: original mean 0.8 {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+  replay 0: mean 0.629 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.8, 'correctness': 0.6, 'failure_modes': 0.7, 'robustness': 0.6} issues=3
+  replay 1: mean 0.514 {'alternatives': 0, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.5, 'correctness': 0.5, 'failure_modes': 0.5, 'robustness': 0.5} issues=3

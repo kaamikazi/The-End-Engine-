@@ -17,7 +17,7 @@ from .models import MockProvider, ModelRequest
 from .models.protocol import INVALID_REFERENCE, SCHEMA_FAILURE, ModelProtocolError, repair_context, termination_category
 from .models.recording import RecordingProvider
 from .models.repair import repair_policy
-from .core.progress import InternalProgress, progress_state
+from .core.progress import InternalProgress, progress_state, substantive_text
 from .core.task_contract import TaskContract
 from .quality.epistemic import epistemic_integrity
 from .models.budget import RunBudgetExceeded
@@ -25,6 +25,7 @@ from .models.schema import CANDIDATE, PLAN, validate, verification_schema
 from .core.output_format import check_candidate, final_answer_region, extract_answer_region, candidate_answer
 from .quality.assessment import AssessmentAuthorityPolicy, authority_policy
 from .quality.revision_integrity import evidence_violations
+from .quality.integrity import content_sha256
 from .operators import default_operators
 from .verification import LLMVerifier
 from .cognition.branches import BranchController
@@ -396,7 +397,30 @@ class EndEngine:
                 trajectory.record("revision_plan", plan, "revision_plans")
                 self._log("Revision plan generated")
                 stage = "revision"
+                parent_candidate = current
                 current = self._candidate(provider, task, current, plan, registry, iteration=iterations+1)
+                # A revision that returns its parent unchanged is a stagnant cycle. When it would reach the no-progress
+                # patience, stop before re-judging it (Colab run 3: plans asked for evidence a design task cannot have,
+                # the revision rightly ignored them, and two cycles re-judged identical text). Only model judgments
+                # would be repeated; with a tool verifier a re-check can add executed evidence, so it always continues.
+                stalled_next = progress.stagnant + 1
+                if (not blockers and self.tool_verifier is None and stalled_next >= progress.patience
+                        and substantive_text(current.content) == substantive_text(parent_candidate.content)):
+                    iterations += 1
+                    progress.stagnant, progress.last_cycle = stalled_next, iterations
+                    trajectory.record('cycle_progress', {'cycle': iterations, 'reasons': [],
+                        'no_progress_cycles': stalled_next, 'blockers': [], 'unchanged_revision': True}, 'cycle_progress')
+                    trajectory.set('no_progress_cycles', stalled_next)
+                    trajectory.record("unchanged_revision", {"candidate_id": current.candidate_id,
+                        "parent_candidate_id": parent_candidate.candidate_id, "cycle": iterations,
+                        "content_sha256": content_sha256(current.content),
+                        "action": "not re-judged or recorded as a candidate; run stopped"})
+                    self._log(f"Revision {current.candidate_id} unchanged from {parent_candidate.candidate_id}; stopping")
+                    current = parent_candidate
+                    reason, explanation = (StopReason.NO_PROGRESS, f"{stalled_next} completed cycles without "
+                        f"meaningful internal state change; revision {iterations} returned "
+                        f"{parent_candidate.candidate_id} unchanged")
+                    break
                 candidates.append(current)
                 iterations = current.iteration
                 verification = None  # A previous candidate's score is never attributed to a new one.

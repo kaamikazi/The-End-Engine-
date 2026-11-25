@@ -15,6 +15,21 @@ STRONG = re.compile(r'\b(?:verif(?:ied|ies|y)|confirm(?:ed|s|ing)?|establish(?:e
                     r'certain|demonstrat(?:ed|es)|validat(?:ed|es))\b', re.I)
 NEGATION = re.compile(r"\b(?:not(?! only\b| just\b)|never|cannot|can't|could not|couldn't|does not|doesn't|no)\b[^.;,]{0,45}$", re.I)
 UNIVERSAL = re.compile(r'\b(?:universally|always|everywhere|all possible|without exception)\b', re.I)
+# Not status assertions (Colab runs 1-2, 2026-11-23): a metric definition ("Recall: the share of answers that are
+# verified"), a temporal clause ("deleted only after they are confirmed stale") or a pass criterion ("verified when
+# memory stays under 600 MB").
+DEFINITION = re.compile(r'^\s*(?:[-*•]\s*)?(?:\*\*)?[^:\n]{1,80}?(?:\*\*)?\s*:\s*(?:\*\*)?\s*(?:the|a|an)?\s*'
+                        r'(?:percentage|share|fraction|proportion|number|count|rate|ratio|amount|average|mean)\s+of\b',
+                        re.I)
+SUBORDINATE = re.compile(r'\b(?:when|whenever|until|unless|once|after|before|while)\b[^,;:]*$', re.I)
+CRITERION = re.compile(r'(?:when|whenever|if|only if|once|until|unless|as long as)\b', re.I)
+# Claimed operating history or measured results; these carry no status word but are empirical claims.
+TRACK_RECORD = re.compile(r'\bbattle[- ]tested\b|\b(?:tested|deployed|proven|run|running|used)\s+in\s+production\b'
+                          r'|\b(?:\d+\+?|several|many)\s+(?:years?|months?)\s+(?:of|in)\s+'
+                          r'(?:testing|production|real[- ]world\s+use|use|operation|deployment)\b'
+                          r'|\b(?:in|across|from)\s+(?:our|real[- ]world)\s+'
+                          r'(?:tests?|testing|benchmarks?|deployments?|trials?|experiments?)\b', re.I)
+HYPOTHETICAL = re.compile(r'\b(?:if|whether|could|might|may|would|should|suppose|hypothetical|hypothetically)\b', re.I)
 STATUS_KEYS = frozenset(('certainty', 'confidence', 'status', 'verification', 'verified', 'confirmed'))
 
 
@@ -89,9 +104,12 @@ def extract_epistemic_claims(content):
                 r'\b(?:the user|the task|the prompt|a judge|the model|the report)\s+'
                 r'(?:claims?|says?|states?|wrote|alleges?)\b', clause, re.I)):
             continue
+        definition = bool(DEFINITION.match(clause))
         for match in STRONG.finditer(clause):
             prefix = clause[:match.start()]
-            if NEGATION.search(prefix) or re.search(r'\b(?:if|whether|could|might|may|would|should|suppose|hypothetical|hypothetically)\b', prefix, re.I):
+            if NEGATION.search(prefix) or HYPOTHETICAL.search(prefix):
+                continue
+            if definition or SUBORDINATE.search(prefix) or CRITERION.match(clause[match.end():].lstrip(' ,')):
                 continue
             active = bool(re.fullmatch(r'confirms?|verifies|establishes?|proves?|demonstrates|validates', match[0], re.I))
             if not active and not re.search(r'\b(?:is|are|was|were|been|has|have|i|we|engineers?|judges?|models?)\b', prefix, re.I):
@@ -103,6 +121,14 @@ def extract_epistemic_claims(content):
                     target = ''
                 target += ' ' + suffix
             add(target.strip(), match[0].lower(), 'prose', clause.strip())
+        for match in TRACK_RECORD.finditer(clause):
+            prefix = clause[:match.start()]
+            # Only a negation directly before the match negates it ("has not been tested in production"); in
+            # "never exceeded 1 GB in 1 year of testing" the negation belongs to another verb.
+            near_negation = re.search(r"(?:\bnot|\bnever|\bno|n't)\b(?:\s+\w+){0,2}\s*$", prefix, re.I)
+            if not (near_negation or HYPOTHETICAL.search(prefix) or SUBORDINATE.search(prefix)):
+                add(clause.strip(' .'), 'track_record', 'prose', clause.strip())
+                break
     for match in re.finditer(r'\b(?:check|test)\s+([\w.-]+)\s+passed\s+([^.;\n]+)', prose, re.I):
         prefix = prose[max(0, match.start()-80):match.start()]
         if not NEGATION.search(prefix) and not re.search(r'\b(?:if|could|might|would|user claims)\b', prefix, re.I):

@@ -27,8 +27,9 @@ class LLMVerifier:
             "weakness_updates may name only IDs listed in weaknesses; leave it empty when none apply." + suffix,
             {"task": task, "candidate": view, "dimensions": dimensions,
              'assessment_context': AssessmentAuthorityPolicy(task).context(candidate),
-             "weaknesses": trajectory["weaknesses"],
-             "previous_verification": trajectory["verification"][-1:], **extra}, schema)).content
+             # No earlier verification result is shown: models copy prior scores verbatim (Colab runs 1-2,
+             # 2026-11-23), freezing the score across revisions. Open issues still arrive via weaknesses.
+             "weaknesses": trajectory["weaknesses"], **extra}, schema)).content
         validate(data, schema)
         # Cap optimistic overall scores by the arithmetic mean of explicit dimensions.
         scores = data["dimensions"]

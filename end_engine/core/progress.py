@@ -32,10 +32,17 @@ class InternalProgress:
         if cycle <= self.last_cycle:
             return False
         reasons = [name for name, value in state.items() if self.previous is not None and value != self.previous[name]]
+        # Branches explored without changing the answer are not progress (Colab runs 3-4: this reset the count in
+        # cycles whose revision returned its parent unchanged). Pending branch work blocks stopping on its own.
+        ignored = ['branch_state'] if 'branch_state' in reasons and 'candidate_content' in state \
+            and 'candidate_content' not in reasons else []
+        reasons = [r for r in reasons if r not in ignored]
         if cycle and self.previous is not None:
             self.stagnant = 0 if reasons else self.stagnant + 1
-            self.trajectory.record('cycle_progress', {'cycle': cycle, 'reasons': reasons,
-                'no_progress_cycles': self.stagnant, 'blockers': list(blockers)}, 'cycle_progress')
+            entry = {'cycle': cycle, 'reasons': reasons, 'no_progress_cycles': self.stagnant, 'blockers': list(blockers)}
+            if ignored:
+                entry['ignored'] = ignored
+            self.trajectory.record('cycle_progress', entry, 'cycle_progress')
         self.previous, self.last_cycle = state, cycle
         self.trajectory.set('no_progress_cycles', self.stagnant)
         return self.stagnant >= self.patience and not blockers
