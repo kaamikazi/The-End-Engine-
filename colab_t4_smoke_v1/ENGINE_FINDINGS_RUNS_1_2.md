@@ -450,7 +450,7 @@ Unsafe drafts are handled as before. Format violations come from the same determ
 
 Tests: `FormatSafeBestDraftTests` in `tests/test_colab_run_regressions.py`. One test checks that a format-breaking REVISE revision does not replace a correctly formatted BLOCKED draft. The other checks that a correctly formatted BLOCKED revision does replace a format-breaking REVISE draft. Both failed before the fix. 321 engine tests and 13 pilot tests pass.
 
-**Replay on recorded runs.** I simulated the old and new rules on the 20 END trajectories from graded run 3 and the trials run, using the recorded gates, checks and comparisons. The old-rule simulation matches the recorded best draft in 17 of 20. The 3 mismatches are BA-009 runs whose only format-breaking draft, if any, was cut off and is already excluded under the cut-off fix, so the new rule cannot affect them.
+**Replay on recorded runs.** I simulated the old and new rules on the 20 END trajectories from graded run 3 and the trials run, using the recorded gates, checks and comparisons. The old-rule simulation matches the recorded best draft in all 20. A first version matched 17; it had missed overclaims, which are now read from the gate reasons.
 - **Trials run, BA-008 T2:** the new rule changes the returned draft from C1 (0.5) to C0 (1.0).
 - **Graded run 3, BA-008 native:** the simulation would pick C3, but C3 was cut off. Under the cut-off fix it is incomplete, so the engine would still return C0.
 - **Every other run:** no change.
@@ -482,7 +482,40 @@ The reasoning traces show the real behaviour. The model writes the complete answ
 
 **Conclusion.** No prompt change made. Like finding 9, this is a limitation of qwen3:4b as a reviser on this task, not something a wording change fixes. Fix 11 limits the damage: a format-breaking revision can no longer displace a correctly formatted first draft. When the first draft is also wrong (T1) or cut off (T3), END native on qwen3:4b cannot recover BA-008.
 
-**Also seen.** The gate gave BLOCKED 22 times for "Assessment requires evidence; advisory model negatives do not establish candidate failure", including on correct drafts. Only BA-001 ever reached ACCEPT_PROVISIONALLY. The other runs used the full cycle budget or stopped as inconclusive. This is open issue 3 (the evidence-gap critique), and it drives most of the 28× cost.
+### 13. An unproven verifier "not passed" keeps runs revising to the cycle cap
+
+The gate gave BLOCKED 22 times in the trials run with the single reason "Assessment requires evidence; advisory model negatives do not establish candidate failure", including on correct drafts. Only BA-001 ever reached ACCEPT_PROVISIONALLY. Every other run that reached BLOCKED revised until the cycle cap and stopped as INCONCLUSIVE.
+
+**Where it comes from** (`quality/gate.py`). The gate returns BLOCKED when there are no demonstrated defects but the verification, or any judgment, is negative with nothing grounded in the candidate (`assessment_requires_evidence`). The termination logic does not treat BLOCKED as accepted, so the run continues.
+
+In all 22 such gates, the **LLM verifier** (qwen3:4b, the generator's own model) had set the flag. It was the only source in 17, and the judge or adversary joined it in the other 5. Its concerns are mostly wrong, or not objections at all:
+- BA-001: "70.7 is incorrect for 21.5°C (should be 71.3°F)". In fact 21.5 × 1.8 + 32 = 70.7.
+- BA-001 T3 C1: it reported not passed, while its only issue said the answer is valid "with all conversions matching standard values".
+- BA-002: "did not verify the correctness … against the original task's assertions". A revision cannot produce executed evidence, so it can never answer this.
+
+**Simulation on the recorded runs.** The simulation stops a run at the first draft from C1 onwards (the minimum cycle count) whose gate is an advisory-only BLOCKED, or an acceptance. It then returns the draft the selection rule would hold at that point; the selection replay above reproduces all 20 recorded choices.
+
+| Rule | Trials run tokens | Trials run score | Graded run 3 tokens | Graded run 3 score |
+| --- | --- | --- | --- | --- |
+| As recorded | 1,013k | 10.5 | 602k | 6.5 |
+| Stop at the first advisory-only block | 512k (51%) | 10.5 | 447k (74%) | 6.5 |
+| Stop when two drafts in a row are advisory-only blocked (or accepted) | 578k (57%) | 10.5 | 447k (74%) | 6.5 |
+
+In none of the 20 runs did a revision after the first advisory-only block raise the returned score. BA-008 never reaches that state, so its runs are unchanged.
+
+**Fix** (`engine.py`, `quality/gate.py`, `config.py`). After the minimum cycles, the run stops as INCONCLUSIVE when all of these hold:
+- The current draft is BLOCKED with the advisory-evidence reason as its only reason.
+- The draft before it was blocked the same way, or accepted.
+- No other continuation policy applies (format, overclaim or verification blockers, pending branches, protocol recovery, high-risk assumptions, critical-complexity scrutiny, a post-acceptance probe, or a custom termination policy).
+- **No tool verifier is configured.** With one, a revision can gain executed evidence. The existing tests show such runs reaching ACCEPT_VERIFIED after advisory blocks, and the unchanged-revision stop already makes the same exception.
+
+The best draft is returned and the label stays INCONCLUSIVE, so nothing is reported as accepted on an unproven concern. The trajectory records an `advisory_block_stop` step. `EngineConfig(stop_on_advisory_blocks=False)` turns the stop off.
+
+Tests: `AdvisoryBlockStopTests` in `tests/test_colab_run_regressions.py`. They check that two blocks in a row stop the run, that a REVISE in between resets the count, that a tool verifier disables the stop, and that the switch turns it off. The first two failed before the fix.
+
+Six existing tests exercise the no-progress and unchanged-revision stops with mock drafts that are blocked only by the mock verifier's unproven "not passed". The new stop now ends those runs first, which is the intended behaviour, so they set `stop_on_advisory_blocks=False` to keep covering the mechanism they test. These are `ProgressTests` and `UnchangedRevisionTests`.
+
+325 engine tests and 13 pilot tests pass. The pilot runs have no tool verifier, so the simulation above applies: the same scores with 57% of END's tokens on the trials run. Not yet checked on Colab.
 
 ## Not concluded
 

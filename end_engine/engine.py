@@ -37,10 +37,17 @@ from .cognition.state import TargetType
 from .quality.session import QualitySession
 from .quality.mock import MockJudgeProvider
 from .quality.state import GateDecision
+from .quality.gate import ADVISORY_EVIDENCE_REASON
 from .decisions.routing import DecisionRoutingSession
 
 
 logger = logging.getLogger("end_engine")
+
+
+def advisory_only(gate):
+    """BLOCKED solely because a negative model assessment has no grounded defect basis (needs evidence)."""
+    return gate.decision is GateDecision.BLOCKED and tuple(gate.reasons) == (ADVISORY_EVIDENCE_REASON,)
+
 
 # v0.3.5 native mode: the candidate is the user-facing answer, generated as free text. The task's output format is not
 # the Engine's protocol format, and Engine internals (weakness IDs, plans, candidate IDs) never enter the request.
@@ -158,7 +165,7 @@ class EndEngine:
             verifier = LLMVerifier(recorded_judge)
         registry = WeaknessRegistry(self.deduplicator)
         cognitive, branch_controller, quality = None, None, None
-        accepted_at = None
+        accepted_at, previous_gate = None, None
         candidates, critiques, used, scores = [], [], [], []
         verification = None
         iterations, repeats = 0, 0
@@ -279,9 +286,22 @@ class EndEngine:
                     elif at_cap:
                         decision = TerminationDecision(StopReason.INCONCLUSIVE if gate.decision is GateDecision.BLOCKED
                             else StopReason.BUDGET_EXHAUSTED, "; ".join(gate.reasons))
+                    elif (self.config.stop_on_advisory_blocks and self.tool_verifier is None and not blockers
+                            and advisory_only(gate) and previous_gate is not None and (
+                            advisory_only(previous_gate) or previous_gate.decision in
+                            (GateDecision.ACCEPT_VERIFIED, GateDecision.ACCEPT_PROVISIONALLY))):
+                        # The gate is blocked only by negative model assessments with no grounded defect, and a
+                        # revision did not settle them. With no tool verifier, a revision cannot add the executed
+                        # evidence they ask for (graded trials run: 22 such gates, all from the LLM verifier; revising
+                        # on never raised the returned score). Stop unaccepted instead of spending the remaining cycles.
+                        decision = TerminationDecision(StopReason.INCONCLUSIVE, "Two consecutive candidates are blocked "
+                            "only by advisory concerns that need evidence a revision cannot supply: " + ADVISORY_EVIDENCE_REASON)
+                        trajectory.record("advisory_block_stop", {"candidate_id": current.candidate_id,
+                            "previous_decision": previous_gate.decision.value})
                     elif decision.reason in (StopReason.QUALITY_THRESHOLD_REACHED, StopReason.VERIFIER_PASSED, StopReason.FAST_PATH,
                                              StopReason.NO_MATERIAL_IMPROVEMENT, StopReason.REPEATED_CRITIQUE):
                         decision = TerminationDecision(None, "Quality gate requires further investigation: " + "; ".join(gate.reasons))
+                    previous_gate = gate
                 # Hard ceilings are enforced even when a custom policy wants to continue.
                 if stalled and decision.reason is None:
                     from .core.termination import TerminationDecision

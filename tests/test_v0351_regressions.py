@@ -256,6 +256,13 @@ class RepairTests(Fixture):
 
 
 class ProgressTests(Fixture):
+    def engine(self, gen, **kwargs):
+        # These tests exercise the no-progress counter. Their mock drafts are blocked only by the mock verifier's
+        # unproven "not passed", so the advisory-block stop (graded Colab trials run) would end the runs first.
+        kwargs.setdefault('config', EngineConfig(ledger_dir=self.temp.name, enable_branching=False,
+                                                 stop_on_advisory_blocks=False))
+        return super().engine(gen, **kwargs)
+
     def stagnant_run(self, contents=('Alpha answer.',), contract=None, verifier=None):
         engine = self.engine(Stagnant(contents=contents), judge_provider=MockJudgeProvider(), verifier=verifier)
         result = engine.run('Inspect this bounded proposal.', mode='normal', max_cycles=5, task_contract=contract)

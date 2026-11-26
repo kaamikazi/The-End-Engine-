@@ -7,6 +7,7 @@ import unittest
 
 from end_engine.core.state import StopReason
 from end_engine.quality.epistemic import epistemic_integrity, extract_epistemic_claims
+from end_engine.quality.gate import ADVISORY_EVIDENCE_REASON
 from end_engine.quality.mock import MockJudgeProvider
 from end_engine.verification import CallableToolVerifier
 from end_engine import EngineConfig
@@ -115,6 +116,10 @@ class UnchangedRevisionTests(Fixture):
     TASK = "Inspect this bounded proposal."
 
     def run_stagnant(self, **kwargs):
+        # Both drafts are blocked only by the mock verifier's unproven "not passed"; the advisory-block stop would end
+        # the run before the unchanged revision this class tests, so it is switched off here.
+        kwargs.setdefault("config", EngineConfig(ledger_dir=self.temp.name, enable_branching=False,
+                                                 stop_on_advisory_blocks=False))
         engine = self.engine(Stagnant(contents=("Alpha answer.",)), judge_provider=MockJudgeProvider(), **kwargs)
         result = engine.run(self.TASK, mode="normal", max_cycles=5)
         return result, engine.last_trajectory
@@ -240,6 +245,63 @@ class FormatSafeBestDraftTests(Fixture):
         self.assertEqual((gates["C0"], gates["C1"]), ("REVISE", "BLOCKED"))
         self.assertEqual(result.best_candidate_id, "C1")
         self.assertEqual(result.answer, self.FORMATTED)
+
+
+def draft(conclusion):
+    return '```json\n{"conclusion": "%s", "certainty": "hypothesis"}\n```' % conclusion
+
+
+class AdvisoryBlockStopTests(Fixture):
+    """Graded trials run: the LLM verifier's unproven "not passed" made the gate BLOCKED ("Assessment requires
+    evidence") on 22 drafts, including correct ones. BLOCKED never counts as accepted, so runs revised to the cycle cap
+    although no revision could supply the evidence; on the 20 recorded END runs, stopping after two such drafts in a
+    row returned the same scores with 57% of the tokens (trials run)."""
+    TASK = FormatRevisionTests.TASK
+    WEAK = staticmethod(objection("SYNTHETIC: weak evidence"))
+
+    def run_engine(self, contents, objections, max_cycles):
+        engine = self.engine(Gen(contents=contents), judge_provider=adversary(*objections))
+        result = engine.run(self.TASK, mode="normal", max_cycles=max_cycles)
+        return result, engine.last_trajectory
+
+    def test_two_advisory_blocks_in_a_row_stop_the_run(self):
+        contents = tuple(draft(f"Database issue after the deployment ({n})") for n in range(4))
+        result, record = self.run_engine(contents, [self.WEAK] * 4, max_cycles=3)
+        gates = record["quality_gate_decisions"]
+        self.assertEqual([g["candidate_id"] for g in gates], ["C0", "C1"])
+        self.assertTrue(all(g["decision"] == "BLOCKED" and g["reasons"] == [ADVISORY_EVIDENCE_REASON] for g in gates))
+        self.assertEqual((result.termination_reason, result.iterations), (StopReason.INCONCLUSIVE, 1))
+        self.assertEqual(record["acceptance_label"], "INCONCLUSIVE")
+        self.assertIn(result.answer, contents[:2])
+        stops = [s["data"] for s in record["steps"] if s["type"] == "advisory_block_stop"]
+        self.assertEqual(stops, [{"candidate_id": "C1", "previous_decision": "BLOCKED"}])
+
+    def test_a_tool_verifier_disables_the_stop(self):
+        # With a tool verifier a revision can gain executed evidence, so the run keeps going.
+        contents = tuple(draft(f"Database issue after the deployment ({n})") for n in range(4))
+        engine = self.engine(Gen(contents=contents), judge_provider=adversary(*[self.WEAK] * 4),
+                             tool_verifier=CallableToolVerifier(lambda task, candidate, tests, claims: ()))
+        result = engine.run(self.TASK, mode="normal", max_cycles=3)
+        self.assertFalse(any(s["type"] == "advisory_block_stop" for s in engine.last_trajectory["steps"]))
+        self.assertEqual(result.iterations, 3)
+
+    def test_the_stop_can_be_switched_off(self):
+        contents = tuple(draft(f"Database issue after the deployment ({n})") for n in range(4))
+        engine = self.engine(Gen(contents=contents), judge_provider=adversary(*[self.WEAK] * 4),
+                             config=EngineConfig(ledger_dir=self.temp.name, enable_branching=False,
+                                                 stop_on_advisory_blocks=False))
+        result = engine.run(self.TASK, mode="normal", max_cycles=3)
+        self.assertEqual(len(engine.last_trajectory["quality_gate_decisions"]), 4)
+        self.assertEqual(result.iterations, 3)
+
+    def test_a_revise_between_advisory_blocks_resets_the_count(self):
+        contents = (draft("Database issue after the deployment (0)"), FormatRevisionTests.PROSE,
+                    draft("Database issue after the deployment (2)"), draft("Database issue after the deployment (3)"),
+                    draft("Database issue after the deployment (4)"))
+        result, record = self.run_engine(contents, [self.WEAK] * 5, max_cycles=4)
+        decisions = [g["decision"] for g in record["quality_gate_decisions"]]
+        self.assertEqual(decisions, ["BLOCKED", "REVISE", "BLOCKED", "BLOCKED"])
+        self.assertEqual((result.termination_reason, result.iterations), (StopReason.INCONCLUSIVE, 3))
 
 
 class CutOffGen(Gen):

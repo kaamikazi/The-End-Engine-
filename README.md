@@ -498,6 +498,10 @@ Positive complexity_cost means additional burden; increased cost without benefit
 counts as regression. A clarity gain cannot cancel severe correctness or recovery
 regressions. `post_acceptance_cycles=1` permits one extra bounded research probe;
 the demo uses it to expose C4 after C3 passes. It is disabled by default.
+Without a tool verifier, a run stops as INCONCLUSIVE when two consecutive candidates
+are BLOCKED only because a negative model assessment has no grounded defect (it
+"requires evidence"). Revising cannot supply executed evidence, so further cycles
+cannot settle it. `stop_on_advisory_blocks=False` turns this off.
 
 Every completed strict trajectory receives ACCEPTED_HIGH_CONFIDENCE,
 ACCEPTED_PROVISIONAL, REJECTED_REGRESSION, REJECTED_FATAL, INCONCLUSIVE or INCOMPLETE.

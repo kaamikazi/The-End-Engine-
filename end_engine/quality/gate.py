@@ -2,6 +2,9 @@ from ..cognition.state import AssumptionStatus, CoverageLevel
 from .grounding import ungrounded_objection
 from .state import GateDecision, GateResult, Verdict
 
+# The only reason given when the gate is BLOCKED because a negative model assessment has no grounded defect basis.
+ADVISORY_EVIDENCE_REASON = 'Assessment requires evidence; advisory model negatives do not establish candidate failure'
+
 
 class QualityGate:
     def __init__(self, min_confidence=0.75, min_dimension_score=0.75):
@@ -71,8 +74,7 @@ class QualityGate:
             return GateResult(candidate_id, GateDecision.REVISE, tuple(dict.fromkeys(reasons)), ("Address judged findings through targeted cognition",))
         if (verification and verification.assessment_requires_evidence or
                 any(j.assessment_requires_evidence for j in all_judgments)):
-            return GateResult(candidate_id, GateDecision.BLOCKED,
-                ('Assessment requires evidence; advisory model negatives do not establish candidate failure',),
+            return GateResult(candidate_id, GateDecision.BLOCKED, (ADVISORY_EVIDENCE_REASON,),
                 ('Investigate the unvalidated concern without treating it as a proven defect',))
         uncertain = [u for j in all_judgments for u in j.uncertainties]
         if verification and (verification.advisory_issues or not verification.assessment_decisive and not verification.passed):

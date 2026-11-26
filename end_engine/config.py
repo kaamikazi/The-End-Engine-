@@ -25,6 +25,9 @@ class EngineConfig:
     quality_evaluation: bool = False
     judge_min_confidence: float = 0.75
     post_acceptance_cycles: int = 0
+    # Without a tool verifier, stop (unaccepted, INCONCLUSIVE) when two consecutive candidates are blocked only by
+    # advisory model negatives that need evidence: revising cannot supply it (graded Colab trials run).
+    stop_on_advisory_blocks: bool = True
     # v0.3.5. Targeted repair calls per failing structured stage (0 disables repair).
     protocol_repair_attempts: int = 1
     repair_failure_limit: int = 2
