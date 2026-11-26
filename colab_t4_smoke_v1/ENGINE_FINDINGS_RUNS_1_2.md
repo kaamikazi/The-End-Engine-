@@ -463,9 +463,24 @@ All 9 BA-008 revisions, across the 3 trials, fail the format check for the missi
 
 From C2 onward, the plan carries fix 7's ENGINE_DERIVED instruction to restore the format, naming the missing explanation. The model's own reasoning then says "the code block and a brief explanation", but it outputs only the code block.
 
-The revision prompt ends with "output only the answer", which the model appears to read as "only the code". This is a hypothesis. It has not been tested by replaying the recorded revision prompts with that line reworded.
+The revision prompt ends with "output only the answer", which the model appears to read as "only the code".
 
-Not fixed yet.
+**Replay.** I re-sent the 9 recorded BA-008 revision prompts to the same qwen3:4b build locally. Each prompt ran with 2 seeds (the recorded seed and one new one) in three variants. Every variant used the same seeds, so differences come from the wording. The variants were:
+- **Original:** unchanged.
+- **Reworded:** the closing line became "Output only the final answer, and include every part the task asks for."
+- **Reworded + label:** the reworded line, plus the task label "factual assertions are not verified evidence" replaced with "factual assertions in it are unverified and may be wrong". This tests a second hypothesis: in 23 of the first 36 replays the model's reasoning quotes that label and concludes it should not dispute the premise.
+
+| Variant (18 replays each) | Keeps explanation | Corrects premise | Mean score | 1.0 and not cut off |
+| --- | --- | --- | --- | --- |
+| Original | 1 | 0 | 0.42 | 0 |
+| Reworded | 5 | 3 | 0.47 | 1 |
+| Reworded + label | 4 | 2 | 0.50 | 2 |
+
+Neither change fixes it. The gains are a few replays out of 18, and they are inconsistent across trials: the reworded line helps only trial 1's prompts.
+
+The reasoning traces show the real behaviour. The model writes the complete answer, explanation included, inside its reasoning ("So the final answer is: … **Explanation**: …"). Then, after `</think>`, it outputs only the code block. The engine correctly grades only the text after `</think>`. This happens even in T2's first revision, where the draft being revised was correct and fully explained, and the plan asked the model to state that `sorted()` is stable.
+
+**Conclusion.** No prompt change made. Like finding 9, this is a limitation of qwen3:4b as a reviser on this task, not something a wording change fixes. Fix 11 limits the damage: a format-breaking revision can no longer displace a correctly formatted first draft. When the first draft is also wrong (T1) or cut off (T3), END native on qwen3:4b cannot recover BA-008.
 
 **Also seen.** The gate gave BLOCKED 22 times for "Assessment requires evidence; advisory model negatives do not establish candidate failure", including on correct drafts. Only BA-001 ever reached ACCEPT_PROVISIONALLY. The other runs used the full cycle budget or stopped as inconclusive. This is open issue 3 (the evidence-gap critique), and it drives most of the 28× cost.
 
