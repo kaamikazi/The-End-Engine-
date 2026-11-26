@@ -338,7 +338,27 @@ Two tests were added in `tests/test_colab_run_regressions.py` (`SafeBestDraftTes
 
 ### 9. Structured revisions on qwen3:4b copy the draft
 
-BA-009 structured shows the structured reviser can return its input unchanged even with a concrete plan. In this run, the unchanged-revision stop did not fire either, because the model's revision plans added new weaknesses each cycle, so `issue_state` kept changing. Not yet investigated: whether the revision prompt or schema encourages copying (the current draft is in the context as `CURRENT_CANDIDATE` and `candidate`, with the same field names as the output schema).
+BA-009 structured shows the structured reviser can return its input unchanged even with a concrete plan. In this run, the unchanged-revision stop did not fire either, because the model's revision plans added new weaknesses each cycle, so `issue_state` kept changing. **Investigation (2026-11-26).**
+
+*How common it is.* Structured revisions returned their input byte-for-byte in 8/11, 8/10 and 9/9 calls in graded runs 1–3. The original pilot shows the same pattern (7/12), so this predates the fixes here.
+
+*What the model sees.* The current draft appears three times in the rendered request: `assessment_context.CURRENT_CANDIDATE.content`, then `candidate.answer_content` and `candidate.content`. The `candidate` object also carries `confidence` and `known_strengths`, exactly the fields of the output schema. The revision plan sits after it, in the middle of the JSON.
+
+*Replay.* The 9 recorded structured revisions from graded run 3 were sent again to the same qwen3:4b build (digest `359d7dd4…`, Ollama 0.40.18) on a local RTX 3050, with the same options. Each was run with the recorded seed and 2 more, and every output was graded with the pilot grader. With the recorded seed, the copies reproduced.
+
+| Variant | Copies | BA-001 | BA-002 | BA-008 | BA-009 |
+| --- | --- | --- | --- | --- | --- |
+| As sent | 25/27 | 1.00 | 1.00 | 0.83 | 0 |
+| Without the `candidate` object | 14/27 | 1.00 | 0.83 | 0.83 | 0 |
+| Without it, and the plan's changes first | 2/27 | **0.22** | 0.83 | 0.83 | 0 |
+| Without it, plus "the content string must contain the code block the task asks for" | 15/18 (BA-001, BA-009 only) | 1.00 | – | – | 0 |
+
+The duplicated draft does drive the copying, but stopping the copies did not raise any score:
+- **BA-001:** the copies were protecting a correct answer. With the plan first, the model re-did the conversion under vague plans ("add a post-processing step to round each value") and changed 212.0 to 100.0.
+- **BA-009:** the structured answer never contains the required ```` ```json ```` block, in any variant, including the initial drafts of all three graded runs. Once the model stopped copying, the substance improved (certainty "likely", the missing evidence named), but it still scored 0. Across 36 BA-009 replays the block appeared once, with the explicit instruction, and even then the model only restated the format requirement in prose.
+- For this model, a fenced JSON answer inside a JSON string field is the real obstacle. Prompt changes did not overcome it.
+
+**Conclusion.** No change made. Removing the duplicate would break the byte-for-byte v0.3.4 structured requests (`engine.py:546`) and cost points on BA-001 and BA-002 in this replay. Native mode is the format-preserving mode, and on these tasks it is the one to evaluate. The copies are cheap (one short call each, 122 tokens on BA-009). The unchanged-revision stop only fails to end them when the model's own plans keep changing `issue_state`.
 
 ## Graded run 3: fixes 6, 7 and 8 applied, T4 (2026-11-26)
 
@@ -369,11 +389,22 @@ With one trial per task, 2.5 → 3.5 is still within sampling noise. One of the 
 
 ### 10. Cut-off drafts are evaluated as answers
 
-3 of 12 native revisions across runs 2 and 3 hit the 4,096-token limit inside the model's reasoning (`done_reason: length`, no `</think>`). Runs 2 BA-009 C2, 3 BA-009 C1 and 3 BA-008 C3. Each became a full candidate. Its answer region is the whole unfinished reasoning, which then gets judged, critiqued and checked for overclaims (run 2 BA-009 C2 got 9 overclaim flags, all from reasoning text).
+5 of 22 native revisions across runs 2 and 3 hit the 4,096-token limit inside the model's reasoning (`done_reason: length`, no `</think>`). Run 2 BA-002 C2 and BA-009 C2; run 3 BA-002 C2, BA-008 C3 and BA-009 C1. (An earlier count of 3 of 12 covered only BA-008 and BA-009.) No initial answer was cut off. Each became a full candidate. Its answer region is the whole unfinished reasoning, which then gets judged, critiqued and checked for overclaims (run 2 BA-009 C2 got 9 overclaim flags, all from reasoning text).
 
 The pilot grader scored run 3 BA-008 C3 1.0, because the reasoning contains a correct function and says "sorted() is actually stable". That is a grader artifact, not an answer. The engine kept C0 there, which was right.
 
-Not fixed. Options: treat a cut-off native response as a format failure, retry it once with the same plan, or raise `num_predict`.
+**Replay.** Each of the 5 cut-off revision requests was re-sent 3 times locally with new seeds (same qwen3:4b build, same 4,096 cap). 9 of 15 finished. Every request finished at least once. 8 of the 9 finished answers score 1.0 on the pilot grader; the other (run 3 BA-008) scores 0.0. One retry therefore rescues about 60% of cut-offs. Raising `num_predict` was not chosen because it raises the cost of every call, not just the cut-off ones.
+
+**Fix.**
+
+- Adapters can now report why generation ended: `ModelResponse.finish_reason`. The recorder passes it through, and the pilot's Ollama provider sets it from `done_reason`.
+- A native revision that ends with `length` is retried once with the same request. If the retry is also cut off, the candidate's answer region is `AMBIGUOUS` with reason "response cut off at the output limit". Output integrity then never returns it, and selection treats it as unsafe.
+- A cut-off initial answer is marked the same way but not retried, so the initial call stays the exact DIRECT request.
+- The next revision plan gets an `ENGINE_DERIVED` change: "The previous answer was cut off at the output limit before it was finished. Give the complete final answer in the format the original task requires, and keep any reasoning before it short."
+- The trajectory records `truncated_response` (retried once / kept as incomplete) and `cut_off_revision_required`.
+- Structured mode is unchanged.
+
+Tests: `CutOffTests` in `tests/test_colab_run_regressions.py` (retry once; cut off twice → incomplete, never returned, next plan asks for a complete answer; cut-off initial answer marked, not retried). All 3 failed before the fix. 319 engine tests and 13 pilot tests pass. Not yet checked on Colab.
 
 ## Not concluded
 

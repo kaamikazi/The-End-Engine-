@@ -2,6 +2,7 @@
 
 See colab_t4_smoke_v1/ENGINE_FINDINGS_RUNS_1_2.md.
 """
+from dataclasses import replace
 import unittest
 
 from end_engine.core.state import StopReason
@@ -214,6 +215,73 @@ class SafeBestDraftTests(Fixture):
         self.assertEqual(self.gates(record)["C0"], "REVISE")
         self.assertEqual(result.best_candidate_id, "C1")
         self.assertEqual(result.answer, self.SAFE)
+
+
+class CutOffGen(Gen):
+    """SYNTHETIC: the native text calls numbered in `cut` (1-based, in call order) end at the output cap."""
+    def __init__(self, *args, cut=(), **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cut = set(cut)
+
+    def generate(self, request):
+        response = super().generate(request)
+        return replace(response, finish_reason="length" if self.counts["text"] in self.cut else "stop")
+
+
+class CutOffTests(Fixture):
+    """Graded runs 2-3: 3 of 12 native revisions hit the 4,096-token cap inside the reasoning. Each became a candidate
+    whose answer region was the unfinished reasoning, and was judged, critiqued and checked for overclaims."""
+    TASK = FormatRevisionTests.TASK
+    ANSWER = FormatRevisionTests.FIXED
+    REVISED = '```json\n{"conclusion": "Database issue after the deployment", "certainty": "likely"}\n```'
+    CUT = "Okay, the engineers said it is definitely the database, but no metrics are available, so I should"
+
+    def run_engine(self, gen, max_cycles):
+        config = EngineConfig(ledger_dir=self.temp.name, enable_branching=False, candidate_generation="native")
+        engine = self.engine(gen, config=config, judge_provider=MockJudgeProvider())
+        result = engine.run(self.TASK, mode="normal", max_cycles=max_cycles)
+        return result, engine.last_trajectory
+
+    @staticmethod
+    def revisions(gen):
+        return [r.prompt for kind, r in gen.requests if kind == "text" and r.purpose == "revision"]
+
+    @staticmethod
+    def candidate(record, cid):
+        return next(c for c in record["candidates"] if c["candidate_id"] == cid)
+
+    def test_cut_off_revision_is_retried_once(self):
+        gen = CutOffGen(native=(self.ANSWER, self.CUT, self.REVISED), cut={2})
+        _, record = self.run_engine(gen, max_cycles=1)
+        prompts = self.revisions(gen)
+        self.assertEqual(len(prompts), 2)
+        self.assertEqual(prompts[0], prompts[1])  # the same request, sent again
+        c1 = self.candidate(record, "C1")
+        self.assertEqual((c1["content"], c1["answer_region_status"]), (self.REVISED, "WHOLE_RESPONSE"))
+        events = [s["data"] for s in record["steps"] if s["type"] == "truncated_response"]
+        self.assertEqual([(e["purpose"], e["action"]) for e in events], [("revision", "retried once")])
+
+    def test_revision_cut_off_twice_is_incomplete_and_never_returned(self):
+        gen = CutOffGen(native=(self.ANSWER, self.CUT, self.CUT, self.REVISED), cut={2, 3})
+        result, record = self.run_engine(gen, max_cycles=2)
+        c1 = self.candidate(record, "C1")
+        self.assertEqual(c1["answer_region_status"], "AMBIGUOUS")
+        self.assertIn("cut off at the output limit", c1["answer_region_reason"])
+        # The next revision is told why, and the user never gets the unfinished text.
+        prompts = self.revisions(gen)
+        self.assertEqual(len(prompts), 3)
+        self.assertIn("[ENGINE_DERIVED] The previous answer was cut off", prompts[2])
+        self.assertNotEqual(result.answer, self.CUT)
+        self.assertIn(result.answer, (self.ANSWER, self.REVISED))
+
+    def test_cut_off_initial_answer_is_marked_but_not_retried(self):
+        # C0 stays the exact DIRECT call: one request, never repeated.
+        gen = CutOffGen(native=(self.CUT, self.ANSWER), cut={1})
+        result, record = self.run_engine(gen, max_cycles=0)
+        self.assertEqual(len([r for k, r in gen.requests if k == "text"]), 1)
+        self.assertEqual(self.candidate(record, "C0")["answer_region_status"], "AMBIGUOUS")
+        self.assertTrue(record["output_integrity"]["blocked"])
+        self.assertEqual(result.answer, "")
 
 
 if __name__ == "__main__":

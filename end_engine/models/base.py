@@ -18,6 +18,8 @@ class ModelResponse:
     tool_calls: tuple[dict, ...] = ()
     # Optional adapter-owned final output boundary, never inferred from a model's JSON authority fields.
     answer_content: str | None = None
+    # Optional adapter-reported reason generation ended: "stop", or "length" when the output cap cut the response.
+    finish_reason: str | None = None
 
 
 class ModelProvider(ABC):

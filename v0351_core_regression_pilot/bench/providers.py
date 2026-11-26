@@ -160,7 +160,7 @@ class OllamaModel(ModelProvider):
                     entry.update(status="truncated", latency_ms=entry["latency_ms"])
                     self.log.add(**entry)
                     usage = {k: entry[k] for k in ("input_tokens", "output_tokens") if entry[k] is not None} or None
-                    return ModelResponse(text, usage)
+                    return ModelResponse(text, usage, finish_reason=data.get("done_reason"))
                 content = text
                 if structured:
                     try:
@@ -182,7 +182,7 @@ class OllamaModel(ModelProvider):
             entry["status"] = "ok"
             self.log.add(**entry)
             usage = {k: entry[k] for k in ("input_tokens", "output_tokens") if entry[k] is not None} or None
-            return ModelResponse(content, usage)
+            return ModelResponse(content, usage, finish_reason=data.get("done_reason"))
         raise last  # pragma: no cover
 
 

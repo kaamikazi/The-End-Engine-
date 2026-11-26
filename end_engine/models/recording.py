@@ -111,7 +111,7 @@ class RecordingProvider(ModelProvider):
             for item in response.tool_calls:
                 self.trajectory.record("tool_call", {"call_id": call["call_id"], "data": item}, "tool_calls")
             return ModelResponse(deepcopy(content), deepcopy(response.usage), deepcopy(response.tool_calls),
-                                 deepcopy(response.answer_content))
+                                 deepcopy(response.answer_content), response.finish_reason)
         except Exception as exc:
             call["error"] = {"type": type(exc).__name__, "message": str(exc)}
             raise
