@@ -13,7 +13,13 @@ from ..core.output_format import final_answer_region
 
 STRONG = re.compile(r'\b(?:verif(?:ied|ies|y)|confirm(?:ed|s|ing)?|establish(?:ed|es)?|prove[sdn]?|'
                     r'certain|demonstrat(?:ed|es)|validat(?:ed|es))\b', re.I)
-NEGATION = re.compile(r"\b(?:not(?! only\b| just\b)|never|cannot|can't|could not|couldn't|does not|doesn't|no)\b[^.;,]{0,45}$", re.I)
+# Graded Colab run (2026-11-25): "we don't have the metrics to confirm" and "to avoid implying it's confirmed" were
+# read as status claims and withheld a correct answer. Any n't contraction negates like "not". Absence words
+# ("without", "lack") stop at a conjunction, so "shipped without downtime and verified" is still a claim.
+NEGATION = re.compile(r"(?:\b(?:not(?! only\b| just\b)|never|cannot|could not|does not|no|\w+n['’]t)\b[^.;,]{0,45}"
+                      r"|\b(?:without(?! (?:any |a )?doubt\b)|lack(?:s|ed|ing)?|unable to|yet to|avoid(?:s|ed|ing)? "
+                      r"(?:implying|claiming|saying|suggesting|stating|asserting))\b"
+                      r"(?:(?!\b(?:and|but)\b)[^.;,]){0,45})$", re.I)
 UNIVERSAL = re.compile(r'\b(?:universally|always|everywhere|all possible|without exception)\b', re.I)
 # Not status assertions (Colab runs 1-2, 2026-11-23): a metric definition ("Recall: the share of answers that are
 # verified"), a temporal clause ("deleted only after they are confirmed stale") or a pass criterion ("verified when
@@ -29,6 +35,8 @@ TRACK_RECORD = re.compile(r'\bbattle[- ]tested\b|\b(?:tested|deployed|proven|run
                           r'(?:testing|production|real[- ]world\s+use|use|operation|deployment)\b'
                           r'|\b(?:in|across|from)\s+(?:our|real[- ]world)\s+'
                           r'(?:tests?|testing|benchmarks?|deployments?|trials?|experiments?)\b', re.I)
+# A purpose clause names a check still to be done ("collect query logs to confirm the cause", "remains to be verified").
+PURPOSE = re.compile(r'(?<!\bable )(?<!\bmanaged )\bto\s+(?:be\s+)?$', re.I)  # "we were able to confirm" is a claim
 HYPOTHETICAL = re.compile(r'\b(?:if|whether|could|might|may|would|should|suppose|hypothetical|hypothetically)\b', re.I)
 STATUS_KEYS = frozenset(('certainty', 'confidence', 'status', 'verification', 'verified', 'confirmed'))
 
@@ -107,7 +115,7 @@ def extract_epistemic_claims(content):
         definition = bool(DEFINITION.match(clause))
         for match in STRONG.finditer(clause):
             prefix = clause[:match.start()]
-            if NEGATION.search(prefix) or HYPOTHETICAL.search(prefix):
+            if NEGATION.search(prefix) or HYPOTHETICAL.search(prefix) or PURPOSE.search(prefix):
                 continue
             if definition or SUBORDINATE.search(prefix) or CRITERION.match(clause[match.end():].lstrip(' ,')):
                 continue

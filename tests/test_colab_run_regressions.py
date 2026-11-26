@@ -8,6 +8,8 @@ from end_engine.core.state import StopReason
 from end_engine.quality.epistemic import epistemic_integrity, extract_epistemic_claims
 from end_engine.quality.mock import MockJudgeProvider
 from end_engine.verification import CallableToolVerifier
+from end_engine import EngineConfig
+from .test_v035_regressions import Gen, adversary, objection
 from .test_v0351_regressions import Fixture, Stagnant
 
 # Sentences that describe a design, a metric or a test plan; none asserts an earned status.
@@ -22,6 +24,19 @@ NOT_CLAIMS = (
     "It has not been tested in production.",
     "It hasn't been tested in production.",
     "Deploy the cache in production with a 500 MB limit.",
+    # Graded run BA-009 (2026-11-25): these withheld a draft the grader scored 1.0.
+    "We have \"hypothesis\" for the candidate, which is correct because we don't have the database metrics to confirm.",
+    "We don't have evidence to confirm, so it's a hypothesis.",
+    "We can change \"was\" to \"is hypothesized to be\" to avoid implying it's confirmed.",
+    "So we don't need database metrics to confirm",
+    "The cause isn’t confirmed.",
+    "We lack the traces needed to confirm the cause.",
+    "We are unable to verify the cause.",
+    "The cause is yet to be established.",
+    # Purpose clauses name a check still to be done (pilot BA-009 trajectory 2965e080).
+    "The root cause requires further investigation into database-specific metrics to confirm the exact impact.",
+    "Collect query logs to confirm the cause.",
+    "The cause remains to be verified.",
 )
 
 # Unsupported empirical or status claims; each must be flagged without executed evidence.
@@ -35,6 +50,13 @@ CLAIMS = (
     "It has been deployed in production at three companies.",
     "This design has been verified in production.",
     "After testing, the bound is verified.",
+    # Absence words do not negate a status asserted after a conjunction, or "without doubt".
+    "It shipped without downtime and was verified in staging.",
+    "It ran without any errors and the bound was confirmed.",
+    "It is without doubt confirmed.",
+    "The database is the root cause (so that part is established).",  # graded run BA-009 C1
+    "We were able to confirm the fix.",
+    "We managed to verify the bound.",
 )
 
 
@@ -115,6 +137,83 @@ class UnchangedRevisionTests(Fixture):
         self.assertFalse([s for s in record["steps"] if s["type"] == "unchanged_revision"])
         verified = [v["candidate_id"] for v in record["verification"]]
         self.assertEqual(verified, [c["candidate_id"] for c in record["candidates"]])
+
+
+class FormatRevisionTests(Fixture):
+    """Graded run BA-009 (structured): every draft lacked the required ```json block. The format check blocked stopping,
+    but no revision plan asked for the format, so no revision restored it."""
+    TASK = ('Question: what was the root cause? Give your final answer as one JSON object in a ```json code block '
+            'with exactly these keys: "conclusion" (string), "certainty" (string).')
+    PROSE = 'The root cause is likely a database issue after the deployment.'
+    FIXED = '```json\n{"conclusion": "Database issue after the deployment", "certainty": "hypothesis"}\n```'
+
+    def run_engine(self, gen, generation='structured'):
+        config = EngineConfig(ledger_dir=self.temp.name, enable_branching=False, candidate_generation=generation)
+        engine = self.engine(gen, config=config, judge_provider=MockJudgeProvider())
+        result = engine.run(self.TASK, mode="normal", max_cycles=2)
+        return result, engine.last_trajectory
+
+    @staticmethod
+    def engine_changes(plan):
+        return [c for c in plan["changes"] if c["source_origin"] == "ENGINE_DERIVED" and "output format" in c["action"]]
+
+    def test_structured_revision_is_told_the_format_violation(self):
+        gen = Gen(contents=(self.PROSE, self.FIXED))
+        result, record = self.run_engine(gen)
+        sent = [r.context["revision_plan"] for kind, r in gen.requests if r.purpose == "revision"]
+        changes = self.engine_changes(sent[0])
+        self.assertEqual(len(changes), 1)
+        self.assertIn("missing the required ```json code block", changes[0]["action"])
+        required = [s["data"] for s in record["steps"] if s["type"] == "format_revision_required"]
+        self.assertEqual(required[0]["candidate_id"], "C0")
+        self.assertIn("```json", result.answer)
+
+    def test_native_revision_prompt_carries_the_format_violation(self):
+        gen = Gen(native=(self.PROSE, self.FIXED))
+        result, record = self.run_engine(gen, generation='native')
+        prompts = [r.prompt for kind, r in gen.requests if r.purpose == "revision"]
+        self.assertIn("[ENGINE_DERIVED] Restore the output format", prompts[0])
+        self.assertIn("missing the required ```json code block", prompts[0])
+        self.assertIn("```json", result.answer)
+
+    def test_no_format_change_when_the_format_is_met(self):
+        gen = Gen(contents=(self.FIXED,))
+        _, record = self.run_engine(gen)
+        self.assertFalse([s for s in record["steps"] if s["type"] == "format_revision_required"])
+        self.assertFalse([c for p in record["revision_plans"] for c in self.engine_changes(p)])
+
+
+class SafeBestDraftTests(Fixture):
+    """Graded run 2, BA-009 native: C1 was correct and clean (gate BLOCKED by an unvalidated advisory concern). C2 went
+    back to certainty "established"; its REVISE gate outranked BLOCKED, so it replaced C1 as best and the answer was
+    withheld. A draft that the output-integrity check would withhold must not replace one it would return."""
+    TASK = FormatRevisionTests.TASK
+    SAFE = '```json\n{"conclusion": "Database issue after the deployment", "certainty": "hypothesis"}\n```'
+    OVERCLAIM = '```json\n{"conclusion": "Database issue after the deployment", "certainty": "established"}\n```'
+
+    def run_engine(self, contents, judge):
+        engine = self.engine(Gen(contents=contents), judge_provider=judge)
+        result = engine.run(self.TASK, mode="normal", max_cycles=2)
+        return result, engine.last_trajectory
+
+    @staticmethod
+    def gates(record):
+        return {g["candidate_id"]: g["decision"] for g in record["quality_gate_decisions"]}
+
+    def test_overclaiming_revision_does_not_replace_a_clean_blocked_draft(self):
+        # The advisory objection to C0 is not validated, so C0 is BLOCKED; C1 and C2 overclaim and are REVISE.
+        result, record = self.run_engine((self.SAFE, self.OVERCLAIM), adversary(objection("SYNTHETIC: weak evidence")))
+        gates = self.gates(record)
+        self.assertEqual((gates["C0"], gates["C1"]), ("BLOCKED", "REVISE"))
+        self.assertEqual(result.best_candidate_id, "C0")
+        self.assertFalse(record["output_integrity"]["blocked"])
+        self.assertEqual(result.answer, self.SAFE)
+
+    def test_clean_revision_still_replaces_an_overclaiming_draft(self):
+        result, record = self.run_engine((self.OVERCLAIM, self.SAFE), MockJudgeProvider())
+        self.assertEqual(self.gates(record)["C0"], "REVISE")
+        self.assertEqual(result.best_candidate_id, "C1")
+        self.assertEqual(result.answer, self.SAFE)
 
 
 if __name__ == "__main__":

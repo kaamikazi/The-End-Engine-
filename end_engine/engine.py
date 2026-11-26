@@ -394,6 +394,19 @@ class EndEngine:
                                    'Epistemic status stays within the recorded evidence scope', 'ENGINE_DERIVED')))
                     trajectory.record('epistemic_revision_required', {'candidate_id': current.candidate_id,
                         'targets': targets, 'action': action})
+                # The deterministic format check blocks stopping, so the reviser must be told what it found: the planner
+                # sees only the critique and weaknesses (graded Colab run BA-009, 2026-11-25: no plan in three cycles
+                # asked for the required ```json block, and no revision restored it).
+                problems = [*current_check.get('format_violations', ()),
+                            *(f'remove Engine-internal text "{item}"' for item in current_check.get('internal_leakage', ()))]
+                if problems:
+                    action = ('Restore the output format the original task requires, keeping the substance of the '
+                              'answer. The deterministic format check found: ' + '; '.join(problems)[:800]
+                              + '. Do not add claims or evidence to satisfy the format.')
+                    plan = replace(plan, changes=(*plan.changes, Change((), action,
+                                   "The answer follows the original task's output format", 'ENGINE_DERIVED')))
+                    trajectory.record('format_revision_required', {'candidate_id': current.candidate_id,
+                        'violations': problems, 'action': action})
                 trajectory.record("revision_plan", plan, "revision_plans")
                 self._log("Revision plan generated")
                 stage = "revision"

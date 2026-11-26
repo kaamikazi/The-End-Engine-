@@ -239,6 +239,142 @@ The run ended with NO_PROGRESS: "2 completed cycles without meaningful internal 
 
 **Unchanged revisions again 2 of 4** (C2 = C1, C4 = C3): every other revision is a no-op. The evidence-gap loop from section 4 is still the main cost.
 
+## Graded run: the pilot's 4 tasks, T4 (2026-11-25)
+
+Commit `6338ccb`, qwen3:4b (same build as the pilot, digest `359d7dd4…`), 3 cycles, `num_ctx` 16384, pilot seed 20261005. 311 offline tests passed. One trial per task and condition.
+
+| Condition | Score now | Pilot score | Time | Calls | Tokens |
+| --- | --- | --- | --- | --- | --- |
+| DIRECT | 3.5/4 | 3.5/4 | 250 s | 4 | 12k |
+| FULL_END_NATIVE | 2.5/4 | 3.0/4 | 1,938 s | 121 | 414k |
+| FULL_END_STRUCTURED | 3.0/4 | 3.0/4 | 952 s | 110 | 226k |
+
+| Task | DIRECT | NATIVE | STRUCTURED |
+| --- | --- | --- | --- |
+| BA-001 | 1 | 1 (NO_PROGRESS) | 1 (NO_PROGRESS) |
+| BA-002 | 1 | 1 (INCONCLUSIVE) | 1 (INCONCLUSIVE) |
+| BA-008 | 0.5 (code had an IndentationError) | 0.5 (premise never corrected) | 1 (NO_PROGRESS) |
+| BA-009 | 1 | **0 (answer withheld)** | 0 (no JSON block in any draft) |
+
+DIRECT used the same seed as the pilot but produced different text (different token counts). BA-008 went 1 → 0.5 and BA-009 went 0.5 → 1. Single-trial scores therefore move by ±0.5 from sampling alone, and none of the differences above is significant.
+
+**END added nothing on 6 of 8 runs.** It returned its first draft C0 in 6 runs. The unchanged-revision stop fired 3 times (BA-001 both modes, BA-008 structured), as designed.
+
+### 6. Negated sentences are flagged as overclaims, and a correct answer was withheld
+
+BA-009 native: drafts C2 and C3 both scored **1.0** with the grader (certainty "hypothesis", missing evidence named). The engine returned C3 and withheld it. All three sentences that triggered the withholding say the cause is *not* confirmed:
+
+- "…which is correct because we don't have the database metrics to confirm."
+- "We don't have evidence to confirm, so it's a hypothesis."
+- "We can change "was" to "is hypothesized to be" to avoid implying it's confirmed."
+
+`NEGATION` in `quality/epistemic.py` lists `doesn't`, `can't` and `couldn't`, but not `don't`, `didn't`, `haven't`, `isn't`, `won't`, `without`, `lack` or `avoid`. C1 had two more of the same ("we don't have evidence to confirm that"). With these forms recognised, C3 has no flags left, so it would have been returned and the run would score 1.0 (native total 3.5/4).
+
+The same check also flagged purpose clauses, for example "requires further investigation into database-specific metrics to confirm the exact impact" (pilot BA-009). It names a check that has not been done, not a confirmed result.
+
+**Fix (2026-11-25, not yet run on Colab).** `NEGATION` now treats any n't contraction like "not". It also recognises "without", "lack", "unable to", "yet to" and "avoid implying/claiming…", and these absence words stop at "and"/"but", so "shipped without downtime and was verified" is still a claim. A new `PURPOSE` rule skips "to confirm" and "to be verified", except after "able" or "managed".
+
+The change only removes flags. Replayed over the recorded pilot and graded-run drafts, it clears exactly the 5 negated BA-009 sentences and nothing else. C1's real overclaims ("so that part is established") and C0's `certainty=established` are still flagged. 20 sentences were added to the tables in `tests/test_colab_run_regressions.py`; 311 tests and the pilot's 13 pass.
+
+### 7. Format violations block stopping but never reach the reviser
+
+BA-009 structured: every draft was plain prose without the required ```` ```json ```` block. The engine detected this each cycle (`mandatory deterministic output-format revision` blocker, gate reason "does not follow the task's required output format"). None of the three revision plans asked for the format, because the planner sees only the critique and the weakness registry, and format violations are added to neither. The pilot scored 0 here for the same reason.
+
+The plans instead asked to "quantify the database impact (e.g. 'query latency increased by X ms')", which the task's evidence cannot support.
+
+**Fix (2026-11-25, not yet run on Colab).** When the current draft fails the deterministic format check, the engine now adds an ENGINE_DERIVED change to the revision plan. It works like the existing changes for bad references and overclaims, and covers internal leakage too. The change names each violation (for example "missing the required ```json code block") and says not to add claims or evidence to satisfy the format. It also records a `format_revision_required` step in the trajectory.
+- Structured mode receives the change in `revision_plan`.
+- Native mode receives it as a `[ENGINE_DERIVED]` line in the revision prompt.
+
+Three tests were added in `tests/test_colab_run_regressions.py`. The structured and native tests fail without the fix. A control checks that no change is added when the format is already met. 314 tests and the pilot's 13 pass.
+
+Still open: whether qwen3:4b in structured mode will put a fenced ```json block inside the JSON `content` string when asked. Only a Colab run can show that.
+
+## Graded run 2: fixes 6 and 7 applied, T4 (2026-11-25)
+
+Same setup as the first graded run. The two fixes were applied as a local patch on `6338ccb` (`END_COLAB_GRADED_FIXES_2.ipynb`); 314 offline tests passed on Colab.
+
+| Condition | Score now | Graded run 1 | Pilot | Time | Calls | Tokens |
+| --- | --- | --- | --- | --- | --- | --- |
+| DIRECT | 3.5/4 | 3.5/4 | 3.5/4 | 244 s | 4 | 12k |
+| FULL_END_NATIVE | 2.5/4 | 2.5/4 | 3.0/4 | 1,692 s | 106 | 348k |
+| FULL_END_STRUCTURED | 3.0/4 | 3.0/4 | 3.0/4 | 862 s | 104 | 204k |
+
+Every per-task score is the same as in graded run 1. DIRECT produced byte-identical token counts, so it reproduced exactly with the seed this time. END used 10–16% fewer tokens, mostly because three BA-001/BA-002 runs stopped a cycle earlier. BA-008 structured used more (45k → 73k).
+
+Every draft graded with the pilot grader (gate decision after the slash):
+
+| Run | Drafts | Returned |
+| --- | --- | --- |
+| BA-008 native | C0=0.5, C1=0.5, C2=0, C3=0 | C0 (0.5) |
+| BA-009 native | C0=0.5, **C1=1.0/BLOCKED**, C2=0/REVISE, C3=0.75/REVISE | C3, **withheld (0)** |
+| BA-009 structured | C0–C3 all 0, byte-identical | C0 (0) |
+
+**Fix 6 (negation)** was not exercised. Replaying the old and new rules over all 26 drafts gives the same 11 flags. The one negated sentence in BA-009 C1 ("cannot be confirmed without database metrics") was already treated as negated by the old rule.
+
+**Fix 7 (format) works in native mode, not in structured mode.**
+- Native BA-009: C2 hit the 4,096-token limit inside its reasoning and had no JSON block. The format change was sent, and C3 restored the block.
+- Native BA-008: the change asked for the missing explanation outside the code. The model added it, but *inside* the ```` ```python ```` block, which broke the code (C2 and C3 scored 0). The engine still returned C0, so the score did not drop.
+- Structured BA-009: all three revision requests carried the format change in `revision_plan`. qwen3:4b returned C0 byte-for-byte each time, including `known_strengths` and `confidence` (122 output tokens every time). It ignored the whole plan, not only the format change.
+
+### 8. An unsafe later draft replaces a safe best draft, and the answer is withheld
+
+BA-009 native, C1:
+
+```json
+{"conclusion": "The root cause is a database issue (as identified by on-call engineers), but the specific cause (e.g., dependency bumps) cannot be confirmed without database metrics, traces, or query logs.",
+ "certainty": "hypothesis", "evidence_used": ["E1", "E2"], "additional_evidence_needed": ["database metrics", "traces", "query logs"]}
+```
+
+The grader scored it 1.0. It had no overclaims and the right format. Its gate was BLOCKED only because an advisory model concern was not validated. The next revision went back to `"certainty": "established"` ("two engineers said it"). The judge scored C2 and C3 1.0 on every dimension, and the pairwise comparison preferred them.
+
+`QualitySession` ranks gates REJECT < BLOCKED < REVISE < ACCEPT. C2's REVISE outranked C1's BLOCKED, so C2 became the best draft even though it had overclaims, and C3 followed. The `unsafe_tie` guard (`quality/session.py`, around line 299) only applies when the gates are equal. At the end, output integrity withheld C3, so END returned nothing. If C1 had stayed best, END native would have scored 3.0/4 and BA-009 1.0.
+
+**Fix (2026-11-26, not yet run on Colab)** in `quality/session.py`. A draft the final output-integrity check would withhold no longer replaces a best draft it would return, even with a higher gate. The one exception is a best draft whose gate is REJECT. "Would withhold" now uses the same criteria as the final check: overclaims, bad references, an ambiguous answer region and, new here, Engine-internal leakage. A clean draft still replaces an unsafe best, as before. The returned answer can now be BLOCKED/INCONCLUSIVE instead of empty.
+
+Revisions, judging and stopping are unchanged; only the choice of the returned draft is affected. In this run, C1 would have stayed best, and its output-integrity check finds nothing, so END should have returned C1 (grader 1.0).
+
+Two tests were added in `tests/test_colab_run_regressions.py` (`SafeBestDraftTests`): a clean BLOCKED C0 is kept over an overclaiming REVISE C1, which fails without the fix; and a clean revision still replaces an overclaiming draft. 316 tests and the pilot's 13 pass.
+
+### 9. Structured revisions on qwen3:4b copy the draft
+
+BA-009 structured shows the structured reviser can return its input unchanged even with a concrete plan. In this run, the unchanged-revision stop did not fire either, because the model's revision plans added new weaknesses each cycle, so `issue_state` kept changing. Not yet investigated: whether the revision prompt or schema encourages copying (the current draft is in the context as `CURRENT_CANDIDATE` and `candidate`, with the same field names as the output schema).
+
+## Graded run 3: fixes 6, 7 and 8 applied, T4 (2026-11-26)
+
+Same setup again (`END_COLAB_GRADED_FIXES_3.ipynb`, local patch on `6338ccb`); 316 offline tests passed on Colab.
+
+| Condition | Run 3 | Run 2 | Run 1 | Pilot | Time | Calls | Tokens |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| DIRECT | 3.5/4 | 3.5/4 | 3.5/4 | 3.5/4 | 261 s | 4 | 12k |
+| FULL_END_NATIVE | **3.5/4** | 2.5/4 | 2.5/4 | 3.0/4 | 2,077 s | 119 | 417k |
+| FULL_END_STRUCTURED | 3.0/4 | 3.0/4 | 3.0/4 | 3.0/4 | 855 s | 95 | 185k |
+
+END native matched DIRECT for the first time in these runs. It did so at about 34× DIRECT's tokens. DIRECT reproduced exactly again.
+
+Every draft graded with the pilot grader:
+
+| Run | Drafts | Returned |
+| --- | --- | --- |
+| BA-002 native | C0=1/BLOCKED, C1=1/BLOCKED, C2=0.29/REVISE (leaks "revision plan"), C3=1/BLOCKED | C0 (1.0) |
+| BA-008 native | C0=0.5, C1=0.5, C2=0, C3=1.0 (cut off, see 10) | C0 (0.5) |
+| BA-009 native | C0=0.5, C1=0 (cut off), C2=0.75, **C3=1.0/BLOCKED** | C3 (1.0, certainty "likely") |
+| BA-009 structured | C0–C3 all 0, byte-identical (as in run 2) | C0 (0) |
+
+**Fix 8 decided BA-002 native, not BA-009.** Both conclusions come from replaying the old selection rule on the recorded gates.
+- BA-009 native: C0–C2 all overclaimed. C3 was the first clean draft, and the old rule's `safer_tie` would also have picked it. This BA-009 point comes from the model writing a clean final draft this time.
+- BA-002 native: C2 leaked Engine text, and its REVISE gate outranked C0's BLOCKED. The old rule did not count leakage as unsafe, so C2 would have become best. C3 (BLOCKED, ranked lower) could not replace it, and the final check would have withheld C2, so the answer would have been empty. The new rule kept C0 (1.0).
+
+With one trial per task, 2.5 → 3.5 is still within sampling noise. One of the two points is attributable to a fix.
+
+### 10. Cut-off drafts are evaluated as answers
+
+3 of 12 native revisions across runs 2 and 3 hit the 4,096-token limit inside the model's reasoning (`done_reason: length`, no `</think>`). Runs 2 BA-009 C2, 3 BA-009 C1 and 3 BA-008 C3. Each became a full candidate. Its answer region is the whole unfinished reasoning, which then gets judged, critiqued and checked for overclaims (run 2 BA-009 C2 got 9 overclaim flags, all from reasoning text).
+
+The pilot grader scored run 3 BA-008 C3 1.0, because the reasoning contains a correct function and says "sorted() is actually stable". That is a grader artifact, not an answer. The engine kept C0 there, which was right.
+
+Not fixed. Options: treat a cut-off native response as a format failure, retry it once with the same plan, or raise `num_predict`.
+
 ## Not concluded
 
 These runs are one task each, run once, with the same model acting as generator and judges. They show how the mechanisms behave. They say nothing about whether END is better or worse than DIRECT in general.
