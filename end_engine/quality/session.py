@@ -42,7 +42,7 @@ class QualitySession:
         self.comparator = RevisionComparator(self.primary)
         self.cache, self.snapshots, self.candidates = {}, {}, {}
         self.evidence, self.overclaims = {}, {}
-        self.reference_violations, self.leakage = {}, {}
+        self.reference_violations, self.leakage, self.format_defects = {}, {}, {}
         self.best_candidate_id = None
         self.latest_candidate_id = None
         self.final_gate = None  # Set only by reconcile() for the returned candidate.
@@ -264,6 +264,7 @@ class QualitySession:
         engine_check = next((c for c in reversed(record.get("engine_checks", ()))
                              if c["candidate_id"] == candidate.candidate_id), None)
         self.leakage[candidate.candidate_id] = tuple((engine_check or {}).get('internal_leakage', ()))
+        self.format_defects[candidate.candidate_id] = tuple((engine_check or {}).get('format_violations', ()))
         engine_check = {**(engine_check or {}), 'epistemic_overclaims': self.overclaims[candidate.candidate_id],
                        'evidence_violations': delta['violations'],
                        'answer_region_ambiguous': candidate.answer_region_status == 'AMBIGUOUS'}
@@ -294,13 +295,17 @@ class QualitySession:
             self.trajectory.record("best_candidate_comparison", best_comparison, "pairwise_comparisons")
         ranks = {GateDecision.REJECT: 0, GateDecision.BLOCKED: 1, GateDecision.REVISE: 2,
                  GateDecision.ACCEPT_PROVISIONALLY: 3, GateDecision.ACCEPT_VERIFIED: 4}
-        # "Unsafe" uses the final output-integrity criteria: such a candidate would be withheld if returned.
-        unsafe = lambda cid: bool(self.overclaims.get(cid) or self.reference_violations.get(cid) or self.leakage.get(cid)
-                                  or self.candidates[cid].answer_region_status == 'AMBIGUOUS')
-        safer_tie = prior is not None and unsafe(prior.candidate_id) and not unsafe(candidate.candidate_id)
-        unsafe_tie = prior is not None and not unsafe(prior.candidate_id) and unsafe(candidate.candidate_id)
-        # A higher gate does not let an unsafe candidate replace a returnable best: the user would get an empty answer
-        # instead of a BLOCKED one (graded Colab run 2, BA-009: clean C1 BLOCKED, overclaiming C2 REVISE, C3 withheld).
+        # Deterministic defect level: 2 = "unsafe" by the final output-integrity criteria (it would be withheld if
+        # returned), 1 = fails the task's deterministic format check, 0 = neither.
+        defects = lambda cid: (2 if (self.overclaims.get(cid) or self.reference_violations.get(cid) or self.leakage.get(cid)
+                                     or self.candidates[cid].answer_region_status == 'AMBIGUOUS') else
+                               1 if self.format_defects.get(cid) else 0)
+        safer_tie = prior is not None and defects(prior.candidate_id) > defects(candidate.candidate_id)
+        unsafe_tie = prior is not None and defects(prior.candidate_id) < defects(candidate.candidate_id)
+        # A higher gate does not let a candidate with a worse demonstrated defect replace the best: an unsafe one would
+        # give the user an empty answer instead of a BLOCKED one (graded Colab run 2, BA-009: clean C1 BLOCKED,
+        # overclaiming C2 REVISE, C3 withheld), and one that breaks the format would be returned in place of one that
+        # follows it (graded trials run, BA-008 T2: C0 correct and BLOCKED, C1 dropped the explanation, REVISE).
         keeps_safe_best = unsafe_tie and prior.gate.decision is not GateDecision.REJECT
         if prior is None or (safer_tie and gate.decision in (GateDecision.BLOCKED, GateDecision.REVISE)) or (
             gate.decision is not GateDecision.REJECT and not keeps_safe_best and

@@ -406,6 +406,69 @@ The pilot grader scored run 3 BA-008 C3 1.0, because the reasoning contains a co
 
 Tests: `CutOffTests` in `tests/test_colab_run_regressions.py` (retry once; cut off twice → incomplete, never returned, next plan asks for a complete answer; cut-off initial answer marked, not retried). All 3 failed before the fix. 319 engine tests and 13 pilot tests pass. Not yet checked on Colab.
 
+## Graded trials run: 3 trials per task, all fixes on the branch, T4 (2026-11-26)
+
+`END_COLAB_GRADED_TRIALS_3.ipynb`: branch `codex/colab-run5-engine-fixes` at `81c8db6`, with no local patch. The setup is otherwise as in runs 1–3: qwen3:4b with the pilot's digest, 3 cycles and a 16,384-token context. It ran DIRECT and FULL_END_NATIVE only, 3 trials per task. Trial 1 used the pilot's seeds and trials 2 and 3 used new seeds. 319 offline tests passed on Colab. All 24 runs finished, with no errors and no withheld answers.
+
+| Task | DIRECT (T1, T2, T3) | END native (T1, T2, T3) |
+| --- | --- | --- |
+| BA-001 | 1, 1, 1 | 1, 1, 1 |
+| BA-002 | 1, 1, 1 | 1, 1, 1 |
+| BA-008 | 0.5, 0.5, 1 | 0.5, 0.5, 0.5 |
+| BA-009 | 1, 0.5, 0.5 | 1, 1, 1 |
+| **Total** | **3.5, 3.0, 3.5 (mean 3.33)** | **3.5, 3.5, 3.5 (mean 3.5)** |
+
+| Condition | Time | Calls | Tokens | Tokens per run |
+| --- | --- | --- | --- | --- |
+| DIRECT | 13 min | 12 | 36k | 3.0k |
+| FULL_END_NATIVE | 100 min | 351 | 1,013k | 84k (BA-001 32k, BA-002 143k, BA-008 86k, BA-009 78k) |
+
+- **Scores:** END native is ahead by 0.17 per trial on average. Of the 12 task/trial pairs, 9 tie, END wins 2 (BA-009 T2 and T3) and loses 1 (BA-008 T3). That is not a significant difference. On these four tasks END native and DIRECT perform about the same, and END costs 28× the tokens and 7.7× the time.
+- **BA-009 is where END helps.** Its first draft scored 0.5, 0.75 and 1.0, and END returned 1.0 in all three trials. DIRECT scored 1, 0.5 and 0.5.
+- **BA-008 is where END loses**, for the two reasons in findings 11 and 12.
+- **DIRECT on BA-008** hit the 4,096-token output limit in T1 and T2. Both answers were cut off, and they scored 0.5.
+
+**The cut-off fix (finding 10) worked as designed on real runs.**
+- 6 native revisions were cut off. The retry finished 3 of them (scores 1.0, 1.0, 0.75).
+- The other 3 were BA-002 C2 in every trial, cut off twice. Each was marked incomplete and not returned. The next revision, whose plan asked for a complete answer, scored 1.0 each time.
+- One initial answer (BA-008 T3 C0) was cut off. It was marked, not retried and not returned.
+- No cut-off text was returned in any run.
+
+### 11. A revision that breaks the format replaces a clean draft
+
+In BA-008 T2, C0 scored 1.0: tests pass, and its explanation corrects the false premise ("sorted() is actually stable"). Its gate was BLOCKED only because "Assessment requires evidence; advisory model negatives do not establish candidate failure".
+
+C1 dropped the explanation and kept only the code, which scored 0.5. The deterministic format check caught this ("missing the explicitly requested explanation outside code") and gave C1 REVISE. REVISE ranks above BLOCKED, so C1 became the best draft and was returned.
+
+A draft with a demonstrated format defect replaced one whose only problem was an unproven advisory concern. Fix 8 stops unsafe drafts from replacing a returnable best draft. It does not cover format violations. With that rule extended, END would have returned C0 here, and its BA-008 mean would be 0.67, equal to DIRECT.
+
+**Fix** (`quality/session.py`). Selection now ranks each draft by its worst deterministic defect: unsafe (it would be withheld), breaks the task's format, or neither. Fix 8's two rules now use this ranking:
+- A draft with a worse defect cannot replace the best draft because its gate ranks higher, unless the best draft is REJECT.
+- A draft with a lesser defect replaces the best draft when its gate is BLOCKED or REVISE.
+
+Unsafe drafts are handled as before. Format violations come from the same deterministic check that feeds the gate.
+
+Tests: `FormatSafeBestDraftTests` in `tests/test_colab_run_regressions.py`. One test checks that a format-breaking REVISE revision does not replace a correctly formatted BLOCKED draft. The other checks that a correctly formatted BLOCKED revision does replace a format-breaking REVISE draft. Both failed before the fix. 321 engine tests and 13 pilot tests pass.
+
+**Replay on recorded runs.** I simulated the old and new rules on the 20 END trajectories from graded run 3 and the trials run, using the recorded gates, checks and comparisons. The old-rule simulation matches the recorded best draft in 17 of 20. The 3 mismatches are BA-009 runs whose only format-breaking draft, if any, was cut off and is already excluded under the cut-off fix, so the new rule cannot affect them.
+- **Trials run, BA-008 T2:** the new rule changes the returned draft from C1 (0.5) to C0 (1.0).
+- **Graded run 3, BA-008 native:** the simulation would pick C3, but C3 was cut off. Under the cut-off fix it is incomplete, so the engine would still return C0.
+- **Every other run:** no change.
+
+Not yet checked on Colab.
+
+### 12. qwen3:4b revisions on BA-008 strip the explanation despite the format instruction
+
+All 9 BA-008 revisions, across the 3 trials, fail the format check for the missing explanation. All 9 also lose the premise correction (`premise: not_addressed`).
+
+From C2 onward, the plan carries fix 7's ENGINE_DERIVED instruction to restore the format, naming the missing explanation. The model's own reasoning then says "the code block and a brief explanation", but it outputs only the code block.
+
+The revision prompt ends with "output only the answer", which the model appears to read as "only the code". This is a hypothesis. It has not been tested by replaying the recorded revision prompts with that line reworded.
+
+Not fixed yet.
+
+**Also seen.** The gate gave BLOCKED 22 times for "Assessment requires evidence; advisory model negatives do not establish candidate failure", including on correct drafts. Only BA-001 ever reached ACCEPT_PROVISIONALLY. The other runs used the full cycle budget or stopped as inconclusive. This is open issue 3 (the evidence-gap critique), and it drives most of the 28× cost.
+
 ## Not concluded
 
 These runs are one task each, run once, with the same model acting as generator and judges. They show how the mechanisms behave. They say nothing about whether END is better or worse than DIRECT in general.

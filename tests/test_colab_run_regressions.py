@@ -217,6 +217,31 @@ class SafeBestDraftTests(Fixture):
         self.assertEqual(result.answer, self.SAFE)
 
 
+class FormatSafeBestDraftTests(Fixture):
+    """Graded trials run, BA-008 T2 native: C0 was correct and followed the format (gate BLOCKED by an unvalidated
+    advisory concern). C1 dropped the requested explanation; the deterministic format check gave it REVISE, which
+    outranked BLOCKED, so C1 replaced C0 and was returned (score 1.0 -> 0.5)."""
+    TASK = FormatRevisionTests.TASK
+    FORMATTED = FormatRevisionTests.FIXED
+    BROKEN = FormatRevisionTests.PROSE
+    run_engine, gates = SafeBestDraftTests.run_engine, staticmethod(SafeBestDraftTests.gates)
+
+    def test_format_breaking_revision_does_not_replace_a_clean_blocked_draft(self):
+        result, record = self.run_engine((self.FORMATTED, self.BROKEN), adversary(objection("SYNTHETIC: weak evidence")))
+        gates = self.gates(record)
+        self.assertEqual((gates["C0"], gates["C1"]), ("BLOCKED", "REVISE"))
+        self.assertEqual(result.best_candidate_id, "C0")
+        self.assertEqual(result.answer, self.FORMATTED)
+
+    def test_formatted_blocked_revision_replaces_a_format_breaking_draft(self):
+        weak = objection("SYNTHETIC: weak evidence")
+        result, record = self.run_engine((self.BROKEN, self.FORMATTED), adversary(weak, weak, weak))
+        gates = self.gates(record)
+        self.assertEqual((gates["C0"], gates["C1"]), ("REVISE", "BLOCKED"))
+        self.assertEqual(result.best_candidate_id, "C1")
+        self.assertEqual(result.answer, self.FORMATTED)
+
+
 class CutOffGen(Gen):
     """SYNTHETIC: the native text calls numbered in `cut` (1-based, in call order) end at the output cap."""
     def __init__(self, *args, cut=(), **kwargs):
@@ -229,7 +254,7 @@ class CutOffGen(Gen):
 
 
 class CutOffTests(Fixture):
-    """Graded runs 2-3: 3 of 12 native revisions hit the 4,096-token cap inside the reasoning. Each became a candidate
+    """Graded runs 2-3: 5 of 22 native revisions hit the 4,096-token cap inside the reasoning. Each became a candidate
     whose answer region was the unfinished reasoning, and was judged, critiqued and checked for overclaims."""
     TASK = FormatRevisionTests.TASK
     ANSWER = FormatRevisionTests.FIXED
