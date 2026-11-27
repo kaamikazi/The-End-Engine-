@@ -572,6 +572,89 @@ The stop reason and label follow the best draft's gate, and the trajectory recor
 
 Tests: `AcceptedBestStopTests` checks that an accepted C0 followed by a format-breaking C1 stops at C1 and returns C0, and that the switch turns the stop off. A new cut-off test checks that a revision cut off twice after an accepted C0 also ends the run with C0. The existing test for the "previous answer was cut off" plan change now switches the stop off to reach that revision. The first new test failed before the fix. 328 engine tests and 13 pilot tests pass. Not yet checked on Colab.
 
+## Graded 12-task run: all fixes, T4 (2026-11-27)
+
+`END_COLAB_GRADED_12_TASKS.ipynb`, run on branch `codex/colab-run5-engine-fixes` at `c098a99` with no local patch. It covers all 12 auto-graded tasks in `benchmark_alpha/tasks`, 3 trials each, DIRECT against END native. The model is qwen3:4b with the pilot's digest, at 3 cycles, a 16,384-token context and a 4,096-token output limit per call. 328 offline tests passed on Colab. All 72 runs finished, with no errors and no withheld answers. The run took 4.3 hours on a T4.
+
+| Task (type) | DIRECT (T1, T2, T3) | END native (T1, T2, T3) | END tokens per run | DIRECT tokens per run |
+| --- | --- | --- | --- | --- |
+| BA-001 (known answer) | 1, 1, 1 | 1, 1, 1 | 25k | 1.8k |
+| BA-002 (executable test) | 1, 1, 1 | 1, 1, 1 | 29k | 3.2k |
+| BA-003 (executable test) | 1, 1*, 1 | 1, 1, 1 | 78k | 3.6k |
+| BA-004 (validator: schedule) | 0*, 0*, 0* | 1, 1, 1 | 145k | 4.3k |
+| BA-005 (known answer) | 1, 1, 1 | 1, 1, 1 | 62k | 2.0k |
+| BA-006 (structured rubric) | 0*, 0*, 0* | 1, 1, 1 | 238k | 4.3k |
+| BA-007 (structured rubric) | 0*, 0*, 0* | 1, 1, 1 | 157k | 4.3k |
+| BA-008 (test + premise) | 0.5*, 0.5*, 1 | 0.5, 1, 0.5 | 79k | 3.9k |
+| BA-009 (validator: evidence) | 1, 0.5, 0.5 | 1, 1, 1 | 79k | 3.0k |
+| BA-010 (validator: evidence) | 0*, 1, 0* | 1, 1, 1 | 115k | 4.1k |
+| BA-011 (validator: evidence) | 1, 1, 1 | 1, 1, 1 | 62k | 3.1k |
+| BA-012 (executable test) | 1, 1, 1 | 1, 1, 1 | 27k | 1.1k |
+| **Total** | **7.5, 8.0, 7.5 (mean 7.67/12)** | **11.5, 12.0, 11.5 (mean 11.67/12)** | **91k** | **3.2k** |
+
+\* DIRECT's answer was cut off at the 4,096-token output limit.
+
+- **Score:** of the 36 task/trial pairs, END wins 14, loses 1 (BA-008 T3) and ties 21. A two-sided sign test gives p = 0.001, the first significant difference in these runs.
+- **Cost:** END used 28× DIRECT's tokens (3.29M vs 116k) and 6.8× the time. The cost rises steeply on the tasks DIRECT cannot finish: BA-006 took 238k tokens per run.
+- **Stops:** the advisory-block stop ended 20 of the 36 END runs, and the other 16 ran to the cycle cap. The accepted-best stop (finding 14) did not fire. In the four runs where it could have (BA-001 T1, BA-002 T3, BA-012 T2 and T3, each with C0 accepted and C1 advisory-blocked), the advisory-block stop fired first with the same result.
+
+### 15. Most of END's 12-task advantage is recovery from cut-off answers
+
+DIRECT was cut off at the output limit in 14 of 36 runs. Its 11 zero scores are all among them, because the model's reasoning used up the 4,096 tokens before any answer. **12 of END's 14 wins are against a cut-off DIRECT answer.** In the 11 zero-score cases (BA-004, BA-006 and BA-007 in every trial, BA-010 in T1 and T3), the pattern is the same:
+- END's own first draft was cut off too (C0 scored 0, marked incomplete by fix 10).
+- The first revision's plan carried fix 10's ENGINE_DERIVED change: "The previous answer was cut off at the output limit … keep any reasoning before it short."
+- That revision used only 543 to 2,382 output tokens, finished, and scored 1.0.
+- Later revisions, whose plans no longer had that instruction, often ran to 4,096 tokens again.
+
+Where DIRECT finished its answer (22 pairs), END wins 2 (BA-009 T2 and T3, the evidence-discipline gain seen in earlier runs), loses 1 (BA-008 T3, where END's C0 was cut off and its revisions dropped the premise correction, finding 12) and ties 19. That is not a significant difference.
+
+So, on these 12 tasks with qwen3:4b and a 4,096-token output limit, END's measured advantage comes mostly from one mechanism: recovering answers that were cut off. The baseline replays below show which part of that matters. The instruction to keep the reasoning short is not enough on its own. What works is handing the model its own unfinished text back.
+
+**Baseline replay: DIRECT plus one retry.** If END's gain were only the instruction to keep the reasoning short, a cheap baseline would match it: retry DIRECT once when it is cut off, with that instruction. I replayed the 14 cut-off DIRECT runs locally (qwen3:4b, same build and settings, new seeds) in two versions.
+- **Retry with instruction (2 seeds):** the task prompt again, plus "A previous attempt at this task ran out of space before it gave an answer. Give the complete final answer in the format the task requires, and keep any reasoning before it short."
+- **Plain retry (1 seed):** the task prompt again, with a new seed.
+
+| Recovery after a cut-off (cases where DIRECT scored 0) | Recovered (score > 0) | Mean score | Retries cut off again |
+| --- | --- | --- | --- |
+| END's first revision (recorded run) | 11 of 11 | 1.0 | 0 of 11 |
+| DIRECT retry with the instruction | 4 of 22 | 0.15 | 18 of 28 |
+| DIRECT plain retry | 1 of 11 (cut off; the grader found a valid schedule in the unfinished text) | 0.09 | 11 of 14 |
+
+A retry does not explain END's advantage, with or without the instruction. The retried answers averaged about 3,700 output tokens and mostly ran out again. END's first revision needed only 543 to 2,382. The difference is what the revision sees: END's revision prompt includes the cut-off draft as CURRENT_CANDIDATE. The model gets its own unfinished reasoning back and only has to finish it, rather than reason from scratch inside the same limit.
+
+**Baseline replay: DIRECT plus one continuation call.** If DIRECT is cut off, one more call sends the task, the unfinished text and the instruction: "Your previous answer to this task was cut off at the output limit before it was finished. This is what you wrote: <previous_answer>…</previous_answer> Give the complete final answer in the format the task requires, and keep any reasoning before it short." The reply is the answer. I replayed all 14 cut-off runs with the same 2 seeds as the retry with the instruction.
+
+| Recovery after a cut-off (cases where DIRECT scored 0) | Recovered | Mean score | Cut off again | Mean output tokens |
+| --- | --- | --- | --- | --- |
+| END's first revision (recorded run) | 11 of 11 | 1.0 | 0 of 11 | 543–2,382 |
+| **DIRECT + continuation** | **21 of 22** | **0.87** | 1 of 28 | 1,529 |
+| DIRECT retry with the instruction | 4 of 22 | 0.15 | 18 of 28 | 3,662 |
+| DIRECT plain retry | 1 of 11 | 0.09 | 11 of 14 | 3,795 |
+
+I then put the continuation replies into the 12-task run. The baseline's answer is DIRECT's own answer where it was not cut off, and the continuation reply where it was.
+
+| Condition | Mean score (out of 12) | Tokens per run | END vs it (wins / losses / ties) |
+| --- | --- | --- | --- |
+| DIRECT | 7.67 | 3.2k | 14 / 1 / 21, p = 0.001 |
+| DIRECT + continuation (seed 0 / seed 1) | 10.70 / 11.03 | 5.5k | 6 / 1 / 29, p = 0.13 · 5 / 1 / 30, p = 0.22 |
+| END native | 11.67 | 91k | — |
+
+The END-vs-baseline differences are:
+- **BA-009 T2 and T3:** DIRECT was not cut off but scored 0.5, and END scored 1.0. This is the evidence-discipline gain seen in every run.
+- **Partial-credit continuations:** BA-007 T2 (0.5 vs 1.0), BA-010 T1 (0.6 vs 1.0) and BA-008 T2 (0.5 vs 1.0), plus one continuation that was cut off again (BA-004 T1, seed 0).
+- **END's one loss:** BA-008 T3.
+
+**Conclusion.** On these 12 tasks with qwen3:4b and a 4,096-token output limit, a two-call baseline gets 92–95% of END's score for about 6% of its tokens. The baseline is DIRECT plus one continuation of a cut-off answer, with the unfinished text handed back. The remaining gap is not significant and comes mainly from BA-009.
+
+Most of END's 12-task advantage over DIRECT is therefore this continuation step, which END performs implicitly when it revises a cut-off draft. The critique, judging and multi-cycle revision loop adds a small and so far unproven amount beyond it.
+
+Caveat: the baseline replies were generated locally (same model build and settings, different GPU), while END's numbers come from the Colab T4 run. The cases are paired, but the generations are not identical.
+
+Implications:
+1. DIRECT + continuation should be the baseline END is measured against from now on. Plain DIRECT is handicapped by the output limit on half these tasks.
+2. The engine could make continuation an explicit first step when the initial answer is cut off: one call instead of a full critique-and-revise cycle. That would also make its own cost on these tasks much closer to the baseline's.
+3. To show that END's loop adds value beyond continuation, the next evaluation needs tasks where DIRECT finishes but is wrong. On those tasks, the critique and revision are what is being tested. BA-009 is the only such case in this set.
+
 ## Not concluded
 
 These runs are one task each, run once, with the same model acting as generator and judges. They show how the mechanisms behave. They say nothing about whether END is better or worse than DIRECT in general.
