@@ -304,6 +304,37 @@ class AdvisoryBlockStopTests(Fixture):
         self.assertEqual((result.termination_reason, result.iterations), (StopReason.INCONCLUSIVE, 3))
 
 
+class AcceptedBestStopTests(Fixture):
+    """Graded trials run 2, BA-008 T1 and T3: C0 was ACCEPT_PROVISIONALLY, but the minimum cycle count required one
+    revision. Every revision broke the format (REVISE), so the current draft was never accepted again and the run went
+    to the cycle cap; C0 was returned anyway. In 48 recorded END runs, no revision ever replaced an accepted best
+    draft. After the minimum cycles, a revision that does not replace an accepted best draft now ends the run."""
+    TASK = FormatRevisionTests.TASK
+    CONTENTS = (FormatRevisionTests.FIXED, FormatRevisionTests.PROSE, draft("Database issue after the deployment (2)"),
+                draft("Database issue after the deployment (3)"))
+
+    def run_engine(self, **config):
+        engine = self.engine(Gen(contents=self.CONTENTS), judge_provider=MockJudgeProvider(),
+                             config=EngineConfig(ledger_dir=self.temp.name, enable_branching=False, **config))
+        result = engine.run(self.TASK, mode="normal", max_cycles=3)
+        return result, engine.last_trajectory
+
+    def test_a_revision_that_loses_to_an_accepted_best_draft_ends_the_run(self):
+        result, record = self.run_engine()
+        decisions = [(g["candidate_id"], g["decision"]) for g in record["quality_gate_decisions"]]
+        self.assertEqual(decisions, [("C0", "ACCEPT_PROVISIONALLY"), ("C1", "REVISE")])
+        self.assertEqual((result.termination_reason, result.iterations), (StopReason.ACCEPTED_PROVISIONALLY, 1))
+        self.assertEqual((result.best_candidate_id, result.answer), ("C0", FormatRevisionTests.FIXED))
+        self.assertEqual(record["acceptance_label"], "ACCEPTED_PROVISIONAL")
+        stops = [s["data"] for s in record["steps"] if s["type"] == "accepted_best_stop"]
+        self.assertEqual(stops, [{"candidate_id": "C1", "best_candidate_id": "C0", "best_decision": "ACCEPT_PROVISIONALLY"}])
+
+    def test_the_stop_can_be_switched_off(self):
+        result, record = self.run_engine(stop_on_accepted_best=False)
+        self.assertEqual(len(record["quality_gate_decisions"]), 3)
+        self.assertEqual(result.iterations, 2)
+
+
 class CutOffGen(Gen):
     """SYNTHETIC: the native text calls numbered in `cut` (1-based, in call order) end at the output cap."""
     def __init__(self, *args, cut=(), **kwargs):
@@ -323,8 +354,8 @@ class CutOffTests(Fixture):
     REVISED = '```json\n{"conclusion": "Database issue after the deployment", "certainty": "likely"}\n```'
     CUT = "Okay, the engineers said it is definitely the database, but no metrics are available, so I should"
 
-    def run_engine(self, gen, max_cycles):
-        config = EngineConfig(ledger_dir=self.temp.name, enable_branching=False, candidate_generation="native")
+    def run_engine(self, gen, max_cycles, **options):
+        config = EngineConfig(ledger_dir=self.temp.name, enable_branching=False, candidate_generation="native", **options)
         engine = self.engine(gen, config=config, judge_provider=MockJudgeProvider())
         result = engine.run(self.TASK, mode="normal", max_cycles=max_cycles)
         return result, engine.last_trajectory
@@ -350,7 +381,9 @@ class CutOffTests(Fixture):
 
     def test_revision_cut_off_twice_is_incomplete_and_never_returned(self):
         gen = CutOffGen(native=(self.ANSWER, self.CUT, self.CUT, self.REVISED), cut={2, 3})
-        result, record = self.run_engine(gen, max_cycles=2)
+        # C0 is accepted here, so the accepted-best stop would end the run at C1; it is switched off to reach the
+        # revision that must be told about the cut-off.
+        result, record = self.run_engine(gen, max_cycles=2, stop_on_accepted_best=False)
         c1 = self.candidate(record, "C1")
         self.assertEqual(c1["answer_region_status"], "AMBIGUOUS")
         self.assertIn("cut off at the output limit", c1["answer_region_reason"])
@@ -360,6 +393,13 @@ class CutOffTests(Fixture):
         self.assertIn("[ENGINE_DERIVED] The previous answer was cut off", prompts[2])
         self.assertNotEqual(result.answer, self.CUT)
         self.assertIn(result.answer, (self.ANSWER, self.REVISED))
+
+    def test_cut_off_revision_after_an_accepted_draft_ends_the_run(self):
+        gen = CutOffGen(native=(self.ANSWER, self.CUT, self.CUT, self.REVISED), cut={2, 3})
+        result, record = self.run_engine(gen, max_cycles=2)
+        self.assertEqual(self.candidate(record, "C1")["answer_region_status"], "AMBIGUOUS")
+        self.assertEqual((result.termination_reason, result.answer), (StopReason.ACCEPTED_PROVISIONALLY, self.ANSWER))
+        self.assertEqual(len(self.revisions(gen)), 2)
 
     def test_cut_off_initial_answer_is_marked_but_not_retried(self):
         # C0 stays the exact DIRECT call: one request, never repeated.

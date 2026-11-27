@@ -28,6 +28,9 @@ class EngineConfig:
     # Without a tool verifier, stop (unaccepted, INCONCLUSIVE) when two consecutive candidates are blocked only by
     # advisory model negatives that need evidence: revising cannot supply it (graded Colab trials run).
     stop_on_advisory_blocks: bool = True
+    # After the minimum cycles, stop when the best candidate is accepted and the latest revision did not replace it
+    # (graded Colab trials run 2).
+    stop_on_accepted_best: bool = True
     # v0.3.5. Targeted repair calls per failing structured stage (0 disables repair).
     protocol_repair_attempts: int = 1
     repair_failure_limit: int = 2

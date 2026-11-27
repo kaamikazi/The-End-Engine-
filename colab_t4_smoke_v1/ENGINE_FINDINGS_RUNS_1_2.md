@@ -517,6 +517,61 @@ Six existing tests exercise the no-progress and unchanged-revision stops with mo
 
 325 engine tests and 13 pilot tests pass. The pilot runs have no tool verifier, so the simulation above applies: the same scores with 57% of END's tokens on the trials run. Not yet checked on Colab.
 
+## Graded trials run 2: fixes 11 and 13 applied, L4 (2026-11-27)
+
+`END_COLAB_GRADED_TRIALS_3_RUN2.ipynb`, run on branch `codex/colab-run5-engine-fixes` at `c6cde3b` with no local patch. The setup matches the first trials run (qwen3:4b with the pilot's digest, 3 cycles, 16,384-token context, the same seeds), except for the GPU: this run used an **L4**, not a T4. DIRECT's answers changed with the hardware (BA-008 T2 0.5 → 0.0, BA-009 T1 1.0 → 0.5, BA-009 T3 0.5 → 1.0), so trial-by-trial pairs with the first run are not exact. 325 offline tests passed on Colab. All 24 runs finished, with no errors and no withheld answers.
+
+| Task | DIRECT (T1, T2, T3) | END native (T1, T2, T3) |
+| --- | --- | --- |
+| BA-001 | 1, 1, 1 | 1, 1, 1 |
+| BA-002 | 1, 1, 1 | 1, 1, 1 |
+| BA-008 | 0.5, 0, 1 | 0.5, 0.5, 1 |
+| BA-009 | 0.5, 0.5, 1 | 1, 1, 1 |
+| **Total** | **3.0, 2.5, 4.0 (mean 3.17)** | **3.5, 3.5, 4.0 (mean 3.67)** |
+
+| Condition | Tokens | Tokens per run | vs first trials run |
+| --- | --- | --- | --- |
+| DIRECT | 36k | 3.0k | 3.0k |
+| FULL_END_NATIVE | 573k | 47.8k (BA-001 23k, BA-002 29k, BA-008 88k, BA-009 51k) | 84.4k (**57%**) |
+
+- **Advisory-block stop (finding 13) on real runs.** It fired in 8 of 12 END runs: BA-001 T2 and T3, all three BA-002 runs, and all three BA-009 runs. Each time it fired at the earliest point the rule allows: C1, or C2 on BA-009, which the task analysis rates "deep" with a minimum of 2 cycles. All 8 returned a 1.0 answer. END used 57% of the first run's tokens per run, exactly as the replay predicted. It now costs about 16× DIRECT's tokens instead of 28×. BA-002, the most expensive task before at 143k per run, now takes 29k.
+- **Scores.** Of the 12 task/trial pairs, 9 tie and END wins 3 (BA-008 T2 and BA-009 T1 and T2), with no losses. Across both trials runs, the 24 pairs give 18 ties, 5 END wins and 1 loss. That leans towards END but is not significant (a two-sided sign test gives p ≈ 0.22). All of the gain is on BA-009, where END returned 1.0 in all 6 trials and DIRECT scored 0.5 in 4 of 6.
+- **Format-aware selection (finding 11)** was not exercised. On BA-008, T1's and T3's first drafts were ACCEPT_PROVISIONALLY, and every format-breaking revision was REVISE. ACCEPT already outranks REVISE, so END kept C0 under either rule. In T2, C0 was cut off and no draft scored above 0.5.
+- **Finding 12 again.** 8 of the 9 BA-008 revisions broke the format (REVISE). The one that didn't (T2 C2) still lacked the premise correction.
+
+### 14. An accepted first draft still forces a full run of format-breaking revisions
+
+BA-008 now accounts for 265k of END's 573k tokens. In T1 and T3, C0 was ACCEPT_PROVISIONALLY, and in T3 it was also correct. BA-008's minimum cycle count is 1, which does not let a run stop at C0, so one revision is required. Every revision then broke the format and got REVISE. The current draft was therefore never accepted again, so neither the acceptance stop nor the advisory-block stop applied, and the run went on to the cycle cap. T2 cost 148k because its first draft was cut off and its revisions were long.
+
+The stopping rules look only at the latest draft. Once the best draft has been accepted, a revision that is worse (here, REVISE for a format break) does not end the run. Each further revision costs a full cycle and, with qwen3:4b on this task, never wins.
+
+**Candidate rule.** After the minimum cycles, stop when the best draft is accepted and the latest revision did not replace it. With `post_acceptance_cycles = 0`, the engine already stops as soon as the current draft is accepted after the minimum cycles. This rule applies the same test to the best draft: the revision the minimum cycles forced has been tried, and it lost.
+
+**Replay.** I simulated the rule on the recorded END native runs from graded run 3 and both trials runs (28 runs). It ran alongside the existing acceptance stop and the finding 13 stop, using the selection replay for the draft held at each stop. Tokens count every call up to that draft's termination decision.
+
+| Run | Recorded | + advisory stop (13) | + accepted-best stop (14) |
+| --- | --- | --- | --- |
+| Trials run 2 (`c6cde3b`) | 573k, score 11.0 | 573k (already on), 11.0 | **510k (89%), 11.0** |
+| Trials run 1 (`81c8db6`) | 1,013k, 10.5 | 596k (59%), 10.5 | 596k (59%), 10.5 |
+| Graded run 3 | 417k, 3.5 | 291k (70%), 3.5 | 291k (70%), 3.5 |
+
+(The 59% for trials run 1 differs slightly from finding 13's 57% because the count now includes the best-draft comparison call made after each gate.)
+
+The rule fires only in trials run 2's BA-008 T1 and T3, where C0 was accepted. It stops them at C1, taking T1 from 59k to 27k tokens and T3 from 57k to 26k, and returns the same draft. In the other runs no draft was accepted before the minimum cycles, so nothing changes.
+
+**Risk check.** The risk of stopping early is that a later revision would have replaced an accepted best draft. Across all 48 recorded END runs from the five graded runs, native and structured, 16 revisions were evaluated while the best draft was already accepted. None replaced it.
+
+The saving is modest: 11% of END's tokens in trials run 2 and none in the others, because it only helps when the first draft is accepted. The rule is low-risk on this evidence.
+
+**Fix** (`engine.py`, `config.py`). After the minimum cycles, the run stops when all of these hold:
+- the best draft's gate is ACCEPT_PROVISIONALLY or ACCEPT_VERIFIED;
+- the latest revision is not the best draft;
+- no run-level continuation policy applies.
+
+The stop reason and label follow the best draft's gate, and the trajectory records an `accepted_best_stop` step. Run-level policies are the minimum cycles or a custom termination policy, pending branches, protocol recovery, high-risk assumptions, critical-complexity scrutiny and a post-acceptance probe. Blockers that concern only the latest draft (format, overclaims, answer boundary, a failed deterministic check) do not prevent the stop, because that draft is not the one returned. `EngineConfig(stop_on_accepted_best=False)` turns the stop off.
+
+Tests: `AcceptedBestStopTests` checks that an accepted C0 followed by a format-breaking C1 stops at C1 and returns C0, and that the switch turns the stop off. A new cut-off test checks that a revision cut off twice after an accepted C0 also ends the run with C0. The existing test for the "previous answer was cut off" plan change now switches the stop off to reach that revision. The first new test failed before the fix. 328 engine tests and 13 pilot tests pass. Not yet checked on Colab.
+
 ## Not concluded
 
 These runs are one task each, run once, with the same model acting as generator and judges. They show how the mechanisms behave. They say nothing about whether END is better or worse than DIRECT in general.

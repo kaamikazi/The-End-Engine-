@@ -502,6 +502,9 @@ Without a tool verifier, a run stops as INCONCLUSIVE when two consecutive candid
 are BLOCKED only because a negative model assessment has no grounded defect (it
 "requires evidence"). Revising cannot supply executed evidence, so further cycles
 cannot settle it. `stop_on_advisory_blocks=False` turns this off.
+After the minimum cycles, a run also stops when the best candidate is accepted and the
+latest revision did not replace it; the best candidate is returned with its acceptance
+label. `stop_on_accepted_best=False` turns this off.
 
 Every completed strict trajectory receives ACCEPTED_HIGH_CONFIDENCE,
 ACCEPTED_PROVISIONAL, REJECTED_REGRESSION, REJECTED_FATAL, INCONCLUSIVE or INCOMPLETE.

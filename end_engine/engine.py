@@ -49,6 +49,14 @@ def advisory_only(gate):
     return gate.decision is GateDecision.BLOCKED and tuple(gate.reasons) == (ADVISORY_EVIDENCE_REASON,)
 
 
+# Continuation blockers that concern only the current draft. They do not hold back a stop that returns another
+# (accepted) best draft; every other blocker concerns the whole run and still does.
+CURRENT_DRAFT_BLOCKERS = frozenset({'mandatory revision remains', 'mandatory deterministic evidence/output-boundary correction',
+                                    'mandatory deterministic output-format revision',
+                                    'unresolved deterministic verification failure'})
+ACCEPTED = (GateDecision.ACCEPT_VERIFIED, GateDecision.ACCEPT_PROVISIONALLY)
+
+
 # v0.3.5 native mode: the candidate is the user-facing answer, generated as free text. The task's output format is not
 # the Engine's protocol format, and Engine internals (weakness IDs, plans, candidate IDs) never enter the request.
 CUT_OFF = 'response cut off at the output limit'
@@ -298,6 +306,22 @@ class EndEngine:
                             "only by advisory concerns that need evidence a revision cannot supply: " + ADVISORY_EVIDENCE_REASON)
                         trajectory.record("advisory_block_stop", {"candidate_id": current.candidate_id,
                             "previous_decision": previous_gate.decision.value})
+                    elif (self.config.stop_on_accepted_best and iterations >= analysis.reasoning_budget.min_cycles
+                            and not set(blockers) - CURRENT_DRAFT_BLOCKERS
+                            and quality.best_candidate_id not in (None, current.candidate_id)
+                            and quality.cache[quality.best_candidate_id].gate.decision in ACCEPTED):
+                        # The best draft is accepted and the revision the minimum cycles required did not replace
+                        # it. The acceptance stop already ends a run whose latest draft is accepted; this applies it
+                        # to the best draft (graded trials run 2, BA-008: C0 accepted, every revision broke the
+                        # format and the run went to the cap; in 48 recorded END runs no revision ever replaced an
+                        # accepted best draft).
+                        best_gate = quality.cache[quality.best_candidate_id].gate
+                        decision = TerminationDecision(StopReason.ACCEPTED_VERIFIED if best_gate.decision is
+                            GateDecision.ACCEPT_VERIFIED else StopReason.ACCEPTED_PROVISIONALLY,
+                            f"The best candidate {quality.best_candidate_id} is accepted and revision "
+                            f"{current.candidate_id} did not replace it: " + "; ".join(best_gate.reasons))
+                        trajectory.record("accepted_best_stop", {"candidate_id": current.candidate_id,
+                            "best_candidate_id": quality.best_candidate_id, "best_decision": best_gate.decision.value})
                     elif decision.reason in (StopReason.QUALITY_THRESHOLD_REACHED, StopReason.VERIFIER_PASSED, StopReason.FAST_PATH,
                                              StopReason.NO_MATERIAL_IMPROVEMENT, StopReason.REPEATED_CRITIQUE):
                         decision = TerminationDecision(None, "Quality gate requires further investigation: " + "; ".join(gate.reasons))
