@@ -2,6 +2,7 @@ from ..models.base import ModelRequest
 from ..models.schema import validate
 from .schema import comparison_schema
 from .state import RevisionComparison
+from ..core.output_format import candidate_answer
 
 
 class RevisionComparator:
@@ -14,7 +15,9 @@ class RevisionComparator:
             "Compare anonymous A and B against the original task. Do not prefer B for recency or length. "
             "For each dimension give the preferred alias and delta (B minus A), in [-1,1]. "
             "For complexity_cost, positive delta means extra burden. Identify lost requirements and recovery invariants.",
-            {"task": task, "candidates": {"A": parent.content, "B": candidate.content}, "dimensions": dimensions}, schema)).content
+            {"task": task, "candidates": {"A": candidate_answer(parent), "B": candidate_answer(candidate)},
+             "dimensions": dimensions, 'source_origins': {'task': 'TASK_INSTRUCTION_AND_ASSERTIONS',
+                'candidates': 'CANDIDATE', 'comparison': 'MODEL_JUDGMENT_ADVISORY'}}, schema)).content
         validate(output, schema)
         delta = output["delta"]
         gains = [v for d,v in delta.items() if d != "complexity_cost"]
@@ -28,4 +31,4 @@ class RevisionComparator:
         return RevisionComparison(parent.candidate_id, candidate.candidate_id,
             mapping[output["preferred"]] if output["preferred"] in ("A", "B") else None,
             tuple((d,mapping[v]) for d,v in output["dimensions"].items()), tuple(delta.items()),
-            assessment, output["reason"], severe)
+            assessment, output["reason"], severe, False)

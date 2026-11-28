@@ -1,0 +1,1912 @@
+{
+  "members": {
+    "BUDGET_FEASIBILITY.md": {
+      "sha256": "63ad9ce84bac9a19b61996aaaa81dc6c52bfa88780d134b44fa2edddf9fc3d6c",
+      "size": 10524
+    },
+    "DESIGN_DECISION.md": {
+      "sha256": "f9c8f0d315cfa3cb9ce428d18e61612cc84f237422977cc3308afc8b132c131c",
+      "size": 1766
+    },
+    "evaluators/__init__.py": {
+      "sha256": "9b046370a89fe2f944d7e71cf2de5fb42d6f5c901fb3620d4adf51eae0bc09d1",
+      "size": 197
+    },
+    "evaluators/adjudication.py": {
+      "sha256": "ba47bc570f24272bf568c1bc5c5c6587ea838af7b287a101468cd6d3072c627f",
+      "size": 6212
+    },
+    "evaluators/contracts.py": {
+      "sha256": "978d12f6bbfc3ae0f8237587acf7023267dc0aa073335486e51582f9d47a85a9",
+      "size": 2421
+    },
+    "evaluators/evaluator.py": {
+      "sha256": "2b53bb5965ec9b26383c7e2810be9455f521df268f7a5d121bf360034f059c8d",
+      "size": 20912
+    },
+    "evaluators/safety.py": {
+      "sha256": "1cccc9a801ad0d90188e74281c6fa9b03e68c8d1f094a7151d9fec74871789de",
+      "size": 8659
+    },
+    "EXPERIMENT_PREREGISTRATION.md": {
+      "sha256": "5b9b8a7e2dfa435f4f88298f18d28c4a23826cce720d905e068a9ee1c47b72c3",
+      "size": 16295
+    },
+    "FINAL_REPORT.md": {
+      "sha256": "bfec816e693aabd8edd200d2e59b5d138e94629a30ebdb3290464a7fb39fac70",
+      "size": 4928
+    },
+    "finalize.py": {
+      "sha256": "274ef145cc6133be780aaf5e9793bd82ebe4d9fb88f638d08573f1e49de7d489",
+      "size": 15783
+    },
+    "fixtures/exp-001/01_correct.json": {
+      "sha256": "ce87f9caff5343ec598aabbbf2d11993cc38eb496eda779673624a4ec4cf9852",
+      "size": 1554
+    },
+    "fixtures/exp-001/02_equivalent_fence.json": {
+      "sha256": "2bb126df30873e2ec3b88d797613794ed0b558fe9bf1e9baee32496614a33ff3",
+      "size": 1856
+    },
+    "fixtures/exp-001/03_legitimate_uncertainty.json": {
+      "sha256": "508f4b17c3ae6f0dda80663ef5cb7ec8b24d65fd0b792d8acfd0ec44372686d8",
+      "size": 1683
+    },
+    "fixtures/exp-001/04_attribution.json": {
+      "sha256": "af5404f2858791c87aaf8a41c9014ee9420fa3cb704606caad7b5eda292405f2",
+      "size": 1890
+    },
+    "fixtures/exp-001/05_hypothetical.json": {
+      "sha256": "a6c1804e895452bbe3eef15b637bba40dc1eb745c563a9b8ad1e40f318d97eff",
+      "size": 1646
+    },
+    "fixtures/exp-001/06_unsupported_confirmation.json": {
+      "sha256": "4986299d2968463f198cf989390f7ef72b8df48bafce95ee26464136815a7307",
+      "size": 1696
+    },
+    "fixtures/exp-001/07_invented_registry_id.json": {
+      "sha256": "98e149d3aa8bfe358b369de739db9b42810d7c211cb182871450010e97be9255",
+      "size": 1659
+    },
+    "fixtures/exp-001/08_unverified_url.json": {
+      "sha256": "2fb5efab088496ca5905ab4e5c2a36f28750c0588f1368d06846dc18aebd2f62",
+      "size": 1699
+    },
+    "fixtures/exp-001/09_ambiguous_polarity.json": {
+      "sha256": "d56bf7d35c8f35742eb34b8de0ab071355974bf4d9f9c086fb8f9523c53e9c6a",
+      "size": 1702
+    },
+    "fixtures/exp-001/10_claimed_execution.json": {
+      "sha256": "ba590df35527d284250b6ee1a07e87d2d7b9021e17e81f45b2c30f7ec953efce",
+      "size": 1651
+    },
+    "fixtures/exp-001/11_contradictory_status.json": {
+      "sha256": "ee2dd6a9c7cec48338a9e3f814a3149261da95fa6eacb53bdb155726919f01e2",
+      "size": 1749
+    },
+    "fixtures/exp-001/12_scope_overreach.json": {
+      "sha256": "0cd2eed392a24dfe5047b1804b8ca97ef6de5249fc87749962a87faaabf25c0f",
+      "size": 1645
+    },
+    "fixtures/exp-001/13_missing_scope.json": {
+      "sha256": "1ece4e812ddbf4609201a01bb0cb08b0a5e008c9a1079042ea537772f649fdcc",
+      "size": 1619
+    },
+    "fixtures/exp-001/14_verbose_no_reward.json": {
+      "sha256": "92dfbd96711542013708722ec54a1c7bb2414930d7ca2f22c8066a6e4b736d42",
+      "size": 1896
+    },
+    "fixtures/exp-001/15_malformed.json": {
+      "sha256": "b756cdffc51ecbc0ef78a24e56fc6abeb4f59fc8a9ad70053356ebe46842d8cb",
+      "size": 1748
+    },
+    "fixtures/exp-001/16_duplicate_key.json": {
+      "sha256": "9e21fb31515373eb14e1f00d6a4e0026e5d45e93e9ec6f69b6b31d11725591b8",
+      "size": 1719
+    },
+    "fixtures/exp-001/17_unrequested_field.json": {
+      "sha256": "00d27c7bfe4c8a355025936d87d1135d5dc2aea0c12f6595db0588d7a9ba54e5",
+      "size": 1738
+    },
+    "fixtures/exp-001/18_registered_normative_reference.json": {
+      "sha256": "5e1f999627a305403cb6c1bc3074e60008ce3fc0bacf634da074a35c5a6d1a87",
+      "size": 1641
+    },
+    "fixtures/exp-001/19_confidence_no_reward.json": {
+      "sha256": "3c5f9371b790da2996d0fafac2861adfa77badb62e02232e34025898b1d677ed",
+      "size": 1647
+    },
+    "fixtures/exp-001/20_mixed_negation_positive.json": {
+      "sha256": "8f237eee2f0b4a30b12930f944b62d8ed8ce0722c3fd1803d1c1a009c1a47ceb",
+      "size": 1674
+    },
+    "fixtures/exp-001/21_unassessed_free_claim.json": {
+      "sha256": "f8e72414950519d24fd91be89b1ff966646b4675499656a2264edf695c7db497",
+      "size": 1737
+    },
+    "fixtures/exp-001/22_fully_wrong.json": {
+      "sha256": "79f18e3fa12f7bcaf3648342c3805d3b0ddb3351d2faf028aebae07fffe21500",
+      "size": 1596
+    },
+    "fixtures/exp-001/23_partial.json": {
+      "sha256": "d7af5a0420a4fb64a4c8d2e38dc86c105458ef2c21d84fbd702bc9b857a0eb5f",
+      "size": 1568
+    },
+    "fixtures/exp-001/24_missing_explanation.json": {
+      "sha256": "3ca32ee9dd6617cd07621fe69be236023dafc3876745381dfbc7208e343e02b4",
+      "size": 1582
+    },
+    "fixtures/exp-001/25_reordered.json": {
+      "sha256": "e7fb7993455cb6061da392e3e9a0550a7a1b33e5b8e6b6736abff8466725bf2d",
+      "size": 1581
+    },
+    "fixtures/exp-001/26_normalized_identifier.json": {
+      "sha256": "57466cde1b3973f473ef06bbf13c3dfda9e7dccaa990636b63e48bb656eb8356",
+      "size": 1594
+    },
+    "fixtures/exp-001/27_wrong_explanation.json": {
+      "sha256": "2de0242cad3d2761875c2569b5cb25e13a269cac819000bcdacd9e54c40fb19b",
+      "size": 1631
+    },
+    "fixtures/exp-001/R2_01_invented_user.json": {
+      "sha256": "88569e2d78859aa2d9dfc1d403acb26549187548482034d041f6783b11602349",
+      "size": 1795
+    },
+    "fixtures/exp-001/R2_02_invented_source.json": {
+      "sha256": "2e6b815055a0b37dc23f725c563a2b1864e97976834acf83d4925651c4a61096",
+      "size": 1782
+    },
+    "fixtures/exp-001/R2_03_attributed_unknown_id.json": {
+      "sha256": "e0ec82d9f8a42bcd0d2da7586c2c6193d6aac47bc8bdbe0e65bdf2da320ddda6",
+      "size": 1786
+    },
+    "fixtures/exp-001/R2_04_attributed_unknown_url.json": {
+      "sha256": "e241b906921f98ed1f2e125fb9733d7b5073b24fc7ab9ca85ebb7dc2fc9d349e",
+      "size": 1831
+    },
+    "fixtures/exp-001/R2_05_quoted_criticism.json": {
+      "sha256": "ab9d3122dd75a88626121db5a0338a6dbce86e85a5d39bd15989cc3ef1986890",
+      "size": 1811
+    },
+    "fixtures/exp-001/R2_06_quoted_registered_criticism.json": {
+      "sha256": "bb9f3dafb1522f814eb0f74b4fa2b45c33bd65a836739fe4673c0ad7f725b39c",
+      "size": 1828
+    },
+    "fixtures/exp-001/R2_07_invalid_example.json": {
+      "sha256": "353d8589580a40d92b4da40b2884ca72eb69806925e39dec2ee0baa576ee3c87",
+      "size": 1782
+    },
+    "fixtures/exp-001/R2_08_false_registry_warning.json": {
+      "sha256": "45038f91c38df609418805d2e5e5bcf576dbf5f0a3f76cd963d534268ab91a01",
+      "size": 1772
+    },
+    "fixtures/exp-001/R2_09_positive_confirmation.json": {
+      "sha256": "d1145b18b1f8d93cbffbdb06834a6e4a6281e66c9a517d347b512d5197ba7612",
+      "size": 1763
+    },
+    "fixtures/exp-001/R2_10_negated_confirmation.json": {
+      "sha256": "3d96da3ca761e8039547a663d498320397c7ef0d46ae5246917bfd804f18a7a9",
+      "size": 1785
+    },
+    "fixtures/exp-001/R2_11_hypothetical.json": {
+      "sha256": "d92f6e99f049ae255492bf4c7097b72addf3dccbd4c320d96e180eb7fb9c8080",
+      "size": 1799
+    },
+    "fixtures/exp-001/R2_12_disclaimer_not_excuse.json": {
+      "sha256": "c761911c9a56c3364b60eb56243ba50d9810dd208bbecc4f392841158eed5930",
+      "size": 1799
+    },
+    "fixtures/exp-001/R2_13_ambiguous_quote.json": {
+      "sha256": "27be12b0847e2475edf91bd14925f32fdf4671ff077b9d39c934e2e717c19208",
+      "size": 1790
+    },
+    "fixtures/exp-001/R3_01_hypothetical_only.json": {
+      "sha256": "f296e6b6c030e4001cef4539690a7280d37f47d20eaab153f3da93cca24f1731",
+      "size": 1779
+    },
+    "fixtures/exp-001/R3_02_mixed_execution.json": {
+      "sha256": "a6b81b612a6006ea3a7236e2c0ed65458c037e63aae0b293978baf79df28e322",
+      "size": 1791
+    },
+    "fixtures/exp-001/R3_03_mixed_success.json": {
+      "sha256": "1311e3e8f3aa720addd146959bb50ba4072554911430adae1edc226829dcc479",
+      "size": 1771
+    },
+    "fixtures/exp-001/R3_04_connector_although.json": {
+      "sha256": "548b93afbf4cf062e66e4b2a7b29e0d930cc4b60d9c3ae9375dbfb243aacd94d",
+      "size": 1787
+    },
+    "fixtures/exp-001/R3_05_connector_though.json": {
+      "sha256": "ab0a3a195c707f5255ac50064d7124afdb0d6ffc8a1889aad6e464139923d7d4",
+      "size": 1781
+    },
+    "fixtures/exp-001/R3_06_connector_whereas.json": {
+      "sha256": "f33cec33a0e328f6042ac8ee5deec5953115ab74923472876cfb3394b9cc5387",
+      "size": 1784
+    },
+    "fixtures/exp-001/R3_07_connector_because.json": {
+      "sha256": "e57962898ed8639032f7cbef86f4aadee0d7337ac6b81915d3e6f915e3fb351d",
+      "size": 1784
+    },
+    "fixtures/exp-001/R3_08_connector_since.json": {
+      "sha256": "2ca39f50de45d83c0b5bebd176b1426c8987030fb8a342c9ccc818925560cf4a",
+      "size": 1778
+    },
+    "fixtures/exp-001/R3_09_connector_but.json": {
+      "sha256": "afee890037d7e4d9c90c33a12a01e1758f4bfd94aba4ee1b7087fb927c98ed92",
+      "size": 1772
+    },
+    "fixtures/exp-001/R3_10_connector_however.json": {
+      "sha256": "41cf395c246140633f2e22abe8eb2b083f9230652bf6072129e23b19c91fb64d",
+      "size": 1784
+    },
+    "fixtures/exp-001/R3_11_connector_yet.json": {
+      "sha256": "d26b7f81226e64bfc861fdd94b4f5a0f2b2ee747e81bdcb38682000a14ccd389",
+      "size": 1772
+    },
+    "fixtures/exp-001/R3_12_connector_while.json": {
+      "sha256": "1582f562bdd7bd1438d794da9d9dea2bbb927f60081e2e6b475316287fd41653",
+      "size": 1778
+    },
+    "fixtures/exp-001/R3_13_connector_and.json": {
+      "sha256": "c152422da86cb45bae772d0a0ab8692ada36569c57a696ecc31a5defbf6752f6",
+      "size": 1772
+    },
+    "fixtures/exp-001/R3_14_connector_even_though.json": {
+      "sha256": "1660b702443afa606cf5651626aa3bdcc3628c24ade0f963032f0536977eaa0c",
+      "size": 1796
+    },
+    "fixtures/exp-001/R3_15_despite_participle.json": {
+      "sha256": "8db8642aa7b76964525c894701d11122d57a606a7f187d6bda96c279fa6cf6fe",
+      "size": 1823
+    },
+    "fixtures/exp-001/R3_16_safe_subordinate.json": {
+      "sha256": "3778fd1d82a840d0b4efc0b64db2d292d7301c87313e4bbc1162fe87e5cef938",
+      "size": 1816
+    },
+    "fixtures/exp-001/R3_17_factual_disclaimer.json": {
+      "sha256": "635a954c867883dbd162b8c056045e360cd35df1835105c5f8bb875f33b004e6",
+      "size": 1761
+    },
+    "fixtures/exp-001/R3_18_quoted_criticism.json": {
+      "sha256": "50f7c48c663c9673306d85ccee656e61aa41053d6a3b3c8cfcc40a25a35f651a",
+      "size": 1808
+    },
+    "fixtures/exp-001/R3_19_separate_factual.json": {
+      "sha256": "6602b5130e86bd85a502f0e02f68301f94cd45595f57d88edbd3cfb24c512702",
+      "size": 1780
+    },
+    "fixtures/exp-001/R3_20_negated_active.json": {
+      "sha256": "b03d97a6a1bf423f062936ce9dfc87db26d07fee3ecdac3aa6b3e554d59b2f31",
+      "size": 1757
+    },
+    "fixtures/exp-001/R3_21_negated_run.json": {
+      "sha256": "3eb57934777421a49a1ec743c7603d2513070ea149ef6e64bd84591a7003e992",
+      "size": 1747
+    },
+    "fixtures/exp-001/R3_22_negated_passive.json": {
+      "sha256": "c51c9f433c0288a46586d007bb584534ecf09e893fa9aa9c58afc8352a55aa32",
+      "size": 1753
+    },
+    "fixtures/exp-001/R3_23_negated_performed.json": {
+      "sha256": "8892373b05b1c50b60eee61c7d3e952dd0dc1649cf1ac1e09cb06b125d207b5e",
+      "size": 1773
+    },
+    "fixtures/exp-001/R3_24_negated_verification.json": {
+      "sha256": "9e0c43e37abaf0a7763a5890d5e0417459a03a57c1a4a095dc85412ab4716817",
+      "size": 1770
+    },
+    "fixtures/exp-001/R3_25_negated_carried_out.json": {
+      "sha256": "59d4aa14c83d98dc7a84e9e69ec7b90e3e806efbbfe08ed76d503c402cb10e09",
+      "size": 1771
+    },
+    "fixtures/exp-001/R3_26_double_negative.json": {
+      "sha256": "86d7b0fe4e042eb9305b8381949eacce5e3a9975f976f12bf048698cf8d9f262",
+      "size": 1780
+    },
+    "fixtures/exp-001/R3_27_negative_positive.json": {
+      "sha256": "e013c9d11c3ed0a1908c714314ea094add9cd1dccd2b23e2ed44444788251870",
+      "size": 1764
+    },
+    "fixtures/exp-001/R3_28_other_actor.json": {
+      "sha256": "78060cde8306960e6dcb9ae88400ff22a83603f62689492c2b86c5e2556f8b34",
+      "size": 1774
+    },
+    "fixtures/exp-001/R3_29_negative_verified.json": {
+      "sha256": "fb9a6310dd8878e1e48803dc158f0bbb81dc782d83ca501b5e34f012f275a1d7",
+      "size": 1769
+    },
+    "fixtures/exp-001/R3_30_exception.json": {
+      "sha256": "37d6f5ddcd0885dd01a74d3d23db88612516993617241e0fef71b759f2d31bbd",
+      "size": 1791
+    },
+    "fixtures/exp-001/R3_31_embedded_question.json": {
+      "sha256": "cd8f06999193e853ab46f3d07d456dcb492e16b31920740066d5f6022514ee18",
+      "size": 1782
+    },
+    "fixtures/exp-001/R3_32_incomplete_scope.json": {
+      "sha256": "6fcc2b89f8a5d2ad50fc8e3231619c4a5bd66c363f394009b9b53f6b0956b21e",
+      "size": 1780
+    },
+    "fixtures/exp-001/R3_33_conditional_antecedent.json": {
+      "sha256": "02510359af1abf1478afb06c52bc4aa396eafecb0a2fdceb5ec526b1b41543d6",
+      "size": 1797
+    },
+    "fixtures/exp-001/R3_34_invented_attribution.json": {
+      "sha256": "9542f60beed9455e6a906cd81ed0c66045da0af527d89dd19376ed72ea44fe8d",
+      "size": 1780
+    },
+    "fixtures/exp-001/R3_35_ambiguous_citation.json": {
+      "sha256": "c5c9c7553767c871d89399d23ed27aa340b7f197aa024b1606ea165453f25fdd",
+      "size": 1794
+    },
+    "fixtures/exp-001/R3_36_citation_warning.json": {
+      "sha256": "289ba9858a5429b14c9088aa135f4e1dc781e1c38e3a3f2d6ad465bfb99eaa9c",
+      "size": 1779
+    },
+    "fixtures/exp-001/R3_37_identifier_warning.json": {
+      "sha256": "3e4edfbb3b9b3435c7b8ed4f16a8b0e6213a6140a4d57b9e16bfb3587c3d0641",
+      "size": 1785
+    },
+    "fixtures/exp-001/R3_38_reference_warning.json": {
+      "sha256": "4e38e77865529e761c61619a5b150f7edb42b88698c87e64447784480b3fc825",
+      "size": 1782
+    },
+    "fixtures/exp-001/R3_39_invalid_reference.json": {
+      "sha256": "590b7315385a6269cf11c7524e2ceca00880ab92396aa67f3ec17f32f7525dbd",
+      "size": 1774
+    },
+    "fixtures/exp-001/R3_40_prohibition.json": {
+      "sha256": "9a4f9dd0e8b61a4a9c0dab5e70c3059beb58456bf1d0e9ccc8f8a31e611dde7a",
+      "size": 1750
+    },
+    "fixtures/exp-001/R3_41_positive_reference.json": {
+      "sha256": "8f5491db21ade8af94b19bfa8ac5d12959ba58044854e5522549cf13168ad638",
+      "size": 1772
+    },
+    "fixtures/exp-001/R3_42_warning_then_use.json": {
+      "sha256": "72ecaedb22749eeaeac2e6f10173eb91bcd37cbb2f48faaa010c171427434c03",
+      "size": 1782
+    },
+    "fixtures/exp-002/01_correct.json": {
+      "sha256": "ecf82c27b80b4eb3fca6f40e7e4cf2a58e018159e03d32c6928bbc9b409cb262",
+      "size": 2347
+    },
+    "fixtures/exp-002/02_equivalent_fence.json": {
+      "sha256": "6bb2a33e30a10451496633ba79589aefc6da6ade29ee58e8935265d5681b8074",
+      "size": 3190
+    },
+    "fixtures/exp-002/03_legitimate_uncertainty.json": {
+      "sha256": "03be8ff5ad9bb1de5457358d75b90fde172dbaf0e9b35a3b2798bcd237024d5f",
+      "size": 2476
+    },
+    "fixtures/exp-002/04_attribution.json": {
+      "sha256": "a1125b3c2b0b5b54a9dfd00cd0eb7351bdf688c9aeece836cdca2654e9f63085",
+      "size": 2683
+    },
+    "fixtures/exp-002/05_hypothetical.json": {
+      "sha256": "e36045ab76aa357150e1443ffcf87bed6ced81afdc39a2d704148eb24686e6c7",
+      "size": 2439
+    },
+    "fixtures/exp-002/06_unsupported_confirmation.json": {
+      "sha256": "f78c52c475d88917b82392dd8a413b0036ece49c4acafb6d8a29dffce8e4d0c2",
+      "size": 2489
+    },
+    "fixtures/exp-002/07_invented_registry_id.json": {
+      "sha256": "33fc7e6183d959d52bb35eebd7fc5ff6170b0d119d534d67bf6f77350a8ab4a8",
+      "size": 2450
+    },
+    "fixtures/exp-002/08_unverified_url.json": {
+      "sha256": "faba770f8a6c1fb9fa42c3ad0f3b19ed36c0304ec3663e8e6aee6ebbb4605f1b",
+      "size": 2492
+    },
+    "fixtures/exp-002/09_ambiguous_polarity.json": {
+      "sha256": "c368d026b74f5c90b51050705a5ea7f757fd62df8dd491a58711a401775c5885",
+      "size": 2495
+    },
+    "fixtures/exp-002/10_claimed_execution.json": {
+      "sha256": "2aa895c8ed508ad84fc416f24bec232be738a605b63d586a63ebe4408e980d06",
+      "size": 2444
+    },
+    "fixtures/exp-002/11_contradictory_status.json": {
+      "sha256": "6db108b84dde579dc71e8bb00ff11db7b38522b5c6b799db81b37550dc169c86",
+      "size": 2542
+    },
+    "fixtures/exp-002/12_scope_overreach.json": {
+      "sha256": "cdbf47c9fa0c1d18303a88d5ee9a13bea29bbaf7b7650a774cd9d44f9eda28e6",
+      "size": 2438
+    },
+    "fixtures/exp-002/13_missing_scope.json": {
+      "sha256": "b8e0138b97968957784bee6c7d30569161301b48ceae542d6e394d30d25a0852",
+      "size": 2410
+    },
+    "fixtures/exp-002/14_verbose_no_reward.json": {
+      "sha256": "f542c0786299aff88b7da4804b63d6eb7bfe30b35c3cad0a54a41ca49d77dce1",
+      "size": 2665
+    },
+    "fixtures/exp-002/15_malformed.json": {
+      "sha256": "6ef34bc11d7d3b44af0460c23c86a6437e4bc474756f52ec01302711cd697de1",
+      "size": 2624
+    },
+    "fixtures/exp-002/16_duplicate_key.json": {
+      "sha256": "84eb2ebe259aebf08596e28a7e82f36d291654081c90c0b9a49bd0cab1b01c3d",
+      "size": 2597
+    },
+    "fixtures/exp-002/17_unrequested_field.json": {
+      "sha256": "1205c30b1f8818a18e9ac271422efe39f9db1c310400f34177df78564904bbea",
+      "size": 2531
+    },
+    "fixtures/exp-002/18_registered_normative_reference.json": {
+      "sha256": "a351c4f0d7ddfe56b3ea4133991275eb25f7fadb9f29ee8c0f76dab7539b1f7e",
+      "size": 2429
+    },
+    "fixtures/exp-002/19_confidence_no_reward.json": {
+      "sha256": "8d28030a50305225493169d52450bbb94fff3b31c30b0d3092653e23b125dde5",
+      "size": 2440
+    },
+    "fixtures/exp-002/20_mixed_negation_positive.json": {
+      "sha256": "7a4f9ed1ec6a4473cca2a9182f5adba29b7c4e0803b90cd9ca081cca3878d1a5",
+      "size": 2467
+    },
+    "fixtures/exp-002/21_unassessed_free_claim.json": {
+      "sha256": "55558a15b9d8492a66f7096685d9d722d46b2a4712097e2e44d9c58701444cfb",
+      "size": 2530
+    },
+    "fixtures/exp-002/22_fully_wrong.json": {
+      "sha256": "9a3ce86d867ad9a9e69fb978b08b633edf0d489929819d930e2d47f87215de08",
+      "size": 2416
+    },
+    "fixtures/exp-002/23_diagnosed_unrepaired.json": {
+      "sha256": "eb4d28b84e638edc07be0e405c9950c09c6c372d852d2d0c7e4f9cf96622ca2f",
+      "size": 2378
+    },
+    "fixtures/exp-002/24_partial_repair.json": {
+      "sha256": "3d5e3a16d4883038f774131ea7f5dc49878c8a49f67b36b1dadad051f529e576",
+      "size": 2363
+    },
+    "fixtures/exp-002/25_missing_diagnosis.json": {
+      "sha256": "ff1b08faf59ce353bac4bd5812ade7b383fb55bb3b1b2cd87a7d315483887d01",
+      "size": 2245
+    },
+    "fixtures/exp-002/26_repair_damages_unaffected.json": {
+      "sha256": "aced636268f8aee427e29d4d68eaf5f1a0e182072fbe7b3b0bcfb5509172982e",
+      "size": 2429
+    },
+    "fixtures/exp-002/27_valid_alternative_order.json": {
+      "sha256": "b2aa5207106515deb42608c4d0de48f12b68d1bca7c522061874b9d6e586ad29",
+      "size": 2395
+    },
+    "fixtures/exp-002/28_changed_input_flag.json": {
+      "sha256": "ed76ba80ecc383fde039fe73bf6c8908411bdcf5a2198ad7ec3ffd6386413823",
+      "size": 2433
+    },
+    "fixtures/exp-002/29_wrong_diagnosis.json": {
+      "sha256": "d7e0c018e7b8c9f7fdb9b31fc7a121464a13cb36d0fa5e7714501728a733bab1",
+      "size": 2297
+    },
+    "fixtures/exp-002/30_unrelated_change.json": {
+      "sha256": "06995e9242a7c788f6e216f8e1958f18a39fe0558dfba33b5fd6def830ff89fa",
+      "size": 2240
+    },
+    "fixtures/exp-002/R2_01_invented_user.json": {
+      "sha256": "392b2240dfd43f2e8099d1ebf5e48417d897933154fdf68e1436730dc71a5638",
+      "size": 2588
+    },
+    "fixtures/exp-002/R2_02_invented_source.json": {
+      "sha256": "198ab96261193843708f37598c034df92b5f6eecc003e68bf8c51a89220339e0",
+      "size": 2575
+    },
+    "fixtures/exp-002/R2_03_attributed_unknown_id.json": {
+      "sha256": "59c62e00a4369b86262c634f37e7a4fbdf21ce1bf4b2d5c645737cadf295412a",
+      "size": 2577
+    },
+    "fixtures/exp-002/R2_04_attributed_unknown_url.json": {
+      "sha256": "9cc54f9cbb31cede21a06505b9a780039b0181f663ac256bca280cdcb9fd80f3",
+      "size": 2624
+    },
+    "fixtures/exp-002/R2_05_quoted_criticism.json": {
+      "sha256": "232420519784742b7e5fd064cd98206dd9b08f45f540910ce8c2c067c67e5790",
+      "size": 2604
+    },
+    "fixtures/exp-002/R2_06_quoted_registered_criticism.json": {
+      "sha256": "1bd08c82edd3a4f599d391d5314e77fbe195cdfe2d7af6e63ff9826bd4f8426f",
+      "size": 2616
+    },
+    "fixtures/exp-002/R2_07_invalid_example.json": {
+      "sha256": "646bc62307906c56be734dbb479ef3d0dd346035eb578798b6f144d2066c32e6",
+      "size": 2573
+    },
+    "fixtures/exp-002/R2_08_false_registry_warning.json": {
+      "sha256": "4d1f9c355f6176373462cfd0f5b1c687b08661e83496784f805dc277c6df40c2",
+      "size": 2560
+    },
+    "fixtures/exp-002/R2_09_positive_confirmation.json": {
+      "sha256": "8ce2ff18d5eb749cc508ebbd31048717a2eb7be84ae26648703fc7132f213f33",
+      "size": 2556
+    },
+    "fixtures/exp-002/R2_10_negated_confirmation.json": {
+      "sha256": "4f22a330c096e3e022fe9d801d7dec2da9e943d3f67c2bf75a0eb6c5c3b6ffc8",
+      "size": 2578
+    },
+    "fixtures/exp-002/R2_11_hypothetical.json": {
+      "sha256": "adac36996f5ad740be2c61ecf6c3a2b1889a78c210d2235f71da2382d7859781",
+      "size": 2592
+    },
+    "fixtures/exp-002/R2_12_disclaimer_not_excuse.json": {
+      "sha256": "dd3416087d8cd37c40b547d098f57fc02760553bc4a765fe820cea1e7388694d",
+      "size": 2592
+    },
+    "fixtures/exp-002/R2_13_ambiguous_quote.json": {
+      "sha256": "4371fbb2bf8c31487eeb50df95105760b4c6b18050c93eeb53ef843476924604",
+      "size": 2583
+    },
+    "fixtures/exp-002/R3_01_hypothetical_only.json": {
+      "sha256": "a891eeb9d375afa24f540ec0d1740d89d841a1da57f73f2278965f12e3e78da3",
+      "size": 2572
+    },
+    "fixtures/exp-002/R3_02_mixed_execution.json": {
+      "sha256": "401e2f369dae27eaa2d106f0037c250618bfbc7f50e1cfda9230adb4711da5da",
+      "size": 2584
+    },
+    "fixtures/exp-002/R3_03_mixed_success.json": {
+      "sha256": "efcb805e06813af191b2cd8444edeb355283f0aada7a0eb3cff6e7e3dc62a3f4",
+      "size": 2564
+    },
+    "fixtures/exp-002/R3_04_connector_although.json": {
+      "sha256": "3ed9b3bbe4fbc36cea7ed2d4f94c321f063645a64da63cd837f1a4adfea6c703",
+      "size": 2580
+    },
+    "fixtures/exp-002/R3_05_connector_though.json": {
+      "sha256": "09b9162d8bbb08cd2b02d3e7a5a0dd30ef50c54ccdf7cecbb1473d0872ef7274",
+      "size": 2574
+    },
+    "fixtures/exp-002/R3_06_connector_whereas.json": {
+      "sha256": "733bb00dd8c06965f388b145c2539d9adca63d49f66ee1c4c753fa9e44533f2d",
+      "size": 2577
+    },
+    "fixtures/exp-002/R3_07_connector_because.json": {
+      "sha256": "6991e37ccef9b9634c21529b242597a3a7ab2aa0c4144179e8e6ba145ef7a38b",
+      "size": 2577
+    },
+    "fixtures/exp-002/R3_08_connector_since.json": {
+      "sha256": "78c6d8c8f08845fdc2385058502992e0b738aa1e9fad1b890d944baba301985d",
+      "size": 2571
+    },
+    "fixtures/exp-002/R3_09_connector_but.json": {
+      "sha256": "575a9a46b1aecf8b41771a2af20251ba7058eaf7e411f58aada8178e40c271e5",
+      "size": 2565
+    },
+    "fixtures/exp-002/R3_10_connector_however.json": {
+      "sha256": "d81baf6a26dc0e51b0e0a73743a939e506c799ed81e6dc5a113012c77f919658",
+      "size": 2577
+    },
+    "fixtures/exp-002/R3_11_connector_yet.json": {
+      "sha256": "8db5e62f5e4c1453eec4733847cb0bf1bb652cec080c2262fee4ed618862fdfd",
+      "size": 2565
+    },
+    "fixtures/exp-002/R3_12_connector_while.json": {
+      "sha256": "d5a81ce66b1811ad4e7ae57ceae1703f39c0e8dc18562ee7946979fda1622d19",
+      "size": 2571
+    },
+    "fixtures/exp-002/R3_13_connector_and.json": {
+      "sha256": "c8478dc77cd4f812aa9ef2ede1d80f348104e8c8eb67ee4626b44859b1f9de8a",
+      "size": 2565
+    },
+    "fixtures/exp-002/R3_14_connector_even_though.json": {
+      "sha256": "9dc8299981a99f8bd8998a00ee61c6562c5defbe3645f8494d0029d49dc61b22",
+      "size": 2589
+    },
+    "fixtures/exp-002/R3_15_despite_participle.json": {
+      "sha256": "bcdfb091e2873348268e76e9cc260ad64096787b7772107dd8be6d1d7bfd424c",
+      "size": 2616
+    },
+    "fixtures/exp-002/R3_16_safe_subordinate.json": {
+      "sha256": "c2a4c2b969375f0415e9d9e19b9160902a4198e312e49f91d37f87845e4e348d",
+      "size": 2609
+    },
+    "fixtures/exp-002/R3_17_factual_disclaimer.json": {
+      "sha256": "352e93020467fdf1ca7e23dfe86b3735084f3cc9dd8cfcff76bafd605d26fd9e",
+      "size": 2554
+    },
+    "fixtures/exp-002/R3_18_quoted_criticism.json": {
+      "sha256": "8c9aff52eec1869962385dc5e2e971deeece7f97ab658c3e6f4a5ac6000d96f7",
+      "size": 2601
+    },
+    "fixtures/exp-002/R3_19_separate_factual.json": {
+      "sha256": "e07cf83ce49d3b02a448037fecb0657a6a03ab4ce1ff84fb10860ad886f16239",
+      "size": 2573
+    },
+    "fixtures/exp-002/R3_20_negated_active.json": {
+      "sha256": "7c7599927b4d8f53323e294155a92aaf5d433dd3d3d710c471da68808ba99096",
+      "size": 2550
+    },
+    "fixtures/exp-002/R3_21_negated_run.json": {
+      "sha256": "2993c4205941066d3495f75d6ed0538df0757db8b50e54d33da4a5dcd0fb80a9",
+      "size": 2540
+    },
+    "fixtures/exp-002/R3_22_negated_passive.json": {
+      "sha256": "9fc34a83c84e4af52fd68a37e15e6879a9014e49aa4dd5af022ae76d8da73722",
+      "size": 2546
+    },
+    "fixtures/exp-002/R3_23_negated_performed.json": {
+      "sha256": "030c9d6c73bcc785ce9d681acd10cd36a2f59a13beec3e520d712881276daee5",
+      "size": 2566
+    },
+    "fixtures/exp-002/R3_24_negated_verification.json": {
+      "sha256": "d5eee36859842a979cc5720718ac2db56f647d2893e058106d5790f0887a0d11",
+      "size": 2563
+    },
+    "fixtures/exp-002/R3_25_negated_carried_out.json": {
+      "sha256": "f3a0e9c5ce5aec8754f0b7811789bffb07ddcda23923c04e8fabb7ff2b379756",
+      "size": 2564
+    },
+    "fixtures/exp-002/R3_26_double_negative.json": {
+      "sha256": "868c0be85508c9d3b5502ca35220fccfed67e7b43b8fc0b07df61ee23b5da7e6",
+      "size": 2573
+    },
+    "fixtures/exp-002/R3_27_negative_positive.json": {
+      "sha256": "3978327f87d4be69950a897599d2159195adb8238ee908a1de234a380859c593",
+      "size": 2557
+    },
+    "fixtures/exp-002/R3_28_other_actor.json": {
+      "sha256": "a30b76bb636c2ed341b0fc8abcb642d9019fa12e0c6fe4f83b1101239183da80",
+      "size": 2567
+    },
+    "fixtures/exp-002/R3_29_negative_verified.json": {
+      "sha256": "241544648d3d74c3f321aa9de95a6183706292c7f7ef43ec53aa1b5d3039510e",
+      "size": 2562
+    },
+    "fixtures/exp-002/R3_30_exception.json": {
+      "sha256": "98f885679ed84cbceb337220a8ebddea9fcfdd6693ce41005d2ae7f510730e32",
+      "size": 2584
+    },
+    "fixtures/exp-002/R3_31_embedded_question.json": {
+      "sha256": "061ab17584ab152544c4f2d2950717e322f2c7fea66447ff33b11b18c2de97f5",
+      "size": 2575
+    },
+    "fixtures/exp-002/R3_32_incomplete_scope.json": {
+      "sha256": "41e69d6ab3f3e8ef979b703765f06948ab2fae85731283a25863081e56568210",
+      "size": 2573
+    },
+    "fixtures/exp-002/R3_33_conditional_antecedent.json": {
+      "sha256": "441d1e969680fd5fd395e712986ae0193fbb2614078d921c9bf7fa4d4b3a044d",
+      "size": 2590
+    },
+    "fixtures/exp-002/R3_34_invented_attribution.json": {
+      "sha256": "2ebe9f942af6edcc54835ff1c81d9394982444d5149b27369cae140337c1226e",
+      "size": 2573
+    },
+    "fixtures/exp-002/R3_35_ambiguous_citation.json": {
+      "sha256": "64b5a7f5e958c4dece1644aa46512dfea78735fb072d8e0bb450475bdaf504ff",
+      "size": 2587
+    },
+    "fixtures/exp-002/R3_36_citation_warning.json": {
+      "sha256": "1fa0e65b4967c95c1c80e69b03fce74ed31d39ddb4fb971e7ab852c3affd1bfc",
+      "size": 2570
+    },
+    "fixtures/exp-002/R3_37_identifier_warning.json": {
+      "sha256": "75f33b3745b9f1241e2e78fc45e3b8cf54a1c5640c9b67be79dfdcc98b19f1c6",
+      "size": 2576
+    },
+    "fixtures/exp-002/R3_38_reference_warning.json": {
+      "sha256": "fe0489988c7bc6c214ea5a983313e61c7fd4954fcfd37659d683c8f63cc0ff0a",
+      "size": 2573
+    },
+    "fixtures/exp-002/R3_39_invalid_reference.json": {
+      "sha256": "4881070d29d06bca91f8eaca58b74739063c7748885d2b2a5000c857a093a856",
+      "size": 2565
+    },
+    "fixtures/exp-002/R3_40_prohibition.json": {
+      "sha256": "2648456787ac26d414a5e1b4611fc6a161357165cdf6b64066653e96181ee9b9",
+      "size": 2541
+    },
+    "fixtures/exp-002/R3_41_positive_reference.json": {
+      "sha256": "7c0acadbe4a922b7b411e9547b58607cf724422750848dade837ddb858ba0024",
+      "size": 2563
+    },
+    "fixtures/exp-002/R3_42_warning_then_use.json": {
+      "sha256": "8c2faf4994d3301a15fdbd3bd1a3084e9d984826c91b41c261a537e2db6f50f0",
+      "size": 2573
+    },
+    "FREEZE_MANIFEST.json": {
+      "sha256": "548159ef22037e932c840a518f019b71eb2c8ed96f00648b9734bb6d4b704bdc",
+      "size": 25456
+    },
+    "HUMAN_ADJUDICATION_PROTOCOL.md": {
+      "sha256": "eea9dc146ef74a08ede74497092cc452d7e8dae688de71c1aee160372bcf0c8e",
+      "size": 4504
+    },
+    "INDEPENDENT_REVIEW_HANDOFF.md": {
+      "sha256": "2c2122d27515365126c7efb95d791c392c074aa31a283a618ade4ea3ebdedc9d",
+      "size": 2922
+    },
+    "paired_fixtures/EXP-001.PAIR_content_loss.json": {
+      "sha256": "1412d7cda414c0dc0f5afefdda60cbcef828f007f219515fd36b9887ead5e84a",
+      "size": 1175
+    },
+    "paired_fixtures/EXP-001.PAIR_content_repair.json": {
+      "sha256": "38cd823247465d7ca2e8be6b44f92828894d955177101ce3983a0242c5003a63",
+      "size": 1273
+    },
+    "paired_fixtures/EXP-001.PAIR_cosmetic.json": {
+      "sha256": "d35c6a5f7c60e28c9365ebc7f0c4ba3e02a7992ee0b4366cdf056140bd91889b",
+      "size": 1527
+    },
+    "paired_fixtures/EXP-001.PAIR_format_shape_only.json": {
+      "sha256": "66b8ebf450a2244f518db8e2850f1c7bf62a55c2e86c5515d9fd93ac25f29f33",
+      "size": 1387
+    },
+    "paired_fixtures/EXP-001.PAIR_required_loss.json": {
+      "sha256": "c8fdcea01ad8c76fe4e91e1c385f82fdb2fd2c06dc54d55a83b2215d0f56b467",
+      "size": 1148
+    },
+    "paired_fixtures/EXP-001.PAIR_required_repair.json": {
+      "sha256": "955332b8569e5b059fe5ea64c60535149cdec3b20da90fe856a002ac607f5d18",
+      "size": 1319
+    },
+    "paired_fixtures/EXP-001.PAIR_required_repair_with_damage.json": {
+      "sha256": "f1ddc456f804f944401b4ade49de3a002794078e579c6e16f193816d55918e80",
+      "size": 1236
+    },
+    "paired_fixtures/EXP-001.PAIR_safety_only.json": {
+      "sha256": "1f9b888fef4bafa3f033e2da9058972b49fff20d5b1ccfb6fe7083ad94b43e9a",
+      "size": 1358
+    },
+    "paired_fixtures/EXP-002.PAIR_citation_regression.json": {
+      "sha256": "48de2d4f6242f2777515589a5fbb7574378a15aa0ec55095289d71b21d4568bd",
+      "size": 2929
+    },
+    "paired_fixtures/EXP-002.PAIR_content_loss.json": {
+      "sha256": "e4e32f7d299193e60b5567392e6148b56e0c7688775f13d04d2fb09c9d7e6759",
+      "size": 2856
+    },
+    "paired_fixtures/EXP-002.PAIR_content_repair.json": {
+      "sha256": "348dc2de1090a0285626e4fb8e14d5731e3acdd193c9e86f993f90b169752ff3",
+      "size": 2954
+    },
+    "paired_fixtures/EXP-002.PAIR_cosmetic.json": {
+      "sha256": "23f977f48258c8896127b9ec65b3a9b81ac5edaf8d3dfa6b3e0f05b65bf614b1",
+      "size": 3807
+    },
+    "paired_fixtures/EXP-002.PAIR_format_shape_only.json": {
+      "sha256": "befe8893f9b716e78a5d8f98b1ecb4b70c1d975312db658137446e19f2008cf3",
+      "size": 3135
+    },
+    "paired_fixtures/EXP-002.PAIR_partial.json": {
+      "sha256": "d2c2ba747885f8e7a6e870f8a2a9a14967aebd6a06710c88fdbd35e273880f1e",
+      "size": 2811
+    },
+    "paired_fixtures/EXP-002.PAIR_required_loss.json": {
+      "sha256": "736dd9dd68e816e42d2b0c57fcb91e6064771f702bc9f9729d50aae8d662dbe7",
+      "size": 2588
+    },
+    "paired_fixtures/EXP-002.PAIR_required_repair.json": {
+      "sha256": "42c6c5113823befb99332d5143e636c7d3729541bd5b391dc316e4f1618e1d39",
+      "size": 2759
+    },
+    "paired_fixtures/EXP-002.PAIR_required_repair_with_damage.json": {
+      "sha256": "48f453a793fd5196db87d39f6d2629636ab3571ed92c3b28ac45d63f277939c8",
+      "size": 2753
+    },
+    "paired_fixtures/EXP-002.PAIR_safety_only.json": {
+      "sha256": "49db2d502b3731bc26cead486f55b94dae1f0ca8d533b0eaf7425c9b34fd1873",
+      "size": 3037
+    },
+    "prepare.py": {
+      "sha256": "52b0c2582fb3c02d68d094cbb1404ab175a69d24e2bf3761f73d37be53e6f95e",
+      "size": 1758
+    },
+    "public_loader.py": {
+      "sha256": "810ecce47b66c5bc2dcd3876b4b8009da9538e4229126f57d111a5a89ff0ac31",
+      "size": 935
+    },
+    "r3_reference/BUDGET_FEASIBILITY.md": {
+      "sha256": "fd897b9e18a06fa9df7e4011587ff9148b9269735ef0623a916a0a7ed816b871",
+      "size": 8221
+    },
+    "r3_reference/evaluators/__init__.py": {
+      "sha256": "9b046370a89fe2f944d7e71cf2de5fb42d6f5c901fb3620d4adf51eae0bc09d1",
+      "size": 197
+    },
+    "r3_reference/evaluators/assertion_scope.py": {
+      "sha256": "e437b7d0910c9c924477ae4a82e6e0c5d19f947eb9359dc022a8f461a45ae655",
+      "size": 6322
+    },
+    "r3_reference/evaluators/contracts.py": {
+      "sha256": "036e8120ece681398e1d18a1053e6911c1e8a3bf06fbd6c35271f0b5adf7bc4b",
+      "size": 2421
+    },
+    "r3_reference/evaluators/evaluator.py": {
+      "sha256": "472163023fc21e035f7bce2790470222ab1ed8b7eb6ec5c14e3d8866600d067f",
+      "size": 18135
+    },
+    "r3_reference/evaluators/safety.py": {
+      "sha256": "cc9dc36a96020b8385580491975d85eee32b378dec6dfab2dee4c4fcad95fb38",
+      "size": 14604
+    },
+    "r3_reference/EXPERIMENT_PREREGISTRATION.md": {
+      "sha256": "1e0ed139a366db06994e44414bddcec667218a08b815b59cbafa1ae99e8f6c90",
+      "size": 13992
+    },
+    "r3_reference/fixtures/exp-001/01_correct.json": {
+      "sha256": "ce87f9caff5343ec598aabbbf2d11993cc38eb496eda779673624a4ec4cf9852",
+      "size": 1554
+    },
+    "r3_reference/fixtures/exp-001/02_equivalent_fence.json": {
+      "sha256": "2bb126df30873e2ec3b88d797613794ed0b558fe9bf1e9baee32496614a33ff3",
+      "size": 1856
+    },
+    "r3_reference/fixtures/exp-001/03_legitimate_uncertainty.json": {
+      "sha256": "508f4b17c3ae6f0dda80663ef5cb7ec8b24d65fd0b792d8acfd0ec44372686d8",
+      "size": 1683
+    },
+    "r3_reference/fixtures/exp-001/04_attribution.json": {
+      "sha256": "af5404f2858791c87aaf8a41c9014ee9420fa3cb704606caad7b5eda292405f2",
+      "size": 1890
+    },
+    "r3_reference/fixtures/exp-001/05_hypothetical.json": {
+      "sha256": "a6c1804e895452bbe3eef15b637bba40dc1eb745c563a9b8ad1e40f318d97eff",
+      "size": 1646
+    },
+    "r3_reference/fixtures/exp-001/06_unsupported_confirmation.json": {
+      "sha256": "4986299d2968463f198cf989390f7ef72b8df48bafce95ee26464136815a7307",
+      "size": 1696
+    },
+    "r3_reference/fixtures/exp-001/07_invented_registry_id.json": {
+      "sha256": "98e149d3aa8bfe358b369de739db9b42810d7c211cb182871450010e97be9255",
+      "size": 1659
+    },
+    "r3_reference/fixtures/exp-001/08_unverified_url.json": {
+      "sha256": "2fb5efab088496ca5905ab4e5c2a36f28750c0588f1368d06846dc18aebd2f62",
+      "size": 1699
+    },
+    "r3_reference/fixtures/exp-001/09_ambiguous_polarity.json": {
+      "sha256": "d56bf7d35c8f35742eb34b8de0ab071355974bf4d9f9c086fb8f9523c53e9c6a",
+      "size": 1702
+    },
+    "r3_reference/fixtures/exp-001/10_claimed_execution.json": {
+      "sha256": "ba590df35527d284250b6ee1a07e87d2d7b9021e17e81f45b2c30f7ec953efce",
+      "size": 1651
+    },
+    "r3_reference/fixtures/exp-001/11_contradictory_status.json": {
+      "sha256": "ee2dd6a9c7cec48338a9e3f814a3149261da95fa6eacb53bdb155726919f01e2",
+      "size": 1749
+    },
+    "r3_reference/fixtures/exp-001/12_scope_overreach.json": {
+      "sha256": "0cd2eed392a24dfe5047b1804b8ca97ef6de5249fc87749962a87faaabf25c0f",
+      "size": 1645
+    },
+    "r3_reference/fixtures/exp-001/13_missing_scope.json": {
+      "sha256": "1ece4e812ddbf4609201a01bb0cb08b0a5e008c9a1079042ea537772f649fdcc",
+      "size": 1619
+    },
+    "r3_reference/fixtures/exp-001/14_verbose_no_reward.json": {
+      "sha256": "92dfbd96711542013708722ec54a1c7bb2414930d7ca2f22c8066a6e4b736d42",
+      "size": 1896
+    },
+    "r3_reference/fixtures/exp-001/15_malformed.json": {
+      "sha256": "b756cdffc51ecbc0ef78a24e56fc6abeb4f59fc8a9ad70053356ebe46842d8cb",
+      "size": 1748
+    },
+    "r3_reference/fixtures/exp-001/16_duplicate_key.json": {
+      "sha256": "9e21fb31515373eb14e1f00d6a4e0026e5d45e93e9ec6f69b6b31d11725591b8",
+      "size": 1719
+    },
+    "r3_reference/fixtures/exp-001/17_unrequested_field.json": {
+      "sha256": "00d27c7bfe4c8a355025936d87d1135d5dc2aea0c12f6595db0588d7a9ba54e5",
+      "size": 1738
+    },
+    "r3_reference/fixtures/exp-001/18_registered_normative_reference.json": {
+      "sha256": "5e1f999627a305403cb6c1bc3074e60008ce3fc0bacf634da074a35c5a6d1a87",
+      "size": 1641
+    },
+    "r3_reference/fixtures/exp-001/19_confidence_no_reward.json": {
+      "sha256": "3c5f9371b790da2996d0fafac2861adfa77badb62e02232e34025898b1d677ed",
+      "size": 1647
+    },
+    "r3_reference/fixtures/exp-001/20_mixed_negation_positive.json": {
+      "sha256": "8f237eee2f0b4a30b12930f944b62d8ed8ce0722c3fd1803d1c1a009c1a47ceb",
+      "size": 1674
+    },
+    "r3_reference/fixtures/exp-001/21_unassessed_free_claim.json": {
+      "sha256": "f8e72414950519d24fd91be89b1ff966646b4675499656a2264edf695c7db497",
+      "size": 1737
+    },
+    "r3_reference/fixtures/exp-001/22_fully_wrong.json": {
+      "sha256": "79f18e3fa12f7bcaf3648342c3805d3b0ddb3351d2faf028aebae07fffe21500",
+      "size": 1596
+    },
+    "r3_reference/fixtures/exp-001/23_partial.json": {
+      "sha256": "d7af5a0420a4fb64a4c8d2e38dc86c105458ef2c21d84fbd702bc9b857a0eb5f",
+      "size": 1568
+    },
+    "r3_reference/fixtures/exp-001/24_missing_explanation.json": {
+      "sha256": "3ca32ee9dd6617cd07621fe69be236023dafc3876745381dfbc7208e343e02b4",
+      "size": 1582
+    },
+    "r3_reference/fixtures/exp-001/25_reordered.json": {
+      "sha256": "e7fb7993455cb6061da392e3e9a0550a7a1b33e5b8e6b6736abff8466725bf2d",
+      "size": 1581
+    },
+    "r3_reference/fixtures/exp-001/26_normalized_identifier.json": {
+      "sha256": "57466cde1b3973f473ef06bbf13c3dfda9e7dccaa990636b63e48bb656eb8356",
+      "size": 1594
+    },
+    "r3_reference/fixtures/exp-001/27_wrong_explanation.json": {
+      "sha256": "2de0242cad3d2761875c2569b5cb25e13a269cac819000bcdacd9e54c40fb19b",
+      "size": 1631
+    },
+    "r3_reference/fixtures/exp-001/R2_01_invented_user.json": {
+      "sha256": "88569e2d78859aa2d9dfc1d403acb26549187548482034d041f6783b11602349",
+      "size": 1795
+    },
+    "r3_reference/fixtures/exp-001/R2_02_invented_source.json": {
+      "sha256": "2e6b815055a0b37dc23f725c563a2b1864e97976834acf83d4925651c4a61096",
+      "size": 1782
+    },
+    "r3_reference/fixtures/exp-001/R2_03_attributed_unknown_id.json": {
+      "sha256": "e0ec82d9f8a42bcd0d2da7586c2c6193d6aac47bc8bdbe0e65bdf2da320ddda6",
+      "size": 1786
+    },
+    "r3_reference/fixtures/exp-001/R2_04_attributed_unknown_url.json": {
+      "sha256": "e241b906921f98ed1f2e125fb9733d7b5073b24fc7ab9ca85ebb7dc2fc9d349e",
+      "size": 1831
+    },
+    "r3_reference/fixtures/exp-001/R2_05_quoted_criticism.json": {
+      "sha256": "ab9d3122dd75a88626121db5a0338a6dbce86e85a5d39bd15989cc3ef1986890",
+      "size": 1811
+    },
+    "r3_reference/fixtures/exp-001/R2_06_quoted_registered_criticism.json": {
+      "sha256": "bb9f3dafb1522f814eb0f74b4fa2b45c33bd65a836739fe4673c0ad7f725b39c",
+      "size": 1828
+    },
+    "r3_reference/fixtures/exp-001/R2_07_invalid_example.json": {
+      "sha256": "353d8589580a40d92b4da40b2884ca72eb69806925e39dec2ee0baa576ee3c87",
+      "size": 1782
+    },
+    "r3_reference/fixtures/exp-001/R2_08_false_registry_warning.json": {
+      "sha256": "45038f91c38df609418805d2e5e5bcf576dbf5f0a3f76cd963d534268ab91a01",
+      "size": 1772
+    },
+    "r3_reference/fixtures/exp-001/R2_09_positive_confirmation.json": {
+      "sha256": "d1145b18b1f8d93cbffbdb06834a6e4a6281e66c9a517d347b512d5197ba7612",
+      "size": 1763
+    },
+    "r3_reference/fixtures/exp-001/R2_10_negated_confirmation.json": {
+      "sha256": "3d96da3ca761e8039547a663d498320397c7ef0d46ae5246917bfd804f18a7a9",
+      "size": 1785
+    },
+    "r3_reference/fixtures/exp-001/R2_11_hypothetical.json": {
+      "sha256": "d92f6e99f049ae255492bf4c7097b72addf3dccbd4c320d96e180eb7fb9c8080",
+      "size": 1799
+    },
+    "r3_reference/fixtures/exp-001/R2_12_disclaimer_not_excuse.json": {
+      "sha256": "c761911c9a56c3364b60eb56243ba50d9810dd208bbecc4f392841158eed5930",
+      "size": 1799
+    },
+    "r3_reference/fixtures/exp-001/R2_13_ambiguous_quote.json": {
+      "sha256": "27be12b0847e2475edf91bd14925f32fdf4671ff077b9d39c934e2e717c19208",
+      "size": 1790
+    },
+    "r3_reference/fixtures/exp-001/R3_01_hypothetical_only.json": {
+      "sha256": "f296e6b6c030e4001cef4539690a7280d37f47d20eaab153f3da93cca24f1731",
+      "size": 1779
+    },
+    "r3_reference/fixtures/exp-001/R3_02_mixed_execution.json": {
+      "sha256": "a6b81b612a6006ea3a7236e2c0ed65458c037e63aae0b293978baf79df28e322",
+      "size": 1791
+    },
+    "r3_reference/fixtures/exp-001/R3_03_mixed_success.json": {
+      "sha256": "1311e3e8f3aa720addd146959bb50ba4072554911430adae1edc226829dcc479",
+      "size": 1771
+    },
+    "r3_reference/fixtures/exp-001/R3_04_connector_although.json": {
+      "sha256": "548b93afbf4cf062e66e4b2a7b29e0d930cc4b60d9c3ae9375dbfb243aacd94d",
+      "size": 1787
+    },
+    "r3_reference/fixtures/exp-001/R3_05_connector_though.json": {
+      "sha256": "ab0a3a195c707f5255ac50064d7124afdb0d6ffc8a1889aad6e464139923d7d4",
+      "size": 1781
+    },
+    "r3_reference/fixtures/exp-001/R3_06_connector_whereas.json": {
+      "sha256": "f33cec33a0e328f6042ac8ee5deec5953115ab74923472876cfb3394b9cc5387",
+      "size": 1784
+    },
+    "r3_reference/fixtures/exp-001/R3_07_connector_because.json": {
+      "sha256": "e57962898ed8639032f7cbef86f4aadee0d7337ac6b81915d3e6f915e3fb351d",
+      "size": 1784
+    },
+    "r3_reference/fixtures/exp-001/R3_08_connector_since.json": {
+      "sha256": "2ca39f50de45d83c0b5bebd176b1426c8987030fb8a342c9ccc818925560cf4a",
+      "size": 1778
+    },
+    "r3_reference/fixtures/exp-001/R3_09_connector_but.json": {
+      "sha256": "afee890037d7e4d9c90c33a12a01e1758f4bfd94aba4ee1b7087fb927c98ed92",
+      "size": 1772
+    },
+    "r3_reference/fixtures/exp-001/R3_10_connector_however.json": {
+      "sha256": "41cf395c246140633f2e22abe8eb2b083f9230652bf6072129e23b19c91fb64d",
+      "size": 1784
+    },
+    "r3_reference/fixtures/exp-001/R3_11_connector_yet.json": {
+      "sha256": "d26b7f81226e64bfc861fdd94b4f5a0f2b2ee747e81bdcb38682000a14ccd389",
+      "size": 1772
+    },
+    "r3_reference/fixtures/exp-001/R3_12_connector_while.json": {
+      "sha256": "1582f562bdd7bd1438d794da9d9dea2bbb927f60081e2e6b475316287fd41653",
+      "size": 1778
+    },
+    "r3_reference/fixtures/exp-001/R3_13_connector_and.json": {
+      "sha256": "c152422da86cb45bae772d0a0ab8692ada36569c57a696ecc31a5defbf6752f6",
+      "size": 1772
+    },
+    "r3_reference/fixtures/exp-001/R3_14_connector_even_though.json": {
+      "sha256": "1660b702443afa606cf5651626aa3bdcc3628c24ade0f963032f0536977eaa0c",
+      "size": 1796
+    },
+    "r3_reference/fixtures/exp-001/R3_15_despite_participle.json": {
+      "sha256": "8db8642aa7b76964525c894701d11122d57a606a7f187d6bda96c279fa6cf6fe",
+      "size": 1823
+    },
+    "r3_reference/fixtures/exp-001/R3_16_safe_subordinate.json": {
+      "sha256": "3778fd1d82a840d0b4efc0b64db2d292d7301c87313e4bbc1162fe87e5cef938",
+      "size": 1816
+    },
+    "r3_reference/fixtures/exp-001/R3_17_factual_disclaimer.json": {
+      "sha256": "635a954c867883dbd162b8c056045e360cd35df1835105c5f8bb875f33b004e6",
+      "size": 1761
+    },
+    "r3_reference/fixtures/exp-001/R3_18_quoted_criticism.json": {
+      "sha256": "50f7c48c663c9673306d85ccee656e61aa41053d6a3b3c8cfcc40a25a35f651a",
+      "size": 1808
+    },
+    "r3_reference/fixtures/exp-001/R3_19_separate_factual.json": {
+      "sha256": "6602b5130e86bd85a502f0e02f68301f94cd45595f57d88edbd3cfb24c512702",
+      "size": 1780
+    },
+    "r3_reference/fixtures/exp-001/R3_20_negated_active.json": {
+      "sha256": "b03d97a6a1bf423f062936ce9dfc87db26d07fee3ecdac3aa6b3e554d59b2f31",
+      "size": 1757
+    },
+    "r3_reference/fixtures/exp-001/R3_21_negated_run.json": {
+      "sha256": "3eb57934777421a49a1ec743c7603d2513070ea149ef6e64bd84591a7003e992",
+      "size": 1747
+    },
+    "r3_reference/fixtures/exp-001/R3_22_negated_passive.json": {
+      "sha256": "c51c9f433c0288a46586d007bb584534ecf09e893fa9aa9c58afc8352a55aa32",
+      "size": 1753
+    },
+    "r3_reference/fixtures/exp-001/R3_23_negated_performed.json": {
+      "sha256": "8892373b05b1c50b60eee61c7d3e952dd0dc1649cf1ac1e09cb06b125d207b5e",
+      "size": 1773
+    },
+    "r3_reference/fixtures/exp-001/R3_24_negated_verification.json": {
+      "sha256": "9e0c43e37abaf0a7763a5890d5e0417459a03a57c1a4a095dc85412ab4716817",
+      "size": 1770
+    },
+    "r3_reference/fixtures/exp-001/R3_25_negated_carried_out.json": {
+      "sha256": "59d4aa14c83d98dc7a84e9e69ec7b90e3e806efbbfe08ed76d503c402cb10e09",
+      "size": 1771
+    },
+    "r3_reference/fixtures/exp-001/R3_26_double_negative.json": {
+      "sha256": "86d7b0fe4e042eb9305b8381949eacce5e3a9975f976f12bf048698cf8d9f262",
+      "size": 1780
+    },
+    "r3_reference/fixtures/exp-001/R3_27_negative_positive.json": {
+      "sha256": "e013c9d11c3ed0a1908c714314ea094add9cd1dccd2b23e2ed44444788251870",
+      "size": 1764
+    },
+    "r3_reference/fixtures/exp-001/R3_28_other_actor.json": {
+      "sha256": "78060cde8306960e6dcb9ae88400ff22a83603f62689492c2b86c5e2556f8b34",
+      "size": 1774
+    },
+    "r3_reference/fixtures/exp-001/R3_29_negative_verified.json": {
+      "sha256": "fb9a6310dd8878e1e48803dc158f0bbb81dc782d83ca501b5e34f012f275a1d7",
+      "size": 1769
+    },
+    "r3_reference/fixtures/exp-001/R3_30_exception.json": {
+      "sha256": "37d6f5ddcd0885dd01a74d3d23db88612516993617241e0fef71b759f2d31bbd",
+      "size": 1791
+    },
+    "r3_reference/fixtures/exp-001/R3_31_embedded_question.json": {
+      "sha256": "cd8f06999193e853ab46f3d07d456dcb492e16b31920740066d5f6022514ee18",
+      "size": 1782
+    },
+    "r3_reference/fixtures/exp-001/R3_32_incomplete_scope.json": {
+      "sha256": "6fcc2b89f8a5d2ad50fc8e3231619c4a5bd66c363f394009b9b53f6b0956b21e",
+      "size": 1780
+    },
+    "r3_reference/fixtures/exp-001/R3_33_conditional_antecedent.json": {
+      "sha256": "02510359af1abf1478afb06c52bc4aa396eafecb0a2fdceb5ec526b1b41543d6",
+      "size": 1797
+    },
+    "r3_reference/fixtures/exp-001/R3_34_invented_attribution.json": {
+      "sha256": "9542f60beed9455e6a906cd81ed0c66045da0af527d89dd19376ed72ea44fe8d",
+      "size": 1780
+    },
+    "r3_reference/fixtures/exp-001/R3_35_ambiguous_citation.json": {
+      "sha256": "c5c9c7553767c871d89399d23ed27aa340b7f197aa024b1606ea165453f25fdd",
+      "size": 1794
+    },
+    "r3_reference/fixtures/exp-001/R3_36_citation_warning.json": {
+      "sha256": "289ba9858a5429b14c9088aa135f4e1dc781e1c38e3a3f2d6ad465bfb99eaa9c",
+      "size": 1779
+    },
+    "r3_reference/fixtures/exp-001/R3_37_identifier_warning.json": {
+      "sha256": "3e4edfbb3b9b3435c7b8ed4f16a8b0e6213a6140a4d57b9e16bfb3587c3d0641",
+      "size": 1785
+    },
+    "r3_reference/fixtures/exp-001/R3_38_reference_warning.json": {
+      "sha256": "4e38e77865529e761c61619a5b150f7edb42b88698c87e64447784480b3fc825",
+      "size": 1782
+    },
+    "r3_reference/fixtures/exp-001/R3_39_invalid_reference.json": {
+      "sha256": "590b7315385a6269cf11c7524e2ceca00880ab92396aa67f3ec17f32f7525dbd",
+      "size": 1774
+    },
+    "r3_reference/fixtures/exp-001/R3_40_prohibition.json": {
+      "sha256": "9a4f9dd0e8b61a4a9c0dab5e70c3059beb58456bf1d0e9ccc8f8a31e611dde7a",
+      "size": 1750
+    },
+    "r3_reference/fixtures/exp-001/R3_41_positive_reference.json": {
+      "sha256": "8f5491db21ade8af94b19bfa8ac5d12959ba58044854e5522549cf13168ad638",
+      "size": 1772
+    },
+    "r3_reference/fixtures/exp-001/R3_42_warning_then_use.json": {
+      "sha256": "72ecaedb22749eeaeac2e6f10173eb91bcd37cbb2f48faaa010c171427434c03",
+      "size": 1782
+    },
+    "r3_reference/fixtures/exp-002/01_correct.json": {
+      "sha256": "ecf82c27b80b4eb3fca6f40e7e4cf2a58e018159e03d32c6928bbc9b409cb262",
+      "size": 2347
+    },
+    "r3_reference/fixtures/exp-002/02_equivalent_fence.json": {
+      "sha256": "6bb2a33e30a10451496633ba79589aefc6da6ade29ee58e8935265d5681b8074",
+      "size": 3190
+    },
+    "r3_reference/fixtures/exp-002/03_legitimate_uncertainty.json": {
+      "sha256": "03be8ff5ad9bb1de5457358d75b90fde172dbaf0e9b35a3b2798bcd237024d5f",
+      "size": 2476
+    },
+    "r3_reference/fixtures/exp-002/04_attribution.json": {
+      "sha256": "a1125b3c2b0b5b54a9dfd00cd0eb7351bdf688c9aeece836cdca2654e9f63085",
+      "size": 2683
+    },
+    "r3_reference/fixtures/exp-002/05_hypothetical.json": {
+      "sha256": "e36045ab76aa357150e1443ffcf87bed6ced81afdc39a2d704148eb24686e6c7",
+      "size": 2439
+    },
+    "r3_reference/fixtures/exp-002/06_unsupported_confirmation.json": {
+      "sha256": "f78c52c475d88917b82392dd8a413b0036ece49c4acafb6d8a29dffce8e4d0c2",
+      "size": 2489
+    },
+    "r3_reference/fixtures/exp-002/07_invented_registry_id.json": {
+      "sha256": "33fc7e6183d959d52bb35eebd7fc5ff6170b0d119d534d67bf6f77350a8ab4a8",
+      "size": 2450
+    },
+    "r3_reference/fixtures/exp-002/08_unverified_url.json": {
+      "sha256": "faba770f8a6c1fb9fa42c3ad0f3b19ed36c0304ec3663e8e6aee6ebbb4605f1b",
+      "size": 2492
+    },
+    "r3_reference/fixtures/exp-002/09_ambiguous_polarity.json": {
+      "sha256": "c368d026b74f5c90b51050705a5ea7f757fd62df8dd491a58711a401775c5885",
+      "size": 2495
+    },
+    "r3_reference/fixtures/exp-002/10_claimed_execution.json": {
+      "sha256": "2aa895c8ed508ad84fc416f24bec232be738a605b63d586a63ebe4408e980d06",
+      "size": 2444
+    },
+    "r3_reference/fixtures/exp-002/11_contradictory_status.json": {
+      "sha256": "6db108b84dde579dc71e8bb00ff11db7b38522b5c6b799db81b37550dc169c86",
+      "size": 2542
+    },
+    "r3_reference/fixtures/exp-002/12_scope_overreach.json": {
+      "sha256": "cdbf47c9fa0c1d18303a88d5ee9a13bea29bbaf7b7650a774cd9d44f9eda28e6",
+      "size": 2438
+    },
+    "r3_reference/fixtures/exp-002/13_missing_scope.json": {
+      "sha256": "b8e0138b97968957784bee6c7d30569161301b48ceae542d6e394d30d25a0852",
+      "size": 2410
+    },
+    "r3_reference/fixtures/exp-002/14_verbose_no_reward.json": {
+      "sha256": "f542c0786299aff88b7da4804b63d6eb7bfe30b35c3cad0a54a41ca49d77dce1",
+      "size": 2665
+    },
+    "r3_reference/fixtures/exp-002/15_malformed.json": {
+      "sha256": "6ef34bc11d7d3b44af0460c23c86a6437e4bc474756f52ec01302711cd697de1",
+      "size": 2624
+    },
+    "r3_reference/fixtures/exp-002/16_duplicate_key.json": {
+      "sha256": "84eb2ebe259aebf08596e28a7e82f36d291654081c90c0b9a49bd0cab1b01c3d",
+      "size": 2597
+    },
+    "r3_reference/fixtures/exp-002/17_unrequested_field.json": {
+      "sha256": "1205c30b1f8818a18e9ac271422efe39f9db1c310400f34177df78564904bbea",
+      "size": 2531
+    },
+    "r3_reference/fixtures/exp-002/18_registered_normative_reference.json": {
+      "sha256": "a351c4f0d7ddfe56b3ea4133991275eb25f7fadb9f29ee8c0f76dab7539b1f7e",
+      "size": 2429
+    },
+    "r3_reference/fixtures/exp-002/19_confidence_no_reward.json": {
+      "sha256": "8d28030a50305225493169d52450bbb94fff3b31c30b0d3092653e23b125dde5",
+      "size": 2440
+    },
+    "r3_reference/fixtures/exp-002/20_mixed_negation_positive.json": {
+      "sha256": "7a4f9ed1ec6a4473cca2a9182f5adba29b7c4e0803b90cd9ca081cca3878d1a5",
+      "size": 2467
+    },
+    "r3_reference/fixtures/exp-002/21_unassessed_free_claim.json": {
+      "sha256": "55558a15b9d8492a66f7096685d9d722d46b2a4712097e2e44d9c58701444cfb",
+      "size": 2530
+    },
+    "r3_reference/fixtures/exp-002/22_fully_wrong.json": {
+      "sha256": "9a3ce86d867ad9a9e69fb978b08b633edf0d489929819d930e2d47f87215de08",
+      "size": 2416
+    },
+    "r3_reference/fixtures/exp-002/23_diagnosed_unrepaired.json": {
+      "sha256": "eb4d28b84e638edc07be0e405c9950c09c6c372d852d2d0c7e4f9cf96622ca2f",
+      "size": 2378
+    },
+    "r3_reference/fixtures/exp-002/24_partial_repair.json": {
+      "sha256": "3d5e3a16d4883038f774131ea7f5dc49878c8a49f67b36b1dadad051f529e576",
+      "size": 2363
+    },
+    "r3_reference/fixtures/exp-002/25_missing_diagnosis.json": {
+      "sha256": "ff1b08faf59ce353bac4bd5812ade7b383fb55bb3b1b2cd87a7d315483887d01",
+      "size": 2245
+    },
+    "r3_reference/fixtures/exp-002/26_repair_damages_unaffected.json": {
+      "sha256": "aced636268f8aee427e29d4d68eaf5f1a0e182072fbe7b3b0bcfb5509172982e",
+      "size": 2429
+    },
+    "r3_reference/fixtures/exp-002/27_valid_alternative_order.json": {
+      "sha256": "b2aa5207106515deb42608c4d0de48f12b68d1bca7c522061874b9d6e586ad29",
+      "size": 2395
+    },
+    "r3_reference/fixtures/exp-002/28_changed_input_flag.json": {
+      "sha256": "ed76ba80ecc383fde039fe73bf6c8908411bdcf5a2198ad7ec3ffd6386413823",
+      "size": 2433
+    },
+    "r3_reference/fixtures/exp-002/29_wrong_diagnosis.json": {
+      "sha256": "d7e0c018e7b8c9f7fdb9b31fc7a121464a13cb36d0fa5e7714501728a733bab1",
+      "size": 2297
+    },
+    "r3_reference/fixtures/exp-002/30_unrelated_change.json": {
+      "sha256": "06995e9242a7c788f6e216f8e1958f18a39fe0558dfba33b5fd6def830ff89fa",
+      "size": 2240
+    },
+    "r3_reference/fixtures/exp-002/R2_01_invented_user.json": {
+      "sha256": "392b2240dfd43f2e8099d1ebf5e48417d897933154fdf68e1436730dc71a5638",
+      "size": 2588
+    },
+    "r3_reference/fixtures/exp-002/R2_02_invented_source.json": {
+      "sha256": "198ab96261193843708f37598c034df92b5f6eecc003e68bf8c51a89220339e0",
+      "size": 2575
+    },
+    "r3_reference/fixtures/exp-002/R2_03_attributed_unknown_id.json": {
+      "sha256": "59c62e00a4369b86262c634f37e7a4fbdf21ce1bf4b2d5c645737cadf295412a",
+      "size": 2577
+    },
+    "r3_reference/fixtures/exp-002/R2_04_attributed_unknown_url.json": {
+      "sha256": "9cc54f9cbb31cede21a06505b9a780039b0181f663ac256bca280cdcb9fd80f3",
+      "size": 2624
+    },
+    "r3_reference/fixtures/exp-002/R2_05_quoted_criticism.json": {
+      "sha256": "232420519784742b7e5fd064cd98206dd9b08f45f540910ce8c2c067c67e5790",
+      "size": 2604
+    },
+    "r3_reference/fixtures/exp-002/R2_06_quoted_registered_criticism.json": {
+      "sha256": "1bd08c82edd3a4f599d391d5314e77fbe195cdfe2d7af6e63ff9826bd4f8426f",
+      "size": 2616
+    },
+    "r3_reference/fixtures/exp-002/R2_07_invalid_example.json": {
+      "sha256": "646bc62307906c56be734dbb479ef3d0dd346035eb578798b6f144d2066c32e6",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R2_08_false_registry_warning.json": {
+      "sha256": "4d1f9c355f6176373462cfd0f5b1c687b08661e83496784f805dc277c6df40c2",
+      "size": 2560
+    },
+    "r3_reference/fixtures/exp-002/R2_09_positive_confirmation.json": {
+      "sha256": "8ce2ff18d5eb749cc508ebbd31048717a2eb7be84ae26648703fc7132f213f33",
+      "size": 2556
+    },
+    "r3_reference/fixtures/exp-002/R2_10_negated_confirmation.json": {
+      "sha256": "4f22a330c096e3e022fe9d801d7dec2da9e943d3f67c2bf75a0eb6c5c3b6ffc8",
+      "size": 2578
+    },
+    "r3_reference/fixtures/exp-002/R2_11_hypothetical.json": {
+      "sha256": "adac36996f5ad740be2c61ecf6c3a2b1889a78c210d2235f71da2382d7859781",
+      "size": 2592
+    },
+    "r3_reference/fixtures/exp-002/R2_12_disclaimer_not_excuse.json": {
+      "sha256": "dd3416087d8cd37c40b547d098f57fc02760553bc4a765fe820cea1e7388694d",
+      "size": 2592
+    },
+    "r3_reference/fixtures/exp-002/R2_13_ambiguous_quote.json": {
+      "sha256": "4371fbb2bf8c31487eeb50df95105760b4c6b18050c93eeb53ef843476924604",
+      "size": 2583
+    },
+    "r3_reference/fixtures/exp-002/R3_01_hypothetical_only.json": {
+      "sha256": "a891eeb9d375afa24f540ec0d1740d89d841a1da57f73f2278965f12e3e78da3",
+      "size": 2572
+    },
+    "r3_reference/fixtures/exp-002/R3_02_mixed_execution.json": {
+      "sha256": "401e2f369dae27eaa2d106f0037c250618bfbc7f50e1cfda9230adb4711da5da",
+      "size": 2584
+    },
+    "r3_reference/fixtures/exp-002/R3_03_mixed_success.json": {
+      "sha256": "efcb805e06813af191b2cd8444edeb355283f0aada7a0eb3cff6e7e3dc62a3f4",
+      "size": 2564
+    },
+    "r3_reference/fixtures/exp-002/R3_04_connector_although.json": {
+      "sha256": "3ed9b3bbe4fbc36cea7ed2d4f94c321f063645a64da63cd837f1a4adfea6c703",
+      "size": 2580
+    },
+    "r3_reference/fixtures/exp-002/R3_05_connector_though.json": {
+      "sha256": "09b9162d8bbb08cd2b02d3e7a5a0dd30ef50c54ccdf7cecbb1473d0872ef7274",
+      "size": 2574
+    },
+    "r3_reference/fixtures/exp-002/R3_06_connector_whereas.json": {
+      "sha256": "733bb00dd8c06965f388b145c2539d9adca63d49f66ee1c4c753fa9e44533f2d",
+      "size": 2577
+    },
+    "r3_reference/fixtures/exp-002/R3_07_connector_because.json": {
+      "sha256": "6991e37ccef9b9634c21529b242597a3a7ab2aa0c4144179e8e6ba145ef7a38b",
+      "size": 2577
+    },
+    "r3_reference/fixtures/exp-002/R3_08_connector_since.json": {
+      "sha256": "78c6d8c8f08845fdc2385058502992e0b738aa1e9fad1b890d944baba301985d",
+      "size": 2571
+    },
+    "r3_reference/fixtures/exp-002/R3_09_connector_but.json": {
+      "sha256": "575a9a46b1aecf8b41771a2af20251ba7058eaf7e411f58aada8178e40c271e5",
+      "size": 2565
+    },
+    "r3_reference/fixtures/exp-002/R3_10_connector_however.json": {
+      "sha256": "d81baf6a26dc0e51b0e0a73743a939e506c799ed81e6dc5a113012c77f919658",
+      "size": 2577
+    },
+    "r3_reference/fixtures/exp-002/R3_11_connector_yet.json": {
+      "sha256": "8db5e62f5e4c1453eec4733847cb0bf1bb652cec080c2262fee4ed618862fdfd",
+      "size": 2565
+    },
+    "r3_reference/fixtures/exp-002/R3_12_connector_while.json": {
+      "sha256": "d5a81ce66b1811ad4e7ae57ceae1703f39c0e8dc18562ee7946979fda1622d19",
+      "size": 2571
+    },
+    "r3_reference/fixtures/exp-002/R3_13_connector_and.json": {
+      "sha256": "c8478dc77cd4f812aa9ef2ede1d80f348104e8c8eb67ee4626b44859b1f9de8a",
+      "size": 2565
+    },
+    "r3_reference/fixtures/exp-002/R3_14_connector_even_though.json": {
+      "sha256": "9dc8299981a99f8bd8998a00ee61c6562c5defbe3645f8494d0029d49dc61b22",
+      "size": 2589
+    },
+    "r3_reference/fixtures/exp-002/R3_15_despite_participle.json": {
+      "sha256": "bcdfb091e2873348268e76e9cc260ad64096787b7772107dd8be6d1d7bfd424c",
+      "size": 2616
+    },
+    "r3_reference/fixtures/exp-002/R3_16_safe_subordinate.json": {
+      "sha256": "c2a4c2b969375f0415e9d9e19b9160902a4198e312e49f91d37f87845e4e348d",
+      "size": 2609
+    },
+    "r3_reference/fixtures/exp-002/R3_17_factual_disclaimer.json": {
+      "sha256": "352e93020467fdf1ca7e23dfe86b3735084f3cc9dd8cfcff76bafd605d26fd9e",
+      "size": 2554
+    },
+    "r3_reference/fixtures/exp-002/R3_18_quoted_criticism.json": {
+      "sha256": "8c9aff52eec1869962385dc5e2e971deeece7f97ab658c3e6f4a5ac6000d96f7",
+      "size": 2601
+    },
+    "r3_reference/fixtures/exp-002/R3_19_separate_factual.json": {
+      "sha256": "e07cf83ce49d3b02a448037fecb0657a6a03ab4ce1ff84fb10860ad886f16239",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R3_20_negated_active.json": {
+      "sha256": "7c7599927b4d8f53323e294155a92aaf5d433dd3d3d710c471da68808ba99096",
+      "size": 2550
+    },
+    "r3_reference/fixtures/exp-002/R3_21_negated_run.json": {
+      "sha256": "2993c4205941066d3495f75d6ed0538df0757db8b50e54d33da4a5dcd0fb80a9",
+      "size": 2540
+    },
+    "r3_reference/fixtures/exp-002/R3_22_negated_passive.json": {
+      "sha256": "9fc34a83c84e4af52fd68a37e15e6879a9014e49aa4dd5af022ae76d8da73722",
+      "size": 2546
+    },
+    "r3_reference/fixtures/exp-002/R3_23_negated_performed.json": {
+      "sha256": "030c9d6c73bcc785ce9d681acd10cd36a2f59a13beec3e520d712881276daee5",
+      "size": 2566
+    },
+    "r3_reference/fixtures/exp-002/R3_24_negated_verification.json": {
+      "sha256": "d5eee36859842a979cc5720718ac2db56f647d2893e058106d5790f0887a0d11",
+      "size": 2563
+    },
+    "r3_reference/fixtures/exp-002/R3_25_negated_carried_out.json": {
+      "sha256": "f3a0e9c5ce5aec8754f0b7811789bffb07ddcda23923c04e8fabb7ff2b379756",
+      "size": 2564
+    },
+    "r3_reference/fixtures/exp-002/R3_26_double_negative.json": {
+      "sha256": "868c0be85508c9d3b5502ca35220fccfed67e7b43b8fc0b07df61ee23b5da7e6",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R3_27_negative_positive.json": {
+      "sha256": "3978327f87d4be69950a897599d2159195adb8238ee908a1de234a380859c593",
+      "size": 2557
+    },
+    "r3_reference/fixtures/exp-002/R3_28_other_actor.json": {
+      "sha256": "a30b76bb636c2ed341b0fc8abcb642d9019fa12e0c6fe4f83b1101239183da80",
+      "size": 2567
+    },
+    "r3_reference/fixtures/exp-002/R3_29_negative_verified.json": {
+      "sha256": "241544648d3d74c3f321aa9de95a6183706292c7f7ef43ec53aa1b5d3039510e",
+      "size": 2562
+    },
+    "r3_reference/fixtures/exp-002/R3_30_exception.json": {
+      "sha256": "98f885679ed84cbceb337220a8ebddea9fcfdd6693ce41005d2ae7f510730e32",
+      "size": 2584
+    },
+    "r3_reference/fixtures/exp-002/R3_31_embedded_question.json": {
+      "sha256": "061ab17584ab152544c4f2d2950717e322f2c7fea66447ff33b11b18c2de97f5",
+      "size": 2575
+    },
+    "r3_reference/fixtures/exp-002/R3_32_incomplete_scope.json": {
+      "sha256": "41e69d6ab3f3e8ef979b703765f06948ab2fae85731283a25863081e56568210",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R3_33_conditional_antecedent.json": {
+      "sha256": "441d1e969680fd5fd395e712986ae0193fbb2614078d921c9bf7fa4d4b3a044d",
+      "size": 2590
+    },
+    "r3_reference/fixtures/exp-002/R3_34_invented_attribution.json": {
+      "sha256": "2ebe9f942af6edcc54835ff1c81d9394982444d5149b27369cae140337c1226e",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R3_35_ambiguous_citation.json": {
+      "sha256": "64b5a7f5e958c4dece1644aa46512dfea78735fb072d8e0bb450475bdaf504ff",
+      "size": 2587
+    },
+    "r3_reference/fixtures/exp-002/R3_36_citation_warning.json": {
+      "sha256": "1fa0e65b4967c95c1c80e69b03fce74ed31d39ddb4fb971e7ab852c3affd1bfc",
+      "size": 2570
+    },
+    "r3_reference/fixtures/exp-002/R3_37_identifier_warning.json": {
+      "sha256": "75f33b3745b9f1241e2e78fc45e3b8cf54a1c5640c9b67be79dfdcc98b19f1c6",
+      "size": 2576
+    },
+    "r3_reference/fixtures/exp-002/R3_38_reference_warning.json": {
+      "sha256": "fe0489988c7bc6c214ea5a983313e61c7fd4954fcfd37659d683c8f63cc0ff0a",
+      "size": 2573
+    },
+    "r3_reference/fixtures/exp-002/R3_39_invalid_reference.json": {
+      "sha256": "4881070d29d06bca91f8eaca58b74739063c7748885d2b2a5000c857a093a856",
+      "size": 2565
+    },
+    "r3_reference/fixtures/exp-002/R3_40_prohibition.json": {
+      "sha256": "2648456787ac26d414a5e1b4611fc6a161357165cdf6b64066653e96181ee9b9",
+      "size": 2541
+    },
+    "r3_reference/fixtures/exp-002/R3_41_positive_reference.json": {
+      "sha256": "7c0acadbe4a922b7b411e9547b58607cf724422750848dade837ddb858ba0024",
+      "size": 2563
+    },
+    "r3_reference/fixtures/exp-002/R3_42_warning_then_use.json": {
+      "sha256": "8c2faf4994d3301a15fdbd3bd1a3084e9d984826c91b41c261a537e2db6f50f0",
+      "size": 2573
+    },
+    "r3_reference/FREEZE_MANIFEST.json": {
+      "sha256": "e478acd9b0c5503c3c2fe18c4e17db9cdc960510713f825099e4b2467d9cb799",
+      "size": 50442
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_content_loss.json": {
+      "sha256": "1412d7cda414c0dc0f5afefdda60cbcef828f007f219515fd36b9887ead5e84a",
+      "size": 1175
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_content_repair.json": {
+      "sha256": "38cd823247465d7ca2e8be6b44f92828894d955177101ce3983a0242c5003a63",
+      "size": 1273
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_cosmetic.json": {
+      "sha256": "d35c6a5f7c60e28c9365ebc7f0c4ba3e02a7992ee0b4366cdf056140bd91889b",
+      "size": 1527
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_format_shape_only.json": {
+      "sha256": "66b8ebf450a2244f518db8e2850f1c7bf62a55c2e86c5515d9fd93ac25f29f33",
+      "size": 1387
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_required_loss.json": {
+      "sha256": "c8fdcea01ad8c76fe4e91e1c385f82fdb2fd2c06dc54d55a83b2215d0f56b467",
+      "size": 1148
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_required_repair.json": {
+      "sha256": "955332b8569e5b059fe5ea64c60535149cdec3b20da90fe856a002ac607f5d18",
+      "size": 1319
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_required_repair_with_damage.json": {
+      "sha256": "f1ddc456f804f944401b4ade49de3a002794078e579c6e16f193816d55918e80",
+      "size": 1236
+    },
+    "r3_reference/paired_fixtures/EXP-001.PAIR_safety_only.json": {
+      "sha256": "1f9b888fef4bafa3f033e2da9058972b49fff20d5b1ccfb6fe7083ad94b43e9a",
+      "size": 1358
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_citation_regression.json": {
+      "sha256": "48de2d4f6242f2777515589a5fbb7574378a15aa0ec55095289d71b21d4568bd",
+      "size": 2929
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_content_loss.json": {
+      "sha256": "e4e32f7d299193e60b5567392e6148b56e0c7688775f13d04d2fb09c9d7e6759",
+      "size": 2856
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_content_repair.json": {
+      "sha256": "348dc2de1090a0285626e4fb8e14d5731e3acdd193c9e86f993f90b169752ff3",
+      "size": 2954
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_cosmetic.json": {
+      "sha256": "23f977f48258c8896127b9ec65b3a9b81ac5edaf8d3dfa6b3e0f05b65bf614b1",
+      "size": 3807
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_format_shape_only.json": {
+      "sha256": "befe8893f9b716e78a5d8f98b1ecb4b70c1d975312db658137446e19f2008cf3",
+      "size": 3135
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_partial.json": {
+      "sha256": "d2c2ba747885f8e7a6e870f8a2a9a14967aebd6a06710c88fdbd35e273880f1e",
+      "size": 2811
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_required_loss.json": {
+      "sha256": "736dd9dd68e816e42d2b0c57fcb91e6064771f702bc9f9729d50aae8d662dbe7",
+      "size": 2588
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_required_repair.json": {
+      "sha256": "42c6c5113823befb99332d5143e636c7d3729541bd5b391dc316e4f1618e1d39",
+      "size": 2759
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_required_repair_with_damage.json": {
+      "sha256": "48f453a793fd5196db87d39f6d2629636ab3571ed92c3b28ac45d63f277939c8",
+      "size": 2753
+    },
+    "r3_reference/paired_fixtures/EXP-002.PAIR_safety_only.json": {
+      "sha256": "49db2d502b3731bc26cead486f55b94dae1f0ca8d533b0eaf7425c9b34fd1873",
+      "size": 3037
+    },
+    "r3_reference/public_loader.py": {
+      "sha256": "810ecce47b66c5bc2dcd3876b4b8009da9538e4229126f57d111a5a89ff0ac31",
+      "size": 935
+    },
+    "r3_reference/round1_reference/evaluators/__init__.py": {
+      "sha256": "9b046370a89fe2f944d7e71cf2de5fb42d6f5c901fb3620d4adf51eae0bc09d1",
+      "size": 197
+    },
+    "r3_reference/round1_reference/evaluators/contracts.py": {
+      "sha256": "da05f7b7fcfa52ec414a22ede6994196b0add3b58dd76814afca6a01e762d711",
+      "size": 2421
+    },
+    "r3_reference/round1_reference/evaluators/evaluator.py": {
+      "sha256": "1287eaabe79d2994ab46d79ace342dd50e5194869554bc2e2f34aba68023f655",
+      "size": 12550
+    },
+    "r3_reference/round1_reference/evaluators/safety.py": {
+      "sha256": "e4dbaf3d02fd40fdaff10e2534913798d01b5786ac34dd15372b3c10ffaa32d9",
+      "size": 7219
+    },
+    "r3_reference/round1_reference/tasks/EXP-001.json": {
+      "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169",
+      "size": 3108
+    },
+    "r3_reference/round1_reference/tasks/EXP-002.json": {
+      "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff",
+      "size": 5141
+    },
+    "r3_reference/round2_reference/evaluators/__init__.py": {
+      "sha256": "9b046370a89fe2f944d7e71cf2de5fb42d6f5c901fb3620d4adf51eae0bc09d1",
+      "size": 197
+    },
+    "r3_reference/round2_reference/evaluators/contracts.py": {
+      "sha256": "56cbe7712d0369fc63b396f37b901ae23a662e00d30fbcf60fe33e91b9af2137",
+      "size": 2421
+    },
+    "r3_reference/round2_reference/evaluators/evaluator.py": {
+      "sha256": "472163023fc21e035f7bce2790470222ab1ed8b7eb6ec5c14e3d8866600d067f",
+      "size": 18135
+    },
+    "r3_reference/round2_reference/evaluators/safety.py": {
+      "sha256": "e4cf267d58ac5ac6eb6b6d7c2f1f9c86a2429280b63c8560949e4eab72b8ea2b",
+      "size": 12976
+    },
+    "r3_reference/round2_reference/tasks/EXP-001.json": {
+      "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169",
+      "size": 3108
+    },
+    "r3_reference/round2_reference/tasks/EXP-002.json": {
+      "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff",
+      "size": 5141
+    },
+    "r3_reference/SCORING_CONTRACTS.md": {
+      "sha256": "b920b8ff24baf81a1d0478a8cc5e3d2d015ac53840cd373c6eb14d8418913c4c",
+      "size": 13665
+    },
+    "r3_reference/tasks/EXP-001.json": {
+      "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169",
+      "size": 3108
+    },
+    "r3_reference/tasks/EXP-002.json": {
+      "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff",
+      "size": 5141
+    },
+    "r3_reference/tests/__init__.py": {
+      "sha256": "798306a20ed4b134c4995c30f7c9acb3bfebb2526c55639d7ad12d0d44a3a66c",
+      "size": 73
+    },
+    "r3_reference/tests/test_determinism.py": {
+      "sha256": "d066c5d57e4032cc1efafb8e77b7d6bdc5fcc7ef8ca1febc248c456a5ae80db5",
+      "size": 2891
+    },
+    "r3_reference/tests/test_evaluators.py": {
+      "sha256": "fea27debc19faf02330340b981a03ff6fea12fbf44fd4faab892093c3f9e7e41",
+      "size": 8582
+    },
+    "r3_reference/tests/test_round2.py": {
+      "sha256": "eaefd3999e10665d9f526c0c5881c1fbcb75e9e6a1fc2197feb7b6750dfc78d2",
+      "size": 14580
+    },
+    "r3_reference/tests/test_round3.py": {
+      "sha256": "3f699a5ad076d97dbff7d9a04e67c758ac98cd59f657888c5a986d01f96a3960",
+      "size": 8976
+    },
+    "r3_reference/tests/test_safety.py": {
+      "sha256": "a976b56b63bc2bbffc5c36d511459cccfeff6c3d0cafa5018b407623f6a3d43f",
+      "size": 3988
+    },
+    "r3_reference/validation/BUDGET_ESTIMATES.json": {
+      "sha256": "90f5a8306c26248fbdbdc5cdbd3d4aaf0cf28d8bf5e3bf99094846f07fae400c",
+      "size": 3385
+    },
+    "r3_reference/validation/DRAFT_RUN_MATRIX.json": {
+      "sha256": "29e9dae814075e6f5516504bc3688fcdb89931ea4d4479f7d1163f2dc5d97381",
+      "size": 5133
+    },
+    "r3_reference/validation/ORIGINAL_FIXTURE_LABELS.json": {
+      "sha256": "e470e89a0c23cd3836040404583136e525bedff935f5adb4cc511b96406df0a5",
+      "size": 126533
+    },
+    "r3_reference/validation/PAIRWISE_RESULTS.json": {
+      "sha256": "2ab7b2550363f93f5d9e336ecea3e54fb6abd46f40ddf1b4c6868fd49b60eee8",
+      "size": 888923
+    },
+    "r3_reference/validation/RESULTS.json": {
+      "sha256": "4c4057c8f5893c882210f90f4f5e51033abb06b4ee0089b76dc5094c65464138",
+      "size": 4216054
+    },
+    "r3_reference/validation/ROUND1_FINDING_DISPOSITIONS.csv": {
+      "sha256": "af61fac872117d6ece7a3322547b43c64ba142dd2a6b41a59dee3528d6800ae2",
+      "size": 3802
+    },
+    "r3_reference/validation/ROUND2_FINDING_DISPOSITIONS.csv": {
+      "sha256": "fe74938d525f709cb1819769a004265faf0234608ee786a5ce51bcd355357bcb",
+      "size": 2417
+    },
+    "r3_reference/validation/ROUND2_REPRODUCTION_AFTER.json": {
+      "sha256": "081201ec1935ffb0756f3629d3a17a43aa7b1a54a67558ebacd4c5b4fb5b214c",
+      "size": 239585
+    },
+    "r3_reference/validation/ROUND2_REPRODUCTION_BEFORE.json": {
+      "sha256": "75adeca092950ec9ac5c88f7b93b6e13bb91fb55405d3438b30a479605a01967",
+      "size": 139989
+    },
+    "README.md": {
+      "sha256": "83dc81ac4c3861f61a7e4aabc2e8875dcb03ef2f108b221cbf7b28088f97a5a0",
+      "size": 2750
+    },
+    "research.py": {
+      "sha256": "6c6ae6e181ade001b1030bb87d41fa6a904bcfffa2d443784cb129e198927069",
+      "size": 5646
+    },
+    "REVIEW_BURDEN_POLICY.md": {
+      "sha256": "f1d64b4b33ec2e6ee3e28a035388ceb60a5a30d655437f503f6950f90f961ffb",
+      "size": 3192
+    },
+    "SAFETY_BOUNDARY_SPEC.md": {
+      "sha256": "93a38926faeb24fecede7b35ea5b7b4eb7348c3e525bd551dea7530f12f38a24",
+      "size": 6136
+    },
+    "SCORING_CONTRACTS.md": {
+      "sha256": "5a9e36d8a970d6dc4aac13b80c9cfa169ff2a37fe882a7025fcdfade008a1d2c",
+      "size": 4708
+    },
+    "tasks/EXP-001.json": {
+      "sha256": "0bdb69571e7fb51e3613e7d6050d01ace7837e1c2b628429dc527ccb69f9f169",
+      "size": 3108
+    },
+    "tasks/EXP-002.json": {
+      "sha256": "2118740fd19bb3144d06702e129eb881863c18783efdd801d792b406b5a7f3ff",
+      "size": 5141
+    },
+    "tests/__init__.py": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    "tests/test_boundary.py": {
+      "sha256": "8e07d472031eba62014ab2d5dcca4e3e135d2f9179538d6668461fa4472fdecc",
+      "size": 18236
+    },
+    "tests/test_determinism.py": {
+      "sha256": "773e8b8a5d8c010ec44afb56094cfba56728215a7627789cb382a7328bb0031e",
+      "size": 2917
+    },
+    "tests/test_evaluators.py": {
+      "sha256": "8d3af50cfe6760ba387f8f6d0df7257f474f157a270457f82c1353f47bf4e2da",
+      "size": 8305
+    },
+    "TEXT_SURFACE_INVENTORY.md": {
+      "sha256": "3349299f97f21e053b11a44c455dfdd3e47f3eda4cab5a31c169e2e746a6962c",
+      "size": 3681
+    },
+    "validate.py": {
+      "sha256": "6748c1e09236396da4af2e3e7e5478eb6317f58f19f81f5eb4130ff2b332e866",
+      "size": 10567
+    },
+    "validation/ARCHIVE_RETEST.json": {
+      "sha256": "0f29de51bb4f2922ab58fcccd8155d3e20fb6b08eff5de33919a2b5fbbf3c53c",
+      "size": 2521
+    },
+    "validation/BASELINE.json": {
+      "sha256": "92b7ceb768597fca21d176eb19ac0e4bcd6d1d909d427c44fb47feb97c61efe5",
+      "size": 689
+    },
+    "validation/BASELINE_AUDIT.md": {
+      "sha256": "a640e4b5792e2dffff8fa7bb60e516d0203253feed1b369639b707333e37d2c6",
+      "size": 2913
+    },
+    "validation/boundary-tests.json": {
+      "sha256": "e60906f024d560c99729cf52b935c4e85a2c52c59872ed0e4e61d5f55774f330",
+      "size": 84
+    },
+    "validation/boundary-tests.txt": {
+      "sha256": "1d2ec81a19022e86eac52f66546adda48dbc0995cd99a50087cda9fbc4d01cf4",
+      "size": 10450
+    },
+    "validation/BOUNDARY_REGRESSION_RESULTS.json": {
+      "sha256": "0ca042df5fc94e689a1563bbd0022e8734445440c8920fa5f35f6350b77416ee",
+      "size": 379
+    },
+    "validation/COPY_PROVENANCE.json": {
+      "sha256": "ccd0751b9314a9c803fb7a533ee69b649fb34b5b5bbf863da199b2d80a013029",
+      "size": 159
+    },
+    "validation/engine-baseline.json": {
+      "sha256": "5716d5407d58bf85bcf3223dd48d567efd90da3cbc67cf3cd96ecc905bedc281",
+      "size": 139
+    },
+    "validation/engine-baseline.txt": {
+      "sha256": "44d1079a2bfd7b7a16b2edf79a1e5a829a27527e288aa8c8d7e7bfd604f61e21",
+      "size": 49679
+    },
+    "validation/engine-final.json": {
+      "sha256": "691a6a5045da8c0c177730b49015f545824d626eac36187df389fcb3ee857e2a",
+      "size": 139
+    },
+    "validation/engine-final.txt": {
+      "sha256": "ab6bd6618fb28c898ff44cd82dc7bfa21affbac923ec3cfe2b0ecc655caf18c8",
+      "size": 49679
+    },
+    "validation/experimental_task_pack_v1-after-hashes.json": {
+      "sha256": "8b8bcb57dcd2150a740c6b06f3c7a3d71239db2a1d5f98613f324da510a23036",
+      "size": 13213
+    },
+    "validation/experimental_task_pack_v1-original-hashes.json": {
+      "sha256": "8b8bcb57dcd2150a740c6b06f3c7a3d71239db2a1d5f98613f324da510a23036",
+      "size": 13213
+    },
+    "validation/experimental_task_pack_v1_r2-after-hashes.json": {
+      "sha256": "37e2a81799236303507ee2807f411195326c5ecd5833db91012be8ec8a20022f",
+      "size": 60578
+    },
+    "validation/experimental_task_pack_v1_r2-original-hashes.json": {
+      "sha256": "37e2a81799236303507ee2807f411195326c5ecd5833db91012be8ec8a20022f",
+      "size": 60578
+    },
+    "validation/experimental_task_pack_v1_r3-after-hashes.json": {
+      "sha256": "7dd1e4d10ff78003be7d0185946655c918aa87d696f2eaeeb2373dfaf064217e",
+      "size": 130607
+    },
+    "validation/experimental_task_pack_v1_r3-original-hashes.json": {
+      "sha256": "7dd1e4d10ff78003be7d0185946655c918aa87d696f2eaeeb2373dfaf064217e",
+      "size": 130607
+    },
+    "validation/FINAL_VALIDATION.json": {
+      "sha256": "2f6c99d83cbd23ef5853d6a3162c1b955c4cf3ba7f3f9c660d1ab9abc9ff27ca",
+      "size": 3603
+    },
+    "validation/git-status-after.txt": {
+      "sha256": "1095f074f680fac35bf5912e8df7f516ff7fc00c90a1d399cca9747ab7cdf918",
+      "size": 35775
+    },
+    "validation/git-status-before.txt": {
+      "sha256": "1095f074f680fac35bf5912e8df7f516ff7fc00c90a1d399cca9747ab7cdf918",
+      "size": 35775
+    },
+    "validation/historical-r3-retest.json": {
+      "sha256": "67125b37d1d73f5d72caceb5647599168546752f4de5a02b0a01a83ad1860970",
+      "size": 85
+    },
+    "validation/historical-r3-retest.txt": {
+      "sha256": "a96f4e31b342b66bbf2f5f242826ce579d3db29079b3e3666f0e932abea8110b",
+      "size": 14090
+    },
+    "validation/HISTORICAL_PAIR_RESULTS.json": {
+      "sha256": "b3f8383946a522f73f6dfeea7c1f3d97c187b8a71ab6aba88db4f05669762b28",
+      "size": 3557033
+    },
+    "validation/HISTORICAL_RETEST.json": {
+      "sha256": "312de3585dff60600bc5c873d62331113de690cdc9e0d8604f5ffce83c4178cd",
+      "size": 180
+    },
+    "validation/HISTORICAL_SINGLE_RESULTS.json": {
+      "sha256": "6708d3490d413c90c4b60363a2d95d9d390ef7268222505c7d153d246f8a0c52",
+      "size": 15443273
+    },
+    "validation/INDEPENDENT_PROBE_REPRODUCTION.json": {
+      "sha256": "1c176cde7fb9d7f027a4e3126ba9d17dcf72d66c21d4a899b6d5c4b4c370feb3",
+      "size": 42383
+    },
+    "validation/INDEPENDENT_PROBES_AFTER.json": {
+      "sha256": "248cd22fa4f0a6621867e57028a76d8b06e795a694bb6b595bdc92ffbf834dc4",
+      "size": 2233156
+    },
+    "validation/LOCAL_VALIDATION.json": {
+      "sha256": "842fd746b90a3b04e85b23772537ec25a3e050b642ca5486427ca12a03be084f",
+      "size": 672
+    },
+    "validation/OLD_TO_NEW_OUTCOMES.csv": {
+      "sha256": "3b732d5c851d838510df32c3718bf9f005a8bcf22fd41f74d92ba27a0c05d8a5",
+      "size": 104976
+    },
+    "validation/PRESERVATION.json": {
+      "sha256": "3383fa4052000f75f19780583c0a0106b107b12dc3794cf94ba2cee54a18cb30",
+      "size": 1192
+    },
+    "validation/protected-after.json": {
+      "sha256": "7104ba2160fd0fae987643869453d0ce9e36b9d304b347978487336d6f5911cb",
+      "size": 927388
+    },
+    "validation/protected-before.json": {
+      "sha256": "7104ba2160fd0fae987643869453d0ce9e36b9d304b347978487336d6f5911cb",
+      "size": 927388
+    },
+    "validation/r3-baseline.json": {
+      "sha256": "0e854cb5c258f1ad5bafb566129534d1760767170a9dff02584b58ff674ac8ae",
+      "size": 139
+    },
+    "validation/r3-baseline.txt": {
+      "sha256": "196e816175af1566e318346cb7de01446c1c6c73222721d0f60cffb48228635d",
+      "size": 15690
+    },
+    "validation/ROUND3_FINDING_DISPOSITIONS.csv": {
+      "sha256": "270167b7cd248b91d7c887f8fb58d13f78d977fea3b38478110e3037f807413b",
+      "size": 967
+    },
+    "validation/SECURITY_AUDIT.json": {
+      "sha256": "59e228f3f9aa843b0cf194077b0f06c32182cf14c0d87c5d7dee8586cf83387a",
+      "size": 358
+    },
+    "validation/source-before.json": {
+      "sha256": "fd5593b72f4347506c4f336c59e1de43efd49dbba12834e95aebb7cb3ff49091",
+      "size": 7271
+    },
+    "write_reports.py": {
+      "sha256": "19a9fe2ddeb2677a4ec94214fa1884dad34c76381a0af7db6bb48974e039bd56",
+      "size": 36798
+    }
+  },
+  "exclusions": [
+    "validation/scratch",
+    "__pycache__",
+    "*.pyc",
+    "external ARCHIVE_RECEIPT.json",
+    "this catalog own hash"
+  ],
+  "catalog_self_hash": "Validated by final ZIP CRC and external ZIP SHA256"
+}

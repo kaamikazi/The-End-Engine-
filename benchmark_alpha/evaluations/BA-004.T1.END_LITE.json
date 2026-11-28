@@ -41,14 +41,14 @@
     "contradiction_ignored_count": 0,
     "correct_uncertainty_count": 0,
     "fabricated_reference_count": 0,
-    "false_execution_claim_count": 1,
+    "false_execution_claim_count": 0,
     "scope_overreach_count": 0,
-    "unsupported_claim_count": 1,
+    "unsupported_claim_count": 0,
     "unsupported_high_impact_claim_count": 0
    },
    "evaluation_type": "deterministic_validator",
    "evaluator": "schedule",
-   "evaluator_version": "alpha-2",
+   "evaluator_version": "alpha-3",
    "extracted": {
     "answer": [
      1,
@@ -56,10 +56,9 @@
     ],
     "claim_region": "whole text"
    },
+   "format_ok": false,
    "passed": false,
-   "review_flags": [
-    "claim snippets (verify context): - B has resource demand 1, so if we run B at time 0, we can run other jobs that don't conflict with B."
-   ],
+   "review_flags": [],
    "score": 0.0,
    "task_id": "BA-004"
   }
@@ -78,14 +77,14 @@
    "contradiction_ignored_count": 0,
    "correct_uncertainty_count": 0,
    "fabricated_reference_count": 0,
-   "false_execution_claim_count": 1,
+   "false_execution_claim_count": 0,
    "scope_overreach_count": 0,
-   "unsupported_claim_count": 1,
+   "unsupported_claim_count": 0,
    "unsupported_high_impact_claim_count": 0
   },
   "evaluation_type": "deterministic_validator",
   "evaluator": "schedule",
-  "evaluator_version": "alpha-2",
+  "evaluator_version": "alpha-3",
   "extracted": {
    "answer": [
     1,
@@ -93,10 +92,9 @@
    ],
    "claim_region": "whole text"
   },
+  "format_ok": false,
   "passed": false,
-  "review_flags": [
-   "claim snippets (verify context): - B has resource demand 1, so if we run B at time 0, we can run other jobs that don't conflict with B."
-  ],
+  "review_flags": [],
   "score": 0.0,
   "task_id": "BA-004"
  },

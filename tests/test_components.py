@@ -96,6 +96,27 @@ class ComponentTests(unittest.TestCase):
         self.assertFalse(result.passed)
         self.assertAlmostEqual(result.score, 0.55)
 
+    def test_llm_verifier_does_not_show_earlier_verification_results(self):
+        # Live models copied the previous verification's scores verbatim, freezing the score across revisions.
+        response = {"passed": False, "score": 0.5, "dimensions": {"correctness": 0.5, "clarity": 0.5},
+                    "remaining_issues": ["gap"], "weakness_updates": []}
+        provider = MockProvider(scripted={"verification": [response]})
+        seen = []
+        original = provider.generate_structured
+        provider.generate_structured = lambda request: (seen.append(request), original(request))[1]
+        earlier = {"candidate_id": "C0", "passed": False, "score": 0.0731,
+                   "dimensions": [["correctness", 0.0731], ["clarity", 0.0731]],
+                   "remaining_issues": ["EARLIER-ISSUE-MARKER"], "weakness_updates": []}
+        weakness = {"id": "W001", "description": "open issue", "status": "open"}
+        LLMVerifier(provider).verify(TASK, replace(self.candidate(), candidate_id="C1"),
+                                     {"analysis": {"dimensions": ["correctness", "clarity"]},
+                                      "weaknesses": [weakness], "verification": [earlier]})
+        context = repr(seen[0].context)
+        self.assertNotIn("previous_verification", seen[0].context)
+        self.assertNotIn("0.0731", context)
+        self.assertNotIn("EARLIER-ISSUE-MARKER", context)
+        self.assertEqual(seen[0].context["weaknesses"], [weakness])
+
     def test_schema_rejects_nonfinite_boolean_score_and_empty_content(self):
         for confidence, content in ((float("nan"), "text"), (True, "text"), (1.2, "text"), (0.5, "  ")):
             with self.subTest(confidence=confidence, content=content), self.assertRaises(ValueError):

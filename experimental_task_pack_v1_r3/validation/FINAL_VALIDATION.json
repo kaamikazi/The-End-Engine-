@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "engine_version": "0.3.5.2",
+  "engine_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+  "engine_source_unchanged": true,
+  "original_v1_and_R2_byte_identical": true,
+  "all_preexisting_files_byte_identical": true,
+  "protected_file_count": 5281,
+  "historical_benchmarks_architecture_review_unchanged": true,
+  "Harness": "Separate project untouched",
+  "engine_baseline": {
+    "tests": 303,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 22.937
+  },
+  "engine_final": {
+    "tests": 303,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 25.896
+  },
+  "prior_R2_tests": {
+    "tests": 58,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 4.183
+  },
+  "R3_tests": {
+    "tests": 100,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "passed": true,
+    "elapsed_seconds": 11.47
+  },
+  "fixtures": 167,
+  "R2_fixtures_retained": 83,
+  "new_fixtures": 84,
+  "paired_transitions": 18,
+  "outcomes": {
+    "PASS": 55,
+    "REVIEW": 30,
+    "FAIL": 82
+  },
+  "expectation_changes": [],
+  "tasks_public_loader_repair_metric_source_unchanged": true,
+  "all_reported_findings_reproduced_before_edit": true,
+  "local_dispositions": "RESOLVED_LOCALLY",
+  "independent_recheck": "PENDING",
+  "freeze": "DRAFT_PENDING_REVIEW",
+  "rubric": "exp-pack-1.0.3-draft",
+  "unresolved_ambiguity": "Bounded grammar abstains; see AMBIGUITY_BOUNDARY; no universal NLP/world-truth claim",
+  "budget": {
+    "runs": 12,
+    "outer_attempts": 36,
+    "global_attempts": 136,
+    "tokens": 400000,
+    "active_seconds": 10800
+  },
+  "secrets": 0,
+  "live_model_calls": 0,
+  "network_inference_calls": 0,
+  "benchmarks": 0,
+  "commit_push_publication": false,
+  "archive_digest": "External ARCHIVE_RECEIPT.json; scientific hashes and member bytes checked independently"
+}

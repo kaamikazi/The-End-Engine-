@@ -1,0 +1,119 @@
+{
+ "analysis": null,
+ "candidates": {},
+ "final": {
+  "answer_chars": 212,
+  "checks": [
+   {
+    "detail": null,
+    "name": "corrupting_write",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": "got 'w1_checks_lease_before_writing'",
+    "name": "prevention",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "got 'retry_write'",
+    "name": "w1_after_rejection",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "got 'always_safe'",
+    "name": "w2_retry_on_timeout",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "structured_rubric",
+  "evaluator": "choices",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": {
+    "corrupting_write": "W1_at_19",
+    "explanation": "Check first.",
+    "prevention": "w1_checks_lease_before_writing",
+    "w1_after_rejection": "retry_write",
+    "w2_retry_on_timeout": "always_safe"
+   },
+   "claim_region": "whole text"
+  },
+  "format_ok": true,
+  "passed": false,
+  "review_flags": [],
+  "score": 0.25,
+  "task_id": "BA-007"
+ },
+ "run_id": "BA-007.T1.SELF_REFLECT",
+ "stages": {
+  "initial": {
+   "answer_chars": 212,
+   "checks": [
+    {
+     "detail": null,
+     "name": "corrupting_write",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": "got 'w1_checks_lease_before_writing'",
+     "name": "prevention",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "got 'retry_write'",
+     "name": "w1_after_rejection",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "got 'always_safe'",
+     "name": "w2_retry_on_timeout",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "corrupting_write": "W1_at_19",
+     "explanation": "Check first.",
+     "prevention": "w1_checks_lease_before_writing",
+     "w1_after_rejection": "retry_write",
+     "w2_retry_on_timeout": "always_safe"
+    },
+    "claim_region": "whole text"
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.25,
+   "task_id": "BA-007"
+  }
+ }
+}

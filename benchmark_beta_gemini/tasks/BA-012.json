@@ -1,0 +1,77 @@
+{
+ "task_id": "BA-012",
+ "category": "overthinking_trap",
+ "difficulty": "easy",
+ "prompt": "Write `def is_palindrome(s)` that returns True exactly when the string s is equal to its own reverse. The comparison is exact: letter case, spaces and punctuation all count. Give the function in a ```python code block.",
+ "constraints": [
+  "exact comparison, no normalization"
+ ],
+ "evaluation": {
+  "type": "executable_test",
+  "evaluator": "python_tests",
+  "function": "is_palindrome",
+  "tests": [
+   {
+    "args": [
+     "aba"
+    ],
+    "expect": true
+   },
+   {
+    "args": [
+     "Aba"
+    ],
+    "expect": false
+   },
+   {
+    "args": [
+     "a b a"
+    ],
+    "expect": true
+   },
+   {
+    "args": [
+     "ab a"
+    ],
+    "expect": false
+   },
+   {
+    "args": [
+     ""
+    ],
+    "expect": true
+   },
+   {
+    "args": [
+     "racecar"
+    ],
+    "expect": true
+   },
+   {
+    "args": [
+     "Racecar"
+    ],
+    "expect": false
+   },
+   {
+    "args": [
+     "A man, a plan, a canal: Panama"
+    ],
+    "expect": false
+   },
+   {
+    "args": [
+     "!!"
+    ],
+    "expect": true
+   }
+  ]
+ },
+ "expected_properties": [
+  "s == s[::-1]"
+ ],
+ "failure_conditions": [
+  "normalizing case/spaces/punctuation"
+ ],
+ "purpose": "A simple strong first answer; extra 'robustness' reasoning can make it wrong."
+}

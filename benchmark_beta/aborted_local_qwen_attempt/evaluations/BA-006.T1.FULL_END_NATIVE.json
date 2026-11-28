@@ -1,0 +1,701 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C3",
+  "c0_format_ok": false,
+  "calibration": {
+   "basis": "quality_gate=REVISE",
+   "external_passed": true,
+   "internal": "rejected",
+   "label": "FALSE_REJECT"
+  },
+  "delta_validation": [
+   {
+    "external": "IMPROVEMENT",
+    "external_delta": 1.0,
+    "from": "C0",
+    "label": "UNCLASSIFIED",
+    "predicted": "MIXED",
+    "to": "C1"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C1",
+    "label": "UNCLASSIFIED",
+    "predicted": "MIXED",
+    "to": "C2"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C2",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C3"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C3",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C4"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C4",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C5"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C3",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C6"
+   }
+  ],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 27695,
+    "effect": "positive",
+    "external_after": 1.0,
+    "external_before": 0.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C1",
+    "target": "CL001"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 24525,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C1",
+    "operator": "VERIFY",
+    "revision_candidate": "C2",
+    "target": "CL009"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 14594,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C2",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C3",
+    "target": "CL017"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 27111,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C3",
+    "operator": "ALTERNATIVE",
+    "revision_candidate": "C4",
+    "target": "C3:architecture"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 14975,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C4",
+    "operator": "WHICH",
+    "revision_candidate": "C5",
+    "target": "C4:tradeoff"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 14362,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C3",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C6",
+    "target": "CL019"
+   }
+  ],
+  "overthinking": [],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.0
+    },
+    "C1": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C2": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C3": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C4": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C5": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C6": {
+     "passed": true,
+     "score": 1.0
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C1",
+   "regressions": [],
+   "returned_candidate_id": "C3"
+  },
+  "rollbacks": [
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C5",
+    "rejected_score": 1.0,
+    "restored_to": "C3",
+    "returned": "C3",
+    "returned_score": 1.0
+   }
+  ]
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 18945,
+   "checks": [
+    {
+     "detail": "no JSON object",
+     "name": "dedup_key",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "no JSON object",
+     "name": "ack_timing",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "no JSON object",
+     "name": "stale_event",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "no JSON object",
+     "name": "atomicity",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": null,
+    "claim_region": "whole text"
+   },
+   "format_ok": false,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0,
+   "task_id": "BA-006"
+  },
+  "C1": {
+   "answer_chars": 16086,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  },
+  "C2": {
+   "answer_chars": 5700,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  },
+  "C3": {
+   "answer_chars": 4684,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  },
+  "C4": {
+   "answer_chars": 5936,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  },
+  "C5": {
+   "answer_chars": 5182,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  },
+  "C6": {
+   "answer_chars": 5323,
+   "checks": [
+    {
+     "detail": null,
+     "name": "dedup_key",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "ack_timing",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "stale_event",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "atomicity",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "failure_modes",
+     "required": false,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "structured_rubric",
+   "evaluator": "choices",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "ack_timing": "after_durable_commit",
+     "atomicity": "dedup_record_and_effect_in_one_transaction",
+     "dedup_key": "event_id",
+     "failure_modes": [
+      "duplicate events",
+      "out-of-order events",
+      "stale events"
+     ],
+     "stale_event": "ignore_if_sequence_not_newer"
+    },
+    "claim_region": "after </think>"
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-006"
+  }
+ },
+ "final": {
+  "answer_chars": 4684,
+  "checks": [
+   {
+    "detail": null,
+    "name": "dedup_key",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "ack_timing",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "stale_event",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "atomicity",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "failure_modes",
+    "required": false,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "structured_rubric",
+  "evaluator": "choices",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": {
+    "ack_timing": "after_durable_commit",
+    "atomicity": "dedup_record_and_effect_in_one_transaction",
+    "dedup_key": "event_id",
+    "failure_modes": [
+     "duplicate events",
+     "out-of-order events",
+     "stale events"
+    ],
+    "stale_event": "ignore_if_sequence_not_newer"
+   },
+   "claim_region": "after </think>"
+  },
+  "format_ok": true,
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-006"
+ },
+ "run_id": "BA-006.T1.FULL_END_NATIVE",
+ "stages": {}
+}

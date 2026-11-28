@@ -1,0 +1,17 @@
+replaying M25 candidate C3
+original response dims: {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+prior shown (prev dims): {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+A0: 92s prompt_tokens=3401 dims={'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+A1: 26s prompt_tokens=3401 dims={'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+A2: 29s prompt_tokens=3401 dims={'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+B0: 25s prompt_tokens=3117 dims={'alternatives': 0, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.5, 'correctness': 0.5, 'failure_modes': 0.5, 'robustness': 0.5}
+B1: 26s prompt_tokens=3117 dims={'alternatives': 0, 'architecture': 0.5, 'clarity': 0.8, 'completeness': 0.5, 'correctness': 0.5, 'failure_modes': 0.5, 'robustness': 0.5}
+B2: 25s prompt_tokens=3117 dims={'alternatives': 0, 'architecture': 0.8, 'clarity': 0.9, 'completeness': 0.7, 'correctness': 0.6, 'failure_modes': 0.5, 'robustness': 0.6}
+C0: 27s prompt_tokens=3401 dims={'alternatives': 0.3, 'architecture': 0.3, 'clarity': 0.3, 'completeness': 0.3, 'correctness': 0.3, 'failure_modes': 0.3, 'robustness': 0.3}
+C1: 28s prompt_tokens=3401 dims={'alternatives': 0.3, 'architecture': 0.3, 'clarity': 0.3, 'completeness': 0.3, 'correctness': 0.3, 'failure_modes': 0.3, 'robustness': 0.3}
+C2: 30s prompt_tokens=3401 dims={'alternatives': 0.3, 'architecture': 0.3, 'clarity': 0.3, 'completeness': 0.3, 'correctness': 0.3, 'failure_modes': 0.3, 'robustness': 0.3}
+
+SUMMARY (matches prior exactly):
+A 3/3 identical to prior | mean scores: {'alternatives': 0.8, 'architecture': 0.8, 'clarity': 0.8, 'completeness': 0.8, 'correctness': 0.8, 'failure_modes': 0.8, 'robustness': 0.8}
+B 0/3 identical to prior | mean scores: {'alternatives': 0.0, 'architecture': 0.7, 'clarity': 0.83, 'completeness': 0.57, 'correctness': 0.53, 'failure_modes': 0.5, 'robustness': 0.53}
+C 0/3 identical to prior | mean scores: {'alternatives': 0.3, 'architecture': 0.3, 'clarity': 0.3, 'completeness': 0.3, 'correctness': 0.3, 'failure_modes': 0.3, 'robustness': 0.3}

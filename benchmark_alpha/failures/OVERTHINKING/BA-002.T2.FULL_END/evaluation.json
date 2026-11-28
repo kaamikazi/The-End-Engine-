@@ -1,0 +1,309 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C0",
+  "calibration": {
+   "basis": "quality_gate=REJECT",
+   "external_passed": true,
+   "internal": "rejected",
+   "label": "FALSE_REJECT"
+  },
+  "delta_validation": [
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C1"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "PARTIAL_MISMATCH",
+    "predicted": "SEVERE_REGRESSION",
+    "to": "C2"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C3"
+   }
+  ],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 4647,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C1",
+    "target": "CL001"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 4497,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "VERIFY",
+    "revision_candidate": "C2",
+    "target": "CL001"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 4605,
+    "effect": "neutral",
+    "external_after": 1.0,
+    "external_before": 1.0,
+    "information_gain": "LOW",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C3",
+    "target": "CL002"
+   }
+  ],
+  "overthinking": [
+   "B_cycles_without_external_benefit"
+  ],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C1": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C2": {
+     "passed": true,
+     "score": 1.0
+    },
+    "C3": {
+     "passed": true,
+     "score": 1.0
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C0",
+   "regressions": [],
+   "returned_candidate_id": "C0"
+  },
+  "rollbacks": [
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C1",
+    "rejected_score": 1.0,
+    "restored_to": "C0",
+    "returned": "C0",
+    "returned_score": 1.0
+   },
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C2",
+    "rejected_score": 1.0,
+    "restored_to": "C0",
+    "returned": "C0",
+    "returned_score": 1.0
+   },
+   {
+    "label": "ROLLBACK_NEUTRAL",
+    "rejected": "C3",
+    "rejected_score": 1.0,
+    "restored_to": "C0",
+    "returned": "C0",
+    "returned_score": 1.0
+   }
+  ]
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 579,
+   "checks": [
+    {
+     "detail": null,
+     "name": "unit_tests",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 7,
+     "total": 7
+    }
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-002"
+  },
+  "C1": {
+   "answer_chars": 580,
+   "checks": [
+    {
+     "detail": null,
+     "name": "unit_tests",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 7,
+     "total": 7
+    }
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-002"
+  },
+  "C2": {
+   "answer_chars": 580,
+   "checks": [
+    {
+     "detail": null,
+     "name": "unit_tests",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 7,
+     "total": 7
+    }
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-002"
+  },
+  "C3": {
+   "answer_chars": 579,
+   "checks": [
+    {
+     "detail": null,
+     "name": "unit_tests",
+     "required": true,
+     "score": 1.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 7,
+     "total": 7
+    }
+   },
+   "format_ok": true,
+   "passed": true,
+   "review_flags": [],
+   "score": 1.0,
+   "task_id": "BA-002"
+  }
+ },
+ "final": {
+  "answer_chars": 579,
+  "checks": [
+   {
+    "detail": null,
+    "name": "unit_tests",
+    "required": true,
+    "score": 1.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "executable_test",
+  "evaluator": "python_tests",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "claim_region": "whole text",
+   "tests": {
+    "passed": 7,
+    "total": 7
+   }
+  },
+  "format_ok": true,
+  "passed": true,
+  "review_flags": [],
+  "score": 1.0,
+  "task_id": "BA-002"
+ },
+ "run_id": "BA-002.T2.FULL_END",
+ "stages": {}
+}

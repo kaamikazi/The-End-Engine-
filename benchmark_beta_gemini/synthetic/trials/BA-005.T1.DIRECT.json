@@ -1,0 +1,58 @@
+{
+ "answer": "Final answer:\n```json\n{\"first\": \"E1\", \"last\": \"E2\", \"elapsed_minutes\": 330}\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": "stop",
+   "input_tokens": 99,
+   "latency_ms": 0.0,
+   "output_tokens": 19,
+   "purpose": "direct_answer",
+   "role": "generator",
+   "seed": null,
+   "seq": 1,
+   "status": "ok",
+   "structured": false
+  }
+ ],
+ "category": "hidden_assumption",
+ "condition": "DIRECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 1,
+  "calls_by_role": {
+   "generator": 1
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 19,
+  "end_cycles": null,
+  "failed_attempts": 0,
+  "known_partial_tokens": 118,
+  "model_latency_ms": 0,
+  "prompt_tokens": 99,
+  "tool_check_calls": 0,
+  "total_tokens": 118,
+  "truncated_text_answers": 0,
+  "wall_ms": 0.02
+ },
+ "data_origin": "SYNTHETIC",
+ "end": null,
+ "ended_at": "2026-10-01T08:40:54.821978+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "SYNTHETIC",
+  "label": "SYNTHETIC BENCHMARK INFRASTRUCTURE TEST",
+  "model": "synthetic-fixture",
+  "provider": "synthetic-scripted"
+ },
+ "position_in_trial": 0,
+ "run_id": "BA-005.T1.DIRECT",
+ "stages": {
+  "answer": "Final answer:\n```json\n{\"first\": \"E1\", \"last\": \"E2\", \"elapsed_minutes\": 330}\n```"
+ },
+ "started_at": "2026-10-01T08:40:54.821978+00:00",
+ "task_id": "BA-005",
+ "trial": 1,
+ "trial_id": "BA-005.T1",
+ "trial_seed": 1703324673
+}

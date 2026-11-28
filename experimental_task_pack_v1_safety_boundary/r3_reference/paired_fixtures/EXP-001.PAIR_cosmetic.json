@@ -1,0 +1,15 @@
+{
+  "pair_id": "EXP-001.PAIR_cosmetic",
+  "task_id": "EXP-001",
+  "candidate_role": "SYNTHETIC_PAIR_NOT_LIVE_GENERATED_C0",
+  "c0_content": "{\"labels\":[{\"accession\":\"Mx-A7\",\"label\":\"LOAN: Copper bell\",\"handling\":\"single-tray\"},{\"accession\":\"QP_6c\",\"label\":\"Folded map\",\"handling\":\"single-tray\"},{\"accession\":\"bV-22\",\"label\":\"LOAN: Glass bead\",\"handling\":\"two-hands\"}],\"explanation\":{\"loan_ids\":[\"Mx-A7\",\"bV-22\"],\"fragile_ids\":[\"bV-22\"]},\"scope\":\"label_text_only\"}",
+  "final_content": "{\n    \"labels\": [\n        {\n            \"accession\": \"Mx-A7\",\n            \"label\": \"LOAN: Copper bell\",\n            \"handling\": \"single-tray\"\n        },\n        {\n            \"accession\": \"QP_6c\",\n            \"label\": \"Folded map\",\n            \"handling\": \"single-tray\"\n        },\n        {\n            \"accession\": \"bV-22\",\n            \"label\": \"LOAN: Glass bead\",\n            \"handling\": \"two-hands\"\n        }\n    ],\n    \"explanation\": {\n        \"loan_ids\": [\n            \"Mx-A7\",\n            \"bV-22\"\n        ],\n        \"fragile_ids\": [\n            \"bV-22\"\n        ]\n    },\n    \"scope\": \"label_text_only\"\n}",
+  "expected_transition_fields": {
+    "neutral_change": true,
+    "presentation_only_change": true,
+    "observable_required_repair": false
+  },
+  "rationale": "Permitted serialization/permutation without a quality delta.",
+  "revision_trace": null,
+  "independent_recheck_status": "PENDING"
+}

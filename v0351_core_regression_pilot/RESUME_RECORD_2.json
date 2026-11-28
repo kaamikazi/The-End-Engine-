@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-07T17:06:45.334931+00:00",
+  "reason": "User retry after approval-review usage limit; previous Python process confirmed absent. Exact process interruption cause unknown.",
+  "completed_trials_preserved": 9,
+  "resumed_only": [
+    "BA-009.T1.FULL_END_STRUCTURED",
+    "BA-009.T1.FULL_END_NATIVE",
+    "BA-009.T1.DIRECT"
+  ],
+  "partial_run": "BA-009.T1.FULL_END_STRUCTURED",
+  "recorded_response_calls": 3,
+  "observed_partial_latency_seconds": 68.48607399999999,
+  "observed_partial_tokens": 2567,
+  "one_additional_started_call_usage_unknown": true,
+  "source_and_history_unchanged": true,
+  "completed_trial_sha256": {
+    "BA-001.T1.DIRECT.json": "73742bc86785897f91379f97860d05dd3b540b53ed9e26b059662ab719ad7eaf",
+    "BA-001.T1.FULL_END_NATIVE.json": "e7efa54325861e41e192c220187404344e4168653da73712d5d4cfa1e04b23b0",
+    "BA-001.T1.FULL_END_STRUCTURED.json": "fc0561ced28628bdad31b59ca08a81ca7fb7cdbe2a8e16e63026ace7844c5dc2",
+    "BA-002.T1.DIRECT.json": "04a76d996f40f9ae5d54da9c443ce60f4727b756245ad535226f6c749948d142",
+    "BA-002.T1.FULL_END_NATIVE.json": "cf7320f3b665d5cdb0969d6bc76cc3b26082a78dfd670caa111979552d71648f",
+    "BA-002.T1.FULL_END_STRUCTURED.json": "91767df7e5c01f62d9215ee15ea9edba5f4e82f58afba3d3f1e9b35aea2416c7",
+    "BA-008.T1.DIRECT.json": "2d5a5788226a668023a6023f1d95491792d6f51a1fac8b9e6d557875fc76c2e6",
+    "BA-008.T1.FULL_END_NATIVE.json": "97a129d7444f2e131c90df2a6020d628162f5f43c4496fbb49404b84e66a475d",
+    "BA-008.T1.FULL_END_STRUCTURED.json": "acef52fecf2a4d46a2d112775b59a5a6af005f2740c177a9012690ee329559a0"
+  },
+  "partial_artifact_sha256": {
+    "wire/BA-009.T1.FULL_END_STRUCTURED/0001.json": "16273803f13eaeef49b9cb59771e133a952bfef84288d21c2925eb06f8e4d284",
+    "wire/BA-009.T1.FULL_END_STRUCTURED/0002.json": "eb9ed549b68c1ce64819b4bef4416c1f1c8a9e6fc4cb552bc8c493911fb161d2",
+    "wire/BA-009.T1.FULL_END_STRUCTURED/0003.json": "97660ef6dd1481f73c68cf8ea6405f6013d06c87e937abcd18d3bd8b342b7ab5",
+    "call_logs/BA-009.T1.FULL_END_STRUCTURED.jsonl": "191f63f60c5c1926837ac6c18a7c3415f34f98703eef35187506c91cc4dd09bc"
+  }
+}

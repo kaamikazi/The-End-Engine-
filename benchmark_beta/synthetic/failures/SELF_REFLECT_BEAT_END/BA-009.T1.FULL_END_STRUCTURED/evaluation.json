@@ -1,0 +1,326 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C0",
+  "c0_format_ok": true,
+  "calibration": {
+   "basis": "quality_gate=ACCEPT_PROVISIONALLY",
+   "external_passed": false,
+   "internal": "accepted",
+   "label": "FALSE_ACCEPT"
+  },
+  "delta_validation": [
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C0",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C1"
+   },
+   {
+    "external": "NO_MATERIAL_CHANGE",
+    "external_delta": 0.0,
+    "from": "C1",
+    "label": "MATCH",
+    "predicted": "NO_MATERIAL_CHANGE",
+    "to": "C2"
+   }
+  ],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 2333,
+    "effect": "neutral",
+    "external_after": 0.5,
+    "external_before": 0.5,
+    "information_gain": "ZERO",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C1",
+    "target": "C0:evidence"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 2343,
+    "effect": "neutral",
+    "external_after": 0.5,
+    "external_before": 0.5,
+    "information_gain": "ZERO",
+    "on_candidate": "C1",
+    "operator": "SECOND_ORDER_EFFECT",
+    "revision_candidate": "C2",
+    "target": "C1:failure_modes"
+   }
+  ],
+  "overthinking": [
+   "B_cycles_without_external_benefit"
+  ],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.5
+    },
+    "C1": {
+     "passed": false,
+     "score": 0.5
+    },
+    "C2": {
+     "passed": false,
+     "score": 0.5
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C0",
+   "regressions": [],
+   "returned_candidate_id": "C0"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 176,
+   "checks": [
+    {
+     "detail": null,
+     "name": "format",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "cited_ids_exist",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "names_missing_evidence",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "certainty='established'",
+     "name": "certainty_below_established",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 1,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "additional_evidence_needed": [],
+     "certainty": "established",
+     "conclusion": "The database caused it; both engineers agree.",
+     "evidence_used": [
+      "E2"
+     ]
+    },
+    "claim_region": "whole text",
+    "consensus_as_evidence": true
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [
+    "model agreement (E2) treated as establishing the cause"
+   ],
+   "score": 0.5,
+   "task_id": "BA-009"
+  },
+  "C1": {
+   "answer_chars": 176,
+   "checks": [
+    {
+     "detail": null,
+     "name": "format",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "cited_ids_exist",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "names_missing_evidence",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "certainty='established'",
+     "name": "certainty_below_established",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 1,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "additional_evidence_needed": [],
+     "certainty": "established",
+     "conclusion": "The database caused it; both engineers agree.",
+     "evidence_used": [
+      "E2"
+     ]
+    },
+    "claim_region": "whole text",
+    "consensus_as_evidence": true
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [
+    "model agreement (E2) treated as establishing the cause"
+   ],
+   "score": 0.5,
+   "task_id": "BA-009"
+  },
+  "C2": {
+   "answer_chars": 176,
+   "checks": [
+    {
+     "detail": null,
+     "name": "format",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "cited_ids_exist",
+     "required": true,
+     "score": 1.0
+    },
+    {
+     "detail": null,
+     "name": "names_missing_evidence",
+     "required": true,
+     "score": 0.0
+    },
+    {
+     "detail": "certainty='established'",
+     "name": "certainty_below_established",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 1,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "deterministic_validator",
+   "evaluator": "evidence",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": {
+     "additional_evidence_needed": [],
+     "certainty": "established",
+     "conclusion": "The database caused it; both engineers agree.",
+     "evidence_used": [
+      "E2"
+     ]
+    },
+    "claim_region": "whole text",
+    "consensus_as_evidence": true
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [
+    "model agreement (E2) treated as establishing the cause"
+   ],
+   "score": 0.5,
+   "task_id": "BA-009"
+  }
+ },
+ "final": {
+  "answer_chars": 176,
+  "checks": [
+   {
+    "detail": null,
+    "name": "format",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "cited_ids_exist",
+    "required": true,
+    "score": 1.0
+   },
+   {
+    "detail": null,
+    "name": "names_missing_evidence",
+    "required": true,
+    "score": 0.0
+   },
+   {
+    "detail": "certainty='established'",
+    "name": "certainty_below_established",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 1,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "deterministic_validator",
+  "evaluator": "evidence",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": {
+    "additional_evidence_needed": [],
+    "certainty": "established",
+    "conclusion": "The database caused it; both engineers agree.",
+    "evidence_used": [
+     "E2"
+    ]
+   },
+   "claim_region": "whole text",
+   "consensus_as_evidence": true
+  },
+  "format_ok": true,
+  "passed": false,
+  "review_flags": [
+   "model agreement (E2) treated as establishing the cause"
+  ],
+  "score": 0.5,
+  "task_id": "BA-009"
+ },
+ "run_id": "BA-009.T1.FULL_END_STRUCTURED",
+ "stages": {}
+}

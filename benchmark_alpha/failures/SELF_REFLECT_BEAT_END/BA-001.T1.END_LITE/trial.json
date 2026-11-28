@@ -1,0 +1,119 @@
+{
+ "answer": "```json\n[-40.0, 32.0, 97.9, 212.0, 74.7]\n```",
+ "calls": [
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 221,
+   "latency_ms": 5491.481,
+   "output_tokens": 113,
+   "prompt_chars": 762,
+   "purpose": "initial_candidate",
+   "role": "generator",
+   "seed": 3878804567,
+   "seq": 1,
+   "status": "ok",
+   "structured": true
+  },
+  {
+   "attempt": 1,
+   "context_near_limit": false,
+   "done_reason": "stop",
+   "input_tokens": 713,
+   "latency_ms": 10340.525,
+   "output_tokens": 216,
+   "prompt_chars": 2459,
+   "purpose": "verification",
+   "role": "generator",
+   "seed": 2659689463,
+   "seq": 2,
+   "status": "ok",
+   "structured": true
+  }
+ ],
+ "category": "easy_transformation",
+ "condition": "END_LITE",
+ "cost": {
+  "branch_count": 0,
+  "calls": 2,
+  "calls_by_role": {
+   "generator": 2
+  },
+  "calls_missing_usage": 0,
+  "completion_tokens": 329,
+  "end_cycles": 0,
+  "failed_attempts": 0,
+  "known_partial_tokens": 1263,
+  "model_latency_ms": 15832.006,
+  "prompt_tokens": 934,
+  "tool_check_calls": 0,
+  "total_tokens": 1263,
+  "truncated_text_answers": 0,
+  "wall_ms": 15855.017
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": {
+  "acceptance_label": "INCOMPLETE",
+  "best_candidate_id": "C0",
+  "branch_count": 0,
+  "candidates": [
+   "C0"
+  ],
+  "complexity": "normal",
+  "errors": [
+   {
+    "message": "Invalid or duplicate weakness update: C0",
+    "stage": "verification"
+   }
+  ],
+  "gate_decisions": [],
+  "iterations": 0,
+  "latest_candidate_id": "C0",
+  "quality_gate": "BLOCKED",
+  "returned_candidate_id": "C0",
+  "returned_verification": {
+   "evidence_type": "MODEL_JUDGMENT",
+   "passed": false,
+   "remaining_issues": [
+    "The Celsius temperature 21.5 converts to 74.7°F, but the expected value is 74.8°F (21.5 * 9/5 + 32 = 74.7, but due to rounding, it should be 74.8°F)."
+   ],
+   "score": 0.8
+  },
+  "rollback_events": [],
+  "termination": "EXTERNAL_BLOCKER",
+  "trajectory_file": "e949bd9e-6389-4327-96e8-863453c5a568.jsonl",
+  "trajectory_id": "e949bd9e-6389-4327-96e8-863453c5a568",
+  "trajectory_sha256": "f9a4fceb9081d3e3708c1388a4389c3c7af628e9b4f63303519902319573f10f"
+ },
+ "ended_at": "2026-09-30T15:24:48.999774+00:00",
+ "error": null,
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 300.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-001.T1.END_LITE",
+ "stages": {},
+ "started_at": "2026-09-30T15:24:33.144654+00:00",
+ "task_id": "BA-001",
+ "trial": 1,
+ "trial_id": "BA-001.T1",
+ "trial_seed": 1026581566
+}

@@ -1,0 +1,36 @@
+{
+  "engine_version": "0.3.5.2",
+  "engine_fingerprint": "29c0bbce13559ea595d34d9c78d4812811bcade144deb6fdbd8a231c4da4fc82",
+  "python": "3.12.14",
+  "git_head": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+  "git_branch": "main",
+  "original_rubric": "exp-pack-1.0.1-draft",
+  "original_pack_files": 122,
+  "original_fixture_count": 57,
+  "reviewer_files_present": [],
+  "review_source": "Supplied user review/reproductions; reviewer files not locally found unless listed above",
+  "round1_review_status": "REVISE",
+  "reviewer": "ChatGPT in a separate authoring session, as supplied by user",
+  "review_scope": "Targeted code/fixture review; not comprehensive human research audit",
+  "engine_tests": {
+    "tests": 303,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "elapsed_seconds": 24.039,
+    "passed": true,
+    "command": "python -B -m unittest discover -s tests -t . (network guarded)"
+  },
+  "original_evaluator_tests": {
+    "tests": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "elapsed_seconds": 1.321,
+    "passed": true,
+    "command": "python -B -m unittest discover -s experimental_task_pack_v1/tests -t . (network guarded)"
+  },
+  "all_concrete_review_defects_reproduced": true
+}

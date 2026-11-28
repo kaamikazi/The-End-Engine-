@@ -1,0 +1,76 @@
+{
+ "answer": "",
+ "calls": [
+  {
+   "attempt": 1,
+   "done_reason": null,
+   "error": "ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host",
+   "input_tokens": null,
+   "latency_ms": 65897.736,
+   "output_tokens": null,
+   "prompt_chars": 361,
+   "purpose": "direct_answer",
+   "role": "generator",
+   "seed": 1385570727,
+   "seq": 1,
+   "status": "transport_error",
+   "structured": false
+  }
+ ],
+ "category": "algorithm",
+ "condition": "DIRECT",
+ "cost": {
+  "branch_count": null,
+  "calls": 1,
+  "calls_by_role": {
+   "generator": 1
+  },
+  "calls_missing_usage": 1,
+  "completion_tokens": null,
+  "end_cycles": null,
+  "failed_attempts": 1,
+  "known_partial_tokens": 0,
+  "model_latency_ms": 65897.736,
+  "prompt_tokens": null,
+  "tool_check_calls": 0,
+  "total_tokens": null,
+  "truncated_text_answers": 0,
+  "wall_ms": 66079.873
+ },
+ "data_origin": "LIVE_LOCAL_MODEL",
+ "end": null,
+ "ended_at": "2026-09-30T21:15:12.107584+00:00",
+ "error": {
+  "message": "transport_error: [WinError 10054] An existing connection was forcibly closed by the remote host",
+  "traceback": "ttp\\client.py\", line 1419, in getresponse\n    response.begin()\n  File \"C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\client.py\", line 331, in begin\n    version, status, reason = self._read_status()\n                              ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\client.py\", line 292, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\imran\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socket.py\", line 707, in readinto\n    return self._sock.recv_into(b)\n           ^^^^^^^^^^^^^^^^^^^^^^^\nConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"E:\\The End Engine\\benchmark_alpha\\bench\\runner.py\", line 143, in run_benchmark\n    output = run_one(task, step[\"trial\"], step[\"condition\"], model, log, out, end_settings)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\benchmark_alpha\\bench\\runner.py\", line 63, in run_one\n    return run_direct(task, model)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\benchmark_alpha\\bench\\conditions.py\", line 57, in run_direct\n    answer = model.generate(ModelRequest(\"direct_answer\", task[\"prompt\"], {}, None)).content\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\benchmark_alpha\\bench\\providers.py\", line 94, in generate\n    return self._call(request, structured=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\The End Engine\\benchmark_alpha\\bench\\providers.py\", line 133, in _call\n    raise ProviderError(\"transport_error\", str(exc)) from exc\nbench.providers.ProviderError: transport_error: [WinError 10054] An existing connection was forcibly closed by the remote host\n",
+  "type": "ProviderError"
+ },
+ "model": {
+  "data_origin": "LIVE_LOCAL_MODEL",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "model": "qwen3:4b",
+  "provider": "ollama-local",
+  "settings": {
+   "base_seed": 20260930,
+   "endpoint": "http://127.0.0.1:11434",
+   "model": "qwen3:4b",
+   "num_ctx": 8192,
+   "num_predict": 4096,
+   "provider": "ollama-local",
+   "structured_retries": 1,
+   "system": null,
+   "temperature": 0.7,
+   "think": false,
+   "timeout_seconds": 900.0,
+   "top_p": 0.8
+  }
+ },
+ "position_in_trial": 3,
+ "run_id": "BA-003.T2.DIRECT",
+ "stages": {},
+ "started_at": "2026-09-30T21:14:06.031425+00:00",
+ "task_id": "BA-003",
+ "trial": 2,
+ "trial_id": "BA-003.T2",
+ "trial_seed": 857649221
+}

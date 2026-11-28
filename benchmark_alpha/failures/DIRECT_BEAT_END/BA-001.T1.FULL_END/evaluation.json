@@ -1,0 +1,109 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": null,
+  "calibration": {
+   "basis": "quality_gate=BLOCKED",
+   "external_passed": false,
+   "internal": "inconclusive",
+   "label": "INCONCLUSIVE"
+  },
+  "delta_validation": [],
+  "operator_effects": [],
+  "overthinking": [],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.0
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C0",
+   "regressions": [],
+   "returned_candidate_id": "C0"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 44,
+   "checks": [
+    {
+     "detail": "got [-40.0, 32.0, 97.9, 212.0, 74.7]",
+     "name": "values_correct",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "known_answer",
+   "evaluator": "numeric_list",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "answer": [
+     -40.0,
+     32.0,
+     97.9,
+     212.0,
+     74.7
+    ],
+    "claim_region": "whole text"
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0,
+   "task_id": "BA-001"
+  }
+ },
+ "final": {
+  "answer_chars": 44,
+  "checks": [
+   {
+    "detail": "got [-40.0, 32.0, 97.9, 212.0, 74.7]",
+    "name": "values_correct",
+    "required": true,
+    "score": 0.0
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "known_answer",
+  "evaluator": "numeric_list",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "answer": [
+    -40.0,
+    32.0,
+    97.9,
+    212.0,
+    74.7
+   ],
+   "claim_region": "whole text"
+  },
+  "format_ok": true,
+  "passed": false,
+  "review_flags": [],
+  "score": 0.0,
+  "task_id": "BA-001"
+ },
+ "run_id": "BA-001.T1.FULL_END",
+ "stages": {}
+}

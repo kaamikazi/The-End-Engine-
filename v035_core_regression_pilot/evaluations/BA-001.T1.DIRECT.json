@@ -1,0 +1,44 @@
+{
+  "run_id": "BA-001.T1.DIRECT",
+  "final": {
+    "task_id": "BA-001",
+    "evaluator": "numeric_list",
+    "evaluator_version": "alpha-3",
+    "format_ok": true,
+    "evaluation_type": "known_answer",
+    "passed": true,
+    "score": 1.0,
+    "checks": [
+      {
+        "name": "values_correct",
+        "score": 1.0,
+        "required": true,
+        "detail": null
+      }
+    ],
+    "counters": {
+      "unsupported_claim_count": 0,
+      "unsupported_high_impact_claim_count": 0,
+      "fabricated_reference_count": 0,
+      "scope_overreach_count": 0,
+      "contradiction_ignored_count": 0,
+      "false_execution_claim_count": 0,
+      "correct_uncertainty_count": 0
+    },
+    "review_flags": [],
+    "extracted": {
+      "answer": [
+        -40.0,
+        32.0,
+        97.9,
+        212.0,
+        70.7
+      ],
+      "claim_region": "after </think>"
+    },
+    "answer_chars": 4393
+  },
+  "stages": {},
+  "candidates": {},
+  "analysis": null
+}

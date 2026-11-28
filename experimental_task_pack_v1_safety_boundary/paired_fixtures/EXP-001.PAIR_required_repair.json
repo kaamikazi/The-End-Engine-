@@ -1,0 +1,18 @@
+{
+  "pair_id": "EXP-001.PAIR_required_repair",
+  "task_id": "EXP-001",
+  "candidate_role": "SYNTHETIC_PAIR_NOT_LIVE_GENERATED_C0",
+  "c0_content": "{\"labels\":[{\"accession\":\"Mx-A7\",\"label\":\"LOAN: Copper bell\",\"handling\":\"single-tray\"},{\"accession\":\"QP_6c\",\"label\":\"Folded map\",\"handling\":\"single-tray\"},{\"accession\":\"bV-22\",\"label\":\"LOAN: Glass bead\",\"handling\":\"two-hands\"}],\"scope\":\"label_text_only\"}",
+  "final_content": "{\"labels\":[{\"accession\":\"Mx-A7\",\"label\":\"LOAN: Copper bell\",\"handling\":\"single-tray\"},{\"accession\":\"QP_6c\",\"label\":\"Folded map\",\"handling\":\"single-tray\"},{\"accession\":\"bV-22\",\"label\":\"LOAN: Glass bead\",\"handling\":\"two-hands\"}],\"explanation\":{\"loan_ids\":[\"Mx-A7\",\"bV-22\"],\"fragile_ids\":[\"bV-22\"]},\"scope\":\"label_text_only\"}",
+  "expected_transition_fields": {
+    "required_explanation_repaired": true,
+    "task_success_improvement": true,
+    "substantive_improvement": false,
+    "observable_required_repair": true,
+    "meaningful_task_completion_repair": true,
+    "targeted_repair_supported_by_trace": null
+  },
+  "rationale": "Missing mandatory justification repaired; content already correct; no causal target invented.",
+  "revision_trace": null,
+  "independent_recheck_status": "PENDING"
+}

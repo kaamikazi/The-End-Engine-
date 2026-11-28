@@ -1,0 +1,232 @@
+{
+ "analysis": {
+  "best_internal_candidate_id": "C2",
+  "calibration": {
+   "basis": "llm_verifier_passed=False",
+   "external_passed": false,
+   "internal": "rejected",
+   "label": "TRUE_REJECT"
+  },
+  "delta_validation": [],
+  "operator_effects": [
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 6800,
+    "effect": "neutral",
+    "external_after": 0.0909,
+    "external_before": 0.0,
+    "information_gain": "MEDIUM",
+    "on_candidate": "C0",
+    "operator": "EVIDENCE",
+    "revision_candidate": "C1",
+    "target": "CL001"
+   },
+   {
+    "cycle_calls_missing_usage": 0,
+    "cycle_tokens_recorded": 4587,
+    "effect": "neutral",
+    "external_after": 0.0909,
+    "external_before": 0.0909,
+    "information_gain": "LOW",
+    "on_candidate": "C1",
+    "operator": "CONSTRAINT",
+    "revision_candidate": "C2",
+    "target": "C1:completeness"
+   }
+  ],
+  "overthinking": [
+   "B_cycles_without_external_benefit"
+  ],
+  "progression": {
+   "candidate_scores": {
+    "C0": {
+     "passed": false,
+     "score": 0.0
+    },
+    "C1": {
+     "passed": false,
+     "score": 0.0909
+    },
+    "C2": {
+     "passed": false,
+     "score": 0.0909
+    }
+   },
+   "correct_then_lost": false,
+   "earlier_candidate_better": [],
+   "missed_peak": false,
+   "peak_candidate_id": "C1",
+   "regressions": [],
+   "returned_candidate_id": "C2"
+  },
+  "rollbacks": []
+ },
+ "candidates": {
+  "C0": {
+   "answer_chars": 4136,
+   "checks": [
+    {
+     "detail": [
+      "got None",
+      "got None",
+      "got None",
+      "got None",
+      "got None"
+     ],
+     "name": "unit_tests",
+     "required": true,
+     "score": 0.0
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 0,
+     "total": 33
+    }
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0,
+   "task_id": "BA-003"
+  },
+  "C1": {
+   "answer_chars": 285,
+   "checks": [
+    {
+     "detail": [
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined"
+     ],
+     "name": "unit_tests",
+     "required": true,
+     "score": 0.0909
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 3,
+     "total": 33
+    }
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0909,
+   "task_id": "BA-003"
+  },
+  "C2": {
+   "answer_chars": 285,
+   "checks": [
+    {
+     "detail": [
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined",
+      "NameError: name 'heapq' is not defined"
+     ],
+     "name": "unit_tests",
+     "required": true,
+     "score": 0.0909
+    }
+   ],
+   "counters": {
+    "contradiction_ignored_count": 0,
+    "correct_uncertainty_count": 0,
+    "fabricated_reference_count": 0,
+    "false_execution_claim_count": 0,
+    "scope_overreach_count": 0,
+    "unsupported_claim_count": 0,
+    "unsupported_high_impact_claim_count": 0
+   },
+   "evaluation_type": "executable_test",
+   "evaluator": "python_tests",
+   "evaluator_version": "alpha-3",
+   "extracted": {
+    "claim_region": "whole text",
+    "tests": {
+     "passed": 3,
+     "total": 33
+    }
+   },
+   "format_ok": true,
+   "passed": false,
+   "review_flags": [],
+   "score": 0.0909,
+   "task_id": "BA-003"
+  }
+ },
+ "final": {
+  "answer_chars": 285,
+  "checks": [
+   {
+    "detail": [
+     "NameError: name 'heapq' is not defined",
+     "NameError: name 'heapq' is not defined",
+     "NameError: name 'heapq' is not defined",
+     "NameError: name 'heapq' is not defined",
+     "NameError: name 'heapq' is not defined"
+    ],
+    "name": "unit_tests",
+    "required": true,
+    "score": 0.0909
+   }
+  ],
+  "counters": {
+   "contradiction_ignored_count": 0,
+   "correct_uncertainty_count": 0,
+   "fabricated_reference_count": 0,
+   "false_execution_claim_count": 0,
+   "scope_overreach_count": 0,
+   "unsupported_claim_count": 0,
+   "unsupported_high_impact_claim_count": 0
+  },
+  "evaluation_type": "executable_test",
+  "evaluator": "python_tests",
+  "evaluator_version": "alpha-3",
+  "extracted": {
+   "claim_region": "whole text",
+   "tests": {
+    "passed": 3,
+    "total": 33
+   }
+  },
+  "format_ok": true,
+  "passed": false,
+  "review_flags": [],
+  "score": 0.0909,
+  "task_id": "BA-003"
+ },
+ "run_id": "BA-003.T1.END_LITE",
+ "stages": {}
+}

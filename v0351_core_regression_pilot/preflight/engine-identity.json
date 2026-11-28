@@ -1,0 +1,18 @@
+{
+  "version": "0.3.5.1",
+  "source_sha256": "c04475eafbf7bc13f3cd0f2c4a772db9113c23c25e3cf35dd0cdb8b853643077",
+  "fingerprint_scope": "end_engine/**/*.py and pyproject.toml",
+  "files": 68,
+  "python": "3.12.14",
+  "git_commit": "6b2ff6eab3b5faa4a03f18c7116aeb884ca876a7",
+  "offline_tests": {
+    "command": "python -m unittest discover -s tests -t . (network-blocked unittest API)",
+    "tests": 262,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "elapsed_seconds": 15.606
+  },
+  "decision_provider": "baseline"
+}

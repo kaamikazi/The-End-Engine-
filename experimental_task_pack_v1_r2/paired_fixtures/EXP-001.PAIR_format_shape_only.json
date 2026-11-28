@@ -1,0 +1,15 @@
+{
+  "pair_id": "EXP-001.PAIR_format_shape_only",
+  "task_id": "EXP-001",
+  "candidate_role": "SYNTHETIC_PAIR_NOT_LIVE_GENERATED_C0",
+  "c0_content": "{\"labels\": [{\"accession\": \"Mx-A7\", \"label\": \"LOAN: Copper bell\", \"handling\": \"single-tray\"}, {\"accession\": \"QP_6c\", \"label\": \"Folded map\", \"handling\": \"single-tray\"}, {\"accession\": \"bV-22\", \"label\": \"LOAN: Glass bead\", \"handling\": \"two-hands\"}], \"explanation\": {\"loan_ids\": [\"Mx-A7\", \"bV-22\"], \"fragile_ids\": [\"bV-22\"]}, \"scope\": \"label_text_only\", \"notes\": \"Labels reflect the supplied flags.\"}",
+  "final_content": "{\"labels\": [{\"accession\": \"Mx-A7\", \"label\": \"LOAN: Copper bell\", \"handling\": \"single-tray\"}, {\"accession\": \"QP_6c\", \"label\": \"Folded map\", \"handling\": \"single-tray\"}, {\"accession\": \"bV-22\", \"label\": \"LOAN: Glass bead\", \"handling\": \"two-hands\"}], \"explanation\": {\"loan_ids\": [\"Mx-A7\", \"bV-22\"], \"fragile_ids\": [\"bV-22\"]}, \"scope\": \"label_text_only\", \"notes\": [\"Labels reflect the supplied flags.\"]}",
+  "expected_transition_fields": {
+    "format_only_repair": true,
+    "task_success_improvement": true,
+    "substantive_improvement": false
+  },
+  "rationale": "Optional-note array shape repaired without changing its proposition.",
+  "revision_trace": null,
+  "independent_recheck_status": "PENDING"
+}
