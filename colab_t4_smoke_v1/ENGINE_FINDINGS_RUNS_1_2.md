@@ -686,7 +686,79 @@ All 331 engine tests and the 13 pilot tests pass.
 
 The engine's wording recovers at least as well as the tested baseline. The two partial scores are BA-007 T2 (0.75) and BA-010 T1 (0.6). The BA-008 runs stay at 0.5, as in the baseline.
 
-**Expected effect, not yet measured.** In the 12-task run, END's cut-off initial answers each went through a full critique, judging and revision cycle before a finished answer existed. Now the finished answer exists after one extra call. The gate then judges it, and the acceptance and accepted-best stops (findings 13 and 14) can end the run there. This should bring END's cost on cut-off tasks much closer to the baseline's 5.5k tokens per run. The size of that saving, and whether scores hold, needs a Colab run at this commit.
+**Expected effect, not yet measured.** In the 12-task run, END's cut-off initial answers each went through a full critique, judging and revision cycle before a finished answer existed. Now the finished answer exists after one extra call. The gate then judges it, and the acceptance and accepted-best stops (findings 13 and 14) can end the run there. This should bring END's cost on cut-off tasks much closer to the baseline's 5.5k tokens per run. The size of that saving, and whether scores hold, needs a Colab run at this commit (measured in the next section).
+
+## Graded 12-task run 2: continuation-first END and a same-GPU continuation baseline, L4 (2026-11-28)
+
+`END_COLAB_GRADED_12_TASKS_CONTINUATION.ipynb`, run at `c2849e1` with no local patch. It used the same 12 tasks, 3 trials, model and settings as the first 12-task run, with three conditions:
+- **DIRECT:** one call.
+- **DIRECT_CONTINUE:** DIRECT's answer from the same trial. If that answer was cut off, one continuation call with the engine's own prompt follows. Its token count includes DIRECT's call.
+- **END native:** continuation-first (finding 16).
+
+331 offline tests passed on Colab. All 108 runs finished, with no errors and no withheld answers. The run took about 3 hours on an L4.
+
+| Task | DIRECT (T1, T2, T3) | DIRECT_CONTINUE | END native | END tokens per run | END tokens, previous 12-task run | DIRECT_CONTINUE tokens per run |
+| --- | --- | --- | --- | --- | --- | --- |
+| BA-001 | 1, 1, 1 | 1, 1, 1 | 1, 1, 1 | 24k | 25k | 1.9k |
+| BA-002 | 1, 1, 1 | 1, 1, 1 | 1, 1, 1 | 34k | 29k | 3.0k |
+| BA-003 | 1, 1, 0* | 1, 1, 1 | 1, 1, 1 | 33k | 78k | 5.6k |
+| BA-004 | 0*, 0*, 0* | 1, 1, 1 | 1, 1, 1 | 63k | 145k | 9.5k |
+| BA-005 | 1, 1, 1 | 1, 1, 1 | 1, 1, 1 | 29k | 62k | 1.9k |
+| BA-006 | 0*, 0*, 0* | 1, 1, 1 | 0.8, 1, 1 | 146k | 238k | 10.2k |
+| BA-007 | 0*, 0*, 0* | 0.75, 0.75, 0.25 | 1, 0.75, 1 | 73k | 157k | 10.5k |
+| BA-008 | 0.5*, 0.5*, 0.5* | 0.5, 0.5, 0.5 | 0.5, 0.5, 1 | 62k | 79k | 9.5k |
+| BA-009 | 0*, 0.5, 0.5 | 1, 0.5, 0.5 | 1, 1, 1 | 52k | 79k | 5.3k |
+| BA-010 | 0*, 0*, 0.8 | 1, 0.8, 0.8 | 1, 0.8, 1 | 77k | 115k | 8.0k |
+| BA-011 | 1, 1, 1 | 1, 1, 1 | 1, 1, 1 | 71k | 62k | 2.8k |
+| BA-012 | 1, 1, 1 | 1, 1, 1 | 1, 1, 1 | 22k | 27k | 1.8k |
+| **Mean total (of 12)** | **6.77** | **10.62** | **11.45** | **57k** | **91k** | **5.8k** |
+
+\* DIRECT's answer was cut off at the 4,096-token output limit.
+
+| Comparison (36 task/trial pairs) | Wins / losses / ties | Sign test p |
+| --- | --- | --- |
+| END vs DIRECT | 17 / 0 / 19 | < 0.001 |
+| DIRECT_CONTINUE vs DIRECT | 13 / 0 / 23 | < 0.001 |
+| END vs DIRECT_CONTINUE | 6 / 1 / 29 | 0.125 |
+
+- **Continuation works on real runs.** DIRECT was cut off in 16 of 36 runs. DIRECT_CONTINUE continued all 16, none was cut off again, and all 13 of DIRECT's zero scores became non-zero. In END, 45 responses were cut off: 43 were continued and finished, and 2 were cut off again and kept as incomplete.
+- **END's cost fell to 63% of the previous run** (57k tokens per run, against 91k). The saving is on the tasks with cut-offs: BA-004 fell from 145k to 63k, and BA-007 from 157k to 73k. Tasks with no cut-offs cost the same as before, 22k to 34k per run.
+- **END still costs about 10× DIRECT_CONTINUE** (2.06M against 210k tokens in total).
+- **The hardware changed** (L4, not T4), so DIRECT's answers differ from the first 12-task run: 6.77 here against 7.67 there. Scores are compared within this run.
+
+### 17. With continuation in both, END's critique loop adds a small gain on 4 tasks
+
+The pilot's evaluator scores every END candidate, not only the returned one. That separates the two parts of END:
+- **C0** is END's first answer after continuation. It is the same procedure as DIRECT_CONTINUE, with a different seed.
+- **The returned answer** is C0 after the critique, judging and revision loop.
+
+| | Mean total (of 12) |
+| --- | --- |
+| DIRECT_CONTINUE | 10.62 |
+| END's C0 (first answer, continued) | 10.78 |
+| END returned answer | **11.45** |
+| Best END candidate in each run | 11.58 |
+
+- **C0 matches DIRECT_CONTINUE** (10.78 against 10.62), as it should.
+- **The loop raised the score in 5 runs and lowered it in 1**, a net gain of +0.67 of 12 over C0. These are the first measurements of what the loop adds when both sides finish their answers:
+
+  | Run | Candidate scores | Returned |
+  | --- | --- | --- |
+  | BA-007 T3 | C0 0.25 → C1 0.5 → C2 1.0 | 1.0 |
+  | BA-008 T3 | C0 0.5 → C3 1.0 | 1.0 |
+  | BA-009 T2 | C0 0.5 → C1 1.0 | 1.0 |
+  | BA-009 T3 | C0 0.75 → C1 1.0 | 1.0 |
+  | BA-010 T3 | C0 0.8 → C1 1.0 | 1.0 |
+  | **BA-006 T1 (the loss)** | C0 1.0, C1 1.0, C2 cut off, C3 0.8 | 0.8 |
+
+  END's sixth win, BA-007 T1, came from C0 itself (1.0 against DIRECT_CONTINUE's 0.75), so it is seed variation, not the loop.
+- **How the BA-006 T1 loss happened:** C0 and C1 were both blocked only by advisory concerns. The advisory-block stop could not fire yet, because BA-006 is a deep task and needs 2 cycles. C2 was cut off twice and blocked for an ambiguous answer region, which broke the advisory streak. C3 then went back to the wrong deduplication key (`payment_id`), and the model's own judges accepted it provisionally. An accepted draft outranks blocked ones, so C3 was returned. A self-judged acceptance of a wrong draft cannot be caught without an independent check. A possible change: an incomplete (cut-off) revision should not break the advisory streak. With that change, this run could have stopped after C2 and returned C0 or C1 (both 1.0). This is one case, so no change is made.
+- **Significance:** 5 raised against 1 lowered is not significant on its own (sign test p ≈ 0.22). The direction matches the replay in finding 15, where END beat the locally generated baseline 6–1 and 5–1. The gain is concentrated where the task rewards careful reasoning: the evidence-discipline tasks (BA-009, BA-010), the job-lease rubric (BA-007) and the false-premise task (BA-008).
+- **Where the remaining cost goes:** every END run has at least the minimum cycles (1 for normal tasks, 2 for deep ones). The first answer is evaluated with four calls: verification, adversarial tests and two judges. Each cycle then adds eight: critique, plan, revision, the same four evaluation calls on the revision, and a comparison. A one-cycle run costs 22k to 34k tokens even when the first answer was right. That is the floor seen on BA-001, BA-002 and BA-012, and most of the 57k average.
+
+**Conclusion.** On these tasks the loop is worth about +0.7 points of 12 (6%) over a continuation baseline, for about 10× the tokens. The gain is real in direction but not yet significant. It is concentrated in four tasks. The two ways to improve the trade are:
+- cut the per-cycle cost, for example by skipping the minimum revision when the first answer has no grounded defect;
+- run END only where its gain shows: evidence discipline, false premises and multi-constraint design.
 
 ## Not concluded
 
