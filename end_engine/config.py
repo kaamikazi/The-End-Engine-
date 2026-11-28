@@ -31,6 +31,9 @@ class EngineConfig:
     # After the minimum cycles, stop when the best candidate is accepted and the latest revision did not replace it
     # (graded Colab trials run 2).
     stop_on_accepted_best: bool = True
+    # Native mode: a response cut off at the output limit gets one continuation call that hands the unfinished text
+    # back (graded Colab 12-task run). False = retry a cut-off revision once and leave an initial answer as is.
+    continue_cut_off: bool = True
     # v0.3.5. Targeted repair calls per failing structured stage (0 disables repair).
     protocol_repair_attempts: int = 1
     repair_failure_limit: int = 2

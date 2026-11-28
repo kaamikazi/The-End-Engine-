@@ -368,16 +368,58 @@ class CutOffTests(Fixture):
     def candidate(record, cid):
         return next(c for c in record["candidates"] if c["candidate_id"] == cid)
 
-    def test_cut_off_revision_is_retried_once(self):
+    @staticmethod
+    def events(record):
+        return [(s["data"]["purpose"], s["data"]["action"]) for s in record["steps"] if s["type"] == "truncated_response"]
+
+    def assert_continuation(self, prompt, cut):
+        self.assertIn("UNFINISHED_ANSWER", prompt)
+        self.assertIn(cut, prompt)
+        self.assertIn(self.TASK, prompt)
+        self.assertIn("keep any reasoning before it short", prompt)
+
+    def test_cut_off_initial_answer_is_continued(self):
+        # Graded 12-task run: in 11 of 11 cases where DIRECT scored 0 after a cut-off, END's own C0 was cut off too. A
+        # continuation that hands the unfinished text back recovered 21 of 22 such answers in a local replay.
+        gen = CutOffGen(native=(self.CUT, self.ANSWER), cut={1})
+        result, record = self.run_engine(gen, max_cycles=0)
+        prompts = [r.prompt for k, r in gen.requests if k == "text"]
+        self.assertEqual(len(prompts), 2)
+        self.assertEqual(prompts[0], self.TASK)  # C0's first request is still the exact DIRECT call
+        self.assert_continuation(prompts[1], self.CUT)
+        c0 = self.candidate(record, "C0")
+        self.assertEqual((c0["content"], c0["answer_region_status"]), (self.ANSWER, "WHOLE_RESPONSE"))
+        self.assertEqual(result.answer, self.ANSWER)
+        self.assertEqual(self.events(record), [("initial_candidate", "continued")])
+
+    def test_a_continuation_cut_off_again_is_incomplete_and_never_returned(self):
+        gen = CutOffGen(native=(self.CUT, self.CUT, self.ANSWER), cut={1, 2})
+        result, record = self.run_engine(gen, max_cycles=0)
+        self.assertEqual(len([r for k, r in gen.requests if k == "text"]), 2)
+        self.assertEqual(self.candidate(record, "C0")["answer_region_status"], "AMBIGUOUS")
+        self.assertEqual(self.events(record), [("initial_candidate", "continued"), ("initial_candidate", "kept as incomplete")])
+        self.assertTrue(record["output_integrity"]["blocked"])
+        self.assertEqual(result.answer, "")
+
+    def test_cut_off_revision_is_continued(self):
         gen = CutOffGen(native=(self.ANSWER, self.CUT, self.REVISED), cut={2})
         _, record = self.run_engine(gen, max_cycles=1)
+        prompts = self.revisions(gen)
+        self.assertEqual(len(prompts), 2)
+        self.assert_continuation(prompts[1], self.CUT)
+        c1 = self.candidate(record, "C1")
+        self.assertEqual((c1["content"], c1["answer_region_status"]), (self.REVISED, "WHOLE_RESPONSE"))
+        self.assertEqual(self.events(record), [("revision", "continued")])
+
+    def test_without_continuation_a_cut_off_revision_is_retried_once(self):
+        gen = CutOffGen(native=(self.ANSWER, self.CUT, self.REVISED), cut={2})
+        _, record = self.run_engine(gen, max_cycles=1, continue_cut_off=False)
         prompts = self.revisions(gen)
         self.assertEqual(len(prompts), 2)
         self.assertEqual(prompts[0], prompts[1])  # the same request, sent again
         c1 = self.candidate(record, "C1")
         self.assertEqual((c1["content"], c1["answer_region_status"]), (self.REVISED, "WHOLE_RESPONSE"))
-        events = [s["data"] for s in record["steps"] if s["type"] == "truncated_response"]
-        self.assertEqual([(e["purpose"], e["action"]) for e in events], [("revision", "retried once")])
+        self.assertEqual(self.events(record), [("revision", "retried once")])
 
     def test_revision_cut_off_twice_is_incomplete_and_never_returned(self):
         gen = CutOffGen(native=(self.ANSWER, self.CUT, self.CUT, self.REVISED), cut={2, 3})
@@ -401,10 +443,10 @@ class CutOffTests(Fixture):
         self.assertEqual((result.termination_reason, result.answer), (StopReason.ACCEPTED_PROVISIONALLY, self.ANSWER))
         self.assertEqual(len(self.revisions(gen)), 2)
 
-    def test_cut_off_initial_answer_is_marked_but_not_retried(self):
+    def test_without_continuation_a_cut_off_initial_answer_is_marked_but_not_retried(self):
         # C0 stays the exact DIRECT call: one request, never repeated.
         gen = CutOffGen(native=(self.CUT, self.ANSWER), cut={1})
-        result, record = self.run_engine(gen, max_cycles=0)
+        result, record = self.run_engine(gen, max_cycles=0, continue_cut_off=False)
         self.assertEqual(len([r for k, r in gen.requests if k == "text"]), 1)
         self.assertEqual(self.candidate(record, "C0")["answer_region_status"], "AMBIGUOUS")
         self.assertTrue(record["output_integrity"]["blocked"])

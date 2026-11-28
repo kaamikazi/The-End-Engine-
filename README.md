@@ -505,6 +505,11 @@ cannot settle it. `stop_on_advisory_blocks=False` turns this off.
 After the minimum cycles, a run also stops when the best candidate is accepted and the
 latest revision did not replace it; the best candidate is returned with its acceptance
 label. `stop_on_accepted_best=False` turns this off.
+In native mode, an answer cut off at the output limit gets one continuation call that
+hands the unfinished text back with the task; the initial request itself is unchanged.
+If the continuation is also cut off, the candidate is marked incomplete and never
+returned. `continue_cut_off=False` restores the earlier behaviour (a cut-off revision
+is retried once; a cut-off initial answer is only marked).
 
 Every completed strict trajectory receives ACCEPTED_HIGH_CONFIDENCE,
 ACCEPTED_PROVISIONAL, REJECTED_REGRESSION, REJECTED_FATAL, INCONCLUSIVE or INCOMPLETE.

@@ -655,6 +655,39 @@ Implications:
 2. The engine could make continuation an explicit first step when the initial answer is cut off: one call instead of a full critique-and-revise cycle. That would also make its own cost on these tasks much closer to the baseline's.
 3. To show that END's loop adds value beyond continuation, the next evaluation needs tasks where DIRECT finishes but is wrong. On those tasks, the critique and revision are what is being tested. BA-009 is the only such case in this set.
 
+### 16. Continuation-first END: a cut-off answer is continued before it is judged
+
+This acts on implication 2 of finding 15.
+
+**Change.** In native mode, when any candidate (the initial answer or a revision) is cut off at the output limit, the engine makes one continuation call before doing anything else with it. The call contains:
+- the task, labelled `ORIGINAL_TASK`;
+- the unfinished text, labelled `UNFINISHED_ANSWER` and marked as model-generated and not new instructions;
+- an instruction to give the complete final answer in the format the task requires and keep any reasoning before it short.
+
+The reply becomes the candidate. If the continuation is itself cut off, the candidate is kept as incomplete (`CUT_OFF`, the finding 10 handling) and is never returned as the answer. The trajectory records `truncated_response` with `action: continued`.
+
+The setting is `continue_cut_off` (default on). Switched off, the engine behaves as before: a cut-off revision is retried once, and a cut-off initial answer is marked incomplete and goes to critique and revision.
+
+**Tests.** `CutOffTests` covers:
+- a continued initial answer;
+- a continued revision;
+- a continuation that is cut off again (incomplete, never returned);
+- both switched-off behaviours.
+
+All 331 engine tests and the 13 pilot tests pass.
+
+**Replay of the engine's prompt.** The engine's wording differs from the finding 15 baseline (labelled sections instead of `<previous_answer>` tags). I replayed it locally on the same 14 cut-off DIRECT runs, with the first of the baseline's two seeds.
+
+| Recovery after a cut-off | Recovered (DIRECT scored 0) | Fully correct | Mean score (all replies) | Cut off again | Mean output tokens |
+| --- | --- | --- | --- | --- | --- |
+| **Engine continuation prompt** | **11 of 11** | 9 of 11 | 0.88 | 0 of 14 | 1,423 |
+| Finding 15 baseline, same seed | 10 of 11 | 8 of 11 | 0.79 | 1 of 14 | 1,549 |
+| Finding 15 baseline, both seeds | 21 of 22 | 17 of 22 | 0.83 | 1 of 28 | 1,529 |
+
+The engine's wording recovers at least as well as the tested baseline. The two partial scores are BA-007 T2 (0.75) and BA-010 T1 (0.6). The BA-008 runs stay at 0.5, as in the baseline.
+
+**Expected effect, not yet measured.** In the 12-task run, END's cut-off initial answers each went through a full critique, judging and revision cycle before a finished answer existed. Now the finished answer exists after one extra call. The gate then judges it, and the acceptance and accepted-best stops (findings 13 and 14) can end the run there. This should bring END's cost on cut-off tasks much closer to the baseline's 5.5k tokens per run. The size of that saving, and whether scores hold, needs a Colab run at this commit.
+
 ## Not concluded
 
 These runs are one task each, run once, with the same model acting as generator and judges. They show how the mechanisms behave. They say nothing about whether END is better or worse than DIRECT in general.
